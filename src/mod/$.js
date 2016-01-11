@@ -2,11 +2,11 @@ exports.config={
     name:"webgl-experiments",
     description:"WebGL experiments",
     author:"Tolokoban",
-    version:"0.0.50",
+    version:"0.0.51",
     major:0,
     minor:0,
-    revision:50,
-    date:new Date(2016,0,11,21,44,25)
+    revision:51,
+    date:new Date(2016,0,11,21,46,57)
 };
 var currentLang = null;
 exports.lang = function(lang) {

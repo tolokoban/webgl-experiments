@@ -10,7 +10,12 @@ module.exports = function(x, y, z) {
      */
     /*
      */
-    var texture = createTexture("ABCDEFGHI".charAt((x+y+z) % 9), "#f80");
+    var texture = createTexture("ABCDEFGHI".charAt((x+y+z) % 9), 
+                                "rgb(" 
+                                + Math.floor(64 + x*64) + ","
+                                + Math.floor(64 + y*64) + ","
+                                + Math.floor(64 + z*64)
+                                + ")");
     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     var material = new THREE.MeshPhongMaterial({
 //        color: 0x00ff00,
@@ -49,7 +54,7 @@ function createCanvas(text, color) {
 
 function createTexture(text, color) {
     var canvasArray = [];
-    canvasArray.push( createCanvas(text, "#00f") );
+    canvasArray.push( createCanvas(text, color) );
     canvasArray.push( createCanvas(text, "#0f0") );
     canvasArray.push( createCanvas(text, "#f00") );
     canvasArray.push( createCanvas(text, "#88f") );
