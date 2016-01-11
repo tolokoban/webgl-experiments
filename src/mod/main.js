@@ -64,6 +64,7 @@ function render(time) {
     group.rotation.x = time / 3000;
     group.rotation.y = time / 3111;
 
+/*
     var raycaster = new THREE.Raycaster();
     var vector = new THREE.Vector3( mouse.x, mouse.y, 1 ).unproject( camera );
     raycaster.set( camera.position, vector.sub( camera.position ).normalize() );
@@ -82,7 +83,7 @@ function render(time) {
             group.remove(selectedCube);
         }
     }
-
+*/
     requestAnimationFrame( render );
     renderer.render( scene, camera );
 }
