@@ -2,33 +2,81 @@
 
 
 module.exports = function(x, y, z) {
-    /*
-     var grp = new THREE.Group();
+    var materials = z == 0 ?
+        [
+            createMaterial(
+                "F", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "white"),
+            createMaterial(
+                "B", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "white"),
+            createMaterial(
+                "R", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "white"),
+            createMaterial(
+                "L", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "white"),
+            createMaterial(
+                "U", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "white"),
+            createMaterial(
+                "D", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "white"),
+        ] :
+        [
+            createMaterial(
+                "F", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "rgb("
+                    + Math.floor(x*128) + ","
+                    + Math.floor(y*128) + ","
+                    + Math.floor(z*128)
+                    + ")"),
+            createMaterial(
+                "B", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "rgb("
+                    + Math.floor(255 - x*128) + ","
+                    + Math.floor(y*128) + ","
+                    + Math.floor(z*128)
+                    + ")"),
+            createMaterial(
+                "R", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "rgb("
+                    + Math.floor(x*128) + ","
+                    + Math.floor(255 - y*128) + ","
+                    + Math.floor(z*128)
+                    + ")"),
+            createMaterial(
+                "L", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "rgb("
+                    + Math.floor(x*128) + ","
+                    + Math.floor(y*128) + ","
+                    + Math.floor(255 - z*128)
+                    + ")"),
+            createMaterial(
+                "U", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "rgb("
+                    + Math.floor(255 - x*128) + ","
+                    + Math.floor(255 - y*128) + ","
+                    + Math.floor(z*128)
+                    + ")"),
+            createMaterial(
+                "D", //"ABCDEFGHI".charAt((x+y+z) % 9),
+                "rgb("
+                    + Math.floor(255 - x*128) + ","
+                    + Math.floor(255 - y*128) + ","
+                    + Math.floor(255 - z*128)
+                    + ")")
+        ];
+    var mesh = new THREE.Mesh(
+        new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1 ),
+        new THREE.MeshFaceMaterial( materials )
+    );
 
-
-     return grp;
-     */
-    /*
-     */
-    var texture = createTexture("ABCDEFGHI".charAt((x+y+z) % 9), 
-                                "rgb(" 
-                                + Math.floor(64 + x*64) + ","
-                                + Math.floor(64 + y*64) + ","
-                                + Math.floor(64 + z*64)
-                                + ")");
-    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    var material = new THREE.MeshPhongMaterial({
-//        color: 0x00ff00,
-        specular: 0x333333,
-        shininess: 25,
-        map: texture,
-        specularMap: null,
-        normalMap: null
-    });
-    var mesh = new THREE.Mesh( geometry, material );
     mesh.position.set(x - 1, y - 1, z - 1);
     return mesh;
 };
+
+
 
 
 function createCanvas(text, color) {
@@ -37,12 +85,8 @@ function createCanvas(text, color) {
     canvas.height = 128;
     var ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, 128, 128);
-    ctx.fillStyle = "#eee";
-    ctx.fillRect(0, 0, 124, 124);
     ctx.fillStyle = color;
-    ctx.fillRect(4, 4, 120, 120);
+    ctx.fillRect(0, 0, 128, 128);
     ctx.font = 'Bold 96px Arial';
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -53,15 +97,43 @@ function createCanvas(text, color) {
 }
 
 function createTexture(text, color) {
-    var canvasArray = [];
-    canvasArray.push( createCanvas(text, color) );
-    canvasArray.push( createCanvas(text, "#0f0") );
-    canvasArray.push( createCanvas(text, "#f00") );
-    canvasArray.push( createCanvas(text, "#88f") );
-    canvasArray.push( createCanvas(text, "#8f8") );
-    canvasArray.push( createCanvas(text, "#f88") );
-
-    var texture = new THREE.Texture( canvasArray[0] );
+    var texture = new THREE.Texture(  createCanvas(text, color) );
     texture.needsUpdate = true;
     return texture;
+}
+
+function createBump(text) {
+    var canvas = document.createElement("canvas");
+    canvas.width = 128;
+    canvas.height = 128;
+    var ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, 128, 128);
+    ctx.fillStyle = "#777";
+    ctx.fillRect(1, 1, 126, 126);
+    ctx.font = 'Bold 96px Arial';
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "rgba(255, 255, 255, .3)";
+    var x, y;
+    for (y = -2 ; y < 3 ; y++) {
+        for (x = -2 ; x < 3 ; x++) {
+            ctx.fillText(text, 64 + x, 64 + y);
+        }
+    }
+
+    var texture = new THREE.Texture(  canvas );
+    texture.needsUpdate = true;
+    return texture;
+}
+
+function createMaterial(text, color) {
+    return new THREE.MeshPhongMaterial({
+        specular: 0x333333,
+        shininess: 25,
+        map: createTexture(text, color),
+        specularMap: null,
+        bumpMap: createBump(text)
+    });
 }
