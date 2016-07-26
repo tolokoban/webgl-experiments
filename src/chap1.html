@@ -1,0 +1,37 @@
+<page title='webgl-experiments'>
+# Changer le système de coordonnées 2D
+
+Le principal problème du système de coordonnées en [-1 ; +1] est qu'il ne respecte pas les carrés !
+En effet, pour Open GL, la largeur de votre canvas est de 2 et sa hauteur aussi, même si ce dernier est un rectangle flagrant.
+
+On ne peut pas changer cela. Mais on peut tricher pour que ce ne soit plus un problème. Nous allons dessiner un carré dont on spécifiera les coordonnées dans le système du canvas : le point supérieur gauche sera (0,0) et le point inférieur droit sera (W,H), où W est la larguer en pixel du canvas (H la hauteur).
+
+On pourrait très bien réaliser ceci en créant une fonction de transformation des coordonnées avant de les passer à Open GL. Mais ce serait du Javascript, et ce serait donc très lent.
+La meilleure solution consiste à faire faire le travail par le _vertex shader_. Et ça tombe bien, car il sert précisément à cela : modifier les coordonnées.
+
+Mais pour que cela fonctionne, il faut que le shader connaisse la largeur et la hauteur de notre canvas. Il faut donc lui passer des variables. Puisque les valeurs de ces variables ne changent pas pendant le dessin d'une image, on utilise des variables de type __Uniform__.
+
+On ajoute donc ce code juste avant le rendu :
+<x-code src="mod/wdg.gl1" section="canvas-size" />
+
+Et il faut changer le code du _vertex shader_ pour qu'il utilise ces deux variables :
+<x-code src="mod/gl1.vertex.c"/>
+
+On peut désormais utiliser de nouvelles coordonnées. On choisit un carré de larguer 100x100 positionné en (20,20) :
+<x-code src="mod/wdg.gl1" section="vertices" />
+
+Tada ! En voilà un beau carré :
+<wdg:gl1 $width="240" $height="140" />
+
+Un minute ! Comment peut-on dessiner un carré avec la fonction suivante : `gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);` ? On y parle de __TRIANGLE_STRIP__, qu'est-ce donc ?
+
+En fait, le TRIANGLE_STRIP est une bande de triangles. Les 3 premiers points définissent un triangle, normal. Mais ensuite, chaque point ajouté définit un nouveau triangle. Ainsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.
+
+Et ce n'est pas la seule option, comme nous le verrons dans le chapitre suivant.
+<hr/>
+
+* Chapitre précédent : <a href="index.html">Comprendre WebGL</a>.
+* Chapitre suivant : <a href="chap2.html">Vivent les polygones</a>.
+
+
+</page>
