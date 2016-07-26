@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap2.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl2.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap2.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="vivent-les-polygones">Vivent les polygones</h1>
+<h2 id="polygones-r-guliers">Polygones réguliers</h2>
+<center style="margin: 0; padding: 0; display: inline-block">
+        <p>3 sommets</p>
+        <div id="wdg.gl21" style="display:none"></div>
+    </center><center style="margin: 0; padding: 0; display: inline-block">
+        <p>5 sommets</p>
+        <div id="wdg.gl22" style="display:none"></div>
+    </center><center style="margin: 0; padding: 0; display: inline-block">
+        <p>13 sommets</p>
+        <div id="wdg.gl23" style="display:none"></div>
+    </center><center style="margin: 0; padding: 0; display: inline-block">
+        <p>500 sommets</p>
+        <div id="wdg.gl24" style="display:none"></div>
+    </center><h2 id="polygones-irr-guliers">Polygones irréguliers</h2>
+<center style="margin: 0; padding: 0; display: inline-block">
+        <p>3 sommets</p>
+        <div id="wdg.gl25" style="display:none"></div>
+    </center><center style="margin: 0; padding: 0; display: inline-block">
+        <p>5 sommets</p>
+        <div id="wdg.gl26" style="display:none"></div>
+    </center><center style="margin: 0; padding: 0; display: inline-block">
+        <p>13 sommets</p>
+        <div id="wdg.gl27" style="display:none"></div>
+    </center><center style="margin: 0; padding: 0; display: inline-block">
+        <p>500 sommets</p>
+        <div id="wdg.gl28" style="display:none"></div>
+    </center><hr/><p>Il est possible de créer des polygônes de n&#39;importe quelle forme. Ces derniers seront toujours constitués de triangles dont les sommets seront pris dans un tableau. Mais à partir de cet unique tableau, il existe plusieurs façons de dessiner nos triangles.</p>
+<p>Regardons de près les arguments de la fonction <code>drawArrays( mode, first, count )</code>.</p>
+<ul>
+<li><strong>first</strong> : index du premier point. Dans un tableau, le premier point a l&#39;index 0.</li>
+<li><strong>count</strong> : nombre de points à lire.</li>
+<li><strong>mode</strong> : indique ce qu&#39;il faut faire avec ces points<ul>
+<li><strong>gl.POINTS</strong> : afficher seulement un pixel pour chaque point. (on verra plus tard comment définir la taille de ces &quot;pixels&quot;).</li>
+<li><strong>gl.LINE_STRIP</strong> : tracer une ligne qui passe par chaque point.</li>
+<li><strong>gl.LINE_LOOP</strong> : tracer une ligne qui passe par chaque point, mais ajoute un segment entre le dernier et le premier point, formant ainsi une boucle.</li>
+<li><strong>gl.LINES</strong> : Prend deux points et trace un segment. Puis on continue ainsi tant qu&#39;il reste au moins deux points. Cela permet de créer des lignes disjointes.</li>
+<li><strong>gl.TRIANGLE_STRIP</strong> : pour les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.</li>
+<li><strong>gl.TRIANGLE_FAN</strong> : pour les points [A, B, C, D, E], on dessinera 3 triangles : ABC, ACD, ADE. On penser à un éventail.</li>
+<li><strong>gl.TRAIANGLES</strong> : dessine des triangles qui peuvent être disjoints. pour les points [A, B, C, D, E, F], on dessinera 2 triangles : ABC, DEF.</li>
+</ul>
+</li>
+</ul>
+<p>Et, bien sûr, rien ne vous empêche d&#39;enchaîner les appels :</p>
+<pre class="custom highlight js">
+    gl.<span class="function">drawArrays</span>(gl.TRIANGLE_FAN, 0, 7);
+    gl.<span class="function">drawArrays</span>(gl.TRIANGLES, 8, 38);
+    gl.<span class="function">drawArrays</span>(gl.LINE_LOOP, 45, 53);
+    ...</pre><hr/><ul>
+<li>Chapitre précédent : </li>
+</ul>
+<a href="chap1.html">Changer le système de coordonnées 2D</a><p>.</p>
+<ul>
+<li>Chapitre suivant : </li>
+</ul>
+<a href="chap3.html">Textures procédurales</a><p>.</p>
+</section><nav class="theme-color-bg-B2 theme-elevation-2"><p> Sommaire :</p>
+<ul>
+<li><a href="index.html">Comprendre WebGL</a></li>
+<li><a href="chap1.html">Changer le système de coordonnées 2D</a></li>
+</ul>
+
+</nav></body></html>
