@@ -3,8 +3,8 @@
     "author": "tolokoban",
     "description": "WebGL study by tutorials",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/tolokoban/webgl-experiments.git"
+        "type": "git",
+        "url": "https://github.com/tolokoban/webgl-experiments.git"
     },
     "homepage": "https://github.com/tolokoban/webgl-experiments",
     "license": "GPL-3.0",
@@ -16,19 +16,18 @@
         "release": "node node_modules/toloframework/bin/tfw.js build version php clean"
     },
     "bugs": {
-      "url": "https://github.com/tolokoban/webgl-experiments/issues"
+        "url": "https://github.com/tolokoban/webgl-experiments/issues"
     },
-    "scripts": {
-      "test": "jasmine",
-      "test:dbg": "node --debug-brk node_modules/jasmine/bin/jasmine.js"
-    },
+<<<<<<< HEAD
     "name": "webgl-experiments",
-    "version": "0.0.73",
+    "version": "0.0.151",
     "author": "Tolokoban",
     "description": "WebGL experiments",
     "license": "GPL",
+=======
+>>>>>>> 8180336e782188ef8814be6153c7cb40dd451c03
     "tfw": {
-      "modules": [],
+        "modules": [],
         "compile": {
             "type": "firefoxos",
             "files": [

@@ -1,0 +1,7 @@
+{
+  "var": {
+      "vertex": "gl3.vertex.c",
+      "fragment-a": "gl3.fragment-a.c",
+      "fragment-b": "gl3.fragment-b.c"
+  }
+}

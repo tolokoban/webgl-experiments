@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+<x-html app="main" title="Tolokoban's WebGl experiments">
+    <head>
+        <script src="js/three.min.js"></script>
+        <!-- <script src="js/three.js"></script> -->
+    </head>
+    <section>Swype to rotate the whole scene.<br/>Tap to push a tiny cube.</section>
+</x-html>
+=======
 <page title='webgl-experiments'>
 # Comprendre WebGL
 
@@ -58,3 +67,4 @@ Basiquement, un shader est une fonction `void main()` qui doit mettre à jour de
 * Chapitre suivant : <a href="chap1.html">Changer le système de coordonnées 2D</a>.
 
 </page>
+>>>>>>> 8180336e782188ef8814be6153c7cb40dd451c03
