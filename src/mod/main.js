@@ -1,4 +1,6 @@
 var Cube = require("taquin.cube");
+var Grid = require("taquin.grid");
+var RotateTouch = require("taquin.rotate-touch");
 
 var W = Math.min( window.innerWidth, window.innerHeight );
 var H = W;
@@ -45,45 +47,51 @@ scene.add( group );
 scene.add( light1 );
 scene.add( light2 );
 
+var grid = new Grid(3,3,3);
 var x, y, z, cube;
 for (x=0 ; x<3 ; x++) {
     for (y=0 ; y<3 ; y++) {
         for (z=0 ; z<3 ; z++) {
-            cube = Cube(x, y, z);
-            group.add(cube);
+            if (x != 1 || y != 1 || z != 1) {
+                cube = Cube(x, y, z);
+                grid.cube(x, y, z, cube);
+                group.add(cube);
+            }
         }
     }
 }
 material = cube.material;
 
-camera.position.z = 5;
+camera.position.z = 4.3;
 light1.position.set(3,0,5);
 light2.position.set(-1,2,4);
+var time0 = Date.now();
+group.rotation.x = 0;
+group.rotation.y = 0;
+group.rotation.z = 0;
 
-function render(time) {
-    group.rotation.x = time / 3000;
-    group.rotation.y = time / 3111;
+var touch = new RotateTouch(renderer.domElement);
 
-/*
-    var raycaster = new THREE.Raycaster();
-    var vector = new THREE.Vector3( mouse.x, mouse.y, 1 ).unproject( camera );
-    raycaster.set( camera.position, vector.sub( camera.position ).normalize() );
-    var intersects = raycaster.intersectObjects( group.children );
-    
-    nextSelectedCube = intersects.length > 0 ? intersects[0].object : null;
-    if (selectedCube !== nextSelectedCube) {
-        if (selectedCube) selectedCube.material = material;
-        selectedCube = nextSelectedCube;
-        if (selectedCube) selectedCube.material = material2;
-    }
-    
-    while (actions.length > 0) {
-        actions.pop();
-        if (selectedCube) {
-            group.remove(selectedCube);
+function render(time1) {
+    var deltaTime = time1 - time0;
+    touch.applyRotation(group, deltaTime);
+    time0 = time1;
+    touch.rotation.speedX *= .95;
+    touch.rotation.speedY *= .95;
+
+    if (!grid.anim(time1)) {
+        if (touch.tap()) {
+            var raycaster = new THREE.Raycaster();
+            var vector = new THREE.Vector3( touch.x, touch.y, 1 ).unproject( camera );
+            raycaster.set( camera.position, vector.sub( camera.position ).normalize() );
+            var intersects = raycaster.intersectObjects( group.children );
+            var cube = intersects.length > 0 ? intersects[0].object : null;
+            if (cube) {
+                grid.tap(cube, time1);
+            }
         }
     }
-*/
+
     requestAnimationFrame( render );
     renderer.render( scene, camera );
 }

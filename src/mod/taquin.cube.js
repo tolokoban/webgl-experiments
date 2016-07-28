@@ -2,71 +2,33 @@
 
 
 module.exports = function(x, y, z) {
-    var materials = z == 0 ?
-        [
-            createMaterial(
-                "F", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "white"),
-            createMaterial(
-                "B", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "white"),
-            createMaterial(
-                "R", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "white"),
-            createMaterial(
-                "L", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "white"),
-            createMaterial(
-                "U", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "white"),
-            createMaterial(
-                "D", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "white"),
-        ] :
-        [
-            createMaterial(
-                "F", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "rgb("
-                    + Math.floor(x*128) + ","
-                    + Math.floor(y*128) + ","
-                    + Math.floor(z*128)
-                    + ")"),
-            createMaterial(
-                "B", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "rgb("
-                    + Math.floor(255 - x*128) + ","
-                    + Math.floor(y*128) + ","
-                    + Math.floor(z*128)
-                    + ")"),
-            createMaterial(
-                "R", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "rgb("
-                    + Math.floor(x*128) + ","
-                    + Math.floor(255 - y*128) + ","
-                    + Math.floor(z*128)
-                    + ")"),
-            createMaterial(
-                "L", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "rgb("
-                    + Math.floor(x*128) + ","
-                    + Math.floor(y*128) + ","
-                    + Math.floor(255 - z*128)
-                    + ")"),
-            createMaterial(
-                "U", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "rgb("
-                    + Math.floor(255 - x*128) + ","
-                    + Math.floor(255 - y*128) + ","
-                    + Math.floor(z*128)
-                    + ")"),
-            createMaterial(
-                "D", //"ABCDEFGHI".charAt((x+y+z) % 9),
-                "rgb("
-                    + Math.floor(255 - x*128) + ","
-                    + Math.floor(255 - y*128) + ","
-                    + Math.floor(255 - z*128)
-                    + ")")
-        ];
+    var color = "#" + (x > 0 ? '77' : 'ff') + (y > 0 ? '77' : 'ff') + (z > 0 ? '77' : 'ff');
+    var materials = [
+        // Left
+        createMaterial(
+            "L", //"ABCDEFGHI".charAt((x+y+z) % 9),
+            color),
+        // Right
+        createMaterial(
+            "R", //"ABCDEFGHI".charAt((x+y+z) % 9),
+            color),
+        // Up
+        createMaterial(
+            "U", //"ABCDEFGHI".charAt((x+y+z) % 9),
+            color),
+        // Down
+        createMaterial(
+            "D", //"ABCDEFGHI".charAt((x+y+z) % 9),
+            color),
+        // Back
+        createMaterial(
+            "B", //"ABCDEFGHI".charAt((x+y+z) % 9),
+            color),
+        // Front
+        createMaterial(
+            "F", //"ABCDEFGHI".charAt((x+y+z) % 9),
+            ["#f80", "#777", "#840"][z]),
+    ];
     var mesh = new THREE.Mesh(
         new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1 ),
         new THREE.MeshFaceMaterial( materials )

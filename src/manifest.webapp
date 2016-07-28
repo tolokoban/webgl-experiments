@@ -1,6 +1,6 @@
 {
   "name": "webgl-experiments",
-  "version": "0.0.73",
+  "version": "0.0.151",
   "description": "WebGL experiments",
   "launch_path": "/index.html",
   "fullscreen": "false",
@@ -9,8 +9,7 @@
     "url": "http://my-website.org"
   },
   "icons": {
-    "60": "/icon-60.png",
     "128": "/icon-128.png",
-    "256": "/icon-256.png"
+    "512": "/icon-512.png"
   }
 }
