@@ -68,6 +68,10 @@ addListener(
             width: "300",
             height: "300",
             fragment: "b"})
+        W('wdg.gl311', 'wdg.gl3', {
+            width: "300",
+            height: "300",
+            fragment: "c"})
 
     }
 );
