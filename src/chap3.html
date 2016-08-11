@@ -43,4 +43,15 @@ Voici maintenant des exemples de ce que l'on peut obtenir.
     </div>
 </article>
 
+<article>
+    <wdg:gl3 $width="300" $height="300" $fragment="c" />
+    <div>
+        <b>Le tramage</b>
+<x-code src="mod/gl3.fragment-c.c" />
+    </div>
+</article>
+
+Voici quelques fonctions spécifiques au language de shading :
+* __mod( a, b )__ : retourne le reste de la division euclidienne de __a__ par __b__.
+* __clamp( a, min, max )__ : si __a__ < __min__, retourne __min__. Si __a__ > __max__, retourne __max__. Dans tous les autres cas, retourne __a__.
 </page>

@@ -1,7 +1,7 @@
 {
   "name": "webgl-experiments",
   "version": "0.0.73",
-  "description": "WebGL experiments",
+  "description": "WebGL study by tutorials",
   "launch_path": "/index.html",
   "fullscreen": "false",
   "developer": {
@@ -12,8 +12,5 @@
     "60": "/icon-60.png",
     "128": "/icon-128.png",
     "512": "/icon-512.png"
-  },
-  "name": "webgl-experiments",
-  "version": "0.0.1",
-  "description": "WebGL study by tutorials"
+  }
 }

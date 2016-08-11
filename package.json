@@ -1,50 +1,40 @@
 {
-    "name": "webgl-experiments",
-    "author": "tolokoban",
-    "description": "WebGL study by tutorials",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/tolokoban/webgl-experiments.git"
+  "name": "webgl-experiments",
+  "author": "tolokoban",
+  "description": "WebGL study by tutorials",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tolokoban/webgl-experiments.git"
+  },
+  "homepage": "https://github.com/tolokoban/webgl-experiments",
+  "license": "GPL",
+  "scripts": {
+    "test": "node node_modules/karma/bin/karma start karma.conf.js",
+    "test:dbg": "node --debug-brk node_modules/karma/bin/karma start karma.conf.js",
+    "debug": "node node_modules/toloframework/bin/tfw.js build dev test php watch",
+    "clean": "node node_modules/toloframework/bin/tfw.js clean",
+    "release": "node node_modules/toloframework/bin/tfw.js build version php clean"
+  },
+  "bugs": {
+    "url": "https://github.com/tolokoban/webgl-experiments/issues"
+  },
+  "version": "0.0.73",
+  "tfw": {
+    "modules": [],
+    "compile": {
+      "type": "firefoxos",
+      "files": [
+        "\\.html$"
+      ]
     },
-    "homepage": "https://github.com/tolokoban/webgl-experiments",
-    "license": "GPL-3.0",
-    "scripts": {
-        "test": "node node_modules/karma/bin/karma start karma.conf.js",
-        "test:dbg": "node --debug-brk node_modules/karma/bin/karma start karma.conf.js",
-        "debug": "node node_modules/toloframework/bin/tfw.js build dev test php watch",
-        "clean": "node node_modules/toloframework/bin/tfw.js clean",
-        "release": "node node_modules/toloframework/bin/tfw.js build version php clean"
-    },
-    "bugs": {
-      "url": "https://github.com/tolokoban/webgl-experiments/issues"
-    },
-    "scripts": {
-      "test": "jasmine",
-      "test:dbg": "node --debug-brk node_modules/jasmine/bin/jasmine.js"
-    },
-    "name": "webgl-experiments",
-    "version": "0.0.73",
-    "author": "Tolokoban",
-    "description": "WebGL experiments",
-    "license": "GPL",
-    "tfw": {
-      "modules": [],
-        "compile": {
-            "type": "firefoxos",
-            "files": [
-                "\\.html$"
-            ]
-        },
-        "output": "www"
-    },
-    "version": "0.0.1",
-    "reservedModules": [],
-    "dependencies": {
-        "jasmine-core": "^2.4.1",
-        "karma": "^0.13.22",
-        "karma-chrome-launcher": "^0.2.3",
-        "karma-firefox-launcher": "^0.1.7",
-        "karma-jasmine": "^0.3.8",
-        "toloframework": "^0.34.13"
-    }
+    "output": "www"
+  },
+  "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "toloframework": "^0.37.22"
+  }
 }

@@ -2,17 +2,17 @@ exports.config={
     name:"webgl-experiments",
     description:"WebGL study by tutorials",
     author:"tolokoban",
-    version:"0.0.1",
+    version:"0.0.73",
     major:0,
     minor:0,
-    revision:1,
-    date:new Date(2016,6,26,16,17,47)
+    revision:73,
+    date:new Date(2016,6,28,17,11,25)
 };
 var currentLang = null;
 exports.lang = function(lang) {
     if (lang === undefined) {
         if (window.localStorage) {
-        lang = window.localStorage.getItem("Language");
+            lang = window.localStorage.getItem("Language");
         }
         if (!lang) {
             lang = window.navigator.language;
@@ -27,7 +27,7 @@ exports.lang = function(lang) {
     }
     currentLang = lang;
     if (window.localStorage) {
-    window.localStorage.setItem("Language", lang);
+        window.localStorage.setItem("Language", lang);
     }
     return lang;
 };
@@ -36,14 +36,12 @@ exports.intl = function(words, params) {
     k = params[0],
     txt, newTxt, i, c, lastIdx, pos;
     if (!dic) {
-        console.error("Missing internationalization for language : \"" + exports.lang() + "\"!");
+        //console.error("Missing internationalization for language : \"" + exports.lang() + "\"!");
         return k;
     }
     txt = dic[k];
     if (!txt) {
-        console.error("Missing internationalization ["
-                      + exports.lang()
-                      + "]: \"" + k + "\"!");
+        //console.error("Missing internationalization [" + exports.lang() + "]: \"" + k + "\"!");
         return k;
     }
     if (params.length > 1) {

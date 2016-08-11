@@ -1,14 +1,15 @@
 {
   "name": "webgl-experiments",
-  "version": "0.0.151",
-  "description": "WebGL experiments",
+  "version": "0.0.73",
+  "description": "WebGL study by tutorials",
   "launch_path": "/index.html",
   "fullscreen": "false",
   "developer": {
-    "name": "My Name",
-    "url": "http://my-website.org"
+    "name": "tolokoban",
+    "url": "https://github.com/tolokoban/webgl-experiments"
   },
   "icons": {
+    "60": "/icon-60.png",
     "128": "/icon-128.png",
     "512": "/icon-512.png"
   }
