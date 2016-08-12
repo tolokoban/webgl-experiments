@@ -4,7 +4,7 @@
 <li>Les attributs de vertex.</li>
 <li>Les textures à partir d&#39;images.</li>
 </ul>
-<div id="wdg.gl514" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+<div id="wdg.gl517" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
 <p>Nous voulons définir chaque sprite par :</p>
 <ul>
 <li>Les coordonnées de son centre.</li>
@@ -197,7 +197,7 @@ A l&#39;appel de <strong>drawArrays()</strong>, WebGL va lire toutes les donnée
     </span>       <span class="keyword"> var</span> idx <span class="operator">=</span> 0;
             sprites.<span class="function">forEach</span><span class="keyword">(function</span> (sprite, spriteIdx) {
                <span class="keyword"> var</span> x <span class="operator">=</span> sprite.x <span class="operator">*</span> W;
-               <span class="keyword"> var</span> y <span class="operator">=</span> sprite.y <span class="operator">*</span> H;
+               <span class="keyword"> var</span> y <span class="operator">=</span> H <span class="operator">-</span> Math.<span class="function">abs</span>(Math.<span class="function">cos</span>(sprite.y <span class="operator">*</span> Math.PI <span class="operator">+</span> t <span class="operator">*</span> sprite.scale <span class="operator">/</span> 3613)) <span class="operator">*</span> H;
                <span class="keyword"> var</span> z <span class="operator">=</span> Math.<span class="function">cos</span>( t <span class="operator">*</span> sprite.scale <span class="operator">/</span> 2700);
                <span class="keyword"> var</span> scale <span class="operator">=</span> 48 <span class="operator">*</span> (1 <span class="operator">-</span> .4 <span class="operator">*</span> z);
                <span class="keyword"> var</span> rotation <span class="operator">=</span> t <span class="operator">*</span> sprite.rotation <span class="operator">/</span> 700;
@@ -239,7 +239,7 @@ A l&#39;appel de <strong>drawArrays()</strong>, WebGL va lire toutes les donnée
 <li><a href="chap2.html">Vivent les polygones</a></li>
 <li><a href="chap3.html">Textures procédurales</a></li>
 <li><a href="chap4.html">Animations</a></li>
-<li><a href=""></a></li>
+<li><a href="chap5.html">Textures bitmaps</a></li>
 </ul>
 
 </nav></body></html>

@@ -143,7 +143,7 @@ function start( canvas ) {
         var idx = 0;
         sprites.forEach(function (sprite, spriteIdx) {
             var x = sprite.x * W;
-            var y = sprite.y * H;
+            var y = H - Math.abs(Math.cos(sprite.y * Math.PI + t * sprite.scale / 3613)) * H;
             var z = Math.cos( t * sprite.scale / 2700);
             var scale = 48 * (1 - .4 * z);
             var rotation = t * sprite.rotation / 700;
