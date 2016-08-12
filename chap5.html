@@ -4,7 +4,7 @@
 <li>Les attributs de vertex.</li>
 <li>Les textures à partir d&#39;images.</li>
 </ul>
-<div id="wdg.gl542" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+<div id="wdg.gl514" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
 <p>Nous voulons définir chaque sprite par :</p>
 <ul>
 <li>Les coordonnées de son centre.</li>
@@ -152,9 +152,9 @@ A l&#39;appel de <strong>drawArrays()</strong>, WebGL va lire toutes les donnée
     
         <span class="comment">// #(draw)
     </span>    <span class="comment">// Activer le test de profondeur.
-    </span>    gl.<span class="function">enable</span>(gl.DEPTH_TEST);
-        gl.<span class="function">depthFunc</span>(gl.LEQUAL);
-    
+    </span>    gl.<span class="function">disable</span>(gl.DEPTH_TEST);
+        <span class="comment">//gl.depthFunc(gl.LEQUAL);
+    </span>
         <span class="comment">// Charger la texture.
     </span>   <span class="keyword"> var</span> image <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Image</span>();
         image.onload <span class="operator">=</span><span class="keyword"> function</span>() {
@@ -166,7 +166,13 @@ A l&#39;appel de <strong>drawArrays()</strong>, WebGL va lire toutes les donnée
         };
         image.src <span class="operator">=</span> <span class="string">"css/wdg.gl5/champi.png"</span>;
     
+        <span class="comment">// Définir la transparence pour les sprites.
+    </span>    gl.<span class="function">enable</span>(gl.BLEND);
+        gl.<span class="function">blendFunc</span>(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); <span class="comment">// gl.ONE);
+    </span>    gl.<span class="function">disable</span>(gl.DEPTH_TEST);
+    
        <span class="keyword"> function</span> <span class="function">draw</span>( t ) {
+    
             <span class="comment">// Create a texture.
     </span>       <span class="keyword"> var</span> texture <span class="operator">=</span> gl.<span class="function">createTexture</span>();
             gl.<span class="function">bindTexture</span>(gl.TEXTURE_2D, texture);
@@ -212,7 +218,7 @@ A l&#39;appel de <strong>drawArrays()</strong>, WebGL va lire toutes les donnée
                 gl.ARRAY_BUFFER, spritesAttributes, gl.STATIC_DRAW
             );
     
-            gl.<span class="function">clearColor</span>(0.0, 0.0, 0.0, 0.0);
+            gl.<span class="function">clearColor</span>(0.0, 0.0, 0.0, 1.0);
             gl.<span class="function">clear</span>(gl.COLOR_BUFFER_BIT <span class="operator">|</span> gl.DEPTH_BUFFER_BIT);
            <span class="keyword"> for</span> <span class="keyword">(var</span> i <span class="operator">=</span> 0; i <span class="operator">&lt;</span> spritesCount; i<span class="operator">+</span><span class="operator">+</span>) {
                 gl.<span class="function">drawArrays</span>(gl.TRIANGLE_STRIP, i <span class="operator">*</span> 4, 4);

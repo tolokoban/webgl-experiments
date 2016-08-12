@@ -98,8 +98,8 @@ function start( canvas ) {
 
     // #(draw)
     // Activer le test de profondeur.
-    gl.enable(gl.DEPTH_TEST);
-    gl.depthFunc(gl.LEQUAL);
+    gl.disable(gl.DEPTH_TEST);
+    //gl.depthFunc(gl.LEQUAL);
 
     // Charger la texture.
     var image = new Image();
@@ -112,7 +112,13 @@ function start( canvas ) {
     };
     image.src = "css/wdg.gl5/champi.png";
 
+    // Définir la transparence pour les sprites.
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); // gl.ONE);
+    gl.disable(gl.DEPTH_TEST);
+
     function draw( t ) {
+
         // Create a texture.
         var texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, texture);
@@ -158,7 +164,7 @@ function start( canvas ) {
             gl.ARRAY_BUFFER, spritesAttributes, gl.STATIC_DRAW
         );
 
-        gl.clearColor(0.0, 0.0, 0.0, 0.0);
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         for (var i = 0; i < spritesCount; i++) {
             gl.drawArrays(gl.TRIANGLE_STRIP, i * 4, 4);
