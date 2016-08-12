@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap5.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl5.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap5.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="textures-bitmaps">Textures bitmaps</h1>
+<p>Dans ce chapitre, nous allons utiliser WebGL pour afficher des sprites en 2D. Pour cela, il nous manque encore deux notions :</p>
+<ul>
+<li>Les attributs de vertex.</li>
+<li>Les textures à partir d&#39;images.</li>
+</ul>
+<h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+<p>Nous voulons définir chaque sprite par :</p>
+<ul>
+<li>Les coordonnées de son centre.</li>
+<li>Son angle de rotation.</li>
+<li>Son facteur de zoom.</li>
+</ul>
+<p>Pour WebGL, ce sera un rectangle formé de 4 vertices qui auront tous les mêmes coordonnées (celles du centre du sprite) ainsi que les attributs suivants :</p>
+<ul>
+<li>Index du vertex.</li>
+<li>Angle de rotation en radians.</li>
+<li>Facteur de zoom. Si ce facteur vaut 5, par exemple, le sprite fera 10 x 10 pixels.</li>
+</ul>
+<p>Côté Javascript, nous allons faire varier les valeurs de ces attributs en fonction du temps.
+Ainsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.</p>
+<pre class="custom highlight js">
+    function <span class="function">createSprites</span>( count ) {
+       <span class="keyword"> var</span> sprites <span class="operator">=</span> [];
+       <span class="keyword"> while</span> (count <span class="operator">-</span><span class="operator">-</span><span class="operator">&gt;</span> 0) {
+            sprites.<span class="function">push</span>({
+                x: <span class="function">rand</span>(0, 1),
+                y: <span class="function">rand</span>(0, 1),
+                z: <span class="function">rand</span>(0.1, 0.9),
+                <span class="comment">// Taille initiale.
+    </span>            size: <span class="function">rand</span>(8, 64),
+                <span class="comment">// Vitesse de changement de taille.
+    </span>            scale: <span class="function">rand</span>(0.2, 1.2),
+                <span class="comment">// Vitesse de rotation.
+    </span>            rotate: <span class="function">rand</span>(0.2, 1.2)
+            });
+        }
+       <span class="keyword"> return</span> sprites;
+    }
+    
+    <span class="comment">// Retourne un nombre aléatoire compris
+    </span><span class="comment">// entre `min` et `max` .
+    </span>function <span class="function">rand</span>(min, max) {
+       <span class="keyword"> return</span> min <span class="operator">+</span> Math.<span class="function">random</span>() <span class="operator">*</span> (max <span class="operator">-</span> min);
+    }</pre><h2 id="les-textures-partir-d-images">Les textures à partir d&#39;images</h2>
+<div id="wdg.gl513" style="display:none"></div><hr/><ul>
+<li>Chapitre précédent : <a href="chap4.html">Animations</a>.</li>
+<li>Chapitre suivant : <a href="chap6.html">...</a>.</li>
+</ul>
+</section><nav class="theme-color-bg-B2 theme-elevation-2"><p> Sommaire :</p>
+<ul>
+<li><a href="index.html">Comprendre WebGL</a></li>
+<li><a href="chap1.html">Changer le système de coordonnées 2D</a></li>
+<li><a href="chap2.html">Vivent les polygones</a></li>
+<li><a href="chap3.html">Textures procédurales</a></li>
+<li><a href="chap4.html">Animations</a></li>
+<li><a href=""></a></li>
+</ul>
+
+</nav></body></html>
