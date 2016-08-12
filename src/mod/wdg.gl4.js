@@ -3,7 +3,9 @@
 var $ = require("dom");
 var DB = require("tfw.data-binding");
 
-var WdgGl1 = function(opts) {
+var WdgGl4 = function(opts) {
+    var that = this;
+
     var canvas = $.elem( this, 'canvas' );
 
     DB.propInteger( this, 'width' )(function(v) {
@@ -16,71 +18,84 @@ var WdgGl1 = function(opts) {
         canvas.style.height = v + "px";
     });
 
+    DB.propString( this, 'fragment' );
+
     opts = DB.extend({
         width: 640,
-        height: 480
+        height: 480,        
+        fragment: 'a'
     }, opts, this);
 
     window.setTimeout( start.bind( this, canvas ), 20 );
 };
 
 function start( canvas ) {
-    // #(init)
+    var vertexShaderCode = GLOBAL['vertex'];
+    var fragmentShaderCode = GLOBAL['fragment-' + this.fragment];
+
+    // #(code)
     var gl = canvas.getContext("webgl")
             || canvas.getContext("experimental-webgl");
-    // #(init)
 
-    // #(shaders)
     var shaderProgram = gl.createProgram();
-    gl.attachShader(shaderProgram, getVertexShader(gl, GLOBAL['vertex']) );
-    gl.attachShader(shaderProgram, getFragmentShader(gl, GLOBAL['fragment']) );
-    gl.linkProgram(shaderProgram);
-    gl.useProgram(shaderProgram);
-    // #(shaders)
+    gl.attachShader( 
+        shaderProgram, 
+        getVertexShader(gl, vertexShaderCode) );
+    gl.attachShader( 
+        shaderProgram, 
+        getFragmentShader(gl, fragmentShaderCode) );
+    gl.linkProgram( shaderProgram );
+    gl.useProgram( shaderProgram );
 
-    // #(vertices)
     var squareVerticesBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
+    var W = canvas.width;
+    var H = canvas.height;
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-            20, 20, 0,
-            120, 20, 0,
-            20, 120, 0,
-            120, 120, 0
+            0, 0, 0,
+            W, 0, 0,
+            0, H, 0,
+            W, H, 0
         ]),
         gl.STATIC_DRAW
     );
-    // #(vertices)
+    gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
 
-    // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
     gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
-    // #(vertex-position)
 
-    // #(canvas-size)
+    // Déclaration de l'uniform `uniTime`.
+    var uniTimeV = gl.getUniformLocation(shaderProgram, "uniTimeV");
+    var uniTimeF = gl.getUniformLocation(shaderProgram, "uniTimeF");
+
     var uniWidth = gl.getUniformLocation(shaderProgram, "uniWidth");
     var uniHeight = gl.getUniformLocation(shaderProgram, "uniHeight");
-    // #(canvas-size)
 
-    // #(rendering)
-    function render( time ) {
+    function draw( t ) {
+        // Valeurs pour la taille de l'écran.
         gl.uniform1f(uniWidth, canvas.width);
         gl.uniform1f(uniHeight, canvas.height);
+        // Valeur de la variable uniforme pour le temps.
+        gl.uniform1f(uniTimeV, t);
+        gl.uniform1f(uniTimeF, t);
 
-        gl.clearColor(0.0, 0.0, 1.0, 1.0);
+        gl.clearColor(0.0, 0.0, 0.0, 0.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
-        requestAnimationFrame( render );
+        // Dessiner la prochaine frame.
+        window.requestAnimationFrame( draw );
     }
-    requestAnimationFrame( render );
-    // #(rendering)
+
+    window.requestAnimationFrame( draw );
+    // #(code)
 };
 
 
-module.exports = WdgGl1;
+module.exports = WdgGl4;
 
 
 function getShader( type, gl, code ) {
