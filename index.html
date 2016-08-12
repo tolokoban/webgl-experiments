@@ -3,7 +3,7 @@
 <p><strong>WebGL</strong> est une bibliothèque qui permet de faire de l&#39;<strong>Open GL</strong> sur le web. Et l&#39;<strong>Open GL</strong> est une bibliothèque qui permet d&#39;afficher des pixels à l&#39;écran en tirant profit de l&#39;<em>architecture parallèle</em> des cartes graphiques.</p>
 <p><strong>Open GL</strong> est donc à la fois <strong>puissante</strong> et <strong>complexe</strong>.</p>
 <p>Commençons par ce qui prendrait trois lignes avec un canvas 2d : le dessin d&#39;un triangle.</p>
-<div id="wdg.gl03" style="display:none"></div><p>On commence par récupérer le contexte <em>webgl</em> d&#39;un canvas :</p>
+<div id="wdg.gl02" style="display:none"></div><p>On commence par récupérer le contexte <em>webgl</em> d&#39;un canvas :</p>
 <pre class="custom highlight js">
     var gl <span class="operator">=</span> canvas.<span class="function">getContext</span>(<span class="string">"webgl"</span>)
                 <span class="operator">||</span> canvas.<span class="function">getContext</span>(<span class="string">"experimental-webgl"</span>);</pre><p>Ensuite, il faut créer un <strong>programme de shading</strong>.
@@ -67,7 +67,8 @@ L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
         <span class="string">"void main() {"</span> <span class="operator">+</span>
         <span class="string">"  gl_Position = vec4("</span> <span class="operator">+</span>
         <span class="string">"      attVertexPosition.x, attVertexPosition.y,"</span> <span class="operator">+</span>
-        <span class="string">"      0.0, 1.0);"</span>,
+        <span class="string">"      0.0, 1.0);"</span> <span class="operator">+</span> 
+        <span class="string">"}"</span>,
       fragment:
         <span class="string">"void main() {"</span> <span class="operator">+</span>
         <span class="string">"  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);"</span> <span class="operator">+</span>
@@ -91,20 +92,21 @@ L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
 <h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
 <p>Pour ceux qui veulent rentrer dans les détails des commandes WebGL, voici des liens vers la documentation (en anglais) des fonctions utilisée dans cette page :</p>
 <ul>
-<li><a href="">createProgram</a></li>
-<li><a href="">attachShader</a></li>
-<li><a href="">linkProgram</a></li>
-<li><a href="">useProgram</a></li>
-<li><a href="">createBuffer</a></li>
-<li><a href="">bindBuffer</a></li>
-<li><a href="">bufferData</a></li>
-<li><a href="">getAttribLocation</a></li>
-<li><a href="">enableVertexAttribArray</a></li>
-<li><a href="">vertexAttribPointer</a></li>
-<li><a href="">clearColor</a></li>
-<li><a href="">clear</a></li>
-<li><a href="">drawArrays</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glCreateProgram.xml">createProgram</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glAttachShader.xml">attachShader</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glLinkProgram.xml">linkProgram</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glUseProgram.xml">useProgram</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenBuffers.xml">createBuffer</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindBuffer.xml">bindBuffer</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glBufferData.xml">bufferData</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetAttribLocation.xml">getAttribLocation</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glEnableVertexAttribArray.xml">enableVertexAttribArray</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttribPointer.xml">vertexAttribPointer</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glClearColor.xml">clearColor</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glClear.xml">clear</a></li>
+<li><a href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawArrays.xml">drawArrays</a></li>
 </ul>
+<p>Si vous savez lire l&#39;anglais et que vous voulez devenir un maître du langage de shading, consulter <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf">cette documentation</a>.</p>
 <hr/><ul>
 <li>Chapitre suivant : </li>
 </ul>
