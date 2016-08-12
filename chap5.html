@@ -1,17 +1,24 @@
-<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap4.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl4.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap4.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><style>
- article > * {
-     display: inline-block;
-     vertical-align: top;
- }
-</style><h1 id="animations">Animations</h1>
-<p>Jusqu&#39;à présent, nous avons créer des images statiques. Pour faire des animations, il suffit de créer de nombreuses images statiques, plusieurs fois par secondes. L&#39;idéal étant d&#39;atteindre les 60 images par seconde.</p>
-<p>Pour cela, nous allons utiliser la fonction Javascript suivantes : <strong>window.requestAnimationFrame( drawingFunction )</strong>.</p>
-<p>Cette dernière demande au système d&#39;exécuter la fonction <strong>drawingFunction()</strong> dès le prochain rafraichissement de l&#39;écran. Il faut noter deux choses : </p>
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap5.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl4.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap5.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="textures-bitmaps">Textures bitmaps</h1>
+<p>Dans ce chapitre, nous allons utiliser WebGL pour afficher des sprites en 2D. Pour cela, il nous manque encore deux notions :</p>
 <ul>
-<li><strong>drawingFunction()</strong> reçoit un argument unique qui correspond au nombre de millisecondes écoulées depuis le 1er janvier 1970.</li>
-<li><strong>drawingFunction()</strong> n&#39;est appelée que si le canvas est visible à l&#39;écran.</li>
+<li>Les attributs de vertex.</li>
+<li>Les textures à partir d&#39;images.</li>
 </ul>
-<div id="wdg.gl40" style="display:none"></div><p>Voici le code complet de cette animation :</p>
+<h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+<p>Nous voulons définir chaque sprite par :</p>
+<ul>
+<li>Les coordonnées de son centre.</li>
+<li>Son angle de rotation.</li>
+<li>Son facteur de zoom.</li>
+</ul>
+<p>Pour WebGL, ce sera un rectangle formé de 4 vertices qui auront tous les mêmes coordonnées (celles du centre du sprite) ainsi que les attributs suivants :</p>
+<ul>
+<li>Index du vertex.</li>
+<li>Angle de rotation en radians.</li>
+<li>Facteur de zoom. Si ce facteur vaut 5, par exemple, le sprite fera 10 x 10 pixels.</li>
+</ul>
+<h2 id="les-textures-partir-d-images">Les textures à partir d&#39;images</h2>
+<div id="wdg.gl44" style="display:none"></div><p>Voici le code complet de cette animation :</p>
 <pre class="custom highlight js">
     var gl <span class="operator">=</span> canvas.<span class="function">getContext</span>(<span class="string">"webgl"</span>)
                 <span class="operator">||</span> canvas.<span class="function">getContext</span>(<span class="string">"experimental-webgl"</span>);
