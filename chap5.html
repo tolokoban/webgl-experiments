@@ -4,7 +4,7 @@
 <li>Les attributs de vertex.</li>
 <li>Les textures à partir d&#39;images.</li>
 </ul>
-<div id="wdg.gl517" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+<div id="wdg.gl50" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
 <p>Nous voulons définir chaque sprite par :</p>
 <ul>
 <li>Les coordonnées de son centre.</li>
@@ -17,7 +17,52 @@
 <li>Angle de rotation en radians.</li>
 <li>Facteur de zoom. Si ce facteur vaut 5, par exemple, le sprite fera 10 x 10 pixels.</li>
 </ul>
-<p>Côté Javascript, nous allons faire varier les valeurs de ces attributs en fonction du temps.
+<p>Le <em>fragment shader</em> est relativement simple :</p>
+<pre class="custom highlight js">
+    <span class="comment">// Définir la précision par défaut
+    </span><span class="comment">// pour tous les floats.
+    </span>precision mediump float;
+    
+    uniform sampler2D uniTexture;
+     
+    varying vec2 varCoordsUV;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      gl_FragColor <span class="operator">=</span> <span class="function">texture2D</span>( uniTexture, varCoordsUV );
+    }</pre><p>Le plus gros de la logique se trouve dans le <em>vertex shader</em> :</p>
+<pre class="custom highlight js">
+    attribute vec3 attPosition;
+    <span class="comment">// Index du vertex (de 0.0 à 3.0).
+    </span>attribute float attIndex;
+    <span class="comment">// Angle de rotation.
+    </span>attribute float attRotation;
+    <span class="comment">// Facteur d'échelle.
+    </span>attribute float attScale;
+    <span class="keyword">
+    const</span> float PI <span class="operator">=</span> 3.1415926536;
+    
+    uniform float uniWidth;
+    uniform float uniHeight;
+    
+    varying vec2 varCoordsUV;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      float x <span class="operator">=</span> attPosition.x 
+        <span class="operator">+</span> attScale <span class="operator">*</span> <span class="function">cos</span>( attRotation <span class="operator">+</span> attIndex <span class="operator">*</span> PI <span class="operator">/</span> 2.0 );
+      float y <span class="operator">=</span> attPosition.y
+        <span class="operator">+</span> attScale <span class="operator">*</span> <span class="function">sin</span>( attRotation <span class="operator">+</span> attIndex <span class="operator">*</span> PI <span class="operator">/</span> 2.0 );
+    
+      x <span class="operator">=</span> (2.0 <span class="operator">*</span> x <span class="operator">/</span> uniWidth) <span class="operator">-</span> 1.0;
+      y <span class="operator">=</span> 1.0 <span class="operator">-</span> (2.0 <span class="operator">*</span> y <span class="operator">/</span> uniHeight);
+    
+      gl_Position <span class="operator">=</span> <span class="function">vec4</span>( x, y, attPosition.z, 1.0 );
+    
+      <span class="comment">// Define a different color for each point.
+    </span> <span class="keyword"> if</span> (attIndex <span class="operator">==</span> 0.0) varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(0.0, 0.0);
+     <span class="keyword"> else</span><span class="keyword"> if</span> (attIndex <span class="operator">==</span> 1.0) varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(1.0, 0.0);
+     <span class="keyword"> else</span><span class="keyword"> if</span> (attIndex <span class="operator">==</span> 2.0) varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(1.0, 1.0);
+     <span class="keyword"> else</span> varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(0.0, 1.0);
+    }</pre><p>Côté Javascript, nous allons faire varier les valeurs de ces attributs en fonction du temps.
 Ainsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.
 Voici le code de la fonction qui défini les sprites pour le Javascript :</p>
 <pre class="custom highlight js">
