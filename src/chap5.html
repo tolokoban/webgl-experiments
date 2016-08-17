@@ -20,6 +20,12 @@ Pour WebGL, ce sera un rectangle formé de 4 vertices qui auront tous les mêmes
 * Angle de rotation en radians.
 * Facteur de zoom. Si ce facteur vaut 5, par exemple, le sprite fera 10 x 10 pixels.
 
+Le _fragment shader_ est relativement simple :
+<x-code src="mod/gl5.fragment-a.c" />
+
+Le plus gros de la logique se trouve dans le _vertex shader_ :
+<x-code src="mod/gl5.vertex.c" />
+
 Côté Javascript, nous allons faire varier les valeurs de ces attributs en fonction du temps.
 Ainsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.
 Voici le code de la fonction qui défini les sprites pour le Javascript :
