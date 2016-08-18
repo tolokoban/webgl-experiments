@@ -47,11 +47,15 @@ var Test = function(opts) {
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-                -.8, +.8, .0,
-                +.8, -.8, .0,
-                +.3, -.4, .0,
-                +.0, -.0, .0,
-                -.8, -.8, .0
+                -.8, +.8, .5,
+                -.6, +.6, .4,
+                -.4, +.4, .7,
+                -.2, +.2, .6,
+                -.0, +.0, .8,
+                +.2, -.2, .0,
+                +.4, -.4, .1,
+                +.6, -.6, .3,
+                +.8, -.8, .2
         ]),
         gl.STATIC_DRAW
     );
@@ -62,16 +66,34 @@ var Test = function(opts) {
     gl.enableVertexAttribArray(vertexPositionAttribute);
     gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
-
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); // gl.ONE);
     gl.disable(gl.DEPTH_TEST);
+    /*
+     gl.enable(gl.DEPTH_TEST);
+     gl.depthFunc(gl.LEQUAL);
+     */
+
+    var NB_POINTS = 7;
+    var points = new Float32Array(NB_POINTS * 3);
+    var ang;
 
     // #(rendering)
     function render(time) {
+        for (var k = 0; k < NB_POINTS; k++) {
+            ang = time / 700 + k * Math.PI * 2 / NB_POINTS;
+            points[3 * k + 0] = .7 * Math.cos( ang );
+            points[3 * k + 1] = .2 * Math.sin( ang );
+            points[3 * k + 2] = .7 * Math.sin( ang );
+        }
+        // Définir ce buffer comme le buffer actif.
+        gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);
+        // Copier des données dans le buffer actif.
+        gl.bufferData( gl.ARRAY_BUFFER, points, gl.STATIC_DRAW );
+
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-        gl.drawArrays(gl.POINTS, 0, 5);
+        gl.drawArrays(gl.POINTS, 0, NB_POINTS);
         window.requestAnimationFrame( render );
     }
     window.requestAnimationFrame( render );

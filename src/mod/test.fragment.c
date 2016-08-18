@@ -9,7 +9,9 @@ void main() {
 
   if (r > 0.25) {
     gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );
+  } else if (r > 0.24) {
+    gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
   } else {
-    gl_FragColor = vec4( 1.0, gl_PointCoord.x, 0.0, 1.0 );
+    gl_FragColor = vec4( gl_PointCoord.y, gl_PointCoord.x, 0.0, 1.0 );
   }
 }
