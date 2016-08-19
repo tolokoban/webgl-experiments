@@ -11,10 +11,11 @@
 Cela se fait ainsi :</p>
 <pre class="custom highlight js">
     varying lowp vec3 varVertexPosition;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       varVertexPosition <span class="operator">=</span> attVertexPosition;
       ...</pre><p>Voici maintenant des exemples de ce que l&#39;on peut obtenir.</p>
+<<<<<<< HEAD
 <article>
     <div id="wdg.gl327" style="display:none"></div>
     <div>
@@ -90,6 +91,83 @@ Cela se fait ainsi :</p>
       }
     }</pre>
     </div>
+=======
+<article>
+    <div id="wdg.gl313" style="display:none"></div>
+    <div>
+        <b>Le pyjama rayé</b>
+<pre class="custom highlight js">
+    varying lowp vec3 varVertexPosition;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+     <span class="keyword"> if</span> (<span class="function">mod</span>( varVertexPosition.x, 20.0 ) <span class="operator">&gt;</span> 6.0) {
+        gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>(1.0, 1.0, 1.0, 1.0);
+      }<span class="keyword"> else</span> {
+        gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>(0.0, 0.0, 0.0, 1.0);
+      }
+    }</pre>
+    </div>
+</article><article>
+    <div id="wdg.gl314" style="display:none"></div>
+    <div>
+        <b>La vague colorée</b>
+<pre class="custom highlight js">
+    varying lowp vec3 varVertexPosition;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      lowp float x <span class="operator">=</span> varVertexPosition.x;
+      lowp float y <span class="operator">=</span> varVertexPosition.y;
+    
+      highp float radius <span class="operator">=</span> <span class="function">sqrt</span>( (x<span class="operator">*</span>x) <span class="operator">+</span> (y<span class="operator">*</span>y) );
+    
+      highp float r <span class="operator">=</span> <span class="function">abs</span>( <span class="function">cos</span>( radius <span class="operator">/</span> 77.12 ) );
+      highp float g <span class="operator">=</span> <span class="function">abs</span>( <span class="function">cos</span>( radius <span class="operator">/</span> 33.27 ) );
+      highp float b <span class="operator">=</span> <span class="function">abs</span>( <span class="function">cos</span>( radius <span class="operator">/</span> 62.43 ) );
+      
+      gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>( r, g, b, 1.0 );
+    }</pre>
+    </div>
+</article><article>
+    <div id="wdg.gl315" style="display:none"></div>
+    <div>
+        <b>Le tramage</b>
+<pre class="custom highlight js">
+    varying lowp vec3 varVertexPosition;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      <span class="comment">// Couleur de la trame.
+    </span>  lowp float r1 <span class="operator">=</span> 1.0;
+      lowp float g1 <span class="operator">=</span> 0.5;
+      lowp float b1 <span class="operator">=</span> 0.0;
+      <span class="comment">// Couleur du fond.
+    </span>  lowp float r2 <span class="operator">=</span> 0.0;
+      lowp float g2 <span class="operator">=</span> 0.0;
+      lowp float b2 <span class="operator">=</span> 1.0;
+    
+      lowp float x <span class="operator">=</span> <span class="function">mod</span>( varVertexPosition.x, 16.0 ) <span class="operator">-</span> 8.0;
+      lowp float y <span class="operator">=</span> <span class="function">mod</span>( varVertexPosition.y, 16.0 ) <span class="operator">-</span> 8.0;
+    
+      highp float radius <span class="operator">=</span> <span class="function">sqrt</span>( (x<span class="operator">*</span>x) <span class="operator">+</span> (y<span class="operator">*</span>y) );
+    
+      highp float dist <span class="operator">=</span> <span class="function">sqrt</span>( varVertexPosition.x <span class="operator">*</span> varVertexPosition.x 
+                               <span class="operator">+</span> varVertexPosition.y <span class="operator">*</span> varVertexPosition.y );
+      dist <span class="operator">=</span> dist <span class="operator">/</span> 300.0;
+      
+      lowp float limit <span class="operator">=</span> dist <span class="operator">*</span> 9.0;
+    
+     <span class="keyword"> if</span>( radius <span class="operator">&lt;</span> limit ) gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>( r1, g1, b1, 1.0 );
+     <span class="keyword"> else</span> {
+        <span class="comment">// Ici, on fait de l'anti-aliasing.
+    </span>    lowp float c2 <span class="operator">=</span> <span class="function">clamp</span>( radius <span class="operator">-</span> limit, 0.0, 1.0 );
+        lowp float c1 <span class="operator">=</span> 1.0 <span class="operator">-</span> c2;
+        gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>( c1 <span class="operator">*</span> r1 <span class="operator">+</span> c2 <span class="operator">*</span> r2, 
+                             c1 <span class="operator">*</span> g1 <span class="operator">+</span> c2 <span class="operator">*</span> g2, 
+                             c1 <span class="operator">*</span> b1 <span class="operator">+</span> c2 <span class="operator">*</span> b2, 
+                             1.0 );
+      }
+    }</pre>
+    </div>
+>>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
 </article><p>Voici quelques fonctions spécifiques au language de shading :</p>
 <ul>
 <li><strong>mod( a, b )</strong> : retourne le reste de la division euclidienne de <strong>a</strong> par <strong>b</strong>.</li>
@@ -111,7 +189,10 @@ Cela se fait ainsi :</p>
 <li><a href="chap3.html">Textures procédurales</a></li>
 <li><a href="chap4.html">Animations</a></li>
 <li><a href="chap5.html">Textures bitmaps</a></li>
+<<<<<<< HEAD
 <li><a href="chap6.html">Un point c&#39;est tout</a></li>
+=======
+>>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
 </ul>
 
 </nav></body></html>

@@ -60,6 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
+<<<<<<< HEAD
         W('wdg.gl219', 'wdg.gl2', {
             width: "200",
             height: "200",
@@ -77,21 +78,52 @@ addListener(
             height: "200",
             size: "500"})
         W('wdg.gl223', 'wdg.gl2', {
+=======
+        W('wdg.gl25', 'wdg.gl2', {
+            width: "200",
+            height: "200",
+            size: "3"})
+        W('wdg.gl26', 'wdg.gl2', {
+            width: "200",
+            height: "200",
+            size: "5"})
+        W('wdg.gl27', 'wdg.gl2', {
+            width: "200",
+            height: "200",
+            size: "13"})
+        W('wdg.gl28', 'wdg.gl2', {
+            width: "200",
+            height: "200",
+            size: "500"})
+        W('wdg.gl29', 'wdg.gl2', {
+>>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
             width: "200",
             height: "200",
             size: "3",
             regular: "false"})
+<<<<<<< HEAD
         W('wdg.gl224', 'wdg.gl2', {
+=======
+        W('wdg.gl210', 'wdg.gl2', {
+>>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
             width: "200",
             height: "200",
             size: "5",
             regular: "false"})
+<<<<<<< HEAD
         W('wdg.gl225', 'wdg.gl2', {
+=======
+        W('wdg.gl211', 'wdg.gl2', {
+>>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
             width: "200",
             height: "200",
             size: "13",
             regular: "false"})
+<<<<<<< HEAD
         W('wdg.gl226', 'wdg.gl2', {
+=======
+        W('wdg.gl212', 'wdg.gl2', {
+>>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
             width: "200",
             height: "200",
             size: "500",
