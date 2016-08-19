@@ -53,7 +53,7 @@ function start( canvas ) {
   // Définir ce buffer comme le buffer actif.
   gl.bindBuffer(gl.ARRAY_BUFFER, bufAttributes);
   // Les attributs des vertex.
-  var count = 51;
+  var count = 56;
   var datAttributes = new Float32Array(6 * count);
   // Copier des données dans le buffer actif.
   gl.bufferData(gl.ARRAY_BUFFER, datAttributes, gl.STATIC_DRAW);
@@ -75,8 +75,8 @@ function start( canvas ) {
       datAttributes[6 * k + 4] = color.g;
       datAttributes[6 * k + 5] = color.b;
       datIndexes[k] = k;
-      ang1 = .3 * Math.PI + (.4 * k * Math.PI / (count - 1));
-      ang2 = 5 * k * Math.PI / (count - 1);
+      ang1 = .2 * Math.PI + (.6 * k * Math.PI / (count - axe - 1));
+      ang2 = 8.7 * k * Math.PI / (count - axe - 1);
       z = Math.cos(ang1);
       radius = Math.sin(ang1);
       x = radius * Math.cos(ang2);
@@ -131,11 +131,11 @@ function start( canvas ) {
   function render(time) {
     window.requestAnimationFrame( render );
 
-    var ang1 = time / 566;
+    var ang1 = time / 1766.781248;
     var c1 = Math.cos( ang1 );
     var s1 = Math.sin( ang1 );
 
-    var ang2 = time / 979;
+    var ang2 = time / 1979.998511;
     var c2 = Math.cos( ang2 );
     var s2 = Math.sin( ang2 );
 
@@ -232,8 +232,8 @@ function createVividColor() {
 }
 
 var GLOBAL = {
-  "vertex": "attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = (3.0 - z) / 4.0;\r\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 80.0 * depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",
-  "fragment": "precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on place un fragment transparent.\r\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\r\n  } else if (r > .2 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor = vec4(varColor, 1.0);\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    vec3 col = x * varColor + y * WHITE;\r\n    gl_FragColor = vec4( col, 1.0 );\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\r\n}\r\n"};
+  "vertex": "attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = (1.5 - z) / 2.5;\r\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 80.0 * depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",
+  "fragment": "precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on place un fragment transparent.\r\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\r\n  } else if (r > .2 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor = vec4(varColor, 1.0);\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    vec3 col = x * varColor + y * WHITE;\r\n    gl_FragColor = vec4( col, 0.9 );\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\r\n}\r\n"};
  
 module.exports._ = _;
 /**
