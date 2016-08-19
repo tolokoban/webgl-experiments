@@ -1,0 +1,6 @@
+{
+  "var": {
+    "vertex": "gl6.vertex-b.c",
+    "fragment": "gl6.fragment-b.c"
+  }
+}
