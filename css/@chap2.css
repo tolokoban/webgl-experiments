@@ -2,7 +2,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: .5em;
 }
 
 html, body {
@@ -22,7 +21,7 @@ section, nav {
     max-width: 1000px;
 }
 
-strong, b, em, i {
+span, strong, b, em, i, code {
     display: inline;
     margin: 0;
     padding: 0;

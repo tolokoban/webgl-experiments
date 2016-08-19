@@ -52,7 +52,6 @@ function start( canvas ) {
         ]),
         gl.STATIC_DRAW
     );
-    gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
     // #(vertices)
 
     // #(vertex-position)
@@ -64,12 +63,13 @@ function start( canvas ) {
     // #(canvas-size)
     var uniWidth = gl.getUniformLocation(shaderProgram, "uniWidth");
     var uniHeight = gl.getUniformLocation(shaderProgram, "uniHeight");
-    gl.uniform1f(uniWidth, canvas.width);
-    gl.uniform1f(uniHeight, canvas.height);
     // #(canvas-size)
 
     // #(rendering)
     function render( time ) {
+        gl.uniform1f(uniWidth, canvas.width);
+        gl.uniform1f(uniHeight, canvas.height);
+
         gl.clearColor(0.0, 0.0, 1.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);

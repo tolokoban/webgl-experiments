@@ -1,0 +1,291 @@
+<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap5.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl5.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap5.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="textures-bitmaps">Textures bitmaps</h1>
+<p>Dans ce chapitre, nous allons utiliser WebGL pour afficher des sprites en 2D. Pour cela, il nous manque encore deux notions :</p>
+<ul>
+<li>Les attributs de vertex.</li>
+<li>Les textures à partir d&#39;images.</li>
+</ul>
+<div id="wdg.gl531" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+<p>Nous voulons définir chaque sprite par :</p>
+<ul>
+<li>Les coordonnées de son centre.</li>
+<li>Son angle de rotation.</li>
+<li>Son facteur de zoom.</li>
+</ul>
+<p>Pour WebGL, ce sera un rectangle formé de 4 vertices qui auront tous les mêmes coordonnées (celles du centre du sprite) ainsi que les attributs suivants :</p>
+<ul>
+<li>Index du vertex (de 0 à 3).</li>
+<li>Angle de rotation en radians.</li>
+<li>Facteur de zoom. Si ce facteur vaut 5, par exemple, le sprite fera 10 x 10 pixels.</li>
+</ul>
+<p>Le <em>fragment shader</em> est relativement simple :</p>
+<pre class="custom highlight js">
+    <span class="comment">// Définir la précision par défaut
+    </span><span class="comment">// pour tous les floats.
+    </span>precision mediump float;
+    
+    uniform sampler2D uniTexture;
+     
+    varying vec2 varCoordsUV;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      gl_FragColor <span class="operator">=</span> <span class="function">texture2D</span>( uniTexture, varCoordsUV );
+    }</pre><p>Le plus gros de la logique se trouve dans le <em>vertex shader</em> :</p>
+<pre class="custom highlight js">
+    attribute vec3 attPosition;
+    <span class="comment">// Index du vertex (de 0.0 à 3.0).
+    </span>attribute float attIndex;
+    <span class="comment">// Angle de rotation.
+    </span>attribute float attRotation;
+    <span class="comment">// Facteur d'échelle.
+    </span>attribute float attScale;
+    <span class="keyword">
+    const</span> float PI <span class="operator">=</span> 3.1415926536;
+    
+    uniform float uniWidth;
+    uniform float uniHeight;
+    
+    varying vec2 varCoordsUV;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      float x <span class="operator">=</span> attPosition.x 
+        <span class="operator">+</span> attScale <span class="operator">*</span> <span class="function">cos</span>( attRotation <span class="operator">+</span> attIndex <span class="operator">*</span> PI <span class="operator">/</span> 2.0 );
+      float y <span class="operator">=</span> attPosition.y
+        <span class="operator">+</span> attScale <span class="operator">*</span> <span class="function">sin</span>( attRotation <span class="operator">+</span> attIndex <span class="operator">*</span> PI <span class="operator">/</span> 2.0 );
+    
+      x <span class="operator">=</span> (2.0 <span class="operator">*</span> x <span class="operator">/</span> uniWidth) <span class="operator">-</span> 1.0;
+      y <span class="operator">=</span> 1.0 <span class="operator">-</span> (2.0 <span class="operator">*</span> y <span class="operator">/</span> uniHeight);
+    
+      gl_Position <span class="operator">=</span> <span class="function">vec4</span>( x, y, attPosition.z, 1.0 );
+    
+      <span class="comment">// Define a different color for each point.
+    </span> <span class="keyword"> if</span> (attIndex <span class="operator">==</span> 0.0) varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(0.0, 0.0);
+     <span class="keyword"> else</span><span class="keyword"> if</span> (attIndex <span class="operator">==</span> 1.0) varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(1.0, 0.0);
+     <span class="keyword"> else</span><span class="keyword"> if</span> (attIndex <span class="operator">==</span> 2.0) varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(1.0, 1.0);
+     <span class="keyword"> else</span> varCoordsUV <span class="operator">=</span> <span class="function">vec2</span>(0.0, 1.0);
+    }</pre><p>Côté Javascript, nous allons faire varier les valeurs de ces attributs en fonction du temps.
+Ainsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.
+Voici le code de la fonction qui défini les sprites pour le Javascript :</p>
+<pre class="custom highlight js">
+    function <span class="function">createSprites</span>( count ) {
+       <span class="keyword"> var</span> sprites <span class="operator">=</span> [];
+       <span class="keyword"> while</span> (count <span class="operator">-</span><span class="operator">-</span><span class="operator">&gt;</span> 0) {
+            sprites.<span class="function">push</span>({
+                x: <span class="function">rand</span>(0, 1),
+                y: <span class="function">rand</span>(0, 1),
+                z: <span class="function">rand</span>(0.1, 0.9),
+                <span class="comment">// Taille initiale.
+    </span>            size: <span class="function">rand</span>(20, 100),
+                <span class="comment">// Vitesse de changement de taille.
+    </span>            scale: <span class="function">rand</span>(0.7, 3.2),
+                <span class="comment">// Vitesse de rotation.
+    </span>            rotation: <span class="function">rand</span>(<span class="operator">-</span>2, 2)
+            });
+        }
+       <span class="keyword"> return</span> sprites;
+    }
+    
+    <span class="comment">// Retourne un nombre aléatoire compris
+    </span><span class="comment">// entre `min` et `max` .
+    </span>function <span class="function">rand</span>(min, max) {
+       <span class="keyword"> return</span> min <span class="operator">+</span> Math.<span class="function">random</span>() <span class="operator">*</span> (max <span class="operator">-</span> min);
+    }</pre><p>Nous allons maintenant définir le lien entre un buffer et les attributs dont on a besoin.
+Notre vertex shader aura besoin des 4 attributs suivants :</p>
+<ul>
+<li><code>attribute vec3 attPosition;   // offset 0</code> </li>
+<li><code>attribute float attIndex;     // offset 3</code></li>
+<li><code>attribute float attScale;     // offset 4</code></li>
+<li><code>attribute float attRotation;  // offset 5</code></li>
+</ul>
+<p>Il nous faut donc 6 <code>float</code> pour définir un vertex : c&#39;est la taille d&#39;un <em>bloc</em>.
+A l&#39;appel de <strong>drawArrays()</strong>, WebGL va lire toutes les données d&#39;un bloc et alimenter les attributs avec ces valeurs avant d&#39;appeler le premier microprocesseur de vertex shader disponible.</p>
+<p>Voici le code qui définit l&#39;association entre les attributs et les blocs du tableau :</p>
+<pre class="custom highlight js">
+    var squareVerticesBuffer <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
+        <span class="comment">// Créer un tableau d'attributs pour tous les
+    </span>    <span class="comment">// sprites. Il nous faut 3 éléments pour les
+    </span>    <span class="comment">// coordonnées, 1 pour l'index, 1 pour l'angle
+    </span>    <span class="comment">// et 1 pour le facteur de zoom. Et chaque
+    </span>    <span class="comment">// sprite a besoin de 4 vertex.
+    </span>   <span class="keyword"> var</span> spritesAttributes <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Float32Array</span>(
+            spritesCount <span class="operator">*</span> (3 <span class="operator">+</span> 1 <span class="operator">+</span> 1 <span class="operator">+</span> 1) <span class="operator">*</span> 4
+        );
+        <span class="comment">// Récupérer la taille en octets d'un élément
+    </span>    <span class="comment">// du tableau.
+    </span>   <span class="keyword"> var</span> bpe <span class="operator">=</span> spritesAttributes.BYTES_PER_ELEMENT;
+        <span class="comment">// Taille en octets d'un bloc représentant
+    </span>    <span class="comment">// tous les attributs d'un vertex.
+    </span>   <span class="keyword"> var</span> blockSize <span class="operator">=</span> (3 <span class="operator">+</span> 1 <span class="operator">+</span> 1 <span class="operator">+</span> 1) <span class="operator">*</span> bpe;
+    
+        gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, squareVerticesBuffer);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attPosition`.
+    </span>   <span class="keyword"> var</span> attPosition <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attPosition"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attPosition);
+        gl.<span class="function">vertexAttribPointer</span>(attPosition, 3, gl.FLOAT, false, blockSize, 0);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attIndex`.
+    </span>   <span class="keyword"> var</span> attIndex <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attIndex"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attIndex);
+        gl.<span class="function">vertexAttribPointer</span>(attIndex, 1, gl.FLOAT, false, blockSize, 3 <span class="operator">*</span> bpe);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attScale`.
+    </span>   <span class="keyword"> var</span> attScale <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attScale"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attScale);
+        gl.<span class="function">vertexAttribPointer</span>(attScale, 1, gl.FLOAT, false, blockSize, 4 <span class="operator">*</span> bpe);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attRotation`.
+    </span>   <span class="keyword"> var</span> attRotation <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attRotation"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attRotation);
+        gl.<span class="function">vertexAttribPointer</span>(attRotation, 1, gl.FLOAT, false, blockSize, 5 <span class="operator">*</span> bpe);</pre><p>Et celui qui dessine chaque frame :</p>
+<pre class="custom highlight js">
+    var gl <span class="operator">=</span> canvas.<span class="function">getContext</span>(<span class="string">"webgl"</span>)
+                <span class="operator">||</span> canvas.<span class="function">getContext</span>(<span class="string">"experimental-webgl"</span>);
+    
+       <span class="keyword"> var</span> shaderProgram <span class="operator">=</span> gl.<span class="function">createProgram</span>();
+        gl.<span class="function">attachShader</span>(
+            shaderProgram,
+            <span class="function">getVertexShader</span>(gl, vertexShaderCode) );
+        gl.<span class="function">attachShader</span>(
+            shaderProgram,
+            <span class="function">getFragmentShader</span>(gl, fragmentShaderCode) );
+        gl.<span class="function">linkProgram</span>( shaderProgram );
+        gl.<span class="function">useProgram</span>( shaderProgram );
+    
+       <span class="keyword"> var</span> W <span class="operator">=</span> canvas.width;
+       <span class="keyword"> var</span> H <span class="operator">=</span> canvas.height;
+       <span class="keyword"> var</span> spritesCount <span class="operator">=</span> 50;
+       <span class="keyword"> var</span> sprites <span class="operator">=</span> <span class="function">createSprites</span>( spritesCount );
+    
+        <span class="comment">// #(defineAttributes)
+    </span>   <span class="keyword"> var</span> squareVerticesBuffer <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
+        <span class="comment">// Créer un tableau d'attributs pour tous les
+    </span>    <span class="comment">// sprites. Il nous faut 3 éléments pour les
+    </span>    <span class="comment">// coordonnées, 1 pour l'index, 1 pour l'angle
+    </span>    <span class="comment">// et 1 pour le facteur de zoom. Et chaque
+    </span>    <span class="comment">// sprite a besoin de 4 vertex.
+    </span>   <span class="keyword"> var</span> spritesAttributes <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Float32Array</span>(
+            spritesCount <span class="operator">*</span> (3 <span class="operator">+</span> 1 <span class="operator">+</span> 1 <span class="operator">+</span> 1) <span class="operator">*</span> 4
+        );
+        <span class="comment">// Récupérer la taille en octets d'un élément
+    </span>    <span class="comment">// du tableau.
+    </span>   <span class="keyword"> var</span> bpe <span class="operator">=</span> spritesAttributes.BYTES_PER_ELEMENT;
+        <span class="comment">// Taille en octets d'un bloc représentant
+    </span>    <span class="comment">// tous les attributs d'un vertex.
+    </span>   <span class="keyword"> var</span> blockSize <span class="operator">=</span> (3 <span class="operator">+</span> 1 <span class="operator">+</span> 1 <span class="operator">+</span> 1) <span class="operator">*</span> bpe;
+    
+        gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, squareVerticesBuffer);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attPosition`.
+    </span>   <span class="keyword"> var</span> attPosition <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attPosition"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attPosition);
+        gl.<span class="function">vertexAttribPointer</span>(attPosition, 3, gl.FLOAT, false, blockSize, 0);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attIndex`.
+    </span>   <span class="keyword"> var</span> attIndex <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attIndex"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attIndex);
+        gl.<span class="function">vertexAttribPointer</span>(attIndex, 1, gl.FLOAT, false, blockSize, 3 <span class="operator">*</span> bpe);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attScale`.
+    </span>   <span class="keyword"> var</span> attScale <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attScale"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attScale);
+        gl.<span class="function">vertexAttribPointer</span>(attScale, 1, gl.FLOAT, false, blockSize, 4 <span class="operator">*</span> bpe);
+        <span class="comment">// Définir la position des valeurs de l'attribute `attRotation`.
+    </span>   <span class="keyword"> var</span> attRotation <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attRotation"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attRotation);
+        gl.<span class="function">vertexAttribPointer</span>(attRotation, 1, gl.FLOAT, false, blockSize, 5 <span class="operator">*</span> bpe);
+        <span class="comment">// #(defineAttributes)
+    </span>
+       <span class="keyword"> var</span> vertexPositionAttribute <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attVertexPosition"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(vertexPositionAttribute);
+        gl.<span class="function">vertexAttribPointer</span>(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    
+       <span class="keyword"> var</span> uniWidth <span class="operator">=</span> gl.<span class="function">getUniformLocation</span>(shaderProgram, <span class="string">"uniWidth"</span>);
+       <span class="keyword"> var</span> uniHeight <span class="operator">=</span> gl.<span class="function">getUniformLocation</span>(shaderProgram, <span class="string">"uniHeight"</span>);
+    
+        <span class="comment">// #(draw)
+    </span>    <span class="comment">// Activer le test de profondeur.
+    </span>    gl.<span class="function">disable</span>(gl.DEPTH_TEST);
+        <span class="comment">//gl.depthFunc(gl.LEQUAL);
+    </span>
+        <span class="comment">// Charger la texture.
+    </span>   <span class="keyword"> var</span> image <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Image</span>();
+        image.onload <span class="operator">=</span><span class="keyword"> function</span>() {
+            <span class="comment">// Dessiner la prochaine frame.
+    </span>       <span class="keyword2"> window</span>.<span class="function">requestAnimationFrame</span>( draw );
+        };
+        image.onerror <span class="operator">=</span><span class="keyword"> function</span>(err) {
+           <span class="keyword"> throw</span>(err);
+        };
+        image.src <span class="operator">=</span> <span class="string">"css/wdg.gl5/champi.png"</span>;
+    
+        <span class="comment">// Définir la transparence pour les sprites.
+    </span>    gl.<span class="function">enable</span>(gl.BLEND);
+        gl.<span class="function">blendFunc</span>(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); <span class="comment">// gl.ONE);
+    </span>    gl.<span class="function">disable</span>(gl.DEPTH_TEST);
+    
+       <span class="keyword"> function</span> <span class="function">draw</span>( t ) {
+    
+            <span class="comment">// Create a texture.
+    </span>       <span class="keyword"> var</span> texture <span class="operator">=</span> gl.<span class="function">createTexture</span>();
+            gl.<span class="function">bindTexture</span>(gl.TEXTURE_2D, texture);
+    
+            <span class="comment">// Set the parameters so we can render any size image.
+    </span>        gl.<span class="function">texParameteri</span>(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+            gl.<span class="function">texParameteri</span>(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            gl.<span class="function">texParameteri</span>(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+            gl.<span class="function">texParameteri</span>(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    
+            <span class="comment">// Upload the image into the texture.
+    </span>        gl.<span class="function">texImage2D</span>(
+                gl.TEXTURE_2D, 0, 
+                gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, 
+                image);
+    
+            <span class="comment">// Valeurs pour la taille de l'écran.
+    </span>        gl.<span class="function">uniform1f</span>(uniWidth, canvas.width);
+            gl.<span class="function">uniform1f</span>(uniHeight, canvas.height);
+    
+            <span class="comment">// Mettre à jour le tableau des attributs.
+    </span>       <span class="keyword"> var</span> idx <span class="operator">=</span> 0;
+            sprites.<span class="function">forEach</span><span class="keyword">(function</span> (sprite, spriteIdx) {
+               <span class="keyword"> var</span> x <span class="operator">=</span> sprite.x <span class="operator">*</span> W;
+               <span class="keyword"> var</span> y <span class="operator">=</span> H <span class="operator">-</span> Math.<span class="function">abs</span>(Math.<span class="function">cos</span>(sprite.y <span class="operator">*</span> Math.PI <span class="operator">+</span> t <span class="operator">*</span> sprite.scale <span class="operator">/</span> 3613)) <span class="operator">*</span> H;
+               <span class="keyword"> var</span> z <span class="operator">=</span> Math.<span class="function">cos</span>( t <span class="operator">*</span> sprite.scale <span class="operator">/</span> 2700);
+               <span class="keyword"> var</span> scale <span class="operator">=</span> 48 <span class="operator">*</span> (1 <span class="operator">-</span> .4 <span class="operator">*</span> z);
+               <span class="keyword"> var</span> rotation <span class="operator">=</span> t <span class="operator">*</span> sprite.rotation <span class="operator">/</span> 700;
+                <span class="comment">// Alimentons le tableau.
+    </span>            [0, 1, 3, 2].<span class="function">forEach</span><span class="keyword">(function</span> (index) {
+                    spritesAttributes[idx<span class="operator">+</span><span class="operator">+</span>] <span class="operator">=</span> x;
+                    spritesAttributes[idx<span class="operator">+</span><span class="operator">+</span>] <span class="operator">=</span> y;
+                    spritesAttributes[idx<span class="operator">+</span><span class="operator">+</span>] <span class="operator">=</span> z;
+                    spritesAttributes[idx<span class="operator">+</span><span class="operator">+</span>] <span class="operator">=</span> index;
+                    spritesAttributes[idx<span class="operator">+</span><span class="operator">+</span>] <span class="operator">=</span> scale;
+                    spritesAttributes[idx<span class="operator">+</span><span class="operator">+</span>] <span class="operator">=</span> rotation;
+                });
+            });
+            <span class="comment">// Transférer le tableau dans la mémoire
+    </span>        <span class="comment">// de la carte graphique.
+    </span>        gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, squareVerticesBuffer);
+            gl.<span class="function">bufferData</span>(
+                gl.ARRAY_BUFFER, spritesAttributes, gl.STATIC_DRAW
+            );
+    
+            gl.<span class="function">clearColor</span>(0.0, 0.0, 0.0, 1.0);
+            gl.<span class="function">clear</span>(gl.COLOR_BUFFER_BIT <span class="operator">|</span> gl.DEPTH_BUFFER_BIT);
+           <span class="keyword"> for</span> <span class="keyword">(var</span> i <span class="operator">=</span> 0; i <span class="operator">&lt;</span> spritesCount; i<span class="operator">+</span><span class="operator">+</span>) {
+                gl.<span class="function">drawArrays</span>(gl.TRIANGLE_STRIP, i <span class="operator">*</span> 4, 4);
+            }
+    
+           <span class="keyword2"> window</span>.<span class="function">requestAnimationFrame</span>( draw );
+        }
+    
+        <span class="operator">/</span><span class="operator">/</span> #(draw)</pre><h2 id="les-textures-partir-d-images">Les textures à partir d&#39;images</h2>
+<hr/><ul>
+<li>Chapitre précédent : <a href="chap4.html">Animations</a>.</li>
+<li>Chapitre suivant : <a href="chap6.html">Un point c&#39;est tout</a>.</li>
+</ul>
+</section><nav class="theme-color-bg-B2 theme-elevation-2"><p> Sommaire :</p>
+<ul>
+<li><a href="index.html">Comprendre WebGL</a></li>
+<li><a href="chap1.html">Changer le système de coordonnées 2D</a></li>
+<li><a href="chap2.html">Vivent les polygones</a></li>
+<li><a href="chap3.html">Textures procédurales</a></li>
+<li><a href="chap4.html">Animations</a></li>
+<li><a href="chap5.html">Textures bitmaps</a></li>
+<li><a href="chap6.html">Un point c&#39;est tout</a></li>
+</ul>
+
+</nav></body></html>

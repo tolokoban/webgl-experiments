@@ -2,11 +2,11 @@
     name:"webgl-experiments",
     description:"WebGL study by tutorials",
     author:"tolokoban",
-    version:"0.0.1",
+    version:"0.0.73",
     major:0,
     minor:0,
-    revision:1,
-    date:new Date(2016,6,26,16,17,47)
+    revision:73,
+    date:new Date(2016,7,12,14,1,59)
 };
 var currentLang = null;
 exports.lang = function(lang) {
