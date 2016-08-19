@@ -95,8 +95,8 @@ function getVertexShader( gl, code ) {
 
 
 var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\n\nvoid main() {\n  gl_Position = vec4(\n      attVertexPosition.x, attVertexPosition.y,\n      0.0, 1.0);\n}\n",
-  "fragment": "void main() {\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\n}\n"};
+  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nvoid main() {\r\n  gl_Position = vec4(\r\n      attVertexPosition.x, attVertexPosition.y,\r\n      0.0, 1.0);\r\n}\r\n",
+  "fragment": "void main() {\r\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\r\n}\r\n"};
  
 module.exports._ = _;
 /**

@@ -7,18 +7,14 @@ La meilleure solution consiste à faire faire le travail par le <em>vertex shade
 <p>Mais pour que cela fonctionne, il faut que le shader connaisse la largeur et la hauteur de notre canvas. Il faut donc lui passer des variables. Puisque les valeurs de ces variables ne changent pas pendant le dessin d&#39;une image, on utilise des variables de type <strong>Uniform</strong>.</p>
 <p>On ajoute donc ce code juste avant le rendu :</p>
 <pre class="custom highlight js">
-<<<<<<< HEAD
     var uniWidth <span class="operator">=</span> gl.<span class="function">getUniformLocation</span>(shaderProgram, <span class="string">"uniWidth"</span>);
-=======
-    var uniWidth <span class="operator">=</span> gl.<span class="function">getUniformLocation</span>(shaderProgram, <span class="string">"uniWidth"</span>);
->>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
        <span class="keyword"> var</span> uniHeight <span class="operator">=</span> gl.<span class="function">getUniformLocation</span>(shaderProgram, <span class="string">"uniHeight"</span>);</pre><p>Et il faut changer le code du <em>vertex shader</em> pour qu&#39;il utilise ces deux variables :</p>
 <pre class="custom highlight js">
     attribute vec3 attVertexPosition;
     
     uniform float uniWidth;
     uniform float uniHeight;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       float x <span class="operator">=</span> attVertexPosition.x;
       float y <span class="operator">=</span> attVertexPosition.y;
@@ -29,7 +25,6 @@ La meilleure solution consiste à faire faire le travail par le <em>vertex shade
       gl_Position <span class="operator">=</span> <span class="function">vec4</span>( x, y, 0.0, 1.0 );
     }</pre><p>On peut désormais utiliser de nouvelles coordonnées. On choisit un carré de larguer 100x100 positionné en (20,20) :</p>
 <pre class="custom highlight js">
-<<<<<<< HEAD
     var squareVerticesBuffer <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
         gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, squareVerticesBuffer);
         gl.<span class="function">bufferData</span>(
@@ -43,21 +38,6 @@ La meilleure solution consiste à faire faire le travail par le <em>vertex shade
             gl.STATIC_DRAW
         );</pre><p>Tada ! En voilà un beau carré :</p>
 <div id="wdg.gl118" style="display:none"></div><p>Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : <code>gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);</code> ? On y parle de <strong>TRIANGLE_STRIP</strong>, qu&#39;est-ce donc ?</p>
-=======
-    var squareVerticesBuffer <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
-        gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, squareVerticesBuffer);
-        gl.<span class="function">bufferData</span>(
-            gl.ARRAY_BUFFER,
-           <span class="keyword"> new</span> <span class="function">Float32Array</span>([
-                20, 20, 0,
-                120, 20, 0,
-                20, 120, 0,
-                120, 120, 0
-            ]),
-            gl.STATIC_DRAW
-        );</pre><p>Tada ! En voilà un beau carré :</p>
-<div id="wdg.gl14" style="display:none"></div><p>Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : <code>gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);</code> ? On y parle de <strong>TRIANGLE_STRIP</strong>, qu&#39;est-ce donc ?</p>
->>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
 <p>En fait, le TRIANGLE_STRIP est une bande de triangles. Les 3 premiers points définissent un triangle, normal. Mais ensuite, chaque point ajouté définit un nouveau triangle. Ainsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.</p>
 <p>Et ce n&#39;est pas la seule option, comme nous le verrons dans le chapitre suivant.</p>
 <hr/><ul>
@@ -76,10 +56,7 @@ La meilleure solution consiste à faire faire le travail par le <em>vertex shade
 <li><a href="chap3.html">Textures procédurales</a></li>
 <li><a href="chap4.html">Animations</a></li>
 <li><a href="chap5.html">Textures bitmaps</a></li>
-<<<<<<< HEAD
 <li><a href="chap6.html">Un point c&#39;est tout</a></li>
-=======
->>>>>>> 654cf2f505b938a8325f59dc05709bc6626e80fb
 </ul>
 
 </nav></body></html>
