@@ -36,8 +36,12 @@ var WdgGl1 = function(opts) {
     // #(shaders)
 
     // #(vertices)
+    // Création d'un buffer dans la carte graphique.
+    // Un buffer est un tableau de nombres.
     var triangleVerticesBuffer = gl.createBuffer();
+    // Définir ce buffer comme le buffer actif.
     gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);
+    // Copier des données dans le buffer actif.
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
@@ -47,7 +51,6 @@ var WdgGl1 = function(opts) {
         ]),
         gl.STATIC_DRAW
     );
-    gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);
     // #(vertices)
 
     // #(vertex-position)
@@ -66,7 +69,7 @@ var WdgGl1 = function(opts) {
 
 module.exports = WdgGl1;
 
-
+// #(shader)
 function getShader( type, gl, code ) {
     var shader = gl.createShader( type );
     gl.shaderSource( shader, code );
@@ -87,3 +90,4 @@ function getFragmentShader( gl, code ) {
 function getVertexShader( gl, code ) {
     return getShader( gl.VERTEX_SHADER, gl, code );
 }
+// #(shader)

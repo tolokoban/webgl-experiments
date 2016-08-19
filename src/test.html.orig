@@ -1,0 +1,10 @@
+<page title='webgl-experiments'>
+<<<<<<< HEAD
+    <wdg:test $width="640" $height="480" />
+=======
+# Test
+
+<wdg:test $width="640" $height="480" />
+
+>>>>>>> c130950e8584413a2814be5116cd2cfc1e97c58f
+</page>

@@ -1,0 +1,6 @@
+{
+  "var": {
+      "vertex": "gl4.vertex.c",
+      "fragment-a": "gl4.fragment-a.c"
+  }
+}

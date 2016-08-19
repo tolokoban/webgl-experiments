@@ -1,0 +1,6 @@
+{
+  "var": {
+      "vertex": "test.vertex.c",
+      "fragment": "test.fragment.c"
+  }
+}

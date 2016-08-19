@@ -1,0 +1,69 @@
+<page>
+   
+# Textures bitmaps
+
+Dans ce chapitre, nous allons utiliser WebGL pour afficher des sprites en 2D. Pour cela, il nous manque encore deux notions :
+* Les attributs de vertex.
+* Les textures à partir d'images.
+
+<wdg:gl5 $width="640" $height="480" />
+
+## Les attributs de vertex
+
+Nous voulons définir chaque sprite par :
+* Les coordonnées de son centre.
+* Son angle de rotation.
+* Son facteur de zoom.
+
+Pour WebGL, ce sera un rectangle formé de 4 vertices qui auront tous les mêmes coordonnées (celles du centre du sprite) ainsi que les attributs suivants :
+* Index du vertex (de 0 à 3).
+* Angle de rotation en radians.
+* Facteur de zoom. Si ce facteur vaut 5, par exemple, le sprite fera 10 x 10 pixels.
+
+Le _fragment shader_ est relativement simple :
+<x-code src="mod/gl5.fragment-a.c" />
+
+Le plus gros de la logique se trouve dans le _vertex shader_ :
+<x-code src="mod/gl5.vertex.c" />
+
+Côté Javascript, nous allons faire varier les valeurs de ces attributs en fonction du temps.
+Ainsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.
+Voici le code de la fonction qui défini les sprites pour le Javascript :
+
+<x-code src="mod/wdg.gl5.js" section="createSprites" />
+
+Nous allons maintenant définir le lien entre un buffer et les attributs dont on a besoin.
+Notre vertex shader aura besoin des 4 attributs suivants :
+* `attribute vec3 attPosition;   // offset 0` 
+* `attribute float attIndex;     // offset 3`
+* `attribute float attScale;     // offset 4`
+* `attribute float attRotation;  // offset 5`
+
+Il nous faut donc 6 `float` pour définir un vertex : c'est la taille d'un _bloc_.
+A l'appel de __drawArrays()__, WebGL va lire toutes les données d'un bloc et alimenter les attributs avec ces valeurs avant d'appeler le premier microprocesseur de vertex shader disponible.
+
+Voici le code qui définit l'association entre les attributs et les blocs du tableau :
+
+<x-code src="mod/wdg.gl5.js" section="defineAttributes" />
+
+Et celui qui dessine chaque frame :
+
+<x-code src="mod/wdg.gl5.js" section="code" />
+
+
+## Les textures à partir d'images
+
+
+
+
+
+
+
+<hr/>
+
+
+* Chapitre précédent : [Animations](chap4.html).
+* Chapitre suivant : [...](chap6.html).
+
+
+</page>

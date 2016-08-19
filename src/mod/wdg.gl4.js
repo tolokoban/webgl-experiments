@@ -1,11 +1,9 @@
-// https://www.opengl.org/wiki/Primitive#Point_primitives
-
 "use strict";
 
 var $ = require("dom");
 var DB = require("tfw.data-binding");
 
-var Test = function(opts) {
+var WdgGl4 = function(opts) {
     var that = this;
 
     var canvas = $.elem( this, 'canvas' );
@@ -32,65 +30,74 @@ var Test = function(opts) {
 };
 
 function start( canvas ) {
-    // #(init)
+    var vertexShaderCode = GLOBAL['vertex'];
+    var fragmentShaderCode = GLOBAL['fragment-' + this.fragment];
+
+    // #(code)
     var gl = canvas.getContext("webgl")
             || canvas.getContext("experimental-webgl");
-    // #(init)
 
-    console.info("[wdg.gl3] 'fragment-' + this.fragment=...", 'fragment-' + this.fragment);
-    // #(shaders)
     var shaderProgram = gl.createProgram();
-    gl.attachShader(shaderProgram, getVertexShader(gl, GLOBAL['vertex']) );
-    gl.attachShader(shaderProgram, getFragmentShader(gl, GLOBAL['fragment']) );
-    gl.linkProgram(shaderProgram);
-    gl.useProgram(shaderProgram);
-    // #(shaders)
+    gl.attachShader( 
+        shaderProgram, 
+        getVertexShader(gl, vertexShaderCode) );
+    gl.attachShader( 
+        shaderProgram, 
+        getFragmentShader(gl, fragmentShaderCode) );
+    gl.linkProgram( shaderProgram );
+    gl.useProgram( shaderProgram );
 
-    // #(vertices)
-    // Création d'un buffer dans la carte graphique.
-    // Un buffer est un tableau de nombres.
-    var triangleVerticesBuffer = gl.createBuffer();
-    // Définir ce buffer comme le buffer actif.
-    gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);
-    // Copier des données dans le buffer actif.
+    var squareVerticesBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
+    var W = canvas.width;
+    var H = canvas.height;
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-                -.8, +.8, .0,
-                +.8, -.8, .0,
-                +.3, -.4, .0,
-                +.0, -.0, .0,
-                -.8, -.8, .0
+            0, 0, 0,
+            W, 0, 0,
+            0, H, 0,
+            W, H, 0
         ]),
         gl.STATIC_DRAW
     );
-    // #(vertices)
+    gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
 
-    // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
     gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
-    // #(vertex-position)
 
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); // gl.ONE);
-    gl.disable(gl.DEPTH_TEST);
+    // Déclaration de l'uniform `uniTime`.
+    var uniTimeV = gl.getUniformLocation(shaderProgram, "uniTimeV");
+    var uniTimeF = gl.getUniformLocation(shaderProgram, "uniTimeF");
 
-    // #(rendering)
-    function render(time) {
-        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    var uniWidth = gl.getUniformLocation(shaderProgram, "uniWidth");
+    var uniHeight = gl.getUniformLocation(shaderProgram, "uniHeight");
+
+    function draw( t ) {
+        // Valeurs pour la taille de l'écran.
+        gl.uniform1f(uniWidth, canvas.width);
+        gl.uniform1f(uniHeight, canvas.height);
+        // Valeur de la variable uniforme pour le temps.
+        gl.uniform1f(uniTimeV, t);
+        gl.uniform1f(uniTimeF, t);
+
+        gl.clearColor(0.0, 0.0, 0.0, 0.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-        gl.drawArrays(gl.POINTS, 0, 5);
-        window.requestAnimationFrame( render );
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+        // Dessiner la prochaine frame.
+        window.requestAnimationFrame( draw );
     }
-    window.requestAnimationFrame( render );
-    // #(rendering)
+
+    window.requestAnimationFrame( draw );
+    // #(code)
 };
 
 
-module.exports = Test;
+module.exports = WdgGl4;
 
-// #(shader)
+
 function getShader( type, gl, code ) {
     var shader = gl.createShader( type );
     gl.shaderSource( shader, code );
@@ -111,4 +118,3 @@ function getFragmentShader( gl, code ) {
 function getVertexShader( gl, code ) {
     return getShader( gl.VERTEX_SHADER, gl, code );
 }
-// #(shader)
