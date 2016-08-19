@@ -52,7 +52,7 @@ function start( canvas ) {
   // Définir ce buffer comme le buffer actif.
   gl.bindBuffer(gl.ARRAY_BUFFER, bufAttributes);
   // Les attributs des vertex.
-  var count = 51;
+  var count = 56;
   var datAttributes = new Float32Array(6 * count);
   // Copier des données dans le buffer actif.
   gl.bufferData(gl.ARRAY_BUFFER, datAttributes, gl.STATIC_DRAW);
@@ -74,8 +74,8 @@ function start( canvas ) {
       datAttributes[6 * k + 4] = color.g;
       datAttributes[6 * k + 5] = color.b;
       datIndexes[k] = k;
-      ang1 = .3 * Math.PI + (.4 * k * Math.PI / (count - 1));
-      ang2 = 5 * k * Math.PI / (count - 1);
+      ang1 = .2 * Math.PI + (.6 * k * Math.PI / (count - axe - 1));
+      ang2 = 8.7 * k * Math.PI / (count - axe - 1);
       z = Math.cos(ang1);
       radius = Math.sin(ang1);
       x = radius * Math.cos(ang2);
@@ -130,11 +130,11 @@ function start( canvas ) {
   function render(time) {
     window.requestAnimationFrame( render );
 
-    var ang1 = time / 566;
+    var ang1 = time / 1766.781248;
     var c1 = Math.cos( ang1 );
     var s1 = Math.sin( ang1 );
 
-    var ang2 = time / 979;
+    var ang2 = time / 1979.998511;
     var c2 = Math.cos( ang2 );
     var s2 = Math.sin( ang2 );
 

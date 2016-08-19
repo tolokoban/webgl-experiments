@@ -28,7 +28,7 @@ void main() {
   } else {
     // Petit effet de dégradé.
     vec3 col = x * varColor + y * WHITE;
-    gl_FragColor = vec4( col, 1.0 );
+    gl_FragColor = vec4( col, 0.9 );
   }
   // La luminosité varie avec la profondeur du point.
   // En `z = 0.0`, la boule est noire.
