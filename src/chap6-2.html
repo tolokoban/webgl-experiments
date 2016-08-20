@@ -1,0 +1,71 @@
+<page>
+   
+# Un point c'est tout
+
+<wdg:gl6-2 $width="480" $height="480" />
+
+Bien, il nous faut donc trier nos données de sorte à afficher les sphères les plus lointaines en premier.
+Seulement ça semble un peu compliqué puisque nos données ont cette forme :
+
+<x-code>
+[
+  X1, Y1, Z1, Rouge1, Vert1, Bleu1,
+  X2, Y2, Z2, Rouge2, Vert2, Bleu2,
+  X3, Y3, Z3, Rouge3, Vert3, Bleu3,
+  ...
+]    
+</x-code>
+
+Il faudrait trier par blocs, ce qui est faisable, mais pas forcément très rapide, d'autant plus qu'on va devoir faire ça en Javascript.
+
+
+Par chance, WebGL vient à la rescousse avec une fonction qu'on n'a pas encore étudiée : __`drawElements()`__.
+Elle permet justement d'indiquer l'ordre dans lequel il faut prendre les vertices grace à un tableau d'index qu'on lui passe en argument. La solution est toute trouvée : c'est ce tableau d'index que l'on va trier.
+
+
+Comparons les fonctions `drawArrays` et `drawElements()`.
+* __drawArrays(__ mode, first, count __)__
+* __drawElements(__ mode, count, type, offset __)__
+
+Et voici les arguments (dont certains sont communs) :
+* __mode__ : gl.POINTS, gl.LINE_STRIP, gl.LINE_LOOP, gl.LINES, gl.TRIANGLE_STRIP, gl.TRIANGLE_FAN ou gl.TRIANGLES.
+* __first__ : index du premier vertex (généralement 0).
+* __count__ : nombre de vertex à afficher.
+* __type__ : gl.UNSIGNED_BYTE ou gl.UNSIGNED_SHORT. Si vous avez plus de 255 points, il vaut mieux spécifier gl.UNSIGNED_SHORT.
+* __offset__ : position du premier élément (généralement 0). Par rapport à l'index du vertex, l'offset doit être multiplié par `Uint16Array.BYTES_PER_ELEMENT`.
+
+Il va donc nous falloir passer deux buffers à la carte graphique : un __Float32Array__ pour les attributs de chaque vertex et un __Uint16Array__ pour les index sur ces vertices.
+
+Voici comment on s'y prend :
+
+<x-code>
+var datAttributes = new Float32Array([ ... ]);
+var bufAttributes = gl.createBuffer();
+gl.bindBuffer( gl.ARRAY_BUFFER, bufAttributes );
+gl.bufferData( gl.ARRAY_BUFFER, datAttributes, gl.STATIC_DRAW );
+    
+var datIndexes = new Uint16Array([ 0, 1, 2, 3, ... ]);
+var bufIndexes = gl.createBuffer();
+gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, bufIndexes );
+gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, datIndexes, gl.STATIC_DRAW );
+</x-code>
+
+Enfin, voici comment trier le tableau des index :
+<x-code>
+datIndexes.sort(function( i, j ) {
+  return datAttributes[6 * j + 2] - datAttributes[6 * i + 2];
+});
+</x-code>    
+
+Quand on passe une fonction à la méthode `sort()`, celle-ci retourne un zéro si les deux valeurs en argument sont égales, un nombre positif si le premier argument est supérieur au second, ...
+
+
+<hr/>
+
+
+* Page précédente : [Un point c'est tout (page 1)](chap6.html).
+* Chapitre suivant : [Particules](chap7.html).
+
+
+
+</page>
