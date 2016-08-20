@@ -3,7 +3,7 @@
 <p><strong>WebGL</strong> est une bibliothèque qui permet de faire de l&#39;<strong>Open GL</strong> sur le web. Et l&#39;<strong>Open GL</strong> est une bibliothèque qui permet d&#39;afficher des pixels à l&#39;écran en tirant profit de l&#39;<em>architecture parallèle</em> des cartes graphiques.</p>
 <p><strong>Open GL</strong> est donc à la fois <strong>puissante</strong> et <strong>complexe</strong>.</p>
 <p>Commençons par ce qui prendrait trois lignes avec un canvas 2d : le dessin d&#39;un triangle.</p>
-<div id="wdg.gl018" style="display:none"></div><p>On commence par récupérer le contexte <em>webgl</em> d&#39;un canvas :</p>
+<div id="wdg.gl033" style="display:none"></div><p>On commence par récupérer le contexte <em>webgl</em> d&#39;un canvas :</p>
 <pre class="custom highlight js">
     var gl <span class="operator">=</span> canvas.<span class="function">getContext</span>(<span class="string">"webgl"</span>)
                 <span class="operator">||</span> canvas.<span class="function">getContext</span>(<span class="string">"experimental-webgl"</span>);</pre><p>Ensuite, il faut créer un <strong>programme de shading</strong>.
@@ -53,11 +53,11 @@ L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
     
        <span class="keyword"> return</span> shader;
     }
-    <span class="keyword">
+    <span class="keyword">
     function</span> <span class="function">getFragmentShader</span>( gl, code ) {
        <span class="keyword"> return</span> <span class="function">getShader</span>( gl.FRAGMENT_SHADER, gl, code );
     }
-    <span class="keyword">
+    <span class="keyword">
     function</span> <span class="function">getVertexShader</span>( gl, code ) {
        <span class="keyword"> return</span> <span class="function">getShader</span>( gl.VERTEX_SHADER, gl, code );
     }</pre><pre class="custom highlight js">
@@ -76,7 +76,7 @@ L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
     };</pre><p>Pour plus de clarté, voici les codes originaux :</p>
 <pre class="custom highlight js">
     attribute vec3 attVertexPosition;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       gl_Position <span class="operator">=</span> <span class="function">vec4</span>(
           attVertexPosition.x, attVertexPosition.y,
@@ -119,6 +119,7 @@ L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
 <li><a href="chap3.html">Textures procédurales</a></li>
 <li><a href="chap4.html">Animations</a></li>
 <li><a href="chap5.html">Textures bitmaps</a></li>
+<li><a href="chap6.html">Un point c&#39;est tout</a></li>
 </ul>
 
 </nav></body></html>
