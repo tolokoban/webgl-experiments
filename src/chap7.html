@@ -2,11 +2,63 @@
    
 # Particules
 
-Les particules sont en réalité des nuées de points qui peuvent servir à représenter de la fumnée, du feu, de l'eau, ...
+Les particules sont en réalité des nuées de points qui peuvent servir à représenter de la fumnée, du feu, de l'eau et tout ce que votre imagination peut créer.
 
 <wdg:gl7 $width="480" $height="480" />
 
+Pour que l'affichage des particules soit efficace, il faut placer toute la logique dans les shaders. Voici à quoi est réduite la boucle de rendu en Javascript :
 
+<x-code src="mod/wdg.gl7.js" section="rendering" />
+
+La seule donnée variable est `uniTime` et le _vertex shader_ se base sur cette variable pour calculer la position, la taille et la couleur du vertex, donc de la particule.
+
+<x-code src="mod/gl7.vertex-a.c" />
+
+Le _fragment shader_ va dessiner des cercles dont le centre à la couleur `varColor` et qui devient de plus en plus transparent en allant vers la périphérie. A chaque affichage de particule, il faut que la transparence laisse voir ce qui est déjà à l'écran. Ceci est réalisé par le __blending__. Le code qui donne la bonne configuration pour notre démonstration est le suivant :
+
+<x-code src="mod/wdg.gl7.js" section="blend" />
+
+Les 4 arguments de la fonction `blendFuncSeparate()` sont tous des énumérés dont voici les valeurs :
+<pre>
+ Valeur                | Red, Green, Blue  | Alpha
+-----------------------+-------------------+-------
+gl.ZERO                | 0,0,0             | 0
+gl.ONE                 | 1,1,1             | 1
+gl.SRC_COLOR           | Rs, Gs, Bs        | As
+gl.ONE_MINUS_SRC_COLOR | 1-Rs, 1-Gs, 1-Bs  | 1-As
+gl.DST_COLOR           | Rd, Gd, Bd        | Ad
+gl.ONE_MINUS_DST_COLOR | 1-Rd, 1-Gd, 1-Bd  | 1-Ad
+gl.SRC_ALPHA           | As, As, As        | As
+gl.ONE_MINUS_SRC_ALPHA | 1-Ad, 1-Ad, 1-Ad  | 1-As
+gl.DST_ALPHA           | Ad, Ad, Ad        | Ad
+gl.ONE_MINUS_DST_ALPHA | 1-Ad, 1-Ad, 1-Ad  | 1-Ad
+gl.SRC_ALPHA_SATURATE  | min(As, 1 - Ad),  |
+                       | min(As, 1 - Ad),  | 1
+                       | min(As, 1 - Ad)   | 
+</pre>
+
+On appelle __source__ la couleur qui résulte du _fragment shader_ et qui est dans la variable `gl_FragColor`. Et on appelle __destination__ la couleur qui est actuellement affichée.
+
+* La __source__ a 4 composantes : `(Rs, Gs, Bs, As)`.
+* La __destination__ a 4 composantes : `(Rd, Gd, Bd, Ad)`.
+
+La fonction __blendFuncSeparate()__ a les arguments suivants :
+* Coefficient à multiplier avec `(Rs, Gs, Bs)`.
+* Coefficient à multiplier avec `(Rd, Gd, Bd)`.
+* Coefficient à multiplier avec `(As)`.
+* Coefficient à multiplier avec `(Ad)`.
+
+Le code `gl.blendEquation(gl.FUNC_ADD)` indique qu'il faut ensuite additionner les deux couleurs résultantes.
+
+On en déduit que, dans notre exemple, on obtiendra ceci :
+<pre>
+Red   := Rs * As + Rd * (1 - As)
+Green := Gs * As + Gd * (1 - As)
+Blue  := Bs * As + Bd * (1 - As)
+Alpha := As * 0 + Ad * 1
+</pre>
+
+Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets.
 
 <hr/>
 

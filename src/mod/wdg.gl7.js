@@ -45,6 +45,10 @@ function start( canvas, logo ) {
     gl.attachShader(shaderProgram, getFragmentShader(gl, GLOBAL['fragment']) );
     gl.linkProgram(shaderProgram);
     gl.useProgram(shaderProgram);
+var attribs = gl.getProgramParameter(shaderProgram, gl.ACTIVE_ATTRIBUTES);
+for (var kk=0; kk < attribs; kk++) {
+    console.log( gl.getActiveAttrib( shaderProgram, kk ) );
+}
     // #(shaders)
 
     // #(vertices)
@@ -121,7 +125,6 @@ function start( canvas, logo ) {
         window.requestAnimationFrame( render );
 
         gl.clear(gl.COLOR_BUFFER_BIT);
-
         gl.uniform1f(uniTime, time);
         gl.drawArrays(gl.POINTS, 0, count);
     }
