@@ -1,5 +1,4 @@
 <!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap6-2.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl6-2.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap6-2.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="un-point-c-est-tout">Un point c&#39;est tout</h1>
-<<<<<<< HEAD
 <div id="wdg.gl6-214" style="display:none"></div><p>Bien, il nous faut donc trier nos données de sorte à afficher les sphères les plus lointaines en premier.
 Seulement ça semble un peu compliqué puisque nos données ont cette forme :</p>
 <pre class="custom highlight js">
@@ -8,16 +7,6 @@ Seulement ça semble un peu compliqué puisque nos données ont cette forme :</p
       X2, Y2, Z2, Rouge2, Vert2, Bleu2,
       X3, Y3, Z3, Rouge3, Vert3, Bleu3,
       ...
-=======
-<div id="wdg.gl6-23" style="display:none"></div><p>Bien, il nous faut donc trier nos données de sorte à afficher les sphères les plus lointaines en premier.
-Seulement ça semble un peu compliqué puisque nos données ont cette forme :</p>
-<pre class="custom highlight js">
-    [
-      X1, Y1, Z1, Rouge1, Vert1, Bleu1,
-      X2, Y2, Z2, Rouge2, Vert2, Bleu2,
-      X3, Y3, Z3, Rouge3, Vert3, Bleu3,
-      ...
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
     ]</pre><p>Il faudrait trier par blocs, ce qui est faisable, mais pas forcément très rapide, d&#39;autant plus qu&#39;on va devoir faire ça en Javascript.</p>
 <p>Par chance, WebGL vient à la rescousse avec une fonction qu&#39;on n&#39;a pas encore étudiée : <strong><code>drawElements()</code></strong>.
 Elle permet justement d&#39;indiquer l&#39;ordre dans lequel il faut prendre les vertices grace à un tableau d&#39;index qu&#39;on lui passe en argument. La solution est toute trouvée : c&#39;est ce tableau d&#39;index que l&#39;on va trier.</p>
@@ -37,7 +26,6 @@ Elle permet justement d&#39;indiquer l&#39;ordre dans lequel il faut prendre les
 <p>Il va donc nous falloir passer deux buffers à la carte graphique : un <strong>Float32Array</strong> pour les attributs de chaque vertex et un <strong>Uint16Array</strong> pour les index sur ces vertices.</p>
 <p>Voici comment on s&#39;y prend :</p>
 <pre class="custom highlight js">
-<<<<<<< HEAD
     var datAttributes <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Float32Array</span>([ ... ]);<span class="keyword">
     var</span> bufAttributes <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
     gl.<span class="function">bindBuffer</span>( gl.ARRAY_BUFFER, bufAttributes );
@@ -50,20 +38,6 @@ Elle permet justement d&#39;indiquer l&#39;ordre dans lequel il faut prendre les
 <pre class="custom highlight js">
     datIndexes.<span class="function">sort</span><span class="keyword">(function</span>( i, j ) {
      <span class="keyword"> return</span> datAttributes[6 <span class="operator">*</span> j <span class="operator">+</span> 2] <span class="operator">-</span> datAttributes[6 <span class="operator">*</span> i <span class="operator">+</span> 2];
-=======
-    var datAttributes <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Float32Array</span>([ ... ]);<span class="keyword">
-    var</span> bufAttributes <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
-    gl.<span class="function">bindBuffer</span>( gl.ARRAY_BUFFER, bufAttributes );
-    gl.<span class="function">bufferData</span>( gl.ARRAY_BUFFER, datAttributes, gl.STATIC_DRAW );
-        <span class="keyword">
-    var</span> datIndexes <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Uint16Array</span>([ 0, 1, 2, 3, ... ]);<span class="keyword">
-    var</span> bufIndexes <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
-    gl.<span class="function">bindBuffer</span>( gl.ELEMENT_ARRAY_BUFFER, bufIndexes );
-    gl.<span class="function">bufferData</span>( gl.ELEMENT_ARRAY_BUFFER, datIndexes, gl.STATIC_DRAW );</pre><p>Enfin, voici comment trier le tableau des index :</p>
-<pre class="custom highlight js">
-    datIndexes.<span class="function">sort</span><span class="keyword">(function</span>( i, j ) {
-     <span class="keyword"> return</span> datAttributes[6 <span class="operator">*</span> j <span class="operator">+</span> 2] <span class="operator">-</span> datAttributes[6 <span class="operator">*</span> i <span class="operator">+</span> 2];
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
     });</pre><p>Quand on passe une fonction à la méthode <code>sort()</code>, celle-ci retourne un zéro si les deux valeurs en argument sont égales, un nombre positif si le premier argument est supérieur au second, ...</p>
 <hr/><ul>
 <li>Page précédente : <a href="chap6.html">Un point c&#39;est tout (page 1)</a>.</li>
@@ -78,9 +52,5 @@ Elle permet justement d&#39;indiquer l&#39;ordre dans lequel il faut prendre les
 <li><a href="chap5.html">Textures bitmaps</a></li>
 <li><a href="chap6.html">Un point c&#39;est tout</a></li>
 </ul>
-<<<<<<< HEAD
 
-=======
-
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
 </nav></body></html>

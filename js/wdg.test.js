@@ -57,7 +57,6 @@ function start( canvas ) {
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-<<<<<<< HEAD
                 -.8, +.8, .5,
                 -.6, +.6, .4,
                 -.4, +.4, .7,
@@ -67,13 +66,6 @@ function start( canvas ) {
                 +.4, -.4, .1,
                 +.6, -.6, .3,
                 +.8, -.8, .2
-=======
-                -.8, +.8, .0,
-                +.8, -.8, .0,
-                +.3, -.4, .0,
-                +.0, -.0, .0,
-                -.8, -.8, .0
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
         ]),
         gl.STATIC_DRAW
     );
@@ -84,7 +76,6 @@ function start( canvas ) {
     gl.enableVertexAttribArray(vertexPositionAttribute);
     gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
-<<<<<<< HEAD
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); // gl.ONE);
     gl.disable(gl.DEPTH_TEST);
@@ -113,18 +104,6 @@ function start( canvas ) {
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         gl.drawArrays(gl.POINTS, 0, NB_POINTS);
-=======
-
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); // gl.ONE);
-    gl.disable(gl.DEPTH_TEST);
-
-    // #(rendering)
-    function render(time) {
-        gl.clearColor(0.0, 0.0, 0.0, 1.0);
-        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-        gl.drawArrays(gl.POINTS, 0, 5);
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
         window.requestAnimationFrame( render );
     }
     window.requestAnimationFrame( render );
@@ -159,13 +138,8 @@ function getVertexShader( gl, code ) {
 
 
 var GLOBAL = {
-<<<<<<< HEAD
   "vertex": "attribute vec3 attVertexPosition;\n\nvarying vec4 attPosition;\n\nvoid main() {\n  gl_Position = vec4( attVertexPosition.xyz, 1.0 );\n  gl_PointSize = 250.0\n    + (attVertexPosition.z - 1.0) * 120.0;\n  attPosition = gl_Position;\n}\n",
   "fragment": "precision mediump float;\n\nvarying vec4 attPosition;\n\nvoid main() {\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  float r = x*x + y*y;\n\n  if (r > 0.25) {\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\n  } else if (r > 0.24) {\n    gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );\n  } else {\n    gl_FragColor = vec4( gl_PointCoord.y, gl_PointCoord.x, 0.0, 1.0 );\n  }\n}\n"};
-=======
-  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nvarying vec4 attPosition;\r\n\r\nvoid main() {\r\n  gl_Position = vec4(\r\n      attVertexPosition.x, attVertexPosition.y,\r\n      0.0, 1.0);\r\n  gl_PointSize = 250.0;\r\n  attPosition = gl_Position;\r\n}\r\n",
-  "fragment": "precision mediump float;\r\n\r\nvarying vec4 attPosition;\r\n\r\nvoid main() {\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  float r = x*x + y*y;\r\n\r\n  if (r > 0.25) {\r\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\r\n  } else {\r\n    gl_FragColor = vec4( 1.0, gl_PointCoord.x, 0.0, 1.0 );\r\n  }\r\n}\r\n"};
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
  
 module.exports._ = _;
 /**

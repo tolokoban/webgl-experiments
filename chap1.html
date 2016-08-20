@@ -14,7 +14,7 @@ La meilleure solution consiste à faire faire le travail par le <em>vertex shade
     
     uniform float uniWidth;
     uniform float uniHeight;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       float x <span class="operator">=</span> attVertexPosition.x;
       float y <span class="operator">=</span> attVertexPosition.y;
@@ -37,11 +37,7 @@ La meilleure solution consiste à faire faire le travail par le <em>vertex shade
             ]),
             gl.STATIC_DRAW
         );</pre><p>Tada ! En voilà un beau carré :</p>
-<<<<<<< HEAD
 <div id="wdg.gl10" style="display:none"></div><p>Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : <code>gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);</code> ? On y parle de <strong>TRIANGLE_STRIP</strong>, qu&#39;est-ce donc ?</p>
-=======
-<div id="wdg.gl118" style="display:none"></div><p>Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : <code>gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);</code> ? On y parle de <strong>TRIANGLE_STRIP</strong>, qu&#39;est-ce donc ?</p>
->>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
 <p>En fait, le TRIANGLE_STRIP est une bande de triangles. Les 3 premiers points définissent un triangle, normal. Mais ensuite, chaque point ajouté définit un nouveau triangle. Ainsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.</p>
 <p>Et ce n&#39;est pas la seule option, comme nous le verrons dans le chapitre suivant.</p>
 <hr/><ul>
