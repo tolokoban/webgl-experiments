@@ -11,10 +11,11 @@
 Cela se fait ainsi :</p>
 <pre class="custom highlight js">
     varying lowp vec3 varVertexPosition;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       varVertexPosition <span class="operator">=</span> attVertexPosition;
       ...</pre><p>Voici maintenant des exemples de ce que l&#39;on peut obtenir.</p>
+<<<<<<< HEAD
 <article>
     <div id="wdg.gl39" style="display:none"></div>
     <div>
@@ -54,9 +55,50 @@ Cela se fait ainsi :</p>
     <div id="wdg.gl311" style="display:none"></div>
     <div>
         <b>Le tramage</b>
+=======
+<article>
+    <div id="wdg.gl327" style="display:none"></div>
+    <div>
+        <b>Le pyjama rayé</b>
 <pre class="custom highlight js">
     varying lowp vec3 varVertexPosition;
-    <span class="keyword">
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+     <span class="keyword"> if</span> (<span class="function">mod</span>( varVertexPosition.x, 20.0 ) <span class="operator">&gt;</span> 6.0) {
+        gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>(1.0, 1.0, 1.0, 1.0);
+      }<span class="keyword"> else</span> {
+        gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>(0.0, 0.0, 0.0, 1.0);
+      }
+    }</pre>
+    </div>
+</article><article>
+    <div id="wdg.gl328" style="display:none"></div>
+    <div>
+        <b>La vague colorée</b>
+<pre class="custom highlight js">
+    varying lowp vec3 varVertexPosition;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      lowp float x <span class="operator">=</span> varVertexPosition.x;
+      lowp float y <span class="operator">=</span> varVertexPosition.y;
+    
+      highp float radius <span class="operator">=</span> <span class="function">sqrt</span>( (x<span class="operator">*</span>x) <span class="operator">+</span> (y<span class="operator">*</span>y) );
+    
+      highp float r <span class="operator">=</span> <span class="function">abs</span>( <span class="function">cos</span>( radius <span class="operator">/</span> 77.12 ) );
+      highp float g <span class="operator">=</span> <span class="function">abs</span>( <span class="function">cos</span>( radius <span class="operator">/</span> 33.27 ) );
+      highp float b <span class="operator">=</span> <span class="function">abs</span>( <span class="function">cos</span>( radius <span class="operator">/</span> 62.43 ) );
+      
+      gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>( r, g, b, 1.0 );
+    }</pre>
+    </div>
+</article><article>
+    <div id="wdg.gl329" style="display:none"></div>
+    <div>
+        <b>Le tramage</b>
+>>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
+<pre class="custom highlight js">
+    varying lowp vec3 varVertexPosition;
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       <span class="comment">// Couleur de la trame.
     </span>  lowp float r1 <span class="operator">=</span> 1.0;

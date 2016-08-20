@@ -11,7 +11,11 @@
 <li><strong>drawingFunction()</strong> reçoit un argument unique qui correspond au nombre de millisecondes écoulées depuis le 1er janvier 1970.</li>
 <li><strong>drawingFunction()</strong> n&#39;est appelée que si le canvas est visible à l&#39;écran.</li>
 </ul>
+<<<<<<< HEAD
 <div id="wdg.gl412" style="display:none"></div><p>Voici le code complet de cette animation :</p>
+=======
+<div id="wdg.gl430" style="display:none"></div><p>Voici le code complet de cette animation :</p>
+>>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
 <pre class="custom highlight js">
     var gl <span class="operator">=</span> canvas.<span class="function">getContext</span>(<span class="string">"webgl"</span>)
                 <span class="operator">||</span> canvas.<span class="function">getContext</span>(<span class="string">"experimental-webgl"</span>);
@@ -85,7 +89,7 @@
     uniform lowp float uniTimeV;
     
     varying lowp vec3 varVertexPosition;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       highp float time <span class="operator">=</span> uniTimeV;
     
@@ -117,14 +121,14 @@
       gl_Position <span class="operator">=</span> <span class="function">vec4</span>( x <span class="operator">*</span> radius, y <span class="operator">*</span> radius, 0.0, 1.0 );
     }</pre><p>Voici le code du <strong>fragment shader</strong> qui donne cet effet de vagues :</p>
 <pre class="custom highlight js">
-    const highp float PI <span class="operator">=</span> 3.1415926539;<span class="keyword">
-    const</span> lowp vec3 COLOR0 <span class="operator">=</span> <span class="function">vec3</span>(0.7, 0.9, 1.0);<span class="keyword">
+    const highp float PI <span class="operator">=</span> 3.1415926539;<span class="keyword">
+    const</span> lowp vec3 COLOR0 <span class="operator">=</span> <span class="function">vec3</span>(0.7, 0.9, 1.0);<span class="keyword">
     const</span> lowp vec3 COLOR1 <span class="operator">=</span> <span class="function">vec3</span>(0.0, 0.7, 0.9);
     
     varying lowp vec3 varVertexPosition;
     
     uniform lowp float uniTimeF;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       highp float time <span class="operator">=</span> uniTimeF <span class="operator">/</span> 700.0;
       

@@ -4,7 +4,11 @@
 <li>Les attributs de vertex.</li>
 <li>Les textures à partir d&#39;images.</li>
 </ul>
+<<<<<<< HEAD
 <div id="wdg.gl513" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+=======
+<div id="wdg.gl531" style="display:none"></div><h2 id="les-attributs-de-vertex">Les attributs de vertex</h2>
+>>>>>>> 509a8c8ca996e9d07bb19237057a74984fad9567
 <p>Nous voulons définir chaque sprite par :</p>
 <ul>
 <li>Les coordonnées de son centre.</li>
@@ -26,7 +30,7 @@
     uniform sampler2D uniTexture;
      
     varying vec2 varCoordsUV;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       gl_FragColor <span class="operator">=</span> <span class="function">texture2D</span>( uniTexture, varCoordsUV );
     }</pre><p>Le plus gros de la logique se trouve dans le <em>vertex shader</em> :</p>
@@ -38,14 +42,14 @@
     </span>attribute float attRotation;
     <span class="comment">// Facteur d'échelle.
     </span>attribute float attScale;
-    <span class="keyword">
+    <span class="keyword">
     const</span> float PI <span class="operator">=</span> 3.1415926536;
     
     uniform float uniWidth;
     uniform float uniHeight;
     
     varying vec2 varCoordsUV;
-    <span class="keyword">
+    <span class="keyword">
     void</span> <span class="function">main</span>() {
       float x <span class="operator">=</span> attPosition.x 
         <span class="operator">+</span> attScale <span class="operator">*</span> <span class="function">cos</span>( attRotation <span class="operator">+</span> attIndex <span class="operator">*</span> PI <span class="operator">/</span> 2.0 );
