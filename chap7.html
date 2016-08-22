@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap7.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl7.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap7.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="particules">Particules</h1>
 <p>Les particules sont en réalité des nuées de points qui peuvent servir à représenter de la fumnée, du feu, de l&#39;eau et tout ce que votre imagination peut créer.</p>
-<div id="wdg.gl711" style="display:none"></div><p>Pour que l&#39;affichage des particules soit efficace, il faut placer toute la logique dans les shaders. Voici à quoi est réduite la boucle de rendu en Javascript :</p>
+<div id="wdg.gl768" style="display:none"></div><p>Pour que l&#39;affichage des particules soit efficace, il faut placer toute la logique dans les shaders. Voici à quoi est réduite la boucle de rendu en Javascript :</p>
 <pre class="custom highlight js">
     gl.<span class="function">clearColor</span>(1.0, 1.0, 1.0, 1.0);
         gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, bufAttributes);
@@ -107,7 +107,8 @@ Blue  := Bs * As + Bd * (1 - As)
 Alpha := As * 0 + Ad * 1
 </pre><p>Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets.</p>
 <hr/><ul>
-<li>Chapitre présécent : <a href="chap6.html">Un point c&#39;est tout</a>.</li>
+<li>Chapitre précédent : <a href="chap6.html">Un point c&#39;est tout</a>.</li>
+<li>Chapitre suivant : <a href="chap8.html">Framebuffer</a>.</li>
 </ul>
 </section><nav class="theme-color-bg-B2 theme-elevation-2"><p> Sommaire :</p>
 <ul>
@@ -119,6 +120,7 @@ Alpha := As * 0 + Ad * 1
 <li><a href="chap5.html">Textures bitmaps</a></li>
 <li><a href="chap6.html">Un point c&#39;est tout</a></li>
 <li><a href="chap7.html">Particules</a></li>
+<li><a href="chap8.html">Framebuffer</a></li>
 </ul>
 
 </nav></body></html>

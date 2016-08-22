@@ -60,38 +60,38 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.gl21', 'wdg.gl2', {
+        W('wdg.gl252', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "3"})
-        W('wdg.gl22', 'wdg.gl2', {
+        W('wdg.gl253', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "5"})
-        W('wdg.gl23', 'wdg.gl2', {
+        W('wdg.gl254', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "13"})
-        W('wdg.gl24', 'wdg.gl2', {
+        W('wdg.gl255', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "500"})
-        W('wdg.gl25', 'wdg.gl2', {
+        W('wdg.gl256', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "3",
             regular: "false"})
-        W('wdg.gl26', 'wdg.gl2', {
+        W('wdg.gl257', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "5",
             regular: "false"})
-        W('wdg.gl27', 'wdg.gl2', {
+        W('wdg.gl258', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "13",
             regular: "false"})
-        W('wdg.gl28', 'wdg.gl2', {
+        W('wdg.gl259', 'wdg.gl2', {
             width: "200",
             height: "200",
             size: "500",

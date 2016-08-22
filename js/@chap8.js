@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.gl814', 'wdg.gl8', {
+        W('wdg.gl883', 'wdg.gl8', {
             width: "512",
             height: "512"})
 
