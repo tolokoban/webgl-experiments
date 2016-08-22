@@ -1,0 +1,6 @@
+{
+  "var": {
+    "vert": "explosive-tp.vert.c",
+    "frag": "explosive-tp.frag.c"
+  }
+}
