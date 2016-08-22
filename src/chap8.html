@@ -1,9 +1,105 @@
 <page>
    
-# Frame Buffers
+# Framebuffer
 
-Jusqu'à présent, nous avons toujours dessiner directement sur l'écran, mais WebGL permet de faire du rendu dans des textures que l'on peut réutiliser ensuite pour un nouvel affichage.
+Jusqu'à présent, nous avons toujours dessiné directement sur l'écran, mais WebGL permet de faire du rendu dans des textures que l'on peut réutiliser ensuite pour un nouvel affichage.
 
 <wdg:gl8 $width="512" $height="512" />
 
+Dans l'exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le rendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons le fragment shader suivant sur la texture :
+
+<x-code src="mod/gl8.fragment.c" />
+
+Voyons maintenant comment on utilise les Framebuffers.
+
+IL faut commencer par créer un texture qui recevra les affichages : 
+<x-code>
+// Réserver de la mémoire dans la carte graphique
+// pour une texture.
+var texture = gl.createTexture();
+
+// Définir cette texture comme texture courante.
+gl.bindTexture(gl.TEXTURE_2D, texture);
+
+// Si on donne une coordonnée U (aussi appelée S) qui est inférieure à 0 
+// ou supérieure à 1, on n'afiche rien, on ne répète pas la texture.
+gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+// Même configuration pour la coordonnée V (aussi appelée T).
+gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+// Pour passer d'une coordonnée (u, v) en float à des entiers (x, y)
+// correspondant à un pixel de l'image, on décide de ne pas interpoler,
+// mais plutôt de prendre le pixel le plus proche (NEAREST en anglais).
+gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+
+// Initialisons les données de cette texture en spécifiant sa taille
+// 512x512.
+gl.texImage2D(
+    gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
+    gl.RGBA, gl.UNSIGNED_BYTE, null);
+</x-code>
+
+Ensuite, il faut créer un __Framebuffer__ :
+
+<x-code>
+// Réserver de l'espace mémoire sur la carte graphique
+// pour un nouveau Framebuffer.
+var fb = gl.createFramebuffer();
+// Définer `fb` comme le Framebuffer courant.
+gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
+// Associer ce Framebuffer à la 
+// texture précédemment créée.
+gl.framebufferTexture2D(
+    gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, 
+    gl.TEXTURE_2D, texture, 0);
+</x-code>
+
+Le code du rendu ressemblera alors à cela :
+
+<x-code>
+// Tout ce qui suit sera rendu dans la texture.
+gl.bindFramebuffer( gl.FRAMEBUFFER, fb );
+...
+
+// Tout ce qui suit sera rendu dans le canvas.
+gl.bindFramebuffer( gl.FRAMEBUFFER, null );
+// Dans le fragment shader, le premier `uniform`
+// de type `sampler2D` recevra la texture `texture`.
+gl.bindTexture( gl.TEXTURE_2D, texture );
+...
+</x-code>
+
+## Plus de détails
+
+* [__`gl.texImage2D(target, level, internalformat, width, height, border, format, type, pixels)`__](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D)
+  * __target__ : généralement `gl.TEXTURE_2D`, sauf si vous voulez des textures 3D.
+  * __level__ : niveau de détail. Généralement 0.
+  * __internalformat__ : définit le fomat de stockage des pixels dans la texture. Généralement `gl.RGBA`, `gl.RGB` ou `gl.ALPHA`.
+  * __width__ : largeur en pixels.
+  * __height__ : hauteur en pixels.
+  * __border__ : épaisseur de la bordure. Généralement 0.
+  * __format__ : Généralement, mettre la même chose que dans __internalformat__.
+  * __type__ : permet de compresser les données. Généralement `gl.UNSIGNED_BYTE`.
+  * __pixels__ : peut être une image ou un tableau de pixels. Mais dans notre cas, on n'initialise par, donc `null`.
+
+* [__`framebufferTexture2D(target, attachment, textarget, texture, level)`__](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D)
+  * __target__ : Généralement `gl.FRAMEBUFFER`.
+  * __attachment__ : les trois valeurs les plus importantes sont :
+    * __gl.COLOR_ATTACHMENT0__ : stoquer la couleur des pixels dans la texture cible.
+    * __gl.DEPTH_ATTACHMENT__ : stoquer le Z-buffer dans la texture cible. C'est-à-dire la coordonnée __Z__ de chaque pixel.
+    * __gl.STENCIL_ATTACHMENT__ : stoquer le _stencil_ dans la texture cible. Nous verrons cela dans un prochain chapitre.
+  * __textarget__ : type de la texture cible. Généralement `gl.TEXTURE_2D`.
+  * __texture__ : la texture cible.
+  * __level__ : Généralement 0.
+
+
+## A quoi peut bien servir de stoquer le Z-buffer ?
+
+Vous avez certainement déjà joué à des jeux 3D dans lesquels le personnage passe parfois derrière un élément du décor. Pour éviter de rendre le joueur aveugle, une astuce consiste à afficher l'ombre du personnage en surimpression des éléments qui font obstacle à la caméra.
+
+En stoquant le __depth buffer__ (`gl.DEPTH_ATTACHMENT`) du décor et celui du personnage, il est ensuite de redessiner le personnage en comparant les pixels dans ces deux textures. Je vous laisse réfléchir aux détail, mais ce n'est pas trop difficile maintenant que vous savez utiliser les Framebuffers et les textures.
+
+----
+
+* Chapitre précédent : [Particules](chap7.html).
 </page>

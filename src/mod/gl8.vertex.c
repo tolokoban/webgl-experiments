@@ -6,6 +6,7 @@ attribute vec2 attPosition;
 
 // Passer les coordonnées UV pour la texture.
 varying vec2 varUV;
+varying float varTime;
 
 void main() {
   float x = attPosition.x;
@@ -15,4 +16,5 @@ void main() {
   gl_Position = vec4(x, y, z, 1.0 );
 
   varUV = vec2( x, y );
+  varTime = uniTime;
 }

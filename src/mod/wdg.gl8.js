@@ -67,9 +67,11 @@ var Gl8 = function(opts) {
         gl.vertexAttribPointer( prg.$attPosition, 3, gl.FLOAT, false, 0, 0 );
         gl.bufferData( gl.ARRAY_BUFFER, datSquare, gl.STATIC_DRAW );
         gl.bindTexture( gl.TEXTURE_2D, texture );
+        prg.$uniTime = time;
         gl.drawArrays( gl.TRIANGLE_STRIP, 0, 4 );       
     });
 };
 
 
 module.exports = Gl8;
+
