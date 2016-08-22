@@ -49,7 +49,7 @@ var Gl8 = function(opts) {
             +1, -1, 0,
             +1, +1, 0
     ]);
-
+   
     var prg = webgl.createProgram({ vertex: GLOBAL.vert, fragment: GLOBAL.frag });
     
     webgl.start(function(time) {
@@ -57,14 +57,19 @@ var Gl8 = function(opts) {
         gl.clear( gl.COLOR_BUFFER_BIT );
         explosive.render( time );
 
+        prg.use();
         gl.bindFramebuffer( gl.FRAMEBUFFER, null );
+        gl.disable( gl.BLEND );
+        gl.disable( gl.DEPTH_TEST );
         gl.clear( gl.COLOR_BUFFER_BIT );
         gl.bindBuffer( gl.ARRAY_BUFFER, bufSquare );
+        gl.enableVertexAttribArray( prg.$attPosition );
+        gl.vertexAttribPointer( prg.$attPosition, 3, gl.FLOAT, false, 0, 0 );
         gl.bufferData( gl.ARRAY_BUFFER, datSquare, gl.STATIC_DRAW );
-        gl.drawArrays( gl.TRIANGLE_STRIP, 0, 4 );
+        gl.bindTexture( gl.TEXTURE_2D, texture );
+        gl.drawArrays( gl.TRIANGLE_STRIP, 0, 4 );       
     });
 };
 
 
 module.exports = Gl8;
-

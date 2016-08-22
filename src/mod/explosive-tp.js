@@ -26,7 +26,25 @@ ExplosiveTp.prototype.render = function(time) {
     var gl = this._webgl.gl;
     var prg = this._prg;
     prg.use();
+    gl.disable(gl.DEPTH_TEST);
+    gl.enable(gl.BLEND);
+    gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ZERO, gl.ONE);
+    gl.blendEquation(gl.FUNC_ADD);
+
     prg.$uniTime = time;
+    gl.bindBuffer(gl.ARRAY_BUFFER, this._buffer);    
+    var bpe = this._data.BYTES_PER_ELEMENT;
+    var blockSize = 6 * bpe;
+    // attPosition
+    var attPosition = gl.getAttribLocation(this._prg.program, "attPosition");
+    gl.enableVertexAttribArray(attPosition);
+    gl.vertexAttribPointer(attPosition, 2, gl.FLOAT, false, blockSize, 0);
+    // attRandom
+    var attRandom = gl.getAttribLocation(this._prg.program, "attRandom");
+    gl.enableVertexAttribArray(attRandom);
+    gl.vertexAttribPointer(attRandom, 4, gl.FLOAT, false, blockSize, 2 * bpe);
+
+    gl.bufferData(gl.ARRAY_BUFFER, this._data, gl.STATIC_DRAW);
     gl.drawArrays(gl.POINTS, 0, this._count);    
 };
 
@@ -39,6 +57,7 @@ function start( logo ) {
     // Création d'un buffer dans la carte graphique.
     // Un buffer est un tableau de nombres.
     var bufAttributes = gl.createBuffer();
+    this._buffer = bufAttributes;
     // Définir ce buffer comme le buffer actif.
     gl.bindBuffer(gl.ARRAY_BUFFER, bufAttributes);
     // Lire les pixels de l'image.
@@ -105,6 +124,7 @@ function start( logo ) {
 
     this._loaded = true;
     this._count = count;
+    this._data = datAttributes;
 }
 
 
