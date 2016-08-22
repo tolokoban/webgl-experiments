@@ -42,6 +42,7 @@ var Gl8 = function(opts) {
         gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 
+    var bufSquare = gl.createBuffer();
     var datSquare = new Float32Array([
             -1, -1, 0,
             -1, +1, 0,
@@ -52,10 +53,15 @@ var Gl8 = function(opts) {
     var prg = webgl.createProgram({ vertex: GLOBAL.vert, fragment: GLOBAL.frag });
     
     webgl.start(function(time) {
-        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.bindFramebuffer( gl.FRAMEBUFFER, fb );
+        gl.clear( gl.COLOR_BUFFER_BIT );
         explosive.render( time );
 
-        
+        gl.bindFramebuffer( gl.FRAMEBUFFER, null );
+        gl.clear( gl.COLOR_BUFFER_BIT );
+        gl.bindBuffer( gl.ARRAY_BUFFER, bufSquare );
+        gl.bufferData( gl.ARRAY_BUFFER, datSquare, gl.STATIC_DRAW );
+        gl.drawArrays( gl.TRIANGLE_STRIP, 0, 4 );
     });
 };
 

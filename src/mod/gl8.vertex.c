@@ -14,7 +14,5 @@ void main() {
 
   gl_Position = vec4(x, y, z, 1.0 );
 
-  float u = (x + 1.0) / 2.0;
-  float v = (1.0 - y) / 2.0;
-  varUV = vec2( u, v );
+  varUV = vec2( x, y );
 }
