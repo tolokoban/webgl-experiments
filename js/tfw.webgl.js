@@ -2,9 +2,9 @@
  var BPE = (new Float32Array()).BYTES_PER_ELEMENT;
 
 
-function Webgl(opts) {
+function Webgl(canvas) {
     Object.defineProperty( this, 'gl', {
-        value: opts.canvas.getContext('webgl') || opts.canvas.getContext('experimental-webgl'),
+        value: canvas.getContext('webgl') || canvas.getContext('experimental-webgl'),
         writable: false,
         configurable: false,
         enumerable: true
@@ -42,6 +42,30 @@ Webgl.prototype.stop = function() {
 /**
  * @return void
  */
+Webgl.prototype.createTextureForFB = function(width, height) {
+    var gl = this.gl;
+    var texture = gl.createTexture();
+
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+
+    // Set up texture so we can render any size image and so we are
+    // working with pixels.
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+
+    gl.texImage2D(
+        gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
+        gl.RGBA, gl.UNSIGNED_BYTE, null);
+
+    return texture;
+};
+
+
+/**
+ * @return void
+ */
 Webgl.prototype.getDataFromImage = function( img ) {
     var w = img.width;
     var h = img.height;
@@ -61,6 +85,9 @@ function Program(gl, codes) {
     gl.attachShader(shaderProgram, getFragmentShader(gl, codes.fragment || '//No Fragment Shader'));
     gl.linkProgram(shaderProgram);
 
+    this.program = shaderProgram;
+    Object.freeze( this.program );
+    
     this.use = function() {
         gl.useProgram(shaderProgram);
     };
@@ -82,12 +109,61 @@ function Program(gl, codes) {
     for (index = 0; index < uniformsCount; index++) {
         item = gl.getActiveUniform( shaderProgram, index );
         uniforms[item.name] = gl.getUniformLocation(shaderProgram, item.name);
-        this['$' + item.name] = gl.getUniformLocation(shaderProgram, item.name);
+        Object.defineProperty(this, '$' + item.name, {
+            set: createUniformSetter(gl, item, uniforms[item.name]),
+            get: createUniformGetter(item),
+            enumerable: true,
+            configurable: true
+        });
     }
     Object.freeze(uniforms);
     this.uniforms = uniforms;
 }
 
+function createUniformSetter(gl, item, nameGL) {
+    var nameJS = '_$' + item.name;
+
+    switch (item.type) {
+    case gl.BYTE:
+    case gl.UNSIGNED_BYTE:
+    case gl.SHORT:
+    case gl.UNSIGNED_SHORT:
+    case gl.INT:
+    case gl.UNSIGNED_INT:
+        if (item.size == 1) {
+            return function(v) {
+                gl.uniform1i(nameGL, v);
+                this[nameJS] = v;
+            };
+        } else {
+            return function(v) {
+                gl.uniform1iv(nameGL, v);
+                this[nameJS] = v;
+            };
+        }
+        break;
+    case gl.FLOAT:
+        if (item.size == 1) {
+            return function(v) {
+                gl.uniform1f(nameGL, v);
+                this[nameJS] = v;
+            };
+        } else {
+            return function(v) {
+                gl.uniform1fv(nameGL, v);
+                this[nameJS] = v;
+            };
+        }
+        break;
+    }
+}
+
+function createUniformGetter(item) {
+    var name = '_$' + item.name;
+    return function() {
+        return this[name];
+    };
+}
 
 
 function getShader( type, gl, code ) {
