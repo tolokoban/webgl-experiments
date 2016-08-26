@@ -11,6 +11,37 @@ Commençons par ce qui prendrait trois lignes avec un canvas 2d : le dessin d'un
 
 <wdg:gl0 $width="240" $height="160" />
 
+### Un peu de théorie
+
+Basiquement, WebGL est capable de dessiner des triangles, des lignes et des points. Et c'est tout !
+Tout réside en fait dans la façon dont il dessine ces trois formes de base.
+
+Pour chaque affichage, il y a deux étapes obligatoires :
+* __La création de vertex__.
+* __La création de pixels__.
+
+Par exemple, pour dessiner un triangle, il faut :
+* Créer trois points possèdant chacun 3 coordonnées : X, Y et Z.
+* Déterminer pour chaque pixel dans la région de ce triangle, sa couleur, s'il faut l'afficher, s'il faut le mélanger à l'arrière-plan, etc...
+
+
+Pour cela, WebGL met à notre disposition le __vertex shader__ et le __fragment shader__.
+
+
+Le principe est alors le suivant :
+* On définit un _point_ comme un ensemble d'attributs.
+  Par exemple, __I__, __J__, __C__ et __W__. Ces attributs n'ont aucun sens pour la carte graphique et peuvent donc avoir le nom qu'on veut et être aussi nombreux qu'on souhaite.
+* La carte graphique possède plusieurs processeurs capables d'exécuter un _vertex shader_.
+  Du coup, nos _points_ vont être transformés en _vertex_ en parallèle.
+  Ainsi, à chaque ensemble __(I, J, C, W)__ va correspondre trois valeurs __(x, y, z)__ qui représente un __vertex__.
+* La carte graphique utilise alors les valeurs __x__ et __y__ pour déterminer la position exacte de chaque vertex sur l'écran. `(-1.0, -1.0)` correspond au pixel en bas à gauche et `(1.0, 1.0)` à celui en haut à droite.
+* Ensuite, si on lui a demandé de dessiner des triangles, il va déterminer quels sont les pixels qu'il faut afficher. Il va donc passer les valeurs `(x, y, z)` de chaque futur pixel au __fragment shader__ qui va retourner la couleur à utiliser.
+
+
+
+
+### Passons au code
+
 On commence par récupérer le contexte _webgl_ d'un canvas :
 <x-code src="mod/wdg.gl0.js" section="init" />
 
@@ -35,15 +66,19 @@ Vous avez pratiquement tout le code pour faire la même chose. Il ne manque que 
 <x-code>
 var GLOBAL = {
   vertex:
-    "attribute vec3 attVertexPosition;" +
+    "attribute float attI;" +
+    "attribute float attJ;" +
+    "attribute vec3 attC;" +
+    "varying vec3 varColor;" +
     "void main() {" +
-    "  gl_Position = vec4(" +
-    "      attVertexPosition.x, attVertexPosition.y," +
-    "      0.0, 1.0);" + 
+    "  gl_Position = vec4( attI, attJ, 0.0, 1.0 );" +
+    "  varColor = attC;" +
     "}",
   fragment:
+    "precision mediump float;" +
+    "varying vec3 varColor;" +
     "void main() {" +
-    "  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);" +
+    "  gl_FragColor = vec4(varColor.rgb, 1.0);" +
     "}"
 };
 </x-code>

@@ -36,32 +36,44 @@ var WdgGl1 = function(opts) {
     // #(shaders)
 
     // #(vertices)
+    // Définition des attributs de nos trois points.
+    var arrPoints = new Float32Array([
+        // attI, attJ, attC.r, attC.g, attC.b
+            -.4, +.8,  1,      0,      0,
+            +.8, -.8,  0,      1,      0,
+            -.8, -.8,  0,      0,      1
+    ]);
+    // Taille d'une valeur en octets.
+    var bpe = arrPoints.BYTES_PER_ELEMENT;
+    // Nombre d'octets utilisés par point.
+    var block = 5 * bpe;
     // Création d'un buffer dans la carte graphique.
     // Un buffer est un tableau de nombres.
     var triangleVerticesBuffer = gl.createBuffer();
     // Définir ce buffer comme le buffer actif.
     gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);
     // Copier des données dans le buffer actif.
-    gl.bufferData(
-        gl.ARRAY_BUFFER,
-        new Float32Array([
-                -.8, +.8, .0,
-                +.8, -.8, .0,
-                -.8, -.8, .0
-        ]),
-        gl.STATIC_DRAW
-    );
+    gl.bufferData(gl.ARRAY_BUFFER, arrPoints, gl.STATIC_DRAW);
     // #(vertices)
 
     // #(vertex-position)
-    var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
-    gl.enableVertexAttribArray(vertexPositionAttribute);
-    gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    var attI = gl.getAttribLocation(shaderProgram, "attI");
+    gl.enableVertexAttribArray(attI);
+    gl.vertexAttribPointer(attI, 1, gl.FLOAT, false, block, 0);
+    var attJ = gl.getAttribLocation(shaderProgram, "attJ");
+    gl.enableVertexAttribArray(attJ);
+    gl.vertexAttribPointer(attJ, 1, gl.FLOAT, false, block, 1 * bpe);
+    var attC = gl.getAttribLocation(shaderProgram, "attC");
+    gl.enableVertexAttribArray(attC);
+    gl.vertexAttribPointer(attC, 3, gl.FLOAT, false, block, 2 * bpe);
     // #(vertex-position)
 
     // #(rendering)
-    gl.clearColor(0.0, 0.0, 1.0, 1.0);
+    // Définir le noir (0,0,0) comme couleur d'arrière-plan.
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    // Effacer l'écran actuel.
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    // Lancer le dessin du triangle composé de 3 points.
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 3);
     // #(rendering)
 };
