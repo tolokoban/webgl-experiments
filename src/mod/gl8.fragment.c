@@ -61,6 +61,12 @@ void fx4(vec4 color, float u, float v, float x, float y) {
     + texture2D( uniTexture, vec2(u - S, v + S) )
     + texture2D( uniTexture, vec2(u    , v + S) )
     + texture2D( uniTexture, vec2(u + S, v + S) );
+  float r = gl_FragColor.r;
+  float g = gl_FragColor.g;
+  float b = gl_FragColor.b;
+  if (r + g + b < 2.0) {
+    gl_FragColor = vec4( g, 0.0, 0.0, 1.0);
+  }
 }
 
 
