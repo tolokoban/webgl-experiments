@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css"></link><title>webgl-experiments</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><script src="js/@chap8.js"></script><link rel="stylesheet" type="text/css" href="css/dom.css"><script src="js/$.js"></script><script src="js/wdg.gl8.js"></script><script src="js/tfw.webgl.js"></script><script src="js/tfw.data-binding.js"></script><script src="js/tfw.listeners.js"></script><script src="js/polyfill.string.js"></script><script src="js/explosive-tp.js"></script><script src="js/dom.js"></script><script src="js/tfw.pointer-events.js"></script><script src="js/polyfill.classList.js"></script><script src="js/x-widget.js"></script><link rel="stylesheet" type="text/css" href="css/@chap8.css"></head><body class="theme-webgl theme-color-bg-B5"><section class="theme-color-bg-B0 theme-elevation-4"><h1 id="framebuffer">Framebuffer</h1>
 <p>Jusqu&#39;à présent, nous avons toujours dessiné directement sur l&#39;écran, mais WebGL permet de faire du rendu dans des textures que l&#39;on peut réutiliser ensuite pour un nouvel affichage.</p>
-<div id="wdg.gl883" style="display:none"></div><p>Dans l&#39;exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le rendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons le fragment shader suivant sur la texture :</p>
+<div id="wdg.gl80" style="display:none"></div><p>Dans l&#39;exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le rendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons le fragment shader suivant sur la texture :</p>
 <pre class="custom highlight js">
     precision mediump float;
     
@@ -65,6 +65,12 @@
         <span class="operator">+</span> <span class="function">texture2D</span>( uniTexture, <span class="function">vec2</span>(u <span class="operator">-</span> S, v <span class="operator">+</span> S) )
         <span class="operator">+</span> <span class="function">texture2D</span>( uniTexture, <span class="function">vec2</span>(u    , v <span class="operator">+</span> S) )
         <span class="operator">+</span> <span class="function">texture2D</span>( uniTexture, <span class="function">vec2</span>(u <span class="operator">+</span> S, v <span class="operator">+</span> S) );
+      float r <span class="operator">=</span> gl_FragColor.r;
+      float g <span class="operator">=</span> gl_FragColor.g;
+      float b <span class="operator">=</span> gl_FragColor.b;
+     <span class="keyword"> if</span> (r <span class="operator">+</span> g <span class="operator">+</span> b <span class="operator">&lt;</span> 2.0) {
+        gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>( g, 0.0, 0.0, 1.0);
+      }
     }
     
     <span class="keyword">

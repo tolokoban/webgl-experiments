@@ -3,7 +3,32 @@
 <p><strong>WebGL</strong> est une bibliothèque qui permet de faire de l&#39;<strong>Open GL</strong> sur le web. Et l&#39;<strong>Open GL</strong> est une bibliothèque qui permet d&#39;afficher des pixels à l&#39;écran en tirant profit de l&#39;<em>architecture parallèle</em> des cartes graphiques.</p>
 <p><strong>Open GL</strong> est donc à la fois <strong>puissante</strong> et <strong>complexe</strong>.</p>
 <p>Commençons par ce qui prendrait trois lignes avec un canvas 2d : le dessin d&#39;un triangle.</p>
-<div id="wdg.gl070" style="display:none"></div><p>On commence par récupérer le contexte <em>webgl</em> d&#39;un canvas :</p>
+<div id="wdg.gl025" style="display:none"></div><h3 id="un-peu-de-th-orie">Un peu de théorie</h3>
+<p>Basiquement, WebGL est capable de dessiner des triangles, des lignes et des points. Et c&#39;est tout !
+Tout réside en fait dans la façon dont il dessine ces trois formes de base.</p>
+<p>Pour chaque affichage, il y a deux étapes obligatoires :</p>
+<ul>
+<li><strong>La création de vertex</strong>.</li>
+<li><strong>La création de pixels</strong>.</li>
+</ul>
+<p>Par exemple, pour dessiner un triangle, il faut :</p>
+<ul>
+<li>Créer trois points possèdant chacun 3 coordonnées : X, Y et Z.</li>
+<li>Déterminer pour chaque pixel dans la région de ce triangle, sa couleur, s&#39;il faut l&#39;afficher, s&#39;il faut le mélanger à l&#39;arrière-plan, etc...</li>
+</ul>
+<p>Pour cela, WebGL met à notre disposition le <strong>vertex shader</strong> et le <strong>fragment shader</strong>.</p>
+<p>Le principe est alors le suivant :</p>
+<ul>
+<li>On définit un <em>point</em> comme un ensemble d&#39;attributs.
+Par exemple, <strong>I</strong>, <strong>J</strong>, <strong>C</strong> et <strong>W</strong>. Ces attributs n&#39;ont aucun sens pour la carte graphique et peuvent donc avoir le nom qu&#39;on veut et être aussi nombreux qu&#39;on souhaite.</li>
+<li>La carte graphique possède plusieurs processeurs capables d&#39;exécuter un <em>vertex shader</em>.
+Du coup, nos <em>points</em> vont être transformés en <em>vertex</em> en parallèle.
+Ainsi, à chaque ensemble <strong>(I, J, C, W)</strong> va correspondre trois valeurs <strong>(x, y, z)</strong> qui représente un <strong>vertex</strong>.</li>
+<li>La carte graphique utilise alors les valeurs <strong>x</strong> et <strong>y</strong> pour déterminer la position exacte de chaque vertex sur l&#39;écran. <code>(-1.0, -1.0)</code> correspond au pixel en bas à gauche et <code>(1.0, 1.0)</code> à celui en haut à droite.</li>
+<li>Ensuite, si on lui a demandé de dessiner des triangles, il va déterminer quels sont les pixels qu&#39;il faut afficher. Il va donc passer les valeurs <code>(x, y, z)</code> de chaque futur pixel au <strong>fragment shader</strong> qui va retourner la couleur à utiliser.</li>
+</ul>
+<h3 id="passons-au-code">Passons au code</h3>
+<p>On commence par récupérer le contexte <em>webgl</em> d&#39;un canvas :</p>
 <pre class="custom highlight js">
     var gl <span class="operator">=</span> canvas.<span class="function">getContext</span>(<span class="string">"webgl"</span>)
                 <span class="operator">||</span> canvas.<span class="function">getContext</span>(<span class="string">"experimental-webgl"</span>);</pre><p>Ensuite, il faut créer un <strong>programme de shading</strong>.
@@ -16,30 +41,42 @@ Nous reviendrons un peu plus tard sur cela.</p>
         gl.<span class="function">linkProgram</span>(shaderProgram);
         gl.<span class="function">useProgram</span>(shaderProgram);</pre><p>Nous allons maintenant définir les coordonnées des sommets (vertices) de notre triangle rectangle. Chaque coordonnée est exprimée en trois dimensions.</p>
 <pre class="custom highlight js">
-    <span class="comment">// Création d'un buffer dans la carte graphique.
+    <span class="comment">// Définition des attributs de nos trois points.
+    </span>   <span class="keyword"> var</span> arrPoints <span class="operator">=</span><span class="keyword"> new</span> <span class="function">Float32Array</span>([
+            <span class="comment">// attI, attJ, attC.r, attC.g, attC.b
+    </span>            <span class="operator">-</span>.4, <span class="operator">+</span>.8,  1,      0,      0,
+                <span class="operator">+</span>.8, <span class="operator">-</span>.8,  0,      1,      0,
+                <span class="operator">-</span>.8, <span class="operator">-</span>.8,  0,      0,      1
+        ]);
+        <span class="comment">// Taille d'une valeur en octets.
+    </span>   <span class="keyword"> var</span> bpe <span class="operator">=</span> arrPoints.BYTES_PER_ELEMENT;
+        <span class="comment">// Nombre d'octets utilisés par point.
+    </span>   <span class="keyword"> var</span> block <span class="operator">=</span> 5 <span class="operator">*</span> bpe;
+        <span class="comment">// Création d'un buffer dans la carte graphique.
     </span>    <span class="comment">// Un buffer est un tableau de nombres.
     </span>   <span class="keyword"> var</span> triangleVerticesBuffer <span class="operator">=</span> gl.<span class="function">createBuffer</span>();
         <span class="comment">// Définir ce buffer comme le buffer actif.
     </span>    gl.<span class="function">bindBuffer</span>(gl.ARRAY_BUFFER, triangleVerticesBuffer);
         <span class="comment">// Copier des données dans le buffer actif.
-    </span>    gl.<span class="function">bufferData</span>(
-            gl.ARRAY_BUFFER,
-           <span class="keyword"> new</span> <span class="function">Float32Array</span>([
-                    <span class="operator">-</span>.8, <span class="operator">+</span>.8, .0,
-                    <span class="operator">+</span>.8, <span class="operator">-</span>.8, .0,
-                    <span class="operator">-</span>.8, <span class="operator">-</span>.8, .0
-            ]),
-            gl.STATIC_DRAW
-        );</pre><p>Il faut ensuite déclarer un <strong>attribut</strong> qui sera utilisé par les shaders.
+    </span>    gl.<span class="function">bufferData</span>(gl.ARRAY_BUFFER, arrPoints, gl.STATIC_DRAW);</pre><p>Il faut ensuite déclarer un <strong>attribut</strong> qui sera utilisé par les shaders.
 L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
 <pre class="custom highlight js">
-    var vertexPositionAttribute <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attVertexPosition"</span>);
-        gl.<span class="function">enableVertexAttribArray</span>(vertexPositionAttribute);
-        gl.<span class="function">vertexAttribPointer</span>(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);</pre><p>Pour finir, on lance le rendu. D&#39;abord on définit la couleur de fond (un bleu tout simple). Puis on efface l&#39;écran et on dessine un triangle.</p>
+    var attI <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attI"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attI);
+        gl.<span class="function">vertexAttribPointer</span>(attI, 1, gl.FLOAT, false, block, 0);
+       <span class="keyword"> var</span> attJ <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attJ"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attJ);
+        gl.<span class="function">vertexAttribPointer</span>(attJ, 1, gl.FLOAT, false, block, 1 <span class="operator">*</span> bpe);
+       <span class="keyword"> var</span> attC <span class="operator">=</span> gl.<span class="function">getAttribLocation</span>(shaderProgram, <span class="string">"attC"</span>);
+        gl.<span class="function">enableVertexAttribArray</span>(attC);
+        gl.<span class="function">vertexAttribPointer</span>(attC, 3, gl.FLOAT, false, block, 2 <span class="operator">*</span> bpe);</pre><p>Pour finir, on lance le rendu. D&#39;abord on définit la couleur de fond (un bleu tout simple). Puis on efface l&#39;écran et on dessine un triangle.</p>
 <pre class="custom highlight js">
-    gl.<span class="function">clearColor</span>(0.0, 0.0, 1.0, 1.0);
-        gl.<span class="function">clear</span>(gl.COLOR_BUFFER_BIT <span class="operator">|</span> gl.DEPTH_BUFFER_BIT);
-        gl.<span class="function">drawArrays</span>(gl.TRIANGLE_STRIP, 0, 3);</pre><p>Vous avez pratiquement tout le code pour faire la même chose. Il ne manque que les shaders qui ont été ici remplacés par <code>GLOBAL[&#39;vertex&#39;]</code> et <code>GLOBAL[&#39;fragment&#39;]</code>. Ainsi que les fonctions utilitaires <code>getFragmentShader</code> et <code>getVertexShader</code> :</p>
+    <span class="comment">// Définir le noir (0,0,0) comme couleur d'arrière-plan.
+    </span>    gl.<span class="function">clearColor</span>(0.0, 0.0, 0.0, 1.0);
+        <span class="comment">// Effacer l'écran actuel.
+    </span>    gl.<span class="function">clear</span>(gl.COLOR_BUFFER_BIT <span class="operator">|</span> gl.DEPTH_BUFFER_BIT);
+        <span class="comment">// Lancer le dessin du triangle composé de 3 points.
+    </span>    gl.<span class="function">drawArrays</span>(gl.TRIANGLE_STRIP, 0, 3);</pre><p>Vous avez pratiquement tout le code pour faire la même chose. Il ne manque que les shaders qui ont été ici remplacés par <code>GLOBAL[&#39;vertex&#39;]</code> et <code>GLOBAL[&#39;fragment&#39;]</code>. Ainsi que les fonctions utilitaires <code>getFragmentShader</code> et <code>getVertexShader</code> :</p>
 <pre class="custom highlight js">
     function <span class="function">getShader</span>( type, gl, code ) {
        <span class="keyword"> var</span> shader <span class="operator">=</span> gl.<span class="function">createShader</span>( type );
@@ -53,37 +90,78 @@ L&#39;attribut que nous créons sera nommé <code>attVertexPosition</code>.</p>
     
        <span class="keyword"> return</span> shader;
     }
-    <span class="keyword">
+    <span class="keyword">
     function</span> <span class="function">getFragmentShader</span>( gl, code ) {
        <span class="keyword"> return</span> <span class="function">getShader</span>( gl.FRAGMENT_SHADER, gl, code );
     }
-    <span class="keyword">
+    <span class="keyword">
     function</span> <span class="function">getVertexShader</span>( gl, code ) {
        <span class="keyword"> return</span> <span class="function">getShader</span>( gl.VERTEX_SHADER, gl, code );
     }</pre><pre class="custom highlight js">
     var GLOBAL <span class="operator">=</span> {
       vertex:
-        <span class="string">"attribute vec3 attVertexPosition;"</span> <span class="operator">+</span>
+        <span class="string">"attribute float attI;"</span> <span class="operator">+</span>
+        <span class="string">"attribute float attJ;"</span> <span class="operator">+</span>
+        <span class="string">"attribute vec3 attC;"</span> <span class="operator">+</span>
+        <span class="string">"varying vec3 varColor;"</span> <span class="operator">+</span>
         <span class="string">"void main() {"</span> <span class="operator">+</span>
-        <span class="string">"  gl_Position = vec4("</span> <span class="operator">+</span>
-        <span class="string">"      attVertexPosition.x, attVertexPosition.y,"</span> <span class="operator">+</span>
-        <span class="string">"      0.0, 1.0);"</span> <span class="operator">+</span> 
+        <span class="string">"  gl_Position = vec4( attI, attJ, 0.0, 1.0 );"</span> <span class="operator">+</span>
+        <span class="string">"  varColor = attC;"</span> <span class="operator">+</span>
         <span class="string">"}"</span>,
       fragment:
+        <span class="string">"precision mediump float;"</span> <span class="operator">+</span>
+        <span class="string">"varying vec3 varColor;"</span> <span class="operator">+</span>
         <span class="string">"void main() {"</span> <span class="operator">+</span>
-        <span class="string">"  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);"</span> <span class="operator">+</span>
+        <span class="string">"  gl_FragColor = vec4(varColor.rgb, 1.0);"</span> <span class="operator">+</span>
         <span class="string">"}"</span>
     };</pre><p>Pour plus de clarté, voici les codes originaux :</p>
 <pre class="custom highlight js">
-    attribute vec3 attVertexPosition;
-    <span class="keyword">
-    void</span> <span class="function">main</span>() {
-      gl_Position <span class="operator">=</span> <span class="function">vec4</span>(
-          attVertexPosition.x, attVertexPosition.y,
-          0.0, 1.0);
+    attribute float attI;
+    attribute float attJ;
+    <span class="comment">// `vec3` est un vecteur à trois dimensions.
+    </span><span class="comment">// On peut lire les valeurs de ces dimensions
+    </span><span class="comment">// de plusieurs façons :
+    </span><span class="comment">//   * attC.r == attC.x
+    </span><span class="comment">//   * attC.g == attC.y
+    </span><span class="comment">//   * attC.b == attC.z
+    </span>attribute vec3 attC;
+    
+    <span class="comment">// Les `varying` sont des variables qu'on peut
+    </span><span class="comment">// passer du vertex shader au fragment shader.
+    </span><span class="comment">// Leurs valeurs sont interpolées entre les
+    </span><span class="comment">// vertex les plus proches.
+    </span>varying vec3 varColor;
+    
+    
+    <span class="comment">// La fonction principale d'un shader soit toujours
+    </span><span class="comment">// s'appeler `main`, n'avoir aucun argument et
+    </span><span class="comment">// ne rien retourner.
+    </span>void <span class="function">main</span>() {
+      <span class="comment">// `gl_Position` est une variable SPECIALE de WebGL.
+    </span>  <span class="comment">// Il faut obligatoirement la renseigner pour
+    </span>  <span class="comment">// définir les coordonnées du vertex résultant.
+    </span>  gl_Position <span class="operator">=</span> <span class="function">vec4</span>( attI, attJ, 0.0, 1.0 );
+      <span class="comment">// On transmet la couleur au fragment color.
+    </span>  varColor <span class="operator">=</span> attC;
     }</pre><pre class="custom highlight js">
-    void <span class="function">main</span>() {
-      gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>(1.0, 0.5, 0.0, 1.0);
+    <span class="comment">// Préciser la précision par défaut.
+    </span><span class="comment">// Une ligne qu'il est conseillé de mettre
+    </span><span class="comment">// au début de tous vos fragment shaders
+    </span><span class="comment">// pour éviter de devoir préciser la précision
+    </span><span class="comment">// à chaque déclaration de variable.
+    </span><span class="comment">// Les précisions possibles sont
+    </span><span class="comment">// lowp, mediump et highp.
+    </span>precision mediump float;
+    
+    varying vec3 varColor;
+    <span class="keyword">
+    void</span> <span class="function">main</span>() {
+      <span class="comment">// `gl_FragColor` est une variable SPECIALE de WebGL.
+    </span>  <span class="comment">// Elle permet de déterminer la couleur du fragment.
+    </span>  <span class="comment">// C'est un vecteur à 4 dimensions : rouge, vert, bleu
+    </span>  <span class="comment">// et alpha (l'opacité). Toutes les valeurs sont entre
+    </span>  <span class="comment">// 0.0 et 1.0.
+    </span>  gl_FragColor <span class="operator">=</span> <span class="function">vec4</span>(varColor.rgb, 1.0);
     }</pre><p>Basiquement, un shader est une fonction <code>void main()</code> qui doit mettre à jour des variables.</p>
 <ul>
 <li>Le <strong>vertex shader</strong> est appelé en premier pour chaque point (vertex). Il doit définir la variable <strong>gl_Position</strong> qui est un vecteur de dimension 4. Les deux premières coordonnées sont l&#39;abscisse et l&#39;ordonnée du pixel sur l&#39;écran. Mais attention ! Le système de coordonnée de l&#39;écran est particulier. Le point central est (0,0), le point supérieur droit est (+1,+1) et le point inférieur gauche est (-1,-1). Et ceci, quelque soit la taille réalle du canvas.</li>
