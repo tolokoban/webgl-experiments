@@ -1,23 +1,17 @@
+<<<<<<< HEAD
 exports.config={
     name:"webgl-experiments",
-<<<<<<< HEAD
-    description:"WebGL experiments",
-    author:"Tolokoban",
-    version:"0.0.151",
-    major:0,
-    minor:0,
-    revision:151,
-    date:new Date(2016,0,13,17,8,6)
-=======
     description:"WebGL study by tutorials",
     author:"tolokoban",
-    version:"0.0.1",
+    version:"0.0.73",
     major:0,
     minor:0,
-    revision:1,
-    date:new Date(2016,6,26,16,17,47)
->>>>>>> 8180336e782188ef8814be6153c7cb40dd451c03
+    revision:73,
+    date:new Date(2017,3,21,19,56,56)
 };
+=======
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.73\"","major":"0","minor":"0","revision":"73","date":"2017-05-18T10:39:26.000Z","consts":{}};
+>>>>>>> ed60770fef43ceb6207a072673d058559ad5436c
 var currentLang = null;
 exports.lang = function(lang) {
     if (lang === undefined) {
@@ -43,17 +37,23 @@ exports.lang = function(lang) {
 };
 exports.intl = function(words, params) {
     var dic = words[exports.lang()],
-    k = params[0],
-    txt, newTxt, i, c, lastIdx, pos;
+        k = params[0],
+        txt, newTxt, i, c, lastIdx, pos;
+    var defLang;
+    for( defLang in words ) break;
+    if( !defLang ) return k;
     if (!dic) {
-        //console.error("Missing internationalization for language : \"" + exports.lang() + "\"!");
-        return k;
+        dic = words[defLang];
+        if( !dic ) {
+            return k;
+        }
     }
     txt = dic[k];
-    if (!txt) {
-        //console.error("Missing internationalization [" + exports.lang() + "]: \"" + k + "\"!");
-        return k;
+    if( !txt ) {
+        dic = words[defLang];
+        txt = dic[k];
     }
+    if (!txt) return k;
     if (params.length > 1) {
         newTxt = "";
         lastIdx = 0;
