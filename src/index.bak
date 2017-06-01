@@ -1,0 +1,118 @@
+<page>
+# Comprendre WebGL
+
+## Introduction
+    
+__WebGL__ est une bibliothèque qui permet de faire de l'__Open GL__ sur le web.
+Et __Open GL__ est une bibliothèque qui permet d'afficher des pixels à l'écran en tirant profit de l'_architecture parallèle_ des cartes graphiques.
+
+__Open GL__ est à la fois __puissante__ et __complexe__.
+
+Commençons par ce qui prendrait trois lignes avec un canvas 2d : le dessin d'un triangle.
+
+<wdg:gl0 $width="240" $height="160" />
+
+### Un peu de théorie
+
+Basiquement, WebGL est capable de dessiner des triangles, des lignes et des points. Et c'est tout !
+Tout réside en fait dans la façon dont il dessine ces trois formes de base.
+
+Pour chaque affichage, il y a deux étapes obligatoires :
+* __La création de points__ (un point se dit __vertex__ en anglais).
+* __La création de pixels__.
+
+Par exemple, pour dessiner un triangle, il faut :
+* Créer trois points possèdant chacun 3 coordonnées : X, Y et Z.
+* Déterminer pour chaque pixel dans la région de ce triangle, sa couleur, s'il faut l'afficher, s'il faut le mélanger à l'arrière-plan, etc...
+
+
+Pour cela, WebGL met à notre disposition le __vertex shader__ et le __fragment shader__.
+
+
+Le principe est alors le suivant :
+* On définit un _point_ comme un ensemble d'attributs.
+  Par exemple, __I__, __J__, __C__ et __W__. Ces attributs n'ont aucun sens pour la carte graphique et peuvent donc avoir le nom qu'on veut et être aussi nombreux qu'on souhaite.
+* La carte graphique possède plusieurs processeurs capables d'exécuter un _vertex shader_.
+  Du coup, nos _points_ vont être transformés en _coordonnées 3D_ en parallèle.
+  Ainsi, à chaque ensemble __(I, J, C, W)__ va correspondre trois valeurs __(x, y, z)__ qui sont des coordonnées qui doivent toutes être comprises entre -1.0 et +1.0.
+* La carte graphique utilise alors les valeurs __x__ et __y__ pour déterminer la position exacte de chaque vertex sur l'écran.
+`(-1.0, -1.0)` correspond au pixel en bas à gauche et `(1.0, 1.0)` à celui en haut à droite. La coordonnée __z__ sert à définir si un point et devant ou derrière un autre.
+* Ensuite, si on lui a demandé de dessiner des triangles, il va déterminer quels sont les pixels qu'il faut afficher.
+Il va donc passer les valeurs `(x, y, z)` de chaque futur pixel au __fragment shader__ qui va retourner la couleur à utiliser.
+
+
+### Trève de bavardage, passons au code.
+
+On commence par récupérer le contexte _webgl_ d'un canvas :
+<x-code src="mod/wdg.gl0.js" section="init" />
+
+Ensuite, il faut créer un __programme de shading__.
+Il s'agit de code, ressemblant fort à du C, qui sera compilé dans la carte graphique et utilisé simultanément par ses nombreux processeurs pour mettre à jour les pixels.
+Nous reviendrons un peu plus tard sur cela.
+<x-code src="mod/wdg.gl0.js" section="shaders" />
+
+Nous allons maintenant définir les coordonnées des sommets (vertices) de notre triangle rectangle. Chaque coordonnée est exprimée en trois dimensions.
+<x-code src="mod/wdg.gl0.js" section="vertices" />
+
+Il faut ensuite déclarer un __attribut__ qui sera utilisé par les shaders.
+L'attribut que nous créons sera nommé `attVertexPosition`.
+<x-code src="mod/wdg.gl0.js" section="vertex-position" />
+
+Pour finir, on lance le rendu. D'abord on définit la couleur de fond (un bleu tout simple). Puis on efface l'écran et on dessine un triangle.
+<x-code src="mod/wdg.gl0.js" section="rendering" />
+
+Vous avez pratiquement tout le code pour faire la même chose. Il ne manque que les shaders qui ont été ici remplacés par `GLOBAL['vertex']` et `GLOBAL['fragment']`. 
+Ainsi que les fonctions utilitaires `getFragmentShader` et `getVertexShader` :
+<x-code src="mod/wdg.gl0.js" section="shader" />
+
+<x-code>
+var GLOBAL = {
+  vertex:
+    "attribute float attI;" +
+    "attribute float attJ;" +
+    "attribute vec3 attC;" +
+    "varying vec3 varColor;" +
+    "void main() {" +
+    "  gl_Position = vec4( attI, attJ, 0.0, 1.0 );" +
+    "  varColor = attC;" +
+    "}",
+  fragment:
+    "precision mediump float;" +
+    "varying vec3 varColor;" +
+    "void main() {" +
+    "  gl_FragColor = vec4(varColor.rgb, 1.0);" +
+    "}"
+};
+</x-code>
+
+Pour plus de clarté, voici les codes originaux :
+<x-code src="mod/gl0.vertex.c" />
+<x-code src="mod/gl0.fragment.c" />
+
+Basiquement, un shader est une fonction `void main()` qui doit mettre à jour des variables.
+* Le __vertex shader__ est appelé en premier pour chaque point (vertex). Il doit définir la variable __gl_Position__ qui est un vecteur de dimension 4. Les deux premières coordonnées sont l'abscisse et l'ordonnée du pixel sur l'écran. Mais attention ! Le système de coordonnée de l'écran est particulier. Le point central est (0,0), le point supérieur droit est (+1,+1) et le point inférieur gauche est (-1,-1). Et ceci, quelque soit la taille réalle du canvas.
+* Le __fragment shader__ vient après et il est appelé pour chaque pixel de l'écran. Il doit définir la couleur de ce pixel en mettant à jour la variable __gl_FragColor__ qui est un vecteur de dimension 4 : rouge, vert, bleu et opacité.
+
+## Pour aller plus loin
+
+Pour ceux qui veulent rentrer dans les détails des commandes WebGL, voici des liens vers la documentation (en anglais) des fonctions utilisée dans cette page :
+* [createProgram](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glCreateProgram.xml)
+* [attachShader](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glAttachShader.xml)
+* [linkProgram](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glLinkProgram.xml)
+* [useProgram](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glUseProgram.xml)
+* [createBuffer](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenBuffers.xml)
+* [bindBuffer](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindBuffer.xml)
+* [bufferData](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glBufferData.xml)
+* [getAttribLocation](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetAttribLocation.xml)
+* [enableVertexAttribArray](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glEnableVertexAttribArray.xml)
+* [vertexAttribPointer](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttribPointer.xml)
+* [clearColor](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glClearColor.xml)
+* [clear](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glClear.xml)
+* [drawArrays](https://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawArrays.xml)
+
+Si vous savez lire l'anglais et que vous voulez devenir un maître du langage de shading, consulter [cette documentation](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf).
+
+<hr/>
+
+* Chapitre suivant : <a href="chap1.html">Changer le système de coordonnées 2D</a>.
+</page>
