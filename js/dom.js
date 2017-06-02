@@ -1,5 +1,5 @@
-/** @module dom */require( 'dom', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- /**
+/** @module dom */require( 'dom', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+   /**
  * @module dom
  *
  * @description
@@ -11,31 +11,50 @@
  * var mod = require('dom');
  */
 require("polyfill.classList");
-var DB = require("tfw.data-binding");
 var PointerEvents = require("tfw.pointer-events");
+
+var $ = function(dom) {
+    if (typeof dom === 'string') {
+        var elem = document.getElementById( dom );
+        if (!elem) {
+            console.error( "[dom] There is no DOM element with this ID: `" + dom + "`" );
+        }
+        return elem;
+    }
+    if (!dom) {
+        debugger;
+        throw Error("`dom` is not a valid element!", dom);
+    }
+    if (typeof dom.element === 'function') return dom.element();
+    if (dom.element) return dom.element;
+    return dom;
+};
+
+module.exports = $;
 
 
 // Used to store data on the DOM element without colliding with existing attributes.
-var SYMBOL = 'dom' + Date.now();
+var SYMBOL = '@dom' + Date.now();
 
+var RX_ENTITY = /^&(#[0-9]+|[a-zA-Z0-9]+);$/;
 
-exports.tagNS = tagNS;
-exports.svgRoot = tagNS.bind( undefined, "http://www.w3.org/2000/svg", "svg", {
+$.tagNS = tagNS;
+$.svgRoot = tagNS.bind( undefined, "http://www.w3.org/2000/svg", "svg", {
     version: '1.1',
     'xmlns:svg': 'http://www.w3.org/2000/svg',
     xmlns: 'http://www.w3.org/2000/svg',
     'xmlns:xlink': 'http://www.w3.org/1999/xlink'
 });
-exports.svg = tagNS.bind( undefined, "http://www.w3.org/2000/svg" );
-exports.tag = tagNS.bind( undefined, "http://www.w3.org/1999/xhtml" );
-exports.div = tagNS.bind( undefined, "http://www.w3.org/1999/xhtml", "div" );
-exports.txt = window.document.createTextNode.bind( window.document );
-exports.textOrHtml = textOrHtml;
-exports.get = get;
+$.svg = tagNS.bind( undefined, "http://www.w3.org/2000/svg" );
+$.tag = tagNS.bind( undefined, "http://www.w3.org/1999/xhtml" );
+$.div = tagNS.bind( undefined, "http://www.w3.org/1999/xhtml", "div" );
+$.txt = window.document.createTextNode.bind( window.document );
+$.textOrHtml = textOrHtml;
+$.get = get;
 /**
  * Add a readonly `element` property to `obj` and return it.
  */
-exports.elem = elem;
+$.elem = elem;
 /**
  * Apply css rules on `element`.
  *
@@ -45,24 +64,26 @@ exports.elem = elem;
  * var $ = require('dom');
  * $.css( element, { width: '800px'. height: '600px' });
  */
-exports.css = css;
-exports.att = att;
-exports.removeAtt = removeAtt;
-exports.addClass = addClass;
-exports.hasClass = hasClass;
-exports.removeClass = removeClass;
-exports.toggleClass = toggleClass;
+$.css = css;
+$.att = att;
+$.removeAtt = removeAtt;
+$.addClass = addClass;
+$.hasClass = hasClass;
+$.removeClass = removeClass;
+$.toggleClass = toggleClass;
+$.saveStyle = saveStyle;
+$.restoreStyle = restoreStyle;
 /**
  * @param newElem {Element} - Replacement element.
  * @param oldElem {Element} - Element to replace.
  */
-exports.replace = replace;
+$.replace = replace;
 /**
  * Remove element from its parent.
  * @param element {Element} - Element to detach from its parent.
  * @return The parent element.
  */
-exports.detach = detach;
+$.detach = detach;
 /**
  * Add event handlers to one or many elements.
  *
@@ -86,13 +107,14 @@ exports.detach = detach;
  *    DOM.on( body, null );   // Do nothing, but stop propagation.
  *    DOM.on( element, { tap: function() {...} } );
  */
-exports.on = on;
+$.on = on;
+$.off = off;
 /**
  * Append all the `children` to `element`.
  * @param element
  * @param ...children
  */
-exports.add = add;
+$.add = add;
 /**
  * Add the attribute `element` and the following functions to `obj`:
  * * __css__
@@ -100,12 +122,12 @@ exports.add = add;
  * * __removeClass__
  * * __toggleClass__
  */
-exports.wrap = wrap;
+$.wrap = wrap;
 /**
  * Remove all children of the `element`.
  * @param element {Element} - Element from which remove all the children.
  */
-exports.clear = clear;
+$.clear = clear;
 
 function wrap( obj, element, nomethods ) {
     Object.defineProperty( obj, 'element', {
@@ -125,11 +147,14 @@ function wrap( obj, element, nomethods ) {
 }
 
 function replace( newElem, oldElem ) {
+    newElem = $(newElem);
+    oldElem = $(oldElem);
     oldElem.parentNode.replaceChild( newElem, oldElem );
     return newElem;
 }
 
 function css( element, styles ) {
+    element = $(element);
     var key, val;
     for( key in styles ) {
         val = styles[key];
@@ -139,6 +164,7 @@ function css( element, styles ) {
 }
 
 function att( element, attribs, value ) {
+    element = $(element);
     var key, val;
     if (typeof attribs === 'string') {
         key = attribs;
@@ -153,17 +179,32 @@ function att( element, attribs, value ) {
 }
 
 function removeAtt( element, attrib ) {
+    element = $(element);
     element.removeAttribute( attrib );
     return element;
 }
 
 function add( element ) {
+    element = $(element);
     try {
         var i, child;
         for (i = 1 ; i < arguments.length ; i++) {
             child = arguments[i];
             if( typeof child === 'string' || typeof child === 'number' ) {
-                child = document.createTextNode( child );
+                child = '' + child;
+                if( child.substr( 0, 6 ) == '<html>' ) {
+                    var html = child.substr( 6 );
+                    child = $.tag('span');
+                    child.innerHTML = html;
+                } 
+                else if( RX_ENTITY.test( child ) ) {
+                  var text = child;
+                  child = $.tag('span');
+                  child.innerHTML = text;
+                }
+                else {
+                    child = document.createTextNode( child );
+                }
             }
             else if( typeof child.element === 'function' ) {
                 // Backward compatibility with Widgets.
@@ -182,7 +223,22 @@ function add( element ) {
     }
 }
 
-function on( element, slots, capture ) {
+function off( element ) {
+    if( Array.isArray( element ) ) {
+        element.forEach(function ( elem ) {
+            off( elem );
+        });
+        return element;
+    }
+
+    if( typeof element[SYMBOL] === 'undefined' ) return element;
+    var pe = element[SYMBOL].events;
+    if( typeof pe  === 'undefined' ) return element;
+    pe.off();
+    delete element[SYMBOL].events;
+}
+
+function on( element, slots ) {
     // If only a function is passed, we consider this is a Tap event.
     if( typeof slots === 'function' || slots === null ) slots = { tap: slots };
 
@@ -193,8 +249,10 @@ function on( element, slots, capture ) {
         return element;
     }
 
-    if( typeof element[SYMBOL] === 'undefined' ) {
-        element[SYMBOL] = new PointerEvents( element );
+    element = $(element);
+    if( typeof element[SYMBOL] === 'undefined' ) element[SYMBOL] = {};
+    if( typeof element[SYMBOL].events === 'undefined' ) {
+        element[SYMBOL].events = new PointerEvents( element );
     }
 
     var key, val, preview;
@@ -209,7 +267,7 @@ function on( element, slots, capture ) {
         if (key == 'keydown' || key == 'keyup') {
             element.addEventListener( key, val, preview );
         } else {
-            element[SYMBOL].on( key, val, preview );
+            element[SYMBOL].events.on( key, val, preview );
         }
     }
 
@@ -223,13 +281,20 @@ function tagNS( ns, name ) {
         for (i = 2 ; i < arguments.length ; i++) {
             arg = arguments[i];
             if( Array.isArray(arg) ) {
-                // Array are for children.
+                // Arrays are for children.
                 arg.forEach(function (child) {
                     switch( typeof child ) {
                     case 'string':
                     case 'number':
                     case 'boolean':
-                        child = document.createTextNode( "" + child );
+                        child = '' + child;
+                        if( child.substr( 0, 6 ) == '<html>' ) {
+                            var html = child.substr( 6 );
+                            child = $.tag('span');
+                            child.innerHTML = html;
+                        } else {
+                            child = document.createTextNode( child );
+                        }
                         break;
                     }
                     add( e, child );
@@ -274,12 +339,14 @@ function addClass(elem) {
         });
         return elem;
     }
+    elem = $( elem );
     args.forEach(function (className) {
         if (typeof className !== 'string') return;
         className = className.trim();
         if( className.length == 0 ) return;
         try {
-            elem.classList.add( className );
+            if( elem.classList )
+                elem.classList.add( className );
         }
         catch( ex ) {
             console.error( "[dom.addClass] Invalid class name: ", className );
@@ -291,6 +358,8 @@ function addClass(elem) {
 
 
 function hasClass( elem, className ) {
+    elem = $( elem );
+    if( !elem.classList ) return false;
     return elem.classList.contains( className );
 }
 
@@ -306,10 +375,12 @@ function removeClass(elem) {
         });
         return elem;
     }
+    elem = $( elem );
     args.forEach(function (className) {
         if (typeof className !== 'string') return;
         try {
-            elem.classList.remove( className );
+            if( elem.classList )
+                elem.classList.remove( className );
         }
         catch( ex ) {
             console.error( "[dom.removeClass] Invalid class name: ", className );
@@ -339,6 +410,7 @@ function clear( element ) {
     // En effet, le code simplifié a des conséquences inattendues dans IE9 et IE10 au moins.
     // Le bug des markers qui disparaissaients sur les cartes de Trail-Passion 4 a été corrigé
     // avec cette modification.
+    element = $(element);
     var e = element;
     while(e.firstChild){
         e.removeChild(e.firstChild);
@@ -351,6 +423,7 @@ function clear( element ) {
 }
 
 function get( element, query ) {
+    element = $(element);
     if( typeof query === 'undefined' ) {
         query = element;
         element = window.document;
@@ -359,6 +432,7 @@ function get( element, query ) {
 }
 
 function detach( element ) {
+    element = $(element);
     var parent = element.parentElement;
     if( !parent ) return parent;
     parent.removeChild( element );
@@ -378,29 +452,17 @@ function elem( target ) {
         e = args[0];
         addClass( e, 'dom', 'custom' );
     } else {
-        e = exports.tag.apply( exports, args );
+        e = $.tag.apply( $, args );
     }
     Object.defineProperty( target, 'element', {
         value: e, writable: false, configurable: false, enumerable: true
-    });
-    DB.propBoolean(target, 'wide')(function(v) {
-        if (v) {
-            addClass(e, 'wide');
-        } else {
-            removeClass(e, 'wide');
-        }
-    });
-    DB.propBoolean(target, 'visible')(function(v) {
-        if (v) {
-            removeClass(e, 'hide');
-        } else {
-            addClass(e, 'hide');
-        }
     });
     return e;
 }
 
 function textOrHtml( element, content ) {
+    if( typeof content === 'undefined' ) content = '';
+    if (content === null) content = '';
     if (typeof content !== 'string') content = JSON.stringify( content );
     if (content.substr(0, 6) == '<html>') {
         element.innerHTML = content.substr(6);
@@ -410,15 +472,42 @@ function textOrHtml( element, content ) {
     return element;
 }
 
+function saveStyle( elements ) {
+    if( !Array.isArray( elements ) ) return saveStyle( Array.prototype.slice.call( arguments ) );
+    elements.forEach(function (elem) {
+        elem = $( elem );
+        if( typeof elem[SYMBOL] === 'undefined' ) elem[SYMBOL] = {};
+        if( !Array.isArray( elem[SYMBOL].style ) ) elem[SYMBOL].style = [];
+        elem[SYMBOL].style.push( JSON.stringify( elem.style ) );
+    });
+}
 
- 
+function restoreStyle( elements ) {
+    if( !Array.isArray( elements ) ) return restoreStyle( Array.prototype.slice.call( arguments ) );
+    elements.forEach(function (elem) {
+        elem = $( elem );
+        if( typeof elem[SYMBOL] === 'undefined' || !Array.isArray( elem[SYMBOL].style ) ) throw Error(
+            "[dom.restoreStyle] `saveStyle()` has never been used on this element!");
+        if( elem[SYMBOL].style.length == 0 ) throw Error(
+            "[dom.restoreStyle] more `restore` than `save`!");
+        var styles = JSON.parse( elem[SYMBOL].style.pop() );
+        var k, v;
+        for( k in styles ) {
+            v = styles[k];
+            if( typeof v !== 'undefined' ) {
+                elem.style[k] = v;
+            }
+        }
+    });
+}
+
+
+  
 module.exports._ = _;
 /**
  * @module dom
  * @see module:$
- * @see module:dom
  * @see module:polyfill.classList
- * @see module:tfw.data-binding
  * @see module:tfw.pointer-events
 
  */

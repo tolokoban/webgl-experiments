@@ -8,7 +8,7 @@
 
  **********************************************************************/
 
-var require = function() {
+window.require = function() {
     var modules = {};
     var definitions = {};
     var nodejs_require = typeof window.require === 'function' ? window.require : null;
@@ -37,7 +37,7 @@ var require = function() {
         if (typeof mod === 'undefined') {
             mod = {exports: {}};
             var exports = mod.exports;
-            body(exports, mod);
+            body(f, mod, exports);
             modules[id] = mod.exports;
             mod = mod.exports;
             //console.log("Module initialized: " + id);
@@ -60,9 +60,20 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.test71', 'wdg.test', {
-            width: "640",
-            height: "480"})
+        W('wdg.article49', 'wdg.article', {"content": [
+          W({
+              elem: "h1",
+              attr: {"id": "test"},
+              children: ["Test"]}),
+          W({
+              elem: "pre",
+              children: [W({
+                  elem: "code",
+                  children: [
+                                        W('wdg.test50', 'wdg.test', {
+                      width: "640",
+                      height: "480"}),
+                    "\n"]})]})]})
 
     }
 );

@@ -1,5 +1,5 @@
-/** @module tfw.webgl */require( 'tfw.webgl', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- var BPE = (new Float32Array()).BYTES_PER_ELEMENT;
+/** @module tfw.webgl */require( 'tfw.webgl', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+    var BPE = (new Float32Array()).BYTES_PER_ELEMENT;
 
 
 function Webgl(canvas) {
@@ -196,7 +196,6 @@ module.exports._ = _;
 /**
  * @module tfw.webgl
  * @see module:$
- * @see module:tfw.webgl
 
  */
 });

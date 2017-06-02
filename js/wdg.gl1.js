@@ -1,5 +1,8 @@
-/** @module wdg.gl1 */require( 'wdg.gl1', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- "use strict";
+/** @module wdg.gl1 */require( 'wdg.gl1', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec2 attVertexPosition;\n\nuniform float uniWidth;\nuniform float uniHeight;\n\nvoid main() {\n  float x = attVertexPosition.x;\n  float y = attVertexPosition.y;\n\n  x = (2.0 * x / uniWidth) - 1.0;\n  y = 1.0 - (2.0 * y / uniHeight);\n\n  gl_Position = vec4( x, y, 0.0, 1.0 );\n}\n",
+  "fragment": "void main() {\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\n}\n"};
+  "use strict";
 
 var $ = require("dom");
 var DB = require("tfw.data-binding");
@@ -27,8 +30,7 @@ var WdgGl1 = function(opts) {
 
 function start( canvas ) {
     // #(init)
-    var gl = canvas.getContext("webgl")
-            || canvas.getContext("experimental-webgl");
+    var gl = canvas.getContext("webgl");
     // #(init)
 
     // #(shaders)
@@ -45,10 +47,11 @@ function start( canvas ) {
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-            20, 20, 0,
-            120, 20, 0,
-            20, 120, 0,
-            120, 120, 0
+            // x, y (4 points)
+            20, 20,
+            120, 20,
+            20, 120,
+            120, 120
         ]),
         gl.STATIC_DRAW
     );
@@ -57,7 +60,7 @@ function start( canvas ) {
     // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
-    gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
 
     // #(canvas-size)
@@ -106,17 +109,13 @@ function getVertexShader( gl, code ) {
 }
 
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\n\nuniform float uniWidth;\nuniform float uniHeight;\n\nvoid main() {\n  float x = attVertexPosition.x;\n  float y = attVertexPosition.y;\n\n  x = (2.0 * x / uniWidth) - 1.0;\n  y = 1.0 - (2.0 * y / uniHeight);\n\n  gl_Position = vec4( x, y, 0.0, 1.0 );\n}\n",
-  "fragment": "void main() {\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\n}\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.gl1
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.gl1
 
  */
 });

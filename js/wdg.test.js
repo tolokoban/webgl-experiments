@@ -1,5 +1,8 @@
-/** @module wdg.test */require( 'wdg.test', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- // https://www.opengl.org/wiki/Primitive#Point_primitives
+/** @module wdg.test */require( 'wdg.test', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec3 attVertexPosition;\n\nvarying vec4 attPosition;\n\nvoid main() {\n  gl_Position = vec4( attVertexPosition.xyz, 1.0 );\n  gl_PointSize = 250.0\n    + (attVertexPosition.z - 1.0) * 120.0;\n  attPosition = gl_Position;\n}\n",
+  "fragment": "precision mediump float;\n\nvarying vec4 attPosition;\n\nvoid main() {\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  float r = x*x + y*y;\n\n  if (r > 0.25) {\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\n  } else if (r > 0.24) {\n    gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );\n  } else {\n    gl_FragColor = vec4( gl_PointCoord.y, gl_PointCoord.x, 0.0, 1.0 );\n  }\n}\n"};
+  // https://www.opengl.org/wiki/Primitive#Point_primitives
 
 "use strict";
 
@@ -137,17 +140,13 @@ function getVertexShader( gl, code ) {
 // #(shader)
 
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\n\nvarying vec4 attPosition;\n\nvoid main() {\n  gl_Position = vec4( attVertexPosition.xyz, 1.0 );\n  gl_PointSize = 250.0\n    + (attVertexPosition.z - 1.0) * 120.0;\n  attPosition = gl_Position;\n}\n",
-  "fragment": "precision mediump float;\n\nvarying vec4 attPosition;\n\nvoid main() {\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  float r = x*x + y*y;\n\n  if (r > 0.25) {\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\n  } else if (r > 0.24) {\n    gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );\n  } else {\n    gl_FragColor = vec4( gl_PointCoord.y, gl_PointCoord.x, 0.0, 1.0 );\n  }\n}\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.test
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.test
 
  */
 });
