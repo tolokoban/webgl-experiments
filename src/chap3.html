@@ -1,20 +1,19 @@
 <page>
-<style>
- article > * {
-     display: inline-block;
-     vertical-align: top;
- }
-</style>
-    
-# Textures procédurales
-
-Le orange sur le bleu est très ceillant, je vous le concède, mais serait-il possible de changer de couleur, voire d'avoir différentes couleurs sur un même polygône ?
+Le orange sur le bleu est très ceillant, je vous le concède,
+mais serait-il possible de changer de couleur,
+voire d'avoir différentes couleurs sur un même polygône ?
 
 La réponse est oui, si vous utilisez votre _fragment shader_ avec astuce.
 
-Il est possible de faire tout ce que votre imagination (et Open GL, soyons honnêtes) permet. Dans les exemples ci-dessous, nous déterminons la couleur en fonction des coordonnées 2D du pixel à afficher.
 
-Ces coordonnées sont interpolées à partir des coordonnées des vertices. Il faut donc que le _vertex shader_ déclare une variale de type __varying__ pour que le _fragment shader_ puisse l'utiliser.
+Il est possible de faire tout ce que votre imagination (et Open GL, soyons honnêtes) permet.
+Dans les exemples ci-dessous, nous déterminons la couleur en fonction des coordonnées 2D du pixel à afficher.
+
+Ces coordonnées sont interpolées à partir des coordonnées des vertices.
+Il faut donc que le _vertex shader_ déclare une variable de type __varying__
+pour que le _fragment shader_ puisse l'utiliser.
+
+
 Cela se fait ainsi :
 <x-code>
 varying lowp vec3 varVertexPosition;
@@ -27,40 +26,21 @@ void main() {
 
 Voici maintenant des exemples de ce que l'on peut obtenir.
 
-<article>
-    <wdg:gl3 $width="300" $height="300" $fragment="a" />
-    <div>
-        <b>Le pyjama rayé</b>
-<x-code src="mod/gl3.fragment-a.c" />
-    </div>
-</article>
+<wdg:gl3 $width="300" $height="300" $fragment="a" />
+<wdg:gl3 $width="300" $height="300" $fragment="b" />
+<wdg:gl3 $width="300" $height="300" $fragment="c" />
 
-<article>
-    <wdg:gl3 $width="300" $height="300" $fragment="b" />
-    <div>
-        <b>La vague colorée</b>
-<x-code src="mod/gl3.fragment-b.c" />
-    </div>
-</article>
-
-<article>
-    <wdg:gl3 $width="300" $height="300" $fragment="c" />
-    <div>
-        <b>Le tramage</b>
-<x-code src="mod/gl3.fragment-c.c" />
-    </div>
-</article>
+<ex src="mod/gl3.fragment-a.c" lang="glsl" label="Le pyjama rayé"/>
+<ex src="mod/gl3.fragment-b.c" lang="glsl" label="La vague colorée"/>
+<ex src="mod/gl3.fragment-c.c" lang="glsl" label="Le tramage"/>
 
 Voici quelques fonctions spécifiques au language de shading :
 * __mod( a, b )__ : retourne le reste de la division euclidienne de __a__ par __b__.
-* __clamp( a, min, max )__ : si __a__ < __min__, retourne __min__. Si __a__ > __max__, retourne __max__. Dans tous les autres cas, retourne __a__.
-
+* __clamp( a, min, max )__ : si __a__ < __min__, retourne __min__. Si __a__ > __max__, retourne __max__.
+Dans tous les autres cas, retourne __a__.
 
 <hr/>
 
-
-* Chapitre précédent : <a href="chap2.html">Vivent les polygones</a>.
-* Chapitre suivant : <a href="chap4.html">Animations</a>.
-
+<ex label="Coordonnées de l'étoile à 7 branches" src="mod/wdg.gl3" section="vertices"/>
 
 </page>

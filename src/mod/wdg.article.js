@@ -1,7 +1,17 @@
 "use strict";
 
 var PAGES = {
-  index: "Comprendre WebGL"
+  $1: "Les bases",
+  index: "Comprendre WebGL",
+  chap1: "Dessiner un carré",
+  chap2: "Dessiner un polygône",
+  chap3: "Textures procédurales",
+  chap4: "Textures animées",
+  chap5: "Utiliser des images",
+  $999: "脌 trier...",
+  chap6: "Chap-6",
+  chap7: "Chap-7",
+  chap8: "Chap-8"
 };
 
 require("font.josefin");
@@ -22,10 +32,10 @@ var Article = function( opts ) {
 console.info("page=", page);
 
   var header = $.tag('header', 'theme-elevation-12', [PAGES[page]]);
-  var nav = $.tag('nav', 'theme-elevation-8');
+  var nav = createNav();
   var body = $.tag('article');
   var elem = $.elem( this, 'div', 'article', [body, nav, header] );
-
+  
   DB.prop( this, 'content' )( function( v ) {
     $.clear( body );
     if (!Array.isArray( v )) {
@@ -42,3 +52,20 @@ console.info("page=", page);
 };
 
 module.exports = Article;
+
+
+function createNav() {
+  var nav = $.tag('nav', 'theme-elevation-8');
+  var key, val;
+  for( key in PAGES) {
+    val = PAGES[key];
+    if ( key.charAt(0) === '$' ) {
+      // This is a title.
+      $.add( nav, $.tag('h1', [val]) );
+    }
+    else {
+      $.add( nav, $.tag('a', [val], { href: key + ".html"}) );
+    }
+  }
+  return nav;
+}

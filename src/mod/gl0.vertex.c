@@ -1,4 +1,4 @@
-// Temp en millisecondes.
+// Temps en millisecondes.
 uniform float uniTime;
 
 // Angle en degrés.

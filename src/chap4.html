@@ -1,59 +1,48 @@
 <page>
-<style>
- article > * {
-     display: inline-block;
-     vertical-align: top;
- }
-</style>
-    
-# Animations
-
-Jusqu'à présent, nous avons créer des images statiques. Pour faire des animations, il suffit de créer de nombreuses images statiques, plusieurs fois par secondes. L'idéal étant d'atteindre les 60 images par seconde.
+Comme nous l'avons vu dans _Comprendre WebGL_, pour faire des animations,
+il suffit de créer de nombreuses images statiques, plusieurs fois par secondes.
+L'idéal étant d'atteindre les 60 images par seconde.
 
 Pour cela, nous allons utiliser la fonction Javascript suivantes : __window.requestAnimationFrame( drawingFunction )__.
 
-Cette dernière demande au système d'exécuter la fonction __drawingFunction()__ dès le prochain rafraichissement de l'écran. Il faut noter deux choses : 
-* __drawingFunction()__ reçoit un argument unique qui correspond au nombre de millisecondes écoulées depuis le 1er janvier 1970.
+Cette dernière demande au système d'exécuter la fonction __drawingFunction()__ 
+dès le prochain rafraichissement de l'écran. Il faut noter deux choses : 
+* __drawingFunction()__ reçoit un argument unique qui correspond au nombre de
+millisecondes écoulées depuis le 1er janvier 1970.
 * __drawingFunction()__ n'est appelée que si le canvas est visible à l'écran.
 
 
-<wdg:gl4 $width="640" $height="240" />
+<wdg:gl4 $width="880" $height="480" />
 
-Voici le code complet de cette animation :
-
-<x-code src="mod/wdg.gl4" section="code" />
+<ex label="Voici le code complet de cette animation" src="mod/wdg.gl4" section="code" />
 
 Trois remarques importantes à ce stade :
-* Les nombre litéraux de type _float_ doivent toujours avoir une partie décimale. Par exemple, n'écrivez pas `if (x < 0)`, mais plutôt `if (x < 0.0)`.
+* Les nombre litéraux de type _float_ doivent toujours avoir une partie décimale.
+Par exemple, n'écrivez pas `if (x < 0)`, mais plutôt `if (x < 0.0)`.
 * Il faut spécifier les valeurs des _uniforms_ à chaque fois qu'on dessine.
-* Il n'est pas possible d'utiliser le même _uniform_ dans le vertex shader et le segment shader. C'est pour cela qu'on utilise __uniTimeV__ et __uniTimeS__.
+* Il n'est pas possible d'utiliser le même _uniform_ dans le vertex shader et le
+segment shader. C'est pour cela qu'on utilise __uniTimeV__ et __uniTimeS__.
 
 
 Voici le code du __vertex shader__ qui modifie les coordonnées de notre quadrilatère en fonction du temps :
-<x-code src="mod/gl4.vertex.c" />
+<ex label="Vertex Shader" src="mod/gl4.vertex.c" lang="glsl"/>
 
 Voici le code du __fragment shader__ qui donne cet effet de vagues :
-<x-code src="mod/gl4.fragment-a.c" />
+<ex label="Fragment Shader" src="mod/gl4.fragment-a.c" lang="glsl"/>
 
 
-## Faites vos essais
+# Faites vos essais
 
-La plupart du temps, la mise au point d'un shader se fait de façon empirique. On change un paramètre et on regarde ce que ça donne. Mais cela peut être fastidieux. Heureusement, Firefox nous permet de modifier en temps réel le code d'un shader et de voir le résultat sans recharger la page.
+La plupart du temps, la mise au point d'un shader se fait de façon empirique.
+On change un paramètre et on regarde ce que ça donne. Mais cela peut être fastidieux.
+Heureusement, Firefox nous permet de modifier en temps réel le code d'un shader
+et de voir le résultat sans recharger la page.
 
 Pour cela, ouvrez la console de debug en appuyant sur __F12__.
 * Parmi la foule d'icônes que vous apercevez, cliquez sur l'engrenage. 
 * Dans la section __Outils de dévelopement par défaut__, sélectionnez l'option __Editeur de shaders__.
 * Un nouvel onglet apparaît avec la liste des programmes de shading disponibles dans la page.
 
-Je vous conseille d'essayer de modifier quelques paramètres du shader des vagues pour vous familiariser avec l'outil et avec le GLSL (language des shaders).
-
-
-
-<hr/>
-
-
-* Chapitre précédent : <a href="chap3.html">Textures procédurales</a>.
-* Chapitre suivant : <a href="chap5.html">Textures bitmaps</a>.
-
-
+Je vous conseille d'essayer de modifier quelques paramètres du shader des vagues
+pour vous familiariser avec l'outil et avec le GLSL (language des shaders).
 </page>

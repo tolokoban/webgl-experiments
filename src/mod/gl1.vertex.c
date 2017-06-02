@@ -1,4 +1,4 @@
-attribute vec3 attVertexPosition;
+attribute vec2 attVertexPosition;
 
 uniform float uniWidth;
 uniform float uniHeight;

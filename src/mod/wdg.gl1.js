@@ -26,8 +26,7 @@ var WdgGl1 = function(opts) {
 
 function start( canvas ) {
     // #(init)
-    var gl = canvas.getContext("webgl")
-            || canvas.getContext("experimental-webgl");
+    var gl = canvas.getContext("webgl");
     // #(init)
 
     // #(shaders)
@@ -44,10 +43,11 @@ function start( canvas ) {
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-            20, 20, 0,
-            120, 20, 0,
-            20, 120, 0,
-            120, 120, 0
+            // x, y (4 points)
+            20, 20,
+            120, 20,
+            20, 120,
+            120, 120
         ]),
         gl.STATIC_DRAW
     );
@@ -56,7 +56,7 @@ function start( canvas ) {
     // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
-    gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
 
     // #(canvas-size)

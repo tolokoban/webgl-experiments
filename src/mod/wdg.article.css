@@ -61,3 +61,27 @@ div.article > article h4,
 div.article > article h5 {
   clear: both;
 }
+
+div.article > nav > h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+div.article > nav > a,
+div.article > nav > a:visited {
+  display: block;
+  color: maroon;
+  text-decoration: none;
+}
+
+div.article > nav > a:hover {
+  text-decoration: underline;
+}
+
+div.article > article canvas {
+  background: #fff;
+  margin: 4px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0,0,0,.5);
+}

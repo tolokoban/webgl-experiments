@@ -1,36 +1,31 @@
-<page title='webgl-experiments'>
-# Vivent les polygones
+<page>
+Il est possible de créer des polygônes de n'importe quelle forme.
+Ces derniers seront toujours constitués de triangles dont les sommets seront pris dans un tableau.
+Mais à partir de cet unique tableau, il existe plusieurs façons de dessiner nos triangles.
 
-## Polygones réguliers
-    
-<x-loop $size="3;5;13;500">
+<x-loop $size="3;5;13;100">
     <center style="margin: 0; padding: 0; display: inline-block">
         <p><$size/> sommets</p>
-        <tag:x-widget name="wdg.gl2">
+        <tag:x-wdg name="wdg.gl2">
             <att:$width>200</att:$width>
             <att:$height>200</att:$height>
             <att:$size><$size/></att:$size>
-        </tag:x-widget>
+        </tag:x-wdg>
     </center>
 </x-loop>
 
-## Polygones irréguliers
-
-<x-loop $size="3;5;13;500">
+<x-loop $size="3;5;13;100">
     <center style="margin: 0; padding: 0; display: inline-block">
         <p><$size/> sommets</p>
-        <tag:x-widget name="wdg.gl2">
+        <tag:x-wdg name="wdg.gl2">
             <att:$width>200</att:$width>
             <att:$height>200</att:$height>
             <att:$size><$size/></att:$size>
             <att:$regular>false</att:$regular>
-        </tag:x-widget>
+        </tag:x-wdg>
     </center>
 </x-loop>
 
-<hr/>
-
-Il est possible de créer des polygônes de n'importe quelle forme. Ces derniers seront toujours constitués de triangles dont les sommets seront pris dans un tableau. Mais à partir de cet unique tableau, il existe plusieurs façons de dessiner nos triangles.
 
 Regardons de près les arguments de la fonction `drawArrays( mode, first, count )`.
 * __first__ : index du premier point. Dans un tableau, le premier point a l'index 0.
@@ -41,7 +36,8 @@ Regardons de près les arguments de la fonction `drawArrays( mode, first, count 
   * __gl.LINE_LOOP__ : tracer une ligne qui passe par chaque point, mais ajoute un segment entre le dernier et le premier point, formant ainsi une boucle.
   * __gl.LINES__ : Prend deux points et trace un segment. Puis on continue ainsi tant qu'il reste au moins deux points. Cela permet de créer des lignes disjointes.
   * __gl.TRIANGLE_STRIP__ : pour les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.
-  * __gl.TRIANGLE_FAN__ : pour les points [A, B, C, D, E], on dessinera 3 triangles : ABC, ACD, ADE. On penser à un éventail.
+  * __gl.TRIANGLE_FAN__ : pour les points [A, B, C, D, E], on dessinera 3 triangles : ABC, ACD, ADE. 
+  On peut penser à un éventail.
   * __gl.TRAIANGLES__ : dessine des triangles qui peuvent être disjoints. pour les points [A, B, C, D, E, F], on dessinera 2 triangles : ABC, DEF.
 
 Et, bien sûr, rien ne vous empêche d'enchaîner les appels :
@@ -51,11 +47,4 @@ gl.drawArrays(gl.TRIANGLES, 8, 38);
 gl.drawArrays(gl.LINE_LOOP, 45, 53);
 ...
 </x-code>
-
-<hr/>
-
-* Chapitre précédent : <a href="chap1.html">Changer le système de coordonnées 2D</a>.
-* Chapitre suivant : <a href="chap3.html">Textures procédurales</a>.
-
-
 </page>

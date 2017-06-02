@@ -49,17 +49,21 @@ function start( canvas ) {
     gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
     var W = canvas.width;
     var H = canvas.height;
-    var vertices = [W / 2, H / 2, 0];
-    var n = 99;
-    var radius = Math.min(W, H) * .45;
+    // Placer le point central de l'éventail.
+    var vertices = [
+      W / 2,
+      H / 2
+    ];
+    // Définir le nombre de points.
+    var n = 127;
+    var radius = Math.min(W, H) * 0.49;
     var r;
     var ang;
     for (var i=0; i<=n; i++) {
         ang = 2 * Math.PI * i / n;
-        r = radius * (.9 + .1 * Math.cos(ang * 7));
+        r = radius * (0.8 + 0.2 * Math.cos(ang * 7));
         vertices.push( W / 2 + r * Math.cos( ang ) );
         vertices.push( H / 2 + r * Math.sin( ang ) );
-        vertices.push( 0 );
     }
     gl.bufferData(
         gl.ARRAY_BUFFER,
@@ -72,7 +76,7 @@ function start( canvas ) {
     // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
-    gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
 
     // #(canvas-size)
