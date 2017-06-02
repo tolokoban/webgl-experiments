@@ -59,11 +59,7 @@ ici, nous définissons 4 attributs pour chacun de nos 3 points :
 La fonction qui utilise ces attributs pour retourner les coordonnées du point
 s'appelle un __vertex shader__.
 
-<wdg:showhide $value="false" $simple="true" $label="Voici le code de notre vertex shader.">
-  <content>
-    <x-code src="mod/gl0.vertex.c" lang="glsl"/>
-  </content>
-</wdg:showhide>
+<ex label="Voici le code de notre vertex shader" src="mod/gl0.vertex.c" lang="glsl"/>
 
 Nous reviendrons sur les détails plus tard (notemment en ce qui concerne les lignes
 `uniform float uniTime;` et `varying vec3 varColor;`).
@@ -132,11 +128,7 @@ pixels à mettre à jour.
 Pour connaitre la couleur d'un pixel ou pour savoir s'il faut ne pas le dessiner,
 il va faire appel à une autre code GLSL : le __fragment shader__.
 
-<wdg:showhide $value="false" $simple="true" $label="Voici le code de notre fragment shader.">
-  <content>
-    <x-code src="mod/gl0.fragment.c" lang="glsl"/>
-  </content>
-</wdg:showhide>
+<ex label="Voici le code de notre fragment shader" src="mod/gl0.fragment.c" lang="glsl"/>
 
 Il est très similaire au vertex shader. Il varie surtout par ses entrées/sorties.
 
@@ -178,11 +170,7 @@ Enfin, il faut aussi transmettre et compiler les GLSL des vertex et fragment sha
 Pour cela, on les regroupe dans un programme comme ceci :
 <x-code src="mod/wdg.gl0.js" section="shaders" />
 
-<wdg:showhide $value="false" $simple="true" $label="Fonctions utilitaires.">
-  <content>
-    <x-code src="mod/wdg.gl0.js" section="shader"/>
-  </content>
-</wdg:showhide>
+<ex label="Fonctions utilitaires" src="mod/wdg.gl0.js" section="shader"/>
 
 
 # L'animation
@@ -200,10 +188,16 @@ permet de définir la valeur de l'uniform.
 
 # Conclusion
 
-<wdg:showhide $value="false" $simple="true" $label="Le code complet dans l'ordre.">
-  <content>
-    <x-code src="mod/wdg.gl0.js" section="code"/>
-  </content>
-</wdg:showhide>
+Il est important de bien comprendre ce chapitre avant de passer à la suite.
+
+<ex label="Le code complet dans l'ordre" src="mod/wdg.gl0.js" section="code"/>
+<ex label="Fonctions utilitaires" src="mod/wdg.gl0.js" section="shader"/>
+
+Pour en être sûr, faites des exercices.
+Par exemple, essayez de partir de rien et d'écrire le code qui permet de dessiner
+une petite maison bleu avec un toît rouge (en fait, juste un carré bleu surmonté 
+d'un triangle rouge). Bonne chance !
+
+
 
 </page>
