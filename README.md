@@ -7,4 +7,4 @@
 * __[Raytracing in a shader](https://github.com/tolokoban/demo-raytracing-shader)__: Same think with a __fragment shader__. Still no 3D object: just a unique plane facing the camera.
 * __[Taquin 3D](https://github.com/tolokoban/taquin-3d)__: Little phone game written in HTML5 with ThreeJS.
 
-There is also a pure WebGL [tutorial](http://tolokoban.github.io/webgl-experiments) if you can read french.
+There is also a pure WebGL [tutorial](http://tolokoban.github.io/webgl-experiments/index.html) if you can read french.
