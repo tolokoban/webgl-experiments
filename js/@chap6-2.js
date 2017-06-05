@@ -62,20 +62,181 @@ addListener(
         var W = require('x-widget');
         W('wdg.article33', 'wdg.article', {"content": [
           W({
-              elem: "h1",
-              attr: {"id": "un-point-c-est-tout"},
+              elem: "p",
               children: [
-                "Un point c",
+                "  ",
+                                W('wdg.flex34', 'wdg.flex', {"content": [
+                  W({
+                      elem: "center",
+                      children: [
+                        "\n        ",
+                        W({
+                          elem: "div",
+                          children: [
+                            W({
+                              elem: "b",
+                              children: ["Sans"]}),
+                            " tri Javascript"]}),
+                        "\n        ",
+                                                W('wdg.gl6-235', 'wdg.gl6-2', {
+                          width: "420",
+                          height: "420"}),
+                        "\n      "]}),
+                  W({
+                      elem: "center",
+                      children: [
+                        "\n        ",
+                        W({
+                          elem: "div",
+                          children: [
+                            W({
+                              elem: "b",
+                              children: ["Avec"]}),
+                            " tri Javascript"]}),
+                        "\n        ",
+                                                W('wdg.gl6-236', 'wdg.gl6-2', {
+                          width: "420",
+                          height: "420",
+                          sort: "true"}),
+                        "\n    "]})]})]}),
+          W({
+              elem: "p",
+              children: ["La semi-transparence apporte son lot de désagréments. Comparez attentivement\nles deux animations ci-dessus et essayez de comprendre pourquoi celle de gauche\nne donne pas le résultat attendu (laissez se faire plusieurs rotations si vous\nne voyez pas tout de suite le problème)."]}),
+          W({
+              elem: "p",
+              children: [
+                "Les cercles les plus proches semblent bien cacher les cercles les plus éloignés,\npar moment, ",
+                W({
+                  elem: "strong",
+                  children: ["certains perdent leur transparence"]}),
+                " !"]}),
+          W({
+              elem: "p",
+              children: [
+                "Pour savoir ce qu",
                 "&#39;",
-                "est tout"]}),
+                "il se passe, il faut d",
+                "&#39;",
+                "abord comprendre la semi-transparence.\nQuand un pixel doit être dessiné sur l",
+                "&#39;",
+                "écran, il peut se mélanger au pixel déjà\nexistant. Ce mécanisme s",
+                "&#39;",
+                "appelle le ",
+                W({
+                  elem: "strong",
+                  children: ["blending"]}),
+                " et certaines fonctions de WebGL\npermettent de contrôler comme ce mixage opère."]}),
           W({
               elem: "p",
-              children: [                W('wdg.gl6-234', 'wdg.gl6-2', {
-                  width: "480",
-                  height: "480"})]}),
+              children: [
+                "Voici le code que nous utilisons pour activer le blending :\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["enable"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["BLEND"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["blendFunc"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["SRC_ALPHA"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["ONE_MINUS_SRC_ALPHA"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    " "]})]}),
           W({
               elem: "p",
-              children: ["Bien, il nous faut donc trier nos données de sorte à afficher les sphères les plus lointaines en premier.\nSeulement ça semble un peu compliqué puisque nos données ont cette forme :"]}),
+              children: [
+                "On commence par l",
+                "&#39;",
+                "activer, puis on choisit son ",
+                W({
+                  elem: "a",
+                  attr: {"href": "https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/blendFunc"},
+                  children: ["mode opératoire"]}),
+                ".\nNous entrerons plus dans le détail au chapitre ",
+                W({
+                  elem: "strong",
+                  children: ["particules"]}),
+                "."]}),
+          W({
+              elem: "p",
+              children: [
+                "Le problème est que si nous dessinons le pixel d",
+                "&#39;",
+                "un cercle proche, il va se combiner\ncorrectement avec l",
+                "&#39;",
+                "arrière-plan, mais il va aussi mettre à jour le z-buffer,\nempêchant ainsi tout pixel d",
+                "&#39;",
+                "un cercle plus distant de s",
+                "&#39;",
+                "afficher."]}),
+          W({
+              elem: "p",
+              children: [
+                "La seule solution consiste à afficher les cercles dans le bon ordre : c",
+                "&#39;",
+                "est-à-dire\ndu plus éloigné au plus proche. Il nous faut donc trier nos données.\nSeulement ça semble un peu compliqué puisqu",
+                "&#39;",
+                "elles ont cette forme :"]}),
           W({
               elem: "p",
               children: [W({
@@ -257,7 +418,7 @@ addListener(
           W({
               elem: "p",
               children: [
-                "Il faudrait trier par blocs, ce qui est faisable, mais pas forcément très rapide, d",
+                "Il faudrait trier par blocs, ce qui est faisable, mais pas forcément très rapide,\nd",
                 "&#39;",
                 "autant plus qu",
                 "&#39;",
@@ -265,9 +426,9 @@ addListener(
           W({
               elem: "p",
               children: [
-                "Par chance, WebGL vient à la rescousse avec une fonction qu",
+                "Par chance, WebGL vient (encore une fois) à la rescousse avec une fonction qu",
                 "&#39;",
-                "on n",
+                "on\nn",
                 "&#39;",
                 "a pas encore étudiée : ",
                 W({
@@ -275,15 +436,19 @@ addListener(
                   children: [W({
                       elem: "code",
                       children: ["drawElements()"]})]}),
-                ".\nElle permet justement d",
+                "."]}),
+          W({
+              elem: "p",
+              children: [
+                "Elle permet justement d",
                 "&#39;",
                 "indiquer l",
                 "&#39;",
-                "ordre dans lequel il faut prendre les vertices grace à un tableau d",
+                "ordre dans lequel il faut prendre les vertices\ngrâce à un tableau d",
                 "&#39;",
                 "index qu",
                 "&#39;",
-                "on lui passe en argument. La solution est toute trouvée : c",
+                "on lui passe en argument.\nLa solution est toute trouvée : c",
                 "&#39;",
                 "est ce tableau d",
                 "&#39;",
@@ -341,7 +506,7 @@ addListener(
                     W({
                       elem: "strong",
                       children: ["mode"]}),
-                    " : gl.POINTS, gl.LINE_STRIP, gl.LINE_LOOP, gl.LINES, gl.TRIANGLE_STRIP, gl.TRIANGLE_FAN ou gl.TRIANGLES."]}),
+                    " : gl.POINTS, gl.LINE_STRIP, gl.LINE_LOOP, gl.LINES, gl.TRIANGLE_STRIP,\ngl.TRIANGLE_FAN ou gl.TRIANGLES."]}),
                 "\n",
                 W({
                   elem: "li",
@@ -365,7 +530,7 @@ addListener(
                     W({
                       elem: "strong",
                       children: ["type"]}),
-                    " : gl.UNSIGNED_BYTE ou gl.UNSIGNED_SHORT. Si vous avez plus de 255 points, il vaut mieux spécifier gl.UNSIGNED_SHORT."]}),
+                    " : gl.UNSIGNED_BYTE ou gl.UNSIGNED_SHORT. Si vous avez plus de 255 points,\nil vaut mieux spécifier gl.UNSIGNED_SHORT."]}),
                 "\n",
                 W({
                   elem: "li",
@@ -373,11 +538,11 @@ addListener(
                     W({
                       elem: "strong",
                       children: ["offset"]}),
-                    " : position du premier élément (généralement 0). Par rapport à l",
+                    " : position du premier élément (généralement 0).\nPar rapport à l",
                     "&#39;",
                     "index du vertex, l",
                     "&#39;",
-                    "offset doit être multiplié par ",
+                    "offset doit être multiplié par\n",
                     W({
                       elem: "code",
                       children: ["Uint16Array.BYTES_PER_ELEMENT"]}),
@@ -386,11 +551,11 @@ addListener(
           W({
               elem: "p",
               children: [
-                "Il va donc nous falloir passer deux buffers à la carte graphique : un ",
+                "Il va donc nous falloir passer deux buffers à la carte graphique :\nun ",
                 W({
                   elem: "strong",
                   children: ["Float32Array"]}),
-                " pour les attributs de chaque vertex et un ",
+                " pour les attributs de chaque vertex et\nun ",
                 W({
                   elem: "strong",
                   children: ["Uint16Array"]}),
@@ -900,44 +1065,619 @@ addListener(
                 W({
                   elem: "code",
                   children: ["sort()"]}),
-                ", celle-ci retourne un zéro si les deux valeurs en argument sont égales, un nombre positif si le premier argument est supérieur au second, ..."]}),
+                ", celle-ci retourne un zéro si\nles deux valeurs en argument sont égales, un nombre positif si le premier argument\nest supérieur au second, etc."]}),
+          W({
+              elem: "h1",
+              attr: {"id": "remarque"},
+              children: ["Remarque"]}),
           W({
               elem: "p",
-              children: [W({
-                  elem: "hr"})]}),
-          W({
-              elem: "ul",
               children: [
-                "\n",
+                "Nous avons vu que l",
+                "&#39;",
+                "indexation est utile pour trier des vertex, mais elle peut\négalement servire à réutiliser le même vertex dans différents triangles.\nPour faire un cube, par exemple, il vous faut 6 faces carrés, dont chacune est\ncomposée de deux triangles. Il n",
+                "&#39;",
+                "y a que 8 sommets dans votre cube, mais si\nvous utilisez un tableau d",
+                "&#39;",
+                "attributs en mode ",
                 W({
-                  elem: "li",
-                  children: [
-                    "Page précédente : ",
-                    W({
-                      elem: "a",
-                      attr: {"href": "chap6.html"},
-                      children: [
-                        "Un point c",
-                        "&#39;",
-                        "est tout (page 1)"]}),
-                    "."]}),
-                "\n",
+                  elem: "strong",
+                  children: ["gl_TRIANGLES"]}),
+                " vous aurez besoin\nde 12*3 = 36 vertex au lieu de 8."]}),
+          W({
+              elem: "p",
+              children: [
+                "A la place, vous pourriez simplement faire ceci :\n",
                 W({
-                  elem: "li",
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
                   children: [
-                    "Chapitre suivant : ",
                     W({
-                      elem: "a",
-                      attr: {"href": "chap7.html"},
-                      children: ["Particules"]}),
-                    "."]}),
-                "\n"]})]})
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["var"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["attribs"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["new"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword2"},
+                      children: ["Float32Array"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["(["]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["-1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["+1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["]);"]}),
+                    "\n  \n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["var"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["indexes"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["new"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword2"},
+                      children: ["Uint16Array"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["(["]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["2"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["2"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["3"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["5"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["4"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["5"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["3"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["7"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["7"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["4"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["6"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["3"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["2"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["6"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["7"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["3"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["6"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["2"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["6"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["5"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["6"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["5"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["7"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["6"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["4"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["7"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["])"]}),
+                    " "]})]})]})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.75"',major:"0",minor:"0",revision:"75",date:"2017-06-05T07:20:30.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.76"',major:"0",minor:"0",revision:"76",date:"2017-06-05T14:17:26.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
-require("wdg.article",function(e,a,t){function n(){var e,a,t=o.tag("nav","theme-elevation-8");for(e in i)a=i[e],"$"===e.charAt(0)?o.add(t,o.tag("h1",[a])):o.add(t,o.tag("a",[a],{href:e+".html"}));return t}var r=function(){function a(){return n(t,arguments)}var t={en:{},fr:{}},n=e("$").intl;return a.all=t,a}(),i={$1:"Les bases",index:"Comprendre WebGL",chap1:"Dessiner un carré",chap2:"Dessiner un polygône",chap3:"Textures procédurales",chap4:"Textures animées",chap5:"Utiliser des images",$999:"脌 trier...",chap6:"Chap-6",chap7:"Chap-7",chap8:"Chap-8"};e("font.josefin");var o=e("dom"),c=e("tfw.data-binding"),s=function(e){var a=window.location.pathname.split("/").pop();a=a.substr(0,a.length-5),console.info("page=",a);var t=o.tag("header","theme-elevation-12",[i[a]]),r=n(),s=o.tag("article");o.elem(this,"div","article",[s,r,t]);c.prop(this,"content")(function(e){o.clear(s),Array.isArray(e)||(e=[e]),e.forEach(function(e){o.add(s,e)})}),e=c.extend({content:[]},e,this)};a.exports=s,a.exports._=r});
+require("wdg.article",function(e,a,t){function n(e){var a,t,n=c.tag("nav","theme-elevation-8");for(a in i)t=i[a],"$"===a.charAt(0)?c.add(n,c.tag("h1",[t])):a==e?c.add(n,c.tag("div","theme-elevation-1",[t])):c.add(n,c.tag("a",[t],{href:a+".html"}));return n}var r=function(){function a(){return n(t,arguments)}var t={en:{},fr:{}},n=e("$").intl;return a.all=t,a}(),i={$1:"Les bases",index:"Comprendre WebGL",chap1:"Dessiner un carré",chap2:"Dessiner un polygône",chap3:"Textures procédurales",chap4:"Textures animées",chap5:"Utiliser des images",chap6:"Un point c'est tout","chap6-2":"La semi-transparence",chap7:"Particules",chap8:"Frame Buffer"};e("font.josefin");var c=e("dom"),o=e("tfw.data-binding"),s=function(e){var a=window.location.pathname.split("/").pop();a=a.substr(0,a.length-5);var t=c.tag("header","theme-elevation-12",[i[a]]),r=n(a),s=c.tag("article");c.elem(this,"div","article",[s,r,t]);o.prop(this,"content")(function(e){c.clear(s),Array.isArray(e)||(e=[e]),e.forEach(function(e){c.add(s,e)})}),e=o.extend({content:[]},e,this)};a.exports=s,a.exports._=r});
 //# sourceMappingURL=wdg.article.js.map
 require("tfw.data-binding",function(n,t,e){function r(n,t,r,o){var i="function"==typeof o;void 0===t[l]&&(t[l]={}),t[l][r]={value:o,event:new u};var a;a="function"==typeof n?function(e){e=n(e),(i||t[l][r].value!==e)&&(t[l][r].value=e,t[l][r].event.fire(e,t,r))}:function(n){(i||t[l][r].value!==n)&&(t[l][r].value=n,t[l][r].event.fire(n,t,r))};var f=o;return i||(f=function(){return t[l][r].value}),Object.defineProperty(t,r,{get:f,set:a,configurable:!1,enumerable:!0}),e.bind.bind(e,t,r)}var o=function(){function t(){return r(e,arguments)}var e={en:{}},r=n("$").intl;return t.all=e,t}();n("polyfill.string");var i=n("dom"),a=n("tfw.css").parseUnit,u=n("tfw.listeners"),l="_tfw.data-binding_",f={castArray:function(n){return Array.isArray(n)?n:null===n||void 0===n?[]:[n]},castBoolean:function(n){return"boolean"==typeof n?n:"string"==typeof n?"0"!=(n=n.trim().toLowerCase())&&"false"!=n&&"no"!=n&&"null"!=n&&"undefined"!=n:"number"==typeof n?0!=n:null},castColor:function(n){return""+n},castDate:function(n){return"number"==typeof n||"string"==typeof n?new Date(n):n instanceof Date?n:new Date},castEnum:function(n){var t=n.map(String.toLowerCase);return function(e){if("number"==typeof e)return n[Math.floor(e)%n.length];if("string"!=typeof e)return n[0];var r=t.indexOf(e.trim().toLowerCase());return r<0&&(r=0),n[r]}},castInteger:function(n){return"number"==typeof n?Math.floor(n):"boolean"==typeof n?n?1:0:"string"==typeof n?parseInt(n):Number.NaN},castFloat:function(n){return"number"==typeof n?n:"boolean"==typeof n?n?1:0:"string"==typeof n?parseFloat(n):Number.NaN},castRegexp:function(n){if(n instanceof RegExp)return n;if("string"==typeof n&&0!=n.trim().length)try{return new RegExp(n)}catch(t){console.error("[castRegexp] /"+n+"/ ",t)}return null},castString:function(n){return"string"==typeof n?n:void 0===n||null===n?"":JSON.stringify(n)},castStringArray:function(n){return Array.isArray(n)?n:null===n||void 0===n?[]:"string"==typeof n?n.split(",").map(String.trim):[JSON.stringify(n)]},castUnit:function(n){return n?void 0!==n.v?(n.v=parseFloat(n.v),isNaN(n.v)?{v:0,u:"px"}:("string"!=typeof n.u&&(n.u="px"),{v:n.v,u:n.u})):"number"==typeof n?{v:n,u:"px"}:"string"!=typeof n?{v:0,u:"px"}:a(""+n):{v:0,u:"px"}},castValidator:function(n){if("function"==typeof n)return n;if("boolean"==typeof n)return function(){return n};if("string"==typeof n&&0!=n.trim().length)try{var t=new RegExp(n);return t.test.bind(t)}catch(t){console.error("[castValidator] /"+n+"/ ",t)}return function(){return null}}};e.fire=function(n,t,e){var r=n[t];void 0===e&&(e=r),n[l][t].value=e,n[l][t].event.fire(n[t],n,t)},e.set=function(n,t,e){void 0===n[l]&&(n[l]={}),void 0===n[l][t]&&(n[l][t]={}),n[l][t].value=e},e.get=function(n,t){if(void 0!==n[l]&&void 0!==n[l][t])return n[l][t].value},e.readOnly=function(n,t,e){"function"==typeof att?Object.defineProperty(n,t,{get:e,set:function(){},configurable:!1,enumerable:!0}):Object.defineProperty(n,t,{value:e,writtable:!1,configurable:!1,enumerable:!0})},e.prop=r.bind(null,null),e.propToggleClass=function(n,t,e,o){"string"!=typeof o&&(o="");var a={};"string"==typeof e?a[e]=e:Array.isArray(e)?e.forEach(function(n){a[n]=n}):a=e,r(null,n,t)(function(t){var e,r;for(e in a)r=a[e],e==t?i.addClass(n.element,o+r):i.removeClass(n.element,o+r)})},e.propAddClass=function(n,t,e){void 0===e&&(e=t),r(f.castBoolean,n,t)(function(t){t?i.addClass(n.element,e):i.removeClass(n.element,e)})},e.propRemoveClass=function(n,t,e){void 0===e&&(e=t),r(f.castBoolean,n,t)(function(t){t?i.removeClass(n.element,e):i.addClass(n.element,e)})},e.propArray=r.bind(null,f.castArray),e.propBoolean=r.bind(null,f.castBoolean),e.propColor=r.bind(null,f.castColor),e.propDate=r.bind(null,f.castDate),e.propEnum=function(n){return r.bind(null,f.castEnum(n))},e.propInteger=r.bind(null,f.castInteger),e.propFloat=r.bind(null,f.castFloat),e.propRegexp=r.bind(null,f.castRegexp),e.propString=r.bind(null,f.castString),e.propStringArray=r.bind(null,f.castStringArray),e.propUnit=r.bind(null,f.castUnit),e.propValidator=r.bind(null,f.castValidator),e.bind=function(n,t,e,r,o){if(void 0===n[l]||void 0===n[l][t])throw console.error(JSON.stringify(t)+" is not a bindable property!",{srcObj:n,srcAtt:t,dstObj:e,dstAtt:r,options:o}),Error(JSON.stringify(t)+" is not a bindable property!");void 0===o&&(o={}),o.value&&(o.converter=function(){return o.value});var i="function"==typeof e?e:function(n,t,i){e[r]="function"==typeof o.converter?o.converter(n):n};return n[l][t].event.add(i),o},e.extend=function(n,t,e){var r,o,i=JSON.parse(JSON.stringify(n));for(r in t)"$"!=r.charAt(0)&&(o=t[r],void 0===i[r]?console.error("[tfw.data-binding.extend] Undefined argument: `"+r+"`!"):i[r]=o);if(void 0!==e){for(r in t)"$"==r.charAt(0)&&Object.defineProperty(e,r,{value:t[r],writable:!1,configurable:!1,enumerable:!1});for(r in i)"$"!=r.charAt(0)&&(e[r]=i[r])}return i},e.converters=f,t.exports._=o});
 //# sourceMappingURL=tfw.data-binding.js.map
@@ -957,5 +1697,7 @@ require("font.josefin",function(n,r,t){var e=function(){function r(){return e(t,
 //# sourceMappingURL=font.josefin.js.map
 require("x-widget",function(e,t,r){function n(t,r,n){try{var i=e(r),d=new i(n),a="function"==typeof d.element?d.element():d.element;a.setAttribute("id",t);var u=document.getElementById(t);return u&&u.parentNode.replaceChild(a,u),o(t,d),d}catch(e){throw console.error("[x-widget] Unable to create widget `"+r+"`!"),console.error("[x-widget] id = ",t,", args = ",n),Error(e)}}function i(e){var t,r=a.tag(e.elem);e.attr&&(a.att(r,e.attr),t=e.attr.id),Array.isArray(e.children)&&e.children.forEach(function(e){a.add(r,e)});var n,i,d={};if(e.prop)for(n in e.prop)i=e.prop[n],Object.defineProperty(d,n,{value:i,writable:!1,configurable:!1,enumerable:!0});return Object.defineProperty(d,"element",{value:r,writable:!1,configurable:!1,enumerable:!0}),void 0!==t&&o(t,d),d}function o(e,t){c[e]=t;var r=f[e];return void 0!==r&&window.setTimeout(function(){r.forEach(function(e){e(t)}),delete f[e]}),"function"==typeof t.element?t.element:t.element||t}var d=function(){function t(){return n(r,arguments)}var r={en:{}},n=e("$").intl;return t.all=r,t}(),a=e("dom"),u=e("tfw.data-binding"),c={},f={},l=function(e,t,r){return"string"==typeof e?n.call(this,e,t,r):i.call(this,e)};l.template=function(t){var r,n,i,d="",a={};for(r in t)n=t[r],"name"==r?d=n:"id"==r?i=n:"$"==r.charAt(0)&&(a[r.substr(1)]=n);var u=e(d),c=new u(a);return i&&o(i,c),"function"==typeof c.element?c.element():c.element||c},l.getById=function(e){if(!c[e])throw Error("[x-widget.getById()] ID not found: "+e+"!");return c[e]},l.onWidgetCreation=function(e,t){void 0===c[e]?void 0===f[e]?f[e]=[t]:f[e].push(t):window.setTimeout(function(){t(c[e])})},l.bind=function(t,r){var n,i,o,d,a,f=c[t];for(n in r)d=r[n].B,Array.isArray(d)&&d.forEach(function(e){if(void 0===(i=c[e[0]]))return void console.error("[x-widget:bind("+t+')] Trying to bind attribute "'+n+'" of widget "'+t+'" to the unexisting widget "'+e[0]+'"!');o=e[1];try{if(2==e.length)u.bind(i,o,f,n);else{var r=e[2];u.bind(i,o,function(){f[n]=r})}}catch(r){console.error("Binding error for widget `"+t+"`!",{ex:r,binding:e})}}),a=r[n].S,Array.isArray(a)&&a.forEach(function(r){var i=APP,o=r;if(Array.isArray(r)){try{i=e(r[0])}catch(e){throw console.error("[x-widget:bind] Widget `"+t+"` can't require unexistent `"+r[0]+"`: ",e),e}o=r[1]}if("function"!=typeof(o=i[o]))throw Array.isArray(r)?Error("[x-widget:bind]  Widget `"+t+"` use unexisting slot `"+r[1]+"` of module `"+r[0]+"`!"):Error("[x-widget:bind]  Widget `"+t+"` use unexisting slot `"+r+"` of main module `APP`!");try{u.bind(f,n,o)}catch(e){console.error("Binding error for widget `"+t+"`!",{ex:e,dstObj:f,dstAtt:n,fct:o,slot:r})}})},t.exports=l,t.exports._=d});
 //# sourceMappingURL=x-widget.js.map
-require("wdg.gl6-2",function(e,n,t){function r(e){function n(e){window.requestAnimationFrame(n);var r,o,i,l,s=e/1766.781248,A=Math.cos(s),h=Math.sin(s),v=e/1979.998511,E=Math.cos(v),_=Math.sin(v),R=A,b=h,p=h*_,F=E,P=-A*_,T=-h*E,C=_,m=A*E;for(l=0;l<u;l++)r=d[3*l+0],o=d[3*l+1],i=d[3*l+2],c[6*l+0]=r*R+0*o+i*b,c[6*l+1]=r*p+o*F+i*P,c[6*l+2]=r*T+o*C+i*m;f.sort(function(e,n){return c[6*n+2]-c[6*e+2]}),t.bindBuffer(t.ARRAY_BUFFER,a),t.bufferData(t.ARRAY_BUFFER,c,t.STATIC_DRAW),t.bindBuffer(t.ELEMENT_ARRAY_BUFFER,g),t.bufferData(t.ELEMENT_ARRAY_BUFFER,f,t.STATIC_DRAW),t.clear(t.COLOR_BUFFER_BIT|t.DEPTH_BUFFER_BIT),t.drawElements(t.POINTS,u,t.UNSIGNED_SHORT,0)}var t=e.getContext("webgl")||e.getContext("experimental-webgl"),r=t.createProgram();t.attachShader(r,i(t,s.vertex)),t.attachShader(r,o(t,s.fragment)),t.linkProgram(r),t.useProgram(r);var a=t.createBuffer();t.bindBuffer(t.ARRAY_BUFFER,a);var u=56,c=new Float32Array(6*u);t.bufferData(t.ARRAY_BUFFER,c,t.STATIC_DRAW);var d=[],f=new Uint16Array(u),g=t.createBuffer();t.bindBuffer(t.ELEMENT_ARRAY_BUFFER,g),t.bufferData(t.ELEMENT_ARRAY_BUFFER,f,t.STATIC_DRAW),function(){var e,n,t,r,a,o,i,s;for(n=0;n<u-6;n++)e=l(),c[6*n+3]=e.r,c[6*n+4]=e.g,c[6*n+5]=e.b,f[n]=n,i=.2*Math.PI+.6*n*Math.PI/(u-6-1),s=8.7*n*Math.PI/(u-6-1),a=Math.cos(i),o=Math.sin(i),t=o*Math.cos(s),r=o*Math.sin(s),d.push(t,r,a);for(n=u-6;n<u;n++)e=l(),f[n]=n,c[6*n+3]=e.r,c[6*n+4]=e.g,c[6*n+5]=e.b,d.push(0,0,2*(n-u+6)/5-1)}();var A=c.BYTES_PER_ELEMENT,h=6*A,v=t.getAttribLocation(r,"attPosition");t.enableVertexAttribArray(v),t.vertexAttribPointer(v,3,t.FLOAT,!1,h,0);var E=t.getAttribLocation(r,"attColor");t.enableVertexAttribArray(E),t.vertexAttribPointer(E,3,t.FLOAT,!1,h,3*A),Boolean(this.zbuffer)?(t.enable(t.DEPTH_TEST),t.depthFunc(t.LEQUAL),t.disable(t.BLEND),t.enable(t.BLEND),t.blendFunc(t.SRC_ALPHA,t.ONE_MINUS_SRC_ALPHA)):(t.enable(t.BLEND),t.blendFunc(t.SRC_ALPHA,t.ONE_MINUS_SRC_ALPHA),t.disable(t.DEPTH_TEST)),t.clearColor(0,0,0,1),t.bindBuffer(t.ARRAY_BUFFER,a),window.requestAnimationFrame(n)}function a(e,n,t){var r=n.createShader(e);return n.shaderSource(r,t),n.compileShader(r),n.getShaderParameter(r,n.COMPILE_STATUS)?r:(console.log(t),console.error("An error occurred compiling the shader: "+n.getShaderInfoLog(r)),null)}function o(e,n){return a(e.FRAGMENT_SHADER,e,n)}function i(e,n){return a(e.VERTEX_SHADER,e,n)}function l(){var e=Math.random(),n=Math.random(),t=Math.random();return e<n?t<e?(e=1,t=0):(e=1,n>t?t=0:n=0):n>t?(e=1,t=0):(n=0,e>t?e=1:t=1),{r:e,g:n,b:t}}var u=function(){function n(){return r(t,arguments)}var t={en:{}},r=e("$").intl;return n.all=t,n}(),s={vertex:"attribute vec3 attPosition;\nattribute vec3 attColor;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nvoid main() {\n  float z = attPosition.z;\n  // Dans une projection 3D, les points éloignés de la caméra\n  // paraissent plus petits et plus proches les uns des autres.\n  // Cette variable permet de créer cet effet.\n  float depth = (1.5 - z) / 2.5;\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\n\n  // La taille du point dépend aussi de la profondeur.\n  gl_PointSize = 80.0 * depth;\n  varPosition = attPosition;\n  varColor = attColor;\n}\n",fragment:"precision mediump float;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\n\nvoid main() {\n  // Calculons la distance du fragment courant\n  // au centre du point.\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  // On ne calcule pas la racine carré pour gagner du temps.\n  float r = x*x + y*y;\n\n  x = gl_PointCoord.x;\n  y = gl_PointCoord.y;\n\n  // 0.25 = 0.5 * 0.5\n  if (r > 0.25) {\n    // Si on est à l'extérieur du cercle de rayon 0.5,\n    // on place un fragment transparent.\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\n  } else if (r > .2 ) {\n    // Au delà d'un certain rayon, on met une couleur fixe\n    // qui nous sert de liseré.\n    gl_FragColor = vec4(varColor, 1.0);\n  } else {\n    // Petit effet de dégradé.\n    vec3 col = x * varColor + y * WHITE;\n    gl_FragColor = vec4( col, 0.9 );\n  }\n  // La luminosité varie avec la profondeur du point.\n  // En `z = 0.0`, la boule est noire.\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\n}\n"},c=e("dom"),d=e("tfw.data-binding"),f=function(e){var n=c.elem(this,"canvas");d.propInteger(this,"width")(function(e){n.setAttribute("width",e),n.style.width=e+"px"}),d.propInteger(this,"height")(function(e){n.setAttribute("height",e),n.style.height=e+"px"}),d.propBoolean(this,"zindex"),e=d.extend({width:640,height:480,zbuffer:!1},e,this),window.setTimeout(r.bind(this,n),20)};n.exports=f,n.exports._=u});
+require("wdg.flex",function(e,s,t){function a(e){var s=n.elem(this,"div","wdg-flex");i.propToggleClass(this,"orientation",o),i.propToggleClass(this,"type",c),i.propArray(this,"content")(function(e){n.clear(s),e.forEach(function(e){n.add(s,e),void 0!==e.$grow&&n.css(e,{"flex-grow":parseFloat(e.$grow)}),void 0!==e.$shrink&&n.css(e,{"flex-shrink":parseFloat(e.$shrink)})})}),i.propString(this,"justify")(function(e){n.removeClass(s,"justify-center","justify-flex-end","justify-flex-start","justify-space-around","justify-space-between");var t=null;switch(e.trim().toLowerCase()){case"center":t="center";break;case"flex-end":case"flexend":case"end":t="flex-end";break;case"flex-start":case"flexstart":case"start":t="flex-start";break;case"space-around":case"around":t="space-around";break;case"space-between":case"between":t="space-between"}t&&n.addClass(s,"justify-"+t)}),i.propAddClass(this,"wide"),i.propRemoveClass(this,"visible","hide"),e=i.extend({orientation:o[0],type:c[0],justify:"space-around",content:[],wide:!0,visible:!0},e,this)}var r=function(){function s(){return a(t,arguments)}var t={en:{}},a=e("$").intl;return s.all=t,s}(),n=e("dom"),i=e("tfw.data-binding"),o=["H","V","W","N"],c=["default","fill"];s.exports=a,s.exports._=r});
+//# sourceMappingURL=wdg.flex.js.map
+require("wdg.gl6-2",function(e,t,r){function n(e){function t(e){window.requestAnimationFrame(t);var a,o,i,l,u=e/3766.781248,h=Math.cos(u),v=Math.sin(u),p=e/3979.998511,E=Math.cos(p),_=Math.sin(p),R=h,F=v,b=v*_,P=E,C=-h*_,T=-v*E,m=_,S=h*E;for(l=0;l<c;l++)a=f[3*l+0],o=f[3*l+1],i=f[3*l+2],d[6*l+0]=a*R+0*o+i*F,d[6*l+1]=a*b+o*P+i*C,d[6*l+2]=a*T+o*m+i*S;r.sort&&g.sort(function(e,t){return d[6*t+2]-d[6*e+2]}),n.bindBuffer(n.ARRAY_BUFFER,s),n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW),n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),n.clear(n.COLOR_BUFFER_BIT|n.DEPTH_BUFFER_BIT),n.drawElements(n.POINTS,c,n.UNSIGNED_SHORT,0)}var r=this,n=e.getContext("webgl",{alpha:!1,depth:!0,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0}),a=n.createProgram();n.attachShader(a,i(n,u.vertex)),n.attachShader(a,o(n,u.fragment)),n.linkProgram(a),n.useProgram(a);var s=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,s);var c=56,d=new Float32Array(6*c);n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW);var f=[],g=new Uint16Array(c),A=n.createBuffer();n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),function(){var e,t,r,n,a,o,i,s;for(t=0;t<c-6;t++)e=l(t),d[6*t+3]=e.r,d[6*t+4]=e.g,d[6*t+5]=e.b,g[t]=t,i=.2*Math.PI+.6*t*Math.PI/(c-6-1),s=8.7*t*Math.PI/(c-6-1),a=Math.cos(i),o=Math.sin(i),r=o*Math.cos(s),n=o*Math.sin(s),f.push(r,n,a);for(t=c-6;t<c;t++)e=l(t),g[t]=t,d[6*t+3]=e.r,d[6*t+4]=e.g,d[6*t+5]=e.b,f.push(0,0,2*(t-c+6)/5-1)}();var h=d.BYTES_PER_ELEMENT,v=6*h,p=n.getAttribLocation(a,"attPosition");n.enableVertexAttribArray(p),n.vertexAttribPointer(p,3,n.FLOAT,!1,v,0);var E=n.getAttribLocation(a,"attColor");n.enableVertexAttribArray(E),n.vertexAttribPointer(E,3,n.FLOAT,!1,v,3*h),n.enable(n.BLEND),n.blendFunc(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA),n.enable(n.DEPTH_TEST),n.depthFunc(n.LESS),n.clearColor(0,0,0,1),n.bindBuffer(n.ARRAY_BUFFER,s),window.requestAnimationFrame(t)}function a(e,t,r){var n=t.createShader(e);return t.shaderSource(n,r),t.compileShader(n),t.getShaderParameter(n,t.COMPILE_STATUS)?n:(console.log(r),console.error("An error occurred compiling the shader: "+t.getShaderInfoLog(n)),null)}function o(e,t){return a(e.FRAGMENT_SHADER,e,t)}function i(e,t){return a(e.VERTEX_SHADER,e,t)}function l(e){e=(17*e+43)%g.length;var t=g[e];return{r:.5*t[0],g:.5*t[1],b:.5*t[2]}}var s=function(){function t(){return n(r,arguments)}var r={en:{}},n=e("$").intl;return t.all=r,t}(),u={vertex:"attribute vec3 attPosition;\nattribute vec3 attColor;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nvoid main() {\n  float z = attPosition.z;\n  // Dans une projection 3D, les points éloignés de la caméra\n  // paraissent plus petits et plus proches les uns des autres.\n  // Cette variable permet de créer cet effet.\n  float depth = (1.5 - z) / 2.5;\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\n\n  // La taille du point dépend aussi de la profondeur.\n  gl_PointSize = 80.0 * depth;\n  varPosition = attPosition;\n  varColor = attColor;\n}\n",fragment:"precision mediump float;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\n\nvoid main() {\n  // Calculons la distance du fragment courant\n  // au centre du point.\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  // On ne calcule pas la racine carré pour gagner du temps.\n  float r = x*x + y*y;\n\n  x = gl_PointCoord.x;\n  y = gl_PointCoord.y;\n\n  // 0.25 = 0.5 * 0.5\n  if (r > 0.25) {\n    // Si on est à l'extérieur du cercle de rayon 0.5,\n    // on place un fragment transparent.\n    discard;\n  } else if (r > .15 ) {\n    // Au delà d'un certain rayon, on met une couleur fixe\n    // qui nous sert de liseré.\n    gl_FragColor = vec4(varColor, 1.0);\n  } else {\n    // Petit effet de dégradé.\n    gl_FragColor = vec4(varColor, 0.5);\n  }\n  // La luminosité varie avec la profondeur du point.\n  // En `z = 0.0`, la boule est noire.\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\n}\n"},c=e("dom"),d=e("tfw.data-binding"),f=function(e){var t=c.elem(this,"canvas");d.propInteger(this,"width")(function(e){t.setAttribute("width",e),t.style.width=e+"px"}),d.propInteger(this,"height")(function(e){t.setAttribute("height",e),t.style.height=e+"px"}),d.propBoolean(this,"sort"),e=d.extend({width:640,height:480,sort:!1},e,this),window.setTimeout(n.bind(this,t),20)};t.exports=f;var g=[[2,0,0],[0,2,0],[0,0,2],[2,1,0],[2,0,1],[1,2,0],[0,2,1],[1,0,2],[0,1,2],[0,2,2],[2,0,2],[2,2,0],[2,2,2]];t.exports._=s});
 //# sourceMappingURL=wdg.gl6-2.js.map
