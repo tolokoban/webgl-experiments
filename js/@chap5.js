@@ -2827,6 +2827,11 @@ addListener(
                       children: [
                         W({
                           elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// #(init)"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
                           attr: {"class": "keyword"},
                           children: ["var"]}),
                         " ",
@@ -2858,11 +2863,44 @@ addListener(
                           elem: "span",
                           attr: {"class": "string"},
                           children: ["\"webgl\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["premultipliedAlpha"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["false"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
                         " ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// #(init)"]}),
                         "\n\n  ",
                         W({
                           elem: "span",
@@ -4345,7 +4383,12 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
-                          children: ["// #(draw) Activer le test de profondeur."]}),
+                          children: ["// #(draw) "]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Activer le test de profondeur."]}),
                         "\n  ",
                         W({
                           elem: "span",
@@ -4380,7 +4423,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["//gl.depthFunc(gl.LEQUAL); Charger la texture."]}),
-                        "\n  ",
+                        "\n    \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4688,6 +4731,11 @@ addListener(
                         "\n\n  ",
                         W({
                           elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// #(image)"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
                           attr: {"class": "keyword"},
                           children: ["var"]}),
                         " ",
@@ -4968,6 +5016,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// #(image)"]}),
                         "\n\n  ",
                         W({
                           elem: "span",
@@ -6456,15 +6509,411 @@ addListener(
                         " "]})]})]}),
           W({
               elem: "h1",
+              attr: {"id": "remarque-concernant-l-initialisation-du-contexte-webgl"},
+              children: [
+                "Remarque concernant l",
+                "&#39;",
+                "initialisation du contexte WebGL"]}),
+          W({
+              elem: "p",
+              children: [W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["var"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["canvas"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["getContext"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "string"},
+                      children: ["\"webgl\""]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["premultipliedAlpha"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [":"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["false"]}),
+                    "\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["}"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    " "]})]}),
+          W({
+              elem: "p",
+              children: [
+                "En fonction du mavigateur et du système d",
+                "&#39;",
+                "exploitation, les valeurs de configurations\npar défaut de WebGL peuvent varier.\nC",
+                "&#39;",
+                "est pourquoi, il est prudent de les définir manuellement."]}),
+          W({
+              elem: "p",
+              children: [
+                "Ici, on désactive le ",
+                W({
+                  elem: "em",
+                  children: ["premultiplied alpha"]}),
+                " dont on parlera dans un chapitre plus\navancé."]}),
+          W({
+              elem: "h1",
               attr: {"id": "les-textures-partir-d-images"},
               children: [
                 "Les textures à partir d",
                 "&#39;",
-                "images"]})]})
+                "images"]}),
+          W({
+              elem: "p",
+              children: [
+                "Notre texture est prise à partir du fichier PNG suivant :\n",
+                W({
+                  elem: "img",
+                  attr: {"src": "css/wdg.gl5/champi.png"}})]}),
+          W({
+              elem: "p",
+              children: [
+                "Le chargement d",
+                "&#39;",
+                "une image est un processus asynchrone. Il faut donc utiliser\nun code de ce genre :\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["var"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["image"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["new"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["Image"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["image"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["onload"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["function"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [")"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// Upload the image into the texture."]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["texImage2D"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["TEXTURE_2D"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["RGBA"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["RGBA"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["UNSIGNED_BYTE"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["image"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\n\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// Dessiner la prochaine frame."]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword2"},
+                      children: ["window"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["requestAnimationFrame"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["draw"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["};"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["image"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["onerror"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["function"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["err"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [")"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["throw"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["err"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["};"]}),
+                    "\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["image"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["src"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "string"},
+                      children: ["\"css/wdg.gl5/champi.png\""]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    " "]})]})]})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.74"',major:"0",minor:"0",revision:"74",date:"2017-06-02T17:14:06.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.75"',major:"0",minor:"0",revision:"75",date:"2017-06-05T07:20:30.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("wdg.article",function(e,a,t){function n(){var e,a,t=o.tag("nav","theme-elevation-8");for(e in i)a=i[e],"$"===e.charAt(0)?o.add(t,o.tag("h1",[a])):o.add(t,o.tag("a",[a],{href:e+".html"}));return t}var r=function(){function a(){return n(t,arguments)}var t={en:{},fr:{}},n=e("$").intl;return a.all=t,a}(),i={$1:"Les bases",index:"Comprendre WebGL",chap1:"Dessiner un carré",chap2:"Dessiner un polygône",chap3:"Textures procédurales",chap4:"Textures animées",chap5:"Utiliser des images",$999:"脌 trier...",chap6:"Chap-6",chap7:"Chap-7",chap8:"Chap-8"};e("font.josefin");var o=e("dom"),c=e("tfw.data-binding"),s=function(e){var a=window.location.pathname.split("/").pop();a=a.substr(0,a.length-5),console.info("page=",a);var t=o.tag("header","theme-elevation-12",[i[a]]),r=n(),s=o.tag("article");o.elem(this,"div","article",[s,r,t]);c.prop(this,"content")(function(e){o.clear(s),Array.isArray(e)||(e=[e]),e.forEach(function(e){o.add(s,e)})}),e=c.extend({content:[]},e,this)};a.exports=s,a.exports._=r});
 //# sourceMappingURL=wdg.article.js.map
@@ -6498,5 +6947,5 @@ require("dom.fx",function(t,e,n){function i(t){if(t==this._session){if(this._ind
 //# sourceMappingURL=dom.fx.js.map
 require("polyfill.promise",function(t,n,e){var r=function(){function n(){return r(e,arguments)}var e={en:{},fr:{}},r=t("$").intl;return n.all=e,n}();window.Promise||function(){"use strict";function t(t){return"function"==typeof t||"object"==typeof t&&null!==t}function n(t){return"function"==typeof t}function e(t){return"object"==typeof t&&null!==t}function r(){}function o(){for(var t=0;t<S;t+=2){(0,D[t])(D[t+1]),D[t]=void 0,D[t+1]=void 0}S=0}function i(){}function s(){return new TypeError("You cannot resolve a promise with itself")}function u(){return new TypeError("A promises callback cannot return that same promise.")}function c(t){try{return t.then}catch(t){return K.error=t,K}}function a(t,n,e,r){try{t.call(n,e,r)}catch(t){return t}}function f(t,n,e){C(function(t){var r=!1,o=a(e,n,function(e){r||(r=!0,n!==e?_(t,e):v(t,e))},function(n){r||(r=!0,d(t,n))},"Settle: "+(t._label||" unknown promise"));!r&&o&&(r=!0,d(t,o))},t)}function l(t,n){n._state===q?v(t,n._result):t._state===F?d(t,n._result):y(n,void 0,function(n){_(t,n)},function(n){d(t,n)})}function h(t,e){if(e.constructor===t.constructor)l(t,e);else{var r=c(e);r===K?d(t,K.error):void 0===r?v(t,e):n(r)?f(t,e,r):v(t,e)}}function _(n,e){n===e?d(n,s()):t(e)?h(n,e):v(n,e)}function p(t){t._onerror&&t._onerror(t._result),m(t)}function v(t,n){t._state===I&&(t._result=n,t._state=q,0===t._subscribers.length||C(m,t))}function d(t,n){t._state===I&&(t._state=F,t._result=n,C(p,t))}function y(t,n,e,r){var o=t._subscribers,i=o.length;t._onerror=null,o[i]=n,o[i+q]=e,o[i+F]=r,0===i&&t._state&&C(m,t)}function m(t){var n=t._subscribers,e=t._state;if(0!==n.length){for(var r,o,i=t._result,s=0;s<n.length;s+=3)r=n[s],o=n[s+e],r?g(e,r,o,i):o(i);t._subscribers.length=0}}function w(){this.error=null}function b(t,n){try{return t(n)}catch(t){return N.error=t,N}}function g(t,e,r,o){var i,s,c,a,f=n(r);if(f){if(i=b(r,o),i===N?(a=!0,s=i.error,i=null):c=!0,e===i)return void d(e,u())}else i=o,c=!0;e._state!==I||(f&&c?_(e,i):a?d(e,s):t===q?v(e,i):t===F&&d(e,i))}function A(t,n){try{n(function(n){_(t,n)},function(n){d(t,n)})}catch(n){d(t,n)}}function j(t,n,e,r){this._instanceConstructor=t,this.promise=new t(i,r),this._abortOnReject=e,this._validateInput(n)?(this._input=n,this.length=n.length,this._remaining=n.length,this._init(),0===this.length?v(this.promise,this._result):(this.length=this.length||0,this._enumerate(),0===this._remaining&&v(this.promise,this._result))):d(this.promise,this._validationError())}function E(){throw new TypeError("You must pass a resolver function as the first argument to the promise constructor")}function P(){throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.")}function T(t,e){this._id=G++,this._label=e,this._state=void 0,this._result=void 0,this._subscribers=[],i!==t&&(n(t)||E(),this instanceof T||P(),A(this,t))}var k;k=Array.isArray?Array.isArray:function(t){return"[object Array]"===Object.prototype.toString.call(t)};var M,O=k,S=(Date.now,Object.create,0),C=function(t,n){D[S]=t,D[S+1]=n,2===(S+=2)&&M()},R="undefined"!=typeof window?window:{},x=R.MutationObserver||R.WebKitMutationObserver,Y="undefined"!=typeof Uint8ClampedArray&&"undefined"!=typeof importScripts&&"undefined"!=typeof MessageChannel,D=new Array(1e3);M="undefined"!=typeof process&&"[object process]"==={}.toString.call(process)?function(){return function(){process.nextTick(o)}}():x?function(){var t=0,n=new x(o),e=document.createTextNode("");return n.observe(e,{characterData:!0}),function(){e.data=t=++t%2}}():Y?function(){var t=new MessageChannel;return t.port1.onmessage=o,function(){t.port2.postMessage(0)}}():function(){return function(){setTimeout(o,1)}}();var I=void 0,q=1,F=2,K=new w,N=new w;j.prototype._validateInput=function(t){return O(t)},j.prototype._validationError=function(){return new Error("Array Methods must be provided an Array")},j.prototype._init=function(){this._result=new Array(this.length)};var U=j;j.prototype._enumerate=function(){for(var t=this.length,n=this.promise,e=this._input,r=0;n._state===I&&r<t;r++)this._eachEntry(e[r],r)},j.prototype._eachEntry=function(t,n){var r=this._instanceConstructor;e(t)?t.constructor===r&&t._state!==I?(t._onerror=null,this._settledAt(t._state,n,t._result)):this._willSettleAt(r.resolve(t),n):(this._remaining--,this._result[n]=this._makeResult(q,n,t))},j.prototype._settledAt=function(t,n,e){var r=this.promise;r._state===I&&(this._remaining--,this._abortOnReject&&t===F?d(r,e):this._result[n]=this._makeResult(t,n,e)),0===this._remaining&&v(r,this._result)},j.prototype._makeResult=function(t,n,e){return e},j.prototype._willSettleAt=function(t,n){var e=this;y(t,void 0,function(t){e._settledAt(q,n,t)},function(t){e._settledAt(F,n,t)})};var W=function(t,n){return new U(this,t,!0,n).promise},$=function(t,n){function e(t){_(s,t)}function r(t){d(s,t)}var o=this,s=new o(i,n);if(!O(t))return d(s,new TypeError("You must pass an array to race.")),s;for(var u=t.length,c=0;s._state===I&&c<u;c++)y(o.resolve(t[c]),void 0,e,r);return s},z=function(t,n){var e=this;if(t&&"object"==typeof t&&t.constructor===e)return t;var r=new e(i,n);return _(r,t),r},B=function(t,n){var e=this,r=new e(i,n);return d(r,t),r},G=0,H=T;T.all=W,T.race=$,T.resolve=z,T.reject=B,T.prototype={constructor:T,then:function(t,n,e){var r=this,o=r._state;if(o===q&&!t||o===F&&!n)return this;r._onerror=null;var s=new this.constructor(i,e),u=r._result;if(o){var c=arguments[o-1];C(function(){g(o,s,c,u)})}else y(r,s,t,n);return s},catch:function(t,n){return this.then(null,t,n)}};var J=function(){var t;"Promise"in(t="undefined"!=typeof global?global:"undefined"!=typeof window&&window.document?window:self)&&"resolve"in t.Promise&&"reject"in t.Promise&&"all"in t.Promise&&"race"in t.Promise&&function(){var e;return new t.Promise(function(t){e=t}),n(e)}()||(t.Promise=H)};J()}.call(this),n.exports._=r});
 //# sourceMappingURL=polyfill.promise.js.map
-require("wdg.gl5",function(t,e,n){function r(t){function e(n){a.bindTexture(a.TEXTURE_2D,P),a.uniform1f(b,t.width),a.uniform1f(_,t.height),a.activeTexture(a.TEXTURE0),a.bindTexture(a.TEXTURE_2D,P),a.uniform1i(a.getUniformLocation(i,"uniTexture"),0);var r=0;x.forEach(function(t,e){var o=t.x*l,a=d-Math.abs(Math.cos(t.y*Math.PI+n*t.scale/3613))*d,i=Math.cos(n*t.scale/2700),s=128*(1-.4*i),c=n*t.rotation/700;[0,1,3,2].forEach(function(t){T[r++]=o,T[r++]=a,T[r++]=i,T[r++]=t,T[r++]=s,T[r++]=c})}),a.bindBuffer(a.ARRAY_BUFFER,h),a.bufferData(a.ARRAY_BUFFER,T,a.STATIC_DRAW),a.clearColor(.3,.8,1,1),a.clear(a.COLOR_BUFFER_BIT|a.DEPTH_BUFFER_BIT);for(var o=0;o<f;o++)a.drawArrays(a.TRIANGLE_STRIP,4*o,4);window.requestAnimationFrame(e)}var n=u.vertex,r=u["fragment-"+this.fragment],a=t.getContext("webgl"),i=a.createProgram();a.attachShader(i,c(a,n)),a.attachShader(i,s(a,r)),a.linkProgram(i),a.useProgram(i);var l=t.width,d=t.height,f=150,x=o(f),h=a.createBuffer(),T=new Float32Array(6*f*4),v=T.BYTES_PER_ELEMENT,E=6*v;a.bindBuffer(a.ARRAY_BUFFER,h);var g=a.getAttribLocation(i,"attPosition");a.enableVertexAttribArray(g),a.vertexAttribPointer(g,3,a.FLOAT,!1,E,0);var A=a.getAttribLocation(i,"attIndex");a.enableVertexAttribArray(A),a.vertexAttribPointer(A,1,a.FLOAT,!1,E,3*v);var m=a.getAttribLocation(i,"attScale");a.enableVertexAttribArray(m),a.vertexAttribPointer(m,1,a.FLOAT,!1,E,4*v);var R=a.getAttribLocation(i,"attRotation");a.enableVertexAttribArray(R),a.vertexAttribPointer(R,1,a.FLOAT,!1,E,5*v);var p=a.getAttribLocation(i,"attVertexPosition");a.enableVertexAttribArray(p),a.vertexAttribPointer(p,3,a.FLOAT,!1,0,0);var b=a.getUniformLocation(i,"uniWidth"),_=a.getUniformLocation(i,"uniHeight");a.disable(a.DEPTH_TEST);var P=a.createTexture();a.bindTexture(a.TEXTURE_2D,P),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_WRAP_S,a.CLAMP_TO_EDGE),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_WRAP_T,a.CLAMP_TO_EDGE),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_MIN_FILTER,a.NEAREST),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_MAG_FILTER,a.NEAREST);var L=new Image;L.onload=function(){a.texImage2D(a.TEXTURE_2D,0,a.RGBA,a.RGBA,a.UNSIGNED_BYTE,L),window.requestAnimationFrame(e)},L.onerror=function(t){throw t},L.src="css/wdg.gl5/champi.png",a.enable(a.BLEND),a.blendFunc(a.SRC_ALPHA,a.ONE_MINUS_SRC_ALPHA),a.disable(a.DEPTH_TEST)}function o(t){for(var e=[];t-- >0;)e.push({x:a(0,1),y:a(0,1),z:a(.1,.9),size:a(20,100),scale:a(.7,3.2),rotation:a(-2,2)});return e}function a(t,e){return t+Math.random()*(e-t)}function i(t,e,n){var r=e.createShader(t);return e.shaderSource(r,n),e.compileShader(r),e.getShaderParameter(r,e.COMPILE_STATUS)?r:(console.log(n),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(r)),null)}function s(t,e){return i(t.FRAGMENT_SHADER,t,e)}function c(t,e){return i(t.VERTEX_SHADER,t,e)}var l=function(){function e(){return r(n,arguments)}var n={en:{}},r=t("$").intl;return e.all=n,e}(),u={vertex:"// Coordonnées du centre du sprite.\nattribute vec3 attPosition;\n// Index du vertex (de 0.0 à 3.0).\nattribute float attIndex;\n// Angle de rotation en radians.\nattribute float attRotation;\n// Facteur d'échelle.\nattribute float attScale;\n// PI est une constante indispensable en trigonométrie.\nconst float PI = 3.1415926536;\n// La taille du canvas est utilisée pour convertir\n// des coordonnées en pixels vers l'espace de WebGL.\nuniform float uniWidth;\nuniform float uniHeight;\n// Passer au fragment shader les coordonnées UV\n// du vertex dans le bitmap.\nvarying vec2 varCoordsUV;\n\nvoid main() {\n  // On considère un cercle ce centre attPosition,\n  // et de rayon attScale.\n  // Les vertex sont sur ce cercle, c'est pourquoi\n  // on utilise attIndex comme un angle.\n  float x = attPosition.x \n    + attScale * cos( attRotation + attIndex * PI / 2.0 );\n  float y = attPosition.y\n    + attScale * sin( attRotation + attIndex * PI / 2.0 );\n  // On avait des coordonnées en pixels du canvas,\n  // il faut les convertir dans l'espace de WebGL.\n  x = (2.0 * x / uniWidth) - 1.0;\n  y = 1.0 - (2.0 * y / uniHeight);\n  // D�finir la position du vertex.\n  gl_Position = vec4( x, y, attPosition.z, 1.0 );\n  // Il faut associer à chaque attIndex, des coordonnées UV.\n  if (attIndex < 1.5) {\n    if (attIndex < 0.5) varCoordsUV = vec2(0.0, 0.0); // 0\n    else varCoordsUV = vec2(1.0, 0.0);                // 1\n  }\n  else {\n    if (attIndex < 2.5) varCoordsUV = vec2(1.0, 1.0); // 2\n    else varCoordsUV = vec2(0.0, 1.0);                // 3\n  }\n}\n","fragment-a":"precision mediump float;\n// L'image de notre sprite.\nuniform sampler2D uniTexture;\n// Les coordonnes UV du pixel à dessiner.\n// (0,0) correspond au pixel en haut à gauche.\n// (1,1) correspond au pixel en bas à droite.\nvarying vec2 varCoordsUV;\n\nvoid main() {\n  // texture2D retourne la coleur à un endroit donné.\n  vec4 color = texture2D( uniTexture, varCoordsUV );\n  // Si le point est transparent, on ne l'affiche pas.\n  if ( color.a < 0.1 ) discard;\n  gl_FragColor = color;\n}\n","fragment-b":"const highp float PI = 3.1415926539;\nconst lowp vec3 COLOR0 = vec3(0.7, 0.9, 1.0);\nconst lowp vec3 COLOR1 = vec3(0.0, 0.7, 0.9);\n\nvarying lowp vec3 varVertexPosition;\n\nuniform lowp float uniTimeF;\n\nvoid main() {\n  highp float time = uniTimeF / 700.0;\n  \n  lowp float x = varVertexPosition.x + time * 120.0;\n  lowp float y = varVertexPosition.y + sin(time) * 15.0;\n  \n  lowp float xx = x / 10.0;\n  lowp float yy = y / 10.0;\n  \n  lowp float h = cos(yy) * cos(xx) + sin(yy);\n  h = cos( PI * h + time);\n  \n  h = (1.0 + h) / 2.0;\n  gl_FragColor = vec4( h * COLOR0 + (1.0 - h) * COLOR1, 1.0);\n}\n"},d=t("dom"),f=t("tfw.data-binding"),x=function(t){var e=d.elem(this,"canvas");f.propInteger(this,"width")(function(t){e.setAttribute("width",t),e.style.width=t+"px"}),f.propInteger(this,"height")(function(t){e.setAttribute("height",t),e.style.height=t+"px"}),f.propString(this,"fragment"),t=f.extend({width:640,height:480,fragment:"a"},t,this),window.setTimeout(r.bind(this,e),20)};e.exports=x,e.exports._=l});
+require("wdg.gl5",function(t,e,n){function r(t){function e(n){a.bindTexture(a.TEXTURE_2D,P),a.uniform1f(b,t.width),a.uniform1f(_,t.height),a.activeTexture(a.TEXTURE0),a.bindTexture(a.TEXTURE_2D,P),a.uniform1i(a.getUniformLocation(i,"uniTexture"),0);var r=0;h.forEach(function(t,e){var o=t.x*l,a=d-Math.abs(Math.cos(t.y*Math.PI+n*t.scale/3613))*d,i=Math.cos(n*t.scale/2700),s=128*(1-.4*i),c=n*t.rotation/700;[0,1,3,2].forEach(function(t){T[r++]=o,T[r++]=a,T[r++]=i,T[r++]=t,T[r++]=s,T[r++]=c})}),a.bindBuffer(a.ARRAY_BUFFER,x),a.bufferData(a.ARRAY_BUFFER,T,a.STATIC_DRAW),a.clearColor(.3,.8,1,1),a.clear(a.COLOR_BUFFER_BIT|a.DEPTH_BUFFER_BIT);for(var o=0;o<f;o++)a.drawArrays(a.TRIANGLE_STRIP,4*o,4);window.requestAnimationFrame(e)}var n=u.vertex,r=u["fragment-"+this.fragment],a=t.getContext("webgl",{premultipliedAlpha:!1}),i=a.createProgram();a.attachShader(i,c(a,n)),a.attachShader(i,s(a,r)),a.linkProgram(i),a.useProgram(i);var l=t.width,d=t.height,f=150,h=o(f),x=a.createBuffer(),T=new Float32Array(6*f*4),v=T.BYTES_PER_ELEMENT,E=6*v;a.bindBuffer(a.ARRAY_BUFFER,x);var g=a.getAttribLocation(i,"attPosition");a.enableVertexAttribArray(g),a.vertexAttribPointer(g,3,a.FLOAT,!1,E,0);var A=a.getAttribLocation(i,"attIndex");a.enableVertexAttribArray(A),a.vertexAttribPointer(A,1,a.FLOAT,!1,E,3*v);var m=a.getAttribLocation(i,"attScale");a.enableVertexAttribArray(m),a.vertexAttribPointer(m,1,a.FLOAT,!1,E,4*v);var p=a.getAttribLocation(i,"attRotation");a.enableVertexAttribArray(p),a.vertexAttribPointer(p,1,a.FLOAT,!1,E,5*v);var R=a.getAttribLocation(i,"attVertexPosition");a.enableVertexAttribArray(R),a.vertexAttribPointer(R,3,a.FLOAT,!1,0,0);var b=a.getUniformLocation(i,"uniWidth"),_=a.getUniformLocation(i,"uniHeight");a.disable(a.DEPTH_TEST);var P=a.createTexture();a.bindTexture(a.TEXTURE_2D,P),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_WRAP_S,a.CLAMP_TO_EDGE),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_WRAP_T,a.CLAMP_TO_EDGE),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_MIN_FILTER,a.NEAREST),a.texParameteri(a.TEXTURE_2D,a.TEXTURE_MAG_FILTER,a.NEAREST);var L=new Image;L.onload=function(){a.texImage2D(a.TEXTURE_2D,0,a.RGBA,a.RGBA,a.UNSIGNED_BYTE,L),window.requestAnimationFrame(e)},L.onerror=function(t){throw t},L.src="css/wdg.gl5/champi.png",a.enable(a.BLEND),a.blendFunc(a.SRC_ALPHA,a.ONE_MINUS_SRC_ALPHA),a.disable(a.DEPTH_TEST)}function o(t){for(var e=[];t-- >0;)e.push({x:a(0,1),y:a(0,1),z:a(.1,.9),size:a(20,100),scale:a(.7,3.2),rotation:a(-2,2)});return e}function a(t,e){return t+Math.random()*(e-t)}function i(t,e,n){var r=e.createShader(t);return e.shaderSource(r,n),e.compileShader(r),e.getShaderParameter(r,e.COMPILE_STATUS)?r:(console.log(n),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(r)),null)}function s(t,e){return i(t.FRAGMENT_SHADER,t,e)}function c(t,e){return i(t.VERTEX_SHADER,t,e)}var l=function(){function e(){return r(n,arguments)}var n={en:{}},r=t("$").intl;return e.all=n,e}(),u={vertex:"// Coordonnées du centre du sprite.\nattribute vec3 attPosition;\n// Index du vertex (de 0.0 à 3.0).\nattribute float attIndex;\n// Angle de rotation en radians.\nattribute float attRotation;\n// Facteur d'échelle.\nattribute float attScale;\n// PI est une constante indispensable en trigonométrie.\nconst float PI = 3.1415926536;\n// La taille du canvas est utilisée pour convertir\n// des coordonnées en pixels vers l'espace de WebGL.\nuniform float uniWidth;\nuniform float uniHeight;\n// Passer au fragment shader les coordonnées UV\n// du vertex dans le bitmap.\nvarying vec2 varCoordsUV;\n\nvoid main() {\n  // On considère un cercle ce centre attPosition,\n  // et de rayon attScale.\n  // Les vertex sont sur ce cercle, c'est pourquoi\n  // on utilise attIndex comme un angle.\n  float x = attPosition.x \n    + attScale * cos( attRotation + attIndex * PI / 2.0 );\n  float y = attPosition.y\n    + attScale * sin( attRotation + attIndex * PI / 2.0 );\n  // On avait des coordonnées en pixels du canvas,\n  // il faut les convertir dans l'espace de WebGL.\n  x = (2.0 * x / uniWidth) - 1.0;\n  y = 1.0 - (2.0 * y / uniHeight);\n  // D�finir la position du vertex.\n  gl_Position = vec4( x, y, attPosition.z, 1.0 );\n  // Il faut associer à chaque attIndex, des coordonnées UV.\n  if (attIndex < 1.5) {\n    if (attIndex < 0.5) varCoordsUV = vec2(0.0, 0.0); // 0\n    else varCoordsUV = vec2(1.0, 0.0);                // 1\n  }\n  else {\n    if (attIndex < 2.5) varCoordsUV = vec2(1.0, 1.0); // 2\n    else varCoordsUV = vec2(0.0, 1.0);                // 3\n  }\n}\n","fragment-a":"precision mediump float;\n// L'image de notre sprite.\nuniform sampler2D uniTexture;\n// Les coordonnes UV du pixel à dessiner.\n// (0,0) correspond au pixel en haut à gauche.\n// (1,1) correspond au pixel en bas à droite.\nvarying vec2 varCoordsUV;\n\nvoid main() {\n  // texture2D retourne la coleur à un endroit donné.\n  vec4 color = texture2D( uniTexture, varCoordsUV );\n  // Si le point est transparent, on ne l'affiche pas.\n  if ( color.a < 0.1 ) discard;\n  gl_FragColor = color;\n}\n","fragment-b":"const highp float PI = 3.1415926539;\nconst lowp vec3 COLOR0 = vec3(0.7, 0.9, 1.0);\nconst lowp vec3 COLOR1 = vec3(0.0, 0.7, 0.9);\n\nvarying lowp vec3 varVertexPosition;\n\nuniform lowp float uniTimeF;\n\nvoid main() {\n  highp float time = uniTimeF / 700.0;\n  \n  lowp float x = varVertexPosition.x + time * 120.0;\n  lowp float y = varVertexPosition.y + sin(time) * 15.0;\n  \n  lowp float xx = x / 10.0;\n  lowp float yy = y / 10.0;\n  \n  lowp float h = cos(yy) * cos(xx) + sin(yy);\n  h = cos( PI * h + time);\n  \n  h = (1.0 + h) / 2.0;\n  gl_FragColor = vec4( h * COLOR0 + (1.0 - h) * COLOR1, 1.0);\n}\n"},d=t("dom"),f=t("tfw.data-binding"),h=function(t){var e=d.elem(this,"canvas");f.propInteger(this,"width")(function(t){e.setAttribute("width",t),e.style.width=t+"px"}),f.propInteger(this,"height")(function(t){e.setAttribute("height",t),e.style.height=t+"px"}),f.propString(this,"fragment"),t=f.extend({width:640,height:480,fragment:"a"},t,this),window.setTimeout(r.bind(this,e),20)};e.exports=h,e.exports._=l});
 //# sourceMappingURL=wdg.gl5.js.map
