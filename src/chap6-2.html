@@ -1,11 +1,47 @@
 <page>
    
-# Un point c'est tout
+  <wdg:flex>
+    <content>
+      <center>
+        <div><b>Sans</b> tri Javascript</div>
+        <wdg:gl6-2 $width="420" $height="420" />
+      </center>
+      <center>
+        <div><b>Avec</b> tri Javascript</div>
+        <wdg:gl6-2 $width="420" $height="420" $sort="true"/>
+    </center>
+    </content>
+  </wdg:flex>
+   
+La semi-transparence apporte son lot de désagréments. Comparez attentivement
+les deux animations ci-dessus et essayez de comprendre pourquoi celle de gauche
+ne donne pas le résultat attendu (laissez se faire plusieurs rotations si vous
+ne voyez pas tout de suite le problème).
 
-<wdg:gl6-2 $width="480" $height="480" />
+Les cercles les plus proches semblent bien cacher les cercles les plus éloignés,
+par moment, __certains perdent leur transparence__ !
 
-Bien, il nous faut donc trier nos données de sorte à afficher les sphères les plus lointaines en premier.
-Seulement ça semble un peu compliqué puisque nos données ont cette forme :
+Pour savoir ce qu'il se passe, il faut d'abord comprendre la semi-transparence.
+Quand un pixel doit être dessiné sur l'écran, il peut se mélanger au pixel déjà
+existant. Ce mécanisme s'appelle le __blending__ et certaines fonctions de WebGL
+permettent de contrôler comme ce mixage opère.
+
+Voici le code que nous utilisons pour activer le blending :
+<x-code>
+gl.enable(gl.BLEND);
+gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);  
+</x-code>
+
+On commence par l'activer, puis on choisit son [mode opératoire](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/blendFunc).
+Nous entrerons plus dans le détail au chapitre __particules__.
+
+Le problème est que si nous dessinons le pixel d'un cercle proche, il va se combiner
+correctement avec l'arrière-plan, mais il va aussi mettre à jour le z-buffer,
+empêchant ainsi tout pixel d'un cercle plus distant de s'afficher.
+
+La seule solution consiste à afficher les cercles dans le bon ordre : c'est-à-dire
+du plus éloigné au plus proche. Il nous faut donc trier nos données.
+Seulement ça semble un peu compliqué puisqu'elles ont cette forme :
 
 <x-code>
 [
@@ -16,11 +52,16 @@ Seulement ça semble un peu compliqué puisque nos données ont cette forme :
 ]    
 </x-code>
 
-Il faudrait trier par blocs, ce qui est faisable, mais pas forcément très rapide, d'autant plus qu'on va devoir faire ça en Javascript.
+Il faudrait trier par blocs, ce qui est faisable, mais pas forcément très rapide,
+d'autant plus qu'on va devoir faire ça en Javascript.
 
 
-Par chance, WebGL vient à la rescousse avec une fonction qu'on n'a pas encore étudiée : __`drawElements()`__.
-Elle permet justement d'indiquer l'ordre dans lequel il faut prendre les vertices grace à un tableau d'index qu'on lui passe en argument. La solution est toute trouvée : c'est ce tableau d'index que l'on va trier.
+Par chance, WebGL vient (encore une fois) à la rescousse avec une fonction qu'on
+n'a pas encore étudiée : __`drawElements()`__.
+
+Elle permet justement d'indiquer l'ordre dans lequel il faut prendre les vertices
+grâce à un tableau d'index qu'on lui passe en argument.
+La solution est toute trouvée : c'est ce tableau d'index que l'on va trier.
 
 
 Comparons les fonctions `drawArrays` et `drawElements()`.
@@ -28,13 +69,19 @@ Comparons les fonctions `drawArrays` et `drawElements()`.
 * __drawElements(__ mode, count, type, offset __)__
 
 Et voici les arguments (dont certains sont communs) :
-* __mode__ : gl.POINTS, gl.LINE_STRIP, gl.LINE_LOOP, gl.LINES, gl.TRIANGLE_STRIP, gl.TRIANGLE_FAN ou gl.TRIANGLES.
+* __mode__ : gl.POINTS, gl.LINE_STRIP, gl.LINE_LOOP, gl.LINES, gl.TRIANGLE_STRIP,
+gl.TRIANGLE_FAN ou gl.TRIANGLES.
 * __first__ : index du premier vertex (généralement 0).
 * __count__ : nombre de vertex à afficher.
-* __type__ : gl.UNSIGNED_BYTE ou gl.UNSIGNED_SHORT. Si vous avez plus de 255 points, il vaut mieux spécifier gl.UNSIGNED_SHORT.
-* __offset__ : position du premier élément (généralement 0). Par rapport à l'index du vertex, l'offset doit être multiplié par `Uint16Array.BYTES_PER_ELEMENT`.
+* __type__ : gl.UNSIGNED_BYTE ou gl.UNSIGNED_SHORT. Si vous avez plus de 255 points,
+il vaut mieux spécifier gl.UNSIGNED_SHORT.
+* __offset__ : position du premier élément (généralement 0).
+Par rapport à l'index du vertex, l'offset doit être multiplié par
+`Uint16Array.BYTES_PER_ELEMENT`.
 
-Il va donc nous falloir passer deux buffers à la carte graphique : un __Float32Array__ pour les attributs de chaque vertex et un __Uint16Array__ pour les index sur ces vertices.
+Il va donc nous falloir passer deux buffers à la carte graphique :
+un __Float32Array__ pour les attributs de chaque vertex et
+un __Uint16Array__ pour les index sur ces vertices.
 
 Voici comment on s'y prend :
 
@@ -57,15 +104,36 @@ datIndexes.sort(function( i, j ) {
 });
 </x-code>    
 
-Quand on passe une fonction à la méthode `sort()`, celle-ci retourne un zéro si les deux valeurs en argument sont égales, un nombre positif si le premier argument est supérieur au second, ...
+Quand on passe une fonction à la méthode `sort()`, celle-ci retourne un zéro si
+les deux valeurs en argument sont égales, un nombre positif si le premier argument
+est supérieur au second, etc.
 
+# Remarque
 
-<hr/>
+Nous avons vu que l'indexation est utile pour trier des vertex, mais elle peut
+également servire à réutiliser le même vertex dans différents triangles.
+Pour faire un cube, par exemple, il vous faut 6 faces carrés, dont chacune est
+composée de deux triangles. Il n'y a que 8 sommets dans votre cube, mais si
+vous utilisez un tableau d'attributs en mode __gl_TRIANGLES__ vous aurez besoin
+de 12*3 = 36 vertex au lieu de 8.
 
-
-* Page précédente : [Un point c'est tout (page 1)](chap6.html).
-* Chapitre suivant : [Particules](chap7.html).
-
-
+A la place, vous pourriez simplement faire ceci :
+<x-code>
+  var attribs = new Float32Array([
+  +1, +1, -1,
+  +1, -1, -1,
+  -1, -1, -1,
+  -1, +1, -1,
+  +1, +1, +1,
+  +1, -1, +1,
+  -1, -1, +1,
+  -1, +1, +1,
+  ]);
+  
+  var indexes = new Uint16Array([
+    0,1,2, 0,2,3, 0,5,1, 0,4,5, 0,3,7, 0,7,4,
+    6,3,2, 6,7,3, 6,2,1, 6,1,5, 6,5,7, 6,4,7
+  ])
+</x-code>
 
 </page>

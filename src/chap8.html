@@ -1,19 +1,20 @@
 <page>
-   
-# Framebuffer
-
-Jusqu'à présent, nous avons toujours dessiné directement sur l'écran, mais WebGL permet de faire du rendu dans des textures que l'on peut réutiliser ensuite pour un nouvel affichage.
+Jusqu'à présent, nous avons toujours dessiné directement sur l'écran, mais WebGL
+permet de faire du rendu dans des textures que l'on peut réutiliser ensuite pour
+un nouvel affichage.
 
 <wdg:gl8 $width="512" $height="512" />
 
-Dans l'exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le rendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons le fragment shader suivant sur la texture :
+Dans l'exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le
+rendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons
+le fragment shader suivant sur la texture :
 
-<x-code src="mod/gl8.fragment.c" />
+<ex label="Fragment Shader" src="mod/gl8.fragment.c" lang="glsl"/>
 
 Voyons maintenant comment on utilise les Framebuffers.
 
-IL faut commencer par créer un texture qui recevra les affichages : 
-<x-code>
+Il faut commencer par créer un texture qui recevra les affichages : 
+<ex label="Code Javascript">
 // Réserver de la mémoire dans la carte graphique
 // pour une texture.
 var texture = gl.createTexture();
@@ -37,7 +38,7 @@ gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
 gl.texImage2D(
     gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
     gl.RGBA, gl.UNSIGNED_BYTE, null);
-</x-code>
+</ex>
 
 Ensuite, il faut créer un __Framebuffer__ :
 
@@ -92,14 +93,4 @@ gl.bindTexture( gl.TEXTURE_2D, texture );
   * __texture__ : la texture cible.
   * __level__ : Généralement 0.
 
-
-## A quoi peut bien servir de stoquer le Z-buffer ?
-
-Vous avez certainement déjà joué à des jeux 3D dans lesquels le personnage passe parfois derrière un élément du décor. Pour éviter de rendre le joueur aveugle, une astuce consiste à afficher l'ombre du personnage en surimpression des éléments qui font obstacle à la caméra.
-
-En stoquant le __depth buffer__ (`gl.DEPTH_ATTACHMENT`) du décor et celui du personnage, il est ensuite de redessiner le personnage en comparant les pixels dans ces deux textures. Je vous laisse réfléchir aux détail, mais ce n'est pas trop difficile maintenant que vous savez utiliser les Framebuffers et les textures.
-
-----
-
-* Chapitre précédent : [Particules](chap7.html).
 </page>

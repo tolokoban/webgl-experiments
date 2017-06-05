@@ -5,6 +5,12 @@
 var $ = require("dom");
 var DB = require("tfw.data-binding");
 
+var COLORS = [
+  [2,0,0], [0,2,0], [0,0,2],
+  [2,1,0], [2,0,1], [1,2,0], [0,2,1], [1,0,2], [0,1,2],
+  [0,2,2], [2,0,2], [2,2,0]
+];
+
 var WdgGl6 = function(opts) {
   var that = this;
 
@@ -33,8 +39,15 @@ var WdgGl6 = function(opts) {
 
 function start( canvas ) {
   // #(init)
-  var gl = canvas.getContext("webgl")
-        || canvas.getContext("experimental-webgl");
+  var gl = canvas.getContext( "webgl", {
+    alpha: false,
+    depth: this.zbuffer,
+    stencil: false,
+    antialias: false,    
+    premultipliedAlpha: false,
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: true
+  } );
   // #(init)
 
   // #(shaders)
@@ -65,12 +78,13 @@ function start( canvas ) {
       0,  0, -1
   ];
   // Affecter des couleurs aléatoires.
+  shuffle[COLORS];
   var color;
   for (var k = 0; k < count; k++) {
-    color = createVividColor();
-    verticesData[6 * k + 3] = color.r;
-    verticesData[6 * k + 4] = color.g;
-    verticesData[6 * k + 5] = color.b;
+    color = COLORS[k];
+    verticesData[6 * k + 3] = color[0] * 0.5;
+    verticesData[6 * k + 4] = color[1] * 0.5;
+    verticesData[6 * k + 5] = color[2] * 0.5;
   }
   // #(vertices)
 
@@ -200,4 +214,15 @@ function createVividColor() {
   }
 
   return { r: r, g: g, b: b };
+}
+
+function shuffle( arr ) {
+  var i, k, tmp;
+  for( i=0 ; i<arr.length ; i++) {
+    k = Math.floor(Math.random(arr.length));
+    tmp = arr[k];
+    arr[k] = arr[i];
+    arr[i] = tmp;
+  }
+  return arr;
 }

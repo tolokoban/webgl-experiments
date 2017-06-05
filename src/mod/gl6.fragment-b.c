@@ -20,15 +20,14 @@ void main() {
   if (r > 0.25) {
     // Si on est à l'extérieur du cercle de rayon 0.5,
     // on place un fragment transparent.
-    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );
-  } else if (r > .2 ) {
+    discard;
+  } else if (r > .15 ) {
     // Au delà d'un certain rayon, on met une couleur fixe
     // qui nous sert de liseré.
     gl_FragColor = vec4(varColor, 1.0);
   } else {
     // Petit effet de dégradé.
-    vec3 col = x * varColor + y * WHITE;
-    gl_FragColor = vec4( col, 0.9 );
+    gl_FragColor = vec4(varColor, 0.5);
   }
   // La luminosité varie avec la profondeur du point.
   // En `z = 0.0`, la boule est noire.

@@ -20,21 +20,30 @@ var WdgGl6 = function(opts) {
     canvas.style.height = v + "px";
   });
 
-  DB.propBoolean( this, 'zindex' );
+  DB.propBoolean( this, 'sort' );
 
   opts = DB.extend({
     width: 640,
     height: 480,
-    zbuffer: false
+    sort: false
   }, opts, this);
 
   window.setTimeout( start.bind( this, canvas ), 20 );
 };
 
 function start( canvas ) {
+  var that = this;
+  
   // #(init)
-  var gl = canvas.getContext("webgl")
-        || canvas.getContext("experimental-webgl");
+  var gl = canvas.getContext( "webgl", {
+    alpha: false,
+    depth: true,
+    stencil: false,
+    antialias: false,    
+    premultipliedAlpha: false,
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: true
+  } );
   // #(init)
 
   // #(shaders)
@@ -69,12 +78,12 @@ function start( canvas ) {
     // Nombre de boules dans l'axe central.
     var axe = 6;
     for (k = 0; k < count - axe; k++) {
-      color = createVividColor();
+      color = createVividColor( k );
       datAttributes[6 * k + 3] = color.r;
       datAttributes[6 * k + 4] = color.g;
       datAttributes[6 * k + 5] = color.b;
       datIndexes[k] = k;
-      ang1 = .2 * Math.PI + (.6 * k * Math.PI / (count - axe - 1));
+      ang1 = 0.2 * Math.PI + (0.6 * k * Math.PI / (count - axe - 1));
       ang2 = 8.7 * k * Math.PI / (count - axe - 1);
       z = Math.cos(ang1);
       radius = Math.sin(ang1);
@@ -84,7 +93,7 @@ function start( canvas ) {
     }
     // Ajouter l'axe central.
     for (k = count - axe; k < count; k++) {
-      color = createVividColor();
+      color = createVividColor( k );
       datIndexes[k] = k;
       datAttributes[6 * k + 3] = color.r;
       datAttributes[6 * k + 4] = color.g;
@@ -107,21 +116,12 @@ function start( canvas ) {
   gl.vertexAttribPointer(attColor, 3, gl.FLOAT, false, blockSize, 3 * bpe);
   // #(attributes)
 
-  if (Boolean(this.zbuffer)) {
-    // #(zbuffer)
-    gl.enable(gl.DEPTH_TEST);
-    gl.depthFunc(gl.LEQUAL);
-    // #(zbuffer)
-    gl.disable(gl.BLEND);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-  } else {
-    // #(blend)
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-    gl.disable(gl.DEPTH_TEST);
-    // #(blend)
-  }
+  // #(blend)
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.enable(gl.DEPTH_TEST);
+  gl.depthFunc(gl.LESS);
+  // #(blend)
 
   // #(rendering)
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -130,11 +130,11 @@ function start( canvas ) {
   function render(time) {
     window.requestAnimationFrame( render );
 
-    var ang1 = time / 1766.781248;
+    var ang1 = time / 3766.781248;
     var c1 = Math.cos( ang1 );
     var s1 = Math.sin( ang1 );
 
-    var ang2 = time / 1979.998511;
+    var ang2 = time / 3979.998511;
     var c2 = Math.cos( ang2 );
     var s2 = Math.sin( ang2 );
 
@@ -158,9 +158,11 @@ function start( canvas ) {
       datAttributes[6 * k + 2] = x * m31 + y * m32 + z * m33;
     }
 
-    datIndexes.sort(function( i, j ) {
-      return datAttributes[6 * j + 2] - datAttributes[6 * i + 2];
-    });
+    if (that.sort) {
+      datIndexes.sort(function( i, j ) {
+        return datAttributes[6 * j + 2] - datAttributes[6 * i + 2];
+      });
+    }
 
     gl.bindBuffer(gl.ARRAY_BUFFER, bufAttributes);
     gl.bufferData(gl.ARRAY_BUFFER, datAttributes, gl.STATIC_DRAW);
@@ -201,8 +203,22 @@ function getVertexShader( gl, code ) {
 }
 // #(shader)
 
+var COLORS = [
+  [2,0,0], [0,2,0], [0,0,2],
+  [2,1,0], [2,0,1], [1,2,0], [0,2,1], [1,0,2], [0,1,2],
+  [0,2,2], [2,0,2], [2,2,0],
+  [2,2,2]
+];
 
-function createVividColor() {
+function createVividColor(idx) {
+  idx = (idx * 17 + 43) % COLORS.length;
+  var color = COLORS[idx];
+  return {
+    r: color[0] * 0.5, 
+    g: color[1] * 0.5, 
+    b: color[2] * 0.5
+  };
+  
   var r = Math.random();
   var g = Math.random();
   var b = Math.random();

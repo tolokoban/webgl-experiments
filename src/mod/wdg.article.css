@@ -68,6 +68,10 @@ div.article > nav > h1 {
   margin: 0;
 }
 
+div.article > nav > * {
+  margin: 2px 0;
+}
+
 div.article > nav > a,
 div.article > nav > a:visited {
   display: block;
@@ -79,9 +83,31 @@ div.article > nav > a:hover {
   text-decoration: underline;
 }
 
+div.article > nav > div {
+  padding: 3px;  
+  background: rgba(255,255,255,.5);
+}
+
 div.article > article canvas {
   background: #fff;
   margin: 4px;
   display: inline-block;
   box-shadow: 0 4px 8px rgba(0,0,0,.5);
+}
+
+div.article div.wdg-showhide {
+  clear: both;
+}
+
+div.article > article table {
+    border-collapse: collapse;
+    clear: both;
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+
+div.article > article table td,
+div.article > article table th {
+  padding: 3px 6px;
+  border: 1px solid rgba(0,128,255,.5);
+  background: #fff;
 }

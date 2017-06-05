@@ -47,6 +47,8 @@ matrices ou des tableaux de nombres/vecteurs/matrices.
 Pour notre exemple, nous avons défini ces attributs-ci :
 <x-code src="mod/wdg.gl0.js" section="attributes" />
 
+<img style="float:right" class="theme-elevation-4" src="css/gfx/index.triangle.jpeg"/>
+
 Les attributs n'ont aucune signification pour WebGL. Il va juste les passer
 à une fonction qui lui retournera les coordonnées finales.
 
@@ -89,7 +91,7 @@ Il faut noter que X et Y sont __toujours__ compris entre -1 et +1.
 La forme du canvas n'y change rien.
 C'est pourquoi le même code dans un canvas non carré donnera un résultat assez différent :
 
-<wdg:gl0 $width="480" $height="120" />
+<wdg:gl0 $width="800" $height="100" />
 
 # Comment faire le lien entre le tableau de nombres et les attibuts du vertex shader ?
 
@@ -167,7 +169,7 @@ Pour plus de détails :
 * [bufferData()](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferData)
 
 Enfin, il faut aussi transmettre et compiler les GLSL des vertex et fragment shaders.
-Pour cela, on les regroupe dans un programme comme ceci :
+Pour cela, on les regroupe dans un __programme__ comme ceci :
 <x-code src="mod/wdg.gl0.js" section="shaders" />
 
 <ex label="Fonctions utilitaires" src="mod/wdg.gl0.js" section="shader"/>

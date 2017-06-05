@@ -44,11 +44,27 @@ A l'appel de __drawArrays()__, WebGL va lire toutes les données d'un bloc et al
 <ex label="Voici le code qui définit l'association entre les attributs et les blocs du tableau"
     src="mod/wdg.gl5.js" section="defineAttributes" />
 
-<ex label="Et celui qui dessine chaque frame" src="mod/wdg.gl5.js" section="code" />
+<ex label="Et celui qui dessine chaque frame" src="mod/wdg.gl5.js" section="rendering" />
 
+# Remarque concernant l'initialisation du contexte WebGL
+
+<x-code src="mod/wdg.gl5.js" section="init"/>
+
+En fonction du mavigateur et du système d'exploitation, les valeurs de configurations
+par défaut de WebGL peuvent varier.
+C'est pourquoi, il est prudent de les définir manuellement.
+
+Ici, on désactive le _premultiplied alpha_ dont on parlera dans un chapitre plus
+avancé. Vous trouverez toutes les options de configuration sur le 
+[site de Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext).
 
 # Les textures à partir d'images
 
+Notre texture est prise à partir du fichier PNG suivant :<br/>
+<img src="css/gfx/champi.png"/>
 
+Le chargement d'une image est un processus asynchrone. Il faut donc utiliser
+un code de ce genre :
+<x-code src="mod/wdg.gl5.js" section="image"/>
 
 </page>

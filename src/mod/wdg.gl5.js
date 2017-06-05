@@ -1,5 +1,7 @@
 "use strict";
 
+require("gfx");
+
 var $ = require( "dom" );
 var DB = require( "tfw.data-binding" );
 
@@ -34,7 +36,17 @@ function start( canvas ) {
   var fragmentShaderCode = GLOBAL['fragment-' + this.fragment];
 
   // #(code)
-  var gl = canvas.getContext( "webgl" );
+  // #(init)
+  var gl = canvas.getContext( "webgl", {
+    alpha: false,
+    depth: false,
+    stencil: false,
+    antialias: false,    
+    premultipliedAlpha: false,
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: true
+  } );
+  // #(init)
 
   var shaderProgram = gl.createProgram( );
   gl.attachShader(shaderProgram, getVertexShader( gl, vertexShaderCode ));
@@ -83,9 +95,11 @@ function start( canvas ) {
   var uniWidth = gl.getUniformLocation( shaderProgram, "uniWidth" );
   var uniHeight = gl.getUniformLocation( shaderProgram, "uniHeight" );
 
-  // #(draw) Activer le test de profondeur.
+  // #(draw) 
+  // Activer le test de profondeur.
   gl.disable( gl.DEPTH_TEST );
   //gl.depthFunc(gl.LEQUAL); Charger la texture.
+    
   var texture = gl.createTexture( );
   gl.bindTexture( gl.TEXTURE_2D, texture );
 
@@ -95,6 +109,7 @@ function start( canvas ) {
   gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
   gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
 
+  // #(image)
   var image = new Image( );
   image.onload = function( ) {
     // Upload the image into the texture.
@@ -106,13 +121,15 @@ function start( canvas ) {
   image.onerror = function( err ) {
     throw( err );
   };
-  image.src = "css/wdg.gl5/champi.png";
+  image.src = "css/gfx/champi.png";
+  // #(image)
 
   // Définir la transparence pour les sprites.
   gl.enable( gl.BLEND );
   gl.blendFunc( gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA ); // gl.ONE);
   gl.disable( gl.DEPTH_TEST );
 
+  // #(rendering)
   function draw( t ) {
 
     gl.bindTexture( gl.TEXTURE_2D, texture );
@@ -157,6 +174,7 @@ function start( canvas ) {
 
     window.requestAnimationFrame( draw );
   }
+  // #(rendering)
 
   // #(draw) #(code)
 };

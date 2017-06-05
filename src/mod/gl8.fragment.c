@@ -79,8 +79,9 @@ void main() {
   // Mouvement du centre qui permet de séparer l'affichage en 4.
   float ang = varTime * 0.000314;
   float r = cos(4581.15 + varTime * 0.000711);
-  float cx = cos(ang) * r;
-  float cy = sin(ang) * r;
+  float t= varTime * 0.002;
+  float cx = (cos(ang) + 0.35 * cos(t + y * 5.0)) * r;
+  float cy = (sin(ang) + 0.35 * cos(t + x * 5.0)) * r;
 
   // Voici comment on lit un pixel dans une texture.
   vec4 color = texture2D( uniTexture, vec2(u, v) );
