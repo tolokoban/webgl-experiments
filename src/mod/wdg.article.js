@@ -8,10 +8,19 @@ var PAGES = {
   chap3: "Textures procédurales",
   chap4: "Textures animées",
   chap5: "Utiliser des images",
+<<<<<<< HEAD
   chap6: "Un point c'est tout",
   "chap6-2": "La semi-transparence",
   chap7: "Particules",
   chap8: "Frame Buffer"
+=======
+  $999: "脌 trier...",
+  chap6: "Chap-6",
+  chap7: "Chap-7",
+  chap8: "Chap-8",
+  $666: "Annexes",
+  doc: "Documentations"
+>>>>>>> d53f0d73b070ee3df8f282f5f8e6c9c2e5a22e73
 };
 
 require("font.josefin");
