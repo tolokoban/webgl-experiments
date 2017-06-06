@@ -11,7 +11,9 @@ var PAGES = {
   $999: "脌 trier...",
   chap6: "Chap-6",
   chap7: "Chap-7",
-  chap8: "Chap-8"
+  chap8: "Chap-8",
+  $666: "Annexes",
+  doc: "Documentations"
 };
 
 require("font.josefin");
