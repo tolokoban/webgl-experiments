@@ -1,0 +1,6 @@
+{
+  "var": {
+      "vert": "deform-1.vert.c",
+      "frag": "deform-1.frag.c"
+  }
+}
