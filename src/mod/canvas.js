@@ -7,6 +7,7 @@ var Resize = require( "webgl.resize" );
 module.exports = function ( slots ) {
   if( typeof slots.numbers === "undefined" ) slots.numbers = {};
   if( typeof slots.strings === "undefined" ) slots.strings = {};
+  if( typeof slots.booleans === "undefined" ) slots.booleans = {};
   if( typeof slots.context === "undefined" ) slots.context = {};
   if( typeof slots.init !== "function" ) {
     slots.init = function(resolve) {
@@ -54,6 +55,11 @@ module.exports = function ( slots ) {
     for( key in slots.numbers ) {
       val = slots.numbers[key];
       DB.propFloat( this, key );
+      defValues[key] = val;
+    }
+    for( key in slots.booleans ) {
+      val = slots.booleans[key];
+      DB.propBoolean( this, key );
       defValues[key] = val;
     }
 

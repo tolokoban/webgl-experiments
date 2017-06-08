@@ -1,0 +1,23 @@
+<page>
+  <wdg:flex>
+    <content>
+      <div>
+        <wdg:deform-3 $width="960" $height="540" 
+          bind:girafe="girafe:value"
+          bind:delay="delay:value" $delay="0"
+          bind:angle="angle:value" $angle="66"/>
+          <wdg:flex>
+            <content>
+              <wdg:text id="delay" $label="Délai par étage (ms)" 
+                $wide="true" $value="0"/>
+              <wdg:text id="angle" $label="Angle max (deg)" 
+                $wide="true" $value="66"/>
+              <wdg:checkbox id="girafe" $text="Afficher la girafe" $value="false"/>
+            </content>
+          </wdg:flex>
+      </div>
+    </content>
+  </wdg:flex>
+  
+Avec la technique de l'article précédent, il est possible de déformer des images entières.
+</page>
