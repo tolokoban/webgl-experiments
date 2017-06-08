@@ -1,5 +1,8 @@
-/** @module wdg.gl2 */require( 'wdg.gl2', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- "use strict";
+/** @module wdg.gl2 */require( 'wdg.gl2', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec2 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvoid main() {\r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",
+  "fragment": "void main() {\r\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\r\n}\r\n"};
+  "use strict";
 
 var $ = require("dom");
 var DB = require("tfw.data-binding");
@@ -127,17 +130,13 @@ function getVertexShader( gl, code ) {
 }
 
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvoid main() {\r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",
-  "fragment": "void main() {\r\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\r\n}\r\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.gl2
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.gl2
 
  */
 });

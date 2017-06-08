@@ -1,5 +1,8 @@
-/** @module wdg.gl6-2 */require( 'wdg.gl6-2', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- // https://www.opengl.org/wiki/Primitive#Point_primitives
+/** @module wdg.gl6-2 */require( 'wdg.gl6-2', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = (1.5 - z) / 2.5;\r\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 80.0 * depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",
+  "fragment": "precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on place un fragment transparent.\r\n    discard;\r\n  } else if (r > .15 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor = vec4(varColor, 1.0);\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    gl_FragColor = vec4(varColor, 0.5);\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\r\n}\r\n"};
+  // https://www.opengl.org/wiki/Primitive#Point_primitives
 
 "use strict";
 
@@ -21,21 +24,30 @@ var WdgGl6 = function(opts) {
     canvas.style.height = v + "px";
   });
 
-  DB.propBoolean( this, 'zindex' );
+  DB.propBoolean( this, 'sort' );
 
   opts = DB.extend({
     width: 640,
     height: 480,
-    zbuffer: false
+    sort: false
   }, opts, this);
 
   window.setTimeout( start.bind( this, canvas ), 20 );
 };
 
 function start( canvas ) {
+  var that = this;
+  
   // #(init)
-  var gl = canvas.getContext("webgl")
-        || canvas.getContext("experimental-webgl");
+  var gl = canvas.getContext( "webgl", {
+    alpha: false,
+    depth: true,
+    stencil: false,
+    antialias: false,    
+    premultipliedAlpha: false,
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: true
+  } );
   // #(init)
 
   // #(shaders)
@@ -70,12 +82,12 @@ function start( canvas ) {
     // Nombre de boules dans l'axe central.
     var axe = 6;
     for (k = 0; k < count - axe; k++) {
-      color = createVividColor();
+      color = createVividColor( k );
       datAttributes[6 * k + 3] = color.r;
       datAttributes[6 * k + 4] = color.g;
       datAttributes[6 * k + 5] = color.b;
       datIndexes[k] = k;
-      ang1 = .2 * Math.PI + (.6 * k * Math.PI / (count - axe - 1));
+      ang1 = 0.2 * Math.PI + (0.6 * k * Math.PI / (count - axe - 1));
       ang2 = 8.7 * k * Math.PI / (count - axe - 1);
       z = Math.cos(ang1);
       radius = Math.sin(ang1);
@@ -85,7 +97,7 @@ function start( canvas ) {
     }
     // Ajouter l'axe central.
     for (k = count - axe; k < count; k++) {
-      color = createVividColor();
+      color = createVividColor( k );
       datIndexes[k] = k;
       datAttributes[6 * k + 3] = color.r;
       datAttributes[6 * k + 4] = color.g;
@@ -108,21 +120,12 @@ function start( canvas ) {
   gl.vertexAttribPointer(attColor, 3, gl.FLOAT, false, blockSize, 3 * bpe);
   // #(attributes)
 
-  if (Boolean(this.zbuffer)) {
-    // #(zbuffer)
-    gl.enable(gl.DEPTH_TEST);
-    gl.depthFunc(gl.LEQUAL);
-    // #(zbuffer)
-    gl.disable(gl.BLEND);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-  } else {
-    // #(blend)
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-    gl.disable(gl.DEPTH_TEST);
-    // #(blend)
-  }
+  // #(blend)
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.enable(gl.DEPTH_TEST);
+  gl.depthFunc(gl.LESS);
+  // #(blend)
 
   // #(rendering)
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -131,11 +134,11 @@ function start( canvas ) {
   function render(time) {
     window.requestAnimationFrame( render );
 
-    var ang1 = time / 1766.781248;
+    var ang1 = time / 3766.781248;
     var c1 = Math.cos( ang1 );
     var s1 = Math.sin( ang1 );
 
-    var ang2 = time / 1979.998511;
+    var ang2 = time / 3979.998511;
     var c2 = Math.cos( ang2 );
     var s2 = Math.sin( ang2 );
 
@@ -159,9 +162,11 @@ function start( canvas ) {
       datAttributes[6 * k + 2] = x * m31 + y * m32 + z * m33;
     }
 
-    datIndexes.sort(function( i, j ) {
-      return datAttributes[6 * j + 2] - datAttributes[6 * i + 2];
-    });
+    if (that.sort) {
+      datIndexes.sort(function( i, j ) {
+        return datAttributes[6 * j + 2] - datAttributes[6 * i + 2];
+      });
+    }
 
     gl.bindBuffer(gl.ARRAY_BUFFER, bufAttributes);
     gl.bufferData(gl.ARRAY_BUFFER, datAttributes, gl.STATIC_DRAW);
@@ -202,8 +207,22 @@ function getVertexShader( gl, code ) {
 }
 // #(shader)
 
+var COLORS = [
+  [2,0,0], [0,2,0], [0,0,2],
+  [2,1,0], [2,0,1], [1,2,0], [0,2,1], [1,0,2], [0,1,2],
+  [0,2,2], [2,0,2], [2,2,0],
+  [2,2,2]
+];
 
-function createVividColor() {
+function createVividColor(idx) {
+  idx = (idx * 17 + 43) % COLORS.length;
+  var color = COLORS[idx];
+  return {
+    r: color[0] * 0.5, 
+    g: color[1] * 0.5, 
+    b: color[2] * 0.5
+  };
+  
   var r = Math.random();
   var g = Math.random();
   var b = Math.random();
@@ -231,17 +250,13 @@ function createVividColor() {
   return { r: r, g: g, b: b };
 }
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = (1.5 - z) / 2.5;\r\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 80.0 * depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",
-  "fragment": "precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on place un fragment transparent.\r\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\r\n  } else if (r > .2 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor = vec4(varColor, 1.0);\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    vec3 col = x * varColor + y * WHITE;\r\n    gl_FragColor = vec4( col, 0.9 );\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\r\n}\r\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.gl6-2
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.gl6-2
 
  */
 });

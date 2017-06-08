@@ -1,5 +1,5 @@
-/** @module x-widget */require( 'x-widget', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- "use strict";
+/** @module x-widget */require( 'x-widget', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+    "use strict";
 var $ = require("dom");
 var DB = require("tfw.data-binding");
 
@@ -60,8 +60,8 @@ function Widget2(args) {
 
     if (Array.isArray( args.children )) {
         // Adding DOM element children.
-        args.children.forEach(function (child) {
-            $.add( elem, child );
+        args.children.forEach(function (child) {          
+          $.add( elem, child );
         });
     }
     // Converting into a widget.
@@ -115,7 +115,6 @@ Widget.template = function( attribs ) {
 function register( id, wdg ) {
     widgets[id] = wdg;
     var mySlots = slots[id];
-    console.info("[x-widget] widget creation=...", id);
     if( typeof mySlots !== 'undefined' ) {
         window.setTimeout(function() {
             mySlots.forEach(function (slot) {
@@ -177,18 +176,26 @@ Widget.bind = function( id, attribs ) {
             bindings.forEach(function (binding) {
                 srcObj = widgets[binding[0]];
                 if( typeof srcObj === 'undefined' ) {
-                    console.error( "[x-widget:bind] Trying to bind attribute \"" + dstAtt
+                    console.error( "[x-widget:bind(" + id + ")] Trying to bind attribute \""
+                                   + dstAtt
                                    + "\" of widget \"" + id + "\" to the unexisting widget \""
                                    + binding[0] + "\"!");
                     return;
                 }
                 srcAtt = binding[1];
-                if (binding.length == 2) {
-                    DB.bind( srcObj, srcAtt, dstObj, dstAtt );
-                } else {
-                    var value = binding[2];
-                    DB.bind( srcObj, srcAtt, function() {
-                        dstObj[dstAtt] = value;
+                try {
+                    if (binding.length == 2) {
+                        DB.bind( srcObj, srcAtt, dstObj, dstAtt );
+                    } else {
+                        var value = binding[2];
+                        DB.bind( srcObj, srcAtt, function() {
+                            dstObj[dstAtt] = value;
+                        });
+                    }
+                } catch( ex ) {
+                    console.error("Binding error for widget `" + id + "`!", {
+                        ex: ex,
+                        binding: binding
                     });
                 }
             });
@@ -208,14 +215,36 @@ Widget.bind = function( id, attribs ) {
                 var mod = APP;
                 var fct = slot;
                 if (Array.isArray( slot )) {
-                    mod = require(slot[0]);
+                    try {
+                        mod = require(slot[0]);
+                    } catch( ex ) {
+                        console.error("[x-widget:bind] Widget `" + id + "` can't require unexistent `"
+                                      + slot[0] + "`: ", ex);
+                        throw( ex );
+                    }
                     fct = slot[1];
                 }
                 fct = mod[fct];
                 if (typeof fct !== 'function') {
-                    console.error("[x-widget:bind] slot not found: ", slot);
+                    if( Array.isArray(slot) ) {
+                      throw Error("[x-widget:bind]  Widget `" + id + "` use unexisting slot `"
+                                  + slot[1] + "` of module `" + slot[0] + "`!");
+                    } else {
+                      throw Error("[x-widget:bind]  Widget `" + id + "` use unexisting slot `"
+                                  + slot + "` of main module `APP`!");
+                    }
                 } else {
-                    DB.bind( dstObj, dstAtt, fct );
+                    try {
+                        DB.bind( dstObj, dstAtt, fct );
+                    } catch( ex ) {
+                        console.error("Binding error for widget `" + id + "`!", {
+                            ex: ex,
+                            dstObj: dstObj,
+                            dstAtt: dstAtt,
+                            fct: fct,
+                            slot: slot
+                        });
+                    }
                 }
             });
 
@@ -233,7 +262,6 @@ module.exports._ = _;
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:x-widget
 
  */
 });

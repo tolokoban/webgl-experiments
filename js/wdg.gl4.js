@@ -1,5 +1,8 @@
-/** @module wdg.gl4 */require( 'wdg.gl4', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- "use strict";
+/** @module wdg.gl4 */require( 'wdg.gl4', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nuniform lowp float uniTimeV;\r\n\r\nvarying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  highp float time = uniTimeV;\r\n\r\n  varVertexPosition = attVertexPosition;\r\n  \r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  float speed = 0.0;\r\n\r\n  if (x < 0.0) {\r\n    if (y < 0.0) {\r\n      speed = 1600.0;\r\n    } else {\r\n      speed = 1643.0;\r\n    }\r\n  } else {\r\n    if (y < 0.0) {\r\n      speed = 1703.0;\r\n    } else {\r\n      speed = 1742.0;\r\n    }\r\n  }\r\n\r\n  float radius = 0.5 + (cos(time / speed) + 1.0) / 4.0;\r\n  gl_Position = vec4( x * radius, y * radius, 0.0, 1.0 );\r\n}\r\n",
+  "fragment-a": "const highp float PI = 3.1415926539;\r\nconst lowp vec3 COLOR0 = vec3(0.7, 0.9, 1.0);\r\nconst lowp vec3 COLOR1 = vec3(0.0, 0.7, 0.9);\r\n\r\nvarying lowp vec3 varVertexPosition;\r\n\r\nuniform lowp float uniTimeF;\r\n\r\nvoid main() {\r\n  highp float time = uniTimeF / 700.0;\r\n  \r\n  lowp float x = varVertexPosition.x + time * 120.0;\r\n  lowp float y = varVertexPosition.y + sin(time) * 15.0;\r\n  \r\n  lowp float xx = x / 10.0;\r\n  lowp float yy = y / 10.0;\r\n  \r\n  lowp float h = cos(yy) * cos(xx) + sin(yy);\r\n  h = cos( PI * h + time);\r\n  \r\n  h = (1.0 + h) / 2.0;\r\n  gl_FragColor = vec4( h * COLOR0 + (1.0 - h) * COLOR1, 1.0);\r\n}\r\n"};
+  "use strict";
 
 var $ = require("dom");
 var DB = require("tfw.data-binding");
@@ -121,17 +124,13 @@ function getVertexShader( gl, code ) {
 }
 
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nuniform lowp float uniTimeV;\r\n\r\nvarying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  highp float time = uniTimeV;\r\n\r\n  varVertexPosition = attVertexPosition;\r\n  \r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  float speed = 0.0;\r\n\r\n  if (x < 0.0) {\r\n    if (y < 0.0) {\r\n      speed = 1600.0;\r\n    } else {\r\n      speed = 1643.0;\r\n    }\r\n  } else {\r\n    if (y < 0.0) {\r\n      speed = 1703.0;\r\n    } else {\r\n      speed = 1742.0;\r\n    }\r\n  }\r\n\r\n  float radius = 0.5 + (cos(time / speed) + 1.0) / 4.0;\r\n  gl_Position = vec4( x * radius, y * radius, 0.0, 1.0 );\r\n}\r\n",
-  "fragment-a": "const highp float PI = 3.1415926539;\r\nconst lowp vec3 COLOR0 = vec3(0.7, 0.9, 1.0);\r\nconst lowp vec3 COLOR1 = vec3(0.0, 0.7, 0.9);\r\n\r\nvarying lowp vec3 varVertexPosition;\r\n\r\nuniform lowp float uniTimeF;\r\n\r\nvoid main() {\r\n  highp float time = uniTimeF / 700.0;\r\n  \r\n  lowp float x = varVertexPosition.x + time * 120.0;\r\n  lowp float y = varVertexPosition.y + sin(time) * 15.0;\r\n  \r\n  lowp float xx = x / 10.0;\r\n  lowp float yy = y / 10.0;\r\n  \r\n  lowp float h = cos(yy) * cos(xx) + sin(yy);\r\n  h = cos( PI * h + time);\r\n  \r\n  h = (1.0 + h) / 2.0;\r\n  gl_FragColor = vec4( h * COLOR0 + (1.0 - h) * COLOR1, 1.0);\r\n}\r\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.gl4
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.gl4
 
  */
 });

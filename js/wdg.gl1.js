@@ -1,5 +1,8 @@
-/** @module wdg.gl1 */require( 'wdg.gl1', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- "use strict";
+/** @module wdg.gl1 */require( 'wdg.gl1', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec2 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvoid main() {\r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",
+  "fragment": "void main() {\r\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\r\n}\r\n"};
+  "use strict";
 
 var $ = require("dom");
 var DB = require("tfw.data-binding");
@@ -27,8 +30,7 @@ var WdgGl1 = function(opts) {
 
 function start( canvas ) {
     // #(init)
-    var gl = canvas.getContext("webgl")
-            || canvas.getContext("experimental-webgl");
+    var gl = canvas.getContext("webgl");
     // #(init)
 
     // #(shaders)
@@ -45,10 +47,11 @@ function start( canvas ) {
     gl.bufferData(
         gl.ARRAY_BUFFER,
         new Float32Array([
-            20, 20, 0,
-            120, 20, 0,
-            20, 120, 0,
-            120, 120, 0
+            // x, y (4 points)
+            20, 20,
+            120, 20,
+            20, 120,
+            120, 120
         ]),
         gl.STATIC_DRAW
     );
@@ -57,21 +60,23 @@ function start( canvas ) {
     // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
-    gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
 
     // #(canvas-size)
+    // Mémoriser des pointeurs sur les uniform uniWidth et uniHeight.
     var uniWidth = gl.getUniformLocation(shaderProgram, "uniWidth");
     var uniHeight = gl.getUniformLocation(shaderProgram, "uniHeight");
     // #(canvas-size)
 
     // #(rendering)
     function render( time ) {
+        // Assigner des valeurs aux uniforms.
         gl.uniform1f(uniWidth, canvas.width);
         gl.uniform1f(uniHeight, canvas.height);
 
         gl.clearColor(0.0, 0.0, 1.0, 1.0);
-        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+        gl.clear(gl.COLOR_BUFFER_BIT);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
         requestAnimationFrame( render );
@@ -106,17 +111,13 @@ function getVertexShader( gl, code ) {
 }
 
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvoid main() {\r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",
-  "fragment": "void main() {\r\n  gl_FragColor = vec4(1.0, 0.5, 0.0, 1.0);\r\n}\r\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.gl1
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.gl1
 
  */
 });

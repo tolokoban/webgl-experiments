@@ -1,5 +1,10 @@
-/** @module wdg.gl3 */require( 'wdg.gl3', function(exports, module) { var _intl_={"en":{}},_$=require("$").intl;function _(){return _$(_intl_, arguments);}
- "use strict";
+/** @module wdg.gl3 */require( 'wdg.gl3', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+ var GLOBAL = {
+  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvarying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  varVertexPosition = attVertexPosition;\r\n  \r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",
+  "fragment-a": "varying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  if (mod( varVertexPosition.x, 20.0 ) > 6.0) {\r\n    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);\r\n  } else {\r\n    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);\r\n  }\r\n}\r\n",
+  "fragment-b": "varying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  lowp float x = varVertexPosition.x;\r\n  lowp float y = varVertexPosition.y;\r\n\r\n  highp float radius = sqrt( (x*x) + (y*y) );\r\n\r\n  highp float r = abs( cos( radius / 77.12 ) );\r\n  highp float g = abs( cos( radius / 33.27 ) );\r\n  highp float b = abs( cos( radius / 62.43 ) );\r\n  \r\n  gl_FragColor = vec4( r, g, b, 1.0 );\r\n}\r\n",
+  "fragment-c": "varying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  // Couleur de la trame.\r\n  lowp float r1 = 1.0;\r\n  lowp float g1 = 0.5;\r\n  lowp float b1 = 0.0;\r\n  // Couleur du fond.\r\n  lowp float r2 = 0.0;\r\n  lowp float g2 = 0.0;\r\n  lowp float b2 = 1.0;\r\n\r\n  lowp float x = mod( varVertexPosition.x, 16.0 ) - 8.0;\r\n  lowp float y = mod( varVertexPosition.y, 16.0 ) - 8.0;\r\n\r\n  highp float radius = sqrt( (x*x) + (y*y) );\r\n\r\n  highp float dist = sqrt( varVertexPosition.x * varVertexPosition.x \r\n                           + varVertexPosition.y * varVertexPosition.y );\r\n  dist = dist / 300.0;\r\n  \r\n  lowp float limit = dist * 9.0;\r\n\r\n  if( radius < limit ) gl_FragColor = vec4( r1, g1, b1, 1.0 );\r\n  else {\r\n    // Ici, on fait de l'anti-aliasing.\r\n    lowp float c2 = clamp( radius - limit, 0.0, 1.0 );\r\n    lowp float c1 = 1.0 - c2;\r\n    gl_FragColor = vec4( c1 * r1 + c2 * r2, \r\n                         c1 * g1 + c2 * g2, \r\n                         c1 * b1 + c2 * b2, \r\n                         1.0 );\r\n  }\r\n}\r\n"};
+  "use strict";
 
 var $ = require("dom");
 var DB = require("tfw.data-binding");
@@ -50,17 +55,21 @@ function start( canvas ) {
     gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
     var W = canvas.width;
     var H = canvas.height;
-    var vertices = [W / 2, H / 2, 0];
-    var n = 99;
-    var radius = Math.min(W, H) * .45;
+    // Placer le point central de l'éventail.
+    var vertices = [
+      W / 2,
+      H / 2
+    ];
+    // Définir le nombre de points.
+    var n = 127;
+    var radius = Math.min(W, H) * 0.49;
     var r;
     var ang;
     for (var i=0; i<=n; i++) {
         ang = 2 * Math.PI * i / n;
-        r = radius * (.9 + .1 * Math.cos(ang * 7));
+        r = radius * (0.8 + 0.2 * Math.cos(ang * 7));
         vertices.push( W / 2 + r * Math.cos( ang ) );
         vertices.push( H / 2 + r * Math.sin( ang ) );
-        vertices.push( 0 );
     }
     gl.bufferData(
         gl.ARRAY_BUFFER,
@@ -73,7 +82,7 @@ function start( canvas ) {
     // #(vertex-position)
     var vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "attVertexPosition");
     gl.enableVertexAttribArray(vertexPositionAttribute);
-    gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
     // #(vertex-position)
 
     // #(canvas-size)
@@ -116,19 +125,13 @@ function getVertexShader( gl, code ) {
 }
 
 
-var GLOBAL = {
-  "vertex": "attribute vec3 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvarying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  varVertexPosition = attVertexPosition;\r\n  \r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",
-  "fragment-a": "varying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  if (mod( varVertexPosition.x, 20.0 ) > 6.0) {\r\n    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);\r\n  } else {\r\n    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);\r\n  }\r\n}\r\n",
-  "fragment-b": "varying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  lowp float x = varVertexPosition.x;\r\n  lowp float y = varVertexPosition.y;\r\n\r\n  highp float radius = sqrt( (x*x) + (y*y) );\r\n\r\n  highp float r = abs( cos( radius / 77.12 ) );\r\n  highp float g = abs( cos( radius / 33.27 ) );\r\n  highp float b = abs( cos( radius / 62.43 ) );\r\n  \r\n  gl_FragColor = vec4( r, g, b, 1.0 );\r\n}\r\n",
-  "fragment-c": "varying lowp vec3 varVertexPosition;\r\n\r\nvoid main() {\r\n  // Couleur de la trame.\r\n  lowp float r1 = 1.0;\r\n  lowp float g1 = 0.5;\r\n  lowp float b1 = 0.0;\r\n  // Couleur du fond.\r\n  lowp float r2 = 0.0;\r\n  lowp float g2 = 0.0;\r\n  lowp float b2 = 1.0;\r\n\r\n  lowp float x = mod( varVertexPosition.x, 16.0 ) - 8.0;\r\n  lowp float y = mod( varVertexPosition.y, 16.0 ) - 8.0;\r\n\r\n  highp float radius = sqrt( (x*x) + (y*y) );\r\n\r\n  highp float dist = sqrt( varVertexPosition.x * varVertexPosition.x \r\n                           + varVertexPosition.y * varVertexPosition.y );\r\n  dist = dist / 300.0;\r\n  \r\n  lowp float limit = dist * 9.0;\r\n\r\n  if( radius < limit ) gl_FragColor = vec4( r1, g1, b1, 1.0 );\r\n  else {\r\n    // Ici, on fait de l'anti-aliasing.\r\n    lowp float c2 = clamp( radius - limit, 0.0, 1.0 );\r\n    lowp float c1 = 1.0 - c2;\r\n    gl_FragColor = vec4( c1 * r1 + c2 * r2, \r\n                         c1 * g1 + c2 * g2, \r\n                         c1 * b1 + c2 * b2, \r\n                         1.0 );\r\n  }\r\n}\r\n"};
- 
+  
 module.exports._ = _;
 /**
  * @module wdg.gl3
  * @see module:$
  * @see module:dom
  * @see module:tfw.data-binding
- * @see module:wdg.gl3
 
  */
 });
