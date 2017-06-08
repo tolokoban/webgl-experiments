@@ -5,9 +5,10 @@ uniform float uniAngle;
 attribute float attRadius;
 attribute float attAngle;
 attribute float attLevel;
+attribute vec2 attUV;
 
-// Pour faire un léger dégradé dans le fragment shader.
-varying float varBrightness;
+// Coordonnées dans la texture.
+varying vec2 varUV;
 
 void main() {
   // Temps qui tient compte du décalage par level.
@@ -45,13 +46,6 @@ void main() {
     yc + y,
     0, 1 
   );
-  if (attLevel == 9.0) {
-    // Le dernier triangle est de couleur unie.
-    varBrightness = 0.0;
-  } else {
-    // Vaut 0 pour les vertex du bas du triangle
-    // et 1 pour le sommet.
-    // Cela donne l'effer d'une ombre.
-    varBrightness = sin( attAngle );
-  }
+  
+  varUV = attUV;
 }

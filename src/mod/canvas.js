@@ -2,6 +2,7 @@
 
 var $ = require( "dom" );
 var DB = require( "tfw.data-binding" );
+var Resize = require( "webgl.resize" );
 
 module.exports = function ( slots ) {
   if( typeof slots.numbers === "undefined" ) slots.numbers = {};
@@ -30,10 +31,6 @@ module.exports = function ( slots ) {
   
   var constructor = function ( opts ) {
     var canvas = $.elem( this, 'canvas' );
-    this.canvas = canvas;
-    Object.freeze( this.canvas );
-    this.gl = canvas.getContext( 'webgl', webgl );
-    Object.freeze( this.gl );
 
     DB.propInteger( this, 'width' )( function ( v ) {
       canvas.setAttribute( 'width', v );
@@ -62,14 +59,25 @@ module.exports = function ( slots ) {
 
     opts = DB.extend( defValues, opts, this );
 
-    var init = new Promise(slots.init.bind( this ));
-    var draw = slots.draw.bind( this );
-
-    var anim = function( time ) {
-      window.requestAnimationFrame( anim );
-      draw( time );
-    };
-    init.then(anim);
+    window.setTimeout( start.bind( this, canvas, webgl, slots ), 20 );
   };
+  
   return constructor;
 };
+
+  
+function start( canvas, webgl, slots ) {
+  var gl = canvas.getContext( 'webgl', webgl );
+  this.gl = gl;
+  Object.freeze( this.gl );
+
+  var init = new Promise(slots.init.bind( this ));
+  var draw = slots.draw.bind( this );
+
+  var anim = function( time ) {
+    window.requestAnimationFrame( anim );
+    Resize( gl );
+    draw( time );
+  };
+  init.then( anim );
+}
