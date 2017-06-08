@@ -74,61 +74,61 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl26', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "3"}),
-                    "\r\n    "]}),
+                    "\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["5 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl27', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "5"}),
-                    "\r\n    "]}),
+                    "\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["13 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl28', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "13"}),
-                    "\r\n    "]}),
+                    "\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["100 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl29', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "100"}),
-                    "\r\n    "]})]}),
+                    "\n    "]})]}),
           W({
               elem: "p",
               children: [
@@ -136,65 +136,65 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl210', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "3",
                       regular: "false"}),
-                    "\r\n    "]}),
+                    "\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["5 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl211', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "5",
                       regular: "false"}),
-                    "\r\n    "]}),
+                    "\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["13 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl212', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "13",
                       regular: "false"}),
-                    "\r\n    "]}),
+                    "\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "p",
                       children: ["100 sommets"]}),
-                    "\r\n        ",
+                    "\n        ",
                                         W('wdg.gl213', 'wdg.gl2', {
                       width: "200",
                       height: "200",
                       size: "100",
                       regular: "false"}),
-                    "\r\n    "]})]}),
+                    "\n    "]})]}),
           W({
               elem: "p",
               children: [
@@ -356,7 +356,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -401,7 +401,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -446,7 +446,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n... "]})]})]})
+                    "\n... "]})]})]})
 
     }
 );

@@ -60,13 +60,13 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article61', 'wdg.article', {"content": [
+        W('wdg.article65', 'wdg.article', {"content": [
           W({
               elem: "p",
               children: [W({
                   elem: "div",
                   attr: {"style": "float:left; padding:.5rem"},
-                  children: [                    W('wdg.gl062', 'wdg.gl0', {
+                  children: [                    W('wdg.gl066', 'wdg.gl0', {
                       width: "240",
                       height: "240"})]})]}),
           W({
@@ -328,7 +328,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Définition des attributs de nos trois points."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -357,12 +357,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["(["]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -398,12 +398,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -439,12 +439,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -476,7 +476,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "number"},
                       children: ["1"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -547,7 +547,7 @@ addListener(
                 "."]}),
           W({
               elem: "p",
-              children: [                W('wdg.showhide63', 'wdg.showhide', {
+              children: [                W('wdg.showhide67', 'wdg.showhide', {
                   value: "false",
                   label: "Voici le code de notre vertex shader",
                   content: [
@@ -559,7 +559,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Temps en millisecondes."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -578,12 +578,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Angle en degrés."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -602,37 +602,37 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// `vec3` est un vecteur à trois dimensions."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// On peut lire les valeurs de ces dimensions"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// de plusieurs façons :"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["//   * attColor.r == attColor.x"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["//   * attColor.g == attColor.y"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["//   * attColor.b == attColor.z"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -651,27 +651,27 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Les `varying` sont des variables qu'on peut"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// passer du vertex shader au fragment shader."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Leurs valeurs sont interpolées entre les"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// vertex les plus proches."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -690,22 +690,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n\r\n",
+                        "\n\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// La fonction principale d'un shader doit toujours"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// s'appeler `main`, n'avoir aucun argument et"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// ne rien retourner."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -724,17 +724,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Un peu de trigonométrie pour trouver les coordonnées d'un points"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// sur un cercle quand on connaît l'angle."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -778,7 +778,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -812,7 +812,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -846,7 +846,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -880,22 +880,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  \r\n  ",
+                        "\n  \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// `gl_Position` est une variable SPECIALE de WebGL."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Il faut obligatoirement la renseigner pour"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// définir les coordonnées du vertex résultant."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -951,12 +951,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// On transmet la couleur au fragment color."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -975,7 +975,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1097,7 +1097,7 @@ addListener(
                 "est pourquoi le même code dans un canvas non carré donnera un résultat assez différent :"]}),
           W({
               elem: "p",
-              children: [                W('wdg.gl064', 'wdg.gl0', {
+              children: [                W('wdg.gl068', 'wdg.gl0', {
                   width: "800",
                   height: "100"})]}),
           W({
@@ -1136,7 +1136,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Taille d'un Float32 en octets."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1165,12 +1165,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Nombre d'octets utilisés par point."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1204,7 +1204,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1252,7 +1252,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1276,7 +1276,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1360,7 +1360,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1408,7 +1408,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1432,7 +1432,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1661,7 +1661,7 @@ addListener(
                 "."]}),
           W({
               elem: "p",
-              children: [                W('wdg.showhide65', 'wdg.showhide', {
+              children: [                W('wdg.showhide69', 'wdg.showhide', {
                   value: "false",
                   label: "Voici le code de notre fragment shader",
                   content: [
@@ -1673,37 +1673,37 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Préciser la précision par défaut."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Une ligne qu'il est conseillé de mettre"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// au début de tous vos fragment shaders"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// pour éviter de devoir préciser la précision"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// à chaque déclaration de variable."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Les précisions possibles sont"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// lowp, mediump et highp."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1722,7 +1722,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1741,7 +1741,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1760,32 +1760,32 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// `gl_FragColor` est une variable SPECIALE de WebGL."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Elle permet de déterminer la couleur du fragment."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// C'est un vecteur à 4 dimensions : rouge, vert, bleu"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// et alpha (l'opacité). Toutes les valeurs sont entre"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// 0.0 et 1.0."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -1826,7 +1826,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1967,12 +1967,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Création d'un buffer dans la carte graphique."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Un buffer est un tableau de nombres."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -2006,12 +2006,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Définir ce buffer comme le buffer actif."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2049,12 +2049,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Copier des données dans le buffer actif."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2178,7 +2178,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2217,7 +2217,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2227,7 +2227,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2237,7 +2237,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2247,7 +2247,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2257,7 +2257,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2267,7 +2267,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2277,7 +2277,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2287,7 +2287,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2297,7 +2297,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2307,7 +2307,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2317,7 +2317,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2327,7 +2327,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2336,7 +2336,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["));"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2375,7 +2375,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2385,7 +2385,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2395,7 +2395,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2405,7 +2405,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2415,7 +2415,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["+"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "string"},
@@ -2424,7 +2424,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["));"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2448,7 +2448,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2475,7 +2475,7 @@ addListener(
                     " "]})]}),
           W({
               elem: "p",
-              children: [                W('wdg.showhide66', 'wdg.showhide', {
+              children: [                W('wdg.showhide70', 'wdg.showhide', {
                   value: "false",
                   label: "Fonctions utilitaires",
                   content: [
@@ -2529,7 +2529,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2568,7 +2568,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2601,7 +2601,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2625,7 +2625,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2678,7 +2678,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2702,7 +2702,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2749,7 +2749,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2763,12 +2763,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2782,12 +2782,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2825,7 +2825,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2872,12 +2872,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2915,7 +2915,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2962,7 +2962,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3040,7 +3040,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword2"},
@@ -3064,12 +3064,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Définir le blanc (1,1,1) comme couleur d'arrière-plan."]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -3120,12 +3120,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Effacer l'écran actuel."]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -3169,12 +3169,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Mettre à jour la variable globale `uniTime`."]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -3220,7 +3220,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -3253,12 +3253,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Lancer le dessin du triangle composé de 3 points."]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -3305,12 +3305,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["}"]}),
-                    "\r\n\r\n",
+                    "\n\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword2"},
@@ -3345,7 +3345,7 @@ addListener(
           W({
               elem: "p",
               children: [
-                                W('wdg.showhide67', 'wdg.showhide', {
+                                W('wdg.showhide71', 'wdg.showhide', {
                   value: "false",
                   label: "Le code complet dans l'ordre",
                   content: [
@@ -3357,7 +3357,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(init)"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3396,17 +3396,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(init) "]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(shaders)"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3440,7 +3440,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3479,7 +3479,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3489,7 +3489,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3499,7 +3499,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3509,7 +3509,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3519,7 +3519,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3529,7 +3529,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3539,7 +3539,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3549,7 +3549,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3559,7 +3559,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3569,7 +3569,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3579,7 +3579,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3589,7 +3589,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3598,7 +3598,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3637,7 +3637,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3647,7 +3647,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3657,7 +3657,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3667,7 +3667,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3677,7 +3677,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "string"},
@@ -3686,7 +3686,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3710,7 +3710,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3734,22 +3734,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(shaders)"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(attributes) "]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Définition des attributs de nos trois points."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3778,12 +3778,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["(["]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3819,12 +3819,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3860,12 +3860,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3897,32 +3897,32 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["1"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["]);"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(attributes) "]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(vertices) "]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Création d'un buffer dans la carte graphique."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Un buffer est un tableau de nombres."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3956,12 +3956,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Définir ce buffer comme le buffer actif."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3999,12 +3999,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Copier des données dans le buffer actif."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4056,22 +4056,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(vertices) "]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(vertex-position)"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Taille d'un Float32 en octets."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4100,12 +4100,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Nombre d'octets utilisés par point."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4139,7 +4139,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4187,7 +4187,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4211,7 +4211,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4295,7 +4295,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4343,7 +4343,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4367,7 +4367,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4451,17 +4451,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(vertex-position)"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(rendering)"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4490,7 +4490,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -4514,12 +4514,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Définir le blanc (1,1,1) comme couleur d'arrière-plan."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4570,12 +4570,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Effacer l'écran actuel."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4619,12 +4619,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Mettre à jour la variable globale `uniTime`."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4670,7 +4670,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4703,12 +4703,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Lancer le dessin du triangle composé de 3 points."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4755,12 +4755,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -4784,13 +4784,13 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "  \r\n",
+                        "  \n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// #(rendering) "]})]})]}),
                 "\n",
-                                W('wdg.showhide68', 'wdg.showhide', {
+                                W('wdg.showhide72', 'wdg.showhide', {
                   value: "false",
                   label: "Fonctions utilitaires",
                   content: [
@@ -4844,7 +4844,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4883,7 +4883,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4916,7 +4916,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4940,7 +4940,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4993,7 +4993,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -5017,7 +5017,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -5064,7 +5064,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -5078,12 +5078,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -5097,12 +5097,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -5140,7 +5140,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -5187,12 +5187,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -5230,7 +5230,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -5277,7 +5277,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},

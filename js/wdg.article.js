@@ -14,10 +14,7 @@ var PAGES = {
   chap7: "Particules",
   chap8: "Frame Buffer",
   deform: "Déformation",
-<<<<<<< HEAD
   deform2: "Déformation (2)",
-=======
->>>>>>> 0277ca951134712cdb86243b1d949f854aaae6ee
   $666: "Annexes",
   doc: "Documentations"
 };

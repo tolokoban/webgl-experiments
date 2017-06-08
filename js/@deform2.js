@@ -60,23 +60,23 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article59', 'wdg.article', {"content": [
+        W('wdg.article60', 'wdg.article', {"content": [
           W({
               elem: "p",
               children: [
                 "  ",
-                                W('wdg.flex60', 'wdg.flex', {"content": [
+                                W('wdg.flex61', 'wdg.flex', {"content": [
                   W({
                       elem: "div",
                       children: [
                         "\n        ",
-                                                W('wdg.deform-361', 'wdg.deform-3', {
+                                                W('wdg.deform-362', 'wdg.deform-3', {
                           width: "960",
                           height: "540",
                           delay: "0",
                           angle: "66"}),
                         "\n          ",
-                                                W('wdg.flex62', 'wdg.flex', {"content": [
+                                                W('wdg.flex63', 'wdg.flex', {"content": [
                                                       W('delay', 'wdg.text', {
                               label: "Délai par étage (ms)",
                               wide: "true",
@@ -95,6 +95,6 @@ addListener(
                 "Avec la technique de l",
                 "&#39;",
                 "article précédent, il est possible de déformer des images entières."]})]})
-        W.bind('wdg.deform-361',{"girafe":{"B":[["girafe","value"]]},"delay":{"B":[["delay","value"]]},"angle":{"B":[["angle","value"]]}});
+        W.bind('wdg.deform-362',{"girafe":{"B":[["girafe","value"]]},"delay":{"B":[["delay","value"]]},"angle":{"B":[["angle","value"]]}});
     }
 );
