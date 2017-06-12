@@ -1,0 +1,6 @@
+{
+  "var": {
+    "vert": "wdg.interpolation.vert.c",
+    "frag": "wdg.interpolation.frag.c"
+  }
+}

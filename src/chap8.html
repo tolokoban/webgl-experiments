@@ -1,9 +1,9 @@
 <page>
+  <wdg:gl8 $width="512" $height="512" />
+  
 Jusqu'à présent, nous avons toujours dessiné directement sur l'écran, mais WebGL
 permet de faire du rendu dans des textures que l'on peut réutiliser ensuite pour
 un nouvel affichage.
-
-<wdg:gl8 $width="512" $height="512" />
 
 Dans l'exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le
 rendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons
@@ -23,7 +23,8 @@ var texture = gl.createTexture();
 gl.bindTexture(gl.TEXTURE_2D, texture);
 
 // Si on donne une coordonnée U (aussi appelée S) qui est inférieure à 0 
-// ou supérieure à 1, on n'afiche rien, on ne répète pas la texture.
+// ou supérieure à 1, on n'affiche rien, on ne répète pas la texture.
+// C'est ce que signifie gl.CLAMP_TO_EDGE.
 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
 // Même configuration pour la coordonnée V (aussi appelée T).
 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);

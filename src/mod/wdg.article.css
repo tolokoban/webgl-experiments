@@ -30,7 +30,7 @@ div.article > nav {
   left: 0;
   top: 2rem;
   bottom: 0;
-  width: 240px;
+  width: 300px;
   height: auto;
   padding: .5rem;
   overflow: auto;
@@ -39,7 +39,7 @@ div.article > nav {
 
 div.article > article {
   position: absolute;
-  left: 240px;
+  left: 300px;
   top: 2rem;
   bottom: 0;
   right: 0;
