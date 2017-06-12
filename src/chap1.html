@@ -35,7 +35,12 @@ On peut désormais utiliser de nouvelles coordonnées. On choisit un carré de l
 Tada ! En voilà un beau carré :
 <wdg:gl1 $width="240" $height="140" />
 
-Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : `gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);` ? On y parle de __TRIANGLE_STRIP__, qu'est-ce donc ?
+Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : 
+`gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);` ? On y parle de __TRIANGLE_STRIP__, qu'est-ce donc ?
 
-En fait, le TRIANGLE_STRIP est une bande de triangles. Les 3 premiers points définissent un triangle, normal. Mais ensuite, chaque point ajouté définit un nouveau triangle. Ainsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.
+En fait, le TRIANGLE_STRIP est une bande de triangles.
+Les 3 premiers points définissent un triangle normal.
+Mais ensuite, chaque point ajouté définit un nouveau triangle qui partage les deux
+dernier points du triangle précédent.
+Ainsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE.
 </page>
