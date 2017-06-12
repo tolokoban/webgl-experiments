@@ -22,21 +22,21 @@ function init( resolve ) {
     frag: GLOBAL.frag
   } );
 
-  var canvas = document.createElement( "canvas ");
+  var canvas = document.createElement( "canvas" );
   canvas.setAttribute( "width", 64 );
   canvas.setAttribute( "height", 64 );
   var ctx = canvas.getContext( '2d' );
   ctx.fillStyle = "#00f";
   ctx.fillRect( 0, 0, 64, 64 );
   ctx.fillStyle = "#f80";
-  for ( var y = 0 ; y < 64 ; y += 4 ) {
-    ctx.fillRect( 0, y, 64, 2 );
+  for ( var y = 0 ; y < 64 ; y += 8 ) {
+    ctx.fillRect( 0, y + 3, 64, 2 );
   }
     
   var texture = gl.createTexture( );
   gl.bindTexture( gl.TEXTURE_2D, texture );
   this.texture = texture;
-  
+
   // Set the parameters so we can render any size image.
   gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE );
   gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE );
@@ -50,8 +50,8 @@ function init( resolve ) {
     // X, Y, Z, U, V
     -1, -1, -1, 0, 0,
     +0, -1, -1, 1, 0,
-    +0, +1, +1, 0, 1,
-    -1, +1, +1, 1, 1
+    -1, +1, +1, 0, 1,
+    +0, +1, +1, 1, 1
   ]);
   // #(attribs)
 
