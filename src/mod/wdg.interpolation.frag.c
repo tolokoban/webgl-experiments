@@ -1,6 +1,7 @@
 precision mediump float;
 
 uniform sampler2D uniTexture;
+
 varying vec2 varUV;
 
 void main() {

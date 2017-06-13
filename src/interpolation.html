@@ -1,4 +1,37 @@
 <page>
   <wdg:interpolation $width="640" $height="320" />
   
+  Si on utilise l'interpolation linéaire des variables de type _varying_, on risque
+  d'avoir des surprises lorsqu'on essaie d'appliquer une texture sur un surface
+  en 3D.
+  Ce problème est illustré sur la partie gauche de l'animation ci-dessus.
+  
+  Cet exemple illustre l'intérêt de la 4ème coordonnée de __gl_Position__.
+  
+  <ex label="Étudions le Vertex Shader" src="mod/wdg.interpolation.vert.c"
+    $lang="glsl"/>
+    
+  Pour calculer les coordonnées finales sur l'écran 2D, on utilise la technique
+  du théorème de Thalès qui nous dit de diviser par la ditance du point à l'écran.
+  Et pour cela, on a deux possibilités :
+  1. `gl_Position = vec4( x/w, y/w, z, 1.0 )`
+  2. `gl_Position = vec4( x, y, z*w, w )`
+  
+  On a appri dans les chapitres précédents que la 4ème coordonnée de _gl_Position_
+  était un diviseur que WebGL appliquait aux trois autres coordonnées.
+  Les deux lignes ci-dessus devraient donc être équivalentes, non ?
+  
+  Visiblement ... non !
+  
+  La première ligne (correspondant à la partie gauche) va déclencher une interpolation
+  purement linéaire du `varying varUV`. On voit bien que tous les losanges ont la
+  même hauteur, alors qu'à droite la perspective est respectée.
+  
+  __La 4ème coordonnée ne fait donc pas que diviser les 3 autres coordonnées__.  
+  __Elle permet d'ajuster l'interpolation afin de tenir compte de l'effet de
+  perspective__.
+  
+   C'est pour cela, qu'il faut toujours utiliser cette coordonnée
+  quand on veut faire une projection 3D.
+  
 </page>
