@@ -15,6 +15,8 @@ var PAGES = {
   chap8: "Frame Buffer",
   deform: "Déformation",
   deform2: "Déformation (2)",
+  $2: "La troisième dimension",
+  interpolation: "Interpolation des varyings",
   $666: "Annexes",
   doc: "Documentations"
 };

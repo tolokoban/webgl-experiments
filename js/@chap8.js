@@ -64,6 +64,13 @@ addListener(
           W({
               elem: "p",
               children: [
+                "  ",
+                                W('wdg.gl848', 'wdg.gl8', {
+                  width: "512",
+                  height: "512"})]}),
+          W({
+              elem: "p",
+              children: [
                 "Jusqu",
                 "&#39;",
                 "à présent, nous avons toujours dessiné directement sur l",
@@ -71,11 +78,6 @@ addListener(
                 "écran, mais WebGL\npermet de faire du rendu dans des textures que l",
                 "&#39;",
                 "on peut réutiliser ensuite pour\nun nouvel affichage."]}),
-          W({
-              elem: "p",
-              children: [                W('wdg.gl848', 'wdg.gl8', {
-                  width: "512",
-                  height: "512"})]}),
           W({
               elem: "p",
               children: [
@@ -3680,7 +3682,12 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
-                          children: ["// ou supérieure à 1, on n'afiche rien, on ne répète pas la texture."]}),
+                          children: ["// ou supérieure à 1, on n'affiche rien, on ne répète pas la texture."]}),
+                        "\n",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// C'est ce que signifie gl.CLAMP_TO_EDGE."]}),
                         "\n",
                         W({
                           elem: "span",

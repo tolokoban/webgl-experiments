@@ -1162,7 +1162,7 @@ addListener(
           W({
               elem: "p",
               children: [
-                "Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : ",
+                "Une minute ! Comment peut-on dessiner un carré avec la fonction suivante : \n",
                 W({
                   elem: "code",
                   children: ["gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);"]}),
@@ -1175,7 +1175,7 @@ addListener(
                 "est-ce donc ?"]}),
           W({
               elem: "p",
-              children: ["En fait, le TRIANGLE_STRIP est une bande de triangles. Les 3 premiers points définissent un triangle, normal. Mais ensuite, chaque point ajouté définit un nouveau triangle. Ainsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE."]})]})
+              children: ["En fait, le TRIANGLE_STRIP est une bande de triangles.\nLes 3 premiers points définissent un triangle normal.\nMais ensuite, chaque point ajouté définit un nouveau triangle qui partage les deux\ndernier points du triangle précédent.\nAinsi, si on a les points [A, B, C, D, E], on dessinera 3 triangles : ABC, BDC, CDE."]})]})
 
     }
 );

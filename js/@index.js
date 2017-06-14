@@ -1006,7 +1006,7 @@ addListener(
                 W({
                   elem: "strong",
                   children: ["vertex shader"]}),
-                " est un programme écrit en ",
+                " est un programme écrit en \n",
                 W({
                   elem: "a",
                   attr: {"href": "https://www.khronos.org/files/opengles_shading_language.pdf"},
@@ -1067,7 +1067,7 @@ addListener(
                     W({
                       elem: "strong",
                       children: ["Z"]}),
-                    " est un réel compris entre 0 et +1. Il ne change rien à la position de nos points\nqui doivent s",
+                    " est un réel compris entre -1 et +1. Il ne change rien à la position de nos points\nqui doivent s",
                     "&#39;",
                     "afficher sur un canvas en 2D. Mais nous verrons plus tars à quoi\ncela peut être utile."]}),
                 "\n",
