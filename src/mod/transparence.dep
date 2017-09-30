@@ -1,0 +1,6 @@
+{ 
+  "var": { 
+    "vert": "transparence.vert",
+    "frag": "transparence.frag" 
+  } 
+}

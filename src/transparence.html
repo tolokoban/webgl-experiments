@@ -1,0 +1,39 @@
+<page>
+<x-wdg id="wdg" name="transparence" 
+       bind:white="white:value"
+       bind:depth="depth:value"
+       bind:bright="bright:value"
+       bind:multiply="multiply:value" />
+
+<div style="width: 480px">
+   <wdg:checkbox id="white" $wide="true" $text="Arrière-plan blanc" $value="false"/>
+   <wdg:checkbox id="depth" $wide="true" $text="Ecrire dans le Z-buffer" $value="true"/>
+   <wdg:checkbox id="bright" $wide="true" $text="Couleurs pâles" $value="false"/>
+   <wdg:checkbox id="multiply" $wide="true" $text="Combiner par multiplication" $value="false"/>
+</div>
+
+# Peut-on éviter le tri ?
+
+Le tri a deux inconvénients majeurs
+* Il consomme du CPU : plus il y a d'objets à trier et plus le temps de tri sera long.
+* Il ne gère pas les intersections : quand deux objets se coupent, aucun n'est devant l'autre.
+
+L'animation ci-dessus n'utilise pas de tri. Elle commence par dessiner un arrière-plan (que l'on peut retirer avec le switch __Arrière-plan blanc__), puis un trapèze gris opaque et enfin trois rectangles transparents.
+
+On veut utiliser le z-buffer parce que le trapèze gris opaque doit pouvoir cacher les rectangles transparents. Donc à chaque fragment que l'on veut dessiner, on vérifie qu'il n'y a pas dans le z-buffer un fragment plus proche de la caméra.  
+Mais on a vu au chapitre précédent que ceci pose problème pour la transparence. Vous pouvez constater ce défaut sur l'animation.
+
+Il semble qu'on soit confronté à un dilemme insoluble. Heureusement, OpenGL a tout prévu.
+Il est possible de toujours réaliser le test du z-buffer, mais de désactiver sa mise à jour.
+En effet, dans le cas standard l'affichage d'un fragment suit l'algorithme suivant :
+* Tester le z-buffer par rapport au Z du fragment courant.
+* Dessiner le fragment.
+* Mettre à jour le z-buffer avec le Z du fragment courant.
+
+L'instruction suivante permet de ne pas réaliser la troisième action (seulement pour les 3 rectangles transparents, bien-sûr).
+
+<code>gl.depthMask( false );</code>
+
+
+
+</page>

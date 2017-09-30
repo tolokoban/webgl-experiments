@@ -1,0 +1,6 @@
+{ 
+  "var": { 
+    "vert": "prg.image2d.vert",
+    "frag": "prg.image2d.frag" 
+  } 
+}

@@ -10,6 +10,7 @@ var PAGES = {
   chap5: "Utiliser des images",
   chap6: "Un point c'est tout",
   "chap6-2": "La semi-transparence",
+  transparence: "La semi-transparence (2)",
   chap7: "Particules",
   chap8: "Frame Buffer",
   deform: "Déformation",
