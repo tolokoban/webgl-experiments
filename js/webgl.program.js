@@ -225,6 +225,45 @@ function createUniformSetter( gl, item, nameGL, lookup ) {
       };
     }
     break;
+  case gl.FLOAT_VEC2:
+    if ( item.size == 1 ) {
+      return function ( v ) {
+        gl.uniform2fv( nameGL, v );
+        this[ nameJS ] = v;
+      };
+    } else {
+      throw Error(
+        "[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC2 in uniform `" +
+        item.name + "'!'"
+      );
+    }
+    break;
+  case gl.FLOAT_VEC3:
+    if ( item.size == 1 ) {
+      return function ( v ) {
+        gl.uniform3fv( nameGL, v );
+        this[ nameJS ] = v;
+      };
+    } else {
+      throw Error(
+        "[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC3 in uniform `" +
+        item.name + "'!'"
+      );
+    }
+    break;
+  case gl.FLOAT_VEC4:
+    if ( item.size == 1 ) {
+      return function ( v ) {
+        gl.uniform4fv( nameGL, v );
+        this[ nameJS ] = v;
+      };
+    } else {
+      throw Error(
+        "[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC4 in uniform `" +
+        item.name + "'!'"
+      );
+    }
+    break;
   case gl.FLOAT_MAT3:
     if ( item.size == 1 ) {
       return function ( v ) {
@@ -315,6 +354,7 @@ function getSize( gl, item ) {
       "' because I don't know the type " + getTypeName( item.type ) + "!";
   }
 }
+
 
   
 module.exports._ = _;

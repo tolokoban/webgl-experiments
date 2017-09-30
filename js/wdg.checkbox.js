@@ -11,55 +11,80 @@ var Touchable = require("tfw.touchable");
  * @param opts.visible {boolean} - Show/hide this widget.
  */
 var Checkbox = function(opts) {
-    var that = this;
+  var that = this;
 
-    var spinner = $.div('wdg-checkbox-spin', [
-        $.div([
-            new Icon({ content: 'ok', button: "true",
-                       size: ".7em", color0: "transparent", color4: "#000" }),
-            new Icon({ content: 'cancel', button: "true",
-                       size: ".7em", color0: "transparent", color3: "#fff" }),
-        ])
-    ]);
-    var text = $.div('label');
-    var elem = $.elem( this, 'button', 'wdg-checkbox', [spinner, text] );
+  var btn = $.div( 'btn', 'thm-ele2' );
+  var bar = $.div( 'bar' );
+  var text = $.div();
+  var elem = $.elem( this, 'button', 'wdg-checkbox', [$.div([bar, btn]), text] );
 
-    DB.propAddClass(this, 'value', 'checked' );
-    DB.propString(this, 'text')(function(v) {
-        $.textOrHtml( text, v );
-        //text.textContent = v;
-    });
-    DB.propInteger(this, 'action', 0);
-    DB.propAddClass(this, 'wide');
-    DB.propRemoveClass(this, 'visible', 'hide');
+  var refresh = function() {
+    if( typeof that.text !== 'string' || that.text.trim().length === 0 ) {
+      $.addClass( that, 'no-text' );
+    } else {
+      $.textOrHtml( text, that.text );
+      $.removeClass( that, 'no-text' );
+    }
+    if( that.inverted ) {
+      $.addClass( that, 'inverted' );
+    } else {
+      $.removeClass( that, 'inverted' );
+    }
+    if( that.wide ) {
+      $.addClass( that, 'wide' );
+    } else {
+      $.removeClass( that, 'wide' );
+    }
+    if( that.value ) {
+      $.addClass( that, 'checked' );
+      $.addClass( bar, 'thm-bgSL' );
+      $.removeClass( bar, 'thm-bg2' );
+      $.addClass( btn, 'thm-bgS' );
+      $.removeClass( btn, 'thm-bg1' );
+    } else {
+      $.removeClass( that, 'checked' );
+      $.removeClass( bar, 'thm-bgSL' );
+      $.addClass( bar, 'thm-bg2' );
+      $.removeClass( btn, 'thm-bgS' );
+      $.addClass( btn, 'thm-bg1' );
+    }
+  };
 
-    DB.extend({
-        value: false,
-        text: "checked",
-        wide: false,
-        visible: true
-    }, opts, this);
+  DB.propBoolean(this, 'value' );
+  DB.propString(this, 'text');
+  DB.propInteger(this, 'action', 0);
+  DB.propBoolean(this, 'wide');
+  DB.propBoolean(this, 'inverted');
+  DB.propRemoveClass(this, 'visible', 'hide');
 
-    var touchable = new Touchable( elem );
-    touchable.tap.add( this.fire.bind( this ) );
-    $.on( elem, {
-        keydown: function( evt ) {
-            if (evt.keyCode == 13 || evt.keyCode == 32) {
-                evt.preventDefault();
-                evt.stopPropagation();
-                that.fire();
-            }
-        }
-    });
+  DB.extend({
+    value: false,
+    text: "checked",
+    inverted: true,
+    wide: false,
+    visible: true
+  }, opts, this, refresh);
 
-    this.focus = elem.focus.bind( elem );
+  var touchable = new Touchable( elem );
+  touchable.tap.add( this.fire.bind( this ) );
+  $.on( elem, {
+    keydown: function( evt ) {
+      if (evt.keyCode == 13 || evt.keyCode == 32) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        that.fire();
+      }
+    }
+  });
+
+  this.focus = elem.focus.bind( elem );
 };
 
 /**
  * @return void
  */
 Checkbox.prototype.fire = function() {
-    this.value = !this.value;
+  this.value = !this.value;
 };
 
 

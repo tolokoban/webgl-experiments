@@ -1,19 +1,19 @@
-/** @module wdg.button */require( 'wdg.button', function(require, module, exports) { var _=function(){var D={"en":{"cancel":"Cancel","close":"Close","delete":"Delete","edit":"Edit","no":"No","ok":"OK","save":"Save","yes":"Yes"},"fr":{"cancel":"Annuler","close":"Fermer","delete":"Supprimer","edit":"Editer","no":"Non","ok":"Valider","save":"Sauver","yes":"Oui"}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+/** @module wdg.button */require( 'wdg.button', function(require, module, exports) { var _=function(){var D={"en":{"cancel":"Cancel","close":"Close","delete":"Delete","edit":"Edit","gotit":"Got it","no":"No","ok":"OK","save":"Save","yes":"Yes"},"fr":{"cancel":"Annuler","close":"Fermer","delete":"Supprimer","edit":"Editer","gotit":"J'ai compris","no":"Non","ok":"Valider","save":"Sauver","yes":"Oui"}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
     "use strict";
 
+require("font.roboto");
 var $ = require( "dom" );
 var DB = require( "tfw.data-binding" );
 var Icon = require( "wdg.icon" );
 var Touchable = require( "tfw.touchable" );
 
-var TYPES = [ 'standard', 'simple', 'warning', 'shadow', 'special' ];
+var TYPES = [ 'undef', 'default', 'standard', 'primary', 'secondary' ];
 
 /**
  * Liste des classes CSS applicables sur un bouton :
- * * __simple__ : Simple lien, sans l'aspect "bouton".
- * * __shadow__ : Bouton légèrement plus foncé.
+ * * __standard__ : Bouton par défaut. Il est blanc.
+ * * __primary__ : Bouton bleu.
  * * __warning__ : Bouton orangé pour indiquer une action potentiellement dangereuse.
- * * __small__ : Bouton de petite taille (environ 70%).
  *
  * @param {string} opts.text - Texte à afficher dans le bouton.
  * @param {boolean} opts.enabled - Mettre `false` pour désactiver le bouton.
@@ -31,108 +31,52 @@ var TYPES = [ 'standard', 'simple', 'warning', 'shadow', 'special' ];
 var Button = function ( opts ) {
   var that = this;
 
-  var elem = $.elem(
-    this,
-    'button', 'wdg-button', 'theme-elevation-2'
-  );
-  if ( typeof opts.href === 'string' && opts.href.length > 0 ) {
-    $.att( elem, 'href', opts.href );
-  }
-  if ( typeof opts.target === 'string' && opts.target.length > 0 ) {
-    $.att( elem, 'target', opts.target );
-  }
+  var icon = new Icon({ size: "24px" });
+  var text = $.div( 'text' );
+  var elem = $.elem( this, 'button', 'wdg-button', [icon, text] );
 
-  var icon = null;
-
-  var refresh = function () {
-    $.clear( elem );
-    if ( icon ) {
-      $.add( elem, icon.element, that.text );
-      that._icon = icon;
-    } else {
-      elem.textContent = that.text;
-      delete that._icon;
-    }
-  };
+  var refresh = setStyle.bind( this, {
+    icon: icon, text: text
+  });
 
   DB.prop( this, 'value' );
-  DB.propEnum( TYPES )( this, 'type' )( function ( v ) {
-    TYPES.forEach( function ( type ) {
-      $.removeClass( elem, type );
-    } );
-    $.addClass( elem, v );
-  } );
-  DB.prop( this, 'icon' )( function ( v ) {
-    if ( !v || ( typeof v === 'string' && v.trim().length == 0 ) ) {
-      icon = null;
-    } else if ( v.element ) {
-      icon = v.element;
-    } else {
-      icon = new Icon( {
-        content: v,
-        size: "1.2em"
-      } );
-    }
-    refresh();
-  } );
-  DB.propBoolean( this, 'anim' )( function ( v ) {
-    if ( icon ) icon.rotate = v;
-  } );
-  var waitBackup = {};
-  DB.propBoolean( this, 'wait' )( function ( v ) {
-    if ( v ) {
-      waitBackup.enabled = that.enabled;
-      waitBackup.icon = that.icon;
-      waitBackup.anim = that.anim;
-      that.enabled = false;
-      that.icon = 'wait';
-      that.anim = true;
-    } else {
-      that.enabled = waitBackup.enabled;
-      that.icon = waitBackup.icon;
-      that.anim = waitBackup.anim;
-    }
-  } );
-  DB.propString( this, 'text' )( function ( v ) {
-    refresh();
-  } );
+  DB.propEnum( TYPES )( this, 'type' );
+  DB.prop( this, 'icon' );
+  DB.propBoolean( this, 'responsive' );
+  DB.propBoolean( this, 'anim' );
+  DB.propBoolean( this, 'wait' );
+  DB.propString( this, 'text' );
   var touchable = new Touchable( elem, {
-    classToAdd: 'theme-elevation-8'
+    classToAdd: 'thm-ele8'
   } );
   DB.propBoolean( this, 'enabled' )( function ( v ) {
-    touchable.enabled = touchable;
-    if ( v ) {
-      $.removeAtt( elem, 'disabled' );
-    } else {
-      $.att( elem, 'disabled', 'yes' );
-    }
+    touchable.enabled = v;
+    refresh();
   } );
-  DB.propBoolean( this, 'small' )( function ( v ) {
-    if ( v ) {
-      $.addClass( elem, 'small' );
-    } else {
-      $.removeClass( elem, 'small' );
-    }
-  } );
+  DB.propBoolean( this, 'inverted' );
+  DB.propBoolean( this, 'flat' );
   DB.prop( this, 'action', 0 );
-  DB.propAddClass( this, 'wide' );
-  DB.propRemoveClass( this, 'visible', 'hide' );
+  DB.propBoolean( this, 'wide' );
+  DB.propBoolean( this, 'visible' );
 
   opts = DB.extend( {
-    text: "OK",
+    inverted: false,
+    type: "undef",
+    text: "",
     href: null,
     target: null,
     value: "action",
     action: 0,
-    wait: false,
+    responsive: false,
     anim: false,
-    icon: "",
+    flat: false,
     small: false,
     enabled: true,
+    wait: false,
+    icon: null,
     wide: false,
-    visible: true,
-    type: "standard"
-  }, opts, this );
+    visible: true
+  }, opts, this, refresh );
 
   // Animate the pressing.
   $.on( this.element, {
@@ -173,87 +117,117 @@ Button.prototype.fire = function () {
   }
 };
 
-/**
- * Disable the button and start a wait animation.
- */
-Button.prototype.waitOn = function ( text ) {
-  if ( typeof this._backup === 'undefined' ) {
-    this._backup = {
-      text: this.text,
-      icon: this.icon,
-      enabled: this.enabled
-    };
-  }
-  if ( typeof text === 'string' ) this.text = text;
-  this.enabled = false;
-  this.icon = "wait";
-  if ( this._icon ) this._icon.rotate = true;
-};
-
-/**
- * Stop the wait animation and enable the button again.
- */
-Button.prototype.waitOff = function () {
-  this.text = this._backup.text;
-  this.icon = this._backup.icon;
-  this.enabled = this._backup.enabled;
-  if ( this._icon ) this._icon.rotate = false;
-  delete this._backup;
-};
-
-
-function genericButton( id, type ) {
-  if ( typeof type === 'undefined' ) type = 'standard';
-  var iconName = id;
-  var intl = id;
-  if ( intl == 'yes' ) iconName = 'ok';
-  if ( intl == 'no' ) iconName = 'cancel';
-  var btn = new Button( {
-    text: _( intl ),
-    icon: iconName,
-    value: id,
-    type: type
-  } );
-  return btn;
+function genericButton( base, opts ) {
+  if( typeof opts === 'undefined' ) opts = {};
+  return new Button( DB.extend( base, opts ) );
 }
 
-Button.Cancel = function ( type ) {
-  return genericButton( 'cancel', type || 'simple' );
+Button.Cancel = function ( opts ) {
+  return genericButton({ text: _('cancel'), flat: true }, opts);
 };
-Button.Close = function ( type ) {
-  return genericButton( 'close', type || 'simple' );
+Button.Close = function ( opts ) {
+  return genericButton({ text: _('close'), flat: true }, opts);
 };
-Button.Delete = function ( type ) {
-  return genericButton( 'delete', type || 'warning' );
+Button.GotIt = function ( opts ) {
+  return genericButton({ text: _('gotit'), flat: true }, opts);
 };
-Button.No = function ( type ) {
-  return genericButton( 'no' );
+Button.Delete = function ( opts ) {
+  return genericButton({ text: _('delete'), type: 'secondary', icon: 'delete' }, opts);
 };
-Button.Ok = function ( type ) {
-  return genericButton( 'ok', type || 'default' );
+Button.No = function ( opts ) {
+  return genericButton({ text: _('no'), flat: true }, opts);
 };
-Button.Edit = function ( type ) {
-  return genericButton( 'edit' );
+Button.Ok = function ( opts ) {
+  return genericButton({ text: _('ok'), flat: true }, opts);
 };
-Button.Save = function ( type ) {
-  return genericButton( 'save', type || 'special' );
+Button.Edit = function ( opts ) {
+  return genericButton({ text: _('edit'), type: 'primary', icon: 'edit' }, opts);
 };
-Button.Yes = function ( type ) {
-  return genericButton( 'yes', type || 'default' );
+Button.Save = function ( opts ) {
+  return genericButton({ text: _('save'), type: 'primary', icon: 'save' }, opts);
+};
+Button.Yes = function ( opts ) {
+  return genericButton({ text: _('yes'), flat: true }, opts);
 };
 
 Button.default = {
   caption: "OK",
-  type: "default"
+  type: null
 };
 
 module.exports = Button;
+
+
+function setStyle( children ) {
+  this.element.className = 'wdg-button';
+
+  if( !this.visible ) {
+    $.addClass( this, 'hide' );
+  }
+  if( this.flat ) {
+    $.addClass( this, 'flat' );
+    
+    switch( this.type ) {
+    case 'primary':
+    case 'undef':
+      $.addClass( this, 'thm-fgP' );
+      break;
+    case 'secondary':
+      $.addClass( this, 'thm-fgS' );
+      break;
+    }
+  } else {
+    $.addClass( this, 'thm-ele2' );
+
+    switch( this.type ) {
+    case 'primary':
+      $.addClass( this, 'thm-bgP' );
+      break;
+    case 'secondary':
+      $.addClass( this, 'thm-bgS' );
+      break;
+    default:
+      $.addClass( this, 'thm-bg3' );
+    }
+  }
+
+  var txt = (this.text || "").trim();
+  if( txt.length > 0 ) {
+    children.text.textContent = this.text;
+    $.removeClass( this, "no-text" );
+  } else {
+    $.addClass( this, "no-text" );
+  }
+
+  if ( this.wait ) {
+    children.icon.visible = true;
+    children.icon.content = "wait";
+    children.icon.rotate = true;
+  }
+  else if ( !this.icon || ( typeof this.icon === 'string' && this.icon.trim().length === 0 ) ) {
+    children.icon.visible = false;
+    $.removeClass( this, 'responsive' );
+  } else {
+    children.icon.visible = true;
+    children.icon.content = this.icon;
+    children.icon.rotate = this.anim;
+    if( this.responsive ) {
+      $.addClass( this, 'responsive' );
+    }
+  }
+
+  if( !this.enabled || this.wait ) $.addClass( this, 'disabled' );
+  if( this.wide ) $.addClass( this, 'wide' );
+  if( !this.inverted ) $.addClass( this, 'iconToLeft' );
+}
+
 
   
 module.exports._ = _;
 /**
  * @module wdg.button
  * @see module:$
+ * @see module:font.roboto
  * @see module:dom
  * @see module:tfw.data-binding
  * @see module:wdg.icon

@@ -1,4 +1,4 @@
-/** @module wdg.modal */require( 'wdg.modal', function(require, module, exports) { var _=function(){var D={"en":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
+/** @module wdg.modal */require( 'wdg.modal', function(require, module, exports) { var _=function(){var D={"en":{"cancel":"Cancel","close":"Got it","confirm":"Confirm","ok":"Accept"},"fr":{"cancel":"Annuler","close":"J'ai compris","confirm":"Confirmation","ok":"Accepter"}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
     /**
  * @module wdg.modal
  *
@@ -14,13 +14,20 @@ var DB = require( "tfw.data-binding" );
 var Flex = require( "wdg.flex" );
 var Button = require( "wdg.button" );
 
+/**
+@exports {class}
+@param {object} opts.content -
 
+
+*/
 function Modal( opts ) {
   var that = this;
 
-  var body = $.div( 'theme-elevation-24', 'theme-color-bg-B3' );
-  var cell = $.div( [ body ] );
-  var elem = $.elem( this, 'div', 'wdg-modal', [ cell ] );
+  var body = $.div();
+  var header = $.tag( 'header', 'thm-ele8', 'thm-bgPD' );
+  var footer = $.tag( 'footer' );
+  var cell = $.div( 'cell', 'thm-ele24', 'thm-bg0', [ header, body, footer ] );
+  var elem = $.elem( this, 'div', 'wdg-modal', [ $.div([cell]) ] );
 
   DB.prop( this, 'content' )( function ( v ) {
     $.clear( body );
@@ -32,11 +39,32 @@ function Modal( opts ) {
       $.add( body, v );
     }
   } );
+  DB.prop( this, 'header' )( function ( v ) {
+    $.clear( header );
+    if ( Array.isArray( v ) ) {
+      v.forEach( function ( itm ) {
+        $.add( header, itm );
+      } );
+    } else if ( typeof v !== 'undefined' && v !== null ) {
+      $.add( header, v );
+    }
+  } );
+  DB.prop( this, 'footer' )( function ( v ) {
+    $.clear( footer );
+    if ( Array.isArray( v ) ) {
+      v.forEach( function ( itm ) {
+        $.add( footer, itm );
+      } );
+    } else if ( typeof v !== 'undefined' && v !== null ) {
+      $.add( footer, v );
+    }
+  } );
   DB.propString( this, 'width' )( function ( v ) {
     $.css( body, {
       'max-width': v
     } );
   } );
+  DB.propAddClass( this, 'fullscreen' );
   DB.propAddClass( this, 'padding' );
   DB.propAddClass( this, 'scroll' );
   DB.propAddClass( this, 'wide' );
@@ -50,10 +78,13 @@ function Modal( opts ) {
 
   opts = DB.extend( {
     visible: false,
+    header: [],
     content: [],
+    footer: [],
     padding: true,
     scroll: true,
     wide: false,
+    fullscreen: false,
     width: 'auto'
   }, opts, this );
 }
@@ -106,22 +137,47 @@ Modal.prototype.detach = function () {
 
 /**
  * @function Modal.comfirm
+ * @param {array|object|string} args.content - Content to display.
+ * @param {string} args.title - Modal title.
+ * @param {string} args.yes - Text of the confirmation button. Default is `OK`.
+ * @param {string} args.no - Text of the cancellation button. Default is `Cancel`.
+ * @param {function} args.onYes - Callback for confirmation.
+ * @param {function} args.onNo - Callback for cancel.
  */
-Modal.confirm = function ( content, onYes, onNo ) {
-  var btnNo = Button.No();
-  var btnYes = Button.Yes( 'warning' );
-  var buttons = $.div( [ $.tag( 'hr' ), new Flex( {
-    content: [ btnNo, btnYes ]
-  } ) ] );
-  if ( typeof content === 'string' && content.substr( 0, 6 ) == '<html>' ) {
+Modal.confirm = function ( args, onYes, onNo ) {
+  if( typeof onYes === 'function' ) {
+    // This is the old calling way, with multiple arguments.
+    args = {
+      content: args,
+      onYes: onYes,
+      onNo: onNo
+    };
+  }
+  if( typeof args.title === 'undefined' ) args.title = _('confirm');
+  if( typeof args.yes === 'undefined' ) args.yes = _('ok');
+  if( typeof args.no === 'undefined' ) args.no = _('cancel');
+  if( typeof args.onYes === 'undefined' ) args.onYes = function() {};
+  if( typeof args.onNo === 'undefined' ) args.onNo = function() {};
+
+  onYes = args.onYes;
+  onNo = args.onNo;
+
+  var btnYes = new Button({ text: args.yes, flat: true });
+  var btnNo = new Button({ text: args.no, flat: true });
+  if ( Array.isArray(args.content) ) {
+    // Arrays must be wrapped in a DIV.
+    args.content = $.div(args.content);
+  }
+  if ( typeof args.content === 'string' && args.content.substr( 0, 6 ) == '<html>' ) {
     // This is HTML code.
-    var html = content.substr( 6 );
-    content = $.div();
-    content.innerHTML = html;
+    var html = args.content.substr( 6 );
+    args.content = $.div();
+    args.content.innerHTML = html;
   }
   var modal = new Modal( {
-    content: $.div( [ content, buttons ] ),
-    padding: true
+    header: args.title,
+    footer: [btnNo, btnYes],
+    content: args.content
   } );
   modal.attach();
 
@@ -150,10 +206,8 @@ Modal.confirm = function ( content, onYes, onNo ) {
  * Display a message with an OK button.
  */
 Modal.alert = function ( content, onOK ) {
-  var btnOK = Button.Close( 'simple' );
-  var buttons = $.div( [ $.tag( 'hr' ), new Flex( {
-    content: [ btnOK ]
-  } ) ] );
+  var btnOK = new Button( { text: _('close'), flat: true } );
+  var buttons = $.div( 'wdg-modal-flush-right', [ btnOK ] );
   if ( typeof content === 'string' && content.substr( 0, 6 ) == '<html>' ) {
     // This is HTML code.
     var html = content.substr( 6 );
@@ -161,11 +215,10 @@ Modal.alert = function ( content, onOK ) {
     content.innerHTML = html;
   }
   var modal = new Modal( {
-    scroll: false,
+    footer: btnOK,
     content: $.div( [
         $.div( 'scrollable', [ content ] ), buttons
-    ] ),
-    padding: true
+    ] )
   } );
   modal.attach();
 
@@ -176,8 +229,8 @@ Modal.alert = function ( content, onOK ) {
   return modal;
 };
 
-
 module.exports = Modal;
+
 
   
 module.exports._ = _;
