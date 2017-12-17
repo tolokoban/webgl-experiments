@@ -1,0 +1,17 @@
+iframe {
+  margin: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+
+*.left {
+  float: left;
+  margin: 0 8px 8px 0;
+}
+
+*.right {
+  float: right;
+  margin: 0 0 8px 8px;
+}

@@ -32,4 +32,5 @@ exports.compile = function( root, libs ) {
   ];
   root.children = children;
   libs.compile( root );
+  libs.require( "assets" );
 };

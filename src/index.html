@@ -1,5 +1,6 @@
 <page>
-<div style="float:left; padding:.5rem"><wdg:gl0 $width="240" $height="240" /></div>
+<iframe class="left" width="240" height="240"
+            src="css/assets/simple-triangle/index.html"></iframe>
   
 
 __WebGL__ est une bibliothèque qui permet de faire de l' __Open GL__ sur le web.
@@ -17,9 +18,76 @@ et ... c'est tout !
 Tout réside en fait dans la façon dont il dessine ces trois formes de base et
 comment il combine les nouveaux pixels avec ceux déjà affichés.
 
-Le WebGL s'affiche dans un [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-dont on récupère le contexte comme ceci :
+
+Pour mieux comprendre comment ça marche, il faut mettre les mains dans le cambouis. Le code du triangle est [téléchargeable](css/assets/simple-triangle.zip) et je vous invite à jouer avec.
+
+Pour fonctionner, votre `script.js` doit exécuter la fonction `start` avec deux arguments :
+* une liste de fichiers à télécharger et
+* la fonction à exécuter quand tous les téléchargements sont terminés.
+
+Ça ressemble à ceci :
+<x-code>
+start( ["shader.vert", "shader.frag"], function( assets, canvas ) {
+  ...
+});
+</x-code>
+
+Dans l'exemple du triangle, l'objet `assets` ressemblera à ça :
+<x-code>
+{
+  "shader.vert": "precision mediump float;\n\nvarying vec3 varColor;\n\nvoid main() { ...",
+  "shader.frag": "uniform float uniTime;\n\nattribute vec3 attColor;\nattribute ..."
+}    
+</x-code>
+
+
+## Le contexte
+
+Le WebGL s'affiche dans un élément HTML particulier : le [canvas](https://developer.mozilla.org/fr/docs/Web/HTML/Element/canvas). Mais il est possible de faire beaucoup de choses dans un canvas, alors il faut qu'on précise ce que l'on veut en demandant un contexte WebGL.
+
 <x-code src="mod/wdg.gl0.js" section="init" />
+
+La variable `gl` possède désormais une instance de la classe `[WebGLRenderingContext](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext)` qui permet d'accéder à toute l'API WebGL.
+
+
+## Le vertex
+
+WebGL dessine dans un espace à deux dimensions (notre canvas) dont le centre a pour coordonnées (0,0), le coin supérieur droit (1,1) et le coin inférieur droit (-1,-1). Il lui faut donc les coordonnées (X,Y) de trois points pour dessiner un triangle.
+
+Vous pourriez penser que WebGL fournit une fonction du genre `drawTriangle( x1,y1, x2,y2, x3,y3 )`. C'est en effet assez fréquent dans la plupart des API graphiques 2D. Mais pour que le WebGL puisse exploiter pleinement la puissance des unités parallèles de calcul de la carte graphique, il nous faut prendre des chemins détournés.
+
+Ainsi, au lieu de donner les coordonnées d'un point, on va donner les __attributs__ d'un __vertex__.
+Ensuite, un programme écrit en langage [GLSL](https://fr.wikipedia.org/wiki/OpenGL_Shading_Language) va utiliser ces attributs (et peut-être d'autres variables) pour déterminer les coordonnées du point.
+
+<img class="right thm-ele-2" src="css/gfx/index.triangle.jpeg"/>
+
+Pour notre triangle, nous avons décidé de façon totalement arbitraire qu'un vertex serait défini par un angle.
+Les points de notre triangle seront donc sur un cercle de rayon 1 et on déterminera leurs positions par un angle par rapport à l'horizontale comme le dessin ci-contre tente de l'illustrer.
+
+Il nous faut donc un programme qui traduise ceci en coordonnées :
+<x-code src="mod/assets/simple-triangle/shader-0.vert" />
+
+La syntaxe est barbare, mais le code est plutôt simple.
+
+On commence par déclarer notre attribut et son type. En GLSL, il faut toujours déclarer le type des variables. Ici, on a un `float` qui est un nombre à virgules.
+
+Ensuite, on a la fonction `main()` qui sera appelée pour chaque vertex dont la carte graphique veut déterminer les coordonnées. Ce qui est intéressant ici, c'est plusieurs vertex peuvent être traités en même temps par des processeur parallèles. Et c'est en exploitant ceci que l'oon va atteindre de grande vitesses d'affichage.
+
+Le calcul qui suit est simple : on traduit l'angle en radians et on utilise le cosinus et le sinus de cet angle pour déterminer les coordonnées.
+
+La dernière ligne est particulière parce qu'elle ne ressemble pas à ce qu'on trouverait dans les langages de programmation courants. Ici, on ne retourne pas de valeur, mais on écrit le résultat dans une variable globale : `gl_Position`.
+
+Cete variable est un vecteur à 4 dimensions : __X__, __Y__, __Z__ et __W__. Nous reviendrons plus tard sur __Z__ et __W__.
+
+
+## Le fragment
+
+
+
+
+----
+
+----
 
 Pour afficher notre triangle, on appelle la fonction suivante :
 
@@ -47,7 +115,6 @@ matrices ou des tableaux de nombres/vecteurs/matrices.
 Pour notre exemple, nous avons défini ces attributs-ci :
 <x-code src="mod/wdg.gl0.js" section="attributes" />
 
-<img style="float:right" class="theme-elevation-4" src="css/gfx/index.triangle.jpeg"/>
 
 Les attributs n'ont aucune signification pour WebGL. Il va juste les passer
 à une fonction qui lui retournera les coordonnées finales.
