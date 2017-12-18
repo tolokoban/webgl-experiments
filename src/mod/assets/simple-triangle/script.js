@@ -70,7 +70,7 @@ start(["shader.vert", "shader.frag"], function( assets, canvas ) {
   function render( time ) {
     window.requestAnimationFrame( render );
     // Définir le blanc (1,1,1) comme couleur d'arrière-plan.
-    gl.clearColor( 1.0, 1.0, 1.0, 1.0 );
+    gl.clearColor( 0.1, 0.1, 0.1, 1.0 );
     // Effacer l'écran actuel.
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
     // Mettre à jour la variable globale `uniTime`.
