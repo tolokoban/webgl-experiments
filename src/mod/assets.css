@@ -1,4 +1,4 @@
-iframe {
+article iframe {
   margin: 8px;
   padding: 0;
   border: none;
@@ -14,4 +14,22 @@ iframe {
 *.right {
   float: right;
   margin: 0 0 8px 8px;
+}
+
+article code {
+  color: #a73;
+}
+
+article h1 {
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  font-size: 1.6rem;
+}
+
+article a {
+  text-decoration: none;
+}
+
+
+article a:hover {
+  text-decoration: underline;
 }
