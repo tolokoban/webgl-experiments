@@ -3,6 +3,7 @@
 var PAGES = {
   $1: "Les bases",
   index: "Comprendre WebGL",
+  index2: "Comprendre WebGL (2)",
   chap1: "Dessiner un carré",
   chap2: "Dessiner un polygône",
   chap3: "Textures procédurales",

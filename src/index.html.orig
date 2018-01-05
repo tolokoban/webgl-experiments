@@ -153,8 +153,13 @@ Essayez de modifier [ce code](css/assets/simple-triangle-0.zip) pour obtenir le 
 =======
 Essayez de modifier [ce code](css/assets/simple-triangle-0.zip) pour obtenir le dessin ci-contre.
 
+<<<<<<< HEAD
 <wdg:svg><content json>{path stroke:none, fill:orange d:"M100,0 L0,-100 L-100,0 Z"}</content></wdg:svg>
->>>>>>> ab594f46413fe58b9b191f46f6e7d5fe96356e21
 
+=======
+<!-- <x-svg>{path fill:#f80 d:"M 0,100 L 100,0 L -100,0 Z"}</x-svg> -->
+<wdg:svg />
+>>>>>>> ab594f46413fe58b9b191f46f6e7d5fe96356e21
+>>>>>>> 77194514cffb70e481a621ef1e37acf0f23e2ef2
 
 </page>

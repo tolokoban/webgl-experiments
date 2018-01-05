@@ -1,0 +1,46 @@
+<page>
+<iframe class="left" width="240" height="240"
+            src="css/assets/simple-triangle/index.html"></iframe>
+  
+# Spécifier des couleurs variables
+
+Dans le chapitre précédent, nous avons vu comment dessiner le triangle ci dessus, mais il était d'une seule couleur.
+Voyons comment on peut facilement obtenir cet effet de dégradé. Pour cela revenons sur le fragment shader puisque c'est lui qui est responsable de la couleur des pixels.
+
+<x-code src="mod/assets/simple-triangle-0/shader.frag" />
+
+Si on regarde bien ce triangle (un brin hypnotique), on remarque qu'un sommet est rouge, un autre bleu et le dernier vert. Ce sont les pixels les plus loins des sommets qui sont les plus "dégragés".
+
+On va donc ajouter un nouvel attribut à nos vertex : la couleur.
+
+Le vertex shader devient :
+<x-code src="mod/assets/simple-triangle/shader.color.vert" />
+
+Et le fragment shader devient :
+<x-code src="mod/assets/simple-triangle/shader.frag" />
+
+Il faut préciser ici que GLSL est un language qui facilite la manipulation des vecteurs (et des matrices, comme on verra plus tard). Il propose donc des syntaxes très pratiques comme celle-ci : `vec4(varColor.rgb, 1.0)`.
+Qui permet de créer un vecteur à 4 dimensions en utilisant les 3 premières coordonnées de `varColor` et en y ajoutant `1.0`. On peut accéder aux valeurs des coordonnées avec des synonymes :
+* x, y, z et w
+* r, g, b et a
+* s, t, p et q
+
+Et on peut les mettre dans l'ordre de son choix.
+Ainsi, cette syntaxe est parfaitement valide si on veut inverser les valeurs de X et Y :
+<x-code>gl_Position = gl_Position.yxzw;</x-code>
+On peut même les utiliser plusieurs fois :
+<x-code>vec2 pos = gl_Position.xx;</x-code>
+La seule chose illégale est de mixer les lettre de groupes différents comme `pos.rgy` par exemple.
+
+
+# Les données des attributs
+
+Nous avons de nouveaux attributs, il faut donc revoir la structure des données à passer à WebGL.
+<x-code src="mod/assets/simple-triangle/script.js" section="attributes"/>
+
+Et il faut dire comment on fait le lien entre ces données linéaires et les attributs dans le shader.
+<x-code src="mod/assets/simple-triangle/script.js" section="vertex-position"/>
+
+
+
+</page>
