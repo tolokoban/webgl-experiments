@@ -11,10 +11,10 @@
     "scripts": {
         "test": "node node_modules/karma/bin/karma start karma.conf.js",
         "test:dbg": "node --debug-brk node_modules/karma/bin/karma start karma.conf.js",
-        "debug": "node node_modules/toloframework/bin/tfw.js build debug test",
-        "watch": "node node_modules/toloframework/bin/tfw.js build debug test watch",
-        "clean": "node node_modules/toloframework/bin/tfw.js clean",
-        "release": "node node_modules/toloframework/bin/tfw.js build version clean"
+        "debug": "node submodules/tfw/bin/tfw.js build debug test",
+        "watch": "node submodules/tfw/bin/tfw.js build debug test watch",
+        "clean": "node submodules/tfw/bin/tfw.js clean",
+        "release": "node submodules/tfw/bin/tfw.js build version clean"
     },
     "bugs": {
         "url": "https://github.com/tolokoban/webgl-experiments/issues"
