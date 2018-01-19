@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">        
+        <script>
+         /*
+            assets : tableau des fichiers à télécharger.
+            fund : fonction à appeler quand tout est téléchargé.
+          */
+         function start( assets, func ) {
+             if( !Array.isArray( assets ) ) assets = [];
+             var downloads = {};
+             // On doit attendre que la page soit complètement chargée.
+             window.addEventListener('DOMContentLoaded', function() {
+                 // Récupération du canvas.
+                 var canvas = document.getElementById( "canvas" );
+                 function resize() {
+                     canvas.setAttribute( "width", canvas.clientWidth );
+                     canvas.setAttribute( "height", canvas.clientHeight );
+                 }
+                 resize();
+                 window.onresize = resize;
+                 function next() {
+                     if( assets.length === 0 ) {
+                         func( downloads, canvas );
+                     } else {
+                         var asset = assets.shift();
+                         var dotPosition = asset.lastIndexOf( "." );
+                         var extension = asset.substr( dotPosition + 1 ).toLowerCase();
+                         if( ["jpg", "png", "gif", "svg"].indexOf( extension ) !== -1 ) {
+                             var img = new Image();
+                             img.onload = function() {
+                                 downloads[asset] = img;
+                                 next();
+                             };
+                             img.onerror = function() {
+                                 alert( "Impossible de télécharger l'image " + asset + " !" );
+                             };
+                             img.src = asset;
+                         } else {
+                             // Chargement du fichier.
+                             fetch( asset ).then(function( response ) {
+                                 if( !response.ok ) {
+                                     alert( "Impossible de télécharger le fichier " + asset + " !" );
+                                     return;
+                                 }
+                                 if( extension === 'json' ) {
+                                     return response.json();
+                                 } else {
+                                     return response.text();
+                                 }
+                             }).then(function( content ) {
+                                 downloads[asset] = content;
+                                 next();
+                             }).catch(function( err ) {
+                                 alert("Problème lors du téléchargement du fichier " + asset + " !" );
+                                 console.error( err );
+                             });
+                         }
+                     }
+                 }
+                 next();
+             });
+         };
+        </script>
+        <script src="script.js"></script>
+        <style>
+         /* Mettre le canvas en plein écran. */
+         canvas {
+             position: fixed;
+             left: 0;
+             top: 0;
+             width: 512px;
+             height: 512px;
+             margin: 0;
+         }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+    </body>
+</html>

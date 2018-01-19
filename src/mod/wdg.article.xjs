@@ -1,0 +1,20 @@
+{Global
+  toc: [
+    {"WebGL 1.0" [
+      {"Comprendre WebGL" [index index2]}
+      {"Dessiner un carré" chap1}
+      {"Dessiner un polygône" chap2}
+      {"Textures procédurales" chap3}
+      {"Textures animées" chap4}
+      {"Utiliser des images" chap5}
+      {"Un point c'est tout" chap6}
+      {"La semi-transparence" [chap6-2 transparence]}
+      {"Particules" chap7}
+      {"Frame Buffer" chap8}
+      {"Déformation" [deform deform2]}
+    ]}
+    {"Annexes" [
+      {"Documentations" doc}
+    ]}
+  ]
+}

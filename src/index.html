@@ -19,7 +19,7 @@ Tout réside en fait dans la façon dont il dessine ces trois formes de base et
 comment il combine les nouveaux pixels avec ceux déjà affichés.
 
 
-Pour mieux comprendre comment ça marche, il faut mettre les mains dans le cambouis. Le code du triangle est [téléchargeable](css/assets/simple-triangle.zip) et je vous invite à jouer avec.
+Pour mieux comprendre comment ça marche, il faut mettre les mains dans le cambouis. Le code du triangle est [téléchargeable](css/assets/simple-triangle.zip) et je vous invite à jouer avec quand vous aurez lu cette page.
 
 Pour fonctionner, votre `script.js` doit exécuter la fonction `start` avec deux arguments :
 * une liste de fichiers à télécharger et
@@ -39,6 +39,19 @@ Dans l'exemple du triangle, l'objet `assets` ressemblera à ça :
   "shader.frag": "uniform float uniTime;\n\nattribute vec3 attColor;\nattribute ..."
 }    
 </x-code>
+
+# Vue d'ensemble
+
+Voici les étapes qui permettent d'afficher un triangle en WebGL 1.0.
+
+* Créer un context WebGL sur un CANVAS.
+* Ecrire le code pour un __vertex shader__ et pour un __fragment shader__ dans le language [GLSL](docs/opengles_shading_language.pdf).
+* Demander à WebGL de compiler les shaders et de les utiliser pour le prochain affichage.
+hader__.
+* Créer un tableau de données.
+* Copier le tableau de données dans la carte graphique.
+* Définir la structure des données de notre tableau. C'est-à-dire décrire les entrées à utiliser dans le __vertex shader__.
+* Appeler la fonction `drawArray` de WebGL.
 
 
 # Le contexte
@@ -69,11 +82,21 @@ Il nous faut donc un programme qui traduise ceci en coordonnées :
 
 La syntaxe est barbare, mais le code est plutôt simple.
 
-On commence par déclarer notre attribut et son type. En GLSL, il faut toujours déclarer le type des variables. Ici, on a un `float` qui est un nombre à virgules.
+On commence par déclarer notre attribut et son type.
+<x-code>attribute float attAngle;</x-code>
+En GLSL, il faut toujours déclarer le type des variables. Ici, on a un `float` qui est un nombre à virgules.
 
-Ensuite, on a la fonction `main()` qui sera appelée pour chaque vertex dont la carte graphique veut déterminer les coordonnées. Ce qui est intéressant ici, c'est plusieurs vertex peuvent être traités en même temps par des processeur parallèles. Et c'est en exploitant ceci que l'oon va atteindre de grande vitesses d'affichage.
+Ensuite, on a la fonction `main()` qui sera appelée pour chaque vertex dont la carte graphique veut déterminer les coordonnées. Ce qui est intéressant ici, c'est que plusieurs vertex peuvent être traités en même temps par des processeur parallèles. Et c'est en exploitant ceci que l'on va atteindre de grande vitesses d'affichage.
 
-Le calcul qui suit est simple : on traduit l'angle en radians et on utilise le cosinus et le sinus de cet angle pour déterminer les coordonnées.
+Le calcul qui suit est simple : on traduit l'angle en radians
+<x-code>float rad = radians( attAngle );</x-code>
+
+ et on utilise le cosinus et le sinus de cet angle pour déterminer les coordonnées.
+<x-code>
+float x = cos( rad );
+float y = sin( rad );
+</x-code>
+
 
 La dernière ligne est particulière parce qu'elle ne ressemble pas à ce qu'on trouverait dans les langages de programmation courants. Ici, on ne retourne pas de valeur, mais on écrit le résultat dans une variable globale : `gl_Position`.
 
@@ -81,9 +104,9 @@ Cette variable est un vecteur à 4 dimensions :
 * __X__ est un réel compris entre -1 et +1.
 * __Y__ est un réel compris entre -1 et +1.
 * __Z__ est un réel compris entre -1 et +1. Il ne change rien à la position de nos points
-qui doivent s'afficher sur un canvas en 2D. Mais nous verrons plus tars à quoi
+qui doivent s'afficher sur un canvas en 2D. Mais nous verrons plus tard à quoi
 cela peut être utile.
-* __W__ est un facteur de distance : les coordonnées X et Y sont toujours divisées par W par WebGL. On va donc le laisser à __1__ pour le moment.
+* __W__ est un facteur de distance : les coordonnées X, Y et Z sont toujours divisées par W par WebGL. On va donc le laisser à __1__ pour le moment.
 
 Nous reviendrons plus tard sur __Z__ et __W__.
 
@@ -104,6 +127,7 @@ Ici, la variable globale que l'on met à jour est __`gl_FragColor`__. Comme son 
 * et l'opacitée (nombre décimal entre 0 et 1).
 
 Dans notre exemple, on a du pixel vert bien opaque.
+<x-code>gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);</x-code>
 
 
 # Le programme
@@ -146,15 +170,8 @@ C'est la dernière étape, mais aussi la plus simple :
 
 # Exercice
 
-<<<<<<< HEAD
 Essayez de modifier [ce code](css/assets/simple-triangle-0.zip) pour obtenir le dessin ci-dessous.
 <iframe width="300" height="300" src="css/assets/simple-triangle-1/index.html"></iframe>
-
-=======
-Essayez de modifier [ce code](css/assets/simple-triangle-0.zip) pour obtenir le dessin ci-contre.
-
-<wdg:svg><content json>{path stroke:none, fill:orange d:"M100,0 L0,-100 L-100,0 Z"}</content></wdg:svg>
->>>>>>> ab594f46413fe58b9b191f46f6e7d5fe96356e21
 
 
 </page>

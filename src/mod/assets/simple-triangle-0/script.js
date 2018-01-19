@@ -31,6 +31,11 @@ start(["shader.vert", "shader.frag"], function( assets, canvas ) {
   }
   gl.attachShader( program, shaderFrag );
   gl.linkProgram( program );
+  // On libère la mémoire.
+  gl.detachShader( program, shaderVert );
+  gl.deleteShader( shaderVert );
+  gl.detachShader( program, shaderFrag );
+  gl.deleteShader( shaderFrag );
   // #(shaders)
 
   // #(attributes)

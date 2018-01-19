@@ -1,4 +1,7 @@
 {
+  "var": {
+    
+  },
   "res": {
     "docs/opengles_shading_language.pdf": "",
     "docs/es_full_spec_2.0.pdf": ""
