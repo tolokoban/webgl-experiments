@@ -2,14 +2,9 @@
 
 var W = 1024;
 var H = 1024;
-var RES = 1;
+
 
 start(["shader.vert", "shader.frag", "shader.fb.frag", "example.jpg"], function( assets, canvas ) {
-  var aaa = assets["example.jpg"];
-  
-  canvas.setAttribute( "width", W / RES );
-  canvas.setAttribute( "height", H / RES );
-  
   // #(init)
   var gl = canvas.getContext( "webgl" );
   // #(init)
@@ -43,9 +38,8 @@ start(["shader.vert", "shader.frag", "shader.fb.frag", "example.jpg"], function(
   var block = 2 * bpe;
   // #(vertex-position)
 
-  var img = createImage(W,H);
-  var tex1 = createTexture( gl, W, H, img );
-  var tex2 = createTexture( gl, W, H, img );
+  var tex1 = createTexture( gl, W, H, createImage(W,H) );
+  var tex2 = createTexture( gl, W, H, createImage(W,H) );
 
   // Réserver de l'espace mémoire sur la carte graphique
   // pour un nouveau Framebuffer.
@@ -53,14 +47,12 @@ start(["shader.vert", "shader.frag", "shader.fb.frag", "example.jpg"], function(
   // Définer `fb` comme le Framebuffer courant.
   gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
 
-  var framesCount = 0;
   // #(rendering)
   function render( time ) {
     var attPos;
     window.requestAnimationFrame( render );
 
     gl.viewport( 0, 0, W, H );
-    
     // Définir `fb` comme le Framebuffer courant.
     gl.bindFramebuffer( gl.FRAMEBUFFER, fb );
     // Associer ce Framebuffer à la
@@ -70,7 +62,7 @@ start(["shader.vert", "shader.frag", "shader.fb.frag", "example.jpg"], function(
       gl.TEXTURE_2D, tex2, 0);
     gl.useProgram( prgFB );
     var location = gl.getUniformLocation(prgFB, 'uniTime');
-    gl.uniform1f( location, framesCount++ );
+    gl.uniform1f( location, time );
     attPos = gl.getAttribLocation( prgFB, "attPos" );
     gl.enableVertexAttribArray( attPos );
     gl.vertexAttribPointer( attPos, 2, gl.FLOAT, false, block, 0 * bpe );
@@ -85,8 +77,6 @@ start(["shader.vert", "shader.frag", "shader.fb.frag", "example.jpg"], function(
     // Tout ce qui suit sera rendu dans le canvas.
     gl.bindFramebuffer( gl.FRAMEBUFFER, null );
     gl.useProgram( prg );
-    location = gl.getUniformLocation(prgFB, 'uniTime');
-    gl.uniform1f( location, framesCount++ );
     attPos = gl.getAttribLocation( prg, "attPos" );
     gl.enableVertexAttribArray( attPos );
     gl.vertexAttribPointer( attPos, 2, gl.FLOAT, false, block, 0 * bpe );
@@ -104,9 +94,7 @@ start(["shader.vert", "shader.frag", "shader.fb.frag", "example.jpg"], function(
     tex2 = tmp;
   }
 
-  //canvas.addEventListener("click", function() {
-    window.requestAnimationFrame( render );
-  //});
+  window.requestAnimationFrame( render );
   // #(rendering)
 });
 
@@ -139,7 +127,7 @@ function createProgram(gl, codeVert, codeFrag) {
   return program;
 }
 
-function createTexture(gl, width, height, data) {
+function createTexture(gl, width, height, canvas) {
   // Réserver de la mémoire dans la carte graphique
   // pour une texture.
   var texture = gl.createTexture();
@@ -156,13 +144,13 @@ function createTexture(gl, width, height, data) {
   // Pour passer d'une coordonnée (u, v) en float à des entiers (x, y)
   // correspondant à un pixel de l'image, on décide de ne pas interpoler,
   // mais plutôt de prendre le pixel le plus proche (NEAREST en anglais).
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
   // Initialisons les données de cette texture avec une image.
   gl.texImage2D(
     gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
-    gl.RGBA, gl.UNSIGNED_BYTE, data );
+    gl.RGBA, gl.UNSIGNED_BYTE, canvas.getContext("2d").getImageData(0, 0, width, height).data );
 
   return texture;
 }
@@ -187,21 +175,18 @@ function createImage( width, height ) {
   var ctx = canvas.getContext("2d");
 
   var x, y;
-  var imageData = ctx.getImageData( 0, 0, width, height );
-  var data = imageData.data;
-  var idx = 0;
-  for( y=0; y<height; y++ ) {
-    for( x=0; x<width; x++ ) {
-      data[idx + 0] = 0;
-      if( Math.random() < 0.00002 ) {
-        data[idx + 1] = 255;
-      } else {
-        data[idx + 1] = 0;
-      }
-      data[idx + 2] = 256 * Math.random();
-      data[idx + 3] = 255;
-      idx += 4;
+  ctx.globalAlpha = 1.0;
+  ctx.fillStyle = "#000";
+  ctx.fillRect( 0, 0, width, height );
+  ctx.fillStyle = "#fff";
+  
+  for( var loop=0; loop<1000; loop++ ) {
+    x = Math.floor(width * Math.random());
+    y = Math.floor(height * Math.random());
+    for( var spots=0; spots<1; spots++ ) {      
+      ctx.fillRect( x, y, 1, 1 );
     }
   }
-  return data;
+
+  return canvas;
 }

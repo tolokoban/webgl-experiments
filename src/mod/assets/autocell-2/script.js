@@ -193,7 +193,7 @@ function createImage( width, height ) {
   for( y=0; y<height; y++ ) {
     for( x=0; x<width; x++ ) {
       data[idx + 0] = 0;
-      if( Math.random() < 0.00002 ) {
+      if( Math.random() < 0.0001 ) {
         data[idx + 1] = 255;
       } else {
         data[idx + 1] = 0;
