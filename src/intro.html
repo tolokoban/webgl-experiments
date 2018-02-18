@@ -1,4 +1,4 @@
-<page>
+<page $title="Introduction aux concepts fondamentaux">
 # Le système de coordonnées
 
 <wdg:intro1 $float="right" $height="200"/>
@@ -93,12 +93,28 @@ On commence par créer un canvas, on le place sur le document et on récupère l
 Préparons le code de nos shaders :
 <x-code src="mod/assets/intro/index.html" section="shaders-code" />
 
+Créons un __Program__ qui contient nos deux shaders :
+<x-code src="mod/assets/intro/index.html" section="program" />
 
 Puisque nous voulons dessiner un triangle, il nous faut __3 vertex__.
 Chaque vertex aura 2 attributs, l'abscisse et l'ordonnée du point.
 
-On crée donc un tableau que l'on pousse dans la mémoire de la carte graphique :
+On crée donc un tableau que l'on pousse dans la mémoire de la carte graphique (ARRAY_BUFFER) :
 <x-code src="mod/assets/intro/index.html" section="buffer" />
 
+Il faut maintenant décrire ce qu'on a mis dans l'ARRAY_BUFFER.
+
+<x-code src="mod/assets/intro/index.html" section="program" />
+
+Ensuite, on va effacer l'écran en le coloriant en bleu :
+<x-code src="mod/assets/intro/index.html" section="clear-screen" />
+
+Et enfin, on dessine notre triangle :
+<x-code src="mod/assets/intro/index.html" section="draw" />
+
+## Résultat
+
+Et voici le <a href="css/assets/intro/index.html">rendu final</a> :<br/>
+<iframe src="css/assets/intro/index.html" width="300" height="240"></iframe>
 
 </page>

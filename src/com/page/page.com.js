@@ -15,6 +15,7 @@ exports.compile = function( root, libs ) {
     {
       type: TAG,
       name: 'wdg:article',
+      attribs: root.attribs,
       children: [
         {
           type: TAG,

@@ -32,11 +32,12 @@ var TOC = [
 require("font.josefin");
 var $ = require( "dom" );
 var DB = require( "tfw.data-binding" );
+var Icon = require("tfw.view.icon");
 
 
 $.registerTheme("main", {
-  bgP: "#DC9",
-  bgS: "#BF6"
+  bgP: "#06D",
+  bgS: "#F80"
 });
 $.applyTheme("main");
 
@@ -49,13 +50,22 @@ $.applyTheme("main");
  * var instance = new Article({ visible: false });
  */
 var Article = function( opts ) {
+  $.addClass( document.body, "thm-bg0" );
+  
   var page = window.location.pathname.split('/').pop();
   page = page.substr(0, page.length - 5);  // Retirer ".html"
-  
-  var header = $.tag('header', 'thm-ele12', 'thm-bgP', [PAGES[page]]);
+
+  if( typeof opts.title !== 'string' ) opts.title = page;
+
+  var header = $.tag('header', 'thm-ele12', 'thm-bgP', [
+    $.tag("a", { href: "index.html" }, [
+      new Icon({ size: "1.5rem", content: "menu" })
+    ]),
+    opts.title
+  ]);
   var nav = createNav( page );
-  var body = $.tag('article');
-  var elem = $.elem( this, 'div', 'article', [body, nav, header] );
+  var body = $.tag('article', 'thm-bg1');
+  var elem = $.elem( this, 'div', 'article', [body, header] );
   
   DB.prop( this, 'content' )( function( v ) {
     $.clear( body );

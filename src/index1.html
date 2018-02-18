@@ -1,0 +1,177 @@
+<page>
+<iframe class="left" width="240" height="240"
+            src="css/assets/simple-triangle/index.html"></iframe>
+  
+
+__WebGL__ est une bibliothèque qui permet de faire de l' __Open GL__ sur le web.
+Et __Open GL__ est une bibliothèque qui permet d'afficher des pixels à l'écran en tirant profit de l'_architecture parallèle_ des cartes graphiques.
+
+__Open GL__ est à la fois __puissante__ et __complexe__.
+
+Pour bien comprendre comment on utilise WebGL, nous allons étudier l'exemple
+d'un triangle multicolore en rotation lente.
+
+# La base
+
+Basiquement, WebGL est capable de dessiner des triangles, des lignes, des points
+et ... c'est tout !
+Tout réside en fait dans la façon dont il dessine ces trois formes de base et
+comment il combine les nouveaux pixels avec ceux déjà affichés.
+
+
+Pour mieux comprendre comment ça marche, il faut mettre les mains dans le cambouis. Le code du triangle est [téléchargeable](css/assets/simple-triangle.zip) et je vous invite à jouer avec quand vous aurez lu cette page.
+
+Pour fonctionner, votre `script.js` doit exécuter la fonction `start` avec deux arguments :
+* une liste de fichiers à télécharger et
+* la fonction à exécuter quand tous les téléchargements sont terminés.
+
+Ça ressemble à ceci :
+<x-code>
+start( ["shader.vert", "shader.frag"], function( assets, canvas ) {
+  ...
+});
+</x-code>
+
+Dans l'exemple du triangle, l'objet `assets` ressemblera à ça :
+<x-code>
+{
+  "shader.vert": "precision mediump float;\n\nvarying vec3 varColor;\n\nvoid main() { ...",
+  "shader.frag": "uniform float uniTime;\n\nattribute vec3 attColor;\nattribute ..."
+}    
+</x-code>
+
+# Vue d'ensemble
+
+Voici les étapes qui permettent d'afficher un triangle en WebGL 1.0.
+
+* Créer un context WebGL sur un CANVAS.
+* Ecrire le code pour un __vertex shader__ et pour un __fragment shader__ dans le language [GLSL](docs/opengles_shading_language.pdf).
+* Demander à WebGL de compiler les shaders et de les utiliser pour le prochain affichage.
+hader__.
+* Créer un tableau de données.
+* Copier le tableau de données dans la carte graphique.
+* Définir la structure des données de notre tableau. C'est-à-dire décrire les entrées à utiliser dans le __vertex shader__.
+* Appeler la fonction `drawArray` de WebGL.
+
+
+# Le contexte
+
+Le WebGL s'affiche dans un élément HTML particulier : le [canvas](https://developer.mozilla.org/fr/docs/Web/HTML/Element/canvas). Mais il est possible de faire beaucoup de choses dans un canvas, alors il faut qu'on précise ce que l'on veut en demandant un contexte WebGL.
+
+<x-code src="mod/assets/simple-triangle/script.js" section="init" />
+
+La variable `gl` possède désormais une instance de la classe [`WebGLRenderingContext`](https://developer.mozilla.org/fr/docs/Web/API/WebGLRenderingContext) qui permet d'accéder à toute l'API WebGL.
+
+
+# Le vertex
+
+WebGL dessine dans un espace à deux dimensions (notre canvas) dont le centre a pour coordonnées (0,0), le coin supérieur droit (1,1) et le coin inférieur droit (-1,-1). Il lui faut donc les coordonnées (X,Y) de trois points pour dessiner un triangle.
+
+Vous pourriez penser que WebGL fournit une fonction du genre `drawTriangle( x1,y1, x2,y2, x3,y3 )`. C'est en effet assez fréquent dans la plupart des API graphiques 2D. Mais pour que le WebGL puisse exploiter pleinement la puissance des unités parallèles de calcul de la carte graphique, il nous faut prendre des chemins détournés.
+
+Ainsi, au lieu de donner les coordonnées d'un point, on va donner les __attributs__ d'un __vertex__.
+Ensuite, un programme écrit en langage [GLSL](https://fr.wikipedia.org/wiki/OpenGL_Shading_Language) va utiliser ces attributs (et peut-être d'autres variables) pour déterminer les coordonnées du point.
+
+<img class="right thm-ele-2" src="css/gfx/index.triangle.jpeg"/>
+
+Pour notre triangle, nous avons décidé de façon totalement arbitraire qu'un vertex serait défini par un angle.
+Les points de notre triangle seront donc sur un cercle de rayon 1 et on déterminera leurs positions par un angle par rapport à l'horizontale comme le dessin ci-contre tente de l'illustrer.
+
+Il nous faut donc un programme qui traduise ceci en coordonnées :
+<x-code src="mod/assets/simple-triangle-0/shader.vert" />
+
+La syntaxe est barbare, mais le code est plutôt simple.
+
+On commence par déclarer notre attribut et son type.
+<x-code>attribute float attAngle;</x-code>
+En GLSL, il faut toujours déclarer le type des variables. Ici, on a un `float` qui est un nombre à virgules.
+
+Ensuite, on a la fonction `main()` qui sera appelée pour chaque vertex dont la carte graphique veut déterminer les coordonnées. Ce qui est intéressant ici, c'est que plusieurs vertex peuvent être traités en même temps par des processeur parallèles. Et c'est en exploitant ceci que l'on va atteindre de grande vitesses d'affichage.
+
+Le calcul qui suit est simple : on traduit l'angle en radians
+<x-code>float rad = radians( attAngle );</x-code>
+
+ et on utilise le cosinus et le sinus de cet angle pour déterminer les coordonnées.
+<x-code>
+float x = cos( rad );
+float y = sin( rad );
+</x-code>
+
+
+La dernière ligne est particulière parce qu'elle ne ressemble pas à ce qu'on trouverait dans les langages de programmation courants. Ici, on ne retourne pas de valeur, mais on écrit le résultat dans une variable globale : `gl_Position`.
+
+Cette variable est un vecteur à 4 dimensions :
+* __X__ est un réel compris entre -1 et +1.
+* __Y__ est un réel compris entre -1 et +1.
+* __Z__ est un réel compris entre -1 et +1. Il ne change rien à la position de nos points
+qui doivent s'afficher sur un canvas en 2D. Mais nous verrons plus tard à quoi
+cela peut être utile.
+* __W__ est un facteur de distance : les coordonnées X, Y et Z sont toujours divisées par W par WebGL. On va donc le laisser à __1__ pour le moment.
+
+Nous reviendrons plus tard sur __Z__ et __W__.
+
+
+# Le fragment
+
+Maintenant que les coordonnées de notre triangle sont déterminée, la carte graphique va colorier les pixels que ce triangle délimite. Mais comment lui spécifier la couleur qu'il doit utiliser ?
+
+Là encore, on y va par un moyen détourné : on utilise un __fragment shader__ écrit dans le langage __GLSL__.
+<x-code src="mod/assets/simple-triangle-0/shader.frag" />
+
+On retrouve une fonction `main()` qui sera appelée pour chaque pixel à dessiner. Selon la taille de l'écran, il peut y avoir vraiment beaucoup de pixels à dessiner, mais comme d'habitude, ce sera fait en parallèle.
+
+Ici, la variable globale que l'on met à jour est __`gl_FragColor`__. Comme son nom l'indique, il s'agit de la couleur du fragment. Une couleur est définie par un vecteur à 4 dimensions :
+* le rouge (nombre décimal entre 0 et 1),
+* le vert (nombre décimal entre 0 et 1),
+* le blanc (nombre décimal entre 0 et 1),
+* et l'opacitée (nombre décimal entre 0 et 1).
+
+Dans notre exemple, on a du pixel vert bien opaque.
+<x-code>gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);</x-code>
+
+
+# Le programme
+
+Le couple vertex shader/fragment shader est stoqué dans ce qu'on appelle un __program__ (c'est de l'anglais).
+Nous verrons plus tard que l'on peut créer autant de programmes que l'on veut et les utiliser quand on en a besoin.
+Mais voici le code qui crée un programme à partir de nos shaders :
+<x-code src="mod/assets/simple-triangle-0/script.js" section="shaders" />
+
+C'est long et pas très intéressant, alors si j'étais vous, je me ferais une belle fonction `createProgram( vertexShaderCode, fragmentShaderCode)` qui retourne le programme.
+
+
+# Le VBO (Vertex Buffer Object)
+
+On y est presque, l'avant dernière étape consiste à passer les attributs de nos vertex à WebGL.
+
+Pour cela, il faudra que nous suivions ces étapes :
+* Créer un bloc de mémoire contenant nos attributs.
+* Transférer le bloc mémoire dans la carte graphique.
+* Décrire la structure de ce bloc mémoire.
+
+La première étape est simple puisque nous n'avons qu'un seul attribut par vertex. Pour un triangle avec des points à 0°, 130° et 200°, on aura :
+<x-code src="mod/assets/simple-triangle-0/script.js" section="attributes" />
+
+La seconde étape n'est pas bien difficile non plus :
+<x-code src="mod/assets/simple-triangle-0/script.js" section="vertices" />
+
+A présent nos données sont dans la mémoire de la carte graphique (GPU). Il faut spécifier comment on relie ces données aux attributs des vertex.
+<x-code src="mod/assets/simple-triangle-0/script.js" section="vertex-position" />
+
+
+# L'affichage, enfin !
+
+<iframe class="right" width="100" height="100" src="css/assets/simple-triangle-0/index.html"></iframe>
+
+C'est la dernière étape, mais aussi la plus simple :
+<x-code src="mod/assets/simple-triangle-0/script.js" section="rendering" />
+
+
+
+# Exercice
+
+Essayez de modifier [ce code](css/assets/simple-triangle-0.zip) pour obtenir le dessin ci-dessous.
+<iframe width="300" height="300" src="css/assets/simple-triangle-1/index.html"></iframe>
+
+
+</page>

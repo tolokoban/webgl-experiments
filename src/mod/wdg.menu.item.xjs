@@ -1,0 +1,21 @@
+{View A class:"wdg-menu-item thm-ele4 thm-bg3"
+
+  view.attribs: {
+    id: {string ""}
+    title: {string ""}
+    keywords: {string ""}
+  }
+
+  href: {Bind id format:href}
+  
+  [
+    {IMG class:hide
+      event.load: onLoad
+      view.id:background
+      src:{Bind id format: img}}
+    {DIV class:table [
+      {DIV [{DIV class:title textcontent:{Bind title}}]}
+      {DIV [{DIV class:keywords textcontent:{Bind keywords}}]}
+    ]}
+  ]
+}

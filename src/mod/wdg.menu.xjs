@@ -1,0 +1,10 @@
+{View DIV class:wdg-menu
+  view.attribs: {
+    value: {array [] behind:refresh}
+  }
+  
+  [
+    {ARTICLE view.id:article class:thm-bg1}
+    {HEADER class:"thm-bgP thm-ele8" ["Apprendre le WebGL"]}
+  ]
+}
