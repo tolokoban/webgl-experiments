@@ -17,3 +17,66 @@ span, strong, b, em, i, code {
     margin: 0;
     padding: 0;
 }
+
+div.tbl {
+  display: inline-table;
+  border-collapse: collapse;
+}
+
+div.tbl > div {
+  display: table-row;
+}
+
+div.tbl > div > div {
+  display: table-cell;
+  padding: 2px 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.tbl.grd > div > div,
+div.tbl > div > div.grd,
+div.tbl > div.grd > div {
+  display: table-cell;
+  border: 1px solid #444;
+  background: #fff;
+}
+
+div.tbl.w48 > div > div,
+div.tbl > div.w48 > div,
+div.tbl > div > div.w48 {
+  width: 48px;
+}
+
+div.tbl.h16 > div > div,
+div.tbl > div.h16 > div,
+div.tbl > div > div.h16 {
+  height: 16px;
+}
+
+div.tbl.h24 > div > div,
+div.tbl > div.h24 > div,
+div.tbl > div > div.h24 {
+  height: 24px;
+}
+
+div.tbl.h32 > div > div,
+div.tbl > div.h32 > div,
+div.tbl > div > div.h32 {
+  height: 32px;
+}
+
+div.tbl.h48 > div > div,
+div.tbl > div.h48 > div,
+div.tbl > div > div.h48 {
+  height: 48px;
+}
+
+div.box {
+  display: inline-block;
+  padding: 6px 8px;
+  background: #07F;
+  color: #eef;
+  font-weight: bold;
+}
+

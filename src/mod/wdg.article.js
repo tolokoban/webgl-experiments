@@ -2,6 +2,7 @@
 
 var PAGES = {
   $1: "Les bases",
+  intro: "Introduction",
   index: "Comprendre WebGL",
   index2: "Comprendre WebGL (2)",
   chap1: "Dessiner un carré",
@@ -22,9 +23,23 @@ var PAGES = {
   doc: "Documentations"
 };
 
+var TOC = [
+  "Les bases", [
+    "Intoduction | intro"
+  ]
+];
+
 require("font.josefin");
 var $ = require( "dom" );
 var DB = require( "tfw.data-binding" );
+
+
+$.registerTheme("main", {
+  bgP: "#DC9",
+  bgS: "#BF6"
+});
+$.applyTheme("main");
+
 
 /**
  * @class Article
@@ -37,7 +52,7 @@ var Article = function( opts ) {
   var page = window.location.pathname.split('/').pop();
   page = page.substr(0, page.length - 5);  // Retirer ".html"
   
-  var header = $.tag('header', 'theme-elevation-12', [PAGES[page]]);
+  var header = $.tag('header', 'thm-ele12', 'thm-bgP', [PAGES[page]]);
   var nav = createNav( page );
   var body = $.tag('article');
   var elem = $.elem( this, 'div', 'article', [body, nav, header] );
@@ -61,7 +76,7 @@ module.exports = Article;
 
 
 function createNav( currentPage ) {
-  var nav = $.tag('nav', 'theme-elevation-8');
+  var nav = $.tag('nav', 'thm-ele8', 'thm-bgPL');
   var key, val;
   for( key in PAGES) {
     val = PAGES[key];
@@ -70,7 +85,7 @@ function createNav( currentPage ) {
       $.add( nav, $.tag('h1', [val]) );
     }
     else if ( key == currentPage ) {
-      $.add( nav, $.tag('div', 'theme-elevation-1', [val]) );
+      $.add( nav, $.tag('div', 'thm-ele1', [val]) );
     }
     else {
       $.add( nav, $.tag('a', [val], { href: key + ".html"}) );

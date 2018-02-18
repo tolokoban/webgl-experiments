@@ -1,0 +1,104 @@
+<page>
+# Le système de coordonnées
+
+<wdg:intro1 $float="right" $height="200"/>
+
+WebGL manipule les pixels de son __viewport__. Le __viewport__ est le rectangle auquel on restreint l'affichage. Le système de coordonnées de WebGL est totalement indépendant des dimension physiques de ce viewport.
+* L'axe des __X__ est horizontal et dirigé vers la droite.    
+* L'axe des __Y__ est vertical et dirigé vers le haut.
+
+Les coordonnées sont comprises entre `-1` et `+1`. Le centre de l'écran a donc `(0,0)` comme coordonnées.
+
+# Le pipeline
+
+<wdg:intro2 $float="right" $width="200" $height="200"/>
+
+La carte graphique est un mini ordinateur avec ses processeurs, sa mémoire, son langage de programmation.
+Pour lui faire dessiner un simple triangle comme celui-ci (en orange), il faut bien comprendre le principe du __pipeline__.
+
+<div class="tbl">
+    <div>
+        <div>Attributs de vertex</div><div>&xrarr;</div>
+        <div><div class="box">Vertex Shader</div></div><div>&xrarr;</div><div>Coordonnées</div>
+    </div>
+    <div>
+        <div>Coordonnées</div><div>&xrarr;</div>
+        <div><div class="box">Rasterisation</div></div><div>&xrarr;</div><div>Fragments</div>
+    </div>
+    <div>
+        <div>Fragments</div><div>&xrarr;</div>
+        <div><div class="box">Fragment Shader</div></div><div>&xrarr;</div><div>Pixels</div>
+    </div>
+    <div>
+        <div>Pixels</div><div>&xrarr;</div>
+        <div><div class="box">Composition</div></div><div>&xrarr;</div><div>Frame Buffer</div>
+    </div>
+</div>
+
+
+## Le vertex shader
+
+Le __vertex shader__ est un programme de la carte graphique (que vous devez écrire vous-même) qui transforme des données de la mémoire en coordonnées pour le viewport.
+
+<x-include src="intro.vertex-shader.htm"/>
+
+Voici un exemple :
+<x-code>
+attribute float x;
+attribute float y;
+
+void main() {
+  gl_Position = vec4( x, y, 0.0, 1.0 );
+}
+</x-code>
+
+
+## Rasterisation
+
+Avec ces coordonnées, la carte graphique peut faire trois choses : des __points__,
+des __lignes__ et des __triangles pleins__.
+
+La phase de rasterization va donc prendre autant de points que nécessaires (1 pour les points, 2 pour les lignes et 3 pour les triangles) et déterminer quels sont les pixels à générer.
+Comme on ne sait pas encore si ces pixels seront dessinés à l'écran, on les appelle des __fragments__.
+
+## Fragment Shader
+
+Le __fragment shader__ est un programme (à écrire vous-même) qui décide si un fragment doit être gardé, et si oui quelle sera la couleur du pixel résultant.
+
+La couleur est un vecteur à 4 coordonnées toutes comprises entre `0` et `1` :
+le niveau de __rouge__, le niveau de __vert__, le niveau de __bleu__ et l'__opacité__.
+
+Voici un exemple :
+<x-code>
+precision mediump float;
+
+void main() {
+  gl_FragColor = vec4( 1.0, 0.5, 0.0, 1.0 );
+}
+</x-code>
+
+
+## Composition
+
+Durant cette dernière phase il est possible d'effectuer divers tests pour savoir si le pixel doit être écarté ou dessiné. Et s'il est dessiné, on peut préciser comment il doit réagir avec le pixel déjà affiché à la même position.
+
+
+# Passons à la pratique
+
+Maintenant que vous avez la théorie, nous allons décrire pas à pas le code Javascript qui va dessiner le triangle orange ci-dessus.
+
+On commence par créer un canvas, on le place sur le document et on récupère le contexte WebGL.
+<x-code src="mod/assets/intro/index.html" section="canvas" />
+
+Préparons le code de nos shaders :
+<x-code src="mod/assets/intro/index.html" section="shaders-code" />
+
+
+Puisque nous voulons dessiner un triangle, il nous faut __3 vertex__.
+Chaque vertex aura 2 attributs, l'abscisse et l'ordonnée du point.
+
+On crée donc un tableau que l'on pousse dans la mémoire de la carte graphique :
+<x-code src="mod/assets/intro/index.html" section="buffer" />
+
+
+</page>

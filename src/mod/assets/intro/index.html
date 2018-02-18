@@ -1,0 +1,55 @@
+/*<!DOCTYPE html>
+<html>
+    <head>
+        <title>webgl-experiments</title>
+        <meta charset="utf-8">
+  <script>
+  */
+function start() {
+  // #(canvas)
+  // Créer l'élément HTML suivant :
+  // <canvas width="300" height="300"></canvas>
+  var canvas = document.createElement( "canvas" );
+  canvas.setAttribute( "width", 300 );
+  canvas.setAttribute( "height", 300 );
+  // L'ajouter au document courant.
+  document.body.appendChild( canvas );
+  // Récupérer le contexte WebGL.
+  var gl = canvas.getContext( "webgl" );
+  // #(canvas)
+
+  // #(shaders-code)
+  var vertShaderCode =
+    "attribute float x;" +
+    "attribute float y;" +
+    "void main() {" +
+    "  gl_Position = vec4( x, y, 0.0, 1.0 );" +
+    "}";
+  var fragShaderCode =
+    "precision mediump float;" +
+    "void main() {" +
+    "  gl_FragColor = vec4( 1.0, 0.5, 0.0, 1.0 );" +
+    "}";
+  // #(shaders-code)
+  
+  // #(buffer)
+  var vertices = new Float32Array([
+      -0.7, -0.5,
+      -0.1,  0.7,
+       0.5, -0.8
+  ]);
+  // Création d'un buffer dans la carte graphique.
+  // Un buffer est un tableau de nombres.
+  var buff = gl.createBuffer();
+  // Définir ce buffer comme le buffer actif.
+  gl.bindBuffer( gl.ARRAY_BUFFER, buff );
+  // Copier des données dans le buffer actif.
+  gl.bufferData( gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW );  
+  // #(buffer)
+}
+/*
+        </script>
+    </head>
+    <body onload="start()"></body>
+</html>
+*/

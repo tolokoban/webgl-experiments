@@ -25,6 +25,12 @@ article h1 {
   font-size: 1.6rem;
 }
 
+article h2 {
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  font-size: 1.3rem;
+  color: #000A;
+}
+
 article a {
   text-decoration: none;
 }
