@@ -29,17 +29,10 @@ var TOC = [
   ]
 ];
 
-require("font.josefin");
+require("theme");
 var $ = require( "dom" );
 var DB = require( "tfw.data-binding" );
 var Icon = require("tfw.view.icon");
-
-
-$.registerTheme("main", {
-  bgP: "#06D",
-  bgS: "#F80"
-});
-$.applyTheme("main");
 
 
 /**

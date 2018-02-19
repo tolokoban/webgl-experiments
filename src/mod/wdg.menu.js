@@ -5,7 +5,7 @@ var CODE_BEHIND = {
   refresh: refresh
 };
 
-require("font.josefin");
+require("theme");
 require("assets");
 var $ = require("dom");
 var MenuItem = require("wdg.menu.item");

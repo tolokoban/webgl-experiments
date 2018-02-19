@@ -123,6 +123,7 @@ div.article > article table {
   border-collapse: collapse;
   clear: both;
   box-shadow: 0 2px 4px rgba(0,0,0,.5);
+  vertical-align: middle;
 }
 
 div.article > article table td,
@@ -165,10 +166,10 @@ article h2 {
   color: #000A;
 }
 
-article a {
-  text-decoration: none;
+article canvas {
+    display: inline-block;
+    vertical-align: middle;
 }
-
 
 article a:hover {
   text-decoration: underline;

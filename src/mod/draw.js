@@ -25,6 +25,7 @@ module.exports = function(init) {
     
     var ctx = canvas.getContext("2d");
     ctx.clearRect( 0, 0, args.width, args.height );
+    ctx.lineJoin = "round";
     this.element = canvas;
 
     readOnly( this, {
@@ -52,6 +53,11 @@ module.exports = function(init) {
   Draw.prototype.setColor = function( color ) {
     this._ctx.fillStyle = color;
     this._ctx.strokeStyle = color;
+    return this;
+  };
+
+  Draw.prototype.setLine = function( lineWidth ) {
+    this._ctx.lineWidth = lineWidth;
     return this;
   };
 
@@ -133,7 +139,7 @@ module.exports = function(init) {
     return this;
   };
 
-  Draw.prototype.fillTri = function( x1, y1, x2, y2, x3, y3 ) {
+  Draw.prototype.tri = function( x1, y1, x2, y2, x3, y3 ) {
     x1 = this.X( x1 );
     y1 = this.Y( y1 );
     x2 = this.X( x2 );
@@ -146,7 +152,20 @@ module.exports = function(init) {
     ctx.lineTo(x2, y2);
     ctx.lineTo(x3, y3);
     ctx.closePath();
+    return this;
+  };
+
+  Draw.prototype.fillTri = function( x1, y1, x2, y2, x3, y3 ) {
+    var ctx = this._ctx;
+    this.tri( x1, y1, x2, y2, x3, y3 );
     ctx.fill();
+    return this;
+  };
+
+  Draw.prototype.drawTri = function( x1, y1, x2, y2, x3, y3 ) {
+    var ctx = this._ctx;
+    this.tri( x1, y1, x2, y2, x3, y3 );
+    ctx.stroke();
     return this;
   };
 

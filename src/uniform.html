@@ -1,0 +1,113 @@
+<page $title="Passer un uniforme">
+# Changer la couleur
+
+Dans l'exemple précédent, on a pu voir qu'il était facile de changer la couleur de fond.
+Mais la couleur du triangle lui-même est codée dans le fragment shader.
+
+Heureusement, WebGL nous permet de passer des constantes aux shaders que l'on appelle des __uniforms__.
+
+Voici comment on lit un uniform depuis un shader (ici, le fragment shader, mais cela fonctionne aussi avec le vertex shader) :
+
+<x-code>
+precision mediump float;
+// `color` est fournit par le Javascript.
+uniform vec4 color;
+    
+void main() {
+  // On l'utilise comme une constante.
+  gl_FragColor = color;
+}        
+</x-code>
+
+Ensuite, pouir assigner une valeur à cet uniform, il faut écrire ceci entre `gl.useProgram` et `gl.drawArrays` :
+<x-code src="mod/assets/uniform/index.html" section="uniform" />
+
+Vous pouvez télécharger le code <a href="css/assets/uniform/index.html">ici</a>.
+
+
+# Translation, homothétie et rotation
+
+On aimerait maintenant créer des triangles à n'importe quelle position (__translation__), de n'importe quelle taille (homothétie) et dans n'importe quelle orientation (__rotation__).
+
+## Translation
+
+Pour faire une translation, il suffit d'ajouter à chaque coordonnée le même décalage en X et en Y.
+Cette fois, c'est dans le verte shader que nous allons l'utiliser.
+<x-code>
+// Le vecteur de translation.
+uniform vec4 translation;
+
+attribute float x;
+attribute float y;
+
+void main() {
+  // On l'ajoute simplement aux coordonnées du vertex.
+  gl_Position = vec4( x, y, 0.0, 1.0 ) + translation;
+}
+</x-code>
+
+Profitons-en pour introduire les animations :
+<x-code src="mod/assets/uniform/index2.html" section="animation" />"
+
+La fonction Javascript __requiestAnimationFrame__ exécute une fonction dès que l'affichage est prêt à être rafraichi. Sur la plupart des supports, cela se passe 60 fois par secondes. Si vous affichez une image en moins de 16 millisecondes, alors vous aurez une animation de 60 images par secondes : c'est le plus fluide possible.
+
+Voici le <a href="css/assets/uniform/index2.html">résultat</a>.
+
+## Homothétie
+
+Pour modifier la taille du triangle, il suffit de multiplier les coordonnées de ses vertex par un coefficient.
+On va donc ajouter ce coefficient comme un nouvel uniform dans le vertex shader. De plus, on va garder la translation pour voir comment on combine plusieurs transformations.
+
+<x-code>
+// Le vecteur de translation.
+uniform vec4 translation;
+// Le coefficient d'homothétie.
+uniform float homothetie;
+
+attribute float x;
+attribute float y;
+
+void main() {
+  // On l'ajoute simplement aux coordonnées du vertex.
+  gl_Position = vec4( x * homothetie, y * homothetie, 0.0, 1.0 )
+    + translation;
+}
+</x-code>
+
+L'animation ne change pas beaucoup. On ajoute juste l'uniform pour l'homothétie :
+<x-code src="mod/assets/uniform/index3.html" section="animation" />
+
+Voici le <a href="css/assets/uniform/index3.html">résultat</a>.
+
+## Rotation
+
+Pour faire subir à un vertex une rotation d'angle `a` en sens contraire des aiguilles d'une montre, il faut appliquer les formules suivantes :
+* `x' = x.cos(a) - y.sin(a)`
+* `y' = x.sin(a) + y.cos(a)`
+
+Le vertex shader devient :
+<x-code>
+// Le vecteur de translation.
+uniform vec4 translation;
+// Le coefficient d'homothétie.
+uniform float homothetie;
+// L'angle de rotation.
+uniform float rotation;
+
+attribute float x;
+attribute float y;
+
+void main() {
+  float xx = x*cos( rotation ) - y*sin( rotation );
+  float yy = x*sin( rotation ) + y*cos( rotation );
+  gl_Position = vec4( xx * homothetie, yy * homothetie, 0.0, 1.0 )
+    + translation;
+}
+</x-code>
+
+L'animation ne change pas beaucoup non plus. On ajoute juste l'uniform pour la rotation :
+<x-code src="mod/assets/uniform/index4.html" section="animation" />
+
+Voici le <a href="css/assets/uniform/index4.html">résultat</a>.
+
+</page>

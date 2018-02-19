@@ -42,12 +42,14 @@ a.wdg-menu-item > div.table > div {
 a.wdg-menu-item > div.table > div > div {
   display: table-cell;
   padding: 8px;
+  text-shadow: 1px 1px 1px #fff,-1px 1px 1px #fff,-1px -1px 1px #fff,1px -1px 1px #fff;
 }
 
 a.wdg-menu-item > div.table > div > div.title {
   text-align: left;
   vertical-align: top;
   font-weight: bold;
+  font-size: 120%;
 }
 
 a.wdg-menu-item > div.table > div > div.keywords {
