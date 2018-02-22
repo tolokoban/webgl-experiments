@@ -61,13 +61,13 @@ div.article > article {
   margin: 0;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1000px) {
   div.article > article {
     position: absolute;
     left: 50%;
     top: 2rem;
     bottom: 0;
-    width: 960px;
+    width: 1000px;
     height: auto;
     margin: 0 -480px;
   }
@@ -75,7 +75,7 @@ div.article > article {
     position: absolute;
     left: 50%;
     top: 0;
-    width: 960px;
+    width: 1000px;
     height: 2rem;
     margin: 0 -480px;
   }
@@ -179,3 +179,92 @@ article iframe {
   border-radius: 8px;
   border: none;
 }
+
+*, .dom, .dom * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Josefin Sans;
+    font-size: 19px;
+}
+
+span, strong, b, em, i, code {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+div.tbl {
+  display: inline-table;
+  border-collapse: collapse;
+}
+
+div.tbl > div {
+  display: table-row;
+}
+
+div.tbl > div > div {
+  display: table-cell;
+  padding: 2px 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.tbl.grd > div > div,
+div.tbl > div > div.grd,
+div.tbl > div.grd > div {
+  display: table-cell;
+  border: 1px solid #444;
+  background: #fff;
+}
+
+div.tbl.w32 > div > div,
+div.tbl > div.w32 > div,
+div.tbl > div > div.w32 {
+  width: 32px;
+}
+
+div.tbl.w48 > div > div,
+div.tbl > div.w48 > div,
+div.tbl > div > div.w48 {
+  width: 48px;
+}
+
+div.tbl.h16 > div > div,
+div.tbl > div.h16 > div,
+div.tbl > div > div.h16 {
+  height: 16px;
+}
+
+div.tbl.h24 > div > div,
+div.tbl > div.h24 > div,
+div.tbl > div > div.h24 {
+  height: 24px;
+}
+
+div.tbl.h32 > div > div,
+div.tbl > div.h32 > div,
+div.tbl > div > div.h32 {
+  height: 32px;
+}
+
+div.tbl.h48 > div > div,
+div.tbl > div.h48 > div,
+div.tbl > div > div.h48 {
+  height: 48px;
+}
+
+div.box {
+  display: inline-block;
+  padding: 6px 8px;
+  background: #07F;
+  color: #eef;
+  font-weight: bold;
+}
+

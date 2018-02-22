@@ -1,0 +1,15 @@
+<page $title="Boilerplate">
+# Boilerplate ? Kesako ?
+
+Le terme __boilerplate__ pourrait être traduit par __cuisine interne__. C'est tout le code (généralement long et fastidieux) qu'il faut écrire avant de pouvoir rentrer dans le vif du sujet.
+WebGL étant une bibliothèque de bas niveau, elle implique beaucoup de boilerplate.
+
+En bon informatitien, on peut créer ses propres fonctions qui vont encapsuler le boilerplate. Par exemple, pour les programmes, il serait tellement plus simple de pouvoir écrire quelque chose comme ça :
+<x-code>
+var prg = new Program(gl, { vert: vertexShaderCode, frag: fragmentShaderCode });
+prg.use();
+prg.uniforms.width = 800;
+prg.uniforms.height = 600;
+</x-code>
+    
+</page>

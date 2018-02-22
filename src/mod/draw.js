@@ -47,7 +47,7 @@ module.exports = function(init) {
     this.setColor("#000");
     ctx.font = "12px sans-serif";
     
-    init.call( this );
+    init.call( this, args );
   };
 
   Draw.prototype.setColor = function( color ) {
@@ -139,6 +139,19 @@ module.exports = function(init) {
     return this;
   };
 
+  Draw.prototype.drawLine = function( x1, y1, x2, y2 ) {
+    x1 = this.X( x1 );
+    y1 = this.Y( y1 );
+    x2 = this.X( x2 );
+    y2 = this.Y( y2 );
+    var ctx = this._ctx;
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+    return this;
+  };
+  
   Draw.prototype.tri = function( x1, y1, x2, y2, x3, y3 ) {
     x1 = this.X( x1 );
     y1 = this.Y( y1 );

@@ -6,7 +6,6 @@ var CODE_BEHIND = {
 };
 
 require("theme");
-require("assets");
 var $ = require("dom");
 var MenuItem = require("wdg.menu.item");
 

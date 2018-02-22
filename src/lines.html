@@ -1,0 +1,137 @@
+<page $title="Traçons des lignes">
+
+# Des fils et des clous    
+    
+<wdg:lines1 $float="right" $width="200" $height="200"/>
+    
+Nous allons dessiner la figure ci-contre en utilisant l'algorithme suivant :
+* Pour chacun des `n` points répartis autour d'un cercle tracer...
+* ...une ligne jusqu'au point d'indice `f` fois l'indice de celui-ci.
+
+Dans l'exemple ci-contre, par exemple, on a pris `n=10` et `f=3`.
+Les points à relier sont donc :
+
+<div class="tbl grd">
+    <div><div><code>n</code></div><div>0</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+    <div><div><code>n*3</code></div><div>0</div><div>3</div><div>6</div><div>9</div><div>2</div><div>5</div><div>8</div><div>1</div><div>4</div><div>7</div></div>
+</div>
+
+Les multiplications sont calculées _module `n`_. C'est-à-dire que l'on prend le reste de la division euclidienne par `n`.
+
+En faisant varier `n` et `f`, on optient différentes figures :
+
+<wdg:lines1 $n="50" $f="3"/>
+<wdg:lines1 $n="50" $f="4"/>
+<wdg:lines1 $n="50" $f="5"/>
+
+
+# Tracer sans faire de boucles
+
+Quand on voit l'algorithme précédent, on se dit qu'il va falloir faire une boucle pour dessiner chaque trait à la suite.
+Mais en WebGL, il faut raisonner comme si toutes les lignes allaient être tracées simultanément.
+
+Nous allons donc passer un __uniform__ nommé `n` qui donne le nombre de points autour du cercle.
+Ensuite, on aura un __attribut__ : `index` qui est l'indice du point sur ce cercle.
+Le vertex shader pourra ainsi déterminer les coordonnées à partir de ces deux valeurs :
+<x-code>
+// Nombre de points autour du cercle.    
+uniform float n;
+// Index de ce point sur le cercle.    
+attribute float index;
+// Définission d'une constante.    
+const float PI = 3.141592653589793;
+    
+void main() {
+  // On va calculer les coordonnées x,y du vertex
+  // par rapport à un angle.
+  float angle = 2.0 * PI * index / n;
+  // L'angle 0 indique le point du haut.
+  // Les autres points se places consécutivement
+  // dans le sesn des aiguilles d'une montre.
+  float x = sin( angle );
+  float y = cos( angle );
+  gl_Position = vec4( x, y, 0.0, 1.0 );
+}    
+</x-code>
+
+Pour créer le ARRAY_BUFFER, on va utiliser le code Javascript suivant qui définit les coordonées de 500 lignes :
+<x-code src="mod/assets/lines/index.html" section="buffer"/>
+
+Et on passe l'unique uniform de notre programme :
+<x-code src="mod/assets/lines/index.html" section="draw"/>
+
+Et voici <a href="css/assets/lines/index.html">le résultat</a>.
+
+# Passer `f` en paramètre
+
+On a utilisé un uniform pour paramétrer `n`, alors pourquoi ne pas aussi passer `f` dans un second uniform ?
+L'idée est de pouvoir faire varier ce paramètre pour réaliser une petite animation.
+
+Mais dans ce cas, il ne faut plus faire la multiplication par `f` dans le ARRAY_BUFFER, il faut laisser cette multiplication à la charge du vertex shader. On pourrait remplir le buffer comme ceci, par exemple :
+
+<div class="tbl w32">
+    <div>
+        <div class="grd">0</div><div class="grd">0</div>
+        <div class="grd">1</div><div class="grd">1</div>
+        <div class="grd">2</div><div class="grd">2</div>
+        <div class="grd">3</div><div class="grd">3</div>
+        <div class="grd">4</div><div class="grd">4</div>
+        <div>...</div>
+    </div>
+</div>
+
+Ensuite, on pourrait faire multiplier les vertex _pairs_ par `f`. Malheureusement **ça ne fonctionnera pas**.
+Car en théorie WebGL est capable de traiter tous les vertex simultanément. Donc il n'y a aucun moyen de savoir quel vertex est avant ou après un autre vertex. La seule solution sera d'ajouter de l'information dans le ARRAY_BUFFER.
+
+Une solution serait d'ajouter un second attribut avec une valeur 0 pour les vertex pairs et 1 pour les vertex impairs. Il n'y aurait plus qu'à tester cet attribut dans le vertex shader pour savoir si on doit multiplier ou non par `f`.
+
+Mais cela doublerait la taille de notre buffer. Une autre solution serait alors d'utiliser l'unique attribut actuel en lui donnant ces valeurs :
+
+<div class="tbl w32">
+    <div>
+        <div class="grd">0</div><div class="grd">-1</div>
+        <div class="grd">1</div><div class="grd">-2</div>
+        <div class="grd">2</div><div class="grd">-3</div>
+        <div class="grd">3</div><div class="grd">-4</div>
+        <div class="grd">4</div><div class="grd">-5</div>
+        <div>...</div>
+    </div>
+</div>
+
+Si la valeur est négative, on sait qu'il faut multiplier par `f`. C'est ce que fait le vertex shader :
+<x-code>
+uniform float n;
+uniform float f;
+attribute float index;
+const float PI = 3.141592653589793;
+    
+void main() {
+  float i = index;
+  if( index < 0.0 ) {
+    // Décoder l'index et le multiplier par f.
+    i = f * (-1.0 - index);
+  }
+  float angle = 2.0 * PI * i / n;
+  float x = sin( angle );
+  float y = cos( angle );
+  gl_Position = vec4( x, y, 0.0, 1.0 );
+}    
+</x-code>
+
+Il ne reste plus qu'à passer un `f` aléatoire :
+<x-code src="mod/assets/lines/index2.html" section="draw"/>
+
+
+Et voici <a href="css/assets/lines/index2.html">le résultat</a>.
+
+# Animation
+
+Il serait intéressant de voir ce qui arrive quand on augmente `f` au cours du temps. Pour cela, il suffit de modifier la partie du code d'affichage :
+<x-code src="mod/assets/lines/index3.html" section="draw"/>
+
+La fonction Javascript `requestAnimationFrame()` demande au navigateur d'appeler une fonction dés le prochain rafraichissement écran. Si vous passez sur un autre onglet, la fonction n'est plus appelée : cela permet d'économiser les batteries sur les mobiles. Quand votre fonction est appelée, elle reçoit le temps en milliseconds en argument.
+
+Et voici <a href="css/assets/lines/index3.html">le résultat</a>.
+
+
+</page>
