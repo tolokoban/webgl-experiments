@@ -45,7 +45,7 @@ module.exports = function(init) {
     });
 
     this.setColor("#000");
-    ctx.font = "12px sans-serif";
+    ctx.font = "11px sans-serif";
     
     init.call( this, args );
   };

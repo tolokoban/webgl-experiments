@@ -222,6 +222,32 @@ window.WebGL = function() {
         };
       }
       break;
+    case gl.FLOAT_VEC3:
+      if ( item.size == 1 ) {
+        return function ( v ) {
+          gl.uniform3fv( nameGL, v );
+          this[ nameJS ] = v;
+        };
+      } else {
+        throw Error(
+          "[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC3 in uniform `" +
+            item.name + "'!'"
+        );
+      }
+      break;
+    case gl.FLOAT_VEC4:
+      if ( item.size == 1 ) {
+        return function ( v ) {
+          gl.uniform4fv( nameGL, v );
+          this[ nameJS ] = v;
+        };
+      } else {
+        throw Error(
+          "[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC4 in uniform `" +
+            item.name + "'!'"
+        );
+      }
+      break;
     case gl.FLOAT_MAT3:
       if ( item.size == 1 ) {
         return function ( v ) {
@@ -313,63 +339,105 @@ window.WebGL = function() {
     }
   }
 
+  function fetchAssets( assets ) {
 
-  return {
-    Program: Program,
-    fetchAssets: function(assets) {
-      return new Promise(function (resolve, reject) {
-        function process() {
-          var keys = Object.keys( assets );
-          var result = {};
+    return new Promise(function (resolve, reject) {
+      function process() {
+        var keys = Object.keys( assets );
+        var result = {};
 
-          function fetchNext() {
-            if( keys.length === 0 ) {
-              resolve( result );
-              return;
-            }
-
-            var key = keys.shift();
-            var url = assets[key];
-            if( endsWith( url, "jpg", "png", "gif", "svg" ) ) {
-              var img = new Image();
-              result[key] = img;
-              img.onload = fetchNext;
-              img.onerror = function() {
-                console.error("Unable to load image \"" + key + "\":", url);
-                fetchNext();
-              };
-              img.src = url;
-            } else {
-              fetch( url ).then(function(response) {
-                if( !response.ok ) throw "";
-                if( endsWith( url, "json" ) ) {
-                  return response.json();
-                } else {
-                  return response.text();
-                }
-              }).then(function(content) {
-                result[key] = content;
-                fetchNext();
-              }).catch(function(ex) {
-                console.error("Unable to fetch asset \"" + key + "\": ", url);
-                fetchNext();
-              });
-            }
+        function fetchNext() {
+          if( keys.length === 0 ) {
+            resolve( result );
+            return;
           }
 
-          fetchNext();
+          var key = keys.shift();
+          var url = assets[key];
+          if( endsWith( url, "jpg", "png", "gif", "svg" ) ) {
+            var img = new Image();
+            result[key] = img;
+            img.onload = fetchNext;
+            img.onerror = function() {
+              console.error("Unable to load image \"" + key + "\":", url);
+              fetchNext();
+            };
+            img.src = url;
+          } else {
+            fetch( url ).then(function(response) {
+              if( !response.ok ) throw "";
+              if( endsWith( url, "json" ) ) {
+                return response.json();
+              } else {
+                return response.text();
+              }
+            }).then(function(content) {
+              result[key] = content;
+              fetchNext();
+            }).catch(function(ex) {
+              console.error("Unable to fetch asset \"" + key + "\": ", url);
+              fetchNext();
+            });
+          }
         }
 
-        // Toute une  tuyauterie pour  s'assure que  la page  est bien
-        // chargée avant de commencer les téléchargements.
-        if (document.readyState === "complete"
-            || document.readyState === "loaded"
-            || document.readyState === "interactive") {
-          process();
-        } else {
-          document.addEventListener("DOMContentLoaded", process );
-        }
-      });
+        fetchNext();
+      }
+
+      // Toute une  tuyauterie pour  s'assure que  la page  est bien
+      // chargée avant de commencer les téléchargements.
+      if (document.readyState === "complete"
+          || document.readyState === "loaded"
+          || document.readyState === "interactive") {
+        process();
+      } else {
+        document.addEventListener("DOMContentLoaded", process );
+      }
+    });
+  }
+
+  function fillArrayBuffer( gl, vertices ) {
+    if( !(gl instanceof WebGLRenderingContext) && !(gl instanceof WebGL2RenderingContext) ) {
+      throw "Le premier argument de WebGL.fillArrayBuffer doit obligatoirment être de type WebGLRenderingContext ou WebGL2RenderingContext !";
     }
+    if( !(vertices instanceof Float32Array) ) {
+      throw "Le second argument de WebGL.fillArrayBuffer doit obligatoirment être de type Float32Array !";
+    }
+
+    var buff = gl.createBuffer();
+    gl.bindBuffer( gl.ARRAY_BUFFER, buff );
+    gl.bufferData( gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW );
+    return buff;
+  }
+
+  function fillElementBuffer( gl, elements ) {
+    if( !(gl instanceof WebGLRenderingContext) && !(gl instanceof WebGL2RenderingContext) ) {
+      throw "Le premier argument de WebGL.fillArrayBuffer doit obligatoirment être de type WebGLRenderingContext ou WebGL2RenderingContext !";
+    }
+    if( !(elements instanceof Uint16Array) ) {
+      throw "Le second argument de WebGL.fillArrayBuffer doit obligatoirment être de type Uint16Array !";
+    }
+
+    var buff = gl.createBuffer();
+    gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, buff );
+    gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, elements, gl.STATIC_DRAW );
+    return buff;
+  }
+
+  function newCanvas() {
+    var body = document.body;
+    var canvas = document.createElement( "canvas" );
+    canvas.setAttribute( "width", body.clientWidth );
+    canvas.setAttribute( "height", body.clientHeight );
+    body.appendChild( canvas );
+    return canvas;
+  }
+  //========================================================================================
+  return {
+    Program: Program,
+    fetchAssets: fetchAssets,
+    fillArrayBuffer: fillArrayBuffer,
+    fillElementBuffer: fillElementBuffer,
+    newCanvas: newCanvas
   };
 }();

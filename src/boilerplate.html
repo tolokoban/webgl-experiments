@@ -1,15 +1,123 @@
 <page $title="Boilerplate">
 # Boilerplate ? Kesako ?
 
+<wdg:boilerplate $float="right"/>
+    
 Le terme __boilerplate__ pourrait être traduit par __cuisine interne__. C'est tout le code (généralement long et fastidieux) qu'il faut écrire avant de pouvoir rentrer dans le vif du sujet.
 WebGL étant une bibliothèque de bas niveau, elle implique beaucoup de boilerplate.
 
-En bon informatitien, on peut créer ses propres fonctions qui vont encapsuler le boilerplate. Par exemple, pour les programmes, il serait tellement plus simple de pouvoir écrire quelque chose comme ça :
+Arrivés à ce chapitre vous pouvez sûrement écrire le code pour dessiner cette maison. Mais en le faisant, vous allez devoir copier/coller du code que vous avez déjà écrit dans les autres chapitres. Jusqu'ici, tout tenait dans un seul fichier HTML, nous allons désormais structurer les choses pour faciliter la lecture du code.
+
+Voici les 6 fichiers nécessaires pour dessiner cette maison :
+
+<ex src="mod/assets/boilerplate/index.html" lang="html" label="La page HTML (index.html)"/>
+<ex src="mod/assets/boilerplate/style.css" lang="css" label="Le style (style.css)"/>
+<ex src="mod/assets/boilerplate/script.js" lang="js" label="Le code pour la maison (script.js)"/>
+<ex src="mod/assets/boilerplate/shader.vert" lang="glsl" label="Vertex shader (shader.vert)"/>
+<ex src="mod/assets/boilerplate/shader.frag" lang="glsl" label="Fragment shader (shader.frag)"/>
+<ex src="mod/assets/webgl.js" lang="js" label="Le boilerplate (../webgl.js)"/>
+
+Pour vos expérimentations, il vous suffit de copier ces 6 fichiers et de ne modifier que `script.js`, `shader.vert` et `shader.frag`.
+
+Le code Javascript contenu dans `script.js` est nettement plus simple que ce que nous avions dans le fichier HTML unique, car il utilise des utilitaires fournis par `webgl.js`.
+
+## Les assets
+
+Quand nous commencerons à écrire de petits jeux, vous aurez besoin de charger des dizaines de shaders (vertex ou fragment), images (jpg, png, gif ou svg) ou structures (tableaux pour jeux de plateformes, maillages d'objets 3D, ...). La fonction suivante vous permet de télécharger tout ce dont vous avez besoin de manière asynchrone.
 <x-code>
-var prg = new Program(gl, { vert: vertexShaderCode, frag: fragmentShaderCode });
-prg.use();
-prg.uniforms.width = 800;
-prg.uniforms.height = 600;
+WebGL.fetchAssets({ ... }).then( function( assets ) { ... } );
 </x-code>
-    
+
+Dire que cette fonction est __asynchrone__ signifie que le code Javascript qui se trouve après s'exécute avant que les fichiers soient tous téléchargés. Cependant, la fonction qui est passée en argument à `.then()` sera appelée quand tout sera disponible, et elle recevra le résultat comme unique argument.
+
+Voici un exemple pour mieux comprendre :
+<x-code>
+WebGL.fetchAssets({
+  msg: "message.txt"
+}).then( function( assets ) {
+  alert( assets.msg );
+} );
+alert( "Chargement en cours..." );
+</x-code>
+
+Dans ce code, on demande de télécharger le fichier `message.txt` et de mettre son contenu dans `assets.msg`.
+Quand le fichier aura été téléchargé, on appelera la function avec `assets` en argument qui affichera le contenu du message.
+
+Puisque `fetchAssets` est __asynchrone__, on verra apparaître _"Chargement en cours..."_ avant le contenu de `message.txt`.
+
+## Le canvas
+
+Pour faire du WebGL il nous faut un canvas. La plupart du temps, on veut qu'il prenne la taille maximale de l'écran et que sa résolution corresponde à celle de l'écran.
+C'est pourquoi le code `var canvas = WebGL.newCanvas()` est l'équivalent de ceci :
+<x-code>
+var body = document.body;
+var canvas = document.createElement( "canvas" );
+canvas.setAttribute( "width", body.clientWidth );
+canvas.setAttribute( "height", body.clientHeight );
+body.appendChild( canvas );
+</x-code>
+
+## Le programme
+
+Créer des programmes demande de nombreuses lignes de code fastidieux, surtout si on veut gérer correctement la libération de la mémoire et la gestion des erreurs de compilation. C'est pourquoi on a écrit une classe utilitaire : `WebGL.Program`.
+
+Voici un exemple d'instantiation :
+<x-code>
+var prg = new WebGL.Program( gl, {
+  vert: "attribute float x;" +
+    "attribute float y;" +
+    "void main() {" +
+    "  gl_Position = vec4( x, y, 0.0, 1.0 );" +
+    "}",
+  frag: "precision mediump float;" +
+    "void main() {" +
+    "  gl_FragColor = vec4( 1.0, 0.5, 0.0, 1.0 );" +
+    "}"
+});
+</x-code>
+
+Pour notre belle maison, on a utilisé directement l'objet `assets` comme second argument pour instantier notre programme.
+
+Avec cette instance, on peut mettre à jour facilement les _uniforms_ puiqu'ils sont directement accessibles sur l'objet en les prefixant par `$`. Ainsi, `prg.$time = time` est équivalent à :
+<x-code>
+var uniTime = gl.getUniformLocation( program, 'time' );
+gl.uniform1f( uniTime, time );
+</x-code>
+
+L'avantage est double : économie de code et appel unique à `getUniformLocation`.
+En effet, la classe `Program` stoque une bonne fois pour toutes le retour de `getUniformLocation` réduisant ainsi le nombre d'accès à la carte graphique à chaque modification de valeur d'un uniform.
+
+Mais le plus plaisant reste la déclaration des __attributs__. L'appel `prg.bindAttribs( buff, "x", "y" )`
+remplace tout ceci :
+<x-code>
+var bpe = vertices.BYTES_PER_ELEMENT;
+var block = 2 * bpe;
+var attX = gl.getAttribLocation( program, "x" );
+gl.enableVertexAttribArray( attX );
+gl.vertexAttribPointer( attX, 1, gl.FLOAT, false, block, 0 * bpe );
+var attY = gl.getAttribLocation( program, "y" );
+gl.enableVertexAttribArray( attY );
+gl.vertexAttribPointer( attY, 1, gl.FLOAT, false, block, 1 * bpe );    
+</x-code>
+
+## Les ARRAY_BUFFER
+
+Enfin, la fonction `WebGL.fillArrayBuffer` bien que moins impressionnante a l'avantage de vérifier que vous ne vous êtes pas trompés dans les arguments. Il est, par exemple, très courant de passer un tableau javascript à la place d'un `Float32Array`.
+
+Ainsi, le code `var buff = WebGL.fillArrayBuffer( gl, vertices )` remplace ceci :
+<x-code>
+  var buff = gl.createBuffer();
+  gl.bindBuffer( gl.ARRAY_BUFFER, buff );
+  gl.bufferData( gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW );      
+</x-code>
+
+Profitons-en pour porter notre attention sur la façon dont nous avons utilisé un unique ARRAY_BUFFER pour dessiner notre maison qui est en deux parties.
+Les vertex du toît et de la façade sont stoqués une fois pour toute et ensuite, on utilise une partie de ceux-ci grâce aux arguments 2 et 3 de `drawArrays( type, début, longueur )`.
+
+Cette notion est importante car envoyer un ARRAY_BUFFER dans la carte graphique prend du temps.
+Alors on préfère envoyer tout ce qu'on peut en dehors de la boucle d'animation, quite à ne pas tout afficher à chaque frame.
+
+<hr/>
+
+Et voici <a href="css/assets/boilerplate/index.html">le résultat</a>.
 </page>
