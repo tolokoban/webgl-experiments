@@ -5,8 +5,8 @@ varying float z;
 
 void main() {
   float zoom = 1.0 + depth * 0.5;
-  float x = sin(angle);
-  float y = cos(angle);
+  float x = sin(angle) * 1.5;
+  float y = cos(angle) * 1.5;
   z = zoom;
   gl_Position = vec4( x, y, 0.0, zoom );
 }

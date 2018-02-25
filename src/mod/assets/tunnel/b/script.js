@@ -1,9 +1,9 @@
 "use strict";
 
 // Nombre de points pour faire un cercle.
-var SECTEURS = 12;
+var SECTEURS = 36;
 // Nombre de cercles de notre tunnel.
-var PROFONDEUR = 25;
+var PROFONDEUR = 45;
 
 
 WebGL.fetchAssets({
@@ -24,13 +24,15 @@ WebGL.fetchAssets({
   var buff = WebGL.fillArrayBuffer( gl, vertices );  
   prg.bindAttribs( buff, "angle", "depth" );
 
+  gl.enable( gl.DEPTH_TEST );
+  gl.depthFunc( gl.GEQUAL );
+  gl.clearDepth( -1 );
+  
   gl.clearColor( 0.1333, 0.5333, 1, 1 );
-  gl.clear( gl.COLOR_BUFFER_BIT );
+  gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
   
   prg.$color = new Float32Array([ 1, 0.4667, 0 ]);
   gl.drawElements( gl.TRIANGLE_STRIP, elements.length, gl.UNSIGNED_SHORT, 0 );
-  prg.$color = new Float32Array([ 0, 0, 0 ]);
-  gl.drawElements( gl.LINE_STRIP, elements.length, gl.UNSIGNED_SHORT, 0 );
 });
 
 
