@@ -1,3 +1,5 @@
+uniform float time;
+
 attribute float angle;
 attribute float depth;
 
@@ -8,7 +10,7 @@ const float ANGLE_FACTOR = 3.0 / 6.283185307179586;
 const float DEPTH_FACTOR = 0.5 / 2.0;
 
 void main() {
-  float u = angle * ANGLE_FACTOR;
+  float u = angle * ANGLE_FACTOR + time * 0.0001;
   float v = depth * DEPTH_FACTOR;
   uv = vec2( u, v );
   float zoom = 1.0 + depth * 0.5;

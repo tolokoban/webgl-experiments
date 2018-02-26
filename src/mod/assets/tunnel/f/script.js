@@ -1,7 +1,7 @@
 "use strict";
 
 // Nombre de points pour faire un cercle.
-var SECTEURS = 18; //36;
+var SECTEURS = 36;
 // Nombre de cercles de notre tunnel.
 var PROFONDEUR = 45;
 
@@ -14,17 +14,11 @@ WebGL.fetchAssets({
   var canvas = WebGL.newCanvas();
   var gl = canvas.getContext("webgl");
 
-  var img = document.createElement("img");
-  img.setAttribute("crossOrigin", "anonymous");
-  img.setAttribute("src", "../tile.jpg");
-  document.body.appendChild( img );
-  
   var prg = new WebGL.Program( gl, {
     vert: assets.vert,
     frag: assets.frag
   });
   var vertices = new Float32Array( getVertices() );
-  console.info("[script] vertices=", vertices);
   var elements = new Uint16Array( getElements() );
 
   WebGL.fillElementBuffer( gl, elements );
@@ -39,10 +33,13 @@ WebGL.fetchAssets({
   gl.depthFunc( gl.GEQUAL );
   gl.clearDepth( -1 );
 
-  gl.clearColor( 0.1333, 0.5333, 1, 1 );
+  gl.clearColor( 0, 0, 0, 1 );
 
   function anim( time ) {
     requestAnimationFrame( anim );
+    prg.$time = time;
+    prg.$width = canvas.clientWidth;
+    prg.$height = canvas.clientHeight;
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
     gl.drawElements( gl.TRIANGLE_STRIP, elements.length, gl.UNSIGNED_SHORT, 0 );
   }
@@ -70,7 +67,7 @@ function getVertices() {
   var p, s;
 
   for( p=0; p<PROFONDEUR; p++ ) {
-    for( s=0; s<SECTEURS; s++ ) {
+    for( s=0; s<=SECTEURS; s++ ) {
       vertices.push( Math.PI * 2 * s / SECTEURS, p );
     }
   }
@@ -85,13 +82,13 @@ function getElements() {
   var p, s;
 
   for( p=0; p<PROFONDEUR - 1; p++ ) {
-    offset = p * SECTEURS;
-    for( s=0; s<SECTEURS; s++ ) {
-      elements.push( offset + s, offset + s + SECTEURS );
+    offset = p * (SECTEURS + 1);
+    for( s=0; s<(SECTEURS + 1); s++ ) {
+      elements.push( offset + s, offset + s + (SECTEURS + 1) );
     }
     elements.push( offset );
   }
-  elements.push( offset + SECTEURS );
+  elements.push( offset + (SECTEURS + 1) );
 
   return elements;
 }

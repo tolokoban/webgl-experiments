@@ -1,0 +1,44 @@
+<page $title="Tunnel">
+
+<img class="right" src="css/assets/index/tunnel.jpg" />
+
+Le but de cet article est de réaliser une animation infinie de voyage mouvementé à l'intérieur d'un tunnel en bois.
+L'intégralité des calculs seront faits dans la carte graphique afin de rendre l'animation aussi fluide que possible sur un écran HD.
+
+Le tunnel étant infini, deux solutions se présentent à nous :
+* On ajoute des vertex au fil de l'eau.
+* On crée une portion de tunnel qui ne bouge pas et on utilise une astuce pour créer l'illusion.
+
+La première solution implique du code côté Javascript dans la boucle d'animation pour calculer et envoyer vers la carte graphique des tableaux de vertex.
+
+Nous allons donc exposer la seconde solution parce que l'illusion est la meilleure alliée de l'optimisation.
+
+## La structure d'une portion de tunnel
+
+<wdg:tunnel1 />
+
+Voici <a href="css/assets/tunnel/a/index.html">le résultat</a>.
+
+## Cacher le bout du tunnel
+
+Voici <a href="css/assets/tunnel/b/index.html">le résultat</a>.
+
+## Ajouter des textures
+
+<img class="right" src="css/assets/tunnel/tile.jpg" width="256" />
+
+Voici <a href="css/assets/tunnel/c/index.html">le résultat</a>.
+
+## Mettre en rotation par décallage des textures
+
+Voici <a href="css/assets/tunnel/d/index.html">le résultat</a>.
+
+## Mettre en rotation par mouvement des vertex
+
+Voici <a href="css/assets/tunnel/e/index.html">le résultat</a>.
+
+## En avant toute !
+
+Voici <a href="css/assets/tunnel/f/index.html">le résultat</a>.
+    
+</page>

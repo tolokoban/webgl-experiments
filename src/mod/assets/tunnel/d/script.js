@@ -1,7 +1,7 @@
 "use strict";
 
 // Nombre de points pour faire un cercle.
-var SECTEURS = 18; //36;
+var SECTEURS = 36;
 // Nombre de cercles de notre tunnel.
 var PROFONDEUR = 45;
 
@@ -43,6 +43,7 @@ WebGL.fetchAssets({
 
   function anim( time ) {
     requestAnimationFrame( anim );
+    prg.$time = time;
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
     gl.drawElements( gl.TRIANGLE_STRIP, elements.length, gl.UNSIGNED_SHORT, 0 );
   }
@@ -70,7 +71,7 @@ function getVertices() {
   var p, s;
 
   for( p=0; p<PROFONDEUR; p++ ) {
-    for( s=0; s<SECTEURS; s++ ) {
+    for( s=0; s<=SECTEURS; s++ ) {
       vertices.push( Math.PI * 2 * s / SECTEURS, p );
     }
   }
@@ -85,13 +86,13 @@ function getElements() {
   var p, s;
 
   for( p=0; p<PROFONDEUR - 1; p++ ) {
-    offset = p * SECTEURS;
-    for( s=0; s<SECTEURS; s++ ) {
-      elements.push( offset + s, offset + s + SECTEURS );
+    offset = p * (SECTEURS + 1);
+    for( s=0; s<(SECTEURS + 1); s++ ) {
+      elements.push( offset + s, offset + s + (SECTEURS + 1) );
     }
     elements.push( offset );
   }
-  elements.push( offset + SECTEURS );
+  elements.push( offset + (SECTEURS + 1) );
 
   return elements;
 }

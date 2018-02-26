@@ -340,7 +340,6 @@ window.WebGL = function() {
   }
 
   function fetchAssets( assets ) {
-
     return new Promise(function (resolve, reject) {
       function process() {
         var keys = Object.keys( assets );
@@ -356,10 +355,12 @@ window.WebGL = function() {
           var url = assets[key];
           if( endsWith( url, "jpg", "png", "gif", "svg" ) ) {
             var img = new Image();
+            img.crossOrigin = "anonymous";
             result[key] = img;
             img.onload = fetchNext;
-            img.onerror = function() {
+            img.onerror = function( ex ) {
               console.error("Unable to load image \"" + key + "\":", url);
+              console.error( ex );
               fetchNext();
             };
             img.src = url;

@@ -1,3 +1,5 @@
+uniform float time;
+
 attribute float angle;
 attribute float depth;
 
@@ -12,8 +14,10 @@ void main() {
   float v = depth * DEPTH_FACTOR;
   uv = vec2( u, v );
   float zoom = 1.0 + depth * 0.5;
-  float x = sin(angle) * 1.5;
-  float y = cos(angle) * 1.5;
+
+  float a = angle + time * 0.0001;
+  float x = sin(a) * 1.5;
+  float y = cos(a) * 1.5;
   float chute = depth * depth * 0.005;
   z = -depth / 45.0;
   gl_Position = vec4( x, y - chute, z * zoom, zoom );
