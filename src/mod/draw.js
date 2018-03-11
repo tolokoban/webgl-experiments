@@ -70,7 +70,6 @@ module.exports = function(init) {
     var y = Math.min( y1, y2 );
     var w = Math.max( x1, x2 ) - x;
     var h = Math.max( y1, y2 ) - y;
-    console.info("[draw] x, y, w, h=", x, y, w, h);
     this._ctx.fillRect( x, y, w, h );
     return this;
   };
@@ -134,7 +133,6 @@ module.exports = function(init) {
       y -= 4;
     }
     else ctx.textBaseline = "middle";
-    console.info("[draw] ctx.textBaseline, text=", ctx.textBaseline, text);
     ctx.fillText( text, x, y );
     return this;
   };

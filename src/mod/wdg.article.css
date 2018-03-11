@@ -121,8 +121,6 @@ div.article div.wdg-showhide {
 
 div.article > article table {
   border-collapse: collapse;
-  clear: both;
-  box-shadow: 0 2px 4px rgba(0,0,0,.5);
   vertical-align: middle;
 }
 
@@ -131,7 +129,15 @@ div.article > article table th {
   padding: 3px 6px;
   border: 1px solid rgba(0,128,255,.5);
   background: #fff;
+  text-align: center;
+  vertical-align: middle;
 }
+
+div.article > article table td.empty {
+  background: transparent;
+  border: none;
+}
+
 
 article iframe {
   margin: 8px;

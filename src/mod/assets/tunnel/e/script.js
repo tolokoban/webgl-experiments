@@ -1,7 +1,7 @@
 "use strict";
 
 // Nombre de points pour faire un cercle.
-var SECTEURS = 36;
+var SECTEURS = 12;
 // Nombre de cercles de notre tunnel.
 var PROFONDEUR = 45;
 

@@ -15,11 +15,32 @@ Nous allons donc exposer la seconde solution parce que l'illusion est la meilleu
 
 ## La structure d'une portion de tunnel
 
-<wdg:tunnel1 />
+<wdg:tunnel1 $float="right"/>
+
+Nous allons utiliser un __TRIANGLE_STRIP__ avec les points suivants :
+<table class="tbl grd">
+    <tr><td>0</td><td>3</td><td>1</td><td>4</td><td>2</td><td>5</td><td>0</td><td>3</td><td>6</td><td>4</td><td>7</td><td>5</td><td>8</td><td>3</td><td>6</td></tr>
+    <tr><td colspan="3">031</td><td colspan="3">425</td><td colspan="3">036</td><td colspan="3">475</td><td colspan="3">836</td></tr>
+    <tr><td class="empty"></td><td colspan="3">314</td><td colspan="3">250</td><td colspan="3">364</td><td colspan="3">758</td></tr>
+    <tr><td colspan="2" class="empty"></td><td colspan="3">142</td><td colspan="3">503</td><td colspan="3">647</td></tr>
+</table>
+
+Ce qui nous donne 12 triangles qui constituent ce tunnel de section triangulaire.
+
+Voici le code qui permet de générer la liste des index des points en fonction de la PROFONDEUR du tunnel ainsi que du nombre de SECTEURS (3 pour une section triangulaire, par exemple) :
+<x-code src="mod/assets/tunnel/a/script.js" section="elements"/>
 
 Voici <a href="css/assets/tunnel/a/index.html">le résultat</a>.
 
+
 ## Cacher le bout du tunnel
+
+Si on ne crée qu'une portion de tunnel, il faut cacher la fin de celui-ci, sinon on s'apercevra de la supercherie.
+C'est pourquoi, on va faire en sorte que notre tunnel fasse un virage. Mais nous n'allons pas modifier les vertex au niveau du Javascript, nous allons juste adapter notre vertex shader comme ceci :
+<x-code src="mod/assets/tunnel/b/shader.vert"/>
+
+Pour donner l'impression de profondeur, nous allons assombrir la couleur de l'arrière du tunnel. Voici comment on fait cela dans le fragment shader :
+<x-code src="mod/assets/tunnel/b/shader.frag"/>
 
 Voici <a href="css/assets/tunnel/b/index.html">le résultat</a>.
 
@@ -27,18 +48,65 @@ Voici <a href="css/assets/tunnel/b/index.html">le résultat</a>.
 
 <img class="right" src="css/assets/tunnel/tile.jpg" width="256" />
 
+L'assombrissement des couleurs pour donner l'illusion de profondeur n'est encore pas suffisant. Mais si on applique la texture ci-contre, le relief va vraiment mieux ressortir. Pour cela, il faut charger l'image, puis utiliser le code suivant pour créer une texture WebGL :
+<x-code src="mod/assets/tunnel/c/script.js" section="maketexture"/>
+
+Il faut ensuite assigner cette texture au programme courant pour qu'elle soit accessible par le fragment shader :
+<x-code src="mod/assets/tunnel/c/script.js" section="bindtexture"/>
+
+Et voici comment le fragment shader va exploiter cette texture :
+<x-code src="mod/assets/tunnel/c/shader.frag"/>
+
+Le varying `uv` donne les coordonnées du pixel à aller chercher dans la texture. Les coordonnées sont comprises entre `0` et `1`. Le pixel en haut à gauche est en `(0,0)`.
+C'est dans le vertex shader que nous allons déterminer ce varying :
+<x-code src="mod/assets/tunnel/c/shader.vert"/>
+
 Voici <a href="css/assets/tunnel/c/index.html">le résultat</a>.
 
-## Mettre en rotation par décallage des textures
+C'est pas si mal, mais en y regardant de plus près, on peut voir un drôle d'effet dans la partie supérieure du tunnel. La texture semble s'écraser à cet endroit.
+
+Voici l'explication de ce curieux phénomène.
+Nous avons 12 secteurs dans notre tunnel. Chaque vertex du tunnel a deux attributs : l'__angle__ par rapport à la verticale dirigée vers le haut et la __profondeur__. Pour les 12 vertex d'un même cercle du tunnel, la profondeur est la même. Nous avons utilisé l'angle pour la coordonnée `u` de la texture. Et celle-ci est interpolée entre deux vertex consécutifs d'un cercle. Ainsi, on va interpoler entre 0 et 1, entre 1 et 2, etc. __Mais la dernière interpolation se fera entre 11 et 0__.
+
+Pour pallier ce problème, nous allons dupliquer un vertex du cercle pour avoir le 0 et le 12 confondus de sorte que la dernière interpolation se fasse bien entre le 11 et 12.
+
+Il nous faudra donc plus de vertex. Voici la nouvelle fonction de génération des index des vertex :
+<x-code src="mod/assets/tunnel/d/script.js" section="elements"/>
+
+
+## Mettre en rotation par décalage des textures
+
+En jouant sur la coordonnée `u` des textures, il est possible de dévaler cette dernière en fonction du temps et donner, ainsi, une impression de rotation du tunnel.
+
+Il nous faut donc un nouvel uniform : `uniform float time;`. Et dans le vertex shader, on décale la coordonnée `u` comme ceci :
+<x-code lang="glsl">
+float u = angle * ANGLE_FACTOR + time * 0.0001;
+</x-code>
 
 Voici <a href="css/assets/tunnel/d/index.html">le résultat</a>.
 
 ## Mettre en rotation par mouvement des vertex
 
-Voici <a href="css/assets/tunnel/e/index.html">le résultat</a>.
+Quelque chose ne joue pas dans l'animation précédente. Pour amplifier l'effet, nous avons volontairement pris un faible nombre de vertex. Ainsi, 12 vertex sont utilisés pour un cercle. De ce fait, vous pouvez voir le dodécagone à l'écran qui reste fixe et la texture qui s'y déplace.
+
+En fait, il est plus intéressant de faire tourner les vertex eux-même plutôt que la texture. Cela n'est pas plus coûteux en temps de calcul, et <a href="css/assets/tunnel/e/index.html">le résultat</a> est bien meilleur.
+
+Voici le vertex shader qui permet cela :
+<x-code src="mod/assets/tunnel/e/shader.vert"/>
+
+Désormais, même à faible résolution (peu de vertex), la sensation de rotation est bien rendue.
 
 ## En avant toute !
 
+Mais cette technique de décalage de la texture n'est pas inutile. On va s'en servir pour donner l'illusion d'avancer dans le tunnel. Parce que dans ce cas de figure, cela va nous éviter de déplacer le tunnel vers l'avant et d'atteindre ainsi le fond de ce dernier.
+
 Voici <a href="css/assets/tunnel/f/index.html">le résultat</a>.
+
+Le vertex shader ressemble à ceci :
+<x-code src="mod/assets/tunnel/f/shader.vert"/>
+
+Et le fragment shader à ceci :
+<x-code src="mod/assets/tunnel/f/shader.frag"/>
+
     
 </page>
