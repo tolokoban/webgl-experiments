@@ -1,7 +1,7 @@
 "use strict";
 
 // Nombre de points pour faire un cercle.
-var SECTEURS = 18; //36;
+var SECTEURS = 12;
 // Nombre de cercles de notre tunnel.
 var PROFONDEUR = 45;
 
@@ -31,9 +31,11 @@ WebGL.fetchAssets({
   var buff = WebGL.fillArrayBuffer( gl, vertices );
   prg.bindAttribs( buff, "angle", "depth" );
 
+  //#(bindtexture)
   gl.activeTexture(gl.TEXTURE0);
   gl.bindTexture(gl.TEXTURE_2D, makeTexture( gl, assets.texture ) );
   prg.$texture = 0;
+  //#(bindtexture)
 
   gl.enable( gl.DEPTH_TEST );
   gl.depthFunc( gl.GEQUAL );
@@ -50,6 +52,7 @@ WebGL.fetchAssets({
 });
 
 
+//#(maketexture)
 function makeTexture( gl, img ) {
   console.info("[script] img=", img);
   var texture = gl.createTexture( );
@@ -64,6 +67,7 @@ function makeTexture( gl, img ) {
 
   return texture;
 }
+//#(maketexture)
 
 function getVertices() {
   var vertices = [];

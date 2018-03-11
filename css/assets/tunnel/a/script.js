@@ -45,6 +45,7 @@ function getVertices() {
 }
 
 
+//#(elements)
 function getElements() {
   var elements = [];
   var offset;
@@ -61,3 +62,4 @@ function getElements() {
 
   return elements;
 }
+//#(elements)

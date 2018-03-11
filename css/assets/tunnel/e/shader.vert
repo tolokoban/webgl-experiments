@@ -15,7 +15,7 @@ void main() {
   uv = vec2( u, v );
   float zoom = 1.0 + depth * 0.5;
 
-  float a = angle + time * 0.0001;
+  float a = angle - time * 0.0001;
   float x = sin(a) * 1.5;
   float y = cos(a) * 1.5;
   float chute = depth * depth * 0.005;
