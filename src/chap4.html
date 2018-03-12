@@ -1,9 +1,11 @@
-<page>
+<page $title="Animation de Textures">
 Comme nous l'avons vu dans _Comprendre WebGL_, pour faire des animations,
 il suffit de créer de nombreuses images statiques, plusieurs fois par secondes.
 L'idéal étant d'atteindre les 60 images par seconde.
 
 Pour cela, nous allons utiliser la fonction Javascript suivantes : __window.requestAnimationFrame( drawingFunction )__.
+
+<wdg:gl4 class="right" $width="300" $height="300" />
 
 Cette dernière demande au système d'exécuter la fonction __drawingFunction()__ 
 dès le prochain rafraichissement de l'écran. Il faut noter deux choses : 
@@ -11,8 +13,7 @@ dès le prochain rafraichissement de l'écran. Il faut noter deux choses :
 millisecondes écoulées depuis le 1er janvier 1970.
 * __drawingFunction()__ n'est appelée que si le canvas est visible à l'écran.
 
-
-<wdg:gl4 $width="880" $height="480" />
+Voici le <a href="css/assets/chap4/index.html">rendu en plein écran</a> dans un version légèrement différente.
 
 <ex label="Voici le code complet de cette animation" src="mod/wdg.gl4" section="code" />
 

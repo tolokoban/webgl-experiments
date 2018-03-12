@@ -76,8 +76,8 @@ function start( canvas ) {
 
     function draw( t ) {
         // Valeurs pour la taille de l'écran.
-        gl.uniform1f(uniWidth, canvas.width);
-        gl.uniform1f(uniHeight, canvas.height);
+        gl.uniform1f(uniWidth, canvas.clientWidth);
+        gl.uniform1f(uniHeight, canvas.clientHeight);
         // Valeur de la variable uniforme pour le temps.
         gl.uniform1f(uniTimeV, t);
         gl.uniform1f(uniTimeF, t);
