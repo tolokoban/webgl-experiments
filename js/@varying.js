@@ -60,6 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
+<<<<<<< HEAD
         W('wdg.article86', 'wdg.article', {
             title: "Variation sur les couleurs",
             content: [
@@ -2190,6 +2191,11 @@ addListener(
                   attr: {"href": "css/assets/varying/index.html"},
                   children: ["un exemple de carré"]}),
                 " avec des couleurs différentes pour chaque sommet."]})]},{"id":"wdg.article86"})
+=======
+        W('wdg.article96', 'wdg.article', {
+            title: "Variation sur les couleurs",
+            content: []},{"id":"wdg.article96"})
+>>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
 
     }
 );
