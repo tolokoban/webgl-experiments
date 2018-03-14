@@ -34,10 +34,15 @@ module.exports = require("draw")(function(args) {
     .fillTri( xA, yA, xB, yB, xC, yC )
     .setColor("#28F")
     .fillTri( xD, yD, xE, yE, xF, yF )
+    .setColor("#3AF")
     .fillTri( xE, yE, xF, yF, xG, yG )
+    .setColor("#28F")
     .fillTri( xF, yF, xG, yG, xH, yH )
+    .setColor("#3AF")
     .fillTri( xG, yG, xH, yH, xI, yI )
+    .setColor("#28F")
     .fillTri( xH, yH, xI, yI, xJ, yJ )
+    .setColor("#3AF")
     .fillTri( xI, yI, xJ, yJ, xK, yK );
 
   this

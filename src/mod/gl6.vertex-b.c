@@ -13,7 +13,7 @@ void main() {
   gl_Position = vec4(attPosition.xy * depth, z, 1.0);
 
   // La taille du point dépend aussi de la profondeur.
-  gl_PointSize = 80.0 * depth;
+  gl_PointSize = 60.0 * depth;
   varPosition = attPosition;
   varColor = attColor;
 }

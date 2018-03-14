@@ -56,7 +56,7 @@ function start( canvas ) {
 
   var W = canvas.width;
   var H = canvas.height;
-  var spritesCount = 150;
+  var spritesCount = 300;
   var sprites = createSprites( spritesCount );
 
   // #(defineAttributes)
@@ -166,7 +166,7 @@ function start( canvas ) {
     gl.bindBuffer( gl.ARRAY_BUFFER, squareVerticesBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, spritesAttributes, gl.STATIC_DRAW );
 
-    gl.clearColor( 0.3, 0.8, 1.0, 1.0 );
+    gl.clearColor( 0.9, 0.9, 0.8, 1.0 );
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
     for ( var i = 0; i < spritesCount; i++ ) {
       gl.drawArrays( gl.TRIANGLE_STRIP, i * 4, 4 );

@@ -26,7 +26,7 @@ function init( resolve ) {
   canvas.setAttribute( "width", 256 );
   canvas.setAttribute( "height", 256 );
   var ctx = canvas.getContext( '2d' );
-  ctx.fillStyle = "#00f";
+  ctx.fillStyle = "#27f";
   ctx.fillRect( 0, 0, 256, 256 );
   ctx.fillStyle = "#f80";
   var x, y, s2 = 32, s1 = s2 >> 1;

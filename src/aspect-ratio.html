@@ -1,0 +1,38 @@
+<page $title="Aspect ratio">
+Jusqu'ici, on ne s'est pas préoccupé d'un problème qui est pourtant essentiel en animation : __faire en sort qu'un carré reste carré, même sur un écran rectangulaire__. C'est ce qu'on appelle l'__aspect ratio__.
+
+WebGL ne s'en soucie guère puisqu'il utilise un système de coordonnées calqué sur la forme de l'écran. Ainsi, sur un écran en mode paysage (un écran d'ordinateur, par exemple), avancer d'une unité suivant X nous fait parcourir plus de pixels que d'avancer de la même unité suivant Y.
+
+<wdg:aspect-ratio class="right"/>
+    
+Il y a deux possibilités de rendre l'espace __aspect ratio__ :
+* __Contain__ : <a href="css/assets/aspect-ratio/a/index.html">l'espace de dessin est entièrement contenu dans l'affichage</a>.
+* __Cover__ : <a href="css/assets/aspect-ratio/b/index.html">l'espace de dessin recouvre entièrement l'affichage</a>.
+
+Dans le scéma ci-contre, on peut voir comment on modifie les coordonnées sur un écran en mode paysage (le rectangle plein de couleur bleue). Le petit carré orange correspond au __contain__, et le grand au __cover__.
+
+Les calculs pour modifier les coordonnées s'effectuent dans le vertex shader.
+
+<ex src="mod/assets/aspect-ratio/a/shader.vert" lang="glsl" label="Contain"/>
+<ex src="mod/assets/aspect-ratio/b/shader.vert" lang="glsl" label="Cover"/>
+
+Puisque WebGL ne sait pas quelle forme à l'écran, il faut le lui dire en utilisant les uniforms avec la taille réelle du canvas.
+
+<x-code>
+var w = canvas.clientWidth;
+var h = canvas.clientHeight;
+canvas.setAttribute("width", w);
+canvas.setAttribute("height", h);
+prg.$uniWidth = w;
+prg.$uniHeight = h;    
+</x-code>
+
+Au passage, on redéfinit les attributs du _canvas_ pour qu'il ajuste la résolution aux changements de taille de l'affichage.
+
+Pour finir, il faut aussi définir le __viewport__ dans WebGL. Ceci est indispensable, mais si on n'a encore jamais rencontré cette instruction avant, c'est simplement parce qu'elle est appelée de façon implicite lors de la création du contexte `webgl`.
+<x-code>
+// Définir le rectangle d'affichage en pixels.    
+gp.viewport( 0, 0, w, h );
+</x-code>
+
+</page>

@@ -118,7 +118,7 @@ for (var kk=0; kk < attribs; kk++) {
     var uniTime = gl.getUniformLocation(shaderProgram, "uniTime");
 
     // #(rendering)
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(0.133, 0.466, 1.0, 1.0);
     gl.bindBuffer(gl.ARRAY_BUFFER, bufAttributes);
 
     function render(time) {

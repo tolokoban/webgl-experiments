@@ -42,7 +42,8 @@ void main() {
 
   varCoeff = c2;
   // Petites variations de vert.
-  varColor = vec3( 0.0, .3 + .1 * abs(cos(attRandom.x * uniTime * 0.01)), 0.0 );
+  float color = .6 + .3 * abs(cos(attRandom.x * uniTime * 0.01));
+  varColor = vec3( color, color * 0.5, 0.0 );
   // La position est intrerpolée entre (x,y) et (xx,yy).
   gl_Position = vec4( x * c2 + xx * c1, y * c2 + yy * c1, 0.0, 1.0 );
   // Palpitation de la taille et diminution lors de la phase de désordre.

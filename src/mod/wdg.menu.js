@@ -21,4 +21,7 @@ function refresh() {
     });
     $.add( article, m );
   });
+  $.add( article, $.tag("hr") );
+  $.add( article, $.tag("a", { href: "doc.html" }, ["Liens utiles vers de la documentation"]) );
+  $.add( article, $.tag("br") );
 }

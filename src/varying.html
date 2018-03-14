@@ -1,3 +1,46 @@
 <page $title="Variation sur les couleurs">
+Jusqu'ici, on a vu qu'il était possible de passer des __attributs__ au vertex shader et des __uniforms__ au vertex et au fragment shaders. Avec ceci, on est capable d'afficher des triangles de différentes couleurs, mais cela signifie qu'il faut faire plusieurs appels à `gl.drawArrays`.
 
+<x-code>
+var uniColor = gl.getUniformLocation( program, 'color' );
+gl.uniform4f( uniColor, Math.random(), Math.random(), 0, 1 );
+gl.drawArrays( gl.TRIANGLES, 0, 3 );        
+gl.uniform4f( uniColor, Math.random(), Math.random(), 0, 1 );
+gl.drawArrays( gl.TRIANGLES, 3, 3 );
+...
+</x-code>
+
+Or, ce qui coûte cher en terme de performance, c'est la transition entre le Javascript et le WebGL.
+L'idéal est de faire le moins d'appels possibles à des fonctions WebGL. Il faudrait donc __passer la couleur par les attributs__.
+
+Voyons comment faire cela à travers un exemple.
+Affichons quatre triangles de deux couleurs différentes en un seul appel à `gl.drawArrays`.
+Pour cela, nous utilisons 5 attributs :
+* __attAngle__ : Angle par rapport au centre (exprimé en degrés).
+* __attRayon__ : Distance par rapport au centre.
+* __attRouge__ : Niveau de rouge entre 0 et 1.
+* __attVert__ : Niveau de vert entre 0 et 1.
+* __attBleu__ : Niveau de bleu entre 0 et 1.
+
+Pour mettre tout ce petit monde en rotation, passons aussi l'uniform __uniTime__.
+
+Voici le code Javascript complet :
+<x-code src="mod/assets/varying/a/script.js"/>
+
+La nouveauté se trouve au niveau des shaders. C'est le mot clef `varying` :
+<x-code src="mod/assets/varying/a/shader.vert"/>
+<x-code src="mod/assets/varying/a/shader.frag"/>
+
+L'instruction `varying vec3 varColor;` doit être présente dans __les deux shaders__.
+C'est elle qui permet de passer des valeurs du vertex shader au fragment shader.
+
+Et voici <a href="css/assets/varying/a/index.html">le résultat</a>.
+
+
+<hr/>
+Les plus curieux se sont sûrement posé la question suivante : "_Que se passe-t-il si les vertex n'ont pas tous la même couleur ?_"
+
+Et bien, c'est là que ça devient intéressant. WebGL réalise une interpolation entre les vertex dont il dépend (2 pour une ligne, 3 pour un triangle). On verra plus tard que cette interpolation se base aussi sur la coordonnée __w__ que l'on n'a pas encore détaillée (la quatrième dans `gl_Position`).
+
+Et voici <a href="css/assets/varying/index.html">un exemple de carré</a> avec des couleurs différentes pour chaque sommet.
 </page>
