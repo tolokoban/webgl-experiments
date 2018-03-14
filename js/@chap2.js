@@ -60,11 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-<<<<<<< HEAD
         W('wdg.article12', 'wdg.article', {
-=======
-        W('wdg.article13', 'wdg.article', {
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
             title: "Du triangle au polygône",
             content: [
           W({
@@ -80,97 +76,61 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl213','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "3"},{"id":"wdg.gl213","name":"wdg.gl2"}),
                     "\r\n    "]}),
-=======
-                    "\n        ",
-                    W('wdg.gl214','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "3"},{"id":"wdg.gl214","name":"wdg.gl2"}),
-                    "\n    "]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["5 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl214','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "5"},{"id":"wdg.gl214","name":"wdg.gl2"}),
                     "\r\n    "]}),
-=======
-                    "\n        ",
-                    W('wdg.gl215','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "5"},{"id":"wdg.gl215","name":"wdg.gl2"}),
-                    "\n    "]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["11 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl215','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "11"},{"id":"wdg.gl215","name":"wdg.gl2"}),
                     "\r\n    "]}),
-=======
-                    "\n        ",
-                    W('wdg.gl216','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "11"},{"id":"wdg.gl216","name":"wdg.gl2"}),
-                    "\n    "]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["100 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl216','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "100"},{"id":"wdg.gl216","name":"wdg.gl2"}),
                     "\r\n    "]})]}),
-=======
-                    "\n        ",
-                    W('wdg.gl217','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "100"},{"id":"wdg.gl217","name":"wdg.gl2"}),
-                    "\n    "]})]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
           W({
               elem: "p",
               children: [
@@ -178,11 +138,10 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl217','wdg.gl2',{
                       width: "200",
@@ -190,25 +149,15 @@ addListener(
                       size: "3",
                       regular: "false"},{"id":"wdg.gl217","name":"wdg.gl2"}),
                     "\r\n    "]}),
-=======
-                    "\n        ",
-                    W('wdg.gl218','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "3",
-                      regular: "false"},{"id":"wdg.gl218","name":"wdg.gl2"}),
-                    "\n    "]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["5 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl218','wdg.gl2',{
                       width: "200",
@@ -216,25 +165,15 @@ addListener(
                       size: "5",
                       regular: "false"},{"id":"wdg.gl218","name":"wdg.gl2"}),
                     "\r\n    "]}),
-=======
-                    "\n        ",
-                    W('wdg.gl219','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "5",
-                      regular: "false"},{"id":"wdg.gl219","name":"wdg.gl2"}),
-                    "\n    "]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["13 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl219','wdg.gl2',{
                       width: "200",
@@ -242,25 +181,15 @@ addListener(
                       size: "13",
                       regular: "false"},{"id":"wdg.gl219","name":"wdg.gl2"}),
                     "\r\n    "]}),
-=======
-                    "\n        ",
-                    W('wdg.gl220','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "13",
-                      regular: "false"},{"id":"wdg.gl220","name":"wdg.gl2"}),
-                    "\n    "]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["100 sommets"]}),
-<<<<<<< HEAD
                     "\r\n        ",
                     W('wdg.gl220','wdg.gl2',{
                       width: "200",
@@ -268,15 +197,6 @@ addListener(
                       size: "100",
                       regular: "false"},{"id":"wdg.gl220","name":"wdg.gl2"}),
                     "\r\n    "]})]}),
-=======
-                    "\n        ",
-                    W('wdg.gl221','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "100",
-                      regular: "false"},{"id":"wdg.gl221","name":"wdg.gl2"}),
-                    "\n    "]})]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
           W({
               elem: "p",
               children: [
@@ -398,7 +318,6 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-<<<<<<< HEAD
                     "\r\n    ",
                     W({
                       elem: "div",
@@ -412,30 +331,11 @@ addListener(
                           elem: "div",
                           children: [
                             "\r\n            ",
-=======
-                    "\n    ",
-                    W({
-                      elem: "div",
-                      children: [
-                        "    \n        ",
-                        W('wdg.chap2-triangles22','wdg.chap2-triangles',{
-                          width: "160",
-                          height: "160"},{"id":"wdg.chap2-triangles22"}),
-                        "\n        ",
-                        W({
-                          elem: "div",
-                          children: [
-                            "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                             W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-<<<<<<< HEAD
                                 "\r\n                ",
-=======
-                                "\n                ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [
@@ -448,11 +348,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["C"]})]}),
-<<<<<<< HEAD
                                 "\r\n                ",
-=======
-                                "\n                ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [
@@ -465,11 +361,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["E"]})]}),
-<<<<<<< HEAD
                                 "\r\n                ",
-=======
-                                "\n                ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [
@@ -482,11 +374,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["F"]})]}),
-<<<<<<< HEAD
                                 "\r\n                ",
-=======
-                                "\n                ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [
@@ -499,7 +387,6 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["E"]})]}),
-<<<<<<< HEAD
                                 "\r\n            "]}),
                             "\r\n        "]}),
                         "\r\n        ",
@@ -507,15 +394,6 @@ addListener(
                           elem: "div",
                           children: [
                             "\r\n12 vertex sont nécessaires, mais certains représentent le même point et sont calculés à double (",
-=======
-                                "\n            "]}),
-                            "\n        "]}),
-                        "\n        ",
-                        W({
-                          elem: "div",
-                          children: [
-                            "\n12 vertex sont nécessaires, mais certains représentent le même point et sont calculés à double (",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                             W({
                               elem: "b",
                               children: ["A"]}),
@@ -527,15 +405,9 @@ addListener(
                             W({
                               elem: "b",
                               children: ["E"]}),
-<<<<<<< HEAD
                             ").\r\n        "]}),
                         "\r\n    "]}),
                     "\r\n"]})]}),
-=======
-                            ").\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
           W({
               elem: "h2",
               attr: {"id": "triangle_fan"},
@@ -546,7 +418,6 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-<<<<<<< HEAD
                     "\r\n    ",
                     W({
                       elem: "div",
@@ -558,86 +429,48 @@ addListener(
                               width: "160",
                               height: "160"},{"id":"wdg.chap2-trifan22"})]}),
                         "\r\n        ",
-=======
-                    "\n    ",
-                    W({
-                      elem: "div",
-                      children: [
-                        "\n        ",
-                        W({
-                          elem: "div",
-                          children: [W('wdg.chap2-trifan23','wdg.chap2-trifan',{
-                              width: "160",
-                              height: "160"},{"id":"wdg.chap2-trifan23"})]}),
-                        "\n        ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                         W({
                           elem: "div",
                           children: [W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["A"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["B"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["C"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["D"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["E"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["F"]})]}),
-<<<<<<< HEAD
                                 "\r\n        "]})]}),
                         "\r\n        ",
                         W({
@@ -650,20 +483,6 @@ addListener(
                             ") est commun à tous les triangles.\r\nEnsuite, le dernier point d'un triangle est utilisé comme second point du suivant.\r\n        "]}),
                         "\r\n    "]}),
                     "\r\n"]})]}),
-=======
-                                "\n        "]})]}),
-                        "\n        ",
-                        W({
-                          elem: "div",
-                          children: [
-                            "\n6 vertex sont suffisants. C'est une structure en \"éventail\" (fan en anglais).\nLe premier point (",
-                            W({
-                              elem: "b",
-                              children: ["A"]}),
-                            ") est commun à tous les triangles.\nEnsuite, le dernier point d'un triangle est utilisé comme second point du suivant.\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]}),
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
           W({
               elem: "h2",
               attr: {"id": "triangle_strip"},
@@ -674,7 +493,6 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-<<<<<<< HEAD
                     "\r\n    ",
                     W({
                       elem: "div",
@@ -686,86 +504,48 @@ addListener(
                               width: "160",
                               height: "160"},{"id":"wdg.chap2-tristrip23"})]}),
                         "\r\n        ",
-=======
-                    "\n    ",
-                    W({
-                      elem: "div",
-                      children: [
-                        "\n        ",
-                        W({
-                          elem: "div",
-                          children: [W('wdg.chap2-tristrip24','wdg.chap2-tristrip',{
-                              width: "160",
-                              height: "160"},{"id":"wdg.chap2-tristrip24"})]}),
-                        "\n        ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                         W({
                           elem: "div",
                           children: [W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["A"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["B"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["F"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["C"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["E"]})]}),
-<<<<<<< HEAD
                                 "\r\n            ",
-=======
-                                "\n            ",
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["D"]})]}),
-<<<<<<< HEAD
                                 "\r\n        "]})]}),
                         "\r\n        ",
                         W({
@@ -773,15 +553,6 @@ addListener(
                           children: ["\r\n6 vertex sont suffisants. Deux triangles consécutifs ont un côté en commun.\r\nC'est-à-dire que les deux derniers points d'une triangle seront les deux premiers du suivant.\r\n        "]}),
                         "\r\n    "]}),
                     "\r\n"]})]})]},{"id":"wdg.article12"})
-=======
-                                "\n        "]})]}),
-                        "\n        ",
-                        W({
-                          elem: "div",
-                          children: ["\n6 vertex sont suffisants. Deux triangles consécutifs ont un côté en commun.\nC'est-à-dire que les deux derniers points d'une triangle seront les deux premiers du suivant.\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]})]},{"id":"wdg.article13"})
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
 
     }
 );
@@ -841,9 +612,5 @@ require("wdg.chap2-trifan",function(t,r,o){var i=function(){function r(){return 
 //# sourceMappingURL=wdg.chap2-trifan.js.map
 require("wdg.chap2-triangles",function(t,r,o){var i=function(){function r(){return i(o,arguments)}var o={en:{},fr:{}},i=t("$").intl;return r.all=o,r}();r.exports=t("draw")(function(){function t(t,r,o){i.drawTri(n[t],s[t],n[r],s[r],n[o],s[o])}var r,o,i=this,n=[],s=[];for(r=0;r<6;r++)n.push(1*Math.cos(2*Math.PI*r/6)),s.push(1*Math.sin(2*Math.PI*r/6));for(this.setColor("#06F"),r=0;r<6;r++)o=(r+1)%6,this.fillTri(0,0,n[r],s[r],n[o],s[o]).drawTri(0,0,n[r],s[r],n[o],s[o]);this.setColor("#F70").setLine(4),t(0,1,2),t(0,2,4),t(0,4,5),t(2,3,4),this.setColor("#000").dot(n[0],s[0],"A","L").dot(n[1],s[1],"B","LB").dot(n[2],s[2],"C","RB").dot(n[3],s[3],"D","R").dot(n[4],s[4],"E","RT").dot(n[5],s[5],"F","LT")}),r.exports._=i});
 //# sourceMappingURL=wdg.chap2-triangles.js.map
-<<<<<<< HEAD
 require("wdg.gl2",function(t,r,e){function n(t){var r=t.getContext("webgl")||t.getContext("experimental-webgl"),e=r.createProgram();r.attachShader(e,a(r,u.vertex)),r.attachShader(e,o(r,u.fragment)),r.linkProgram(e),r.useProgram(e);var n=r.createBuffer();r.bindBuffer(r.ARRAY_BUFFER,n);var i=t.width,h=t.height,g=[i/2,h/2,0],l=Math.min(1e3,Math.max(3,this.size));console.info("[wdg.gl2] n=...",l);for(var s,c,f=.45*Math.min(i,h),d=0;d<=l;d++)c=2*Math.PI*d/l,s=f,this.regular||(s*=.5+Math.random()/2),g.push(i/2+s*Math.cos(c)),g.push(h/2+s*Math.sin(c)),g.push(0);console.info("[wdg.gl2] vertices=...",g),r.bufferData(r.ARRAY_BUFFER,new Float32Array(g),r.STATIC_DRAW),r.bindBuffer(r.ARRAY_BUFFER,n);var m=r.getAttribLocation(e,"attVertexPosition");r.enableVertexAttribArray(m),r.vertexAttribPointer(m,3,r.FLOAT,!1,0,0);var A=r.getUniformLocation(e,"uniWidth"),x=r.getUniformLocation(e,"uniHeight");r.uniform1f(A,t.width),r.uniform1f(x,t.height),r.clearColor(0,.4,.8667,1),r.clear(r.COLOR_BUFFER_BIT|r.DEPTH_BUFFER_BIT),r.drawArrays(r.TRIANGLE_FAN,0,l+2)}function i(t,r,e){var n=r.createShader(t);return r.shaderSource(n,e),r.compileShader(n),r.getShaderParameter(n,r.COMPILE_STATUS)?n:(console.log(e),console.error("An error occurred compiling the shader: "+r.getShaderInfoLog(n)),null)}function o(t,r){return i(t.FRAGMENT_SHADER,t,r)}function a(t,r){return i(t.VERTEX_SHADER,t,r)}var h=function(){function r(){return n(e,arguments)}var e={en:{}},n=t("$").intl;return r.all=e,r}(),u={vertex:"attribute vec2 attVertexPosition;\r\n\r\nuniform float uniWidth;\r\nuniform float uniHeight;\r\n\r\nvoid main() {\r\n  float x = attVertexPosition.x;\r\n  float y = attVertexPosition.y;\r\n\r\n  x = (2.0 * x / uniWidth) - 1.0;\r\n  y = 1.0 - (2.0 * y / uniHeight);\r\n\r\n  gl_Position = vec4( x, y, 0.0, 1.0 );\r\n}\r\n",fragment:"void main() {\r\n  gl_FragColor = vec4(1.0, 0.4667, 0.0, 1.0);\r\n}\r\n"},g=t("dom"),l=t("tfw.data-binding"),s=function(t){var r=this,e=g.elem(this,"canvas");l.propInteger(this,"width")(function(t){e.setAttribute("width",t),e.style.width=t+"px"}),l.propInteger(this,"height")(function(t){e.setAttribute("height",t),e.style.height=t+"px"}),l.propInteger(this,"size")(function(t){n.call(r,e)}),l.propInteger(this,"regular")(function(t){n.call(r,e)}),t=l.extend({width:640,height:480,size:5,regular:!0},t,this),window.setTimeout(n.bind(this,e),20)};r.exports=s,r.exports._=h});
-=======
-require("wdg.gl2",function(t,e,r){function n(t){var e=t.getContext("webgl")||t.getContext("experimental-webgl"),r=e.createProgram();e.attachShader(r,a(e,u.vertex)),e.attachShader(r,o(e,u.fragment)),e.linkProgram(r),e.useProgram(r);var n=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,n);var i=t.width,h=t.height,g=[i/2,h/2,0],l=Math.min(1e3,Math.max(3,this.size));console.info("[wdg.gl2] n=...",l);for(var s,c,f=.45*Math.min(i,h),d=0;d<=l;d++)c=2*Math.PI*d/l,s=f,this.regular||(s*=.5+Math.random()/2),g.push(i/2+s*Math.cos(c)),g.push(h/2+s*Math.sin(c)),g.push(0);console.info("[wdg.gl2] vertices=...",g),e.bufferData(e.ARRAY_BUFFER,new Float32Array(g),e.STATIC_DRAW),e.bindBuffer(e.ARRAY_BUFFER,n);var m=e.getAttribLocation(r,"attVertexPosition");e.enableVertexAttribArray(m),e.vertexAttribPointer(m,3,e.FLOAT,!1,0,0);var A=e.getUniformLocation(r,"uniWidth"),x=e.getUniformLocation(r,"uniHeight");e.uniform1f(A,t.width),e.uniform1f(x,t.height),e.clearColor(0,.4,.8667,1),e.clear(e.COLOR_BUFFER_BIT|e.DEPTH_BUFFER_BIT),e.drawArrays(e.TRIANGLE_FAN,0,l+2)}function i(t,e,r){var n=e.createShader(t);return e.shaderSource(n,r),e.compileShader(n),e.getShaderParameter(n,e.COMPILE_STATUS)?n:(console.log(r),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(n)),null)}function o(t,e){return i(t.FRAGMENT_SHADER,t,e)}function a(t,e){return i(t.VERTEX_SHADER,t,e)}var h=function(){function e(){return n(r,arguments)}var r={en:{}},n=t("$").intl;return e.all=r,e}(),u={vertex:"attribute vec2 attVertexPosition;\n\nuniform float uniWidth;\nuniform float uniHeight;\n\nvoid main() {\n  float x = attVertexPosition.x;\n  float y = attVertexPosition.y;\n\n  x = (2.0 * x / uniWidth) - 1.0;\n  y = 1.0 - (2.0 * y / uniHeight);\n\n  gl_Position = vec4( x, y, 0.0, 1.0 );\n}\n",fragment:"void main() {\n  gl_FragColor = vec4(1.0, 0.4667, 0.0, 1.0);\n}\n"},g=t("dom"),l=t("tfw.data-binding"),s=function(t){var e=this,r=g.elem(this,"canvas");l.propInteger(this,"width")(function(t){r.setAttribute("width",t),r.style.width=t+"px"}),l.propInteger(this,"height")(function(t){r.setAttribute("height",t),r.style.height=t+"px"}),l.propInteger(this,"size")(function(t){n.call(e,r)}),l.propInteger(this,"regular")(function(t){n.call(e,r)}),t=l.extend({width:640,height:480,size:5,regular:!0},t,this),window.setTimeout(n.bind(this,r),20)};e.exports=s,e.exports._=h});
->>>>>>> b206acd752288eb5a70a2d867d81dbb0145d8c11
 //# sourceMappingURL=wdg.gl2.js.map
