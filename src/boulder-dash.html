@@ -1,0 +1,58 @@
+<page $title="Boulder Dash">
+<img src="css/assets/boulder-dash/screen-shot.jpg" class="right"/>
+    
+Boulder Dash&trade; est un jeu créé en 1984 par la société First Start. Le héro est une taupe qui creuse des tunnels pour récupérer des diamants tout en évitant de se faire écraser par des pierres. C'est donc un jeu de 2D avec scrolling horizontal et vertical et nous allons en faire un mini-clone en WebGL.
+
+
+# Les tableaux
+
+Le plus simple pour décrire un tableau est de le faire sous forme de texte :
+<x-code>
+[
+  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+  "w......_..d.r_.....r.r......._....r....w",
+  "w.rEr......_.........rd..r...._....._..w",
+  "w.........._..r.....r.r..r........r....w",
+  "wr.rr.........r......r..r....r...r.....w",
+  "wr._r........._r..r........r......r.rr.w",
+  "w..._..r........r.....r._r........r.rr.w",
+  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwww...r..r.w",
+  "w._...r..d._..r.r..........d.rd......_.w",
+  "w..d.....r....._........rr_r..r....r...w",
+  "w...r..r.r..............r_.r..r........w",
+  "w.r.....r........rrr.......r.._.d....r.w",
+  "w.d.._..r.__.....r.rd..d....r...r..d._.w",
+  "w._r..............r_r..r........d.....rw",
+  "w........wwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+  "w_r.........r...d....r.....r...r.......w",
+  "w_r........._r..r........r......r.rr..Xw",
+  "w._..r........r.....r.__....d...r.rr...w",
+  "w....rd..r........r......r.rd......r...w",
+  "w..._..r._..r.rr.........r.rd......_..rw",
+  "w.d...._....._........._.r..r....r...r.w",
+  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+]    
+</x-code>
+
+Voici la légende :
+* **w** : Mur. Indestructible et immobile.
+* **_** : Vide.
+* **.** : Terre. Destructible et immobile.
+* **r** : Pierre. Indestructible et mobile.
+* **d** : Diamant. Destructible et mobile.
+* **E** : Entrée. Où le héro va apparaître.
+* **X** : Sortie. Où il doit aller pour terminer le tableau.
+
+# Les murs
+
+<img src="css/assets/boulder-dash/wall.jpg" width="256" class="right"/>
+
+Nous avons différents types d'éléments dans nos tableaux. On va donc découper tout cela en couches et commencer par décrire comment on peut afficher les murs.
+
+Dans le jeu original, chaque cellule était représentée par une image. Ainsi, toutes le murs avaient le même visuel.
+Nous allons plutôt faire en sorte que les murs soient le plus différents possibles et pour cela, nous allons utiliser une texture de 512x512 ce qui équivaut à une surface de 8x8 cellules (chaque cellule fera 64x64 pixels)
+
+
+Voir <a href="css/assets/boulder-dash/a/index.html">le résultat</a>.
+
+</page>

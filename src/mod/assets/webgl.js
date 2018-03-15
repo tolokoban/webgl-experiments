@@ -340,14 +340,21 @@ window.WebGL = function() {
   }
 
   function fetchAssets( assets ) {
-    return new Promise(function (resolve, reject) {
+    showSplashScreen();
+    var splashIsOver = new Promise(function( resolve ) {
+      window.setTimeout( resolve, 1000 );
+    });
+    return new Promise(function (resolve, reject) {      
       function process() {
         var keys = Object.keys( assets );
         var result = {};
 
         function fetchNext() {
           if( keys.length === 0 ) {
-            resolve( result );
+            splashIsOver.then(function() {
+              resolve( result );
+              hideSplashScreen();
+            });
             return;
           }
 
@@ -433,6 +440,33 @@ window.WebGL = function() {
     body.appendChild( canvas );
     return canvas;
   }
+
+  function showSplashScreen() {
+    function show() {
+      var splash = document.createElement( "div" );
+      splash.setAttribute( "id", "SPLASH" );
+      splash.innerHTML = "<div>TOLOKOBAN</div>";
+      document.body.appendChild( splash );
+      window.setTimeout(function() {
+        splash.setAttribute( "class", "show" );
+      }, 50);
+    }
+    if( document.readyState === "complete" ) {
+      show();
+    } else {
+      document.addEventListener( "DOMContentLoaded", show );
+    }
+  }
+
+  function hideSplashScreen() {
+    var splash = document.getElementById( "SPLASH" );
+    splash.setAttribute( "class", "hide" );
+    window.setTimeout(function() {
+      document.body.removeChild( splash );
+    }, 500);
+  }
+
+
   //========================================================================================
   return {
     Program: Program,
