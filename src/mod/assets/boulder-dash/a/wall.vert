@@ -1,6 +1,8 @@
-attribute float x;
-attribute float y;
+#include "coords"
+
+attribute float attX;
+attribute float attY;
 
 void main() {
-  gl_Position = vec4( x, y, 0.0, 1.0 );
+  gl_Position = vec4( getCoords( attX, attY ), 0.0, 1.0 );
 }

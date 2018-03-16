@@ -32,12 +32,12 @@ window.WebGL = function() {
     gl.attachShader( shaderProgram, shaderVert );
     gl.attachShader( shaderProgram, shaderFrag );
     gl.linkProgram( shaderProgram );
-
+/*
     gl.detachShader( shaderProgram, shaderVert );
     gl.deleteShader( shaderVert );
     gl.detachShader( shaderProgram, shaderFrag );
     gl.deleteShader( shaderFrag );
-
+*/
     this.program = shaderProgram;
     Object.freeze( this.program );
 
