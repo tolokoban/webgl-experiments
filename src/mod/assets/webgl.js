@@ -342,7 +342,7 @@ window.WebGL = function() {
   function fetchAssets( assets ) {
     showSplashScreen();
     var splashIsOver = new Promise(function( resolve ) {
-      window.setTimeout( resolve, 1000 );
+      window.setTimeout( resolve, 200 );
     });
     return new Promise(function (resolve, reject) {      
       function process() {

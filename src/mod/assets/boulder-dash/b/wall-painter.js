@@ -5,10 +5,16 @@ window.WallPainter = function() {
    * @param env.cave
    */
   var WP = function( env ) {
-    var vertexArray = getVertexArray( env.cave );
-    console.info("[a/wall-painter] vertexArray=", vertexArray);
-    this._verticesCount = vertexArray.length / 2;
-    this._buffer = WebGL.fillArrayBuffer( env.gl, new Float32Array( vertexArray ) );
+    var arrays = getArrays( env.cave );
+    var vertexArray = arrays.vertex;
+    console.info("[wall-painter] vertexArray=", vertexArray);
+    var elementArray = arrays.element;
+    console.info("[wall-painter] elementArray=", elementArray);
+    
+    this._count = elementArray.length;
+    this._buffVert = WebGL.fillArrayBuffer( env.gl, new Float32Array( vertexArray ) );
+    this._buffElem = WebGL.fillElementBuffer( env.gl, new Uint16Array( elementArray ) );
+    
     this._prg = new WebGL.Program( env.gl, {
       vert: env.assets.wallVert,
       frag: env.assets.wallFrag
@@ -45,9 +51,10 @@ window.WallPainter = function() {
     gl.bindTexture(gl.TEXTURE_2D, this._texture );
     prg.$texture = 0;
     // Attributs.
-    prg.bindAttribs( this._buffer, "attX", "attY" );
+    prg.bindAttribs( this._buffVert, "attX", "attY" );
     // Dessin.
-    gl.drawArrays( gl.TRIANGLES, 0, this._verticesCount );
+    gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, this._buffElem );    
+    gl.drawElements( gl.TRIANGLES, this._count, gl.UNSIGNED_SHORT, 0 );
   };
   //#(draw)
 
@@ -68,30 +75,45 @@ window.WallPainter = function() {
   }
   //#(createTexture)
 
-  //#(getVertexArray)
-  function getVertexArray( cave ) {
+  //#(getArrays)
+  function getArrays( cave ) {
+    var cache = {};
     var rows = cave.rows;
     var cols = cave.cols;
     var col, row;
     var vertexArray = [];
+    var elementArray = [];
+
+    function addVertex( col, row ) {
+      var key = row + "-" + col;
+      var idx = cache[key];
+      if( typeof idx === 'undefined' ) {
+        // C'est un nouveau vertex.
+        idx = Math.floor( vertexArray.length / 2 );
+        vertexArray.push( col, row );
+        cache[key] = idx;
+      }
+      elementArray.push( idx );
+    }
 
     for( row = 0; row < rows; row++ ) {
       for( col = 0; col < cols; col++ ) {
         if( cave.get( row, col ) === 'w' ) {
-          vertexArray.push(
-            col, row,
-            col + 1, row,
-            col + 1, row + 1,
-            col, row,
-            col, row + 1,
-            col + 1, row + 1
-          );
+          addVertex( col, row );
+          addVertex( col + 1, row );
+          addVertex( col + 1, row + 1 );
+          addVertex( col, row );
+          addVertex( col, row + 1 );
+          addVertex( col + 1, row + 1 );
         }
       }
     }
-    return vertexArray;
+    
+    return {
+      vertex: vertexArray, element: elementArray
+    };
   }
-  //#(getVertexArray)
+  //#(getArrays)
 
 
   return WP;

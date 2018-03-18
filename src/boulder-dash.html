@@ -43,6 +43,21 @@ Voici la légende :
 * **E** : Entrée. Où le héro va apparaître.
 * **X** : Sortie. Où il doit aller pour terminer le tableau.
 
+# Le système de coordonnées
+
+Nous allons faire en sorte que le jeu fonctionne sur ordinateur, tablette et téléphone.
+Il faut donc s'adapter à différentes tailles d'écrans.
+Mais d'un autre côté, nous nous imposons de respecter les pixels des images d'origine.
+Nous décidons donc qu'une cellule aura une taille de 64x64 pixels sur les écrans de plus de 480 pixels (dans sa plus petite dimension) et de 32x32 sur les autres.
+
+<ex src="mod/assets/boulder-dash/coords.vert" label="Fonction à insérer dans tous les vertex shaders"/>
+
+Les coordonnées passées à la fonction `getCoords(x,y)` sont alignées sur les cellules des tableaux. Ainsi, le coin supérieur gauche de la cellule en haut à gauche aura pour coordonnées `(0,0)`, son centre `(0.5,0.5)`, son coin inférieur droit `(1,1)`, etc.
+
+Dans tout le jeu, c'est ce système de coordonnées basé sur un tableau que l'on utilisera.
+
+Pour passer d'un affichage 64x64 à 32x32 par cellule, il suffit de changer la valeur de `uniW` de `1` à `2`.
+
 # Les murs
 
 <img src="css/assets/boulder-dash/wall.jpg" width="256" class="right"/>
@@ -50,9 +65,94 @@ Voici la légende :
 Nous avons différents types d'éléments dans nos tableaux. On va donc découper tout cela en couches et commencer par décrire comment on peut afficher les murs.
 
 Dans le jeu original, chaque cellule était représentée par une image. Ainsi, toutes le murs avaient le même visuel.
-Nous allons plutôt faire en sorte que les murs soient le plus différents possibles et pour cela, nous allons utiliser une texture de 512x512 ce qui équivaut à une surface de 8x8 cellules (chaque cellule fera 64x64 pixels)
+Nous allons plutôt faire en sorte que les murs soient le plus différents possibles et pour cela, nous allons utiliser une texture de 512x512 ce qui équivaut à une surface de 8x8 cellules (chaque cellule fera 64x64 pixels).
+
+Nous allons donc créer deux triangles par cellule représentant un mur (`w`).
+
+<x-code src="mod/assets/boulder-dash/a/wall-painter.js" section="getVertexArray"/>
+
+<ex src="mod/assets/boulder-dash/a/wall.vert" label="Vertex Shader"/>
+Il faut bien noter que l'instruction `#include` __n'esiste pas__ en GLSL.
+Nous l'utilisons parce que le constructeur de Program du fichier `webgl.js` permet d'inclure des bouts de code.
+Voici comment ça s'utilise :
+<x-code>
+WebGL.fetchAssets({
+  wallVert: "wall.vert",
+  wallFrag: "wall.frag",
+  coordsVert: "../coords.vert"
+}).then(function(assets) {
+    ...
+    var prg = new WebGL.Program( gl, {
+      vert: assets.wallVert,
+      frag: assets.wallFrag
+    }, {
+      // Le code des includes se trouve ici.
+      coords: assets.coordsVert
+    });
+    ...
+});
+</x-code>
+
+<ex src="mod/assets/boulder-dash/a/wall.frag" label="Fragment Shader"/>
+<ex src="mod/assets/boulder-dash/a/wall-painter.js" label="Création d'une texture" section="createTexture"/>
+<ex src="mod/assets/boulder-dash/a/wall-painter.js" label="Fonction d'affichage" section="draw"/>
+
+Je ne rentre pas dans les détails de chaque portion du code nécessaire,
+mais n'hésitez pas à l'<a href="css/assets/boulder-dash/a/index.html">analyser par vous même</a>.le résultat.
+
+## Optimisation
+
+Le code que nous avons écrit fonctionne très bien, mais il est loin d'être très économe en vertex.
+En effet, rien que pour une cellule, on utilise 6 vertex alors qu'il n'y a que 4 coins.
+Avoir des vertex ayant exactement les mêmes attributs est inutile et risque de plomber les performances
+sur des jeux plus complexes. Nous allons donc voir comment optimiser la chose, même si ce n'est pas vraiment nécessaire pour un simple Boulder-Dash&trade;.
+
+L'idée est d'utiliser un `drawElements(mode, count, type, offset)` à la place du `drawArrays(mode, first, count)`.
+
+Avec cette fonction, on passe un tableau d'indices sur un tableau de vertex. Voici ce que ça donne pour une cellule.
+Voici les 4 attributs :
+<table class='grd tbl'>
+    <tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+    <tr><td>(0,0)</td><td>(1,0)</td><td>(1,1)</td><td>(0,1)</td></tr>
+</table>
+
+Et voici les indices qui permettent de dessiner les 2 triangles :
+<table class='grd tbl'>
+    <tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+    <tr><td>0</td><td>1</td><td>2</td><td>0</td><td>2</td><td>1</td></tr>
+</table>
+
+Ainsi, le vertex shader sera appelé 4 fois au lieu de 6. C'est déjà un beau gain, mais ce n'est pas tout puisque quand deux cellules sont adjacentes, elles partagent aussi deux vertex. On va donc beaucoup diminuer les appels au vertex shader.
+
+Et voilà <a href="css/assets/boulder-dash/b/index.html">le résultat</a>.
+On est passé de 1080 vertex à seulement 360.
+
+## Plus d'optimisation
+
+On a déjà divisé par trois le nonbre de vertex, mais il est possible de faire beaucoup mieux.
+En effet, au lieu de dessiner un carrè pour chaque cellule, on pourrait faire de grands rectangles englobant plusieurs cellules.
+
+<ex src="mod/assets/boulder-dash/c/wall-painter.js"
+    label="Voyons comment on pourrait faire ça" section="getArrays"/>
+
+Et voilà <a href="css/assets/boulder-dash/c/index.html">le résultat</a>. On est tombé à seulement __20 vertex__. Et les indices sont passés de 1080 à __36__.
 
 
-Voir <a href="css/assets/boulder-dash/a/index.html">le résultat</a>.
+# Les feuilles
 
+<img src="css/assets/boulder-dash/img/fill.png" class="right"/>
+Il faut maintenant afficher la terre.
+Pour cela, nous avons décidé de dessiner des feuilles qui débordent sur les cellules adjacentes.
+L'image des feuilles (ci-contre) a une dimension de 80x80.
+
+Pour chaque cellule de terre (feuille) nous utiliserons un et un seul vertex avec les attributs `attX` et `attY`.
+
+Les cellules vont forcément se chevaucher puisque pour une cellule de 64x64, on va afficher une image de 80x80.
+Il va donc falloir utiliser la technique du Z-Buffer pour éviter de dessiner des pixels où il y en a déjà.
+
+Voici comment on active le Z-buffer (un pixel sera affiché seulement si sa coordonnée `z` est strictement supérieure à celle du pixel actuellement à l'écran) :
+<x-code>
+gl.enable( gl.DEPTH_TEST );
+gl.depthFunc( gl.GREATER );     
+</x-code>
 </page>
