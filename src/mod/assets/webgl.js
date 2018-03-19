@@ -32,12 +32,12 @@ window.WebGL = function() {
     gl.attachShader( shaderProgram, shaderVert );
     gl.attachShader( shaderProgram, shaderFrag );
     gl.linkProgram( shaderProgram );
-/*
-    gl.detachShader( shaderProgram, shaderVert );
-    gl.deleteShader( shaderVert );
-    gl.detachShader( shaderProgram, shaderFrag );
-    gl.deleteShader( shaderFrag );
-*/
+    /*
+      gl.detachShader( shaderProgram, shaderVert );
+      gl.deleteShader( shaderVert );
+      gl.detachShader( shaderProgram, shaderFrag );
+      gl.deleteShader( shaderFrag );
+    */
     this.program = shaderProgram;
     Object.freeze( this.program );
 
@@ -340,26 +340,27 @@ window.WebGL = function() {
   }
 
   function fetchAssets( assets ) {
-    showSplashScreen();
-    var splashIsOver = new Promise(function( resolve ) {
-      window.setTimeout( resolve, 200 );
-    });
-    return new Promise(function (resolve, reject) {      
-      function process() {
+    return new Promise(function (resolve, reject) {
+      showSplashScreen().then(function() {
+        var count = 0;
+        for( var key in assets ) count++;
+        var progress = document.getElementById("PROGRESS");
+
         var keys = Object.keys( assets );
         var result = {};
 
         function fetchNext() {
           if( keys.length === 0 ) {
-            splashIsOver.then(function() {
-              resolve( result );
-              hideSplashScreen();
-            });
+            resolve( result );
+            hideSplashScreen();
             return;
           }
 
           var key = keys.shift();
+          var percent = 1 - keys.length / count;
+          progress.style.transform = "scaleX(" + percent + ")";
           var url = assets[key];
+          console.log( url, (100 * percent).toFixed(0) + "%");
           if( endsWith( url, "jpg", "png", "gif", "svg" ) ) {
             var img = new Image();
             img.crossOrigin = "anonymous";
@@ -390,17 +391,7 @@ window.WebGL = function() {
         }
 
         fetchNext();
-      }
-
-      // Toute une  tuyauterie pour  s'assure que  la page  est bien
-      // chargée avant de commencer les téléchargements.
-      if (document.readyState === "complete"
-          || document.readyState === "loaded"
-          || document.readyState === "interactive") {
-        process();
-      } else {
-        document.addEventListener("DOMContentLoaded", process );
-      }
+      });
     });
   }
 
@@ -441,26 +432,36 @@ window.WebGL = function() {
     return canvas;
   }
 
-  function showSplashScreen() {
-    function show() {
-      var splash = document.createElement( "div" );
-      splash.setAttribute( "id", "SPLASH" );
-      splash.innerHTML = "<div>TOLOKOBAN</div>";
-      document.body.appendChild( splash );
-      window.setTimeout(function() {
-        splash.setAttribute( "class", "show" );
-      }, 50);
-    }
-    if( document.readyState === "complete" ) {
-      show();
-    } else {
-      document.addEventListener( "DOMContentLoaded", show );
-    }
+  function showSplashScreen( applicationName ) {
+    if( typeof applicationName === 'undefined' ) applicationName = 'TOLOKOBAN';
+
+    return new Promise(function (resolve, reject) {
+      function show() {
+        var splash = document.createElement( "div" );
+        splash.setAttribute( "id", "SPLASH" );
+        splash.innerHTML = "<div>" + applicationName + "</div><div>" + applicationName + "</div>";
+        document.body.appendChild( splash );
+        var progress = document.createElement( "div" );
+        progress.setAttribute( "id", "PROGRESS" );
+        document.body.appendChild( progress );
+        window.setTimeout(function() {
+          splash.setAttribute( "class", "show" );
+        }, 50);
+        resolve();
+      }
+      if( document.readyState === "complete" ) {
+        show();
+      } else {
+        document.addEventListener( "DOMContentLoaded", show );
+      }
+    });
   }
 
   function hideSplashScreen() {
     var splash = document.getElementById( "SPLASH" );
     splash.setAttribute( "class", "hide" );
+    var progress = document.getElementById( "PROGRESS" );
+    document.body.removeChild( progress );
     window.setTimeout(function() {
       document.body.removeChild( splash );
     }, 500);
