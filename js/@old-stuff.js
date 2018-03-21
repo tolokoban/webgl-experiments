@@ -60,7 +60,11 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
+<<<<<<< HEAD:js/@old-stuff.js
         W('wdg.article83', 'wdg.article', {
+=======
+        W('wdg.article69', 'wdg.article', {
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@old-stuff.js
             title: "Old stuff (à trier)",
             content: [
           W({
@@ -71,36 +75,57 @@ addListener(
                     W({
                       elem: "ul",
                       children: [
+<<<<<<< HEAD:js/@old-stuff.js
                         "\n        ",
+=======
+                        "\r\n        ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@old-stuff.js
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "chap8.html"},
                               children: ["chap8"]})]}),
+<<<<<<< HEAD:js/@old-stuff.js
                         "\n        ",
+=======
+                        "\r\n        ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@old-stuff.js
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform.html"},
                               children: ["deform"]})]}),
+<<<<<<< HEAD:js/@old-stuff.js
                         "\n        ",
+=======
+                        "\r\n        ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@old-stuff.js
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform2.html"},
                               children: ["deform2"]})]}),
+<<<<<<< HEAD:js/@old-stuff.js
                         "\n        ",
+=======
+                        "\r\n        ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@old-stuff.js
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "doc.html"},
                               children: ["doc"]})]}),
+<<<<<<< HEAD:js/@old-stuff.js
                         "\n    "]}),
                     "\n"]})]})]},{"id":"wdg.article83"})
+=======
+                        "\r\n    "]}),
+                    "\n"]})]})]},{"id":"wdg.article69"})
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@old-stuff.js
 
     }
 );

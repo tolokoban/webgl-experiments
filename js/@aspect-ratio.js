@@ -195,7 +195,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -214,7 +214,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -233,7 +237,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n\n",
+=======
+                        "\r\n\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -252,7 +260,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -271,7 +283,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -290,7 +306,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -309,7 +329,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -328,7 +352,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n\n",
+=======
+                        "\r\n\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -347,7 +375,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n\n",
+=======
+                        "\r\n\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -366,7 +398,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  ",
+=======
+                        "\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -413,7 +449,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  \n  ",
+=======
+                        "\r\n  \r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -471,7 +511,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["float"]}),
+                        " ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -519,7 +564,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  ",
+=======
+                        "\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -535,6 +584,7 @@ addListener(
                           attr: {"class": "operator"},
                           children: ["="]}),
                         " ",
+<<<<<<< HEAD:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -561,17 +611,50 @@ addListener(
                         " ",
                         W({
                           elem: "span",
+=======
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword2"},
+                          children: ["cos"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["a"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        " ",
+                        W({
+                          elem: "span",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                           attr: {"class": "identifier"},
                           children: ["attRayon"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n\n  ",
+=======
+                        "\r\n\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
                           children: ["if"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -616,13 +699,62 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["*"]}),
+=======
                         W({
                           elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["uniWidth"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["&gt;"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["uniHeight"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\r\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Mode paysage."]}),
+                        "\r\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["x"]}),
+                        " ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        W({
+                          elem: "span",
+<<<<<<< HEAD:js/@aspect-ratio.js
+=======
                           attr: {"class": "operator"},
                           children: ["="]}),
                         " ",
                         W({
                           elem: "span",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                           attr: {"class": "identifier"},
                           children: ["uniHeight"]}),
                         " ",
@@ -639,7 +771,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -654,12 +786,20 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n    ",
+=======
+                        "\r\n    ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Mode portrait."]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n    ",
+=======
+                        "\r\n    ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -692,12 +832,20 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  ",
+=======
+                        "\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  \n  ",
+=======
+                        "\r\n  \r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -753,7 +901,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -786,7 +938,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -805,7 +961,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -820,6 +980,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["uniHeight"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -839,11 +1000,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["attAngle"]}),
+=======
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -854,6 +1016,26 @@ addListener(
                           attr: {"class": "keyword"},
                           children: ["float"]}),
                         " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["attAngle"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\r\n",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["attribute"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["float"]}),
+                        " ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -862,7 +1044,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -876,6 +1062,34 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
+<<<<<<< HEAD:js/@aspect-ratio.js
+                          children: ["attRayon"]}),
+=======
+                          children: ["attRouge"]}),
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
+                        "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["attribute"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["float"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+<<<<<<< HEAD:js/@aspect-ratio.js
                           children: ["attRouge"]}),
                         W({
                           elem: "span",
@@ -896,10 +1110,52 @@ addListener(
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["attVert"]}),
+=======
+                          children: ["attVert"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+                        "\r\n",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["attribute"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["float"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["attBleu"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\r\n\r\n",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["varying"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["vec3"]}),
+                        " ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["varColor"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
                         W({
                           elem: "span",
@@ -920,6 +1176,33 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [";"]}),
                         "\n\n",
+=======
+                        "\r\n\r\n",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["main"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\r\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["varColor"]}),
+                        " ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -946,6 +1229,7 @@ addListener(
                         " ",
                         W({
                           elem: "span",
+<<<<<<< HEAD:js/@aspect-ratio.js
                           attr: {"class": "function"},
                           children: ["main"]}),
                         W({
@@ -970,6 +1254,8 @@ addListener(
                         " ",
                         W({
                           elem: "span",
+=======
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                           attr: {"class": "keyword"},
                           children: ["vec3"]}),
                         W({
@@ -994,6 +1280,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         " ",
                         W({
                           elem: "span",
@@ -1043,6 +1330,82 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["+"]}),
+=======
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["attBleu"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\r\n  \r\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["float"]}),
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["uniTime"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        " ",
+                        W({
+                          elem: "span",
+<<<<<<< HEAD:js/@aspect-ratio.js
+                          attr: {"class": "number"},
+                          children: ["0.0001"]}),
+=======
+                          attr: {"class": "keyword2"},
+                          children: ["radians"]}),
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+<<<<<<< HEAD:js/@aspect-ratio.js
+                          attr: {"class": "keyword"},
+                          children: ["float"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["x"]}),
+=======
+                          attr: {"class": "identifier"},
+                          children: ["attAngle"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+<<<<<<< HEAD:js/@aspect-ratio.js
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword2"},
+                          children: ["sin"]}),
+                        W({
+                          elem: "span",
+=======
+                          children: ["+"]}),
                         " ",
                         W({
                           elem: "span",
@@ -1062,7 +1425,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1084,6 +1447,7 @@ addListener(
                           children: ["sin"]}),
                         W({
                           elem: "span",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                           attr: {"class": "symbol"},
                           children: ["("]}),
                         " ",
@@ -1110,7 +1474,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  ",
+=======
+                        "\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1158,7 +1526,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n\n  ",
+=======
+                        "\r\n\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1192,12 +1564,20 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n    ",
+=======
+                        "\r\n    ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Mode paysage."]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n    ",
+=======
+                        "\r\n    ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1230,7 +1610,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  ",
+=======
+                        "\r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1245,12 +1629,20 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n    ",
+=======
+                        "\r\n    ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Mode portrait."]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n    ",
+=======
+                        "\r\n    ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1283,12 +1675,16 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n  \n  ",
+=======
+                        "\r\n  \r\n  ",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -1344,7 +1740,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                         "\n",
+=======
+                        "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1390,7 +1790,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                     "\n",
+=======
+                    "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1419,7 +1823,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                     "\n",
+=======
+                    "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1450,7 +1858,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                     "\n",
+=======
+                    "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1481,7 +1893,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                     "\n",
+=======
+                    "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1505,7 +1921,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                     "\n",
+=======
+                    "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1538,6 +1958,7 @@ addListener(
                   elem: "em",
                   children: ["canvas"]}),
                 " pour qu",
+<<<<<<< HEAD:js/@aspect-ratio.js
                 "&#39;",
                 "il ajuste la résolution aux changements de taille de l",
                 "&#39;",
@@ -1557,6 +1978,27 @@ addListener(
                 "&#39;",
                 "elle est appelée de façon implicite lors de la création du contexte ",
                 W({
+=======
+                "&#39;",
+                "il ajuste la résolution aux changements de taille de l",
+                "&#39;",
+                "affichage."]}),
+          W({
+              elem: "p",
+              children: [
+                "Pour finir, il faut aussi définir le ",
+                W({
+                  elem: "strong",
+                  children: ["viewport"]}),
+                " dans WebGL. Ceci est indispensable, mais si on n",
+                "&#39;",
+                "a encore jamais rencontré cette instruction avant, c",
+                "&#39;",
+                "est simplement parce qu",
+                "&#39;",
+                "elle est appelée de façon implicite lors de la création du contexte ",
+                W({
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                   elem: "code",
                   children: ["webgl"]}),
                 ".\n",
@@ -1568,7 +2010,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Définir le rectangle d'affichage en pixels.    "]}),
+<<<<<<< HEAD:js/@aspect-ratio.js
                     "\n",
+=======
+                    "\r\n",
+>>>>>>> 1fd700ad6247c9723fecf607e62b5e599c1a4805:js/@aspect-ratio.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
