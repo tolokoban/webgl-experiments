@@ -343,33 +343,35 @@ window.WebGL = function() {
     return new Promise(function (resolve, reject) {
       showSplashScreen().then(function() {
         var count = 0;
+        var done = 0;
         for( var key in assets ) count++;
         var progress = document.getElementById("PROGRESS");
-
-        var keys = Object.keys( assets );
         var result = {};
 
-        function fetchNext() {
-          if( keys.length === 0 ) {
+        function next( url ) {
+          done++;
+          var percent = done / count;
+          progress.style.transform = "scaleX(" + percent + ")";
+          console.log( url, (100 * percent).toFixed(0) + "%");
+
+          if( done >= count ) {
             resolve( result );
             hideSplashScreen();
             return;
           }
+        }
 
-          var key = keys.shift();
-          var percent = 1 - keys.length / count;
-          progress.style.transform = "scaleX(" + percent + ")";
+        Object.keys( assets ).forEach(function( key ) {
           var url = assets[key];
-          console.log( url, (100 * percent).toFixed(0) + "%");
           if( endsWith( url, "jpg", "png", "gif", "svg" ) ) {
             var img = new Image();
             img.crossOrigin = "anonymous";
             result[key] = img;
-            img.onload = fetchNext;
+            img.onload = next.bind(null, url);
             img.onerror = function( ex ) {
               console.error("Unable to load image \"" + key + "\":", url);
               console.error( ex );
-              fetchNext();
+              next( url );
             };
             img.src = url;
           } else {
@@ -382,15 +384,13 @@ window.WebGL = function() {
               }
             }).then(function(content) {
               result[key] = content;
-              fetchNext();
+              next( url );
             }).catch(function(ex) {
               console.error("Unable to fetch asset \"" + key + "\": ", url);
-              fetchNext();
+              next( url );
             });
           }
-        }
-
-        fetchNext();
+        });
       });
     });
   }
