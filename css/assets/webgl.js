@@ -32,12 +32,12 @@ window.WebGL = function() {
     gl.attachShader( shaderProgram, shaderVert );
     gl.attachShader( shaderProgram, shaderFrag );
     gl.linkProgram( shaderProgram );
-
-    gl.detachShader( shaderProgram, shaderVert );
-    gl.deleteShader( shaderVert );
-    gl.detachShader( shaderProgram, shaderFrag );
-    gl.deleteShader( shaderFrag );
-
+    /*
+      gl.detachShader( shaderProgram, shaderVert );
+      gl.deleteShader( shaderVert );
+      gl.detachShader( shaderProgram, shaderFrag );
+      gl.deleteShader( shaderFrag );
+    */
     this.program = shaderProgram;
     Object.freeze( this.program );
 
@@ -341,27 +341,37 @@ window.WebGL = function() {
 
   function fetchAssets( assets ) {
     return new Promise(function (resolve, reject) {
-      function process() {
-        var keys = Object.keys( assets );
+      showSplashScreen().then(function() {
+        var count = 0;
+        var done = 0;
+        for( var key in assets ) count++;
+        var progress = document.getElementById("PROGRESS");
         var result = {};
 
-        function fetchNext() {
-          if( keys.length === 0 ) {
+        function next( url ) {
+          done++;
+          var percent = done / count;
+          progress.style.transform = "scaleX(" + percent + ")";
+          console.log( url, (100 * percent).toFixed(0) + "%");
+
+          if( done >= count ) {
             resolve( result );
+            hideSplashScreen();
             return;
           }
+        }
 
-          var key = keys.shift();
+        Object.keys( assets ).forEach(function( key ) {
           var url = assets[key];
           if( endsWith( url, "jpg", "png", "gif", "svg" ) ) {
             var img = new Image();
             img.crossOrigin = "anonymous";
             result[key] = img;
-            img.onload = fetchNext;
+            img.onload = next.bind(null, url);
             img.onerror = function( ex ) {
               console.error("Unable to load image \"" + key + "\":", url);
               console.error( ex );
-              fetchNext();
+              next( url );
             };
             img.src = url;
           } else {
@@ -374,26 +384,14 @@ window.WebGL = function() {
               }
             }).then(function(content) {
               result[key] = content;
-              fetchNext();
+              next( url );
             }).catch(function(ex) {
               console.error("Unable to fetch asset \"" + key + "\": ", url);
-              fetchNext();
+              next( url );
             });
           }
-        }
-
-        fetchNext();
-      }
-
-      // Toute une  tuyauterie pour  s'assure que  la page  est bien
-      // chargée avant de commencer les téléchargements.
-      if (document.readyState === "complete"
-          || document.readyState === "loaded"
-          || document.readyState === "interactive") {
-        process();
-      } else {
-        document.addEventListener("DOMContentLoaded", process );
-      }
+        });
+      });
     });
   }
 
@@ -433,6 +431,43 @@ window.WebGL = function() {
     body.appendChild( canvas );
     return canvas;
   }
+
+  function showSplashScreen( applicationName ) {
+    if( typeof applicationName === 'undefined' ) applicationName = 'TOLOKOBAN';
+
+    return new Promise(function (resolve, reject) {
+      function show() {
+        var splash = document.createElement( "div" );
+        splash.setAttribute( "id", "SPLASH" );
+        splash.innerHTML = "<div>" + applicationName + "</div><div>" + applicationName + "</div>";
+        document.body.appendChild( splash );
+        var progress = document.createElement( "div" );
+        progress.setAttribute( "id", "PROGRESS" );
+        document.body.appendChild( progress );
+        window.setTimeout(function() {
+          splash.setAttribute( "class", "show" );
+        }, 50);
+        resolve();
+      }
+      if( document.readyState === "complete" ) {
+        show();
+      } else {
+        document.addEventListener( "DOMContentLoaded", show );
+      }
+    });
+  }
+
+  function hideSplashScreen() {
+    var splash = document.getElementById( "SPLASH" );
+    splash.setAttribute( "class", "hide" );
+    var progress = document.getElementById( "PROGRESS" );
+    document.body.removeChild( progress );
+    window.setTimeout(function() {
+      document.body.removeChild( splash );
+    }, 500);
+  }
+
+
   //========================================================================================
   return {
     Program: Program,

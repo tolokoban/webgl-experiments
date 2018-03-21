@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article0', 'wdg.article', {
+        W('wdg.article4', 'wdg.article', {
             title: "Boilerplate",
             content: [
           W({
@@ -69,7 +69,7 @@ addListener(
               children: ["Boilerplate ? Kesako ?"]}),
           W({
               elem: "p",
-              children: [W('wdg.boilerplate1','wdg.boilerplate',{"float": "right"},{"id":"wdg.boilerplate1"})]}),
+              children: [W('wdg.boilerplate5','wdg.boilerplate',{"float": "right"},{"id":"wdg.boilerplate5"})]}),
           W({
               elem: "p",
               children: [
@@ -98,7 +98,7 @@ addListener(
           W({
               elem: "p",
               children: [
-                W('wdg.showhide2','wdg.showhide',{
+                W('wdg.showhide6','wdg.showhide',{
                   value: "false",
                   label: "La page HTML (index.html)",
                   content: [
@@ -415,9 +415,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["&gt;"]}),
-                        " "]})]},{"id":"wdg.showhide2"}),
+                        " "]})]},{"id":"wdg.showhide6"}),
                 "\n",
-                W('wdg.showhide3','wdg.showhide',{
+                W('wdg.showhide7','wdg.showhide',{
                   value: "false",
                   label: "Le style (style.css)",
                   content: [
@@ -803,9 +803,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide3"}),
+                        " "]})]},{"id":"wdg.showhide7"}),
                 "\n",
-                W('wdg.showhide4','wdg.showhide',{
+                W('wdg.showhide8','wdg.showhide',{
                   value: "false",
                   label: "Le code pour la maison (script.js)",
                   content: [
@@ -1702,9 +1702,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["});"]}),
-                        " "]})]},{"id":"wdg.showhide4"}),
+                        " "]})]},{"id":"wdg.showhide8"}),
                 "\n",
-                W('wdg.showhide5','wdg.showhide',{
+                W('wdg.showhide9','wdg.showhide',{
                   value: "false",
                   label: "Vertex shader (shader.vert)",
                   content: [
@@ -1829,9 +1829,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide5"}),
+                        " "]})]},{"id":"wdg.showhide9"}),
                 "\n",
-                W('wdg.showhide6','wdg.showhide',{
+                W('wdg.showhide10','wdg.showhide',{
                   value: "false",
                   label: "Fragment shader (shader.frag)",
                   content: [
@@ -1938,9 +1938,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide6"}),
+                        " "]})]},{"id":"wdg.showhide10"}),
                 "\n",
-                W('wdg.showhide7','wdg.showhide',{
+                W('wdg.showhide11','wdg.showhide',{
                   value: "false",
                   label: "Le boilerplate (../webgl.js)",
                   content: [
@@ -2814,7 +2814,16 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n\n    ",
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["/"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2847,7 +2856,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n    ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2871,7 +2880,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n    ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2904,7 +2913,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n    ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2928,7 +2937,16 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n\n    ",
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["/"]}),
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -9977,13 +9995,25 @@ addListener(
                         "\n      ",
                         W({
                           elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["function"]}),
-                        " ",
+                          attr: {"class": "function"},
+                          children: ["showSplashScreen"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        ".",
                         W({
                           elem: "span",
                           attr: {"class": "function"},
-                          children: ["process"]}),
+                          children: ["then"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -10002,7 +10032,106 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["keys"]}),
+                          children: ["count"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["done"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["for"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["key"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["in"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["assets"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["count"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
                         " ",
                         W({
                           elem: "span",
@@ -10012,22 +10141,20 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["Object"]}),
+                          children: ["document"]}),
                         ".",
                         W({
                           elem: "span",
                           attr: {"class": "function"},
-                          children: ["keys"]}),
+                          children: ["getElementById"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " ",
                         W({
                           elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["assets"]}),
-                        " ",
+                          attr: {"class": "string"},
+                          children: ["\"PROGRESS\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -10061,17 +10188,204 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "function"},
-                          children: ["fetchNext"]}),
+                          children: ["next"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["()"]}),
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
                         " ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
                         "\n          ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["done"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n          ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["percent"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["done"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["/"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["count"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n          ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["style"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["transform"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"scaleX(\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["percent"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\")\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n          ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["console"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["log"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["percent"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["toFixed"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"%\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n\n          ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -10084,22 +10398,21 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["keys"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["length"]}),
+                          children: ["done"]}),
                         " ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
-                          children: ["==="]}),
+                          children: ["&gt;"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
                         " ",
                         W({
                           elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0"]}),
+                          attr: {"class": "identifier"},
+                          children: ["count"]}),
                         " ",
                         W({
                           elem: "span",
@@ -10132,6 +10445,15 @@ addListener(
                         "\n            ",
                         W({
                           elem: "span",
+                          attr: {"class": "function"},
+                          children: ["hideSplashScreen"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n            ",
+                        W({
+                          elem: "span",
                           attr: {"class": "keyword"},
                           children: ["return"]}),
                         W({
@@ -10143,11 +10465,52 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\n\n          ",
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
+                        "\n\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["Object"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["keys"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["assets"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["forEach"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
-                          children: ["var"]}),
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
                         " ",
                         W({
                           elem: "span",
@@ -10156,22 +10519,13 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
                         " ",
                         W({
                           elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["keys"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "function"},
-                          children: ["shift"]}),
-                        W({
-                          elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["();"]}),
+                          children: ["{"]}),
                         "\n          ",
                         W({
                           elem: "span",
@@ -10381,11 +10735,33 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["fetchNext"]}),
+                          children: ["next"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["bind"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: [";"]}),
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["null"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
                         "\n            ",
                         W({
                           elem: "span",
@@ -10504,11 +10880,21 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "function"},
-                          children: ["fetchNext"]}),
+                          children: ["next"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["();"]}),
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
                         "\n            ",
                         W({
                           elem: "span",
@@ -10815,11 +11201,21 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "function"},
-                          children: ["fetchNext"]}),
+                          children: ["next"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["();"]}),
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
                         "\n            ",
                         W({
                           elem: "span",
@@ -10910,11 +11306,21 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "function"},
-                          children: ["fetchNext"]}),
+                          children: ["next"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["();"]}),
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
                         "\n            ",
                         W({
                           elem: "span",
@@ -10929,180 +11335,12 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["}"]}),
-                        "\n\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "function"},
-                          children: ["fetchNext"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["();"]}),
+                          children: ["});"]}),
                         "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["}"]}),
-                        "\n\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Toute une  tuyauterie pour  s'assure que  la page  est bien"]}),
-                        "\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// chargée avant de commencer les téléchargements."]}),
-                        "\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["if"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["document"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["readyState"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["==="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"complete\""]}),
-                        "\n          ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["||"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["document"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["readyState"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["==="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"loaded\""]}),
-                        "\n          ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["||"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["document"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["readyState"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["==="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"interactive\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [")"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "function"},
-                          children: ["process"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["();"]}),
-                        "\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["}"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["else"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["document"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "function"},
-                          children: ["addEventListener"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"DOMContentLoaded\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["process"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["}"]}),
+                          children: ["});"]}),
                         "\n    ",
                         W({
                           elem: "span",
@@ -11979,7 +12217,875 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
+                        "\n\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["showSplashScreen"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["applicationName"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["if"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["typeof"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["applicationName"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["==="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["'undefined'"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["applicationName"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["'TOLOKOBAN'"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["return"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["new"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["Promise"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["resolve"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["reject"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["show"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["createElement"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"div\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"id\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"SPLASH\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["innerHTML"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: [
+                            "\"",
+                            "&lt;",
+                            "div",
+                            "&gt;",
+                            "\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["applicationName"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: [
+                            "\"",
+                            "&lt;",
+                            "/div",
+                            "&gt;",
+                            "&lt;",
+                            "div",
+                            "&gt;",
+                            "\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["applicationName"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["+"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: [
+                            "\"",
+                            "&lt;",
+                            "/div",
+                            "&gt;",
+                            "\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["body"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["appendChild"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["createElement"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"div\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"id\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"PROGRESS\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["body"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["appendChild"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword2"},
+                          children: ["window"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setTimeout"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n          ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"class\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"show\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["50"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["resolve"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["if"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["readyState"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["==="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"complete\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["show"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["else"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n        ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["addEventListener"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"DOMContentLoaded\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["show"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["});"]}),
                         "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
+                        "\n\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["hideSplashScreen"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["getElementById"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"SPLASH\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"class\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"hide\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["getElementById"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"PROGRESS\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["body"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["removeChild"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["progress"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword2"},
+                          children: ["window"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setTimeout"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["body"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["removeChild"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["splash"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["500"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["}"]}),
+                        "\n\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
@@ -12090,7 +13196,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}();"]}),
-                        " "]})]},{"id":"wdg.showhide7"})]}),
+                        " "]})]},{"id":"wdg.showhide11"})]}),
           W({
               elem: "p",
               children: [
@@ -13466,17 +14572,17 @@ addListener(
                   elem: "a",
                   attr: {"href": "css/assets/boilerplate/index.html"},
                   children: ["le résultat"]}),
-                "."]})]},{"id":"wdg.article0"})
+                "."]})]},{"id":"wdg.article4"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.79"',major:"0",minor:"0",revision:"79",date:"2018-03-11T15:05:33.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.81"',major:"0",minor:"0",revision:"81",date:"2018-03-21T19:44:52.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
 require("wdg.article",function(e,t,n){function a(e){var t,n,a=o.tag("nav","thm-ele8","thm-bgPL");for(t in i)n=i[t],"$"===t.charAt(0)?o.add(a,o.tag("h1",[n])):t==e?o.add(a,o.tag("div","thm-ele1",[n])):o.add(a,o.tag("a",[n],{href:t+".html"}));return a}var r=function(){function t(){return a(n,arguments)}var n={en:{},fr:{}},a=e("$").intl;return t.all=n,t}(),i={$1:"Les bases",intro:"Introduction",index:"Comprendre WebGL",index2:"Comprendre WebGL (2)",chap1:"Dessiner un carré",chap2:"Dessiner un polygône",chap3:"Textures procédurales",chap4:"Textures animées",chap5:"Utiliser des images",chap6:"Un point c'est tout","chap6-2":"La semi-transparence",transparence:"La semi-transparence (2)",chap7:"Particules",chap8:"Frame Buffer",deform:"Déformation",deform2:"Déformation (2)",$2:"La troisième dimension",interpolation:"Interpolation des varyings",$666:"Annexes",doc:"Documentations"};e("theme");var o=e("dom"),s=e("tfw.data-binding"),c=e("tfw.view.icon"),d=function(e){o.addClass(document.body,"thm-bg0");var t=window.location.pathname.split("/").pop();t=t.substr(0,t.length-5),"string"!=typeof e.title&&(e.title=t);var n=o.tag("header","thm-ele12","thm-bgP",[o.tag("a",{href:"index.html"},[new c({size:"1.5rem",content:"menu"})]),e.title]),r=(a(t),o.tag("article","thm-bg1"));o.elem(this,"div","article",[r,n]);s.prop(this,"content")(function(e){o.clear(r),Array.isArray(e)||(e=[e]),e.forEach(function(e){o.add(r,e)})}),e=s.extend({content:[]},e,this)};t.exports=d;t.exports._=r});
 //# sourceMappingURL=wdg.article.js.map
-require("tfw.view.icon",function(n,e,t){function o(n){try{"string"==typeof n&&(n=p.iconsBook[n]),this._content=i.call(this,n),u.clear(this,this._content.svgRootGroup),[0,1,2,3,4,5,6,7].forEach(function(n){s.call(this,n,this["pen"+n])},this),this.$.style.display=""}catch(n){this.$.style.display="none",""!=this.content&&(this.content="")}}function i(n){var e=(u.svg("g",{"stroke-width":6,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"}),[[],[],[],[],[],[],[],[]]),t=[[],[],[],[],[],[],[],[]],o=r(this.$,e,t,n);return u.att(o,{"stroke-width":6,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"}),{svgRootGroup:o,elementsToFillPerColor:e,elementsToStrokePerColor:t}}function r(n,e,t,o){if("string"==typeof o)return u.add(n,o);a(o);var i=o[0],s=u.svg(i);return o.forEach(function(n,o){0!==o&&(Array.isArray(n)?n.forEach(r.bind(null,s,e,t)):c(s,e,t,n))}),u.add(n,s),s}function c(n,e,t,o){var i,r,c,a;for(i in o)r=o[i],"fill"===i||"stroke"===i?(c=parseInt(r),isNaN(c)?u.att(n,i,r):(a="fill"===i?e:t,c=h(c,0,a.length-1),a[c].push(n))):u.att(n,i,r)}function a(n){if(!Array.isArray(n))throw"Definition of SVG elements must be arrays!\n"+JSON.stringify(n);var e=n[0];if("string"!=typeof e)throw"The first item of a SVG element must be a string!\n"+e}function s(n,e){var t=this._content.elementsToFillPerColor[n];Array.isArray(t)||(t=[]);var o=this._content.elementsToStrokePerColor[n];Array.isArray(o)||(o=[]),l(t,o,e)}function l(n,e,t){f("fill",n,v,t),f("stroke",e,m,t)}function f(n,e,t,o){var i=t[o];void 0===i?e.forEach(function(e){u.att(e,n,o)}):e.forEach(function(e){Object.values(t).forEach(function(n){u.removeClass(e,n)}),u.addClass(e,i),u.removeAtt(e,n)})}function h(n,e,t){return n<e?e:n>t?t:n}var d=function(){function e(){return o(t,arguments)}var t={en:{},fr:{}},o=n("$").intl;return e.all=t,e}(),u=n("dom"),p=n("tfw.icons"),g={onContentChanged:o,onPen0Changed:function(n){s.call(this,0,n)},onPen1Changed:function(n){s.call(this,1,n)},onPen2Changed:function(n){s.call(this,2,n)},onPen3Changed:function(n){s.call(this,3,n)},onPen4Changed:function(n){s.call(this,4,n)},onPen5Changed:function(n){s.call(this,5,n)},onPen6Changed:function(n){s.call(this,6,n)},onPen7Changed:function(n){s.call(this,7,n)}},v={0:"thm-svg-fill0",1:"thm-svg-fill1",P:"thm-svg-fill-P",PL:"thm-svg-fill-PL",PD:"thm-svg-fill-PD",S:"thm-svg-fill-S",SL:"thm-svg-fill-SL",SD:"thm-svg-fill-SD"},m={0:"thm-svg-stroke0",1:"thm-svg-stroke1",P:"thm-svg-stroke-P",PL:"thm-svg-stroke-PL",PD:"thm-svg-stroke-PD",S:"thm-svg-stroke-S",SL:"thm-svg-stroke-SL",SD:"thm-svg-stroke-SD"};try{e.exports=function(){function e(n,e,t){return void 0===n[e]?t:n[e]}function t(n,e,t){t?i.removeClass(n,e):i.addClass(n,e)}function o(n,e,t){t?i.addClass(n,e):i.removeClass(n,e)}var i=n("dom"),r=n("tfw.binding.property-manager"),c=n("tfw.view").Tag,a=n("tfw.binding.link"),s=n("tfw.view"),l=n("tfw.binding.converters");s.ensureCodeBehind(g,"onContentChanged","onPen0Changed","onPen1Changed","onPen2Changed","onPen3Changed","onPen4Changed","onPen6Changed","onPen7Changed");var f=l.get("boolean"),h=l.get("unit"),d=l.get("string");return function(n){try{void 0===n&&(n={}),this.$elements={};var s=this,l=r(this);l.create("visible",{cast:f}),l.create("content"),l.create("size",{cast:h}),l.create("animate",{cast:f}),l.create("flipH",{cast:f}),l.create("flipV",{cast:f}),l.create("pen0",{cast:d}),l.create("pen1",{cast:d}),l.create("pen2",{cast:d}),l.create("pen3",{cast:d}),l.create("pen4",{cast:d}),l.create("pen5",{cast:d}),l.create("pen6",{cast:d}),l.create("pen7",{cast:d});var u=new c("SVG",["class","width","height","viewBox","preserveAspectRatio"]);Object.defineProperty(this,"$",{value:u.$,writable:!1,enumerable:!1,configurable:!1}),new a({A:{obj:s,name:"visible"},B:{action:function(n){t(u,"hide",n)}}}),new a({A:{obj:s,name:"animate"},B:{action:function(n){o(u,"animate",n)}}}),new a({A:{obj:s,name:"flipH"},B:{action:function(n){o(u,"flipH",n)}}}),new a({A:{obj:s,name:"flipV"},B:{action:function(n){o(u,"flipV",n)}}}),l.on("content",function(n){try{g.onContentChanged.call(s,n)}catch(n){console.error('Exception in function behind "onContentChanged" of module "mod/tfw.view.icon.js" for attribute "content"!  '),console.error(n)}}),l.on("pen0",function(n){try{g.onPen0Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen0Changed" of module "mod/tfw.view.icon.js" for attribute "pen0"!  '),console.error(n)}}),l.on("pen1",function(n){try{g.onPen1Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen1Changed" of module "mod/tfw.view.icon.js" for attribute "pen1"!  '),console.error(n)}}),l.on("pen2",function(n){try{g.onPen2Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen2Changed" of module "mod/tfw.view.icon.js" for attribute "pen2"!  '),console.error(n)}}),l.on("pen3",function(n){try{g.onPen3Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen3Changed" of module "mod/tfw.view.icon.js" for attribute "pen3"!  '),console.error(n)}}),l.on("pen4",function(n){try{g.onPen3Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen3Changed" of module "mod/tfw.view.icon.js" for attribute "pen4"!  '),console.error(n)}}),l.on("pen5",function(n){try{g.onPen4Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen4Changed" of module "mod/tfw.view.icon.js" for attribute "pen5"!  '),console.error(n)}}),l.on("pen6",function(n){try{g.onPen6Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen6Changed" of module "mod/tfw.view.icon.js" for attribute "pen6"!  '),console.error(n)}}),l.on("pen7",function(n){try{g.onPen7Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen7Changed" of module "mod/tfw.view.icon.js" for attribute "pen7"!  '),console.error(n)}}),l.on("size",function(n){u.$.style.width=n}),l.on("size",function(n){u.$.style.height=n}),u.class="tfw-view-icon",u.width="100%",u.height="100%",u.viewBox="-65 -65 130 130",u.preserveAspectRatio="xMidYMid meet",this.visible=e(n,"visible",!0),this.content=e(n,"content","ok"),this.size=e(n,"size",28),this.animate=e(n,"animate",!1),this.flipH=e(n,"flipH",!1),this.flipV=e(n,"flipV",!1),this.pen0=e(n,"pen0",0),this.pen1=e(n,"pen1",1),this.pen2=e(n,"pen2","P"),this.pen3=e(n,"pen3","PD"),this.pen4=e(n,"pen4","PL"),this.pen5=e(n,"pen5","S"),this.pen6=e(n,"pen6","SD"),this.pen7=e(n,"pen7","SL"),i.addClass(this,"view","custom")}catch(n){throw console.error("mod/tfw.view.icon.js",n),Error('Instantiation error in XJS of "mod/tfw.view.icon.js":\n'+n)}}}()}catch(n){throw Error('Definition error in XJS of "mod/tfw.view.icon.js"\n'+n)}e.exports._=d});
+require("tfw.view.icon",function(n,e,t){function o(n){try{"string"==typeof n&&(n=p.iconsBook[n]),this._content=i.call(this,n),u.clear(this,this._content.svgRootGroup),[0,1,2,3,4,5,6,7].forEach(function(n){s.call(this,n,this["pen"+n])},this),this.$.style.display=""}catch(n){this.$.style.display="none",""!=this.content&&(this.content="")}}function i(n){var e=(u.svg("g",{"stroke-width":6,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"}),[[],[],[],[],[],[],[],[]]),t=[[],[],[],[],[],[],[],[]],o=r(this.$,e,t,n);return u.att(o,{"stroke-width":6,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"}),{svgRootGroup:o,elementsToFillPerColor:e,elementsToStrokePerColor:t}}function r(n,e,t,o){if("string"==typeof o)return u.add(n,o);a(o);var i=o[0],s=u.svg(i);return o.forEach(function(n,o){0!==o&&(Array.isArray(n)?n.forEach(r.bind(null,s,e,t)):c(s,e,t,n))}),u.add(n,s),s}function c(n,e,t,o){var i,r,c,a;for(i in o)r=o[i],"fill"===i||"stroke"===i?(c=parseInt(r),isNaN(c)?u.att(n,i,r):(a="fill"===i?e:t,c=h(c,0,a.length-1),a[c].push(n))):u.att(n,i,r)}function a(n){if(!Array.isArray(n))throw"Definition of SVG elements must be arrays!\n"+JSON.stringify(n);var e=n[0];if("string"!=typeof e)throw"The first item of a SVG element must be a string!\n"+e}function s(n,e){if(void 0!==e){var t=this._content.elementsToFillPerColor[n];Array.isArray(t)||(t=[]);var o=this._content.elementsToStrokePerColor[n];Array.isArray(o)||(o=[]),l(t,o,e)}}function l(n,e,t){f("fill",n,v,t),f("stroke",e,m,t)}function f(n,e,t,o){var i=t[o];void 0===i?e.forEach(function(e){u.att(e,n,o)}):e.forEach(function(e){Object.values(t).forEach(function(n){u.removeClass(e,n)}),u.addClass(e,i),u.removeAtt(e,n)})}function h(n,e,t){return n<e?e:n>t?t:n}var d=function(){function e(){return o(t,arguments)}var t={en:{},fr:{}},o=n("$").intl;return e.all=t,e}();n("polyfill.object.values");var u=n("dom"),p=n("tfw.icons"),g={onContentChanged:o,onPen0Changed:function(n){s.call(this,0,n)},onPen1Changed:function(n){s.call(this,1,n)},onPen2Changed:function(n){s.call(this,2,n)},onPen3Changed:function(n){s.call(this,3,n)},onPen4Changed:function(n){s.call(this,4,n)},onPen5Changed:function(n){s.call(this,5,n)},onPen6Changed:function(n){s.call(this,6,n)},onPen7Changed:function(n){s.call(this,7,n)}},v={0:"thm-svg-fill0",1:"thm-svg-fill1",P:"thm-svg-fill-P",PL:"thm-svg-fill-PL",PD:"thm-svg-fill-PD",S:"thm-svg-fill-S",SL:"thm-svg-fill-SL",SD:"thm-svg-fill-SD"},m={0:"thm-svg-stroke0",1:"thm-svg-stroke1",P:"thm-svg-stroke-P",PL:"thm-svg-stroke-PL",PD:"thm-svg-stroke-PD",S:"thm-svg-stroke-S",SL:"thm-svg-stroke-SL",SD:"thm-svg-stroke-SD"};try{e.exports=function(){function e(n,e,t){return void 0===n[e]?t:n[e]}function t(n,e,t){t?i.removeClass(n,e):i.addClass(n,e)}function o(n,e,t){t?i.addClass(n,e):i.removeClass(n,e)}var i=n("dom"),r=n("tfw.binding.property-manager"),c=n("tfw.view").Tag,a=n("tfw.binding.link"),s=n("tfw.view"),l=n("tfw.binding.converters");s.ensureCodeBehind(g,"onContentChanged","onPen0Changed","onPen1Changed","onPen2Changed","onPen3Changed","onPen4Changed","onPen6Changed","onPen7Changed");var f=l.get("boolean"),h=l.get("unit"),d=l.get("string");return function(n){try{void 0===n&&(n={}),this.$elements={};var s=this,l=r(this);l.create("visible",{cast:f}),l.create("content"),l.create("size",{cast:h}),l.create("animate",{cast:f}),l.create("flipH",{cast:f}),l.create("flipV",{cast:f}),l.create("pen0",{cast:d}),l.create("pen1",{cast:d}),l.create("pen2",{cast:d}),l.create("pen3",{cast:d}),l.create("pen4",{cast:d}),l.create("pen5",{cast:d}),l.create("pen6",{cast:d}),l.create("pen7",{cast:d});var u=new c("SVG",["class","width","height","viewBox","preserveAspectRatio"]);Object.defineProperty(this,"$",{value:u.$,writable:!1,enumerable:!1,configurable:!1}),new a({A:{obj:s,name:"visible"},B:{action:function(n){t(u,"hide",n)}}}),new a({A:{obj:s,name:"animate"},B:{action:function(n){o(u,"animate",n)}}}),new a({A:{obj:s,name:"flipH"},B:{action:function(n){o(u,"flipH",n)}}}),new a({A:{obj:s,name:"flipV"},B:{action:function(n){o(u,"flipV",n)}}}),l.on("content",function(n){try{g.onContentChanged.call(s,n)}catch(n){console.error('Exception in function behind "onContentChanged" of module "mod/tfw.view.icon.js" for attribute "content"!  '),console.error(n)}}),l.on("pen0",function(n){try{g.onPen0Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen0Changed" of module "mod/tfw.view.icon.js" for attribute "pen0"!  '),console.error(n)}}),l.on("pen1",function(n){try{g.onPen1Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen1Changed" of module "mod/tfw.view.icon.js" for attribute "pen1"!  '),console.error(n)}}),l.on("pen2",function(n){try{g.onPen2Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen2Changed" of module "mod/tfw.view.icon.js" for attribute "pen2"!  '),console.error(n)}}),l.on("pen3",function(n){try{g.onPen3Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen3Changed" of module "mod/tfw.view.icon.js" for attribute "pen3"!  '),console.error(n)}}),l.on("pen4",function(n){try{g.onPen3Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen3Changed" of module "mod/tfw.view.icon.js" for attribute "pen4"!  '),console.error(n)}}),l.on("pen5",function(n){try{g.onPen4Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen4Changed" of module "mod/tfw.view.icon.js" for attribute "pen5"!  '),console.error(n)}}),l.on("pen6",function(n){try{g.onPen6Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen6Changed" of module "mod/tfw.view.icon.js" for attribute "pen6"!  '),console.error(n)}}),l.on("pen7",function(n){try{g.onPen7Changed.call(s,n)}catch(n){console.error('Exception in function behind "onPen7Changed" of module "mod/tfw.view.icon.js" for attribute "pen7"!  '),console.error(n)}}),l.on("size",function(n){u.$.style.width=n}),l.on("size",function(n){u.$.style.height=n}),u.class="tfw-view-icon",u.width="100%",u.height="100%",u.viewBox="-65 -65 130 130",u.preserveAspectRatio="xMidYMid meet",this.visible=e(n,"visible",!0),this.content=e(n,"content","ok"),this.size=e(n,"size",28),this.animate=e(n,"animate",!1),this.flipH=e(n,"flipH",!1),this.flipV=e(n,"flipV",!1),this.pen0=e(n,"pen0",0),this.pen1=e(n,"pen1",1),this.pen2=e(n,"pen2","P"),this.pen3=e(n,"pen3","PD"),this.pen4=e(n,"pen4","PL"),this.pen5=e(n,"pen5","S"),this.pen6=e(n,"pen6","SD"),this.pen7=e(n,"pen7","SL"),i.addClass(this,"view","custom")}catch(n){throw console.error("mod/tfw.view.icon.js",n),Error('Instantiation error in XJS of "mod/tfw.view.icon.js":\n'+n)}}}()}catch(n){throw Error('Definition error in XJS of "mod/tfw.view.icon.js"\n'+n)}e.exports._=d});
 //# sourceMappingURL=tfw.view.icon.js.map
 require("tfw.binding.converters",function(r,n,t){function e(r){if("number"==typeof r)return r+"px";if("auto"===(r=(""+r).trim().toLowerCase())||"inherit"===r)return r;var n=N.exec(r);if(!n)return"0";var t=parseFloat(n[1]);if(isNaN(t))return"0";var e=n[2];return e.length<1&&(e="px"),t+e}function i(r){switch(typeof r){case"string":if(0===r.trim().length)return x;var n=new RegExp(r);return function(r){return n.test(r)};case"function":return function(n){return a(r(n))}}return x}function u(r){return Array.isArray(r)?r.map(e):[]}function o(r){switch(typeof r){case"string":return"true"===r.trim().toLowerCase();case"number":return 0!==r;default:return!!r}}function a(r){return Array.isArray(r)?r.map(o):[]}function f(r){return"string"!=typeof r?"#000":w.instance.parse(r)?w.instance.stringify():"#000"}function s(r){return!o(r)}function c(r){return A.isList(r)?r.slice():Array.isArray(r)?r:[r]}function l(r){return r&&"number"==typeof r.length?r.length:0}function y(r){return!r||("string"==typeof r?0===r.trim().length:"number"==typeof r.length&&0===r.length)}function p(r){return Array.isArray(r)?r.map(function(r){return""+r}):[]}function g(r){if(!Array.isArray(r)&&"object"!=typeof r){var n={};return n[h.lang()]=""+r,n}return r}function m(r){if("string"==typeof r)return r;if(void 0===r)return"";if(null===r)return"";var n=r[h.lang()];if(!n)for(var t in r){n=r[t];break}return"string"!=typeof n?"":n}function v(r){return A.isList(r)?r:new A(c(r))}var b=function(){function n(){return e(t,arguments)}var t={en:{},fr:{}},e=r("$").intl;return n.all=t,n}(),h=r("$"),A=r("tfw.binding.list"),w=r("tfw.color"),d={boolean:o,booleans:a,color:f,multilang:g,intl:m,not:s,strings:p,string:function(r){return null===r||void 0===r?"":"object"==typeof r?Array.isArray(r)?JSON.stringify(r):m(r):""+r},integer:function(r){return"number"==typeof r?function(n){var t=parseInt(n);return isNaN(t)?r:t}:parseInt},float:function(r){return"number"==typeof r?function(n){var t=parseFloat(n);return isNaN(t)?r:t}:parseFloat},enum:function(r){var n=r.map(function(r){return r.toLowerCase()});return function(t){var e=Math.max(0,n.indexOf((""+t).toLowerCase()));return r[e]}},array:c,list:v,unit:e,units:u,length:l,isEmpty:y,isNotEmpty:y,validator:i};t.get=function(r){return d[r]},t.set=function(r,n){"function"==typeof n?d[r]=n:delete d[r]};var N=/^(-?[.0-9]+)[ \n\r]*([a-z%]*)/,x=function(){return!0};n.exports._=b});
 //# sourceMappingURL=tfw.binding.converters.js.map
@@ -13506,6 +14612,8 @@ require("tfw.binding.link",function(e,n,t){function r(e,n,t,r){var o=this,a=[];r
 //# sourceMappingURL=tfw.binding.link.js.map
 require("tfw.icons",function(H,V,L){function C(H){return["path",{d:H,stroke:"none",fill:0}]}var M=function(){function V(){return C(L,arguments)}var L={en:{},fr:{}},C=H("$").intl;return V.all=L,V}();V.exports.draw=C,V.exports.register=function(H){var L,C;for(L in H)C=H[L],V.exports.iconsBook[L]=C},V.exports.iconsBook={android:C("M15,-35H10V-40H15M-10,-35H-15V-40H-10M18,-49L24,-56C25,-57,25,-58,24,-59C23,-60,22,-60,21,-59L13,-52C9,-54,5,-55,0,-55C-5,-55,-9,-54,-13,-52L-21,-59C-22,-60,-23,-60,-24,-59C-25,-58,-25,-57,-24,-56L-18,-49C-25,-44,-30,-35,-30,-25H30C30,-35,25,-44,18,-49M43,-20A8,8,0,0,0,35,-12V23A8,8,0,0,0,43,30A8,8,0,0,0,50,23V-12A8,8,0,0,0,43,-20M-42,-20A8,8,0,0,0,-50,-12V23A8,8,0,0,0,-42,30A8,8,0,0,0,-35,23V-12A8,8,0,0,0,-42,-20M-30,30A5,5,0,0,0,-25,35H-20V53A8,8,0,0,0,-12,60A8,8,0,0,0,-5,53V35H5V53A8,8,0,0,0,13,60A8,8,0,0,0,20,53V35H25A5,5,0,0,0,30,30V-20H-30V30Z"),bug:C("M10,0H-10V-10H10M10,20H-10V10H10M40,-20H26C24,-24 21,-27 17,-30L25,-38L18,-45L7,-34C5,-35 3,-35 0,-35C-2,-35 -5,-35 -7,-34L-18,-45L-25,-38L-17,-30C-21,-27 -24,-24 -26,-20H-40V-10H-30C-30,-8 -30,-7 -30,-5V0H-40V10H-30V15C-30,17 -30,18 -30,20H-40V30H-26C-21,39 -11,45 0,45C11,45 21,39 26,30H40V20H30C30,18 30,17 30,15V10H40V0H30V-5C30,-7 30,-8 30,-10H40V-20Z"),camera:C("M-40,-40H-25L-15,-50H15L25,-40H40A10,10,0,0,1,50,-30V30A10,10,0,0,1,40,40H-40A10,10,0,0,1,-50,30V-30A10,10,0,0,1,-40,-40M0,-25A25,25,0,0,0,-25,0A25,25,0,0,0,0,25A25,25,0,0,0,25,0A25,25,0,0,0,0,-25M0,-15A15,15,0,0,1,15,0A15,15,0,0,1,0,15A15,15,0,0,1,-15,0A15,15,0,0,1,0,-15Z"),cancel:C("M7,0L35,28V35H28L0,7L-28,35H-35V28L-7,0L-35,-28V-35H-28L0,-7L28,-35H35V-28L7,0Z"),center:C("M0,-15A15,15,0,0,0,-15,0A15,15,0,0,0,0,15A15,15,0,0,0,15,0A15,15,0,0,0,0,-15M35,35H15V45H35A10,10,0,0,0,45,35V15H35M35,-45H15V-35H35V-15H45V-35A10,10,0,0,0,35,-45M-35,-35H-15V-45H-35A10,10,0,0,0,-45,-35V-15H-35M-35,15H-45V35A10,10,0,0,0,-35,45H-15V35H-35V15Z"),close:C("M0,-50C28,-50,50,-28,50,0C50,28,28,50,0,50C-28,50,-50,28,-50,0C-50,-28,-28,-50,0,-50M18,-25L0,-7L-18,-25L-25,-18L-7,0L-25,18L-18,25L0,7L18,25L25,18L7,0L25,-18L18,-25Z"),code:C("M13,23L36,0L13,-23L20,-30L50,0L20,30L13,23M-13,23L-36,0L-13,-23L-20,-30L-50,0L-20,30L-13,23Z"),copy:C("M35,45H-20V-25H35M35,-35H-20A10,10,0,0,0,-30,-25V45A10,10,0,0,0,-20,55H35A10,10,0,0,0,45,45V-25A10,10,0,0,0,35,-35M20,-55H-40A10,10,0,0,0,-50,-45V25H-40V-45H20V-55Z"),delete:C("M35,-40H18L13,-45H-12L-17,-40H-35V-30H35M-30,35A10,10,0,0,0,-20,45H20A10,10,0,0,0,30,35V-25H-30V35Z"),direction:C("M10,13V0H-10V15H-20V-5A5,5,0,0,1,-15,-10H10V-22L28,-5M49,-4L4,-49H3C2,-50,-2,-50,-4,-49L-49,-4C-50,-2,-50,2,-49,4L-4,49C-2,50,2,51,4,49L49,4C51,2,51,-2,49,-4Z"),down:C("M-30,-30L0,30,30,-30"),"down-double":C("M-30,-40L0,-10,30,-40M-30,10L0,40,30,10"),edit:C("M24,-46C22,-46,20,-46,19,-44L8,-34L35,-7L45,-17C48,-21,48,-25,45,-28L29,-44C28,-46,26,-46,24,-46M5,-30L-36,11L-23,12L-22,23L-11,24L-9,37L31,-3M-39,15L-47,49L-14,40L-15,29L-27,28L-28,16"),eraser:C("M21,-42L46,-17C50,-14,50,-7,46,-3L0,43C-8,50,-20,50,-28,43L-46,25C-50,21,-50,15,-46,11L7,-42C11,-46,17,-46,21,-42M-39,18L-21,36C-17,39,-11,39,-7,36L11,18L-14,-7L-39,18Z"),export:C("M-35,40H35V30H-35M35,-15H15V-45H-15V-15H-35L0,20L35,-15Z"),"flag-jp":["g",{stroke:"none"},[["path",{fill:"#000",d:"M-65,50h130v-100h-130z"}],["path",{fill:"#fff",d:"M-60,45h120v-90h-120z"}],["circle",{fill:"#bc002d",r:24}]]],"flag-fr":["g",{stroke:"none"},[["path",{fill:"#000",d:"M-65,50h130v-100h-130z"}],["path",{fill:"#002395",d:"M-60,45h40v-90h-40z"}],["path",{fill:"#fff",d:"M-20,45h40v-90h-40z"}],["path",{fill:"#ed2939",d:"M20,45h40v-90h-40z"}]]],"flag-it":["g",{stroke:"none"},[["path",{fill:"#000",d:"M-65,50h130v-100h-130z"}],["path",{fill:"#009246",d:"M-60,45h40v-90h-40z"}],["path",{fill:"#fff",d:"M-20,45h40v-90h-40z"}],["path",{fill:"#ce2b37",d:"M20,45h40v-90h-40z"}]]],"flag-de":["g",{stroke:"none"},[["path",{fill:"#000",d:"M-65,41h130v-82h-130z"}],["path",{fill:"#ffce00",d:"M-60,36h120v-24h-120z"}],["path",{fill:"#dd0000",d:"M-60,12h120v-24h-120z"}]]],"flag-en":["g",{stroke:"none"},[["path",{fill:"#000",d:"M-65,37h130v-75h-130z"}],["path",{fill:"#bb133e",d:"M-60,32h120v-65h-120z"}],["path",{fill:"#fff",d:"M-60,22h120v5h-120z"}],["path",{fill:"#fff",d:"M-60,12h120v5h-120z"}],["path",{fill:"#fff",d:"M-60,2h120v5h-120z"}],["path",{fill:"#fff",d:"M-60,-8h120v5h-120z"}],["path",{fill:"#fff",d:"M-60,-18h120v5h-120z"}],["path",{fill:"#fff",d:"M-60,-28h120v5h-120z"}],["path",{fill:"#002664",d:"M-60,-33h48v35h-48z"}]]],font:C("M25,-20H40V40H45V45H25V40H30V25H10L3,40H10V45H-10V40H-5L25,-20M30,-15L13,20H30V-15M-35,-45H-10C-4,-45,0,-41,0,-35V20H-15V-5H-30V20H-45V-35C-45,-41,-41,-45,-35,-45M-30,-35V-15H-15V-35H-30Z"),"format-align-center":C("M-45,-45H45V-35H-45V-45M-25,-25H25V-15H-25V-25M-45,-5H45V5H-45V-5M-25,15H25V25H-25V15M-45,35H45V45H-45V35Z"),"format-align-justify":C("M-45,-45H45V-35H-45V-45M-45,-25H45V-15H-45V-25M-45,-5H45V5H-45V-5M-45,15H45V25H-45V15M-45,35H45V45H-45V35Z"),"format-align-left":C("M-45,-45H45V-35H-45V-45M-45,-25H15V-15H-45V-25M-45,-5H45V5H-45V-5M-45,15H15V25H-45V15M-45,35H45V45H-45V35Z"),"format-align-right":C(" M-45,-45H45V-35H-45V-45M-15,-25H45V-15H-15V-25M-45,-5H45V5H-45V-5M-15,15H45V25H-15V15M-45,35H45V45H-45V35Z "),"format-bold":C("M8,18H-10V3H8A8,8,0,0,1,15,10A8,8,0,0,1,8,18M-10,-27H5A8,8,0,0,1,13,-20A8,8,0,0,1,5,-12H-10M18,-6C23,-9,26,-15,26,-20C26,-31,18,-40,6,-40H-25V30H10C21,30,29,22,29,11C29,3,24,-3,18,-6Z"),"format-italic":C("M-10,-40V-25H1L-16,15H-30V30H10V15H-1L16,-25H30V-40H-10Z"),"format-float-center":C("M-15,-25H15V5H-15V-25M-45,-45H45V-35H-45V-45M-45,15H45V25H-45V15M-45,35H25V45H-45V35Z"),"format-float-left":C("M-45,-25H-15V5H-45V-25M-45,-45H45V-35H-45V-45M45,-25V-15H-5V-25H45M45,-5V5H-5V-5H45M-45,15H25V25H-45V15M-45,35H45V45H-45V35Z"),"format-float-none":C("M-45,-25H-15V5H-45V-25M-45,-45H45V-35H-45V-45M45,-5V5H-5V-5H45M-45,15H25V25H-45V15M-45,35H45V45H-45V35Z"),"format-float-right":C("M15,-25H45V5H15V-25M-45,-45H45V-35H-45V-45M5,-25V-15H-45V-25H5M-15,-5V5H-45V-5H-15M-45,15H25V25H-45V15M-45,35H45V45H-45V35Z"),"format-header":C("M-40,-40H-30V-10H-10V-40H0V30H-10V0H-30V30H-40V-40M13,-23L31,-5L13,13L20,20L45,-5L20,-30L13,-23Z"),"format-underline":C("M-35,45H35V35H-35V45M0,25A30,30,0,0,0,30,-5V-45H18V-5A18,18,0,0,1,0,13A18,18,0,0,1,-17,-5V-45H-30V-5A30,30,0,0,0,0,25Z"),fullscreen:C("M-35,-35H-10V-25H-25V-10H-35V-35M10,-35H35V-10H25V-25H10V-35M25,10H35V35H10V25H25V10M-10,25V35H-35V10H-25V25H-10Z"),gear:C("M0,18A18,18,0,0,1,-17,0A18,18,0,0,1,0,-17A18,18,0,0,1,18,0A18,18,0,0,1,0,18M37,5C37,3,38,2,38,0C38,-2,37,-3,37,-5L48,-13C49,-14,49,-15,48,-16L38,-34C38,-35,36,-35,35,-35L23,-30C20,-32,18,-33,14,-35L13,-48C12,-49,11,-50,10,-50H-10C-11,-50,-12,-49,-12,-48L-14,-35C-17,-33,-20,-32,-23,-30L-35,-35C-36,-35,-38,-35,-38,-34L-48,-16C-49,-15,-49,-14,-48,-13L-37,-5C-37,-3,-37,-2,-37,0C-37,2,-37,3,-37,5L-48,13C-49,14,-49,15,-48,16L-38,34C-38,35,-36,35,-35,35L-23,30C-20,32,-17,33,-14,35L-12,48C-12,49,-11,50,-10,50H10C11,50,12,49,13,48L14,35C18,33,20,32,23,30L35,35C36,35,38,35,38,34L48,16C49,15,49,14,48,13L37,5Z"),gps:C("M0,-20A20,20,0,0,1,20,0A20,20,0,0,1,0,20A20,20,0,0,1,-20,0A20,20,0,0,1,0,-20M-45,5H-55V-5H-45C-42,-26,-26,-42,-5,-45V-55H5V-45C26,-42,43,-26,45,-5H55V5H45C43,26,26,43,5,45V55H-5V45C-26,43,-42,26,-45,5M0,-35A35,35,0,0,0,-35,0A35,35,0,0,0,0,35A35,35,0,0,0,35,0A35,35,0,0,0,0,-35Z"),hand:C("M-10,-50A10,10,0,0,1,0,-40V-17C0,-17,10,-19,10,-14C10,-14,20,-15,20,-10C20,-10,30,-11,30,-6C30,-6,40,-7,40,-2V15C40,20,25,45,25,50H-15C-15,50,-25,15,-40,5C-40,5,-45,-25,-20,0V-40A10,10,0,0,1,-10,-50Z"),heart:C("M0,47L-7,40C-33,17,-50,1,-50,-17C-50,-33,-38,-45,-22,-45C-14,-45,-5,-41,0,-35C5,-41,14,-45,23,-45C38,-45,50,-33,50,-17C50,1,33,17,7,40L0,47Z"),hide:C("M-1,-15L15,1C15,1,15,0,15,0A15,15,0,0,0,0,-15C0,-15,-1,-15,-1,-15M-22,-11L-15,-3C-15,-2,-15,-1,-15,0A15,15,0,0,0,0,15C1,15,2,15,3,15L11,22C8,24,4,25,0,25A25,25,0,0,1,-25,0C-25,-4,-24,-8,-22,-11M-50,-39L-39,-27L-36,-25C-45,-18,-51,-10,-55,0C-46,22,-25,38,0,38C8,38,15,36,22,33L24,35L39,50L45,44L-44,-45M0,-25A25,25,0,0,1,25,0C25,3,24,6,23,9L38,24C45,18,51,9,55,0C46,-22,25,-37,0,-37C-7,-37,-14,-36,-20,-34L-9,-23C-6,-24,-3,-25,0,-25Z"),home:C("M-10,40V10H10V40H35V0H50L0,-45L-50,0H-35V40H-10Z"),image:C("M5,-15H33L5,-42V-15M-30,-50H10L40,-20V40A10,10,0,0,1,30,50H-30C-36,50,-40,46,-40,40V-40C-40,-46,-36,-50,-30,-50M-30,40H15L30,40V0L10,20L0,10L-30,40M-20,-15A10,10,0,0,0,-30,-5A10,10,0,0,0,-20,5A10,10,0,0,0,-10,-5A10,10,0,0,0,-20,-15Z"),import:C("M-15,20V-10H-35L0,-45L35,-10H15V20H-15M-35,40V30H35V40H-35Z"),improvement:C("M0,50A50,50,0,0,1,-50,0A50,50,0,0,1,0,-50A50,50,0,0,1,50,0A50,50,0,0,1,0,50M0,-25L-25,0H-10V20H10V0H25L0,-25Z"),info:C("M8,-40A8,8,0,0,0,0,-32A8,8,0,0,0,8,-25A8,8,0,0,0,15,-32A8,8,0,0,0,8,-40M6,-16C0,-16,-17,-3,-17,-3C-17,-2,-17,-2,-16,-1C-16,1,-16,1,-15,0C-14,0,-12,-2,-9,-3C1,-10,-8,6,-12,32C-14,45,-2,39,1,37C4,35,12,29,13,28C14,28,13,27,12,26C12,25,11,26,11,26C8,28,2,32,1,29C0,27,6,7,9,-6C10,-10,12,-17,6,-16Z"),left:["path",{fill:0,d:"M40,-5V5H-20L8,33L0,40L-39,0L0,-40L8,-32L-20,-5H40Z"}],"left-double":C("M-10,-30L-40,0,-10,30M40,-30L10,0,40,30"),link:C("M-7,7C-5,9,-5,12,-7,14C-9,16,-12,16,-14,14C-24,4,-24,-11,-14,-21V-21L4,-39C13,-49,29,-49,39,-39C49,-29,49,-13,39,-4L31,4C32,0,31,-4,29,-8L32,-11C38,-16,38,-26,32,-32C26,-38,16,-38,11,-32L-7,-14C-13,-8,-13,1,-7,7M7,-14C9,-16,12,-16,14,-14C24,-4,24,11,14,21V21L-4,39C-13,49,-29,49,-39,39C-49,29,-49,13,-39,4L-31,-4C-31,0,-31,4,-29,8L-32,11C-38,16,-38,26,-32,32C-26,38,-16,38,-11,32L7,14C13,8,13,-1,7,-7C5,-9,5,-12,7,-14Z"),location:C("M0,-2A13,13,0,0,1,-12,-15A13,13,0,0,1,0,-27A13,13,0,0,1,13,-15A13,13,0,0,1,0,-2M0,-50A35,35,0,0,0,-35,-15C-35,11,0,50,0,50C0,50,35,11,35,-15A35,35,0,0,0,0,-50Z"),logout:C("M25,26V10H-10V-10H25V-26L51,0L25,26M5,-50A10,10,0,0,1,15,-40V-20H5V-40H-40V40H5V20H15V40A10,10,0,0,1,5,50H-40A10,10,0,0,1,-50,40V-40A10,10,0,0,1,-40,-50H5Z"),mail:C("M40,-40H-40A10,10,0,0,0,-50,-30V30A10,10,0,0,0,-40,40H40A10,10,0,0,0,50,30V-30A10,10,0,0,0,40,-40M40,30H-40V-20L0,5L40,-20V30M40,-30L0,-5L-40,-30V-30H40V-30Z"),map:C("M15,35L-15,24V-35L15,-24M43,-45C42,-45,42,-45,42,-45L15,-34L-15,-45L-43,-35C-44,-35,-45,-34,-45,-33V43A3,3,0,0,0,-42,45C-42,45,-42,45,-42,45L-15,34L15,45L43,36C44,35,45,34,45,33V-42A3,3,0,0,0,43,-45Z"),"map-layer":C("M0,20L37,-9L45,-15L0,-50L-45,-15L-37,-9M0,33L-37,4L-45,10L0,45L45,10L37,4L0,33Z"),menu:C("M-45,-30H45V-20H-45V-30M-45,-5H45V5H-45V-5M-45,20H45V30H-45V20Z"),minus:C("M35,5H-35V-5H35V5Z"),"minus-o":C("M0,40C-22,40,-40,22,-40,0C-40,-22,-22,-40,0,-40C22,-40,40,-22,40,0C40,22,22,40,0,40M0,-50A50,50,0,0,0,-50,0A50,50,0,0,0,0,50A50,50,0,0,0,50,0A50,50,0,0,0,0,-50M-25,5H25V-5H-25"),"minus-small":C("M35,35V-35H-35V35H35M35,-45A10,10,0,0,1,45,-35V35A10,10,0,0,1,35,45H-35A10,10,0,0,1,-45,35V-35C-45,-41,-40,-45,-35,-45H35M25,-5V5H-25V-5H25Z"),ok:C("M45,-25L-15,35L-42,8L-35,0L-15,21L38,-32L45,-25Z"),pack:["path",{fill:0,d:"M45,23C45,24,44,26,42,27L3,49C2,50,1,50,0,50C-1,50,-2,50,-3,49L-42,27C-44,26,-45,24,-45,23V-22C-45,-24,-44,-26,-42,-27L-3,-49C-2,-50,-1,-50,0,-50C1,-50,2,-50,3,-49L42,-27C44,-26,45,-24,45,-22V23M0,-39L-35,-20V20L0,39L35,20V-20L0,-39M0,-29L24,-15L0,-1L-24,-15L0,-29M25,14L5,26V8L25,-3V14M-5,26L-25,14V-3L-5,8V26Z"}],plus:C("M35,5H5V35H-5V5H-35V-5H-5V-35H5V-5H35V5Z"),"plus-o":C("M0,40C-22,40,-40,22,-40,0C-40,-22,-22,-40,0,-40C22,-40,40,-22,40,0C40,22,22,40,0,40M0,-50A50,50,0,0,0,-50,0A50,50,0,0,0,0,50A50,50,0,0,0,50,0A50,50,0,0,0,0,-50M5,-25H-5V-5H-25V5H-5V25H5V5H25V-5H5V-25Z"),"plus-small":C("M35,35V-35H-35V35H35M35,-45A10,10,0,0,1,45,-35V35A10,10,0,0,1,35,45H-35A10,10,0,0,1,-45,35V-35C-45,-41,-40,-45,-35,-45H35M-5,-25H5V-5H25V5H5V25H-5V5H-25V-5H-5V-25Z"),print:["path",{fill:0,d:"M30,-45H-30V-25H30M35,0A5,5,0,0,1,30,-5A5,5,0,0,1,35,-10A5,5,0,0,1,40,-5A5,5,0,0,1,35,0M20,35H-20V10H20M35,-20H-35A15,15,0,0,0,-50,-5V25H-30V45H30V25H50V-5A15,15,0,0,0,35,-20Z"}],question:C("M-10,35H5V50H-10V35M0,-50C27,-49,38,-22,23,-2C18,3,12,7,8,11C5,15,5,20,5,25H-10C-10,17,-10,10,-7,5C-3,0,3,-3,8,-7C20,-18,17,-34,0,-35A15,15,0,0,0,-15,-20H-30A30,30,0,0,1,0,-50Z"),redo:C("M32,-7C23,-15,11,-20,-2,-20C-26,-20,-45,-5,-52,16L-40,20C-35,4,-20,-7,-2,-7C7,-7,16,-4,23,2L5,20H50V-25L32,-7Z"),refresh:C("M28,-28C21,-35,11,-40,0,-40A40,40,0,0,0,-40,0A40,40,0,0,0,0,40C19,40,34,27,39,10H28C24,22,13,30,0,30A30,30,0,0,1,-30,0A30,30,0,0,1,0,-30C8,-30,16,-27,21,-21L5,-5H40V-40L28,-28Z"),right:["path",{fill:0,d:"M-40,-5V5H20L-7,33L0,40L39,0L0,-40L-7,-32L20,-5H-40Z"}],"right-double":C("M10,-30L40,0,10,30M-40,-30L-10,0,-40,30"),search:C("M-12,-45A33,33,0,0,1,20,-12C20,-4,17,3,12,9L14,10H18L43,35L35,43L10,18V14L9,12C3,17,-4,20,-12,20A33,33,0,0,1,-45,-12A33,33,0,0,1,-12,-45M-12,-35C-25,-35,-35,-25,-35,-12C-35,0,-25,10,-12,10C0,10,10,0,10,-12C10,-25,0,-35,-12,-35Z"),select:C("M35,35H-35V-35H15V-45H-35C-41,-45,-45,-41,-45,-35V35A10,10,0,0,0,-35,45H35A10,10,0,0,0,45,35V-5H35M-20,-10L-27,-2L-5,20L45,-30L38,-37L-5,6L-20,-10Z"),unselect:C("M35,-45H-35C-41,-45,-45,-41,-45,-35V35A10,10,0,0,0,-35,45H35A10,10,0,0,0,45,35V-35C45,-41,41,-45,35,-45M35,-35V35H-35V-35H35Z"),share:C("M30,20C26,20,23,22,20,24L-15,3C-15,2,-15,1,-15,0C-15,-1,-15,-2,-15,-3L20,-24C23,-22,26,-20,30,-20A15,15,0,0,0,45,-35A15,15,0,0,0,30,-50A15,15,0,0,0,15,-35C15,-34,15,-33,15,-31L-20,-11C-22,-13,-26,-15,-30,-15A15,15,0,0,0,-45,0A15,15,0,0,0,-30,15C-26,15,-22,13,-20,11L16,32C16,33,15,34,15,35C15,43,22,50,30,50C38,50,45,43,45,35A15,15,0,0,0,30,20Z"),show:C("M0,-15A15,15,0,0,0,-15,0A15,15,0,0,0,0,15A15,15,0,0,0,15,0A15,15,0,0,0,0,-15M0,25A25,25,0,0,1,-25,0A25,25,0,0,1,0,-25A25,25,0,0,1,25,0A25,25,0,0,1,0,25M0,-37C-25,-37,-46,-22,-55,0C-46,22,-25,38,0,38C25,38,46,22,55,0C46,-22,25,-37,0,-37Z"),speaker:C("M40,35L33,28C41,21,45,11,45,0C45,-11,41,-21,33,-28L40,-35C49,-26,55,-14,55,0C55,14,49,26,40,35M26,21L19,14C23,11,25,6,25,0C25,-6,23,-11,19,-14L26,-21C32,-16,35,-8,35,0C35,8,32,16,26,21M-40,-45H0A10,10,0,0,1,10,-35V35A10,10,0,0,1,0,45H-40A10,10,0,0,1,-50,35V-35A10,10,0,0,1,-40,-45M-20,-35A10,10,0,0,0,-30,-25A10,10,0,0,0,-20,-15A10,10,0,0,0,-10,-25A10,10,0,0,0,-20,-35M-20,-5A20,20,0,0,0,-40,15A20,20,0,0,0,-20,35A20,20,0,0,0,0,15A20,20,0,0,0,-20,-5M-20,5A10,10,0,0,1,-10,15A10,10,0,0,1,-20,25A10,10,0,0,1,-30,15A10,10,0,0,1,-20,5Z"),star:C("M0,26L31,45L23,10L50,-14L14,-17L0,-50L-14,-17L-50,-14L-23,10L-31,45L0,26Z"),"tri-down":C("M-23,-17L0,6L23,-17L30,-10L0,20L-30,-10L-23,-17Z"),"tri-left":C("M17,23L-6,0L17,-23L10,-30L-20,0L10,30L17,23Z"),"tri-right":C("M-17,23L6,0L-17,-23L-10,-30L20,0L-10,30L-17,23Z"),"tri-up":C("M-23,17L0,-6L23,17L30,10L0,-20L-30,10L-23,17Z"),twitter:C("M52,-30C48,-28,44,-27,40,-27C44,-29,48,-33,49,-38C45,-36,41,-34,36,-33C32,-37,26,-40,20,-40C8,-40,-1,-30,-1,-19C-1,-17,-1,-15,-1,-14C-19,-15,-34,-23,-45,-36C-47,-33,-48,-29,-48,-25C-48,-18,-44,-11,-38,-7C-42,-7,-45,-8,-48,-10C-48,-10,-48,-10,-48,-10C-48,1,-41,9,-31,11C-33,12,-35,12,-37,12C-38,12,-39,12,-41,12C-38,20,-30,26,-21,26C-28,32,-37,36,-47,36C-49,36,-51,36,-52,35C-43,41,-31,45,-19,45C20,45,42,12,42,-16C42,-17,42,-18,42,-19C46,-22,49,-26,52,-30Z"),undo:C("M3,-20C-11,-20,-23,-15,-32,-7L-50,-25V20H-5L-23,2C-16,-4,-7,-7,3,-7C20,-7,35,4,41,20L52,16C45,-5,26,-20,3,-20Z"),up:C("M-30,30L0,-30,30,30"),"up-double":C("M-30,40L0,10,30,40M-30,-10L0,-40,30,-10"),user:C("M0,-40A20,20,0,0,1,20,-20A20,20,0,0,1,0,0A20,20,0,0,1,-20,-20A20,20,0,0,1,0,-40M0,10C22,10,40,19,40,30V40H-40V30C-40,19,-22,10,0,10Z"),wait:C("M0,-5A5,5,0,0,0,-5,0A5,5,0,0,0,0,5A5,5,0,0,0,5,0A5,5,0,0,0,0,-5M3,-50C25,-50,26,-32,14,-26C9,-24,7,-19,6,-14C8,-13,10,-11,12,-9C30,-19,50,-15,50,3C50,25,32,26,26,14C24,9,19,7,14,6C13,8,11,10,9,12C19,30,15,50,-2,50C-25,50,-25,32,-14,26C-9,24,-7,19,-6,14C-8,13,-10,11,-12,9C-30,19,-50,15,-50,-2C-50,-25,-32,-26,-26,-14C-24,-9,-19,-7,-14,-6C-13,-8,-11,-10,-9,-12C-19,-30,-15,-50,3,-50Z"),"zoom-in":C("M18,10L43,35L35,43L10,18V14L9,12C3,17,-4,20,-12,20A33,33,0,0,1,-45,-12A33,33,0,0,1,-12,-45A33,33,0,0,1,20,-12C20,-4,17,3,12,9L14,10H18M-12,10C0,10,10,0,10,-12C10,-25,0,-35,-12,-35C-25,-35,-35,-25,-35,-12C-35,0,-25,10,-12,10M0,-10H-10V0H-15V-10H-25V-15H-15V-25H-10V-15H0V-10Z"),"zoom-out":C("M18,10H14L12,9C17,3,20,-4,20,-12A33,33,0,0,0,-12,-45A33,33,0,0,0,-45,-12A33,33,0,0,0,-12,20C-4,20,3,17,9,12L10,14V18L35,43L43,35L18,10M-12,10C-25,10,-35,0,-35,-12C-35,-25,-25,-35,-12,-35C0,-35,10,-25,10,-12C10,0,0,10,-12,10M-25,-15H0V-10H-25V-15Z")};var A,t,l={add:"plus",back:"left",help:"question",save:"export"};for(A in l)t=l[A],V.exports.iconsBook[A]=V.exports.iconsBook[t];V.exports._=M});
 //# sourceMappingURL=tfw.icons.js.map
+require("polyfill.object.values",function(n,r,e){var t=function(){function r(){return t(e,arguments)}var e={en:{},fr:{}},t=n("$").intl;return r.all=e,r}();Object.values||(window.Object.values=function(n){var r=[];for(var e in n)r.push(n[e]);return r}),r.exports._=t});
+//# sourceMappingURL=polyfill.object.values.js.map
 require("tfw.data-binding",function(n,t,e){function r(n,t,r,o){var i="function"==typeof o;void 0===t[c]&&(t[c]={}),t[c][r]={value:o,event:new l};var u;u="function"==typeof n?function(e){e=n(e),(i||t[c][r].value!==e)&&(t[c][r].value=e,t[c][r].event.fire(e,t,r))}:function(n){(i||t[c][r].value!==n)&&(t[c][r].value=n,t[c][r].event.fire(n,t,r))};var a=o;return i||(a=function(){return t[c][r].value}),Object.defineProperty(t,r,{get:a,set:u,configurable:!1,enumerable:!0}),e.bind.bind(e,t,r)}function o(n){return n.toLowerCase()}function i(n){return n.trim()}var u=function(){function t(){return r(e,arguments)}var e={en:{}},r=n("$").intl;return t.all=e,t}();n("polyfill.string");var a=n("dom"),f=n("tfw.css").parseUnit,l=n("tfw.listeners"),c="_tfw.data-binding_",s={castFunction:function(n){return"function"!=typeof n?null:n},castArray:function(n){return Array.isArray(n)?n:null===n||void 0===n?[]:[n]},castBoolean:function(n){return"boolean"==typeof n?n:"string"==typeof n?"0"!=(n=n.trim().toLowerCase())&&"false"!=n&&"no"!=n&&"null"!=n&&"undefined"!=n:"number"==typeof n?0!==n:null},castColor:function(n){return""+n},castDate:function(n){return"number"==typeof n||"string"==typeof n?new Date(n):n instanceof Date?n:new Date},castEnum:function(n){var t=n.map(o);return function(e){if("number"==typeof e)return n[Math.floor(e)%n.length];if("string"!=typeof e)return n[0];var r=t.indexOf(e.trim().toLowerCase());return r<0&&(r=0),n[r]}},castInteger:function(n){return"number"==typeof n?Math.floor(n):"boolean"==typeof n?n?1:0:"string"==typeof n?parseInt(n):Number.NaN},castFloat:function(n){return"number"==typeof n?n:"boolean"==typeof n?n?1:0:"string"==typeof n?parseFloat(n):Number.NaN},castRegexp:function(n){if(n instanceof RegExp)return n;if("string"==typeof n&&0!=n.trim().length)try{return new RegExp(n)}catch(t){console.error("[castRegexp] /"+n+"/ ",t)}return null},castString:function(n){return"string"==typeof n?n:void 0===n||null===n?"":JSON.stringify(n)},castStringArray:function(n){return Array.isArray(n)?n:null===n||void 0===n?[]:"string"==typeof n?n.split(",").map(i):[JSON.stringify(n)]},castUnit:function(n){return n?void 0!==n.v?(n.v=parseFloat(n.v),isNaN(n.v)?{v:0,u:"px"}:("string"!=typeof n.u?n.u="px":n.u=n.u.trim().toLowerCase(),""===n.u&&(n.u="px"),{v:n.v,u:n.u})):"number"==typeof n?{v:n,u:"px"}:"string"!=typeof n?{v:0,u:"px"}:f(""+n):{v:0,u:"px"}},castValidator:function(n){if("function"==typeof n)return n;if("boolean"==typeof n)return function(){return n};if("string"==typeof n&&0!=n.trim().length)try{var t=new RegExp(n);return t.test.bind(t)}catch(t){console.error("[castValidator] /"+n+"/ ",t)}return function(){return null}}};e.fire=function(n,t,e){var r=n[t];void 0===e&&(e=r),n[c][t].value=e,n[c][t].event.fire(n[t],n,t)},e.set=function(n,t,e){void 0===n[c]&&(n[c]={}),void 0===n[c][t]&&(n[c][t]={}),n[c][t].value=e},e.get=function(n,t){if(void 0!==n[c]&&void 0!==n[c][t])return n[c][t].value},e.readOnly=function(n,t,e){"function"==typeof e?Object.defineProperty(n,t,{get:e,set:function(){},configurable:!1,enumerable:!0}):Object.defineProperty(n,t,{value:e,writtable:!1,configurable:!1,enumerable:!0})},e.prop=r.bind(null,null),e.propWidget=function(n,t,r,o){return void 0===o&&(o=t),void 0===n[c]&&(n[c]={}),n[c][t]={event:new l},e.bind(r,o,function(e){n[c][t].event.fire(e,n,t)}),Object.defineProperty(n,t,{get:function(){return r[o]},set:function(n){r[o]=n},configurable:!1,enumerable:!0}),e.bind.bind(e,n,t)},e.propToggleClass=function(n,t,e,o){"string"!=typeof o&&(o="");var i={};return"string"==typeof e?i[e]=e:Array.isArray(e)?e.forEach(function(n){i[n]=n}):i=e,r(null,n,t)(function(t){var e,r;for(e in i)r=i[e],e==t?a.addClass(n.element,o+r):a.removeClass(n.element,o+r)})},e.propAddClass=function(n,t,e){return void 0===e&&(e=t),r(s.castBoolean,n,t)(function(t){t?a.addClass(n.element,e):a.removeClass(n.element,e)})},e.propRemoveClass=function(n,t,e){return void 0===e&&(e=t),r(s.castBoolean,n,t)(function(t){t?a.removeClass(n.element,e):a.addClass(n.element,e)})},e.propArray=r.bind(null,s.castArray),e.propBoolean=r.bind(null,s.castBoolean),e.propColor=r.bind(null,s.castColor),e.propDate=r.bind(null,s.castDate),e.propEnum=function(n){return r.bind(null,s.castEnum(n))},e.propFunction=r.bind(null,s.castFunction),e.propInteger=r.bind(null,s.castInteger),e.propFloat=r.bind(null,s.castFloat),e.propRegexp=r.bind(null,s.castRegexp),e.propString=r.bind(null,s.castString),e.propStringArray=r.bind(null,s.castStringArray),e.propUnit=r.bind(null,s.castUnit),e.propValidator=r.bind(null,s.castValidator),e.bind=function(n,t,e,r,o){if(void 0===n[c]||void 0===n[c][t])throw console.error(JSON.stringify(t)+" is not a bindable property!",{srcObj:n,srcAtt:t,dstObj:e,dstAtt:r,options:o}),Error(JSON.stringify(t)+" is not a bindable property!");void 0===o&&(o={}),o.value&&(o.converter=function(){return o.value});var i="function"==typeof e?e:function(n,t,i){e[r]="function"==typeof o.converter?o.converter(n):n};return n[c][t].event.add(i),o},e.extend=function(n,t,r,o){var i,u,a=JSON.parse(JSON.stringify(n));for(i in t)"$"!=i.charAt(0)&&(u=t[i],void 0===a[i]?console.error("[tfw.data-binding.extend] Undefined argument: `"+i+"`!"):a[i]=u);if(void 0!==r){for(i in t)"$"==i.charAt(0)&&Object.defineProperty(r,i,{value:t[i],writable:!1,configurable:!1,enumerable:!1});for(i in a)"$"!=i.charAt(0)&&(r[i]=a[i]);if("function"==typeof o){for(i in r[c])e.bind(r,i,o);o()}}return a},e.converters=s,t.exports._=u});
 //# sourceMappingURL=tfw.data-binding.js.map
 require("tfw.css",function(e,r,t){var i=function(){function r(){return i(t,arguments)}var t={en:{}},i=e("$").intl;return r.all=t,r}();t.parseUnit=function(e){for(var r,t=0,i=0;i<e.length;i++)if(r=e.charAt(i),0===t){if("-"==r||"+"==r||r>="0"&&r<="9")t=1;else if("."==r)t=2;else if(r>" ")break}else if(1==t){if("."==r)t=2;else if(r<"0"||r>"9")break}else if(2==t&&(r<"0"||r>"9"))break;var n={v:parseFloat(e.substr(0,i)),u:e.substr(i).trim().toLowerCase()};return""===n.u&&(n.u="px"),n},r.exports._=i});
@@ -13524,7 +14632,7 @@ require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e
 //# sourceMappingURL=tfw.focusable.js.map
 require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
 //# sourceMappingURL=wdg.icon.js.map
-require("wdg.boilerplate",function(t,o,r){var i=function(){function o(){return i(r,arguments)}var r={en:{},fr:{}},i=t("$").intl;return o.all=r,o}();o.exports=t("draw")(function(t){var o=[-.7,0,0,.8,.7,0,-.6,-.8,0,-.8,-.6,0,0,-.3,.6,0,.2,-.3,.6,-.8,.2,-.8],r=o[0],i=o[1],l=o[2],d=o[3],e=o[4],T=o[5],f=o[6],n=o[7],s=o[8],a=o[9],u=o[10],R=o[11],c=o[12],B=o[13],C=o[14],L=o[15],p=o[16],v=o[17],x=o[18],F=o[19],h=o[20],w=o[21];this.axes().setColor("#F70").fillTri(r,i,l,d,e,T).setColor("#28F").fillTri(f,n,s,a,u,R).fillTri(s,a,u,R,c,B).fillTri(u,R,c,B,C,L).fillTri(c,B,C,L,p,v).fillTri(C,L,p,v,x,F).fillTri(p,v,x,F,h,w),this.setColor("#000").dot(r,i,"A("+r+","+i+")","RT").dot(l,d,"B("+l+","+d+")","B").dot(e,T,"C("+e+","+T+")","LT").dot(f,n,"D("+f+","+n+")","TR").dot(s,a,"E("+s+","+a+")","RB").dot(u,R,"F("+u+","+R+")","TL").dot(c,B,"G("+c+","+B+")","R").dot(C,L,"H("+C+","+L+")","RB").dot(p,v,"I("+p+","+v+")","L").dot(x,F,"J("+x+","+F+")","TL").dot(h,w,"K("+h+","+w+")","T")}),o.exports._=i});
+require("wdg.boilerplate",function(o,t,r){var l=function(){function t(){return l(r,arguments)}var r={en:{},fr:{}},l=o("$").intl;return t.all=r,t}();t.exports=o("draw")(function(o){var t=[-.7,0,0,.8,.7,0,-.6,-.8,0,-.8,-.6,0,0,-.3,.6,0,.2,-.3,.6,-.8,.2,-.8],r=t[0],l=t[1],i=t[2],e=t[3],d=t[4],s=t[5],T=t[6],f=t[7],n=t[8],C=t[9],F=t[10],a=t[11],u=t[12],R=t[13],c=t[14],A=t[15],B=t[16],L=t[17],p=t[18],v=t[19],x=t[20],h=t[21];this.axes().setColor("#F70").fillTri(r,l,i,e,d,s).setColor("#28F").fillTri(T,f,n,C,F,a).setColor("#3AF").fillTri(n,C,F,a,u,R).setColor("#28F").fillTri(F,a,u,R,c,A).setColor("#3AF").fillTri(u,R,c,A,B,L).setColor("#28F").fillTri(c,A,B,L,p,v).setColor("#3AF").fillTri(B,L,p,v,x,h),this.setColor("#000").dot(r,l,"A("+r+","+l+")","RT").dot(i,e,"B("+i+","+e+")","B").dot(d,s,"C("+d+","+s+")","LT").dot(T,f,"D("+T+","+f+")","TR").dot(n,C,"E("+n+","+C+")","RB").dot(F,a,"F("+F+","+a+")","TL").dot(u,R,"G("+u+","+R+")","R").dot(c,A,"H("+c+","+A+")","RB").dot(B,L,"I("+B+","+L+")","L").dot(p,v,"J("+p+","+v+")","TL").dot(x,h,"K("+x+","+h+")","T")}),t.exports._=l});
 //# sourceMappingURL=wdg.boilerplate.js.map
 require("draw",function(t,i,e){function r(t,i){var e,r;for(e in i)r=i[e],Object.defineProperty(t,e,{value:r,writable:!1,configurable:!1})}var n=function(){function i(){return r(e,arguments)}var e={en:{},fr:{}},r=t("$").intl;return i.all=e,i}(),o=t("dom");i.exports=function(t){var i=function(i){void 0===i&&(i={}),void 0===i.width&&(i.width=300),void 0===i.height&&(i.height=300),i.width=parseInt(i.width),i.height=parseInt(i.height),"number"!=typeof i.width&&(i.width=300),"number"!=typeof i.height&&(i.height=300);var e=o.tag("canvas",{width:i.width,height:i.height});o.css(e,{boxShadow:"none",background:"transparent"}),"string"==typeof i.float&&o.css(e,{float:i.float});var n=e.getContext("2d");n.clearRect(0,0,i.width,i.height),n.lineJoin="round",this.element=e,r(this,{_ctx:n,_w:i.width,_h:i.height,X:function(t){var e=i.width;return.5*e+t*(.5*e-20)},Y:function(t){var e=i.height;return.5*e-t*(.5*e-20)}}),this.setColor("#000"),n.font="11px sans-serif",t.call(this,i)};return i.prototype.setColor=function(t){return this._ctx.fillStyle=t,this._ctx.strokeStyle=t,this},i.prototype.setLine=function(t){return this._ctx.lineWidth=t,this},i.prototype.fillRect=function(t,i,e,r){t=this.X(t),i=this.Y(i),e=this.X(e),r=this.Y(r);var n=Math.min(t,e),o=Math.min(i,r),h=Math.max(t,e)-n,s=Math.max(i,r)-o;return this._ctx.fillRect(n,o,h,s),this},i.prototype.axes=function(){var t=this._ctx;t.save(),this.setColor("#ddd").fillRect(-1,-1,1,1).setColor("#aaa");var i=this._w,e=Math.floor(.5*i)-.5,r=this._h,n=Math.floor(.5*r)-.5;return t.beginPath(),t.moveTo(0,n),t.lineTo(i,n),t.moveTo(e,0),t.lineTo(e,r),t.stroke(),t.restore(),this},i.prototype.dot=function(t,i,e,r){var n=this.X(t),o=this.Y(i),h=this._ctx;return h.beginPath(),h.arc(n,o,3,0,2*Math.PI,!0),h.fill(),"string"==typeof e&&this.txt(e,t,i,r||"LB"),this},i.prototype.txt=function(t,i,e,r){"string"!=typeof r&&(r=""),r=r.toUpperCase(),i=this.X(i),e=this.Y(e);var n=this._ctx;return-1!==r.indexOf("L")?(n.textAlign="start",i+=4):-1!==r.indexOf("R")?(n.textAlign="end",i-=4):n.textAlign="center",-1!==r.indexOf("T")?(n.textBaseline="top",e+=4):-1!==r.indexOf("B")?(n.textBaseline="bottom",e-=4):n.textBaseline="middle",n.fillText(t,i,e),this},i.prototype.drawLine=function(t,i,e,r){t=this.X(t),i=this.Y(i),e=this.X(e),r=this.Y(r);var n=this._ctx;return n.beginPath(),n.moveTo(t,i),n.lineTo(e,r),n.stroke(),this},i.prototype.tri=function(t,i,e,r,n,o){t=this.X(t),i=this.Y(i),e=this.X(e),r=this.Y(r),n=this.X(n),o=this.Y(o);var h=this._ctx;return h.beginPath(),h.moveTo(t,i),h.lineTo(e,r),h.lineTo(n,o),h.closePath(),this},i.prototype.fillTri=function(t,i,e,r,n,o){var h=this._ctx;return this.tri(t,i,e,r,n,o),h.fill(),this},i.prototype.drawTri=function(t,i,e,r,n,o){var h=this._ctx;return this.tri(t,i,e,r,n,o),h.stroke(),this},i.prototype.txtLB=function(t,i,e){return this.txt(t,i,e,"LB")},i.prototype.txtL=function(t,i,e){return this.txt(t,i,e,"L")},i.prototype.txtR=function(t,i,e){return this.txt(t,i,e,"R")},i.prototype.txtT=function(t,i,e){return this.txt(t,i,e,"T")},i.prototype.txtB=function(t,i,e){return this.txt(t,i,e,"B")},i.prototype.txtLT=function(t,i,e){return this.txt(t,i,e,"LT")},i.prototype.txtLB=function(t,i,e){return this.txt(t,i,e,"LB")},i.prototype.txtRT=function(t,i,e){return this.txt(t,i,e,"RT")},i.prototype.txtRB=function(t,i,e){return this.txt(t,i,e,"RB")},i},i.exports._=n});
 //# sourceMappingURL=draw.js.map
