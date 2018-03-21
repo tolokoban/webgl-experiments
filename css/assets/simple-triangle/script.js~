@@ -1,0 +1,6 @@
+start([], function( assets, canvas ) {
+  // #(init)
+  var gl = canvas.getContext( "webgl" );
+  // #(init) 
+
+});
