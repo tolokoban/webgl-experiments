@@ -236,7 +236,80 @@ Et voilà <a href="css/assets/boulder-dash/g/index.html">le résultat</a>.
 Tous les éléments mobiles du jeu (héro, pierres, diamants, ...) se déplacent à la vitesse d'une cellule toutes les 200 millisecondes.
 On a donc un point de synchronisation toutes les 200 ms au moment duquel tous les éléments sont au centre de leur cellule.
 
+On définit donc la variable `env.cellTime` comme étant le temps qu'il faut (en millisecondes) pour traverser une cellule. On en déduit le code suivant pour la synchronisation.
+<ex src="mod/assets/boulder-dash/h/script.js" label="Repérer les points de synchronisation" section="synchro"/>
+Et voici la fonction `processHero` qui réalise le déplacement en fonction des touches actuellement enfoncées.
+<ex src="mod/assets/boulder-dash/h/script.js" label="Gestion des mouvements du héro" section="ProcessHero"/>
+
+Le héro est animé (un peu comme les diamants) et il doit se déplacer entre les moments de synchronisation sans que l'on doive mettre à jour ses attributs. Pour cela, il aura 5 attributs :
+* `attX` : Colonne du tableau.
+* `attY` : Ligne du tableau.
+* `attVx` : Direction de déplacement horizontal. Peut prendre uniquement les valeurs -1, 0 ou +1.
+* `attVy` : Direction de déplacement vertical. Peut prendre uniquement les valeurs -1, 0 ou +1.
+* `attIndex` : Les images pour l'animation de héro sont stoqueés sur 4 lignes. `attIndex` indique la ligne qui est actuellement utilisée pour l'animation.
+
+Voici le vertex shader :
+<x-code>
+// On inclut la fonction getCoords().
+// Taille réelle du canvas, en pixels.
+uniform float uniWidth;
+uniform float uniHeight;
+// Coordonnées du centre.
+uniform float uniX;
+uniform float uniY;
+// Profondeur.
+uniform float uniZ;
+// Facteur de zoom.
+uniform float uniW;
+// Temps.
+uniform float uniTime;
+// Temps em ms pour parcourir une cellule.
+uniform float uniCellTime;
+
+attribute float attX;
+attribute float attY;
+attribute float attVx;
+attribute float attVy;
+
+vec4 getCoords() {
+  float t = mod( uniTime, uniCellTime ) / uniCellTime;
+  float xx = (attX + t * attVx - uniX) * 128.0 / uniWidth;
+  float yy = (attY + t * attVy - uniY) * 128.0 / uniHeight;
+  
+  return vec4( xx, -yy, uniZ, uniW );
+}
+
+
+attribute float attIndex;
+
+varying vec2 varUV;
+
+void main() {
+  float t = 4.0 * mod( uniTime, uniCellTime ) / uniCellTime;
+  float u = 0.25 * floor( t );
+  float v = attIndex * 0.25;
+  varUV = vec2( u, v );
+  
+  gl_PointSize = 64.0 / uniW;
+  gl_Position = getCoords();
+}
+</x-code>
+
+Pour les mouvements, il faut pouvoir utiliser le clavier, mais aussi le touch sur smartphone, et pourquoi pas les gamepads. Nous allons donc abstraire dans le module `game-input.js` l'interaction avec l'utilisateur et présenter uniquement l'attribut `action`.
+<ex src="mod/assets/boulder-dash/game-inputs.js" label="Interractions avec l'utilisateur"/>
+
+Pour finir, voici comment on gère le scrolling. On veut respecter deux contraintes (la première ayant priorité sur la seconde) :
+* On ne doit jamais voir au delà de l'enceinte extérieure du tableau.
+* Le héro doit être au centre de l'écran.
+
+<ex src="mod/assets/boulder-dash/h/script.js" label="Gestion du scrolling" section="camera"/>
+
 
 Et voilà <a href="css/assets/boulder-dash/h/index.html">le résultat</a>.
+
+## Creuser des tunnels
+
+
+Et voilà <a href="css/assets/boulder-dash/i/index.html">le résultat</a>.
 
 </page>

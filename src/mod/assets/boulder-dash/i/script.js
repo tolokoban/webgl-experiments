@@ -68,8 +68,10 @@ WebGL.fetchAssets({
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
     }
     else if( time >= env.nextSynchro ) {
-      processHero( heroPainter, env );
       env.nextSynchro += env.cellTime;
+
+      processHero( heroPainter, env );
+      groundPainter.hitCell( heroPainter.Y, heroPainter.X );
     }
     //#(synchro)
 
