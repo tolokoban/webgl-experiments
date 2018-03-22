@@ -49,7 +49,8 @@ window.GroundPainter = function() {
       return;
     }
     // On met à jour le tableau.
-    env.cave.set( row, col, "_" );
+    env.cave.set( row, col, " " );
+    this._mapCells[idx] = -1;
     // Pour  retirer un  élément sans  devoir en  déplacer toute  une série,  il suffit  de diminuer
     // `this._count` et de mettre l'élément qui se trouve à la fin à la place de celui que l'on veut
     // supprimer.
@@ -63,9 +64,9 @@ window.GroundPainter = function() {
     var colLast = Math.floor( this._vertexArray[ptrLast + 0] );
     var rowLast = Math.floor( this._vertexArray[ptrLast + 1] );
     var idxLast = rowLast * cols + colLast;
-    console.info("[ground-painter] rowLast, colLast, idxLast=", rowLast, colLast, idxLast);
-    this._vertexArray[pointer + 0] = colLast;
-    this._vertexArray[pointer + 1] = rowLast;    
+    console.info("[ground-painter] rowLast, colLast, idxLast, pointer=", rowLast, colLast, idxLast, pointer);
+    this._vertexArray[pointer + 0] = colLast + .5;
+    this._vertexArray[pointer + 1] = rowLast + .5;    
     this._mapCells[idxLast] = pointer;
     this.update();
   };

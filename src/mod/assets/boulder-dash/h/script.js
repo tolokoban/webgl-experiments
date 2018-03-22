@@ -132,7 +132,7 @@ function processHero( heroPainter, env ) {
   case GameInputs.LEFT:
     heroPainter.Vx = -1;
     heroPainter.Vy = 0;
-    heroPainter.index = 2;
+    heroPainter.index = 1;
     break;
   }
 

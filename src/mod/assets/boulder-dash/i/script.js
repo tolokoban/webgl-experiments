@@ -71,7 +71,7 @@ WebGL.fetchAssets({
       env.nextSynchro += env.cellTime;
 
       processHero( heroPainter, env );
-      groundPainter.hitCell( heroPainter.Y, heroPainter.X );
+      groundPainter.hitCell( heroPainter.Y + heroPainter.Vy, heroPainter.X + heroPainter.Vx );
     }
     //#(synchro)
 
@@ -134,7 +134,7 @@ function processHero( heroPainter, env ) {
   case GameInputs.LEFT:
     heroPainter.Vx = -1;
     heroPainter.Vy = 0;
-    heroPainter.index = 2;
+    heroPainter.index = 1;
     break;
   }
 
