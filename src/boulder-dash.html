@@ -172,7 +172,7 @@ Dans notre cas, nous n'affichons par les fragments dont la couleur à une opacit
 Et voilà <a href="css/assets/boulder-dash/d/index.html">le résultat</a>.
 
 
-## Les pierres
+# Les pierres
 
 <img src="css/assets/boulder-dash/img/boulders.png" class="right"/>
 Pour casser la monotonie, nous avons dessiné 16 images pour la pierre et nous afficherons aléatoirement une de ces 16 à chaque emplacement. Il nous faut donc un attribut de plus : l'index de l'image à afficher.
@@ -188,7 +188,7 @@ C'est une astuce pour minimiser les calculs à faire dans le vertex shader.
 Et voilà <a href="css/assets/boulder-dash/e/index.html">le résultat</a>.
 
 
-## Les diamants
+# Les diamants
 
 <img src="css/assets/boulder-dash/img/diams.png" class="right"/>
 Le principe est proche de celui utilisé pour les pierres, mais nous allons ajouter une animation des diamants pour leur donner l'impression de tourner sur eux-même.
@@ -202,7 +202,7 @@ L'utilisation du modulo permet d'avoir des sauts de 0.25 entre deux valeurs cons
 Et voilà <a href="css/assets/boulder-dash/f/index.html">le résultat</a>.
 
 
-## L'arrière-plan
+# L'arrière-plan
 
 Pour remplir un peu, nous allons ajouter un arrière-plan de terre et vieilles racines.
 Ce sera une texture de 1024x1024 pixels qui va se répéter sur tout l'écran visible.
@@ -230,7 +230,7 @@ backgroundPainter.draw( env );
 Et voilà <a href="css/assets/boulder-dash/g/index.html">le résultat</a>.
 
 
-## Le héro
+# Le héro
 
 <img src="css/assets/boulder-dash/img/mole.png" class="right"/>
 Tous les éléments mobiles du jeu (héro, pierres, diamants, ...) se déplacent à la vitesse d'une cellule toutes les 200 millisecondes.
@@ -304,12 +304,52 @@ Pour finir, voici comment on gère le scrolling. On veut respecter deux contrain
 
 <ex src="mod/assets/boulder-dash/h/script.js" label="Gestion du scrolling" section="camera"/>
 
-
 Et voilà <a href="css/assets/boulder-dash/h/index.html">le résultat</a>.
 
-## Creuser des tunnels
 
+# Creuser des tunnels
+
+Ce que l'on veut maintenant c'est que le héro supprime les feuilles sur son passage.
+Pour cela, lors de chaque synchronisation, on va appeler la méthode `hitCell(row, col)` du module `ground-painter.js` avec la prohaine position du héro.
+
+<ex src="mod/assets/boulder-dash/i/ground-painter.js" label="hitCell(row, col)" section="hitCell"/>
+<ex src="mod/assets/boulder-dash/i/ground-painter.js" label="Initialisation de _mapCells"
+    section="getVertexArray"/>
 
 Et voilà <a href="css/assets/boulder-dash/i/index.html">le résultat</a>.
+
+
+# Faire tomber les pierres et les diamants
+
+Les pierre et les diamants sont mobiles, alors il faut les traiter comme le héro, c'est-à-dire leur ajouter les attribus `attVx` et `attVy`.
+
+Voici comment on gère la chute des pierres et diamants :
+<ex src="mod/assets/boulder-dash/j/boulder-painter.js" label="Acter le déplacement" section="applyMoves"/>
+<ex src="mod/assets/boulder-dash/j/boulder-painter.js" label="Calculer les chutes" section="computeNextMoves"/>
+
+Et voilà <a href="css/assets/boulder-dash/j/index.html">le résultat</a>.
+
+
+# Boulder-Dash version 2
+
+Avec la technique utilisée jusqu'à présent de séparation claire de chaque type d'objet, on se retrouve avec du code redondant. Par exemple, les pierres et les diamants tombent de la même façon. De plus, on aimerait ajouter aussi des monstres, des explosions, des blobs, des murs magiques, la sortie, ...
+
+Nous allons donc changer de façon de faire et créer un programe WebGL (avec son vertex shader et son fragment shader) capable de dessiner tous les éléments du décor, à part le fond et les murs.
+
+Ainsi, à chaque cellule du tableau correspond un vertex avec les attributs suivants :
+* `attType` : Contenu de la cellule.
+** __0__ : Vide.
+** __1__ : Mur.
+** __2__ : Héro.
+** __3__ : Terre/feuilles.
+** __4__ : Rocher.
+** __5__ : Diamant.
+** __6__ : Sortie.
+* `attX' : Colonne dans le tableau.
+* `attY' : Ligne dans le tableau.
+* `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attIndex` : Index de l'image à afficher.
+
 
 </page>

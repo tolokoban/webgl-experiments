@@ -12,6 +12,8 @@ window.GroundPainter = function() {
     this._mapCells = [];
     var vertexArray = new Float32Array( getVertexArray( env.cave, this._mapCells ) );
     this._vertexArray = vertexArray;
+    console.info("[ground-painter] vertexArray=", vertexArray);
+    console.info("[ground-painter] this._mapCells=", this._mapCells);
     
     this._count = vertexArray.length / 2;
     this._buffVert = WebGL.fillArrayBuffer( env.gl, vertexArray );
@@ -59,11 +61,11 @@ window.GroundPainter = function() {
     // le dernier de la liste, il n'y a rien de plus à faire.
     if( pointer === ptrLast ) return;
     // Il faut garder à jour la variable `this._mapCells`.
-    var colLast = Math.floor( this._vertexArray[ptrLast + 0] );
-    var rowLast = Math.floor( this._vertexArray[ptrLast + 1] );
+    var colLast = this._vertexArray[ptrLast + 0];
+    var rowLast = this._vertexArray[ptrLast + 1];
     var idxLast = rowLast * cols + colLast;
-    this._vertexArray[pointer + 0] = colLast + .5;
-    this._vertexArray[pointer + 1] = rowLast + .5;    
+    this._vertexArray[pointer + 0] = colLast;
+    this._vertexArray[pointer + 1] = rowLast;    
     this._mapCells[idxLast] = pointer;
     this.update();
   };
@@ -128,7 +130,7 @@ window.GroundPainter = function() {
       for( col = 0; col < cols; col++ ) {
         if( cave.get( row, col ) === '.' ) {
           mapCells.push( vertexArray.length );
-          vertexArray.push( col + .5, row + .5 );
+          vertexArray.push( col, row );
         } else {
           // Pas de feuilles dans cette cellule.
           mapCells.push( -1 );
