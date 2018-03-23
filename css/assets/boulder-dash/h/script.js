@@ -62,6 +62,7 @@ WebGL.fetchAssets({
 
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
+    //#(synchro)
     // A la synchro, on fait les calculs de mouvements.
     if( env.nextSynchro < 0 ) {
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
@@ -70,7 +71,9 @@ WebGL.fetchAssets({
       processHero( heroPainter, env );
       env.nextSynchro += env.cellTime;
     }
+    //#(synchro)
 
+    //#(camera)
     // Positionner la caméra sur le héro.
     // Sauf si le cadrage arrive hors tableau.
     var t = (time % env.cellTime) / env.cellTime;
@@ -88,6 +91,7 @@ WebGL.fetchAssets({
       ),
       env.cave.rows - h * env.w * .5 / 64
     );
+    //#(camera)
     
     // On affiche tout.
     env.z = 0.5;
@@ -103,7 +107,7 @@ WebGL.fetchAssets({
   window.requestAnimationFrame( anim );
 });
 
-
+//#(ProcessHero)
 function processHero( heroPainter, env ) {
   heroPainter.X += heroPainter.Vx;
   heroPainter.Y += heroPainter.Vy;
@@ -128,7 +132,7 @@ function processHero( heroPainter, env ) {
   case GameInputs.LEFT:
     heroPainter.Vx = -1;
     heroPainter.Vy = 0;
-    heroPainter.index = 2;
+    heroPainter.index = 1;
     break;
   }
 
@@ -140,3 +144,4 @@ function processHero( heroPainter, env ) {
 
   heroPainter.update();
 }
+//#(ProcessHero)
