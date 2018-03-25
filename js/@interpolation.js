@@ -114,7 +114,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Le temps set à la rotation lente du rectangle."]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -133,12 +133,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Type de calcul a effectué pour le relief."]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -157,7 +157,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -176,7 +176,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -200,7 +200,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées de la texture."]}),
-                        "\n\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -219,12 +219,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Profondeur de champ comprise entre 0.0 et 1.0."]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -253,7 +253,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -272,7 +272,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -291,12 +291,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Rotation lente du rectangle."]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -330,7 +330,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -359,7 +359,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -406,7 +406,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -453,12 +453,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Diviseur, calculé selon z."]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -502,7 +502,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  \n  ",
+                        "\r\n  \r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -537,12 +537,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Partie de droite."]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -561,7 +561,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -570,7 +570,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -579,7 +579,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -596,17 +596,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["w"]}),
-                        " \n    ",
+                        " \r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -621,12 +621,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Partie de gauche."]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -645,7 +645,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -662,7 +662,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -679,7 +679,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -688,22 +688,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["1.0"]}),
-                        " \n    ",
+                        " \r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -794,7 +794,11 @@ addListener(
 
     }
 );
+<<<<<<< HEAD
 require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.80"',major:"0",minor:"0",revision:"80",date:"2018-03-25T18:06:38.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+=======
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.79"',major:"0",minor:"0",revision:"79",date:"2018-03-11T15:05:33.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+>>>>>>> d1826d2151dc6cc80f38c89b5aef59ec41ff9082
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -850,7 +854,7 @@ require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e
 //# sourceMappingURL=tfw.focusable.js.map
 require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
 //# sourceMappingURL=wdg.icon.js.map
-require("wdg.interpolation",function(t,e,n){function r(t){var e=this.gl;this.prg=new u(this.gl,{vert:o.vert,frag:o.frag});var n=document.createElement("canvas");n.setAttribute("width",256),n.setAttribute("height",256);var r=n.getContext("2d");r.fillStyle="#27f",r.fillRect(0,0,256,256),r.fillStyle="#f80";var i,a;for(a=0;a<256;a+=32)for(i=0;i<256;i+=32)r.beginPath(),r.moveTo(i+16,a),r.lineTo(i+32,a+16),r.lineTo(i+16,a+32),r.lineTo(i,a+16),r.closePath(),r.fill();var T=e.createTexture();e.bindTexture(e.TEXTURE_2D,T),this.texture=T,e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_S,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_T,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MIN_FILTER,e.LINEAR),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MAG_FILTER,e.LINEAR),e.texImage2D(e.TEXTURE_2D,0,e.RGBA,e.RGBA,e.UNSIGNED_BYTE,n);var l=new Float32Array([-1,-1,0,0,-1,1,0,1,0,-1,1,0,0,1,1,1,0,-1,0,0,1,-1,1,0,0,1,0,1,1,1,1,1]);this.prg.use();var s=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,s),e.bufferData(e.ARRAY_BUFFER,l,e.STATIC_DRAW);var f=l.BYTES_PER_ELEMENT,E=4*f,c=this.prg.attribs.attPosition.location;e.enableVertexAttribArray(c),e.vertexAttribPointer(c,2,e.FLOAT,!1,E,0*f);var g=this.prg.attribs.attUV.location;e.enableVertexAttribArray(g),e.vertexAttribPointer(g,2,e.FLOAT,!1,E,2*f),this.vertexCount=4,this.uniTexture=e.getUniformLocation(this.prg.program,"uniTexture"),this.uniTime=e.getUniformLocation(this.prg.program,"uniTime"),this.uniType=e.getUniformLocation(this.prg.program,"uniType"),t()}function i(t){var e=this.prg,n=this.gl;n.clearColor(1,1,1,1),n.clear(n.COLOR_BUFFER_BIT),e.use(),n.activeTexture(n.TEXTURE0),n.bindTexture(n.TEXTURE_2D,this.texture),n.uniform1i(this.uniTexture,0),n.uniform1f(this.uniTime,t),n.uniform1f(this.uniType,0),n.drawArrays(n.TRIANGLE_STRIP,0,this.vertexCount),n.uniform1f(this.uniType,1),n.drawArrays(n.TRIANGLE_STRIP,4,this.vertexCount)}var a=function(){function e(){return r(n,arguments)}var n={en:{},fr:{}},r=t("$").intl;return e.all=n,e}(),o={vert:"// Le temps set à la rotation lente du rectangle.\nuniform float uniTime;\n// Type de calcul a effectué pour le relief.\nuniform float uniType;\n\nattribute vec2 attPosition;\nattribute vec2 attUV;  // Coordonnées de la texture.\n\nvarying vec2 varUV;\n// Profondeur de champ comprise entre 0.0 et 1.0.\nconst float DOF = 0.9;\n\nvoid main() {\n  varUV = attUV;\n  // Rotation lente du rectangle.\n  float angle = uniTime * 0.0002;\n  float x = attPosition.x;\n  float y = attPosition.y * cos(angle);\n  float z = attPosition.y * sin(angle);\n  // Diviseur, calculé selon z.\n  float w = z * DOF + 1.0;\n  \n  if ( uniType > 0.0 ) {\n    // Partie de droite.\n    gl_Position = vec4( \n      x, \n      y, \n      z*w, \n      w \n    );\n  } else {\n    // Partie de gauche.\n    gl_Position = vec4( \n      x/w, \n      y/w, \n      z, \n      1.0 \n    );\n  }\n}\n",frag:"precision mediump float;\n\nuniform sampler2D uniTexture;\n\nvarying vec2 varUV;\n\nvoid main() {\n  gl_FragColor = texture2D( uniTexture, varUV );\n}\n"},u=t("webgl.program"),T=t("canvas");t("dom");e.exports=T({init:r,draw:i,context:{alpha:!1},numbers:{z:1}}),e.exports._=a});
+require("wdg.interpolation",function(r,t,e){function n(r){var t=this.gl;this.prg=new u(this.gl,{vert:o.vert,frag:o.frag});var e=document.createElement("canvas");e.setAttribute("width",256),e.setAttribute("height",256);var n=e.getContext("2d");n.fillStyle="#27f",n.fillRect(0,0,256,256),n.fillStyle="#f80";var i,a;for(a=0;a<256;a+=32)for(i=0;i<256;i+=32)n.beginPath(),n.moveTo(i+16,a),n.lineTo(i+32,a+16),n.lineTo(i+16,a+32),n.lineTo(i,a+16),n.closePath(),n.fill();var T=t.createTexture();t.bindTexture(t.TEXTURE_2D,T),this.texture=T,t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.LINEAR),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.LINEAR),t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,e);var l=new Float32Array([-1,-1,0,0,-1,1,0,1,0,-1,1,0,0,1,1,1,0,-1,0,0,1,-1,1,0,0,1,0,1,1,1,1,1]);this.prg.use();var s=t.createBuffer();t.bindBuffer(t.ARRAY_BUFFER,s),t.bufferData(t.ARRAY_BUFFER,l,t.STATIC_DRAW);var f=l.BYTES_PER_ELEMENT,E=4*f,c=this.prg.attribs.attPosition.location;t.enableVertexAttribArray(c),t.vertexAttribPointer(c,2,t.FLOAT,!1,E,0*f);var g=this.prg.attribs.attUV.location;t.enableVertexAttribArray(g),t.vertexAttribPointer(g,2,t.FLOAT,!1,E,2*f),this.vertexCount=4,this.uniTexture=t.getUniformLocation(this.prg.program,"uniTexture"),this.uniTime=t.getUniformLocation(this.prg.program,"uniTime"),this.uniType=t.getUniformLocation(this.prg.program,"uniType"),r()}function i(r){var t=this.prg,e=this.gl;e.clearColor(1,1,1,1),e.clear(e.COLOR_BUFFER_BIT),t.use(),e.activeTexture(e.TEXTURE0),e.bindTexture(e.TEXTURE_2D,this.texture),e.uniform1i(this.uniTexture,0),e.uniform1f(this.uniTime,r),e.uniform1f(this.uniType,0),e.drawArrays(e.TRIANGLE_STRIP,0,this.vertexCount),e.uniform1f(this.uniType,1),e.drawArrays(e.TRIANGLE_STRIP,4,this.vertexCount)}var a=function(){function t(){return n(e,arguments)}var e={en:{},fr:{}},n=r("$").intl;return t.all=e,t}(),o={vert:"// Le temps set à la rotation lente du rectangle.\r\nuniform float uniTime;\r\n// Type de calcul a effectué pour le relief.\r\nuniform float uniType;\r\n\r\nattribute vec2 attPosition;\r\nattribute vec2 attUV;  // Coordonnées de la texture.\r\n\r\nvarying vec2 varUV;\r\n// Profondeur de champ comprise entre 0.0 et 1.0.\r\nconst float DOF = 0.9;\r\n\r\nvoid main() {\r\n  varUV = attUV;\r\n  // Rotation lente du rectangle.\r\n  float angle = uniTime * 0.0002;\r\n  float x = attPosition.x;\r\n  float y = attPosition.y * cos(angle);\r\n  float z = attPosition.y * sin(angle);\r\n  // Diviseur, calculé selon z.\r\n  float w = z * DOF + 1.0;\r\n  \r\n  if ( uniType > 0.0 ) {\r\n    // Partie de droite.\r\n    gl_Position = vec4( \r\n      x, \r\n      y, \r\n      z*w, \r\n      w \r\n    );\r\n  } else {\r\n    // Partie de gauche.\r\n    gl_Position = vec4( \r\n      x/w, \r\n      y/w, \r\n      z, \r\n      1.0 \r\n    );\r\n  }\r\n}\r\n",frag:"precision mediump float;\r\n\r\nuniform sampler2D uniTexture;\r\n\r\nvarying vec2 varUV;\r\n\r\nvoid main() {\r\n  gl_FragColor = texture2D( uniTexture, varUV );\r\n}\r\n"},u=r("webgl.program"),T=r("canvas");r("dom");t.exports=T({init:n,draw:i,context:{alpha:!1},numbers:{z:1}}),t.exports._=a});
 //# sourceMappingURL=wdg.interpolation.js.map
 require("canvas",function(t,n,i){function e(t,n,i){var e=t.getContext("webgl",n);this.gl=e,Object.freeze(this.gl);var r=new Promise(i.init.bind(this)),o=i.draw.bind(this),s=function(t){window.requestAnimationFrame(s),a(e),o(t)};r.then(s)}var r=function(){function n(){return e(i,arguments)}var i={en:{},fr:{}},e=t("$").intl;return n.all=i,n}(),o=t("dom"),s=t("tfw.data-binding"),a=t("webgl.resize");n.exports=function(t){void 0===t.numbers&&(t.numbers={}),void 0===t.strings&&(t.strings={}),void 0===t.booleans&&(t.booleans={}),void 0===t.context&&(t.context={}),"function"!=typeof t.init&&(t.init=function(t){t()}),"function"!=typeof t.draw&&(t.draw=function(){});var n,i={alpha:!1,depth:!1,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0};for(n in t.context)i[n]=t.context[n];var r=function(n){var r=o.elem(this,"canvas");s.propInteger(this,"width")(function(t){r.setAttribute("width",t),r.style.width=t+"px"}),s.propInteger(this,"height")(function(t){r.setAttribute("height",t),r.style.height=t+"px"});var a,h,f={width:640,height:480};for(a in t.strings)h=t.strings[a],s.propString(this,a),f[a]=h;for(a in t.numbers)h=t.numbers[a],s.propFloat(this,a),f[a]=h;for(a in t.booleans)h=t.booleans[a],s.propBoolean(this,a),f[a]=h;n=s.extend(f,n,this),window.setTimeout(e.bind(this,r,i,t),20)};return r},n.exports._=r});
 //# sourceMappingURL=canvas.js.map

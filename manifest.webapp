@@ -1,6 +1,10 @@
 {
   "name": "webgl-experiments",
+<<<<<<< HEAD
   "version": "0.0.80",
+=======
+  "version": "0.0.79",
+>>>>>>> d1826d2151dc6cc80f38c89b5aef59ec41ff9082
   "description": "WebGL study by tutorials",
   "launch_path": "/index.html",
   "fullscreen": "false",
