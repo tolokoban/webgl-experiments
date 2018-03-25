@@ -6,9 +6,10 @@ attribute float attIndex;
 varying vec2 varUV;
 
 void main() {
-  float t = 4.0 * mod( uniTime, uniCellTime ) / uniCellTime;
-  float u = 0.25 * floor( t );
-  float v = attIndex * 0.25;
+  float ct = 500.0;
+  float t = 8.0 * mod( uniTime, ct ) / ct;
+  float u = 0.125 * floor( t );
+  float v = attIndex * 0.5;
   varUV = vec2( u, v );
   
   gl_PointSize = 64.0 / uniW;
