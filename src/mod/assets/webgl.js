@@ -374,6 +374,18 @@ window.WebGL = function() {
               next( url );
             };
             img.src = url;
+          } else if( endsWith( url, "ogg", "wav", "mp3" ) ) {
+            var audio = document.createElement("audio");
+            result[key] = audio;
+            /*
+            audio.addEventListener( "canplay", next.bind(null, url) );
+            audio.addEventListener( "error", function( ex ) {
+              console.error("Unable to load sound \"" + key + "\":", url);
+              console.error( ex );
+              next( url );
+            });*/
+            audio.src = url;
+            next( url );
           } else {
             fetch( url ).then(function(response) {
               if( !response.ok ) throw "";

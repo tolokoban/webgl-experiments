@@ -32,6 +32,17 @@ window.Level = function() {
     return NB_ATTRIBS * (row * this.cols + col);
   };
 
+  Level.prototype.move = function( row1, col1, row2, col2 ) {
+    var idx1 = this.index( row1, col1 );
+    var idx2 = this.index( row2, col2 );
+    var d = this.data;
+    d[idx2 + 0] = d[idx1 + 0];  // Type
+    d[idx2 + 3] = d[idx1 + 3];  // VX
+    d[idx2 + 4] = d[idx1 + 4];  // VY
+    d[idx2 + 5] = d[idx1 + 5];  // Index
+    d[idx1 + 0] = Level.VOID;
+  };
+
   Level.prototype.getType = function( row, col ) {
     return this.data[this.index(row, col) + 0];
   };
@@ -100,10 +111,11 @@ window.Level = function() {
     var data = [];
     var diamCount = 0;
     var heroCol, heroRow;
+    var exitCol, exitRow;
     rows.forEach(function (row, y) {
       for( var x = 0; x < row.length; x++ ) {
         var char = row.charAt( x );
-        var type = 0;
+        var type = VOID;
         var index = 0;
         switch( char ) {
         case ' ':
@@ -129,7 +141,9 @@ window.Level = function() {
           heroRow = y;
           break;
         case 'X':
-          type = EXIT;
+          type = WALL;
+          exitCol = x;
+          exitRow = y;
           break;
         }
         data.push( type, x, y, 0, 0, index );
@@ -140,31 +154,35 @@ window.Level = function() {
     this.heroY = heroRow;
     Object.defineProperty( this, "heroVX", {
       get: function() {
-        return this.data[NB_ATTRIBS * (this.cols * this.heroY + this.heroX) + 3];
+        return this.data[this.index(this.heroY, this.heroX) + 3];
       },
       set: function( v ) {
-        this.data[NB_ATTRIBS * (this.cols * this.heroY + this.heroX) + 3] = v;
+        this.data[this.index(this.heroY, this.heroX) + 3] = v;
       }
     });
     Object.defineProperty( this, "heroVY", {
       get: function() {
-        return this.data[NB_ATTRIBS * (this.cols * this.heroY + this.heroX) + 4];
+        return this.data[this.index(this.heroY, this.heroX) + 4];
       },
       set: function( v ) {
-        this.data[NB_ATTRIBS * (this.cols * this.heroY + this.heroX) + 4] = v;
+        this.data[this.index(this.heroY, this.heroX) + 4] = v;
       }
     });
     Object.defineProperty( this, "heroIndex", {
       get: function() {
-        return this.data[NB_ATTRIBS * (this.cols * this.heroY + this.heroX) + 5];
+        return this.data[this.index(this.heroY, this.heroX) + 5];
       },
       set: function( v ) {
-        this.data[NB_ATTRIBS * (this.cols * this.heroY + this.heroX) + 5] = v;
+        this.data[this.index(this.heroY, this.heroX) + 5] = v;
       }
     });
     readonly( this, "data", new Float32Array( data ) );
     readonly( this, "rows", rows.length );
     readonly( this, "cols", rows[0].length );
+    readonly( this, "exitX", exitCol );
+    readonly( this, "exitY", exitRow );
+
+    console.info("[level] cols, rows, data=", this.cols, this.rows, data);
     return data;
   }
 
