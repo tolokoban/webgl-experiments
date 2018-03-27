@@ -17,7 +17,10 @@
 window.Levels = function() {
   return [
     {
+      // Nombre de diamants nécessaire pour ouvrir la sortie.
       need: 12,
+      // Variation de la teinte pour chaque élément.
+      tint: { wall: 0, rock: 0, diam: 0, dust: 0, exit: 0 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w...... ..d.r .....r.r....... ....r....w",

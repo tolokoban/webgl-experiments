@@ -6,15 +6,15 @@ Dans cette version 2, nous allons transformer un tableau en VertexArray et nous 
 
 Ainsi, à chaque cellule du tableau correspondra un vertex avec les attributs suivants :
 * `attType` : Contenu de la cellule.
-** __0__ : Vide.
-** __1__ : Mur.
-** __2__ : Héro.
-** __3__ : Terre/feuilles.
-** __4__ : Rocher.
-** __5__ : Diamant.
-** __6__ : Sortie.
-* `attX' : Colonne dans le tableau.
-* `attY' : Ligne dans le tableau.
+    * __0__ : Vide.
+    * __1__ : Mur.
+    * __2__ : Héro.
+    * __3__ : Terre/feuilles.
+    * __4__ : Rocher.
+    * __5__ : Diamant.
+    * __6__ : Sortie.
+* `attX` : Colonne dans le tableau.
+* `attY` : Ligne dans le tableau.
 * `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
 * `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
 * `attIndex` : Index de l'image à afficher.
@@ -35,14 +35,47 @@ L'idée la plus simple est de créer une image qui contienne tout ce dont on a b
 * on veut apprendre à créer des images dynamiquement
 * et on veut pouvoir changer les teintes des différents éléments de façon indépendante.
 
+<img class="right" src="css/assets/boulder-dash2/img/ground.png"/>
+
 Nous allons donc charger les images suivantes et les agréger dans un canvas.
 
-<img src="css/assets/boulder-dash2/img/row-walk.png" width="256"/>
-<img src="css/assets/boulder-dash2/img/row-boulder.png" width="256"/>
-<img src="css/assets/boulder-dash2/img/row-diam.png" width="256"/>
-<img src="css/assets/boulder-dash2/img/ground.png"/>
+La marche du héro (512x64) : <img src="css/assets/boulder-dash2/img/row-walk.png" width="512"/>
+
+Les pierres (1024x64) : <img src="css/assets/boulder-dash2/img/row-boulder.png" width="512"/>
+
+Les diamants (1024x64) : <img src="css/assets/boulder-dash2/img/row-diam.png" width="512"/>
+
+La feuille a une taille de 80x80, nous la placerons dans une espace de 128x128, ce qui fait que notre canvas devra avoir une taille finale de 1024x320. La marche du héro ne fait que 512 pixels de large, mais elle ne propose que le déplacement vers la droite. Nous allons donc retourner cette partie et la coller à la suite.
+
+<ex src="mod/assets/boulder-dash2/a/texture-aggregator.js" label="Module texture-aggregator.js (Instance d'un tableau)"/>
+
+Et voilà <a href="css/assets/boulder-dash2/a/index.html">le résultat</a>.
 
 
+# Le level-painter
+
+Nous règlons les animations (rotation des diamants, mouvements du héro, ...) à 20 images par secondes.
+On pourrait monter jusqu'à 60, mais ce serait trop rapide, ou alors il nous faudrait trois fois plus d'images.
+
+
+Tout est géré dans le vertex shader :
+<ex src="mod/assets/boulder-dash2/b/level.vert" label="level.vert" lang="glsl"/>
+
+Le __level painter__ est relativement simple :
+<ex src="mod/assets/boulder-dash2/b/level-painter.js" label="level-painter.js" lang="js"/>
+
+
+Et voilà <a href="css/assets/boulder-dash2/b/index.html">le résultat</a>.
+
+
+# Déplacer le héro, manger les feuilles et les diamants
+
+
+
+Et voilà <a href="css/assets/boulder-dash2/b/index.html">le résultat</a>.
+
+
+# Que tombent les pierres !
 
 
 </page>
