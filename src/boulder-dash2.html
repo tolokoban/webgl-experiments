@@ -1,0 +1,23 @@
+<page $title="Boulder Dash (version 2)">
+
+Avec la technique utilisée dans l'article précédent de séparation claire de chaque type d'objet, on se retrouve avec du code redondant. Par exemple, les pierres et les diamants tombent de la même façon. De plus, on aimerait ajouter aussi des monstres, des explosions, des blobs, des murs magiques, la sortie, ... Si on continue ainsi, on va multiplier le code inutilement.
+
+Nous allons donc changer de façon de faire et créer un unique programe WebGL (avec son vertex shader et son fragment shader) capable de dessiner tous les éléments d'un tableau, à part le fond et les murs.
+
+Ainsi, à chaque cellule du tableau correspond un vertex avec les attributs suivants :
+* `attType` : Contenu de la cellule.
+** __0__ : Vide.
+** __1__ : Mur.
+** __2__ : Héro.
+** __3__ : Terre/feuilles.
+** __4__ : Rocher.
+** __5__ : Diamant.
+** __6__ : Sortie.
+* `attX' : Colonne dans le tableau.
+* `attY' : Ligne dans le tableau.
+* `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attIndex` : Index de l'image à afficher.
+
+
+</page>
