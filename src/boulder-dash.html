@@ -329,27 +329,4 @@ Voici comment on gère la chute des pierres et diamants :
 
 Et voilà <a href="css/assets/boulder-dash/j/index.html">le résultat</a>.
 
-
-# Boulder-Dash version 2
-
-Avec la technique utilisée jusqu'à présent de séparation claire de chaque type d'objet, on se retrouve avec du code redondant. Par exemple, les pierres et les diamants tombent de la même façon. De plus, on aimerait ajouter aussi des monstres, des explosions, des blobs, des murs magiques, la sortie, ...
-
-Nous allons donc changer de façon de faire et créer un programe WebGL (avec son vertex shader et son fragment shader) capable de dessiner tous les éléments du décor, à part le fond et les murs.
-
-Ainsi, à chaque cellule du tableau correspond un vertex avec les attributs suivants :
-* `attType` : Contenu de la cellule.
-** __0__ : Vide.
-** __1__ : Mur.
-** __2__ : Héro.
-** __3__ : Terre/feuilles.
-** __4__ : Rocher.
-** __5__ : Diamant.
-** __6__ : Sortie.
-* `attX' : Colonne dans le tableau.
-* `attY' : Ligne dans le tableau.
-* `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
-* `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
-* `attIndex` : Index de l'image à afficher.
-
-
 </page>

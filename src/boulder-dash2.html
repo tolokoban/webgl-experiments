@@ -1,0 +1,48 @@
+<page $title="Boulder-Dash (version 2)">
+
+Dans l'article précédent, la technique utilisée de séparation claire de chaque type d'objet avait un but pédagogique. Mais quand l'application se complique, on se retrouve rapidement avec du code redondant. De plus, on a dû séparer les données du tableau (un niveau du jeu) de celles des vertex, ce qui nous empêche d'optimiser nos accès à la mémoire.
+
+Dans cette version 2, nous allons transformer un tableau en VertexArray et nous appliquerons la logique de chute des pierres directement sur le VertexArray. Le nombre de vertex ne variera donc jamais, mais pour cela, il faut qu'un vertex puisse représenter les différents types de cellules : pierres, diamants, terre/feuille, héro, sortie, explosions, monstres, ...
+
+Ainsi, à chaque cellule du tableau correspondra un vertex avec les attributs suivants :
+* `attType` : Contenu de la cellule.
+** __0__ : Vide.
+** __1__ : Mur.
+** __2__ : Héro.
+** __3__ : Terre/feuilles.
+** __4__ : Rocher.
+** __5__ : Diamant.
+** __6__ : Sortie.
+* `attX' : Colonne dans le tableau.
+* `attY' : Ligne dans le tableau.
+* `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attIndex` : Index de l'image à afficher.
+
+# Les tableaux
+
+On rajoute des informations au niveau de la définition des tableaux. Par exemple, le nombre de diamants à manger pour que la sortie s'ouvre (`need`).
+<ex src="mod/assets/boulder-dash2/levels.js" label="Module levels.js (Définition des tableaux)"/>
+
+La classe qui représente une tableau est responsable de la création du VertexArray qu'il fournit au travers de son attribut `data`.
+<ex src="mod/assets/boulder-dash2/level.js" label="Module level.js (Instance d'un tableau)"/>
+
+# La texture agrégée
+
+Puisqu'on va utiliser un seul programme WebGL, il faut lui passer une seule texture (il est possible de passer plusieurs textures à un fragment shader, mais ce serait moins efficace puisqu'il faudrait exécuter du code pour choisir la bonne texture).
+
+L'idée la plus simple est de créer une image qui contienne tout ce dont on a besoin, mais ce n'est pas ce que nous allons faire, et pour deux raisons :
+* on veut apprendre à créer des images dynamiquement
+* et on veut pouvoir changer les teintes des différents éléments de façon indépendante.
+
+Nous allons donc charger les images suivantes et les agréger dans un canvas.
+
+<img src="css/assets/boulder-dash2/img/row-walk.png" width="256"/>
+<img src="css/assets/boulder-dash2/img/row-boulder.png" width="256"/>
+<img src="css/assets/boulder-dash2/img/row-diam.png" width="256"/>
+<img src="css/assets/boulder-dash2/img/ground.png"/>
+
+
+
+
+</page>
