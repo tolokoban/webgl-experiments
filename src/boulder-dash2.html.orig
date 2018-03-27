@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+<page $title="Boulder Dash (version 2)">
+
+Avec la technique utilisée dans l'article précédent de séparation claire de chaque type d'objet, on se retrouve avec du code redondant. Par exemple, les pierres et les diamants tombent de la même façon. De plus, on aimerait ajouter aussi des monstres, des explosions, des blobs, des murs magiques, la sortie, ... Si on continue ainsi, on va multiplier le code inutilement.
+
+Nous allons donc changer de façon de faire et créer un unique programe WebGL (avec son vertex shader et son fragment shader) capable de dessiner tous les éléments d'un tableau, à part le fond et les murs.
+
+Ainsi, à chaque cellule du tableau correspond un vertex avec les attributs suivants :
+* `attType` : Contenu de la cellule.
+** __0__ : Vide.
+** __1__ : Mur.
+** __2__ : Héro.
+** __3__ : Terre/feuilles.
+** __4__ : Rocher.
+** __5__ : Diamant.
+** __6__ : Sortie.
+* `attX' : Colonne dans le tableau.
+* `attY' : Ligne dans le tableau.
+=======
 <page $title="Boulder-Dash (version 2)">
 
 Dans l'article précédent, la technique utilisée de séparation claire de chaque type d'objet avait un but pédagogique. Mais quand l'application se complique, on se retrouve rapidement avec du code redondant. De plus, on a dû séparer les données du tableau (un niveau du jeu) de celles des vertex, ce qui nous empêche d'optimiser nos accès à la mémoire.
@@ -15,10 +34,13 @@ Ainsi, à chaque cellule du tableau correspondra un vertex avec les attributs su
     * __6__ : Sortie.
 * `attX` : Colonne dans le tableau.
 * `attY` : Ligne dans le tableau.
+>>>>>>> 201c07e772de6b434624a2fe3ff4c1ad3ea91bd4
 * `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
 * `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
 * `attIndex` : Index de l'image à afficher.
 
+<<<<<<< HEAD
+=======
 # Les tableaux
 
 On rajoute des informations au niveau de la définition des tableaux. Par exemple, le nombre de diamants à manger pour que la sortie s'ouvre (`need`).
@@ -77,5 +99,6 @@ Et voilà <a href="css/assets/boulder-dash2/b/index.html">le résultat</a>.
 
 # Que tombent les pierres !
 
+>>>>>>> 201c07e772de6b434624a2fe3ff4c1ad3ea91bd4
 
 </page>

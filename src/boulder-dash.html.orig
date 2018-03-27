@@ -328,5 +328,8 @@ Voici comment on gère la chute des pierres et diamants :
 <ex src="mod/assets/boulder-dash/j/boulder-painter.js" label="Calculer les chutes" section="computeNextMoves"/>
 
 Et voilà <a href="css/assets/boulder-dash/j/index.html">le résultat</a>.
+<<<<<<< HEAD
+=======
 
+>>>>>>> 201c07e772de6b434624a2fe3ff4c1ad3ea91bd4
 </page>
