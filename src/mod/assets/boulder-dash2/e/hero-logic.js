@@ -36,9 +36,22 @@ window.HeroLogic = function() {
       if( move ) {
         var nextX = level.heroX + level.heroVX;
         var nextY = level.heroY + level.heroVY;
-        var cell = env.level.getType( nextY, nextX );
-        if( cell === Level.WALL || cell === Level.ROCK ) {
-          // Les murs et les pierres arrêtent le déplacement.
+        var cell = level.getType( nextY, nextX );
+        if( cell === Level.WALL ) {
+          // Les murs arrêtent le déplacement.
+          level.heroVX = 0;
+          level.heroVY = 0;
+        }
+        else if( cell === Level.ROCK ) {
+          // Les rochers aussi,  mais ils peuvent être  poussés au cas
+          // où ils ont un espace vide derrière eux.
+          if( level.heroVX === +1 && level.getType( nextY, nextX + 1 ) === Level.VOID ) {
+            level.setVX( nextY, nextX, +1 );
+          }
+          else if( level.heroVX === -1 && level.getType( nextY, nextX - 1 ) === Level.VOID ) {
+            level.setVX( nextY, nextX, -1 );
+          }
+          // Le héro s'arrête net.
           level.heroVX = 0;
           level.heroVY = 0;
         }

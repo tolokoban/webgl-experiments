@@ -36,10 +36,10 @@ window.Level = function() {
     var idx1 = this.index( row1, col1 );
     var idx2 = this.index( row2, col2 );
     var d = this.data;
-    d[idx2 + 0] = d[idx1 + 0];  // Type
-    d[idx2 + 3] = 0;            // VX
-    d[idx2 + 4] = 0;            // VY
-    d[idx2 + 5] = d[idx1 + 5];  // Index
+    d[idx2 + 0] = d[idx1 + 0];      // Type
+    d[idx2 + 3] = d[idx1 + 3] = 0;  // VX
+    d[idx2 + 4] = d[idx1 + 4] = 0;  // VY
+    d[idx2 + 5] = d[idx1 + 5];      // Index
     d[idx1 + 0] = Level.VOID;
   };
 

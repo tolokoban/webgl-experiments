@@ -126,9 +126,10 @@ window.WallPainter = function() {
 
   function countWallToRight( level, row, col ) {
     var count = 1;
+    col++;
     while( col < level.cols ) {
-      col++;
       if( level.getType( row, col ) !== Level.WALL ) break;
+      col++;
       count++;
     }
     return count;
@@ -136,9 +137,10 @@ window.WallPainter = function() {
 
   function countWallToBottom( level, row, col ) {
     var count = 1;
+    row++;
     while( row < level.rows ) {
-      row++;
       if( level.getType( row, col ) !== Level.WALL ) break;
+      row++;
       count++;
     }
     return count;

@@ -43,6 +43,12 @@ WebGL.fetchAssets({
       assets.diamSound.currentTime = 0;
       assets.diamSound.play();
       this.eatenDiams++;
+    },
+    // Bruit du rocher dont la chute est stoppée par un obstacle.
+    playBoom: function() {
+      assets.rockSound.pause();
+      assets.rockSound.currentTime = 0;
+      assets.rockSound.play();
     }
     //#(eatDiam)
   };
@@ -86,8 +92,8 @@ WebGL.fetchAssets({
       HeroLogic.apply( env );
       LevelLogic.apply( env );
       
-      HeroLogic.process( env );
       LevelLogic.process( env );
+      HeroLogic.process( env );
       levelPainter.update();
     }
     //#(synchro)
