@@ -32,14 +32,19 @@ WebGL.fetchAssets({
     cellTime: 200,  // Temps en ms pour traverser une cellule.
     nextSynchro: -1,
     eatenDiams: 0,
+    //#(eatDiam)
     eatDiam: function() {
-      console.info("[script] assets.diamSound=", assets.diamSound);
+      // Les assets finissant par 'ogg', 'mp3' ou 'wav'
+      // sont transpformés en tag AUDIO.
       assets.diamSound.pause();
+      // Il n'existe pas de méthode `stop()`.
+      // On doit donc faire une pause, puis
+      // remettre le curseur au début de la piste.
       assets.diamSound.currentTime = 0;
       assets.diamSound.play();
       this.eatenDiams++;
-      console.info("[script] eatenDiams=", this.eatenDiams);
     }
+    //#(eatDiam)
   };
 
   var heroIsDead = false;

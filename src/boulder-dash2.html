@@ -70,12 +70,57 @@ Et voilà <a href="css/assets/boulder-dash2/b/index.html">le résultat</a>.
 
 # Déplacer le héro, manger les feuilles et les diamants
 
+Il nous faut, tout d'abord ajouter des éléments dans la variable `env` afin de compter les diamants que le héro mange :
+<x-code src="mod/assets/boulder-dash2/c/script.js" section="env"/>
+
+Ensuite, on fait appel aux fonctions du nouveau module `hero-logic.js` :
+<x-code src="mod/assets/boulder-dash2/c/script.js" section="synchro"/>
+
+Voici le code de ce module :
+<ex src="mod/assets/boulder-dash2/c/hero-logic.js" label="hero-logic.js" lang="js"/>
+
+Il faut noter l'existence des attributs `level.heroVX`, `level.heroVY` et `level.index` qui sont définis dans le module `level.js`. Quand on écrit une valeur dans ces attributs, une fonction s'exécute et met la valeur au bon endroit dans le VertexArray en fonction de la position actuelle du héro.
+
+C'est ce bout de code qui est responsable de créer ces attributs :
+<x-code src="mod/assets/boulder-dash2/level.js" section="heroVXY"/>
 
 
-Et voilà <a href="css/assets/boulder-dash2/b/index.html">le résultat</a>.
+Et voilà <a href="css/assets/boulder-dash2/c/index.html">le résultat</a>.
+
+
+# Ajouter du son
+
+Dans la section précédente, nous avons créé une fonction `eatDiam` dans la variable `env`.
+Elle est appelée pour signifier qu'un diamant a été mangé.
+C'est donc dans cette function que nous allons ajouter le code pour jouer un petit son :
+<x-code src="mod/assets/boulder-dash2/d/script.js" section="eatDiam"/>
+
+Et voilà <a href="css/assets/boulder-dash2/d/">le résultat</a>.
+
+
+# Le bug de "Speedy Gonzales"
+
+Il y a un bug subtil dans tous les exemples de cet article et vous l'avez peut-être remarqué.
+Déplacez le héro d'une case vers le bas, puis basculez sur un autre onglet de votre navigateur pendant quelques secondes. Retournez au jeu et faites avancer le héro sur la droite.
+
+Le héro se prend alors pour <a href="https://fr.wikipedia.org/wiki/Speedy_Gonzales">Speedy Gonzales</a> et il traverse l'écran à la vitesse du son !
+
+Cela est dû au fonctionnement de la fonction `requestAnimationFrame()`.
+Elle a été conçue pour économiser de la batterie sur les téléphones.
+Donc quand l'onglet courant est caché, la fonction n'appelle plus `anim( time )`.
+Et par conséquent, on n'exécute plus le code suivant :
+<x-code>env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;</x-code>
+
+A titre d'exercice, je vous laisse trouver une solution par vous-même.
+Si vous séchez, sachez que le reste du code contient un correctif.
 
 
 # Que tombent les pierres !
 
+Nous acons maintenant besoin d'un module pour gérer la logique des éléments mobiles du tableau (pierres, diamants, monstres, ...). On va l'appeler `level-logic.js`, biensûr.
+
+
+
+Et voilà <a href="css/assets/boulder-dash2/e/">le résultat</a>.
 
 </page>

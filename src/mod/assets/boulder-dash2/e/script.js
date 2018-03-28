@@ -1,6 +1,8 @@
 "use strict";
 
 WebGL.fetchAssets({
+  diamSound: "../snd/diam.ogg",
+  rockSound: "../snd/rock.ogg",
   coordsVert: "../coords.vert",
   coordsMoveVert: "../coords-move.vert",
   backgroundVert: "background.vert",
@@ -21,8 +23,7 @@ WebGL.fetchAssets({
 
   var level = new Level( Levels[0] );
   assets.levelTexture = TextureAggregator( assets );
-
-  //#(env)
+  
   var env = {
     gl: gl,
     level: level,
@@ -31,11 +32,23 @@ WebGL.fetchAssets({
     cellTime: 200,  // Temps en ms pour traverser une cellule.
     nextSynchro: -1,
     eatenDiams: 0,
-    // On compte les diamants mangés.
-    eatDiam: function() { this.eatenDiams++; }
+    //#(eatDiam)
+    eatDiam: function() {
+      // Les assets finissant par 'ogg', 'mp3' ou 'wav'
+      // sont transpformés en tag AUDIO.
+      assets.diamSound.pause();
+      // Il n'existe pas de méthode `stop()`.
+      // On doit donc faire une pause, puis
+      // remettre le curseur au début de la piste.
+      assets.diamSound.currentTime = 0;
+      assets.diamSound.play();
+      this.eatenDiams++;
+    }
+    //#(eatDiam)
   };
-  //#(env)
 
+  var heroIsDead = false;
+  
   var backgroundPainter = new BackgroundPainter( env );
   var wallPainter = new WallPainter( env );
   var levelPainter = new LevelPainter( env );
@@ -68,12 +81,13 @@ WebGL.fetchAssets({
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
     }
     else if( time >= env.nextSynchro ) {
-      env.nextSynchro += env.cellTime;
-      // Appliquer les déplacements du héro.
+      env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
+      
       HeroLogic.apply( env );
-      // Prévoir le prochain déplacement du héro.
+      LevelLogic.apply( env );
+      
       HeroLogic.process( env );
-      // Pousser le VertexArray du tableau dans la carte graphique.
+      LevelLogic.process( env );
       levelPainter.update();
     }
     //#(synchro)

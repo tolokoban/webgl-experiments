@@ -37,8 +37,8 @@ window.Level = function() {
     var idx2 = this.index( row2, col2 );
     var d = this.data;
     d[idx2 + 0] = d[idx1 + 0];  // Type
-    d[idx2 + 3] = d[idx1 + 3];  // VX
-    d[idx2 + 4] = d[idx1 + 4];  // VY
+    d[idx2 + 3] = 0;            // VX
+    d[idx2 + 4] = 0;            // VY
     d[idx2 + 5] = d[idx1 + 5];  // Index
     d[idx1 + 0] = Level.VOID;
   };
@@ -152,6 +152,7 @@ window.Level = function() {
 
     this.heroX = heroCol;
     this.heroY = heroRow;
+    //#(heroVXY)
     Object.defineProperty( this, "heroVX", {
       get: function() {
         return this.data[this.index(this.heroY, this.heroX) + 3];
@@ -176,6 +177,7 @@ window.Level = function() {
         this.data[this.index(this.heroY, this.heroX) + 5] = v;
       }
     });
+    //#(heroVXY)
     readonly( this, "data", new Float32Array( data ) );
     readonly( this, "rows", rows.length );
     readonly( this, "cols", rows[0].length );
