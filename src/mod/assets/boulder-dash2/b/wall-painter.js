@@ -98,9 +98,9 @@ window.WallPainter = function() {
     var ww, hh;
     for( row = 0; row < rows; row++ ) {
       for( col = 0; col < cols; col++ ) {
-        if( level.getType( row, col ) === Level.WALL ) {
-          var countRight = countWallToRight( level, row, col );
-          var countBottom = countWallToBottom( level, row, col );
+        if( level.getType( col, row ) === Level.WALL ) {
+          var countRight = countWallToRight( level, col, row );
+          var countBottom = countWallToBottom( level, col, row );
           if( countRight > countBottom ) {
             ww = countRight;
             hh = 1;
@@ -114,7 +114,7 @@ window.WallPainter = function() {
           addVertex( col, row );
           addVertex( col, row + hh );
           addVertex( col + ww, row + hh );
-          clear( level, row, col, hh, ww );
+          clear( level, col, row, hh, ww );
         }
       }
     }
@@ -124,33 +124,33 @@ window.WallPainter = function() {
     };
   }
 
-  function countWallToRight( level, row, col ) {
+  function countWallToRight( level, col, row ) {
     var count = 1;
     col++;
     while( col < level.cols ) {
-      if( level.getType( row, col ) !== Level.WALL ) break;
+      if( level.getType( col, row ) !== Level.WALL ) break;
       col++;
       count++;
     }
     return count;
   }
 
-  function countWallToBottom( level, row, col ) {
+  function countWallToBottom( level, col, row ) {
     var count = 1;
     row++;
     while( row < level.rows ) {
-      if( level.getType( row, col ) !== Level.WALL ) break;
+      if( level.getType( col, row ) !== Level.WALL ) break;
       row++;
       count++;
     }
     return count;
   }
 
-  function clear( level, rr, cc, hh, ww ) {
+  function clear( level, cc, rr, hh, ww ) {
     var row, col;
     for( row = rr ; row < rr + hh ; row++ ) {
       for( col = cc ; col < cc + ww ; col++ ) {
-        level.setType( row, col, Level.VOID );
+        level.setType( col, row, Level.VOID );
       }
     }
   }

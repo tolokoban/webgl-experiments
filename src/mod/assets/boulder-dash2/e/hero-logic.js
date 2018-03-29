@@ -40,7 +40,7 @@ window.HeroLogic = function() {
       if( move ) {
         var nextX = level.heroX + level.heroVX;
         var nextY = level.heroY + level.heroVY;
-        var cell = level.getType( nextY, nextX );
+        var cell = level.getType( nextX, nextY );
         if( cell === Level.WALL ) {
           // Les murs arrêtent le déplacement.
           level.heroVX = 0;
@@ -49,11 +49,11 @@ window.HeroLogic = function() {
         else if( cell === Level.ROCK ) {
           // Les rochers aussi,  mais ils peuvent être  poussés au cas
           // où ils ont un espace vide derrière eux.
-          if( level.heroVX === +1 && level.getType( nextY, nextX + 1 ) === Level.VOID ) {
-            level.setVX( nextY, nextX, +1 );
+          if( level.heroVX === +1 && level.getType( nextX + 1, nextY ) === Level.VOID ) {
+            level.setVX( nextX, nextY, +1 );
           }
-          else if( level.heroVX === -1 && level.getType( nextY, nextX - 1 ) === Level.VOID ) {
-            level.setVX( nextY, nextX, -1 );
+          else if( level.heroVX === -1 && level.getType( nextX - 1, nextY ) === Level.VOID ) {
+            level.setVX( nextX, nextY, -1 );
           }
           // Le héro s'arrête net.
           level.heroVX = 0;
@@ -61,7 +61,7 @@ window.HeroLogic = function() {
         }
         else {
           if( cell === Level.DIAM ) env.eatDiam();
-          level.setType( nextY, nextX, Level.VOID );
+          level.setType( nextX, nextY, Level.VOID );
         }
       }
     },
@@ -72,7 +72,7 @@ window.HeroLogic = function() {
       if( vx != 0 || vy != 0 ){
         var x = level.heroX;
         var y = level.heroY;
-        level.move( y, x, y + vy, x + vx );
+        level.move( x, y, x + vx, y + vy );
         level.heroX = x + vx;
         level.heroY = y + vy;
       }

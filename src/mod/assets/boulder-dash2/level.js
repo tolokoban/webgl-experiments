@@ -30,13 +30,13 @@ window.Level = function() {
     return new Level( this._levelDef );
   };
 
-  Level.prototype.index = function( row, col ) {
+  Level.prototype.index = function( col, row ) {
     return NB_ATTRIBS * (row * this.cols + col);
   };
 
-  Level.prototype.move = function( row1, col1, row2, col2 ) {
-    var idx1 = this.index( row1, col1 );
-    var idx2 = this.index( row2, col2 );
+  Level.prototype.move = function( col1, row1, col2, row2 ) {
+    var idx1 = this.index( col1, row1 );
+    var idx2 = this.index( col2, row2 );
     var d = this.data;
     var cell = d[idx1];
     if( cell === Level.VOID ) return;
@@ -54,74 +54,74 @@ window.Level = function() {
     d[idx1 + 4] = 0;  // VY
   };
 
-  Level.prototype.getType = function( row, col ) {
-    return this.data[this.index(row, col) + 0];
+  Level.prototype.getType = function( col, row ) {
+    return this.data[this.index(col, row) + 0];
   };
 
-  Level.prototype.setType = function( row, col, value ) {
-    this.data[this.index(row, col) + 0] = value;
+  Level.prototype.setType = function( col, row, value ) {
+    this.data[this.index(col, row) + 0] = value;
   };
 
-  Level.prototype.getX = function( row, col ) {
-    return this.data[this.index(row, col) + 1];
+  Level.prototype.getX = function( col, row ) {
+    return this.data[this.index(col, row) + 1];
   };
 
-  Level.prototype.setX = function( row, col, x ) {
-    this.data[this.index(row, col) + 1] = x;
+  Level.prototype.setX = function( col, row, x ) {
+    this.data[this.index(col, row) + 1] = x;
   };
 
-  Level.prototype.getY = function( row, col ) {
-    return this.data[this.index(row, col) + 2];
+  Level.prototype.getY = function( col, row ) {
+    return this.data[this.index(col, row) + 2];
   };
 
-  Level.prototype.setY = function( row, col, y ) {
-    this.data[this.index(row, col) + 2] = y;
+  Level.prototype.setY = function( col, row, y ) {
+    this.data[this.index(col, row) + 2] = y;
   };
 
-  Level.prototype.getVX = function( row, col ) {
-    return this.data[this.index(row, col) + 3];
+  Level.prototype.getVX = function( col, row ) {
+    return this.data[this.index(col, row) + 3];
   };
 
-  Level.prototype.setVX = function( row, col, vx ) {
-    this.data[this.index(row, col) + 3] = vx;
+  Level.prototype.setVX = function( col, row, vx ) {
+    this.data[this.index(col, row) + 3] = vx;
   };
 
-  Level.prototype.getVY = function( row, col ) {
-    return this.data[this.index(row, col) + 4];
+  Level.prototype.getVY = function( col, row ) {
+    return this.data[this.index(col, row) + 4];
   };
 
-  Level.prototype.setVY = function( row, col, vy ) {
-    this.data[this.index(row, col) + 4] = vy;
+  Level.prototype.setVY = function( col, row, vy ) {
+    this.data[this.index(col, row) + 4] = vy;
   };
 
-  Level.prototype.setMove = function( row, col, vx, vy ) {
-    var idx = this.index(row, col);
+  Level.prototype.setMove = function( col, row, vx, vy ) {
+    var idx = this.index(col, row);
     this.data[idx + 3] = vx;
     this.data[idx + 4] = vy;
   };
 
-  Level.prototype.getIndex = function( row, col ) {
-    return this.data[this.index(row, col) + 5];
+  Level.prototype.getIndex = function( col, row ) {
+    return this.data[this.index(col, row) + 5];
   };
 
-  Level.prototype.setIndex = function( row, col, value ) {
-    this.data[this.index(row, col) + 5] = value;
+  Level.prototype.setIndex = function( col, row, value ) {
+    this.data[this.index(col, row) + 5] = value;
   };
 
   /**
    * Les flags sont des drapeaux que l'on met sur des cellules du tableau pour indiquer 
    */
-  Level.prototype.hasFlag = function( row, col ) {
+  Level.prototype.hasFlag = function( col, row ) {
     var idx = this.cols * row + col;
     return this._flags[idx];
   };
   
-  Level.prototype.flag = function( row, col ) {
+  Level.prototype.flag = function( col, row ) {
     var idx = this.cols * row + col;
     this._flags[idx] = 1;
   };
   
-  Level.prototype.unflag = function( row, col ) {
+  Level.prototype.unflag = function( col, row ) {
     var idx = this.cols * row + col;
     this._flags[idx] = 0;
   };
@@ -192,30 +192,31 @@ window.Level = function() {
     //#(heroVXY)
     Object.defineProperty( this, "heroVX", {
       get: function() {
-        return this.data[this.index(this.heroY, this.heroX) + 3];
+        return this.data[this.index(this.heroX, this.heroY) + 3];
       },
       set: function( v ) {
-        this.data[this.index(this.heroY, this.heroX) + 3] = v;
+        this.data[this.index(this.heroX, this.heroY) + 3] = v;
       }
     });
     Object.defineProperty( this, "heroVY", {
       get: function() {
-        return this.data[this.index(this.heroY, this.heroX) + 4];
+        return this.data[this.index(this.heroX, this.heroY) + 4];
       },
       set: function( v ) {
-        this.data[this.index(this.heroY, this.heroX) + 4] = v;
+        this.data[this.index(this.heroX, this.heroY) + 4] = v;
       }
     });
     Object.defineProperty( this, "heroIndex", {
       get: function() {
-        return this.data[this.index(this.heroY, this.heroX) + 5];
+        return this.data[this.index(this.heroX, this.heroY) + 5];
       },
       set: function( v ) {
-        this.data[this.index(this.heroY, this.heroX) + 5] = v;
+        this.data[this.index(this.heroX, this.heroY) + 5] = v;
       }
     });
     //#(heroVXY)
     readonly( this, "data", new Float32Array( data ) );
+    readonly( this, "need", levelDef.need );
     readonly( this, "rows", rows.length );
     readonly( this, "cols", rows[0].length );
     readonly( this, "exitX", exitCol );

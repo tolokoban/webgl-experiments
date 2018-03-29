@@ -2,6 +2,8 @@
 
 WebGL.fetchAssets({
   diamSound: "../snd/diam.ogg",
+  exitSound: "../snd/exit.ogg",
+  explSound: "../snd/expl.ogg",
   rockSound: "../snd/rock.ogg",
   coordsVert: "../coords.vert",
   coordsMoveVert: "../coords-move.vert",
@@ -45,6 +47,11 @@ WebGL.fetchAssets({
       assets.diamSound.currentTime = 0;
       assets.diamSound.play();
       this.eatenDiams++;
+      console.log( this.eatenDiams, "/", this.level.need );
+      if( this.eatenDiams == this.level.need ) {
+        this.level.setType( this.level.exitX, this.level.exitY, Level.EXIT );
+        assets.exitSound.play();
+      }
     },
     //#(eatDiam)
     // Bruit du rocher dont la chute est stoppée par un obstacle.
@@ -57,13 +64,16 @@ WebGL.fetchAssets({
       var x, y;
       for( y = row - 1; y < row + 2; y++ ) {
         for( x = col - 1; x < col + 2; x++ ) {
-          if( level.getType( y, x ) !== Level.WALL && level.getType( y, x ) !== Level.ROCK ) {
-            level.setType( y, x, Level.EXPL );
-            level.setIndex( y, x, 1 );
-            level.setMove( y, x, 0, 0 );
+          if( level.getType( x, y ) !== Level.WALL && level.getType( x, y ) !== Level.ROCK ) {
+            level.setType( x, y, Level.EXPL );
+            level.setIndex( x, y, 1 );
+            level.setMove( x, y, 0, 0 );
           }
         }
       }
+      assets.explSound.pause();
+      assets.explSound.currentTime = 0;
+      assets.explSound.play();      
     },
     // Vie te mort du Héro.
     isHeroAlive: true,
@@ -72,15 +82,13 @@ WebGL.fetchAssets({
       var col, row;
       for( row = 0; row < this.level.rows; row++ ) {
         for( col = 0; col < this.level.cols; col++ ) {
-          if( this.level.getType( row, col ) === Level.HERO ) {
+          if( this.level.getType( col, row ) === Level.HERO ) {
             this.explode( col, row );
           }
         }
       }
     }
   };
-
-  var heroIsDead = false;
 
   var backgroundPainter = new BackgroundPainter( env );
   var wallPainter = new WallPainter( env );
@@ -116,11 +124,11 @@ WebGL.fetchAssets({
     else if( time >= env.nextSynchro ) {
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
 
-      HeroLogic.apply( env );
+      if( env.isHeroAlive ) HeroLogic.apply( env );
       LevelLogic.apply( env );
 
       LevelLogic.process( env );
-      HeroLogic.process( env );
+      if( env.isHeroAlive ) HeroLogic.process( env );
       levelPainter.update();
     }
     //#(synchro)
