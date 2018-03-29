@@ -6,10 +6,11 @@ window.GameInputs = function() {
   var RIGHT = 2;
   var DOWN = 3;
   var LEFT = 4;
-  var state = [0,0,0,0,0];
+  var SUICIDE = 5;
+  var state = [0,0,0,0,0,0];
 
   function clear() {
-    state[0] = state[1] = state[2] = state[3] = state[4] = 0;
+    state[0] = state[1] = state[2] = state[3] = state[4] = state[5] = 0;
   }
 
   // Mouvement à l'aide des touches du clavier.
@@ -27,6 +28,9 @@ window.GameInputs = function() {
       break;
     case 'arrowleft':
       state[LEFT] = 1;
+      break;
+    case 'escape':
+      state[SUICIDE] = 1;
       break;
     default:
       catchKey = false;
@@ -46,6 +50,9 @@ window.GameInputs = function() {
       break;
     case 'arrowleft':
       state[LEFT] = 0;
+      break;
+    case 'escape':
+      state[SUICIDE] = 0;
       break;
     }
   }, true);
@@ -100,7 +107,8 @@ window.GameInputs = function() {
       UP: UP,
       RIGHT: RIGHT,
       DOWN: DOWN,
-      LEFT: LEFT
+      LEFT: LEFT,
+      SUICIDE: SUICIDE
     };
 
     Object.defineProperty( context, "action", {
@@ -109,6 +117,7 @@ window.GameInputs = function() {
         if( state[RIGHT] ) return RIGHT;
         if( state[DOWN] ) return DOWN;
         if( state[LEFT] ) return LEFT;
+        if( state[SUICIDE] ) return SUICIDE;
         return STILL;
       }
     });

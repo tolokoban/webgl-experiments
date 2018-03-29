@@ -17,6 +17,8 @@ window.TextureAggregator = function() {
     ctx.drawImage( assets.boulderTexture, 0, 64 );
     ctx.drawImage( assets.diamTexture, 0, 128 );
     ctx.drawImage( assets.groundTexture, 0, 192 );
+    ctx.drawImage( assets.exitTexture, 80, 192 );
+    ctx.drawImage( assets.exploTexture, 512, 192 );
 
     // Retourner le héro image par image.
     ctx.scale( -1, 1 );

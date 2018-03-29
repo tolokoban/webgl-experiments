@@ -14,8 +14,10 @@ WebGL.fetchAssets({
   levelVert: "level.vert",
   levelFrag: "level.frag",
   boulderTexture: "../img/row-boulder.png",
+  exitTexture: "../img/exit.png",
   diamTexture: "../img/row-diam.png",
   heroTexture: "../img/row-walk.png",
+  exploTexture: "../img/row-explo.png",
   groundTexture: "../img/ground.png"
 }).then(function(assets) {
   var canvas = WebGL.newCanvas();
@@ -23,7 +25,7 @@ WebGL.fetchAssets({
 
   var level = new Level( Levels[0] );
   assets.levelTexture = TextureAggregator( assets );
-  
+
   var env = {
     gl: gl,
     level: level,
@@ -44,17 +46,42 @@ WebGL.fetchAssets({
       assets.diamSound.play();
       this.eatenDiams++;
     },
+    //#(eatDiam)
     // Bruit du rocher dont la chute est stoppée par un obstacle.
     playBoom: function() {
       assets.rockSound.pause();
       assets.rockSound.currentTime = 0;
       assets.rockSound.play();
+    },
+    explode: function( col, row ) {
+      var x, y;
+      for( y = row - 1; y < row + 2; y++ ) {
+        for( x = col - 1; x < col + 2; x++ ) {
+          if( level.getType( y, x ) !== Level.WALL && level.getType( y, x ) !== Level.ROCK ) {
+            level.setType( y, x, Level.EXPL );
+            level.setIndex( y, x, 1 );
+            level.setMove( y, x, 0, 0 );
+          }
+        }
+      }
+    },
+    // Vie te mort du Héro.
+    isHeroAlive: true,
+    killHero: function() {
+      this.isHeroAlive = false;
+      var col, row;
+      for( row = 0; row < this.level.rows; row++ ) {
+        for( col = 0; col < this.level.cols; col++ ) {
+          if( this.level.getType( row, col ) === Level.HERO ) {
+            this.explode( col, row );
+          }
+        }
+      }
     }
-    //#(eatDiam)
   };
 
   var heroIsDead = false;
-  
+
   var backgroundPainter = new BackgroundPainter( env );
   var wallPainter = new WallPainter( env );
   var levelPainter = new LevelPainter( env );
@@ -88,10 +115,10 @@ WebGL.fetchAssets({
     }
     else if( time >= env.nextSynchro ) {
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
-      
+
       HeroLogic.apply( env );
       LevelLogic.apply( env );
-      
+
       LevelLogic.process( env );
       HeroLogic.process( env );
       levelPainter.update();
@@ -99,7 +126,7 @@ WebGL.fetchAssets({
     //#(synchro)
 
 
-    
+
     //#(camera)
     // Positionner la caméra sur le héro.
     // Sauf si le cadrage arrive hors tableau.
@@ -121,7 +148,7 @@ WebGL.fetchAssets({
     //#(camera)
 
 
-    
+
     // On affiche tout.
     levelPainter.draw( env );
     env.z = 0.2;

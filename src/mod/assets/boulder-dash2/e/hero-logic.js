@@ -28,6 +28,10 @@ window.HeroLogic = function() {
         level.heroVY = 0;
         level.heroIndex = 1;
         break;
+      case GameInputs.SUICIDE:
+        env.killHero();
+        move = false;
+        break;
       default:
         move = false;
         break;

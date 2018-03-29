@@ -1,11 +1,13 @@
-//#include "const"
-const vec2 cstDim64x64 = vec2(64.0 / 1024.0, 64.0 / 320.0);
-const vec2 cstDim80x80 = vec2(80.0 / 1024.0, 80.0 / 320.0);
+const float cstW = 1024.0;
+const float cstH = 320.0;
+const vec2 cstDim64x64 = vec2(64.0 / cstW, 64.0 / cstH);
+const vec2 cstDim80x80 = vec2(80.0 / cstW, 80.0 / cstH);
 const vec2 cstHeroUV = vec2( 0.0, 0.0 );
-const vec2 cstRockUV = vec2( 0.0, 64.0 / 320.0 );
-const vec2 cstDiamUV = vec2( 0.0, 128.0 / 320.0 );
-const vec2 cstDustUV = vec2( 0.0, 192.0 / 320.0 );
-const vec2 cstExitUV = vec2( 80.0 / 1024.0, 192.0 / 320.0 );
+const vec2 cstRockUV = vec2( 0.0, 64.0 / cstH );
+const vec2 cstDiamUV = vec2( 0.0, 128.0 / cstH );
+const vec2 cstDustUV = vec2( 0.0, 192.0 / cstH );
+const vec2 cstExitUV = vec2( 80.0 / cstW, 192.0 / cstH );
+const vec2 cstExplUV = vec2( 512.0 / cstW, 192.0 / cstH );
 
 attribute float attType;
 attribute float attX;
@@ -53,6 +55,16 @@ void drawDiam() {
   varUV = cstDiamUV + vec2(shift, 0.0);
 }
 
+void drawExpl() {
+  gl_Position.z = 0.91;
+  gl_PointSize = 64.0 / uniW;
+  varDimension = cstDim64x64;
+  // L'explosion dure deux cycles.
+  float index = floor( 4.0 * mod( uniTime, 2.0 * uniCellTime ) / uniCellTime );
+  float shift = index / 16.0;
+  varUV = cstExplUV + vec2(shift, 0.0);
+}
+
 void drawDust() {
   gl_Position.z = 0.7;
   gl_PointSize = 80.0 / uniW;
@@ -88,4 +100,5 @@ void main() {
   else if( attType < 4.1 ) drawRock();
   else if( attType < 5.1 ) drawDiam();
   else if( attType < 6.1 ) drawExit();
+  else if( attType < 7.1 ) drawExpl();
 }

@@ -10,6 +10,7 @@ window.Level = function() {
   var ROCK = 4;
   var DIAM = 5;
   var EXIT = 6;
+  var EXPL = 7;
 
   var Level = function( levelDef ) {
     this._levelDef = levelDef;
@@ -23,6 +24,7 @@ window.Level = function() {
   Level.ROCK = ROCK;
   Level.DIAM = DIAM;
   Level.EXIT = EXIT;
+  Level.EXPL = EXPL;
 
   Level.prototype.clone = function() {
     return new Level( this._levelDef );
@@ -36,11 +38,20 @@ window.Level = function() {
     var idx1 = this.index( row1, col1 );
     var idx2 = this.index( row2, col2 );
     var d = this.data;
-    d[idx2 + 0] = d[idx1 + 0];      // Type
-    d[idx2 + 3] = d[idx1 + 3] = 0;  // VX
-    d[idx2 + 4] = d[idx1 + 4] = 0;  // VY
-    d[idx2 + 5] = d[idx1 + 5];      // Index
+    var cell = d[idx1];
+    if( cell === Level.VOID ) return;
+    d[idx2 + 0] = cell;  // Type
+    d[idx2 + 5] = d[idx1 + 5];  // Index
     d[idx1 + 0] = Level.VOID;
+    if( cell === Level.ROCK || cell === Level.DIAM ) {
+      d[idx2 + 3] = d[idx1 + 3];  // VX
+      d[idx2 + 4] = d[idx1 + 4];  // VY
+    } else {
+      d[idx2 + 3] = 0;  // VX
+      d[idx2 + 4] = 0;  // VY
+    }
+    d[idx1 + 3] = 0;  // VX
+    d[idx1 + 4] = 0;  // VY
   };
 
   Level.prototype.getType = function( row, col ) {
@@ -97,6 +108,24 @@ window.Level = function() {
     this.data[this.index(row, col) + 5] = value;
   };
 
+  /**
+   * Les flags sont des drapeaux que l'on met sur des cellules du tableau pour indiquer 
+   */
+  Level.prototype.hasFlag = function( row, col ) {
+    var idx = this.cols * row + col;
+    return this._flags[idx];
+  };
+  
+  Level.prototype.flag = function( row, col ) {
+    var idx = this.cols * row + col;
+    this._flags[idx] = 1;
+  };
+  
+  Level.prototype.unflag = function( row, col ) {
+    var idx = this.cols * row + col;
+    this._flags[idx] = 0;
+  };
+  
   function readonly( obj, name, value ) {
     Object.defineProperty(obj, name, {
       value: value,
@@ -112,8 +141,10 @@ window.Level = function() {
     var diamCount = 0;
     var heroCol, heroRow;
     var exitCol, exitRow;
+    var flags = [];
     rows.forEach(function (row, y) {
       for( var x = 0; x < row.length; x++ ) {
+        flags.push(0);
         var char = row.charAt( x );
         var type = VOID;
         var index = 0;
@@ -145,11 +176,17 @@ window.Level = function() {
           exitCol = x;
           exitRow = y;
           break;
+        case '*':
+          type = EXPL;
+          exitCol = x;
+          exitRow = y;
+          break;
         }
         data.push( type, x, y, 0, 0, index );
       }
     });
 
+    this._flags = flags;
     this.heroX = heroCol;
     this.heroY = heroRow;
     //#(heroVXY)
