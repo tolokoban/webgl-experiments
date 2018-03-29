@@ -36,7 +36,7 @@ window.LevelLogic = function() {
     } else {
       // La pierre est immobile .
       if( below === Level.VOID ) {
-        level.setVY( row, col, 1 );
+        level.setMove( row, col, 0, 1 );
         console.log("Début de la chute");
       }
       else if( isRockOrDiamOrWall( level, col, row + 1 ) ) {
@@ -48,14 +48,14 @@ window.LevelLogic = function() {
               && !isRockOrDiam( level, col + 1, row - 1 ) )
           {
             // On tombe sur la droite.
-            level.setVX( row, col, 1 );
+            level.setMove( row, col, +1, 0 );
           }
           else if( level.getType( row, col - 1 ) == Level.VOID
                    && level.getType( row + 1, col - 1 ) == Level.VOID
                    && !isRockOrDiam( level, col - 1 , row - 1 ) )
           {
             // On tombe sur la gauche.
-            level.setVX( row, col, -1 );
+            level.setMove( row, col, -1, 0 );
           }
         }
       }
