@@ -1,6 +1,7 @@
 "use strict";
 
 WebGL.fetchAssets({
+  musicSound: "../snd/music.ogg",
   diamSound: "../snd/diam.ogg",
   exitSound: "../snd/exit.ogg",
   explSound: "../snd/expl.ogg",
@@ -22,6 +23,10 @@ WebGL.fetchAssets({
   exploTexture: "../img/row-explo.png",
   groundTexture: "../img/ground.png"
 }).then(function(assets) {
+  assets.musicSound.addEventListener("canplay", function() {
+    assets.musicSound.play();
+  });
+  
   var canvas = WebGL.newCanvas();
   var gl = canvas.getContext("webgl");
 
