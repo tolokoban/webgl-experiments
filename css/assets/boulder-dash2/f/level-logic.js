@@ -184,7 +184,7 @@ window.LevelLogic = function() {
           if( cell === Level.ROCK || cell === Level.DIAM ) {
             processRockOrDiam( level, col, row, env );
           }
-          else if( cell === Level.EXPL ) {
+          else if( cell === Level.EXP1 ) {
             processExplosion( level, col, row );
           }
           else if( cell === Level.HERO ) {

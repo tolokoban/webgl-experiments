@@ -355,11 +355,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["*"]}),
-                        "  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["f"]}),
+                        "  @",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -368,12 +364,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["Ennemi"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["1"]}),
+                          children: ["Monstre"]}),
                         "\n ",
                         W({
                           elem: "span",
@@ -473,8 +464,12 @@ addListener(
                         "    \n    ",
                         W({
                           elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
+                          attr: {"class": "operator"},
+                          children: ["/"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -635,7 +630,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wE...........d.....w\""]}),
+                          children: ["\"w.......r..r.d.....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -644,7 +639,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.dr...............w\""]}),
+                          children: ["\"w.dr....E..........w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -653,7 +648,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.......r..........w\""]}),
+                          children: ["\"w.....r............w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -662,7 +657,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwww..wwwwwwww\""]}),
+                          children: ["\"wwwwwwww wwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -671,7 +666,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..................w\""]}),
+                          children: ["\"w....... ..........w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -680,7 +675,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w........r......X..w\""]}),
+                          children: ["\"w....... r......X..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -689,7 +684,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.....d..........rrw\""]}),
+                          children: ["\"w.....d. ........rrw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -698,7 +693,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w................rrw\""]}),
+                          children: ["\"w.......@........rrw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -718,6 +713,14 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["},"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["/"]}),
                         "\n    ",
                         W({
                           elem: "span",
@@ -1241,7 +1244,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr.  f..w....r.rw... ...w.rd..r.w......w\""]}),
+                          children: ["\"wr.  @..w....r.rw... ...w.rd..r.w......w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2151,7 +2154,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.......  f.....  f.....  f.....  f....w\""]}),
+                          children: ["\"w.......  @.....  @.....  @.....  @....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2205,7 +2208,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.......  f.....  f.....  f.....  f....w\""]}),
+                          children: ["\"w.......  @.....  @.....  @.....  @....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2347,7 +2350,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwfd      ..r..........r...r..      dfww\""]}),
+                          children: ["\"ww@d      ..r..........r...r..      d@ww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2374,7 +2377,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwfd      ....r......r.rr.....      dfww\""]}),
+                          children: ["\"ww@d      ....r......r.rr.....      d@ww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2401,7 +2404,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwfd      ....r.r....r..r..r..      dfww\""]}),
+                          children: ["\"ww@d      ....r.r....r..r..r..      d@ww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2428,7 +2431,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwfd      ....r..r........r...      dfww\""]}),
+                          children: ["\"ww@d      ....r..r........r...      d@ww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2588,7 +2591,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr.....  .f.  ... .r.r. ... wwwwwwwwwwww\""]}),
+                          children: ["\"wr.....  .@.  ... .r.r. ... wwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2615,7 +2618,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr. r...... ..r. ... ..r.  ..r.  f.....w\""]}),
+                          children: ["\"wr. r...... ..r. ... ..r.  ..r.  @.....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2642,7 +2645,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w... ..r. .r.... ...f......r.r..  r..r.w\""]}),
+                          children: ["\"w... ..r. .r.... ...@......r.r..  r..r.w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2741,7 +2744,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w. .drf..r.... ...r......r.rf.....dr...w\""]}),
+                          children: ["\"w. .dr@..r.... ...r......r.r@.....dr...w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2838,7 +2841,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w...d ..r. f.....r..... ........rr r..rw\""]}),
+                          children: ["\"w...d ..r. @.....r..... ........rr r..rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2865,7 +2868,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w... r... f.. ..r.  .....r.rr..r. . r..w\""]}),
+                          children: ["\"w... r... @.. ..r.  .....r.rr..r. . r..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2883,7 +2886,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.....r ...... .  frr. ...  r.. .r....rw\""]}),
+                          children: ["\"w.....r ...... .  @rr. ...  r.. .r....rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2937,7 +2940,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.. ..r. .r...mmmmmmmm.........  r..r..w\""]}),
+                          children: ["\"w.. ..r. .r...@@@@@@@@.........  r..r..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2964,7 +2967,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w. r..f.r.... .  ......rr r..r...  ...rw\""]}),
+                          children: ["\"w. r..@.r.... .  ......rr r..r...  ...rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3052,7 +3055,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wrf...............rwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wr@...............rwwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3061,7 +3064,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wErf.............rXwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wEr@.............rXwwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3070,7 +3073,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wd.rf...........r.dwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wd.r@...........r.dwwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3079,7 +3082,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wrd.rf.........r.drwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wrd.r@.........r.drwwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3088,7 +3091,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.rd.rf.......r.dr.wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w.rd.r@.......r.dr.wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3097,7 +3100,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..rd.rf.....r.dr..wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w..rd.r@.....r.dr..wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3106,7 +3109,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w...rd.rf...r.dr...wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w...rd.r@...r.dr...wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3115,7 +3118,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w....rd.rf.r.dr....wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w....rd.r@.r.dr....wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3570,7 +3573,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw.wd.........dw.w.................w\""]}),
+                          children: ["\"ww.w@w.wd.........dw.w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3579,7 +3582,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw.w.wwww wwww.w.w.................w\""]}),
+                          children: ["\"ww.w@w.w.wwww wwww.w.w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3588,7 +3591,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw.w.wd.....dw.w.w.................w\""]}),
+                          children: ["\"ww.w@w.w.wd.....dw.w.w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3597,7 +3600,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw.w.w.ww ww.w.w.w.................w\""]}),
+                          children: ["\"ww.w@w.w.w.ww ww.w.w.w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3606,7 +3609,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw w w w   w w w w.................w\""]}),
+                          children: ["\"ww.w@w w w w   w w w w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3615,7 +3618,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfwfwfwfwfffwfwfwfw.................w\""]}),
+                          children: ["\"ww.w@w@w@w@w@@@w@w@w@w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3624,7 +3627,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw w w w   w w w w.................w\""]}),
+                          children: ["\"ww.w@w w w w   w w w w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3633,7 +3636,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw.w.w.wwwww.w.w.w.................w\""]}),
+                          children: ["\"ww.w@w.w.w.wwwww.w.w.w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3642,7 +3645,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"ww.wfw.w.wd.....dw.w.w.................w\""]}),
+                          children: ["\"ww.w@w.w.wd.....dw.w.w.................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3838,7 +3841,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..r...r..w...r.r..rwr..r. .rrw. r..fwrw\""]}),
+                          children: ["\"w..r...r..w...r.r..rwr..r. .rrw. r..@wrw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3847,7 +3850,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr.r.wwwwwwwwwfwwwwwwwwwrwwwwwwwww..w. w\""]}),
+                          children: ["\"wr.r.wwwwwwwww@wwwwwwwwwrwwwwwwwww..w. w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3928,7 +3931,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr.rr..r.wr...r....rErr......r..rf..r..w\""]}),
+                          children: ["\"wr.rr..r.wr...r....rErr......r..r@..r..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3937,7 +3940,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr...r...w..r.rf......r... r.. r..rdr..w\""]}),
+                          children: ["\"wr...r...w..r.r@......r... r.. r..rdr..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3946,7 +3949,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wrr.d. ..w..r.rr......r..r. r.f.rr.r...w\""]}),
+                          children: ["\"wrr.d. ..w..r.rr......r..r. r.@.rr.r...w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4034,7 +4037,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.......rdw.r.w.. w...wr...r... f.. .. w\""]}),
+                          children: ["\"w.......rdw.r.w.. w...wr...r... @.. .. w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4079,7 +4082,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.wwwwwwwwwww.w.r.w .rw.r....r. f...d.rw\""]}),
+                          children: ["\"w.wwwwwwwwwww.w.r.w .rw.r....r. @...d.rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4124,7 +4127,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w...r.r...w...wr..wr..w.r..r.r. f......w\""]}),
+                          children: ["\"w...r.r...w...wr..wr..w.r..r.r. @......w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4311,7 +4314,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w              ffffwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w              @@@@wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4320,7 +4323,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w              ffffwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w              @@@@wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4329,7 +4332,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w              ffffwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w              @@@@wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4338,7 +4341,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wddddddddddddddffffwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wdddddddddddddd@@@@wwwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4775,7 +4778,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.....................f.f.f.f.f.f......w\""]}),
+                          children: ["\"w.....................@.@.@.@.@.@......w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4998,7 +5001,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wrrw.r... r.. r..r.r..rwr.... .. ..r.rfw\""]}),
+                          children: ["\"wrrw.r... r.. r..r.r..rwr.... .. ..r.r@w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5007,7 +5010,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w...wr..r. f.....r. ..wr.  .....rrrr..rw\""]}),
+                          children: ["\"w...wr..r. @.....r. ..wr.  .....rrrr..rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5034,7 +5037,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w...rr.w.f ..r..r.rw.....r.rr..r.r.rr..w\""]}),
+                          children: ["\"w...rr.w.@ ..r..r.rw.....r.rr..r.r.rr..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5052,7 +5055,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w... .rr.w....r. wfrr. ...rrr..r.r... rw\""]}),
+                          children: ["\"w... .rr.w....r. w@rr. ...rrr..r.r... rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5088,7 +5091,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.rr......r.mmm..r....r...r......r.rr..w\""]}),
+                          children: ["\"w.rr......r.@@@..r....r...r......r.rr..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5133,7 +5136,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w. r..f r....r.rr......rrrr..r. .rr.. rw\""]}),
+                          children: ["\"w. r..@ r....r.rr......rrrr..r. .rr.. rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5284,7 +5287,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..r...mmmmmm..mmmmmm.....r.r..r.......w\""]}),
+                          children: ["\"w..r...@@@@@@..@@@@@@.....r.r..r.......w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5374,7 +5377,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..r..r. f...... f.....r. f..r... f...rw\""]}),
+                          children: ["\"w..r..r. @...... @.....r. @..r... @...rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5489,7 +5492,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..........mmm......wwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w..........@@@......wwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5525,7 +5528,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w........X.mmm......wwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w........X.@@@......wwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -6031,7 +6034,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["320"]}),
+                          children: ["384"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -6350,6 +6353,53 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["192"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["ctx"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["drawImage"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["assets"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["monsterTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["320"]}),
                         " ",
                         W({
                           elem: "span",
@@ -18337,7 +18387,7 @@ addListener(
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
-                      children: ["EXPL"]}),
+                      children: ["EXP1"]}),
                     " ",
                     W({
                       elem: "span",

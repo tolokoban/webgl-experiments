@@ -17,6 +17,7 @@ WebGL.fetchAssets({
   levelVert: "level.vert",
   levelFrag: "level.frag",
   boulderTexture: "../img/row-boulder.png",
+  monsterTexture: "../img/row-monster.png",
   exitTexture: "../img/exit.png",
   diamTexture: "../img/row-diam.png",
   heroTexture: "../img/row-walk.png",
@@ -67,13 +68,14 @@ WebGL.fetchAssets({
       assets.rockSound.currentTime = 0;
       assets.rockSound.play();
     },
-    explode: function( col, row ) {
+    explode: function( col, row, makeDiams ) {
       var level = this.level;
       var x, y;
+      this.makeDiams = makeDiams;
       for( y = row - 1; y < row + 2; y++ ) {
         for( x = col - 1; x < col + 2; x++ ) {
           if( level.getType( x, y ) !== Level.WALL && level.getType( x, y ) !== Level.ROCK ) {
-            level.setType( x, y, Level.EXPL );
+            level.setType( x, y, makeDiams ? Level.EXP2 : Level.EXP1 );
             level.setIndex( x, y, 1 );
             level.setMove( x, y, 0, 0 );
           }
@@ -218,7 +220,7 @@ function initLevel( env, levelNumber ) {
   env.nextSynchro = -1;
   env.isHeroAlive = true;
   env.isLevelDone = false;
-  env.bonus = level.cols * level.rows * 5;
+  env.bonus = level.cols * level.rows * 4;
   env.transition = -1;
   env.levelNumber = levelNumber;
   if( levelNumber === 0 ) {

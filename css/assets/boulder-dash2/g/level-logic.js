@@ -28,6 +28,10 @@ window.LevelLogic = function() {
         // On tombe sur le héro : ça le tue.
         env.killHero();
       }
+      else if( below == Level.MONS ) {
+        // On écrase un monstre.
+        env.explode( col, row + 1, true );
+      }
       else if( below == Level.DIAM ) {
         // Si c'est une pierre qui tombe sur un diamant, il explose.
         if( level.getType( col, row ) === Level.ROCK ) {
@@ -82,7 +86,7 @@ window.LevelLogic = function() {
     }
   }
 
-  function processExplosion( level, col, row ) {
+  function processExplosion1( env, level, col, row ) {
     // Une explosion a une durée de vie de 2 cycles.
     if( level.getIndex( col, row ) > 0 ) {
       // Encore un cycle...
@@ -91,6 +95,45 @@ window.LevelLogic = function() {
       // C'est terminé pour l'explosion.
       level.setType( col, row, Level.VOID );
     }
+  }
+
+  function processExplosion2( env, level, col, row ) {
+    // Une explosion a une durée de vie de 2 cycles.
+    if( level.getIndex( col, row ) > 0 ) {
+      // Encore un cycle...
+      level.setIndex( col, row, level.getIndex( col, row ) - 1 );
+    } else {
+      // C'est terminé pour l'explosion.
+      level.setType( col, row, Level.DIAM );
+    }
+  }
+
+  // Directions du monstre en fonction de attIndex.
+  // Il essaie  d'aller dans sa  direction et si c'est  impossible, il
+  // essaie sur sa droite et ainsi de suite...
+  var dirs = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+  function processMonster( env, level, col, row ) {
+    var dir = level.getIndex( col, row );
+    var d, k;
+    var vx, vy, v;
+    var target;
+    for( k = 5; k > 1; k-- ) {
+      d = (dir + k) % 4;
+      v = dirs[d];
+      vx = v[0];
+      vy = v[1];
+      target = level.getType( col + vx, row + vy );
+      switch( target ) {
+      case Level.VOID:
+        level.setMove( col, row, vx, vy );
+        level.setIndex( col, row, d );
+        return;
+      case Level.HERO:
+        env.killHero();
+        return;
+      }
+    }
+    level.setMove( col, row, 0, 0 );
   }
 
   function processHero( env, level, col, row ) {
@@ -157,6 +200,7 @@ window.LevelLogic = function() {
         if( cell === Level.DIAM ) env.eatDiam();
         else if( cell === Level.EXIT ) env.nextLevel();
         else if( cell === Level.BOOM ) env.killHero();
+        else if( cell === Level.MONS ) env.killHero();
         level.setType( nextX, nextY, Level.VOID );
         level.flag( nextX, nextY );
         level.setMove( col, row, vx, vy );
@@ -184,11 +228,17 @@ window.LevelLogic = function() {
           if( cell === Level.ROCK || cell === Level.DIAM ) {
             processRockOrDiam( level, col, row, env );
           }
-          else if( cell === Level.EXPL ) {
-            processExplosion( level, col, row );
+          else if( cell === Level.MONS ) {
+            processMonster( env, level, col, row );
           }
           else if( cell === Level.HERO ) {
             processHero( env, level, col, row );
+          }
+          else if( cell === Level.EXP1 ) {
+            processExplosion1( env, level, col, row );
+          }
+          else if( cell === Level.EXP2 ) {
+            processExplosion2( env, level, col, row );
           }
         }
       }

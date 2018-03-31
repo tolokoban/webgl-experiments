@@ -73,7 +73,7 @@ WebGL.fetchAssets({
       for( y = row - 1; y < row + 2; y++ ) {
         for( x = col - 1; x < col + 2; x++ ) {
           if( level.getType( x, y ) !== Level.WALL && level.getType( x, y ) !== Level.ROCK ) {
-            level.setType( x, y, Level.EXPL );
+            level.setType( x, y, Level.EXP1 );
             level.setIndex( x, y, 1 );
             level.setMove( x, y, 0, 0 );
           }

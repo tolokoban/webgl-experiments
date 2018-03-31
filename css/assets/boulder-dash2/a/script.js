@@ -6,6 +6,7 @@ WebGL.fetchAssets({
   diamTexture: "../img/row-diam.png",
   heroTexture: "../img/row-walk.png",
   exploTexture: "../img/row-explo.png",
+  monsterTexture: "../img/row-monster.png",
   groundTexture: "../img/ground.png"
 }).then(function(assets) {
   var canvas = TextureAggregator( assets );
