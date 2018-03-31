@@ -11,7 +11,9 @@ window.Level = function() {
   var ROCK = 4;
   var DIAM = 5;
   var EXIT = 6;
-  var EXPL = 7;
+  var EXP1 = 7;
+  var EXP2 = 8;
+  var MONS = 9;
   var BOOM = 99;
 
   var Level = function( levelDef ) {
@@ -26,7 +28,9 @@ window.Level = function() {
   Level.ROCK = ROCK;
   Level.DIAM = DIAM;
   Level.EXIT = EXIT;
-  Level.EXPL = EXPL;
+  Level.EXP1 = EXP1;
+  Level.EXP2 = EXP2;
+  Level.MONS = MONS;
   // Destination d'une pierre ou d'un diamant en chute.
   Level.BOOM = BOOM;
 
@@ -181,9 +185,10 @@ window.Level = function() {
           exitRow = y;
           break;
         case '*':
-          type = EXPL;
-          exitCol = x;
-          exitRow = y;
+          type = EXP1;
+          break;
+        case '@':
+          type = MONS;
           break;
         }
         data.push( type, x, y, 0, 0, index );
