@@ -92,6 +92,7 @@ WebGL.fetchAssets({
         }
       }
       this.transition = 6;
+      console.info("[script] this=", this);
     },
     isLevelDone: false,
     nextLevel: function() {
@@ -112,14 +113,14 @@ WebGL.fetchAssets({
     window.requestAnimationFrame( anim );
 
     env.time = time;
-    var w = canvas.clientWidth;
-    var h = canvas.clientHeight;
-    canvas.setAttribute("width", w);
-    canvas.setAttribute("height", h);
-    env.width = w;
-    env.height = h;
-    env.w = Math.min(w, h) < 481 ? 2 : 1;
-    gl.viewport(0, 0, w, h);
+    var width = canvas.clientWidth;
+    var height = canvas.clientHeight;
+    canvas.setAttribute("width", width);
+    canvas.setAttribute("height", height);
+    env.width = width;
+    env.height = height;
+    env.w = Math.min(width, height) < 481 ? 2 : 1;
+    gl.viewport(0, 0, width, height);
 
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
@@ -154,20 +155,28 @@ WebGL.fetchAssets({
     // Positionner la caméra sur le héro.
     // Sauf si le cadrage arrive hors tableau.
     var t = (time % env.cellTime) / env.cellTime;
-    env.x = Math.min(
-      Math.max(
-        env.camX + t * env.camVX,
-        w * env.w * .5 / 64
-      ),
-      env.level.cols - 1 - w * env.w * .5 / 64
-    );
-    env.y = Math.min(
-      Math.max(
-        env.camY + t * env.camVY,
-        h * env.w * .5 / 64
-      ),
-      env.level.rows - 1 - h * env.w * .5 / 64
-    );
+    if( env.level.cols * 64 / env.w < width ) {
+      env.x = env.level.cols / 2;
+    } else {
+      env.x = Math.min(
+        Math.max(
+          env.camX + t * env.camVX,
+          width * env.w * .5 / 64
+        ),
+        env.level.cols - 1 - width * env.w * .5 / 64
+      );
+    }
+    if( env.level.rows * 64 / env.w < height ) {
+      env.y = env.level.rows / 2;
+    } else {
+      env.y = Math.min(
+        Math.max(
+          env.camY + t * env.camVY,
+          height * env.w * .5 / 64
+        ),
+        env.level.rows - 1 - height * env.w * .5 / 64
+      );
+    }
     //#(camera)
 
     // On affiche tout.

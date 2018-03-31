@@ -18982,6 +18982,15 @@ addListener(
                 W({
                   elem: "code",
                   children: ["wall-painter.js"]}),
+                "."]}),
+          W({
+              elem: "p",
+              children: [
+                "Et voilà ",
+                W({
+                  elem: "a",
+                  attr: {"href": "css/assets/boulder-dash2/g/"},
+                  children: ["le résultat"]}),
                 "."]})]},{"id":"wdg.article0"})
 
     }
