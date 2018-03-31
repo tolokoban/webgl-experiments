@@ -18,16 +18,20 @@ window.Levels = function() {
   return [    
     {
       // Nombre de diamants nécessaire pour ouvrir la sortie.
-      need: 1,
+      need: 3,
       // Variation de la teinte pour chaque élément.
       tint: { wall: 0, rock: 0, diam: 0, dust: 0, exit: 0 },
       rows: [
-        "wwww",
-        "wErw",
-        "w.dw",
-        "w..w",
-        "wX.w",
-        "wwwww"
+        "wwwwwwwwwwwwwwwwwwww",
+        "wE...........d.....w",
+        "w.dr...............w",
+        "w.......r..........w",
+        "wwwwwwwwww..wwwwwwww",
+        "w..................w",
+        "w........r......X..w",
+        "w.....d..........rrw",
+        "w................rrw",
+        "wwwwwwwwwwwwwwwwwwww"
       ]
     },
     {
@@ -61,7 +65,7 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 11,
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w.r..r..w.r...d.w... .r.wr......w..rr..w",
@@ -88,7 +92,7 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 23,
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.ww.wrr.w...rwr..r....w...r.....rw.d.w",
@@ -115,7 +119,7 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 18,
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....r....................r........r.w",
