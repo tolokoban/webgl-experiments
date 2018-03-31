@@ -33,6 +33,7 @@ WebGL.fetchAssets({
   var level = new Level( Levels[0] );
   assets.levelTexture = TextureAggregator( assets );
 
+  //#(env)
   var env = {
     gl: gl,
     level: level,
@@ -94,6 +95,7 @@ WebGL.fetchAssets({
       }
     }
   };
+  //#(env)
 
   var backgroundPainter = new BackgroundPainter( env );
   var wallPainter = new WallPainter( env );

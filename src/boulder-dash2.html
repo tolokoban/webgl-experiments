@@ -25,7 +25,8 @@ On rajoute des informations au niveau de la définition des tableaux. Par exempl
 <ex src="mod/assets/boulder-dash2/levels.js" label="Module levels.js (Définition des tableaux)"/>
 
 La classe qui représente une tableau est responsable de la création du VertexArray qu'il fournit au travers de son attribut `data`.
-<ex src="mod/assets/boulder-dash2/level.js" label="Module level.js (Instance d'un tableau)"/>
+<!-- <ex src="mod/assets/boulder-dash2/level.js" label="Module level.js (Instance d'un tableau)"/> -->
+
 
 # La texture agrégée
 
@@ -115,12 +116,38 @@ A titre d'exercice, je vous laisse trouver une solution par vous-même.
 Si vous séchez, sachez que le reste du code contient un correctif.
 
 
-# Que tombent les pierres !
+# Que tombent les pierres et les diamants, que s'ouvrent les sorties, ... !
 
-Nous acons maintenant besoin d'un module pour gérer la logique des éléments mobiles du tableau (pierres, diamants, monstres, ...). On va l'appeler `level-logic.js`, biensûr.
+Nous avons maintenant besoin d'un module pour gérer la logique des éléments mobiles du tableau (pierres, diamants, monstres, ...). On va l'appeler `level-logic.js`, biensûr.
+<x-code src="mod/assets/boulder-dash2/e/level-logic.js"/>
 
+L'environnement s'est enrichit, lui-aussi, apportant de nouveaux sons et même une musique d'ambiance.
+<x-code src="mod/assets/boulder-dash2/e/script.js" section="env"/>
 
 
 Et voilà <a href="css/assets/boulder-dash2/e/">le résultat</a>.
+
+
+# Simplifier encore le nombre de modules
+
+Mais tout d'abord, nous allons fusionner les modules `level-logic.js` et `hero-logic.js`.
+Puisque le héro est aussi un élément du décord, il peut être géré dans `level-logic.js`.
+Ça va d'ailleurs nous permettre d'avoir plusieurs héros sur un même tableau.
+Ce qui peut rendre le jeu assez intéressant.
+
+Et voilà <a href="css/assets/boulder-dash2/f/">le résultat</a>.
+
+
+# Changer de niveau
+
+Je ne vais pas vous décrire le jeu complet dans cet article, parce que le but est d'apprendre le WebGL.
+Si vous coulez en savoir plus, tout le code est ouvert et il est commenté.
+
+Mais si vous voulez passer au tableau suivant, il va falloir faire le ménage dans la carte graphique.
+En effet, toutes les textures, les programmes, les VertexArray qui on été créés, nous allons les détruire avant d'en recréer pour le tableau suivant.
+
+Il nous faut maintenant ajouter une méthode `destroy()` aux deux modules suivants : `level-logic.js` et `wall-painter.js`.
+
+
 
 </page>

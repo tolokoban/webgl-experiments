@@ -12,11 +12,12 @@ window.LevelLogic = function() {
   }
 
   function processRockOrDiam( level, col, row, env ) {
+    level.setVX( col, row, 0 ); // On arrête tout déplacement horizontal.
+    
     var below = level.getType( col, row + 1 );
     var falling = level.getVY( col, row ) != 0;
     if( falling ) {
       // La pierre est déjà en train de tomber.
-      level.setVX( col, row, 0 ); // On arrête tout déplacement horizontal.
       // On regarde s'il y a autre chose que du vide dessous.
       if( below !== Level.VOID ) {
         // On arrête la chute dans tous les cas.
@@ -57,8 +58,11 @@ window.LevelLogic = function() {
                    && level.getType( col - 1, row + 1 ) == Level.VOID
                    && !isRockOrDiam( level, col - 1 , row - 1 ) )
           {
-            // On tombe sur la gauche.
-            level.setMove( col, row, -1, 0 );
+            // On tombe sur la gauche seulement s'il n'y a pas déjà un
+            // rocher qui tombe sur la droite juste en face.
+            if( col < 2 || !isRockOrDiam( level, col - 2, row ) || level.getVX( col - 2, row ) < 1 ) {
+              level.setMove( col, row, -1, 0 );
+            }
           }
         }
       }

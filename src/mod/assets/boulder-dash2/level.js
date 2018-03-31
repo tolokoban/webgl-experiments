@@ -1,5 +1,6 @@
 "use strict";
 
+
 window.Level = function() {
   var NB_ATTRIBS = 6;
 
@@ -11,6 +12,7 @@ window.Level = function() {
   var DIAM = 5;
   var EXIT = 6;
   var EXPL = 7;
+  var BOOM = 99;
 
   var Level = function( levelDef ) {
     this._levelDef = levelDef;
@@ -25,6 +27,8 @@ window.Level = function() {
   Level.DIAM = DIAM;
   Level.EXIT = EXIT;
   Level.EXPL = EXPL;
+  // Destination d'une pierre ou d'un diamant en chute.
+  Level.BOOM = BOOM;
 
   Level.prototype.clone = function() {
     return new Level( this._levelDef );
