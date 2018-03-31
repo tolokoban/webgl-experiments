@@ -3106,6 +3106,79 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
+                          children: ["destroy"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["deleteProgram"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["program"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["};"]}),
+                        "\n\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["Program"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prototype"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
                           children: ["use"]}),
                         " ",
                         W({
@@ -11070,15 +11143,6 @@ addListener(
                         "\n            ",
                         W({
                           elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["/"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
-                        "\n            ",
-                        W({
-                          elem: "span",
                           attr: {"class": "identifier"},
                           children: ["audio"]}),
                         ".",
@@ -11102,30 +11166,37 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["next"]}),
-                        ".",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
                         W({
                           elem: "span",
-                          attr: {"class": "function"},
-                          children: ["bind"]}),
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n              ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["if"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["null"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
                         " ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["url"]}),
+                          children: ["audio"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_loaded"]}),
+                        " ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -11133,8 +11204,60 @@ addListener(
                         " ",
                         W({
                           elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["return"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n              ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["audio"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_loaded"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["true"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n              ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["next"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["url"]}),
+                        " ",
+                        W({
+                          elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
+                        "              \n            ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["});"]}),
                         "\n            ",
                         W({
                           elem: "span",
@@ -11281,14 +11404,6 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["});"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["/"]}),
                         "\n            ",
                         W({
                           elem: "span",
@@ -11313,25 +11428,6 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n            ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "function"},
-                          children: ["next"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["url"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
                         "\n          ",
                         W({
                           elem: "span",

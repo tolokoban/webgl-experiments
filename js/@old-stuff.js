@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article63', 'wdg.article', {
+        W('wdg.article97', 'wdg.article', {
             title: "Old stuff (à trier)",
             content: [
           W({
@@ -100,7 +100,7 @@ addListener(
                               attr: {"href": "doc.html"},
                               children: ["doc"]})]}),
                         "\n    "]}),
-                    "\n"]})]})]},{"id":"wdg.article63"})
+                    "\n"]})]})]},{"id":"wdg.article97"})
 
     }
 );

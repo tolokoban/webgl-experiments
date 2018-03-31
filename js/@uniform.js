@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article79', 'wdg.article', {
+        W('wdg.article113', 'wdg.article', {
             title: "Passer un uniforme",
             content: [
           W({
@@ -2911,7 +2911,7 @@ addListener(
                   elem: "a",
                   attr: {"href": "css/assets/uniform/index4.html"},
                   children: ["résultat"]}),
-                "."]})]},{"id":"wdg.article79"})
+                "."]})]},{"id":"wdg.article113"})
 
     }
 );

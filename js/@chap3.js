@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article18', 'wdg.article', {
+        W('wdg.article52', 'wdg.article', {
             title: "Textures procédurales",
             content: [
           W({
@@ -182,24 +182,24 @@ addListener(
           W({
               elem: "p",
               children: [
-                W('wdg.gl319','wdg.gl3',{
+                W('wdg.gl353','wdg.gl3',{
                   width: "300",
                   height: "300",
-                  fragment: "a"},{"id":"wdg.gl319"}),
+                  fragment: "a"},{"id":"wdg.gl353"}),
                 "\n",
-                W('wdg.gl320','wdg.gl3',{
+                W('wdg.gl354','wdg.gl3',{
                   width: "300",
                   height: "300",
-                  fragment: "b"},{"id":"wdg.gl320"}),
+                  fragment: "b"},{"id":"wdg.gl354"}),
                 "\n",
-                W('wdg.gl321','wdg.gl3',{
+                W('wdg.gl355','wdg.gl3',{
                   width: "300",
                   height: "300",
-                  fragment: "c"},{"id":"wdg.gl321"})]}),
+                  fragment: "c"},{"id":"wdg.gl355"})]}),
           W({
               elem: "p",
               children: [
-                W('wdg.showhide22','wdg.showhide',{
+                W('wdg.showhide56','wdg.showhide',{
                   value: "false",
                   label: "Le pyjama rayé",
                   content: [
@@ -443,9 +443,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide22"}),
+                        " "]})]},{"id":"wdg.showhide56"}),
                 "\n",
-                W('wdg.showhide23','wdg.showhide',{
+                W('wdg.showhide57','wdg.showhide',{
                   value: "false",
                   label: "La vague colorée",
                   content: [
@@ -894,9 +894,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide23"}),
+                        " "]})]},{"id":"wdg.showhide57"}),
                 "\n",
-                W('wdg.showhide24','wdg.showhide',{
+                W('wdg.showhide58','wdg.showhide',{
                   value: "false",
                   label: "Le tramage",
                   content: [
@@ -1864,7 +1864,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide24"})]}),
+                        " "]})]},{"id":"wdg.showhide58"})]}),
           W({
               elem: "p",
               children: ["Voici quelques fonctions spécifiques au language de shading :"]}),
@@ -1934,7 +1934,7 @@ addListener(
                   elem: "hr"})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide25','wdg.showhide',{
+              children: [W('wdg.showhide59','wdg.showhide',{
                   value: "false",
                   label: "Coordonnées de l'étoile à 7 branches",
                   content: [
@@ -2701,7 +2701,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        " "]})]},{"id":"wdg.showhide25"})]})]},{"id":"wdg.article18"})
+                        " "]})]},{"id":"wdg.showhide59"})]})]},{"id":"wdg.article52"})
 
     }
 );

@@ -60,12 +60,12 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article31', 'wdg.article', {"content": [
+        W('wdg.article65', 'wdg.article', {"content": [
           W({
               elem: "p",
               children: [
                 "  ",
-                W('wdg.flex32','wdg.flex',{"content": [
+                W('wdg.flex66','wdg.flex',{"content": [
                   W({
                       elem: "center",
                       children: [
@@ -78,9 +78,9 @@ addListener(
                               children: ["Sans"]}),
                             " tri Javascript"]}),
                         "\n        ",
-                        W('wdg.gl6-233','wdg.gl6-2',{
+                        W('wdg.gl6-267','wdg.gl6-2',{
                           width: "420",
-                          height: "420"},{"id":"wdg.gl6-233"}),
+                          height: "420"},{"id":"wdg.gl6-267"}),
                         "\n      "]}),
                   W({
                       elem: "center",
@@ -94,11 +94,11 @@ addListener(
                               children: ["Avec"]}),
                             " tri Javascript"]}),
                         "\n        ",
-                        W('wdg.gl6-234','wdg.gl6-2',{
+                        W('wdg.gl6-268','wdg.gl6-2',{
                           width: "420",
                           height: "420",
-                          sort: "true"},{"id":"wdg.gl6-234"}),
-                        "\n    "]})]},{"id":"wdg.flex32"})]}),
+                          sort: "true"},{"id":"wdg.gl6-268"}),
+                        "\n    "]})]},{"id":"wdg.flex66"})]}),
           W({
               elem: "p",
               children: ["La semi-transparence apporte son lot de désagréments. Comparez attentivement\nles deux animations ci-dessus et essayez de comprendre pourquoi celle de gauche\nne donne pas le résultat attendu (laissez se faire plusieurs rotations si vous\nne voyez pas tout de suite le problème)."]}),
@@ -1671,7 +1671,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["])"]}),
-                    " "]})]})]},{"id":"wdg.article31"})
+                    " "]})]})]},{"id":"wdg.article65"})
 
     }
 );

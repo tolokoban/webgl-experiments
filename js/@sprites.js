@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article68', 'wdg.article', {
+        W('wdg.article102', 'wdg.article', {
             title: "Sprites",
             content: [
           W({
@@ -73,9 +73,9 @@ addListener(
                 ".\nVous pouvez constater que ça reste fluide."]}),
           W({
               elem: "p",
-              children: [W('wdg.gl569','wdg.gl5',{
+              children: [W('wdg.gl5103','wdg.gl5',{
                   width: "880",
-                  height: "660"},{"id":"wdg.gl569"})]}),
+                  height: "660"},{"id":"wdg.gl5103"})]}),
           W({
               elem: "p",
               children: ["Pour WebGL, chaque sprite sera un carré formé de 4 vertices qui auront tous les mêmes coordonnées\n(celles du centre du sprite) ainsi que les attributs suivants :"]}),
@@ -413,7 +413,7 @@ addListener(
                     " "]})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide70','wdg.showhide',{
+              children: [W('wdg.showhide104','wdg.showhide',{
                   value: "false",
                   label: "Le plus gros de la logique se trouve dans le vertex shader",
                   content: [
@@ -1323,12 +1323,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide70"})]}),
+                        " "]})]},{"id":"wdg.showhide104"})]}),
           W({
               elem: "p",
               children: [
                 "Côté Javascript, nous allons faire varier les valeurs des attributs de chaque sprite\nen fonction du temps.\nAinsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.\n",
-                W('wdg.showhide71','wdg.showhide',{
+                W('wdg.showhide105','wdg.showhide',{
                   value: "false",
                   label: "Voici le code de la fonction qui défini les sprites pour le Javascript",
                   content: [
@@ -1824,7 +1824,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide71"})]}),
+                        " "]})]},{"id":"wdg.showhide105"})]}),
           W({
               elem: "p",
               children: ["Nous allons maintenant définir le lien entre un buffer et les attributs dont on a besoin.\nNotre vertex shader aura besoin des 4 attributs suivants :"]}),
@@ -1886,7 +1886,7 @@ addListener(
                 "appeler le premier microprocesseur de vertex shader disponible."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide72','wdg.showhide',{
+              children: [W('wdg.showhide106','wdg.showhide',{
                   value: "false",
                   label: "Voici le code qui définit l'association entre les attributs et les blocs du tableau",
                   content: [
@@ -2821,10 +2821,10 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        " "]})]},{"id":"wdg.showhide72"})]}),
+                        " "]})]},{"id":"wdg.showhide106"})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide73','wdg.showhide',{
+              children: [W('wdg.showhide107','wdg.showhide',{
                   value: "false",
                   label: "Et celui qui dessine chaque frame",
                   content: [
@@ -4205,7 +4205,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide73"})]}),
+                        " "]})]},{"id":"wdg.showhide107"})]}),
           W({
               elem: "h1",
               attr: {"id": "remarque-concernant-l-initialisation-du-contexte-webgl"},
@@ -4724,7 +4724,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    " "]})]})]},{"id":"wdg.article68"})
+                    " "]})]})]},{"id":"wdg.article102"})
 
     }
 );

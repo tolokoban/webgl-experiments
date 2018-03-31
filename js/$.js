@@ -1,4 +1,4 @@
-/** @module $ */require( '$', function(require, module, exports) {     exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.84\"","major":"0","minor":"0","revision":"84","date":"2018-03-30T17:22:31.000Z","consts":{}};
+/** @module $ */require( '$', function(require, module, exports) {     exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.85\"","major":"0","minor":"0","revision":"85","date":"2018-03-31T09:15:55.000Z","consts":{}};
 var currentLang = null;
 exports.lang = function(lang) {
     if (lang === undefined) {

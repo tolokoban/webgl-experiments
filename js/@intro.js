@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article55', 'wdg.article', {
+        W('wdg.article89', 'wdg.article', {
             title: "Introduction aux concepts fondamentaux",
             content: [
           W({
@@ -69,9 +69,9 @@ addListener(
               children: ["Le système de coordonnées"]}),
           W({
               elem: "p",
-              children: [W('wdg.intro156','wdg.intro1',{
+              children: [W('wdg.intro190','wdg.intro1',{
                   float: "right",
-                  height: "200"},{"id":"wdg.intro156"})]}),
+                  height: "200"},{"id":"wdg.intro190"})]}),
           W({
               elem: "p",
               children: [
@@ -136,10 +136,10 @@ addListener(
               children: ["Le pipeline"]}),
           W({
               elem: "p",
-              children: [W('wdg.intro257','wdg.intro2',{
+              children: [W('wdg.intro291','wdg.intro2',{
                   float: "right",
                   width: "200",
-                  height: "200"},{"id":"wdg.intro257"})]}),
+                  height: "200"},{"id":"wdg.intro291"})]}),
           W({
               elem: "p",
               children: [
@@ -2417,7 +2417,7 @@ addListener(
                   attr: {
                     src: "css/assets/intro/index.html",
                     width: "300",
-                    height: "240"}})]})]},{"id":"wdg.article55"})
+                    height: "240"}})]})]},{"id":"wdg.article89"})
 
     }
 );

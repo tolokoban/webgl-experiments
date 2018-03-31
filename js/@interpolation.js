@@ -60,16 +60,16 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article52', 'wdg.article', {
+        W('wdg.article86', 'wdg.article', {
             title: "Interpolation",
             content: [
           W({
               elem: "p",
               children: [
                 "  ",
-                W('wdg.interpolation53','wdg.interpolation',{
+                W('wdg.interpolation87','wdg.interpolation',{
                   width: "640",
-                  height: "320"},{"id":"wdg.interpolation53","class":"right"})]}),
+                  height: "320"},{"id":"wdg.interpolation87","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -102,7 +102,7 @@ addListener(
               elem: "p",
               children: [
                 "  ",
-                W('wdg.showhide54','wdg.showhide',{
+                W('wdg.showhide88','wdg.showhide',{
                   value: "false",
                   label: "Étudions le Vertex Shader",
                   content: [
@@ -708,7 +708,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide54"})]}),
+                        " "]})]},{"id":"wdg.showhide88"})]}),
           W({
               elem: "p",
               children: [
@@ -790,7 +790,7 @@ addListener(
                         "&#39;",
                         "il faut toujours utiliser cette coordonnée\nquand on veut faire une projection 3D."]}),
                     "\n"]}),
-                "\n"]})]},{"id":"wdg.article52"})
+                "\n"]})]},{"id":"wdg.article86"})
 
     }
 );

@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article64', 'wdg.article', {
+        W('wdg.article98', 'wdg.article', {
             title: "Particules",
             content: [
           W({
@@ -71,9 +71,9 @@ addListener(
                 "eau et tout ce que votre imagination peut créer."]}),
           W({
               elem: "p",
-              children: [W('wdg.gl765','wdg.gl7',{
+              children: [W('wdg.gl799','wdg.gl7',{
                   width: "640",
-                  height: "640"},{"id":"wdg.gl765"})]}),
+                  height: "640"},{"id":"wdg.gl799"})]}),
           W({
               elem: "p",
               children: [
@@ -368,7 +368,7 @@ addListener(
                 " se base sur cette variable pour calculer la position, la taille et la couleur du vertex, donc de la particule."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide66','wdg.showhide',{
+              children: [W('wdg.showhide100','wdg.showhide',{
                   value: "false",
                   label: "Vertex Shader",
                   content: [
@@ -1713,7 +1713,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide66"})]}),
+                        " "]})]},{"id":"wdg.showhide100"})]}),
           W({
               elem: "p",
               children: [
@@ -1728,7 +1728,7 @@ addListener(
                 "\net qui devient de plus en plus transparent en allant vers la périphérie."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide67','wdg.showhide',{
+              children: [W('wdg.showhide101','wdg.showhide',{
                   value: "false",
                   label: "Fragment Shader",
                   content: [
@@ -2105,7 +2105,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide67"})]}),
+                        " "]})]},{"id":"wdg.showhide101"})]}),
           W({
               elem: "p",
               children: [
@@ -2762,7 +2762,7 @@ addListener(
                   children: ["\nRed   := Rs * As + Rd * (1 - As)\nGreen := Gs * As + Gd * (1 - As)\nBlue  := Bs * As + Bd * (1 - As)\nAlpha := As * 0 + Ad * 1\n"]})]}),
           W({
               elem: "p",
-              children: ["Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets."]})]},{"id":"wdg.article64"})
+              children: ["Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets."]})]},{"id":"wdg.article98"})
 
     }
 );

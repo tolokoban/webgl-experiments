@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article36', 'wdg.article', {
+        W('wdg.article70', 'wdg.article', {
             title: "Un point c'est tout",
             content: [
           W({
@@ -83,7 +83,7 @@ addListener(
                 "amuser avec. Cet exemple utilise 6 vertices, par exemple :"]}),
           W({
               elem: "p",
-              children: [W('wdg.flex37','wdg.flex',{"content": [
+              children: [W('wdg.flex71','wdg.flex',{"content": [
                   W({
                       elem: "center",
                       children: [
@@ -92,9 +92,9 @@ addListener(
                           elem: "div",
                           children: ["Sans z-buffer"]}),
                         "\n      ",
-                        W('wdg.gl638','wdg.gl6',{
+                        W('wdg.gl672','wdg.gl6',{
                           width: "320",
-                          height: "320"},{"id":"wdg.gl638"}),
+                          height: "320"},{"id":"wdg.gl672"}),
                         "\n    "]}),
                   W({
                       elem: "center",
@@ -104,11 +104,11 @@ addListener(
                           elem: "div",
                           children: ["Avec z-buffer"]}),
                         "\n      ",
-                        W('wdg.gl639','wdg.gl6',{
+                        W('wdg.gl673','wdg.gl6',{
                           width: "320",
                           height: "320",
-                          zbuffer: "true"},{"id":"wdg.gl639"}),
-                        "\n  "]})]},{"id":"wdg.flex37"})]}),
+                          zbuffer: "true"},{"id":"wdg.gl673"}),
+                        "\n  "]})]},{"id":"wdg.flex71"})]}),
           W({
               elem: "p",
               children: [
@@ -146,7 +146,7 @@ addListener(
               children: ["Voici les shaders qui sont utilisés ici :"]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide40','wdg.showhide',{
+              children: [W('wdg.showhide74','wdg.showhide',{
                   value: "false",
                   label: "Vertex Shader",
                   content: [
@@ -477,10 +477,10 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide40"})]}),
+                        " "]})]},{"id":"wdg.showhide74"})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide41','wdg.showhide',{
+              children: [W('wdg.showhide75','wdg.showhide',{
                   value: "false",
                   label: "fragment Shader",
                   content: [
@@ -1181,7 +1181,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide41"})]}),
+                        " "]})]},{"id":"wdg.showhide75"})]}),
           W({
               elem: "p",
               children: [
@@ -1368,7 +1368,7 @@ addListener(
               elem: "p",
               children: [
                 "  ",
-                W('wdg.flex42','wdg.flex',{"content": [
+                W('wdg.flex76','wdg.flex',{"content": [
                   W({
                       elem: "center",
                       children: [
@@ -1381,9 +1381,9 @@ addListener(
                               children: ["Sans"]}),
                             " tri Javascript"]}),
                         "\n        ",
-                        W('wdg.gl6-243','wdg.gl6-2',{
+                        W('wdg.gl6-277','wdg.gl6-2',{
                           width: "300",
-                          height: "300"},{"id":"wdg.gl6-243"}),
+                          height: "300"},{"id":"wdg.gl6-277"}),
                         "\n      "]}),
                   W({
                       elem: "center",
@@ -1397,11 +1397,11 @@ addListener(
                               children: ["Avec"]}),
                             " tri Javascript"]}),
                         "\n        ",
-                        W('wdg.gl6-244','wdg.gl6-2',{
+                        W('wdg.gl6-278','wdg.gl6-2',{
                           width: "300",
                           height: "300",
-                          sort: "true"},{"id":"wdg.gl6-244"}),
-                        "\n    "]})]},{"id":"wdg.flex42"})]}),
+                          sort: "true"},{"id":"wdg.gl6-278"}),
+                        "\n    "]})]},{"id":"wdg.flex76"})]}),
           W({
               elem: "p",
               children: ["La semi-transparence apporte son lot de désagréments. Comparez attentivement\nles deux animations ci-dessus et essayez de comprendre pourquoi celle de gauche\nne donne pas le résultat attendu (laissez se faire plusieurs rotations si vous\nne voyez pas tout de suite le problème)."]}),
@@ -2974,7 +2974,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["])"]}),
-                    " "]})]})]},{"id":"wdg.article36"})
+                    " "]})]})]},{"id":"wdg.article70"})
 
     }
 );

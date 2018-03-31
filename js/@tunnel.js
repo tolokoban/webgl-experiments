@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article77', 'wdg.article', {
+        W('wdg.article111', 'wdg.article', {
             title: "Tunnel",
             content: [
           W({
@@ -126,7 +126,7 @@ addListener(
                 "une portion de tunnel"]}),
           W({
               elem: "p",
-              children: [W('wdg.tunnel178','wdg.tunnel1',{"float": "right"},{"id":"wdg.tunnel178"})]}),
+              children: [W('wdg.tunnel1112','wdg.tunnel1',{"float": "right"},{"id":"wdg.tunnel1112"})]}),
           W({
               elem: "p",
               children: [
@@ -5522,7 +5522,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["}"]}),
-                    " "]})]})]},{"id":"wdg.article77"})
+                    " "]})]})]},{"id":"wdg.article111"})
 
     }
 );

@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article76', 'wdg.article', {"content": [
+        W('wdg.article110', 'wdg.article', {"content": [
           W({
               elem: "p",
               children: [W('wdg','transparence',{},{"id":"wdg","name":"transparence"})]}),
@@ -185,7 +185,7 @@ addListener(
               elem: "p",
               children: [W({
                   elem: "code",
-                  children: ["gl.depthMask( false );"]})]})]},{"id":"wdg.article76"})
+                  children: ["gl.depthMask( false );"]})]})]},{"id":"wdg.article110"})
         W.bind('wdg',{"white":{"B":[["white","value"]]},"depth":{"B":[["depth","value"]]},"bright":{"B":[["bright","value"]]},"multiply":{"B":[["multiply","value"]]}});
     }
 );

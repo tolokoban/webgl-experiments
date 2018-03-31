@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article26', 'wdg.article', {
+        W('wdg.article60', 'wdg.article', {
             title: "Animation de Textures",
             content: [
           W({
@@ -87,9 +87,9 @@ addListener(
                 "."]}),
           W({
               elem: "p",
-              children: [W('wdg.gl427','wdg.gl4',{
+              children: [W('wdg.gl461','wdg.gl4',{
                   width: "300",
-                  height: "300"},{"id":"wdg.gl427","class":"right"})]}),
+                  height: "300"},{"id":"wdg.gl461","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -137,7 +137,7 @@ addListener(
                 " dans un version légèrement différente."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide28','wdg.showhide',{
+              children: [W('wdg.showhide62','wdg.showhide',{
                   value: "false",
                   label: "Voici le code complet de cette animation",
                   content: [
@@ -1414,7 +1414,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        " "]})]},{"id":"wdg.showhide28"})]}),
+                        " "]})]},{"id":"wdg.showhide62"})]}),
           W({
               elem: "p",
               children: ["Trois remarques importantes à ce stade :"]}),
@@ -1491,7 +1491,7 @@ addListener(
                   elem: "strong",
                   children: ["vertex shader"]}),
                 " qui modifie les coordonnées de notre quadrilatère en fonction du temps :\n",
-                W('wdg.showhide29','wdg.showhide',{
+                W('wdg.showhide63','wdg.showhide',{
                   value: "false",
                   label: "Vertex Shader",
                   content: [
@@ -1973,7 +1973,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide29"})]}),
+                        " "]})]},{"id":"wdg.showhide63"})]}),
           W({
               elem: "p",
               children: [
@@ -1982,7 +1982,7 @@ addListener(
                   elem: "strong",
                   children: ["fragment shader"]}),
                 " qui donne cet effet de vagues :\n",
-                W('wdg.showhide30','wdg.showhide',{
+                W('wdg.showhide64','wdg.showhide',{
                   value: "false",
                   label: "Fragment Shader",
                   content: [
@@ -2901,7 +2901,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide30"})]}),
+                        " "]})]},{"id":"wdg.showhide64"})]}),
           W({
               elem: "h1",
               attr: {"id": "faites-vos-essais"},
@@ -2961,7 +2961,7 @@ addListener(
                 "&#39;",
                 "essayer de modifier quelques paramètres du shader des vagues\npour vous familiariser avec l",
                 "&#39;",
-                "outil et avec le GLSL (language des shaders)."]})]},{"id":"wdg.article26"})
+                "outil et avec le GLSL (language des shaders)."]})]},{"id":"wdg.article60"})
 
     }
 );

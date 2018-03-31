@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article35', 'wdg.article', {"content": [
+        W('wdg.article69', 'wdg.article', {"content": [
           W({
               elem: "ul",
               children: [
@@ -78,7 +78,7 @@ addListener(
                       elem: "a",
                       attr: {"href": "docs/es_full_spec_2.0.pdf"},
                       children: ["OpenGL ES2 Full Spec"]})]}),
-                "\n"]})]},{"id":"wdg.article35"})
+                "\n"]})]},{"id":"wdg.article69"})
 
     }
 );

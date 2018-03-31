@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article58', 'wdg.article', {
+        W('wdg.article92', 'wdg.article', {
             title: "Traçons des lignes",
             content: [
           W({
@@ -69,10 +69,10 @@ addListener(
               children: ["Des fils et des clous"]}),
           W({
               elem: "p",
-              children: [W('wdg.lines159','wdg.lines1',{
+              children: [W('wdg.lines193','wdg.lines1',{
                   float: "right",
                   width: "200",
-                  height: "200"},{"id":"wdg.lines159"})]}),
+                  height: "200"},{"id":"wdg.lines193"})]}),
           W({
               elem: "p",
               children: [
@@ -243,17 +243,17 @@ addListener(
           W({
               elem: "p",
               children: [
-                W('wdg.lines160','wdg.lines1',{
+                W('wdg.lines194','wdg.lines1',{
                   n: "50",
-                  f: "3"},{"id":"wdg.lines160"}),
+                  f: "3"},{"id":"wdg.lines194"}),
                 "\n",
-                W('wdg.lines161','wdg.lines1',{
+                W('wdg.lines195','wdg.lines1',{
                   n: "50",
-                  f: "4"},{"id":"wdg.lines161"}),
+                  f: "4"},{"id":"wdg.lines195"}),
                 "\n",
-                W('wdg.lines162','wdg.lines1',{
+                W('wdg.lines196','wdg.lines1',{
                   n: "50",
-                  f: "5"},{"id":"wdg.lines162"})]}),
+                  f: "5"},{"id":"wdg.lines196"})]}),
           W({
               elem: "h1",
               attr: {"id": "tracer-sans-faire-de-boucles"},
@@ -2746,7 +2746,7 @@ addListener(
                   elem: "a",
                   attr: {"href": "css/assets/lines/index3.html"},
                   children: ["le résultat"]}),
-                "."]})]},{"id":"wdg.article58"})
+                "."]})]},{"id":"wdg.article92"})
 
     }
 );

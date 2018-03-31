@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article51', 'wdg.article', {"content": [
+        W('wdg.article85', 'wdg.article', {"content": [
           W({
               elem: "p",
               children: [W({
@@ -1258,7 +1258,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    " "]})]})]},{"id":"wdg.article51"})
+                    " "]})]})]},{"id":"wdg.article85"})
 
     }
 );

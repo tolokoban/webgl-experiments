@@ -60,16 +60,16 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article45', 'wdg.article', {
+        W('wdg.article79', 'wdg.article', {
             title: "Frame Buffer",
             content: [
           W({
               elem: "p",
               children: [
                 "  ",
-                W('wdg.gl846','wdg.gl8',{
+                W('wdg.gl880','wdg.gl8',{
                   width: "512",
-                  height: "512"},{"id":"wdg.gl846"})]}),
+                  height: "512"},{"id":"wdg.gl880"})]}),
           W({
               elem: "p",
               children: [
@@ -88,7 +88,7 @@ addListener(
                 "exemple ci-dessus, nous utilisons le code du chapitre précédent, mais le\nrendu se fait dans une texture. Ensuite, nous affichons un carré et utilisons\nle fragment shader suivant sur la texture :"]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide47','wdg.showhide',{
+              children: [W('wdg.showhide81','wdg.showhide',{
                   value: "false",
                   label: "Fragment Shader",
                   content: [
@@ -3580,7 +3580,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide47"})]}),
+                        " "]})]},{"id":"wdg.showhide81"})]}),
           W({
               elem: "p",
               children: ["Voyons maintenant comment on utilise les Framebuffers."]}),
@@ -3588,7 +3588,7 @@ addListener(
               elem: "p",
               children: [
                 "Il faut commencer par créer un texture qui recevra les affichages : \n",
-                W('wdg.showhide48','wdg.showhide',{
+                W('wdg.showhide82','wdg.showhide',{
                   value: "false",
                   label: "Code Javascript",
                   content: [
@@ -4055,7 +4055,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        " "]})]},{"id":"wdg.showhide48"})]}),
+                        " "]})]},{"id":"wdg.showhide82"})]}),
           W({
               elem: "p",
               children: [
@@ -4613,7 +4613,7 @@ addListener(
                             " : Généralement 0."]}),
                         "\n"]}),
                     "\n"]}),
-                "\n"]})]},{"id":"wdg.article45"})
+                "\n"]})]},{"id":"wdg.article79"})
 
     }
 );
