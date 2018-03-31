@@ -1092,7 +1092,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["11"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1333,7 +1333,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["23"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1574,7 +1574,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["18"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},

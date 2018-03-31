@@ -65,7 +65,7 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 11,
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w.r..r..w.r...d.w... .r.wr......w..rr..w",
@@ -92,7 +92,7 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 23,
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.ww.wrr.w...rwr..r....w...r.....rw.d.w",
@@ -119,7 +119,7 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 18,
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....r....................r........r.w",
