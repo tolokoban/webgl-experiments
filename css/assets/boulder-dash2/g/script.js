@@ -25,7 +25,10 @@ WebGL.fetchAssets({
 }).then(function(assets) {
   var canvas = WebGL.newCanvas();
   var gl = canvas.getContext("webgl");
-
+  var header = document.createElement("header");
+  header.innerHTML = "<div>Life x <b id='life'>3</b></div><div><b id='score'>0</b></div><div id='bonus'>0</div><div><b id='diam'>12</b> x diam</div>";
+  document.body.appendChild( header );
+  
   //#(env)
   var env = {
     gl: gl,
@@ -34,8 +37,8 @@ WebGL.fetchAssets({
     cellTime: 180,  // Temps en ms pour traverser une cellule.
     nextSynchro: -1,
     levelNumber: 0,
-    globalScore: 0,
-    levelScore: 0,
+    score: 0,
+    bonus: 0,
     //#(eatDiam)
     eatenDiams: 0,
     eatDiam: function() {
@@ -53,6 +56,9 @@ WebGL.fetchAssets({
         this.level.setType( this.level.exitX, this.level.exitY, Level.EXIT );
         assets.exitSound.play();
       }
+      document.getElementById("diam").textContent = Math.max(0, this.level.need - this.eatenDiams );
+      this.score += 50;
+      document.getElementById("score").textContent = this.score;
     },
     //#(eatDiam)
     // Bruit du rocher dont la chute est stoppée par un obstacle.
@@ -136,10 +142,15 @@ WebGL.fetchAssets({
       LevelLogic.process( env );
       env.levelPainter.update();
 
+      env.bonus--;
+      if( env.bonus === 0 ) env.killHero();
+      document.getElementById("bonus").textContent = env.bonus;
+      
       if( env.transition > -1 ) {
         env.transition--;
         if( env.transition <= 0 ) {
           if( env.isLevelDone ) {
+            env.score += env.bonus;
             initLevel( env, env.levelNumber + 1 );
           } else {
             env.life--;
@@ -207,11 +218,13 @@ function initLevel( env, levelNumber ) {
   env.nextSynchro = -1;
   env.isHeroAlive = true;
   env.isLevelDone = false;
-  env.levelScore = 0;
-  env.bonus = 2000;
+  env.bonus = level.cols * level.rows * 5;
   env.transition = -1;
   env.levelNumber = levelNumber;
-  if( levelNumber === 0 ) env.life = 3;
+  if( levelNumber === 0 ) {
+    env.life = 3;
+    env.score = 0;
+  }
 
   env.assets.musicSound.pause();
   env.assets.musicSound.currentTime = 0;
@@ -221,5 +234,10 @@ function initLevel( env, levelNumber ) {
   env.wallPainter = new WallPainter( env );
   env.levelPainter = new LevelPainter( env );
 
+  document.getElementById("diam").textContent = level.need;
+  document.getElementById("life").textContent = env.life;
+  document.getElementById("score").textContent = env.score;
+  document.getElementById("bonus").textContent = env.bonus;
+  
   return level;
 }
