@@ -88,6 +88,8 @@ WebGL.fetchAssets({
     // Vie te mort du Héro.
     isHeroAlive: true,
     killHero: function() {
+      if( !this.isHeroAlive ) return;
+      
       this.camVX = this.camVY = 0;
 
       this.isHeroAlive = false;
@@ -100,7 +102,6 @@ WebGL.fetchAssets({
         }
       }
       this.transition = 6;
-      console.info("[script] this=", this);
     },
     isLevelDone: false,
     nextLevel: function() {
@@ -110,7 +111,7 @@ WebGL.fetchAssets({
   };
   //#(env)
 
-  initLevel( env, 0 );
+  initLevel( env, parseInt( location.search.substr(1) ) );
 
   gl.clearColor( 0, 0, 0, 1 );
   gl.enable( gl.DEPTH_TEST );
@@ -204,6 +205,7 @@ WebGL.fetchAssets({
 
 
 function initLevel( env, levelNumber ) {
+  if( typeof levelNumber !== 'number' || isNaN( levelNumber ) ) levelNumber = 0;
   if( env.backgroundPainter ) env.backgroundPainter.destroy();
   if( env.wallPainter ) env.wallPainter.destroy();
   if( env.levelPainter ) env.levelPainter.destroy();
