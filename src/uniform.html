@@ -49,7 +49,11 @@ void main() {
 Profitons-en pour introduire les animations :
 <x-code src="mod/assets/uniform/index2.html" section="animation" />"
 
-La fonction Javascript __requiestAnimationFrame__ exécute une fonction dès que l'affichage est prêt à être rafraichi. Sur la plupart des supports, cela se passe 60 fois par secondes. Si vous affichez une image en moins de 16 millisecondes, alors vous aurez une animation de 60 images par secondes : c'est le plus fluide possible.
+La fonction Javascript __requestAnimationFrame__ exécute une fonction dès que l'affichage est prêt à être rafraichi. Sur la plupart des supports, cela se passe 60 fois par secondes. Si vous affichez une image en moins de 16 millisecondes, alors vous aurez une animation de 60 images par secondes : c'est le plus fluide possible.
+
+Il faut noter que pour que WebGL garde le contenu de l'écran entre deux images, il faut passer l'options `preserveDrawingBuffer` lors de la création du contexte :
+<x-code src="mod/assets/uniform/index2.html" section="context" />"
+
 
 Voici le <a href="css/assets/uniform/index2.html">résultat</a>.
 

@@ -12,33 +12,31 @@
  *
  *  E: Entrée
  *  X: Sortie
-*/
+ */
 
 window.Levels = function() {
-  return [    
-    /*
+  return [
+    {
       // Nombre de diamants nécessaire pour ouvrir la sortie.
       need: 3,
       // Variation de la teinte pour chaque élément.
-      tint: { wall: 0, rock: 0, diam: 0, dust: 0, exit: 0 },
+      tint: { wall: 120, rock: 80, diam: 180, dust: 330, expl: 0, mons: 0, void: 210 },
       rows: [
-        "wwwwwwwwwwwwwwwwwwww",
-        "w.......r..r.d.....w",
-        "w.dr....E..........w",
-        "w.....r............w",
-        "wwwwwwww wwwwwwwwwww",
-        "w....... ..........w",
-        "w....... r......X..w",
-        "w.....d. ........rrw",
-        "w.......@........rrw",
-        "wwwwwwwwwwwwwwwwwwww"
+        "wwwwwwwwwwwwwwwww",
+        "w......r..r.d...w",
+        "wdr....E........w",
+        "w....r..........w",
+        "wwwwwww wwwwwwwww",
+        "w...... ........w",
+        "w...... r....X..w",
+        "w....d. ......rrw",
+        "w......@......rrw",
+        "wwwwwwwwwwwwwwwww"
       ]
-    },*/
+    },
     {
       // Nombre de diamants nécessaire pour ouvrir la sortie.
       need: 12,
-      // Variation de la teinte pour chaque élément.
-      tint: { wall: 0, rock: 0, diam: 0, dust: 0, exit: 0 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w...... ..d.r .....r.r....... ....r....w",
@@ -66,6 +64,7 @@ window.Levels = function() {
     },
     {
       need: 11,
+      tint: { wall: 280, rock: 280, diam: 45, dust: 280, expl: 0, mons: 0, void: 285 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w.r..r..w.r...d.w... .r.wr......w..rr..w",
@@ -93,6 +92,7 @@ window.Levels = function() {
     },
     {
       need: 23,
+      tint: { wall: 120, rock: 80, diam: 180, dust: 330, expl: 0, mons: 0, void: 210 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.ww.wrr.w...rwr..r....w...r.....rw.d.w",
@@ -119,7 +119,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 12,
+      need: 20,
+      tint: { wall: 200, rock: 280, diam: 200, dust: 200, expl: 0, mons: 0, void: 200 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....r....................r........r.w",
@@ -147,12 +148,13 @@ window.Levels = function() {
     },
     {
       need: 1,
+      tint: { wall: 100, rock: 20, diam: 100, dust: 100, expl: 0, mons: 240, void: 100 },
       rows: [
         "wwwwwwwwwwwwwwwwwwww",
-        "w             @    w",
-        "w         r        w",
-        "w  E      .        w",
         "w                  w",
+        "w         r        w",
+        "w E       .        w",
+        "w                 @w",
         "w                  w",
         "w                  w",
         "w                  w",
@@ -164,6 +166,7 @@ window.Levels = function() {
     },
     {
       need: 20,
+      tint: { wall: 30, rock: 90, diam: 120, dust: 200, expl: 0, mons: 140, void: 300 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....................................w",

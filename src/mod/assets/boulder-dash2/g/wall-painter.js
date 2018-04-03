@@ -4,7 +4,7 @@ window.WallPainter = function() {
    * @param env.assets
    * @param env.level
    */
-  var WP = function( env ) {
+  var WP = function( env, wallTexture ) {
     var level = env.level.clone();
     var arrays = getArrays( level );
     var vertexArray = arrays.vertex;
@@ -21,7 +21,7 @@ window.WallPainter = function() {
       coords: env.assets.coordsVert
     });
 
-    this._texture = createTexture( env.gl, env.assets.wallTexture );
+    this._texture = createTexture( env.gl, wallTexture );
   };
 
   WP.prototype.destroy = function() {

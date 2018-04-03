@@ -140,13 +140,14 @@ Et voilà <a href="css/assets/boulder-dash2/f/">le résultat</a>.
 
 # Changer de niveau
 
-Je ne vais pas vous décrire le jeu complet dans cet article, parce que le but est d'apprendre le WebGL.
-Si vous coulez en savoir plus, tout le code est ouvert et il est commenté.
+Je ne vais pas vous décrire le jeu complet dans cet article, parce que le but est de se concentrer sur le WebGL.
+Si vous voulez en savoir plus, tout le code est ouvert et il est commenté.
 
-Mais si vous voulez passer au tableau suivant, il va falloir faire le ménage dans la carte graphique.
-En effet, toutes les textures, les programmes, les VertexArray qui on été créés, nous allons les détruire avant d'en recréer pour le tableau suivant.
+Pour passer au tableau suivant, il va falloir faire le ménage dans la carte graphique.
+En effet, toutes les textures, les programmes, les VertexArray qui on été créés devront être supprimés avant d'en recréer pour le tableau suivant.
 
-Il nous faut maintenant ajouter une méthode `destroy()` aux deux modules suivants : `level-logic.js` et `wall-painter.js`.
+Pour cela, nous allons ajouter une méthode `destroy()` aux deux modules suivants : `level-painter.js` et `wall-painter.js`.
+<ex src="mod/assets/boulder-dash2/g/level-painter.js" label="Faire du ménage" section="destroy" lang="js"/>
 
 Et voilà <a href="css/assets/boulder-dash2/g/">le résultat</a>.
 
