@@ -4,7 +4,11 @@ window.WallPainter = function() {
    * @param env.assets
    * @param env.level
    */
+<<<<<<< HEAD
   var WP = function( env, wallTexture ) {
+=======
+  var WP = function( env ) {
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
     var level = env.level.clone();
     var arrays = getArrays( level );
     var vertexArray = arrays.vertex;
@@ -21,7 +25,11 @@ window.WallPainter = function() {
       coords: env.assets.coordsVert
     });
 
+<<<<<<< HEAD
     this._texture = createTexture( env.gl, wallTexture );
+=======
+    this._texture = createTexture( env.gl, env.assets.wallTexture );
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
   };
 
   WP.prototype.destroy = function() {

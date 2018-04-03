@@ -60,16 +60,24 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
+<<<<<<< HEAD
         W('wdg.article66', 'wdg.article', {"content": [
+=======
+        W('wdg.article65', 'wdg.article', {"content": [
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           W({
               elem: "p",
               children: [
                 "  ",
+<<<<<<< HEAD
                 W('wdg.flex67','wdg.flex',{"content": [
+=======
+                W('wdg.flex66','wdg.flex',{"content": [
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
                   W({
                       elem: "center",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "div",
                           children: [
@@ -77,15 +85,23 @@ addListener(
                               elem: "b",
                               children: ["Sans"]}),
                             " tri Javascript"]}),
+<<<<<<< HEAD
                         "\r\n        ",
                         W('wdg.gl6-268','wdg.gl6-2',{
                           width: "420",
                           height: "420"},{"id":"wdg.gl6-268"}),
                         "\r\n      "]}),
+=======
+                        "\n        ",
+                        W('wdg.gl6-267','wdg.gl6-2',{
+                          width: "420",
+                          height: "420"},{"id":"wdg.gl6-267"}),
+                        "\n      "]}),
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
                   W({
                       elem: "center",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "div",
                           children: [
@@ -93,12 +109,21 @@ addListener(
                               elem: "b",
                               children: ["Avec"]}),
                             " tri Javascript"]}),
+<<<<<<< HEAD
                         "\r\n        ",
                         W('wdg.gl6-269','wdg.gl6-2',{
                           width: "420",
                           height: "420",
                           sort: "true"},{"id":"wdg.gl6-269"}),
                         "\r\n    "]})]},{"id":"wdg.flex67"})]}),
+=======
+                        "\n        ",
+                        W('wdg.gl6-268','wdg.gl6-2',{
+                          width: "420",
+                          height: "420",
+                          sort: "true"},{"id":"wdg.gl6-268"}),
+                        "\n    "]})]},{"id":"wdg.flex66"})]}),
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           W({
               elem: "p",
               children: ["La semi-transparence apporte son lot de désagréments. Comparez attentivement\nles deux animations ci-dessus et essayez de comprendre pourquoi celle de gauche\nne donne pas le résultat attendu (laissez se faire plusieurs rotations si vous\nne voyez pas tout de suite le problème)."]}),
@@ -160,7 +185,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -247,7 +272,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["["]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -301,7 +326,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -355,7 +380,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -409,7 +434,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ...\r\n",
+                    "\n  ...\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -605,7 +630,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["]);"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -634,7 +659,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["();"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -672,7 +697,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -724,7 +749,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n    \r\n",
+                    "\n    \n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -794,7 +819,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["]);"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -823,7 +848,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["();"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -861,7 +886,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -967,7 +992,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1051,7 +1076,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["];"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -1120,7 +1145,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["(["]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1147,7 +1172,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1174,7 +1199,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1201,7 +1226,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1228,7 +1253,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1255,7 +1280,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1282,7 +1307,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1309,7 +1334,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1336,12 +1361,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["]);"]}),
-                    "\r\n  \r\n  ",
+                    "\n  \n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1370,7 +1395,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["(["]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1520,7 +1545,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -1666,11 +1691,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "number"},
                       children: ["7"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["])"]}),
+<<<<<<< HEAD
                     " "]})]})]},{"id":"wdg.article66"})
 
     }
@@ -1729,3 +1755,9 @@ require("wdg.flex",function(e,s,t){function a(e){var s=n.elem(this,"div","wdg-fl
 //# sourceMappingURL=wdg.flex.js.map
 require("wdg.gl6-2",function(r,e,t){function n(r){function e(r){window.requestAnimationFrame(e);var a,o,i,l,u=r/3766.781248,h=Math.cos(u),v=Math.sin(u),p=r/3979.998511,E=Math.cos(p),_=Math.sin(p),R=h,F=v,b=v*_,P=E,C=-h*_,T=-v*E,m=_,S=h*E;for(l=0;l<c;l++)a=f[3*l+0],o=f[3*l+1],i=f[3*l+2],d[6*l+0]=a*R+0*o+i*F,d[6*l+1]=a*b+o*P+i*C,d[6*l+2]=a*T+o*m+i*S;t.sort&&g.sort(function(r,e){return d[6*e+2]-d[6*r+2]}),n.bindBuffer(n.ARRAY_BUFFER,s),n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW),n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),n.clear(n.COLOR_BUFFER_BIT|n.DEPTH_BUFFER_BIT),n.drawElements(n.POINTS,c,n.UNSIGNED_SHORT,0)}var t=this,n=r.getContext("webgl",{alpha:!1,depth:!0,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0}),a=n.createProgram();n.attachShader(a,i(n,u.vertex)),n.attachShader(a,o(n,u.fragment)),n.linkProgram(a),n.useProgram(a);var s=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,s);var c=56,d=new Float32Array(6*c);n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW);var f=[],g=new Uint16Array(c),A=n.createBuffer();n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),function(){var r,e,t,n,a,o,i,s;for(e=0;e<c-6;e++)r=l(e),d[6*e+3]=r.r,d[6*e+4]=r.g,d[6*e+5]=r.b,g[e]=e,i=.2*Math.PI+.6*e*Math.PI/(c-6-1),s=8.7*e*Math.PI/(c-6-1),a=Math.cos(i),o=Math.sin(i),t=o*Math.cos(s),n=o*Math.sin(s),f.push(t,n,a);for(e=c-6;e<c;e++)r=l(e),g[e]=e,d[6*e+3]=r.r,d[6*e+4]=r.g,d[6*e+5]=r.b,f.push(0,0,2*(e-c+6)/5-1)}();var h=d.BYTES_PER_ELEMENT,v=6*h,p=n.getAttribLocation(a,"attPosition");n.enableVertexAttribArray(p),n.vertexAttribPointer(p,3,n.FLOAT,!1,v,0);var E=n.getAttribLocation(a,"attColor");n.enableVertexAttribArray(E),n.vertexAttribPointer(E,3,n.FLOAT,!1,v,3*h),n.enable(n.BLEND),n.blendFunc(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA),n.enable(n.DEPTH_TEST),n.depthFunc(n.LESS),n.clearColor(0,0,0,1),n.bindBuffer(n.ARRAY_BUFFER,s),window.requestAnimationFrame(e)}function a(r,e,t){var n=e.createShader(r);return e.shaderSource(n,t),e.compileShader(n),e.getShaderParameter(n,e.COMPILE_STATUS)?n:(console.log(t),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(n)),null)}function o(r,e){return a(r.FRAGMENT_SHADER,r,e)}function i(r,e){return a(r.VERTEX_SHADER,r,e)}function l(r){r=(17*r+43)%g.length;var e=g[r];return{r:.5*e[0],g:.5*e[1],b:.5*e[2]}}var s=function(){function e(){return n(t,arguments)}var t={en:{}},n=r("$").intl;return e.all=t,e}(),u={vertex:"attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = (1.5 - z) / 2.5;\r\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 60.0 * depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",fragment:"precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on place un fragment transparent.\r\n    discard;\r\n  } else if (r > .15 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor = vec4(varColor, 1.0);\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    gl_FragColor = vec4(varColor, 0.5);\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\r\n}\r\n"},c=r("dom"),d=r("tfw.data-binding"),f=function(r){var e=c.elem(this,"canvas");d.propInteger(this,"width")(function(r){e.setAttribute("width",r),e.style.width=r+"px"}),d.propInteger(this,"height")(function(r){e.setAttribute("height",r),e.style.height=r+"px"}),d.propBoolean(this,"sort"),r=d.extend({width:640,height:480,sort:!1},r,this),window.setTimeout(n.bind(this,e),20)};e.exports=f;var g=[[2,0,0],[0,2,0],[0,0,2],[2,1,0],[2,0,1],[1,2,0],[0,2,1],[1,0,2],[0,1,2],[0,2,2],[2,0,2],[2,2,0],[2,2,2]];e.exports._=s});
 //# sourceMappingURL=wdg.gl6-2.js.map
+=======
+                    " "]})]})]},{"id":"wdg.article65"})
+
+    }
+);
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd

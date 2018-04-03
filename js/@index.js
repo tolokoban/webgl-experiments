@@ -60,6 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
+<<<<<<< HEAD
         W('wdg.menu12', 'wdg.menu', {"value": [["intro","Introduction aux concepts fondamentaux","attachShader bindBuffer bufferData clear clearColor clearProgram compileShader createBuffer createShader drawArrays enableVertexAttribArray getAttribLocation linkProgram shaderSource useProgram vertexAttribPointer"],["uniform","Passer un uniforme","requestAnimationFrame getUniformLocation uniform4f uniform1f"],["chap2","Du triangle au polygône","drawArrays"],["lines","Traçons des lignes","gl.LINES requestAnimationFrame"],["boilerplate","Boilerplate","WebGL.Program WebGL.fetchAssets WebGL.newCanvas, WebGL.fillArrayBuffer"],["varying","Variations sur les couleurs","varying"],["aspect-ratio","Aspect Ratio","viewport clientWidth clientHeight"],["chap3","Textures procédurales","mod clamp"],["chap4","Animations de Textures",""],["interpolation","Interpolation","Coordonnée 'w'"],["marilyn","Marilyn",""],["dot","Un point c'est tout",""],["particules","Particules",""],["frame-buffer","Frame Buffer",""],["sprites","Sprites","gl.createTexture gl.bindTexture gl.texParameteri"],["deform","Déformations",""],["tunnel","Tunnel","createTexture, bindTexture, texParameteri, texImage2D, drawElements"],["boulder-dash","Boulder Dash",""],["boulder-dash2","Boulder Dash (Version 2)",""]]},{"id":"wdg.menu12"})
 
     }
@@ -110,3 +111,9 @@ require("tfw.css",function(e,r,t){var i=function(){function r(){return i(t,argum
 //# sourceMappingURL=tfw.css.js.map
 require("polyfill.string",function(r,t,n){var e=function(){function t(){return e(n,arguments)}var n={en:{}},e=r("$").intl;return t.all=n,t}();"function"!=typeof String.toLowerCase&&(String.toLowerCase=function(r){return r.toLowerCase()},String.toUpperCase=function(r){return r.toUpperCase()},String.trim=function(r){return r.trim()}),t.exports._=e});
 //# sourceMappingURL=polyfill.string.js.map
+=======
+        W('wdg.menu0', 'wdg.menu', {"value": [["intro","Introduction aux concepts fondamentaux","attachShader bindBuffer bufferData clear clearColor clearProgram compileShader createBuffer createShader drawArrays enableVertexAttribArray getAttribLocation linkProgram shaderSource useProgram vertexAttribPointer"],["uniform","Passer un uniforme","requestAnimationFrame getUniformLocation uniform4f uniform1f"],["chap2","Du triangle au polygône","drawArrays"],["lines","Traçons des lignes","gl.LINES requestAnimationFrame"],["boilerplate","Boilerplate","WebGL.Program WebGL.fetchAssets WebGL.newCanvas, WebGL.fillArrayBuffer"],["varying","Variations sur les couleurs","varying"],["aspect-ratio","Aspect Ratio","viewport clientWidth clientHeight"],["chap3","Textures procédurales","mod clamp"],["chap4","Animations de Textures",""],["interpolation","Interpolation","w"],["dot","Un point c'est tout",""],["particules","Particules",""],["frame-buffer","Frame Buffer",""],["sprites","Sprites","gl.createTexture gl.bindTexture gl.texParameteri"],["deform","Déformations",""],["tunnel","Tunnel","createTexture, bindTexture, texParameteri, texImage2D, drawElements"],["boulder-dash","Boulder Dash",""],["boulder-dash2","Boulder Dash (Version 2)",""]]},{"id":"wdg.menu0"})
+
+    }
+);
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd

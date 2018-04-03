@@ -226,7 +226,10 @@ window.Level = function() {
     //#(heroVXY)
     readonly( this, "data", new Float32Array( data ) );
     readonly( this, "need", levelDef.need );
+<<<<<<< HEAD
     readonly( this, "tint", levelDef.tint || {} );
+=======
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
     readonly( this, "rows", rows.length );
     readonly( this, "cols", rows[0].length );
     readonly( this, "exitX", exitCol );

@@ -30,13 +30,19 @@ window.LevelLogic = function() {
       }
       else if( below == Level.MONS ) {
         // On écrase un monstre.
+<<<<<<< HEAD
         level.setType( col, row, Level.VOID );
+=======
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
         env.explode( col, row + 1, true );
       }
       else if( below == Level.DIAM ) {
         // Si c'est une pierre qui tombe sur un diamant, il explose.
         if( level.getType( col, row ) === Level.ROCK ) {
+<<<<<<< HEAD
           level.setType( col, row, Level.VOID );
+=======
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           env.explode( col, row + 1 );
         }
       }
@@ -133,17 +139,24 @@ window.LevelLogic = function() {
       case Level.HERO:
         env.killHero();
         return;
+<<<<<<< HEAD
       case Level.ROCK:
       case Level.DIAM:
         if( level.getVY( col + vx, row + vy ) !== 0 ) {
           env.explode( col, row, true );
         }
+=======
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       }
     }
     level.setMove( col, row, 0, 0 );
   }
 
+<<<<<<< HEAD
   function processHero( env, level, col, row, heroMoves ) {
+=======
+  function processHero( env, level, col, row ) {
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
     // Si le héro est mort, on ne fait rien du tout.
     if( !env.isHeroAlive ) return;
 
@@ -204,11 +217,19 @@ window.LevelLogic = function() {
         vx = vy = 0;
       }
       else {
+<<<<<<< HEAD
         /*
          else if( cell === Level.BOOM ) env.killHero();
          else if( cell === Level.MONS ) env.killHero();
          */
         heroMoves.push([ col, row ]);
+=======
+        if( cell === Level.DIAM ) env.eatDiam();
+        else if( cell === Level.EXIT ) env.nextLevel();
+        else if( cell === Level.BOOM ) env.killHero();
+        else if( cell === Level.MONS ) env.killHero();
+        level.setType( nextX, nextY, Level.VOID );
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
         level.flag( nextX, nextY );
         level.setMove( col, row, vx, vy );
       }
@@ -222,6 +243,7 @@ window.LevelLogic = function() {
   return {
     // Déterminer les déplacements futurs.
     process: function( env ) {
+<<<<<<< HEAD
       // Chaque héro peut manger de la terres (feuilles), mais il faut
       // la retirer dans  un deuxième temps pour éviter  des effets de
       // bord sur la chute de pierres vers la gauche.
@@ -237,6 +259,10 @@ window.LevelLogic = function() {
 
       var level = env.level;
       var row, col, cell;
+=======
+      var level = env.level;
+      var row, col;
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       for( row = 0; row < level.rows; row++ ) {
         for( col = 0; col < level.cols; col++ ) {
           if( level.hasFlag( col, row ) ) {
@@ -244,6 +270,7 @@ window.LevelLogic = function() {
             continue;
           }
 
+<<<<<<< HEAD
           cell = level.getType( col, row );
           if( cell === Level.ROCK || cell === Level.DIAM ) {
             processRockOrDiam( level, col, row, env );
@@ -254,6 +281,18 @@ window.LevelLogic = function() {
           else if( cell === Level.MONS ) {
             processMonster( env, level, col, row );
           }
+=======
+          var cell = level.getType( col, row );
+          if( cell === Level.ROCK || cell === Level.DIAM ) {
+            processRockOrDiam( level, col, row, env );
+          }
+          else if( cell === Level.MONS ) {
+            processMonster( env, level, col, row );
+          }
+          else if( cell === Level.HERO ) {
+            processHero( env, level, col, row );
+          }
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           else if( cell === Level.EXP1 ) {
             processExplosion1( env, level, col, row );
           }
@@ -262,6 +301,7 @@ window.LevelLogic = function() {
           }
         }
       }
+<<<<<<< HEAD
       heroMoves.forEach(function (move) {
         var col = move[0];
         var row = move[1];
@@ -281,15 +321,22 @@ window.LevelLogic = function() {
         else if( cell !== Level.VOID ) env.killHero();
       });
 
+=======
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
     },
     // Appliquer les déplacements de chaque cellule.
     apply: function( env ) {
       var level = env.level;
       var row, col;
+<<<<<<< HEAD
       var isHeroAlive = false;
       for( row = 0; row < level.rows; row++ ) {
         for( col = 0; col < level.cols; col++ ) {
           if( level.getType( col, row ) === Level.HERO ) isHeroAlive = true;
+=======
+      for( row = 0; row < level.rows; row++ ) {
+        for( col = 0; col < level.cols; col++ ) {
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           if( level.hasFlag( col, row ) ) {
             // Cellule avec un flag : il ne faut pas la traiter.
             level.unflag( col, row );
@@ -309,7 +356,10 @@ window.LevelLogic = function() {
           }
         }
       }
+<<<<<<< HEAD
       if( !isHeroAlive ) env.killHero();
+=======
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
     }
   };
 }();

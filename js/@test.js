@@ -60,7 +60,11 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
+<<<<<<< HEAD
         W('wdg.article109', 'wdg.article', {"content": [
+=======
+        W('wdg.article108', 'wdg.article', {"content": [
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           W({
               elem: "h1",
               attr: {"id": "test"},
@@ -70,6 +74,7 @@ addListener(
               children: [W({
                   elem: "code",
                   children: [
+<<<<<<< HEAD
                     W('wdg.test110','wdg.test',{
                       width: "640",
                       height: "480"},{"id":"wdg.test110"}),
@@ -129,3 +134,12 @@ require("x-widget",function(e,r,t){function n(r,t,n,i){void 0===i&&(i={});try{va
 //# sourceMappingURL=x-widget.js.map
 require("wdg.test",function(r,t,e){function n(r){function t(r){for(var n=0;n<f;n++)s=r/700+n*Math.PI*2/f,c[3*n+0]=.7*Math.cos(s),c[3*n+1]=.2*Math.sin(s),c[3*n+2]=.7*Math.sin(s);e.bindBuffer(e.ARRAY_BUFFER,o),e.bufferData(e.ARRAY_BUFFER,c,e.STATIC_DRAW),e.clearColor(0,0,0,1),e.clear(e.COLOR_BUFFER_BIT|e.DEPTH_BUFFER_BIT),e.drawArrays(e.POINTS,0,f),window.requestAnimationFrame(t)}var e=r.getContext("webgl")||r.getContext("experimental-webgl");console.info("[wdg.gl3] 'fragment-' + this.fragment=...","fragment-"+this.fragment);var n=e.createProgram();e.attachShader(n,a(e,l.vertex)),e.attachShader(n,i(e,l.fragment)),e.linkProgram(n),e.useProgram(n);var o=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,o),e.bufferData(e.ARRAY_BUFFER,new Float32Array([-.8,.8,.5,-.6,.6,.4,-.4,.4,.7,-.2,.2,.6,-0,0,.8,.2,-.2,0,.4,-.4,.1,.6,-.6,.3,.8,-.8,.2]),e.STATIC_DRAW);var g=e.getAttribLocation(n,"attVertexPosition");e.enableVertexAttribArray(g),e.vertexAttribPointer(g,3,e.FLOAT,!1,0,0),e.enable(e.BLEND),e.blendFunc(e.SRC_ALPHA,e.ONE_MINUS_SRC_ALPHA),e.disable(e.DEPTH_TEST);var s,f=7,c=new Float32Array(3*f);window.requestAnimationFrame(t)}function o(r,t,e){var n=t.createShader(r);return t.shaderSource(n,e),t.compileShader(n),t.getShaderParameter(n,t.COMPILE_STATUS)?n:(console.log(e),console.error("An error occurred compiling the shader: "+t.getShaderInfoLog(n)),null)}function i(r,t){return o(r.FRAGMENT_SHADER,r,t)}function a(r,t){return o(r.VERTEX_SHADER,r,t)}var g=function(){function t(){return n(e,arguments)}var e={en:{}},n=r("$").intl;return t.all=e,t}(),l={vertex:"attribute vec3 attVertexPosition;\r\n\r\nvarying vec4 attPosition;\r\n\r\nvoid main() {\r\n  gl_Position = vec4( attVertexPosition.xyz, 1.0 );\r\n  gl_PointSize = 250.0\r\n    + (attVertexPosition.z - 1.0) * 120.0;\r\n  attPosition = gl_Position;\r\n}\r\n",fragment:"precision mediump float;\r\n\r\nvarying vec4 attPosition;\r\n\r\nvoid main() {\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  float r = x*x + y*y;\r\n\r\n  if (r > 0.25) {\r\n    gl_FragColor = vec4( 0.0, 0.0, 0.0, 0.0 );\r\n  } else if (r > 0.24) {\r\n    gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );\r\n  } else {\r\n    gl_FragColor = vec4( gl_PointCoord.y, gl_PointCoord.x, 0.0, 1.0 );\r\n  }\r\n}\r\n"},s=r("dom"),f=r("tfw.data-binding"),c=function(r){var t=s.elem(this,"canvas");f.propInteger(this,"width")(function(r){t.setAttribute("width",r),t.style.width=r+"px"}),f.propInteger(this,"height")(function(r){t.setAttribute("height",r),t.style.height=r+"px"}),f.propString(this,"fragment"),r=f.extend({width:640,height:480,fragment:"a"},r,this),window.setTimeout(n.bind(this,t),20)};t.exports=c,t.exports._=g});
 //# sourceMappingURL=wdg.test.js.map
+=======
+                    W('wdg.test109','wdg.test',{
+                      width: "640",
+                      height: "480"},{"id":"wdg.test109"}),
+                    "\n"]})]})]},{"id":"wdg.article108","title":"webgl-experiments"})
+
+    }
+);
+>>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
