@@ -107,6 +107,7 @@ window.LevelLogic = function() {
     } else {
       // C'est terminé pour l'explosion.
       level.setType( col, row, Level.DIAM );
+      level.setIndex( col, row, Math.floor( Math.random() * 16 ) );
     }
   }
 
@@ -135,9 +136,16 @@ window.LevelLogic = function() {
         return;
       case Level.ROCK:
       case Level.DIAM:
-        if( level.getVY( col + vx, row + vy ) !== 0 ) {
+        if( d == 0 ) {
+          // Si on  monte vers  une pierre,  c'est qu'elle  nous fonce
+          // dessus.
           env.explode( col, row, true );
+          return;
         }
+        break;
+      case Level.BOOM:
+        env.explode( col, row, true );
+        return;
       }
     }
     level.setMove( col, row, 0, 0 );

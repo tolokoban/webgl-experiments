@@ -120,7 +120,7 @@ window.Levels = function() {
     },
     {
       need: 20,
-      tint: { wall: 200, rock: 280, diam: 200, dust: 200, expl: 0, mons: 0, void: 200 },
+      tint: { wall: 200, rock: 280, diam: 200, dust: 240, expl: 0, mons: 60, void: 200 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....r....................r........r.w",
@@ -165,8 +165,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 20,
-      tint: { wall: 30, rock: 90, diam: 120, dust: 200, expl: 0, mons: 140, void: 300 },
+      need: 70,
+      tint: { wall: 30, rock: 90, diam: 120, dust: 300, expl: 0, mons: 140, void: 300 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....................................w",
@@ -193,7 +193,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 40,
+      tint: { wall: 300, rock: 210, diam: 300, dust: 200, expl: 0, mons: 140, void: 300 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wwwwwwwwww....r.r..r........r.wwwwwwwwww",
@@ -220,7 +221,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 13,
+      tint: { wall: 30, rock: 10, diam: 80, dust: 100, expl: 0, mons: 300, void: 100 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w. .. .rr..... ..r. E.... rr r..r. .  .w",
@@ -247,7 +249,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 42,
+      tint: { wall: 30, rock: 10, diam: 20, dust: 130, expl: 0, mons: 130, void: 160 },
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w . r.. . .. ..r. ..E ..r.  ..r. r... .w",
@@ -274,34 +277,26 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 16,
+      tint: { wall: 180 , rock: 239 , diam: 45 , dust: 245 , expl: 320 , mons: 357 , void: 133 },
       rows: [
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wr@...............rwwwwwwwwwwwwwwwwwwwww",
-        "wEr@.............rXwwwwwwwwwwwwwwwwwwwww",
-        "wd.r@...........r.dwwwwwwwwwwwwwwwwwwwww",
-        "wrd.r@.........r.drwwwwwwwwwwwwwwwwwwwww",
-        "w.rd.r@.......r.dr.wwwwwwwwwwwwwwwwwwwww",
-        "w..rd.r@.....r.dr..wwwwwwwwwwwwwwwwwwwww",
-        "w...rd.r@...r.dr...wwwwwwwwwwwwwwwwwwwww",
-        "w....rd.r@.r.dr....wwwwwwwwwwwwwwwwwwwww",
-        "w.....rd.rr.dr.....wwwwwwwwwwwwwwwwwwwww",
-        "w......rd..dr......wwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+        "wwwwwwwwwwwwwwwwwwww",
+        "wr@...............rw",
+        "wEr@.............rXw",
+        "wd.r@...........r.dw",
+        "wrd.r@.........r.drw",
+        "w.rd.r@.......r.dr.w",
+        "w..rd.r@.....r.dr..w",
+        "w...rd.r@...r.dr...w",
+        "w....rd.r@.r.dr....w",
+        "w.....rd.rr.dr.....w",
+        "w......rd..dr......w",
+        "wwwwwwwwwwwwwwwwwwww"
       ]
     },
     {
-      need: 10,
+      need: 50,
+      tint: {wall: 26 , rock: 71 , diam: 264 , dust: 247 , expl: 56 , mons: 275 , void: 120},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wdddrrddrddr.rrrrdrdd.ddrddrddddrrdrdrrw",
@@ -328,7 +323,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 16,
+      tint: {wall: 33 , rock: 216 , diam: 73 , dust: 82 , expl: 92 , mons: 189 , void: 276},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w............E.........................w",
@@ -350,12 +346,13 @@ window.Levels = function() {
         "ww.wdwd.............dw.................w",
         "wwwwwwwwwwwwwwwwwwwwww.................w",
         "w......................................w",
-        "w......................................X",
+        "wX.....................................w",
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
       ]
     },
     {
-      need: 10,
+      need: 6,
+      tint: {wall: 161 , rock: 339 , diam: 235 , dust: 70 , expl: 140 , mons: 135 , void: 303},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.rd.rrr.w...drr..rw...d...r.w...dr.r.w",
@@ -382,7 +379,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 22,
+      tint: {wall: 99 , rock: 91 , diam: 112 , dust: 72 , expl: 71 , mons: 192 , void: 220},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr. ...rr.....r.r..r........r.....r..d.w",
@@ -409,34 +407,26 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 14,
+      tint: {wall: 166 , rock: 95 , diam: 98 , dust: 46 , expl: 293 , mons: 329 , void: 21},
       rows: [
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "w       E          wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                 Xwwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w              @@@@wwwwwwwwwwwwwwwwwwwww",
-        "w              @@@@wwwwwwwwwwwwwwwwwwwww",
-        "w              @@@@wwwwwwwwwwwwwwwwwwwww",
-        "wdddddddddddddd@@@@wwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+        "wwwwwwwwwwwwwwwwwwww",
+        "w       E          w",
+        "w                  w",
+        "w                  w",
+        "w                  w",
+        "w                 Xw",
+        "w                  w",
+        "w              @@@@w",
+        "w              @@@@w",
+        "w              @@@@w",
+        "wdddddddddddddd@@@@w",
+        "wwwwwwwwwwwwwwwwwwww"
       ]
     },
     {
       need: 10,
+      tint: {wall: 105 , rock: 55 , diam: 192 , dust: 74 , expl: 53 , mons: 142 , void: 169},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.....rr.X.....r.Era.......r........r.w",

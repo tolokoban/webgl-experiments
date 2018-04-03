@@ -13,19 +13,21 @@ Ainsi, à chaque cellule du tableau correspondra un vertex avec les attributs su
     * __4__ : Rocher.
     * __5__ : Diamant.
     * __6__ : Sortie.
+    * __7__ : Explosion normale.
+    * __8__ : Explosion qui donne des diamants.
+    * __9__ : Monstre.
 * `attX` : Colonne dans le tableau.
 * `attY` : Ligne dans le tableau.
 * `attVx` : Déplacement horizontal. Peut-être -1, 0 ou +1.
-* `attVy` : Déplacement horizontal. Peut-être -1, 0 ou +1.
+* `attVy` : Déplacement vertical. Peut-être -1, 0 ou +1.
 * `attIndex` : Index de l'image à afficher.
 
 # Les tableaux
 
-On rajoute des informations au niveau de la définition des tableaux. Par exemple, le nombre de diamants à manger pour que la sortie s'ouvre (`need`).
+On rajoute des informations au niveau de la définition des tableaux. Par exemple, le nombre de diamants à manger pour que la sortie s'ouvre (`need`), ou les teintes de chaque élément (`tint`).
 <ex src="mod/assets/boulder-dash2/levels.js" label="Module levels.js (Définition des tableaux)"/>
 
-La classe qui représente une tableau est responsable de la création du VertexArray qu'il fournit au travers de son attribut `data`.
-<!-- <ex src="mod/assets/boulder-dash2/level.js" label="Module level.js (Instance d'un tableau)"/> -->
+La classe qui représente une tableau est responsable de la création du VertexArray qu'il fournit au travers de son attribut `data` (voir <a href="css/assets/boulder-dash2/level.js"><code>level.js</code></a>).
 
 
 # La texture agrégée
@@ -46,7 +48,9 @@ Les pierres (1024x64) : <img src="css/assets/boulder-dash2/img/row-boulder.png" 
 
 Les diamants (1024x64) : <img src="css/assets/boulder-dash2/img/row-diam.png" width="512"/>
 
-La feuille a une taille de 80x80, nous la placerons dans une espace de 128x128, ce qui fait que notre canvas devra avoir une taille finale de 1024x320. La marche du héro ne fait que 512 pixels de large, mais elle ne propose que le déplacement vers la droite. Nous allons donc retourner cette partie et la coller à la suite.
+Les monstres (1024x64) : <img src="css/assets/boulder-dash2/img/row-monster.png" width="512"/>
+
+La feuille a une taille de 80x80, nous la placerons dans une espace de 128x128, ce qui fait que notre canvas devra avoir une taille finale de 1024x384. La marche du héro ne fait que 512 pixels de large, mais elle ne propose que le déplacement vers la droite. Nous allons donc retourner cette partie et la coller à la suite.
 
 <ex src="mod/assets/boulder-dash2/a/texture-aggregator.js" label="Module texture-aggregator.js (Instance d'un tableau)"/>
 
@@ -86,34 +90,12 @@ C'est ce bout de code qui est responsable de créer ces attributs :
 <x-code src="mod/assets/boulder-dash2/level.js" section="heroVXY"/>
 
 
-Et voilà <a href="css/assets/boulder-dash2/c/index.html">le résultat</a>.
-
-
 # Ajouter du son
 
 Dans la section précédente, nous avons créé une fonction `eatDiam` dans la variable `env`.
 Elle est appelée pour signifier qu'un diamant a été mangé.
 C'est donc dans cette function que nous allons ajouter le code pour jouer un petit son :
 <x-code src="mod/assets/boulder-dash2/d/script.js" section="eatDiam"/>
-
-Et voilà <a href="css/assets/boulder-dash2/d/">le résultat</a>.
-
-
-# Le bug de "Speedy Gonzales"
-
-Il y a un bug subtil dans tous les exemples de cet article et vous l'avez peut-être remarqué.
-Déplacez le héro d'une case vers le bas, puis basculez sur un autre onglet de votre navigateur pendant quelques secondes. Retournez au jeu et faites avancer le héro sur la droite.
-
-Le héro se prend alors pour <a href="https://fr.wikipedia.org/wiki/Speedy_Gonzales">Speedy Gonzales</a> et il traverse l'écran à la vitesse du son !
-
-Cela est dû au fonctionnement de la fonction `requestAnimationFrame()`.
-Elle a été conçue pour économiser de la batterie sur les téléphones.
-Donc quand l'onglet courant est caché, la fonction n'appelle plus `anim( time )`.
-Et par conséquent, on n'exécute plus le code suivant :
-<x-code>env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;</x-code>
-
-A titre d'exercice, je vous laisse trouver une solution par vous-même.
-Si vous séchez, sachez que le reste du code contient un correctif.
 
 
 # Que tombent les pierres et les diamants, que s'ouvrent les sorties, ... !
@@ -148,6 +130,10 @@ En effet, toutes les textures, les programmes, les VertexArray qui on été cré
 
 Pour cela, nous allons ajouter une méthode `destroy()` aux deux modules suivants : `level-painter.js` et `wall-painter.js`.
 <ex src="mod/assets/boulder-dash2/g/level-painter.js" label="Faire du ménage" section="destroy" lang="js"/>
+
+Enfin, pour faire varier les couleurs d'un tableau à l'autre, nous utilisons la technique de l'article <a href="marilyn.html">Marilyn</a> associé au code suivant :
+<ex src="mod/assets/boulder-dash2/g/texture-aggregator.js" label="La classe Tinter" section="tinter" lang="js"/>
+
 
 Et voilà <a href="css/assets/boulder-dash2/g/">le résultat</a>.
 
