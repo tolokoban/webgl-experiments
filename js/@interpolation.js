@@ -60,26 +60,16 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-<<<<<<< HEAD
         W('wdg.article87', 'wdg.article', {
-=======
-        W('wdg.article86', 'wdg.article', {
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
             title: "Interpolation",
             content: [
           W({
               elem: "p",
               children: [
                 "  ",
-<<<<<<< HEAD
                 W('wdg.interpolation88','wdg.interpolation',{
                   width: "640",
                   height: "320"},{"id":"wdg.interpolation88","class":"right"})]}),
-=======
-                W('wdg.interpolation87','wdg.interpolation',{
-                  width: "640",
-                  height: "320"},{"id":"wdg.interpolation87","class":"right"})]}),
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           W({
               elem: "p",
               children: [
@@ -112,11 +102,7 @@ addListener(
               elem: "p",
               children: [
                 "  ",
-<<<<<<< HEAD
                 W('wdg.showhide89','wdg.showhide',{
-=======
-                W('wdg.showhide88','wdg.showhide',{
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
                   value: "false",
                   label: "Étudions le Vertex Shader",
                   content: [
@@ -128,7 +114,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Le temps set à la rotation lente du rectangle."]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -147,12 +133,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Type de calcul a effectué pour le relief."]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -171,7 +157,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -190,7 +176,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -214,7 +200,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées de la texture."]}),
-                        "\n\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -233,12 +219,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Profondeur de champ comprise entre 0.0 et 1.0."]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -267,7 +253,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n\n",
+                        "\r\n\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -286,7 +272,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -305,12 +291,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Rotation lente du rectangle."]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -344,7 +330,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -373,7 +359,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -420,7 +406,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -467,12 +453,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Diviseur, calculé selon z."]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -516,7 +502,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  \n  ",
+                        "\r\n  \r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -551,12 +537,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Partie de droite."]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -575,7 +561,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -584,7 +570,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -593,7 +579,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -610,17 +596,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["w"]}),
-                        " \n    ",
+                        " \r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -635,12 +621,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Partie de gauche."]}),
-                        "\n    ",
+                        "\r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -659,7 +645,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -676,7 +662,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -693,7 +679,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -702,31 +688,27 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        " \n      ",
+                        " \r\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["1.0"]}),
-                        " \n    ",
+                        " \r\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\n",
+                        "\r\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-<<<<<<< HEAD
                         " "]})]},{"id":"wdg.showhide89"})]}),
-=======
-                        " "]})]},{"id":"wdg.showhide88"})]}),
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
           W({
               elem: "p",
               children: [
@@ -808,7 +790,6 @@ addListener(
                         "&#39;",
                         "il faut toujours utiliser cette coordonnée\nquand on veut faire une projection 3D."]}),
                     "\n"]}),
-<<<<<<< HEAD
                 "\n"]})]},{"id":"wdg.article87"})
 
     }
@@ -877,9 +858,3 @@ require("webgl.resize",function(n,t,e){var i=function(){function t(){return i(e,
 //# sourceMappingURL=webgl.resize.js.map
 require("webgl.program",function(r,e,t){function n(r,e,t){if("string"!=typeof e.vert)throw Error("[webgl.program] Missing attribute `vert` in argument `codes`!");if("string"!=typeof e.frag)throw Error("[webgl.program] Missing attribute `frag` in argument `codes`!");e=a(e,t),this.gl=r,Object.freeze(this.gl),this._typesNamesLookup=h(r);var n=r.createProgram();r.attachShader(n,m(r,e.vert)),r.attachShader(n,c(r,e.frag)),r.linkProgram(n),this.program=n,Object.freeze(this.program),this.use=function(){r.useProgram(n)},this.use(),o(this,r,n),i(this,r,n)}function o(r,e,t){var n,o,i={},a=e.getProgramParameter(t,e.ACTIVE_ATTRIBUTES);for(n=0;n<a;n++)o=e.getActiveAttrib(t,n),o.typeName=r.getTypeName(o.type),o.length=g(e,o),o.location=e.getAttribLocation(t,o.name),console.info("item=",o),i[o.name]=o;r.attribs=i,Object.freeze(r.attribs)}function i(r,e,t){var n,o,i={},a=e.getProgramParameter(t,e.ACTIVE_UNIFORMS);for(n=0;n<a;n++)o=e.getActiveUniform(t,n),i[o.name]=e.getUniformLocation(t,o.name),Object.defineProperty(r,"$"+o.name,{set:s(e,o,i[o.name],r._typesNamesLookup),get:u(o),enumerable:!0,configurable:!1});r.uniforms=i,Object.freeze(r.uniforms)}function a(r,e){var t,n,o={};for(t in r)n=r[t],o[t]=n.split("\n").map(function(r){if("#include"!=r.trim().substr(0,8))return r;var t=r.indexOf("#include")+8,n=r.substr(t).trim();"'<\"".indexOf(n.charAt(0))>-1&&(n=n.substr(1,n.length-2));var o=e[n];if("string"!=typeof o)throw console.error("Include <"+n+"> not found in ",e),Error("Include not found in shader: "+n);return o}).join("\n");return o}function s(r,e,t,n){var o="_$"+e.name;switch(e.type){case r.BYTE:case r.UNSIGNED_BYTE:case r.SHORT:case r.UNSIGNED_SHORT:case r.INT:case r.UNSIGNED_INT:case r.SAMPLER_2D:return 1==e.size?function(e){r.uniform1i(t,e),this[o]=e}:function(e){r.uniform1iv(t,e),this[o]=e};case r.FLOAT:return 1==e.size?function(e){r.uniform1f(t,e),this[o]=e}:function(e){r.uniform1fv(t,e),this[o]=e};case r.FLOAT_VEC2:if(1==e.size)return function(e){r.uniform2fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC2 in uniform `"+e.name+"'!'");case r.FLOAT_VEC3:if(1==e.size)return function(e){r.uniform3fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC3 in uniform `"+e.name+"'!'");case r.FLOAT_VEC4:if(1==e.size)return function(e){r.uniform4fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC4 in uniform `"+e.name+"'!'");case r.FLOAT_MAT3:if(1==e.size)return function(e){r.uniformMatrix3fv(t,!1,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_MAT3 in uniform `"+e.name+"'!'");case r.FLOAT_MAT4:if(1==e.size)return function(e){r.uniformMatrix4fv(t,!1,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_MAT4 in uniform `"+e.name+"'!'");default:throw Error("[webgl.program.createWriter] Don't know how to deal with uniform `"+e.name+"` of type "+n[e.type]+"!")}}function u(r){var e="_$"+r.name;return function(){return this[e]}}function f(r,e,t){var n=e.createShader(r);return e.shaderSource(n,t),e.compileShader(n),e.getShaderParameter(n,e.COMPILE_STATUS)?n:(console.log(t),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(n)),null)}function c(r,e){return f(r.FRAGMENT_SHADER,r,e)}function m(r,e){return f(r.VERTEX_SHADER,r,e)}function h(r){var e,t,n={};for(e in r)"number"==typeof(t=r[e])&&(n[t]=e);return n}function g(r,e){switch(e.type){case r.FLOAT_VEC4:return 4;case r.FLOAT_VEC3:return 3;case r.FLOAT_VEC2:return 2;case r.FLOAT:return 1;default:throw"[webgl.program:getSize] I don't know the size of the attribute '"+e.name+"' because I don't know the type "+getTypeName(e.type)+"!"}}var l=function(){function e(){return n(t,arguments)}var t={en:{},fr:{}},n=r("$").intl;return e.all=t,e}();n.prototype.getTypeName=function(r){return this._typesNamesLookup[r]};var p=(new Float32Array).BYTES_PER_ELEMENT;n.prototype.bindAttribs=function(r){var e=this.gl;e.bindBuffer(e.ARRAY_BUFFER,r);var t=Array.prototype.slice.call(arguments,1),n=0;t.forEach(function(r){var e=this.attribs[r];if(!e)throw'Cannot find attribute "'+r+'"!\nIt may be not active because unused in the shader.\nAvailable attributes are: '+Object.keys(this.attribs).map(function(r){return'"'+r+'"'}).join(", ");n+=e.size*e.length*p},this);var o=0;t.forEach(function(r){var t=this.attribs[r];e.enableVertexAttribArray(t.location),e.vertexAttribPointer(t.location,t.size*t.length,e.FLOAT,!1,n,o),o+=t.size*t.length*p},this)},e.exports=n,e.exports._=l});
 //# sourceMappingURL=webgl.program.js.map
-=======
-                "\n"]})]},{"id":"wdg.article86"})
-
-    }
-);
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd

@@ -4,7 +4,7 @@ window.BackgroundPainter = function() {
    * @param env.assets
    * @param env.cave
    */
-  var WP = function( env ) {
+  var WP = function( env, backgroundTexture ) {
     var vertexArray = [ -1, -1, +1, -1, -1, +1, +1, +1 ];
     this._buffVert = WebGL.fillArrayBuffer( env.gl, new Float32Array( vertexArray ) );
 
@@ -15,7 +15,7 @@ window.BackgroundPainter = function() {
       coords: env.assets.coordsVert
     });
 
-    this._texture = createTexture( env.gl, env.assets.backgroundTexture );
+    this._texture = createTexture( env.gl, backgroundTexture );
   };
 
   WP.prototype.destroy = function() {

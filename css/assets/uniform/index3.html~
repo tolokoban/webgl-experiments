@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>webgl-experiments</title>
+        <meta charset="utf-8">
+        <style>
+         canvas {
+             position: fixed;
+             left: 0;
+             top: 0;
+             right: 0;
+             bottom: 0;
+             width: 100%;
+             height: 100%;
+             margin: 0
+         }
+        </style>
+        <script>
+         function start() {
+             // #(canvas)
+             // Créer l'élément HTML suivant :
+             // <canvas width="1920" height="1080"></canvas>
+             var canvas = document.createElement( "canvas" );
+             canvas.setAttribute( "width", 1920 );
+             canvas.setAttribute( "height", 1028 );
+             // L'ajouter au document courant.
+             document.body.appendChild( canvas );
+             // Récupérer le contexte WebGL.
+             var gl = canvas.getContext( "webgl", {
+                 preserveDrawingBuffer: true
+             });
+             // #(canvas)
+
+             // #(shaders-code)
+             var codeVert =
+             "uniform vec4 translation;" +
+             "attribute float x;" +
+             "attribute float y;" +
+             "void main() {" +
+             "  gl_Position = vec4( x, y, 0.0, 1.0 ) + translation;" +
+             "}";
+             var codeFrag =
+             "precision mediump float;" +
+             "uniform vec4 color;" +
+             "void main() {" +
+             "  gl_FragColor = color;" +
+             "}";
+             // #(shaders-code)
+
+             // #(program)
+             var program = gl.createProgram();
+             // Vertex shader.
+             var shaderVert = gl.createShader( gl.VERTEX_SHADER );
+             gl.shaderSource( shaderVert, codeVert );
+             gl.compileShader( shaderVert );
+             gl.attachShader( program, shaderVert );
+             // Fragment shader.
+             var shaderFrag = gl.createShader( gl.FRAGMENT_SHADER );
+             gl.shaderSource( shaderFrag, codeFrag );
+             gl.compileShader( shaderFrag );
+             gl.attachShader( program, shaderFrag );
+             // Relier tout ça.
+             gl.linkProgram( program );
+             // Utiliser ce programme.
+             gl.useProgram( program );
+             // #(program)
+
+             // #(buffer)
+             var vertices = new Float32Array([
+                 -0.7, -0.5,
+                 -0.1,  0.7,
+                 0.5, -0.8
+             ]);
+             // Création d'un buffer dans la carte graphique.
+             // Un buffer est un tableau de nombres.
+             var buff = gl.createBuffer();
+             // Définir ce buffer comme le buffer actif.
+             gl.bindBuffer( gl.ARRAY_BUFFER, buff );
+             // Copier des données dans le buffer actif.
+             gl.bufferData( gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW );
+             // #(buffer)
+
+             // #(attribs)
+             // Taille d'un Float32 en octets.
+             var bpe = vertices.BYTES_PER_ELEMENT;
+             // Nombre d'octets utilisés par vertex.
+             var block = 2 * bpe; // 2 attributs.
+             var attX = gl.getAttribLocation( program, "x" );
+             gl.enableVertexAttribArray( attX );
+             gl.vertexAttribPointer( attX, 1, gl.FLOAT, false, block, 0 * bpe );
+             var attY = gl.getAttribLocation( program, "y" );
+             gl.enableVertexAttribArray( attY );
+             gl.vertexAttribPointer( attY, 1, gl.FLOAT, false, block, 1 * bpe );
+             // #(attribs)
+
+             // #(clear-screen)
+             gl.clearColor( 0, 0.4, 0.867, 1.0 );
+             gl.clear( gl.COLOR_BUFFER_BIT );
+             // #(clear-screen)
+
+
+             // #(animation)
+             function anim() {
+                 // Appeler la fonction `anim` au prochain
+                 // refraichissement de l'écran.
+                 requestAnimationFrame( anim );
+                 // Couleur aléatoire.
+                 var uniColor = gl.getUniformLocation( program, 'color' );
+                 gl.uniform4f( uniColor, Math.random(), Math.random(), 0, 1 );
+                 // Décalage aléatoire compris entre -1 et +1.
+                 var tx = 2 * Math.random() - 1;
+                 var ty = 2 * Math.random() - 1;
+                 var uniTranslation = gl.getUniformLocation( program, 'translation' );
+                 gl.uniform4f( uniTranslation, tx, ty, 0, 0 );
+                 // Dessin du triangle.
+                 gl.drawArrays( gl.TRIANGLES, 0, 3 );
+             }
+             anim();
+             // #(animation)
+         }
+        </script>
+    </head>
+    <body onload="start()"></body>
+</html>

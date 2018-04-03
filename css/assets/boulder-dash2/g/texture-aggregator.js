@@ -1,7 +1,6 @@
 "use strict";
 
 window.TextureAggregator = function() {
-<<<<<<< HEAD
   var Tinter = function( vert, frag ) {
     var canvas = document.createElement("canvas");
     var gl = canvas.getContext("webgl", { preserveDrawingBuffer: true });
@@ -65,13 +64,6 @@ window.TextureAggregator = function() {
   };
 
   var f = function( assets, tint ) {
-=======
-  function Tinter( img, shift ) {
-    // Pour le moment, on ne touche pas à la teinte.
-    return img;
-  }
-  return function( assets, tint ) {
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
     if( typeof tint === 'undefined' ) tint = {};
 
     var canvas = document.createElement("canvas");
@@ -79,7 +71,6 @@ window.TextureAggregator = function() {
     canvas.setAttribute("height", 384);
     var ctx = canvas.getContext("2d");
 
-<<<<<<< HEAD
     var tinter = new Tinter( assets.hueVert, assets.hueFrag );
     ctx.drawImage( assets.heroTexture, 0, 0 );
     ctx.drawImage( tinter.shiftHue(assets.boulderTexture, tint.rock), 0, 64 );
@@ -89,15 +80,6 @@ window.TextureAggregator = function() {
     ctx.drawImage( tinter.shiftHue(assets.exploTexture, tint.expl), 512, 192 );
     ctx.drawImage( tinter.shiftHue(assets.monsterTexture, tint.mons), 0, 320 );
     tinter.destroy();
-=======
-    ctx.drawImage( assets.heroTexture, 0, 0 );
-    ctx.drawImage( assets.boulderTexture, 0, 64 );
-    ctx.drawImage( assets.diamTexture, 0, 128 );
-    ctx.drawImage( assets.groundTexture, 0, 192 );
-    ctx.drawImage( assets.exitTexture, 80, 192 );
-    ctx.drawImage( assets.exploTexture, 512, 192 );
-    ctx.drawImage( assets.monsterTexture, 0, 320 );
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
 
     // Retourner le héro image par image.
     ctx.scale( -1, 1 );
@@ -109,10 +91,7 @@ window.TextureAggregator = function() {
 
     return canvas;
   };
-<<<<<<< HEAD
   f.Tinter = Tinter;
   
   return f;
-=======
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
 }();

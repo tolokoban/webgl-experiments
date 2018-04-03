@@ -12,7 +12,6 @@
  *
  *  E: Entrée
  *  X: Sortie
-<<<<<<< HEAD
  */
 
 window.Levels = function() {
@@ -38,35 +37,6 @@ window.Levels = function() {
     {
       // Nombre de diamants nécessaire pour ouvrir la sortie.
       need: 12,
-=======
-*/
-
-window.Levels = function() {
-  return [    
-    /*
-      // Nombre de diamants nécessaire pour ouvrir la sortie.
-      need: 3,
-      // Variation de la teinte pour chaque élément.
-      tint: { wall: 0, rock: 0, diam: 0, dust: 0, exit: 0 },
-      rows: [
-        "wwwwwwwwwwwwwwwwwwww",
-        "w.......r..r.d.....w",
-        "w.dr....E..........w",
-        "w.....r............w",
-        "wwwwwwww wwwwwwwwwww",
-        "w....... ..........w",
-        "w....... r......X..w",
-        "w.....d. ........rrw",
-        "w.......@........rrw",
-        "wwwwwwwwwwwwwwwwwwww"
-      ]
-    },*/
-    {
-      // Nombre de diamants nécessaire pour ouvrir la sortie.
-      need: 12,
-      // Variation de la teinte pour chaque élément.
-      tint: { wall: 0, rock: 0, diam: 0, dust: 0, exit: 0 },
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w...... ..d.r .....r.r....... ....r....w",
@@ -94,10 +64,7 @@ window.Levels = function() {
     },
     {
       need: 11,
-<<<<<<< HEAD
       tint: { wall: 280, rock: 280, diam: 45, dust: 280, expl: 0, mons: 0, void: 285 },
-=======
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w.r..r..w.r...d.w... .r.wr......w..rr..w",
@@ -125,10 +92,7 @@ window.Levels = function() {
     },
     {
       need: 23,
-<<<<<<< HEAD
       tint: { wall: 120, rock: 80, diam: 180, dust: 330, expl: 0, mons: 0, void: 210 },
-=======
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.ww.wrr.w...rwr..r....w...r.....rw.d.w",
@@ -155,12 +119,8 @@ window.Levels = function() {
       ]
     },
     {
-<<<<<<< HEAD
       need: 20,
       tint: { wall: 200, rock: 280, diam: 200, dust: 200, expl: 0, mons: 0, void: 200 },
-=======
-      need: 18,
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....r....................r........r.w",
@@ -187,7 +147,6 @@ window.Levels = function() {
       ]
     },
     {
-<<<<<<< HEAD
       need: 1,
       tint: { wall: 100, rock: 20, diam: 100, dust: 100, expl: 0, mons: 240, void: 100 },
       rows: [
@@ -208,36 +167,6 @@ window.Levels = function() {
     {
       need: 20,
       tint: { wall: 30, rock: 90, diam: 120, dust: 200, expl: 0, mons: 140, void: 300 },
-=======
-      need: 10,
-      rows: [
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "w             b    wwwwwwwwwwwwwwwwwwwww",
-        "w         r        wwwwwwwwwwwwwwwwwwwww",
-        "w  E      .        wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                  wwwwwwwwwwwwwwwwwwwww",
-        "w                 Xwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
-      ]
-    },
-    {
-      need: 10,
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....................................w",
@@ -526,11 +455,7 @@ window.Levels = function() {
         "w....r.r..r........r.....r............rw",
         "w......r....r....r..r.r......r.........w",
         "w..r.wwwwwwwwwwwwwwwwwwwwwwwwwwwwww....w",
-<<<<<<< HEAD
         "w..r.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@....w",
-=======
-        "w..r.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb....w",
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
         "wr...rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.r..w",
         "w......................................w",
         "w.r................................r...w",
@@ -549,7 +474,6 @@ window.Levels = function() {
         "w.....................r.r.r.r.r.r......w",
         "w......................................w",
         "w......................................w",
-<<<<<<< HEAD
         "w.........@. . . . . ..................w",
         "w......... . . . . . ..................w",
         "w......... .@. . . . ..................w",
@@ -561,19 +485,6 @@ window.Levels = function() {
         "w......... . . . .@. ..................X",
         "w......... . . . . . ..................w",
         "w......... . . . . .@..................w",
-=======
-        "w.........b. . . . . ..................w",
-        "w......... . . . . . ..................w",
-        "w......... .b. . . . ..................w",
-        "w......... . . . . . ..................w",
-        "w......... . .b. . . ..................w",
-        "w......... . . . . . ..................w",
-        "w......... . . .b. . ..................w",
-        "w......... . . . . . ..................w",
-        "w......... . . . .b. ..................X",
-        "w......... . . . . . ..................w",
-        "w......... . . . . .b..................w",
->>>>>>> 087a08f948b2fa3cb3efb25e138c5b93962066cd
         "w......................................w",
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
       ]
