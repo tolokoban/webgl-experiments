@@ -136,7 +136,6 @@ window.LevelLogic = function() {
         return;
       case Level.ROCK:
       case Level.DIAM:
-<<<<<<< HEAD
         if( d == 0 ) {
           // Si on  monte vers  une pierre,  c'est qu'elle  nous fonce
           // dessus.
@@ -147,11 +146,6 @@ window.LevelLogic = function() {
       case Level.BOOM:
         env.explode( col, row, true );
         return;
-=======
-        if( level.getVY( col + vx, row + vy ) !== 0 ) {
-          env.explode( col, row, true );
-        }
->>>>>>> 4d43eec4f11afcaf894e4f90fefb5183d50fcc5c
       }
     }
     level.setMove( col, row, 0, 0 );
