@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article113', 'wdg.article', {
+        W('wdg.article10', 'wdg.article', {
             title: "Passer un uniforme",
             content: [
           W({
@@ -990,12 +990,96 @@ addListener(
                 "La fonction Javascript ",
                 W({
                   elem: "strong",
-                  children: ["requiestAnimationFrame"]}),
+                  children: ["requestAnimationFrame"]}),
                 " exécute une fonction dès que l",
                 "&#39;",
                 "affichage est prêt à être rafraichi. Sur la plupart des supports, cela se passe 60 fois par secondes. Si vous affichez une image en moins de 16 millisecondes, alors vous aurez une animation de 60 images par secondes : c",
                 "&#39;",
                 "est le plus fluide possible."]}),
+          W({
+              elem: "p",
+              children: [
+                "Il faut noter que pour que WebGL garde le contenu de l",
+                "&#39;",
+                "écran entre deux images, il faut passer l",
+                "&#39;",
+                "options ",
+                W({
+                  elem: "code",
+                  children: ["preserveDrawingBuffer"]}),
+                " lors de la création du contexte :\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// Récupérer le contexte WebGL."]}),
+                    "\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["var"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["canvas"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["getContext"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "string"},
+                      children: ["\"webgl\""]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\n    ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["preserveDrawingBuffer"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [":"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["true"]}),
+                    "\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["});"]}),
+                    " "]}),
+                "&quot;"]}),
           W({
               elem: "p",
               children: [
@@ -2911,7 +2995,7 @@ addListener(
                   elem: "a",
                   attr: {"href": "css/assets/uniform/index4.html"},
                   children: ["résultat"]}),
-                "."]})]},{"id":"wdg.article113"})
+                "."]})]},{"id":"wdg.article10"})
 
     }
 );

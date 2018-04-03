@@ -17,6 +17,7 @@ window.LevelPainter = function() {
     this._texture = createTexture( env.gl, env.assets.levelTexture );
   };
 
+  //#(destroy)
   WP.prototype.destroy = function() {
     var prg = this._prg;
     var gl = prg.gl;
@@ -24,6 +25,7 @@ window.LevelPainter = function() {
     gl.deleteBuffer( this._buffVert );
     prg.destroy();
   };
+  //#(destroy)
 
   // Pousser le VertexArray dans la carte graphique.
   WP.prototype.update = function() {

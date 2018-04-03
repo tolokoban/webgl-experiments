@@ -79,7 +79,7 @@ window.LevelLogic = function() {
           if( cell === Level.ROCK || cell === Level.DIAM ) {
             processRockOrDiam( level, col, row, env );
           }
-          else if( cell === Level.EXPL ) {
+          else if( cell === Level.EXP1 || cell === Level.EXP2 ) {
             // Une explosion a une durée de vie de 2 cycles.
             if( level.getIndex( col, row ) > 0 ) {
               // Encore un cycle...

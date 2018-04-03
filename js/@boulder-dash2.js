@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article0', 'wdg.article', {
+        W('wdg.article456', 'wdg.article', {
             title: "Boulder-Dash (version 2)",
             content: [
           W({
@@ -154,6 +154,30 @@ addListener(
                               elem: "strong",
                               children: ["6"]}),
                             " : Sortie."]}),
+                        "\n",
+                        W({
+                          elem: "li",
+                          children: [
+                            W({
+                              elem: "strong",
+                              children: ["7"]}),
+                            " : Explosion normale."]}),
+                        "\n",
+                        W({
+                          elem: "li",
+                          children: [
+                            W({
+                              elem: "strong",
+                              children: ["8"]}),
+                            " : Explosion qui donne des diamants."]}),
+                        "\n",
+                        W({
+                          elem: "li",
+                          children: [
+                            W({
+                              elem: "strong",
+                              children: ["9"]}),
+                            " : Monstre."]}),
                         "\n"]}),
                     "\n"]}),
                 "\n",
@@ -187,7 +211,7 @@ addListener(
                     W({
                       elem: "code",
                       children: ["attVy"]}),
-                    " : Déplacement horizontal. Peut-être -1, 0 ou +1."]}),
+                    " : Déplacement vertical. Peut-être -1, 0 ou +1."]}),
                 "\n",
                 W({
                   elem: "li",
@@ -212,8 +236,12 @@ addListener(
                 W({
                   elem: "code",
                   children: ["need"]}),
+                "), ou les teintes de chaque élément (",
+                W({
+                  elem: "code",
+                  children: ["tint"]}),
                 ").\n",
-                W('wdg.showhide1','wdg.showhide',{
+                W('wdg.showhide457','wdg.showhide',{
                   value: "false",
                   label: "Module levels.js (Définition des tableaux)",
                   content: [
@@ -413,7 +441,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["Sortie"]}),
-                        "\n",
+                        "\n ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -461,7 +489,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["["]}),
-                        "    \n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -470,6 +498,10 @@ addListener(
                           elem: "span",
                           attr: {"class": "operator"},
                           children: ["*"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -525,7 +557,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["0"]}),
+                          children: ["120"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -543,7 +575,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["0"]}),
+                          children: ["80"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -561,7 +593,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["0"]}),
+                          children: ["180"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -579,7 +611,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["0"]}),
+                          children: ["330"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -588,7 +620,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-                          children: ["exit"]}),
+                          children: ["expl"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -598,6 +630,42 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["210"]}),
                         " ",
                         W({
                           elem: "span",
@@ -621,7 +689,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -630,7 +698,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.......r..r.d.....w\""]}),
+                          children: ["\"w......r..r.d...w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -639,7 +707,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.dr....E..........w\""]}),
+                          children: ["\"wdr....E........w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -648,7 +716,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.....r............w\""]}),
+                          children: ["\"w....r..........w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -657,7 +725,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwww wwwwwwwwwww\""]}),
+                          children: ["\"wwwwwww wwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -666,7 +734,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w....... ..........w\""]}),
+                          children: ["\"w...... ........w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -675,7 +743,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w....... r......X..w\""]}),
+                          children: ["\"w...... r....X..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -684,7 +752,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.....d. ........rrw\""]}),
+                          children: ["\"w....d. ......rrw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -693,7 +761,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.......@........rrw\""]}),
+                          children: ["\"w......@......rrw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -702,7 +770,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwww\""]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -749,116 +817,6 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Variation de la teinte pour chaque élément."]}),
-                        "\n      ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["tint"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [":"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["wall"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [":"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["rock"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [":"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["diam"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [":"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["dust"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [":"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["exit"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [":"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -1104,6 +1062,147 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["280"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["280"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["45"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["280"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["285"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
                           children: ["rows"]}),
                         W({
                           elem: "span",
@@ -1345,6 +1444,147 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["120"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["80"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["180"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["330"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["210"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
                           children: ["rows"]}),
                         W({
                           elem: "span",
@@ -1577,11 +1817,152 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["18"]}),
+                          children: ["20"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["200"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["280"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["200"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["240"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["60"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["200"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -1681,7 +2062,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w........ b...r.. b...... b...... b....w\""]}),
+                          children: ["\"w........ @...r.. @...... @...... @....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1818,11 +2199,152 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["1"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["20"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["240"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -1841,7 +2363,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1850,7 +2372,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w             b    wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1859,7 +2381,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w         r        wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w         r        w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1868,7 +2390,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w  E      .        wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w E       .        w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1877,7 +2399,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                 @w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1886,7 +2408,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1895,7 +2417,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1904,7 +2426,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1913,7 +2435,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1922,7 +2444,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1931,7 +2453,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                 Xwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                 Xw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1940,97 +2462,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -2059,11 +2491,152 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["70"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["30"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["90"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["120"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["300"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["140"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["300"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -2300,11 +2873,152 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["40"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["300"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["210"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["300"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["200"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["140"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["300"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -2541,11 +3255,152 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
+                          children: ["13"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["30"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
                           children: ["10"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["80"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["300"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["100"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -2782,11 +3637,152 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
+                          children: ["42"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["30"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
                           children: ["10"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["20"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["130"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["130"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["160"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -3023,11 +4019,158 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["16"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["180"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["239"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["45"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["245"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["320"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["357"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["133"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -3046,7 +4189,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3055,7 +4198,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wr@...............rwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wr@...............rw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3064,7 +4207,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wEr@.............rXwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wEr@.............rXw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3073,7 +4216,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wd.r@...........r.dwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wd.r@...........r.dw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3082,7 +4225,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wrd.r@.........r.drwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wrd.r@.........r.drw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3091,7 +4234,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.rd.r@.......r.dr.wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w.rd.r@.......r.dr.w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3100,7 +4243,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..rd.r@.....r.dr..wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w..rd.r@.....r.dr..w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3109,7 +4252,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w...rd.r@...r.dr...wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w...rd.r@...r.dr...w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3118,7 +4261,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w....rd.r@.r.dr....wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w....rd.r@.r.dr....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3127,7 +4270,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.....rd.rr.dr.....wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w.....rd.rr.dr.....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3136,7 +4279,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......rd..dr......wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w......rd..dr......w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3145,97 +4288,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -3264,11 +4317,156 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["50"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["26"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["71"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["264"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["247"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["56"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["275"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["120"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -3505,11 +4703,156 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["16"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["33"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["216"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["73"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["82"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["92"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["189"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["276"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -3708,7 +5051,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......................................X\""]}),
+                          children: ["\"wX.....................................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3746,11 +5089,156 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["6"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["161"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["339"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["235"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["70"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["140"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["135"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["303"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -3987,11 +5475,156 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["22"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["99"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["91"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["112"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["72"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["71"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["192"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["220"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -4228,11 +5861,156 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-                          children: ["10"]}),
+                          children: ["14"]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["166"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["95"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["98"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["46"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["293"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["329"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["21"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -4251,7 +6029,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4260,7 +6038,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w       E          wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w       E          w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4269,7 +6047,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4278,7 +6056,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4287,7 +6065,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4296,7 +6074,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                 Xwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                 Xw\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4305,7 +6083,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w                  wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w                  w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4314,7 +6092,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w              @@@@wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w              @@@@w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4323,7 +6101,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w              @@@@wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w              @@@@w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4332,7 +6110,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w              @@@@wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"w              @@@@w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4341,7 +6119,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wdddddddddddddd@@@@wwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wdddddddddddddd@@@@w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4350,97 +6128,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        "\n        ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\""]}),
+                          children: ["\"wwwwwwwwwwwwwwwwwwww\""]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -4474,6 +6162,151 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
+                        "\n      ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["tint"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["wall"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["105"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["rock"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["55"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["diam"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["192"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["dust"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["74"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["expl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["53"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["mons"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["142"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["void"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["169"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["},"]}),
                         "\n      ",
                         W({
                           elem: "span",
@@ -4645,7 +6478,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w..r.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb....w\""]}),
+                          children: ["\"w..r.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@....w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4814,7 +6647,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w.........b. . . . . ..................w\""]}),
+                          children: ["\"w.........@. . . . . ..................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4832,7 +6665,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......... .b. . . . ..................w\""]}),
+                          children: ["\"w......... .@. . . . ..................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4850,7 +6683,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......... . .b. . . ..................w\""]}),
+                          children: ["\"w......... . .@. . . ..................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4868,7 +6701,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......... . . .b. . ..................w\""]}),
+                          children: ["\"w......... . . .@. . ..................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4886,7 +6719,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......... . . . .b. ..................X\""]}),
+                          children: ["\"w......... . . . .@. ..................X\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4904,7 +6737,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "string"},
-                          children: ["\"w......... . . . . .b..................w\""]}),
+                          children: ["\"w......... . . . . .@..................w\""]}),
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -5661,7 +7494,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}();"]}),
-                        " "]})]},{"id":"wdg.showhide1"})]}),
+                        " "]})]},{"id":"wdg.showhide457"})]}),
           W({
               elem: "p",
               children: [
@@ -5671,7 +7504,14 @@ addListener(
                 W({
                   elem: "code",
                   children: ["data"]}),
-                "."]}),
+                " (voir ",
+                W({
+                  elem: "a",
+                  attr: {"href": "css/assets/boulder-dash2/level.js"},
+                  children: [W({
+                      elem: "code",
+                      children: ["level.js"]})]}),
+                ")."]}),
           W({
               elem: "h1",
               attr: {"id": "la-texture-agr-g-e"},
@@ -5743,10 +7583,19 @@ addListener(
                     width: "512"}})]}),
           W({
               elem: "p",
-              children: ["La feuille a une taille de 80x80, nous la placerons dans une espace de 128x128, ce qui fait que notre canvas devra avoir une taille finale de 1024x320. La marche du héro ne fait que 512 pixels de large, mais elle ne propose que le déplacement vers la droite. Nous allons donc retourner cette partie et la coller à la suite."]}),
+              children: [
+                "Les monstres (1024x64) : ",
+                W({
+                  elem: "img",
+                  attr: {
+                    src: "css/assets/boulder-dash2/img/row-monster.png",
+                    width: "512"}})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide2','wdg.showhide',{
+              children: ["La feuille a une taille de 80x80, nous la placerons dans une espace de 128x128, ce qui fait que notre canvas devra avoir une taille finale de 1024x384. La marche du héro ne fait que 512 pixels de large, mais elle ne propose que le déplacement vers la droite. Nous allons donc retourner cette partie et la coller à la suite."]}),
+          W({
+              elem: "p",
+              children: [W('wdg.showhide458','wdg.showhide',{
                   value: "false",
                   label: "Module texture-aggregator.js (Instance d'un tableau)",
                   content: [
@@ -6678,7 +8527,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}();"]}),
-                        " "]})]},{"id":"wdg.showhide2"})]}),
+                        " "]})]},{"id":"wdg.showhide458"})]}),
           W({
               elem: "p",
               children: [
@@ -6704,7 +8553,7 @@ addListener(
               elem: "p",
               children: [
                 "Tout est géré dans le vertex shader :\n",
-                W('wdg.showhide3','wdg.showhide',{
+                W('wdg.showhide459','wdg.showhide',{
                   value: "false",
                   label: "level.vert",
                   content: [
@@ -8943,7 +10792,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide3"})]}),
+                        " "]})]},{"id":"wdg.showhide459"})]}),
           W({
               elem: "p",
               children: [
@@ -8952,7 +10801,7 @@ addListener(
                   elem: "strong",
                   children: ["level painter"]}),
                 " est relativement simple :\n",
-                W('wdg.showhide4','wdg.showhide',{
+                W('wdg.showhide460','wdg.showhide',{
                   value: "false",
                   label: "level-painter.js",
                   content: [
@@ -10651,7 +12500,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}();"]}),
-                        " "]})]},{"id":"wdg.showhide4"})]}),
+                        " "]})]},{"id":"wdg.showhide460"})]}),
           W({
               elem: "p",
               children: [
@@ -11245,7 +13094,7 @@ addListener(
               elem: "p",
               children: [
                 "Voici le code de ce module :\n",
-                W('wdg.showhide5','wdg.showhide',{
+                W('wdg.showhide461','wdg.showhide',{
                   value: "false",
                   label: "hero-logic.js",
                   content: [
@@ -12650,7 +14499,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}();"]}),
-                        " "]})]},{"id":"wdg.showhide5"})]}),
+                        " "]})]},{"id":"wdg.showhide461"})]}),
           W({
               elem: "p",
               children: [
@@ -13475,15 +15324,6 @@ addListener(
                       children: ["});"]}),
                     " "]})]}),
           W({
-              elem: "p",
-              children: [
-                "Et voilà ",
-                W({
-                  elem: "a",
-                  attr: {"href": "css/assets/boulder-dash2/c/index.html"},
-                  children: ["le résultat"]}),
-                "."]}),
-          W({
               elem: "h1",
               attr: {"id": "ajouter-du-son"},
               children: ["Ajouter du son"]}),
@@ -13649,143 +15489,6 @@ addListener(
                       attr: {"class": "symbol"},
                       children: ["}"]}),
                     " "]})]}),
-          W({
-              elem: "p",
-              children: [
-                "Et voilà ",
-                W({
-                  elem: "a",
-                  attr: {"href": "css/assets/boulder-dash2/d/"},
-                  children: ["le résultat"]}),
-                "."]}),
-          W({
-              elem: "h1",
-              attr: {"id": "le-bug-de-speedy-gonzales-"},
-              children: [
-                "Le bug de ",
-                "&quot;",
-                "Speedy Gonzales",
-                "&quot;"]}),
-          W({
-              elem: "p",
-              children: [
-                "Il y a un bug subtil dans tous les exemples de cet article et vous l",
-                "&#39;",
-                "avez peut-être remarqué.\nDéplacez le héro d",
-                "&#39;",
-                "une case vers le bas, puis basculez sur un autre onglet de votre navigateur pendant quelques secondes. Retournez au jeu et faites avancer le héro sur la droite."]}),
-          W({
-              elem: "p",
-              children: [
-                "Le héro se prend alors pour ",
-                W({
-                  elem: "a",
-                  attr: {"href": "https://fr.wikipedia.org/wiki/Speedy_Gonzales"},
-                  children: ["Speedy Gonzales"]}),
-                " et il traverse l",
-                "&#39;",
-                "écran à la vitesse du son !"]}),
-          W({
-              elem: "p",
-              children: [
-                "Cela est dû au fonctionnement de la fonction ",
-                W({
-                  elem: "code",
-                  children: ["requestAnimationFrame()"]}),
-                ".\nElle a été conçue pour économiser de la batterie sur les téléphones.\nDonc quand l",
-                "&#39;",
-                "onglet courant est caché, la fonction n",
-                "&#39;",
-                "appelle plus ",
-                W({
-                  elem: "code",
-                  children: ["anim( time )"]}),
-                ".\nEt par conséquent, on n",
-                "&#39;",
-                "exécute plus le code suivant :\n",
-                W({
-                  elem: "pre",
-                  attr: {"class": "custom highlight js"},
-                  children: [
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["env"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["nextSynchro"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["="]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword2"},
-                      children: ["Math"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["ceil"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["time"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["/"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["env"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["cellTime"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [")"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["*"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["env"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["cellTime"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    " "]})]}),
-          W({
-              elem: "p",
-              children: [
-                "A titre d",
-                "&#39;",
-                "exercice, je vous laisse trouver une solution par vous-même.\nSi vous séchez, sachez que le reste du code contient un correctif."]}),
           W({
               elem: "h1",
               attr: {"id": "que-tombent-les-pierres-et-les-diamants-que-s-ouvrent-les-sorties-"},
@@ -16327,7 +18030,32 @@ addListener(
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
-                      children: ["EXPL"]}),
+                      children: ["EXP1"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["||"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["cell"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["==="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["Level"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["EXP2"]}),
                     " ",
                     W({
                       elem: "span",
@@ -19007,32 +20735,2230 @@ addListener(
               children: ["Changer de niveau"]}),
           W({
               elem: "p",
-              children: [
-                "Je ne vais pas vous décrire le jeu complet dans cet article, parce que le but est d",
-                "&#39;",
-                "apprendre le WebGL.\nSi vous coulez en savoir plus, tout le code est ouvert et il est commenté."]}),
+              children: ["Je ne vais pas vous décrire le jeu complet dans cet article, parce que le but est de se concentrer sur le WebGL.\nSi vous voulez en savoir plus, tout le code est ouvert et il est commenté."]}),
           W({
               elem: "p",
               children: [
-                "Mais si vous voulez passer au tableau suivant, il va falloir faire le ménage dans la carte graphique.\nEn effet, toutes les textures, les programmes, les VertexArray qui on été créés, nous allons les détruire avant d",
+                "Pour passer au tableau suivant, il va falloir faire le ménage dans la carte graphique.\nEn effet, toutes les textures, les programmes, les VertexArray qui on été créés devront être supprimés avant d",
                 "&#39;",
                 "en recréer pour le tableau suivant."]}),
           W({
               elem: "p",
               children: [
-                "Il nous faut maintenant ajouter une méthode ",
+                "Pour cela, nous allons ajouter une méthode ",
                 W({
                   elem: "code",
                   children: ["destroy()"]}),
                 " aux deux modules suivants : ",
                 W({
                   elem: "code",
-                  children: ["level-logic.js"]}),
+                  children: ["level-painter.js"]}),
                 " et ",
                 W({
                   elem: "code",
                   children: ["wall-painter.js"]}),
-                "."]}),
+                ".\n",
+                W('wdg.showhide462','wdg.showhide',{
+                  value: "false",
+                  label: "Faire du ménage",
+                  content: [
+                  W({
+                      elem: "pre",
+                      attr: {"class": "custom highlight js"},
+                      children: [
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["WP"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prototype"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["destroy"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_prg"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["deleteTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_texture"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["deleteBuffer"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_buffVert"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["destroy"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["};"]}),
+                        " "]})]},{"id":"wdg.showhide462"})]}),
+          W({
+              elem: "p",
+              children: [
+                "Enfin, pour faire varier les couleurs d",
+                "&#39;",
+                "un tableau à l",
+                "&#39;",
+                "autre, nous utilisons la technique de l",
+                "&#39;",
+                "article ",
+                W({
+                  elem: "a",
+                  attr: {"href": "marilyn.html"},
+                  children: ["Marilyn"]}),
+                " associé au code suivant :\n",
+                W('wdg.showhide463','wdg.showhide',{
+                  value: "false",
+                  label: "La classe Tinter",
+                  content: [
+                  W({
+                      elem: "pre",
+                      attr: {"class": "custom highlight js"},
+                      children: [
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["Tinter"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["vert"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["frag"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["createElement"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"canvas\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["getContext"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"webgl\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["preserveDrawingBuffer"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["true"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["});"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_prg"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["new"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["WebGL"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["Program"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["vert"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["vert"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["frag"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [":"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["frag"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["});"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Les coordonnées UV de la texture."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["vertexArray"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["["]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["1"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["1"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["1"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["1"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["];"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_buffVert"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["WebGL"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["fillArrayBuffer"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["new"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword2"},
+                          children: ["Float32Array"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["vertexArray"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_texture"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["createTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["bindTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_texture"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["texParameteri"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_WRAP_S"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["CLAMP_TO_EDGE"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["texParameteri"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_WRAP_T"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["CLAMP_TO_EDGE"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["texParameteri"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_MIN_FILTER"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["NEAREST"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["texParameteri"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_MAG_FILTER"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["NEAREST"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_canvas"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_gl"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["};"]}),
+                        "\n\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Prend en entrée une image et une valeur comprise entre 0 et 359."]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Retourne un canvas avec l'image en question après décalage de"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// sa teinte."]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["Tinter"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prototype"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["shiftHue"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["img"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["shift"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Soyons sûr d'avoir un paramètre correct en entrée."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["if"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["typeof"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["shift"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["!=="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["'number'"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["||"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["isNaN"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["shift"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [")"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["return"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["img"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    \n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_canvas"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_prg"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_gl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["use"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Appliquer la taille de l'image à notre canvas."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["img"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["img"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"width\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"height\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["viewport"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["clear"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["COLOR_BUFFER_BIT"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["|"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["DEPTH_BUFFER_BIT"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Charger la texture avec l'image courante."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["texImage2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["RGBA"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["RGBA"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["UNSIGNED_BYTE"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["img"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["activeTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["bindTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TEXTURE_2D"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_texture"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["$uniTexture"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Définir le décalage de teinte."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["$uniHueShift"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["shift"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Attributs."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["bindAttribs"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_buffVert"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"attX\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"attY\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Dessin du rectangle."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["drawArrays"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["TRIANGLE_STRIP"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["4"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    \n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Créer le canvas à retourner. Il a la même taille"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// que l'image d'entrée."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["output"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["document"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["createElement"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"canvas\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["output"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"width\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["output"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["setAttribute"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"height\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Un context 2D suffit."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["ctx"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["output"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["getContext"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"2d\""]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["ctx"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["clearRect"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// On y copie le contenu actuel du canvas WebGL."]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["ctx"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["drawImage"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["canvas"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["0"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["width"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["height"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["return"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["output"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["};"]}),
+                        "\n\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "comment"},
+                          children: ["// Pour faire le ménage."]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["Tinter"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prototype"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["destroy"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["function"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["()"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["{"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_prg"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [";"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["deleteTexture"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_texture"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["deleteBuffer"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "keyword"},
+                          children: ["this"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["_buffVert"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\n    ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["prg"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["destroy"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["();"]}),
+                        "\n  ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["};"]}),
+                        " "]})]},{"id":"wdg.showhide463"})]}),
           W({
               elem: "p",
               children: [
@@ -19041,7 +22967,7 @@ addListener(
                   elem: "a",
                   attr: {"href": "css/assets/boulder-dash2/g/"},
                   children: ["le résultat"]}),
-                "."]})]},{"id":"wdg.article0"})
+                "."]})]},{"id":"wdg.article456"})
 
     }
 );

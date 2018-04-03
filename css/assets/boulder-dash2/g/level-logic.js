@@ -30,11 +30,13 @@ window.LevelLogic = function() {
       }
       else if( below == Level.MONS ) {
         // On écrase un monstre.
+        level.setType( col, row, Level.VOID );
         env.explode( col, row + 1, true );
       }
       else if( below == Level.DIAM ) {
         // Si c'est une pierre qui tombe sur un diamant, il explose.
         if( level.getType( col, row ) === Level.ROCK ) {
+          level.setType( col, row, Level.VOID );
           env.explode( col, row + 1 );
         }
       }
@@ -105,6 +107,7 @@ window.LevelLogic = function() {
     } else {
       // C'est terminé pour l'explosion.
       level.setType( col, row, Level.DIAM );
+      level.setIndex( col, row, Math.floor( Math.random() * 16 ) );
     }
   }
 
@@ -131,12 +134,24 @@ window.LevelLogic = function() {
       case Level.HERO:
         env.killHero();
         return;
+      case Level.ROCK:
+      case Level.DIAM:
+        if( d == 0 ) {
+          // Si on  monte vers  une pierre,  c'est qu'elle  nous fonce
+          // dessus.
+          env.explode( col, row, true );
+          return;
+        }
+        break;
+      case Level.BOOM:
+        env.explode( col, row, true );
+        return;
       }
     }
     level.setMove( col, row, 0, 0 );
   }
 
-  function processHero( env, level, col, row ) {
+  function processHero( env, level, col, row, heroMoves ) {
     // Si le héro est mort, on ne fait rien du tout.
     if( !env.isHeroAlive ) return;
 
@@ -197,11 +212,11 @@ window.LevelLogic = function() {
         vx = vy = 0;
       }
       else {
-        if( cell === Level.DIAM ) env.eatDiam();
-        else if( cell === Level.EXIT ) env.nextLevel();
-        else if( cell === Level.BOOM ) env.killHero();
-        else if( cell === Level.MONS ) env.killHero();
-        level.setType( nextX, nextY, Level.VOID );
+        /*
+         else if( cell === Level.BOOM ) env.killHero();
+         else if( cell === Level.MONS ) env.killHero();
+         */
+        heroMoves.push([ col, row ]);
         level.flag( nextX, nextY );
         level.setMove( col, row, vx, vy );
       }
@@ -215,8 +230,21 @@ window.LevelLogic = function() {
   return {
     // Déterminer les déplacements futurs.
     process: function( env ) {
+      // Chaque héro peut manger de la terres (feuilles), mais il faut
+      // la retirer dans  un deuxième temps pour éviter  des effets de
+      // bord sur la chute de pierres vers la gauche.
+      // En effet, si on a une pile de pierre à deux cases à droite du
+      // héro et  que ce dernier  creuse juste à droite,  la prochaine
+      // case analysée sera celle de la pierre et on verra qu'il n'y a
+      // plus rien  à gauche, alors  qu'en réalité, c'est le  héro qui
+      // est censé prendre cette place.
+      // Le résultat  sera que  la pierre  et le  héro auront  la même
+      // cellule comme destination.
+      // `heroMoves` contient les coordonnées du héro.
+      var heroMoves = [];
+
       var level = env.level;
-      var row, col;
+      var row, col, cell;
       for( row = 0; row < level.rows; row++ ) {
         for( col = 0; col < level.cols; col++ ) {
           if( level.hasFlag( col, row ) ) {
@@ -224,15 +252,15 @@ window.LevelLogic = function() {
             continue;
           }
 
-          var cell = level.getType( col, row );
+          cell = level.getType( col, row );
           if( cell === Level.ROCK || cell === Level.DIAM ) {
             processRockOrDiam( level, col, row, env );
           }
+          else if( level.getType( col, row ) === Level.HERO ) {
+            processHero( env, level, col, row, heroMoves );
+          }
           else if( cell === Level.MONS ) {
             processMonster( env, level, col, row );
-          }
-          else if( cell === Level.HERO ) {
-            processHero( env, level, col, row );
           }
           else if( cell === Level.EXP1 ) {
             processExplosion1( env, level, col, row );
@@ -242,13 +270,34 @@ window.LevelLogic = function() {
           }
         }
       }
+      heroMoves.forEach(function (move) {
+        var col = move[0];
+        var row = move[1];
+        var vx = level.getVX( col, row );
+        var vy = level.getVY( col, row );
+        col += vx;
+        row += vy;
+        var cell = level.getType( col, row );
+        if( cell === Level.DUST ) {
+          level.setType( col, row, Level.VOID );
+        }
+        else if( cell === Level.DIAM ) {
+          env.eatDiam();
+          level.setType( col, row, Level.VOID );
+        }
+        else if( cell === Level.EXIT ) env.nextLevel();
+        else if( cell !== Level.VOID ) env.killHero();
+      });
+
     },
     // Appliquer les déplacements de chaque cellule.
     apply: function( env ) {
       var level = env.level;
       var row, col;
+      var isHeroAlive = false;
       for( row = 0; row < level.rows; row++ ) {
         for( col = 0; col < level.cols; col++ ) {
+          if( level.getType( col, row ) === Level.HERO ) isHeroAlive = true;
           if( level.hasFlag( col, row ) ) {
             // Cellule avec un flag : il ne faut pas la traiter.
             level.unflag( col, row );
@@ -268,6 +317,7 @@ window.LevelLogic = function() {
           }
         }
       }
+      if( !isHeroAlive ) env.killHero();
     }
   };
 }();
