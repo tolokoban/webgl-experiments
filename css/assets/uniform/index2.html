@@ -25,10 +25,12 @@
              canvas.setAttribute( "height", 1028 );
              // L'ajouter au document courant.
              document.body.appendChild( canvas );
+             //#(context)
              // Récupérer le contexte WebGL.
              var gl = canvas.getContext( "webgl", {
                  preserveDrawingBuffer: true
              });
+             //#(context)
              // #(canvas)
 
              // #(shaders-code)

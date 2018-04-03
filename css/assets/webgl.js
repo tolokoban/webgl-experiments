@@ -46,6 +46,10 @@ window.WebGL = function() {
     createUniforms( this, gl, shaderProgram );
   }
 
+  Program.prototype.destroy = function() {
+    this.gl.deleteProgram( this.program );
+  };
+
   Program.prototype.use = function() {
     this.gl.useProgram( this.program );
   };
@@ -374,6 +378,20 @@ window.WebGL = function() {
               next( url );
             };
             img.src = url;
+          } else if( endsWith( url, "ogg", "wav", "mp3" ) ) {
+            var audio = document.createElement("audio");
+            result[key] = audio;
+            audio.addEventListener( "canplay", function() {
+              if( audio._loaded ) return;
+              audio._loaded = true;
+              next( url );              
+            });
+            audio.addEventListener( "error", function( ex ) {
+              console.error("Unable to load sound \"" + key + "\":", url);
+              console.error( ex );
+              next( url );
+            });
+            audio.src = url;
           } else {
             fetch( url ).then(function(response) {
               if( !response.ok ) throw "";
