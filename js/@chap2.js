@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article40', 'wdg.article', {
+        W('wdg.article41', 'wdg.article', {
             title: "Du triangle au polygône",
             content: [
           W({
@@ -76,61 +76,61 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
-                    "\n        ",
-                    W('wdg.gl241','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "3"},{"id":"wdg.gl241","name":"wdg.gl2"}),
-                    "\n    "]}),
-                "\n",
-                W({
-                  elem: "center",
-                  attr: {"style": "margin: 0; padding: 0; display: inline-block"},
-                  children: [
-                    "\n        ",
-                    W({
-                      elem: "p",
-                      children: ["5 sommets"]}),
-                    "\n        ",
+                    "\r\n        ",
                     W('wdg.gl242','wdg.gl2',{
                       width: "200",
                       height: "200",
-                      size: "5"},{"id":"wdg.gl242","name":"wdg.gl2"}),
-                    "\n    "]}),
+                      size: "3"},{"id":"wdg.gl242","name":"wdg.gl2"}),
+                    "\r\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
-                      children: ["11 sommets"]}),
-                    "\n        ",
+                      children: ["5 sommets"]}),
+                    "\r\n        ",
                     W('wdg.gl243','wdg.gl2',{
                       width: "200",
                       height: "200",
-                      size: "11"},{"id":"wdg.gl243","name":"wdg.gl2"}),
-                    "\n    "]}),
+                      size: "5"},{"id":"wdg.gl243","name":"wdg.gl2"}),
+                    "\r\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
-                      children: ["100 sommets"]}),
-                    "\n        ",
+                      children: ["11 sommets"]}),
+                    "\r\n        ",
                     W('wdg.gl244','wdg.gl2',{
                       width: "200",
                       height: "200",
-                      size: "100"},{"id":"wdg.gl244","name":"wdg.gl2"}),
-                    "\n    "]})]}),
+                      size: "11"},{"id":"wdg.gl244","name":"wdg.gl2"}),
+                    "\r\n    "]}),
+                "\n",
+                W({
+                  elem: "center",
+                  attr: {"style": "margin: 0; padding: 0; display: inline-block"},
+                  children: [
+                    "\r\n        ",
+                    W({
+                      elem: "p",
+                      children: ["100 sommets"]}),
+                    "\r\n        ",
+                    W('wdg.gl245','wdg.gl2',{
+                      width: "200",
+                      height: "200",
+                      size: "100"},{"id":"wdg.gl245","name":"wdg.gl2"}),
+                    "\r\n    "]})]}),
           W({
               elem: "p",
               children: [
@@ -138,65 +138,65 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
-                    "\n        ",
-                    W('wdg.gl245','wdg.gl2',{
-                      width: "200",
-                      height: "200",
-                      size: "3",
-                      regular: "false"},{"id":"wdg.gl245","name":"wdg.gl2"}),
-                    "\n    "]}),
-                "\n",
-                W({
-                  elem: "center",
-                  attr: {"style": "margin: 0; padding: 0; display: inline-block"},
-                  children: [
-                    "\n        ",
-                    W({
-                      elem: "p",
-                      children: ["5 sommets"]}),
-                    "\n        ",
+                    "\r\n        ",
                     W('wdg.gl246','wdg.gl2',{
                       width: "200",
                       height: "200",
-                      size: "5",
+                      size: "3",
                       regular: "false"},{"id":"wdg.gl246","name":"wdg.gl2"}),
-                    "\n    "]}),
+                    "\r\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
-                      children: ["13 sommets"]}),
-                    "\n        ",
+                      children: ["5 sommets"]}),
+                    "\r\n        ",
                     W('wdg.gl247','wdg.gl2',{
                       width: "200",
                       height: "200",
-                      size: "13",
+                      size: "5",
                       regular: "false"},{"id":"wdg.gl247","name":"wdg.gl2"}),
-                    "\n    "]}),
+                    "\r\n    "]}),
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
-                      children: ["100 sommets"]}),
-                    "\n        ",
+                      children: ["13 sommets"]}),
+                    "\r\n        ",
                     W('wdg.gl248','wdg.gl2',{
                       width: "200",
                       height: "200",
-                      size: "100",
+                      size: "13",
                       regular: "false"},{"id":"wdg.gl248","name":"wdg.gl2"}),
-                    "\n    "]})]}),
+                    "\r\n    "]}),
+                "\n",
+                W({
+                  elem: "center",
+                  attr: {"style": "margin: 0; padding: 0; display: inline-block"},
+                  children: [
+                    "\r\n        ",
+                    W({
+                      elem: "p",
+                      children: ["100 sommets"]}),
+                    "\r\n        ",
+                    W('wdg.gl249','wdg.gl2',{
+                      width: "200",
+                      height: "200",
+                      size: "100",
+                      regular: "false"},{"id":"wdg.gl249","name":"wdg.gl2"}),
+                    "\r\n    "]})]}),
           W({
               elem: "p",
               children: [
@@ -318,24 +318,24 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-                    "\n    ",
+                    "\r\n    ",
                     W({
                       elem: "div",
                       children: [
-                        "    \n        ",
-                        W('wdg.chap2-triangles49','wdg.chap2-triangles',{
+                        "    \r\n        ",
+                        W('wdg.chap2-triangles50','wdg.chap2-triangles',{
                           width: "160",
-                          height: "160"},{"id":"wdg.chap2-triangles49"}),
-                        "\n        ",
+                          height: "160"},{"id":"wdg.chap2-triangles50"}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [
-                            "\n            ",
+                            "\r\n            ",
                             W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -348,7 +348,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["C"]})]}),
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -361,7 +361,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -374,7 +374,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["F"]})]}),
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -387,13 +387,13 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n            "]}),
-                            "\n        "]}),
-                        "\n        ",
+                                "\r\n            "]}),
+                            "\r\n        "]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [
-                            "\n12 vertex sont nécessaires, mais certains représentent le même point et sont calculés à double (",
+                            "\r\n12 vertex sont nécessaires, mais certains représentent le même point et sont calculés à double (",
                             W({
                               elem: "b",
                               children: ["A"]}),
@@ -405,9 +405,9 @@ addListener(
                             W({
                               elem: "b",
                               children: ["E"]}),
-                            ").\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]}),
+                            ").\r\n        "]}),
+                        "\r\n    "]}),
+                    "\r\n"]})]}),
           W({
               elem: "h2",
               attr: {"id": "triangle_fan"},
@@ -418,71 +418,71 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-                    "\n    ",
+                    "\r\n    ",
                     W({
                       elem: "div",
                       children: [
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "div",
-                          children: [W('wdg.chap2-trifan50','wdg.chap2-trifan',{
+                          children: [W('wdg.chap2-trifan51','wdg.chap2-trifan',{
                               width: "160",
-                              height: "160"},{"id":"wdg.chap2-trifan50"})]}),
-                        "\n        ",
+                              height: "160"},{"id":"wdg.chap2-trifan51"})]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["A"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["B"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["C"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["D"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["F"]})]}),
-                                "\n        "]})]}),
-                        "\n        ",
+                                "\r\n        "]})]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [
-                            "\n6 vertex sont suffisants. C'est une structure en \"éventail\" (fan en anglais).\nLe premier point (",
+                            "\r\n6 vertex sont suffisants. C'est une structure en \"éventail\" (fan en anglais).\r\nLe premier point (",
                             W({
                               elem: "b",
                               children: ["A"]}),
-                            ") est commun à tous les triangles.\nEnsuite, le dernier point d'un triangle est utilisé comme second point du suivant.\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]}),
+                            ") est commun à tous les triangles.\r\nEnsuite, le dernier point d'un triangle est utilisé comme second point du suivant.\r\n        "]}),
+                        "\r\n    "]}),
+                    "\r\n"]})]}),
           W({
               elem: "h2",
               attr: {"id": "triangle_strip"},
@@ -493,66 +493,66 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-                    "\n    ",
+                    "\r\n    ",
                     W({
                       elem: "div",
                       children: [
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "div",
-                          children: [W('wdg.chap2-tristrip51','wdg.chap2-tristrip',{
+                          children: [W('wdg.chap2-tristrip52','wdg.chap2-tristrip',{
                               width: "160",
-                              height: "160"},{"id":"wdg.chap2-tristrip51"})]}),
-                        "\n        ",
+                              height: "160"},{"id":"wdg.chap2-tristrip52"})]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["A"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["B"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["F"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["C"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["D"]})]}),
-                                "\n        "]})]}),
-                        "\n        ",
+                                "\r\n        "]})]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
-                          children: ["\n6 vertex sont suffisants. Deux triangles consécutifs ont un côté en commun.\nC'est-à-dire que les deux derniers points d'une triangle seront les deux premiers du suivant.\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]})]},{"id":"wdg.article40"})
+                          children: ["\r\n6 vertex sont suffisants. Deux triangles consécutifs ont un côté en commun.\r\nC'est-à-dire que les deux derniers points d'une triangle seront les deux premiers du suivant.\r\n        "]}),
+                        "\r\n    "]}),
+                    "\r\n"]})]})]},{"id":"wdg.article41"})
 
     }
 );

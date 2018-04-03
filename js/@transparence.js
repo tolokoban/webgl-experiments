@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article110', 'wdg.article', {"content": [
+        W('wdg.article111', 'wdg.article', {"content": [
           W({
               elem: "p",
               children: [W('wdg','transparence',{},{"id":"wdg","name":"transparence"})]}),
@@ -70,27 +70,27 @@ addListener(
                   elem: "div",
                   attr: {"style": "width: 480px"},
                   children: [
-                    "\n   ",
+                    "\r\n   ",
                     W('white','wdg.checkbox',{
                       wide: "true",
                       text: "Arrière-plan blanc",
                       value: "false"},{"id":"white"}),
-                    "\n   ",
+                    "\r\n   ",
                     W('depth','wdg.checkbox',{
                       wide: "true",
                       text: "Ecrire dans le Z-buffer",
                       value: "true"},{"id":"depth"}),
-                    "\n   ",
+                    "\r\n   ",
                     W('bright','wdg.checkbox',{
                       wide: "true",
                       text: "Couleurs pâles",
                       value: "false"},{"id":"bright"}),
-                    "\n   ",
+                    "\r\n   ",
                     W('multiply','wdg.checkbox',{
                       wide: "true",
                       text: "Combiner par multiplication",
                       value: "false"},{"id":"multiply"}),
-                    "\n"]})]}),
+                    "\r\n"]})]}),
           W({
               elem: "h1",
               attr: {"id": "peut-on-viter-le-tri-"},
@@ -185,7 +185,7 @@ addListener(
               elem: "p",
               children: [W({
                   elem: "code",
-                  children: ["gl.depthMask( false );"]})]})]},{"id":"wdg.article110"})
+                  children: ["gl.depthMask( false );"]})]})]},{"id":"wdg.article111"})
         W.bind('wdg',{"white":{"B":[["white","value"]]},"depth":{"B":[["depth","value"]]},"bright":{"B":[["bright","value"]]},"multiply":{"B":[["multiply","value"]]}});
     }
 );

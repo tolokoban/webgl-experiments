@@ -1,0 +1,9 @@
+"use strict";
+
+window.Cave = function() {
+  var Cave = function( caveDef ) {
+
+  };
+
+  return Cave;
+}();

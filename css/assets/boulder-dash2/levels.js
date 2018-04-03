@@ -120,7 +120,11 @@ window.Levels = function() {
     },
     {
       need: 20,
+<<<<<<< HEAD
       tint: { wall: 200, rock: 280, diam: 200, dust: 240, expl: 0, mons: 60, void: 200 },
+=======
+      tint: { wall: 200, rock: 280, diam: 200, dust: 200, expl: 0, mons: 0, void: 200 },
+>>>>>>> 4d43eec4f11afcaf894e4f90fefb5183d50fcc5c
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....r....................r........r.w",
@@ -165,8 +169,13 @@ window.Levels = function() {
       ]
     },
     {
+<<<<<<< HEAD
       need: 70,
       tint: { wall: 30, rock: 90, diam: 120, dust: 300, expl: 0, mons: 140, void: 300 },
+=======
+      need: 20,
+      tint: { wall: 30, rock: 90, diam: 120, dust: 200, expl: 0, mons: 140, void: 300 },
+>>>>>>> 4d43eec4f11afcaf894e4f90fefb5183d50fcc5c
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE.....................................w",
