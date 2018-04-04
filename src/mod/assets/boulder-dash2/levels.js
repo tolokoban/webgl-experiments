@@ -453,7 +453,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 50,
+      tint: {wall: 165 , rock: 0 , diam: 252 , dust: 134 , expl: 113 , mons: 72 , void: 229},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "w..E...................................w",
@@ -480,7 +481,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 32,
+      tint: {wall: 0, rock: 320, diam: 35, dust: 300, expl: 113, mons: 202, void: 0},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wr.rr..  r..r..r.r..Er..r.rr..r.rr...r.w",
@@ -507,7 +509,8 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 30,
+      tint: {wall: 100, rock: 120, diam: 235, dust: 20, expl: 313, mons: 102, void: 200},
       rows: [
         "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
         "wE..r..........r........r.....r..r.....w",
@@ -534,30 +537,21 @@ window.Levels = function() {
       ]
     },
     {
-      need: 10,
+      need: 18,
+      tint: {wall: 320, rock: 70, diam: 70, dust: 70, expl: 70, mons: 70, void: 70},
       rows: [
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "w..E.......rrr......wwwwwwwwwwwwwwwwwwww",
-        "w..........rrr......wwwwwwwwwwwwwwwwwwww",
-        "w...................wwwwwwwwwwwwwwwwwwww",
-        "w..........@@@......wwwwwwwwwwwwwwwwwwww",
-        "w.......r..   ......wwwwwwwwwwwwwwwwwwww",
-        "w........r.   ......wwwwwwwwwwwwwwwwwwww",
-        "w.........r   ......wwwwwwwwwwwwwwwwwwww",
-        "w........X.@@@......wwwwwwwwwwwwwwwwwwww",
-        "w..........   ......wwwwwwwwwwwwwwwwwwww",
-        "w..........   ......wwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+        "wwwwwwwwwwwwwwwwwwwww",
+        "w..E.......rrr......w",
+        "w..........rrr......w",
+        "w...................w",
+        "w..........@@@......w",
+        "w.......r..   ......w",
+        "w........r.   ......w",
+        "w.........r   ......w",
+        "w........X.@@@......w",
+        "w..........   ......w",
+        "w..........   ......w",
+        "wwwwwwwwwwwwwwwwwwwww"
       ]}
   ];
 }();

@@ -129,6 +129,11 @@ WebGL.fetchAssets({
 
 function initLevel( env, levelNumber ) {
   if( typeof levelNumber !== 'number' || isNaN( levelNumber ) ) levelNumber = 0;
+  if( levelNumber === 0 ) {
+    env.life = 3;
+    env.score = 0;
+  }
+  levelNumber %= Levels.length;
   if( env.backgroundPainter ) env.backgroundPainter.destroy();
   if( env.wallPainter ) env.wallPainter.destroy();
   if( env.levelPainter ) env.levelPainter.destroy();
@@ -149,10 +154,6 @@ function initLevel( env, levelNumber ) {
   env.bonus = level.cols * level.rows * 4;
   env.transition = -1;
   env.levelNumber = levelNumber;
-  if( levelNumber === 0 ) {
-    env.life = 3;
-    env.score = 0;
-  }
 
   env.assets.musicSound.pause();
   env.assets.musicSound.currentTime = 0;
