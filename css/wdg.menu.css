@@ -1,0 +1,47 @@
+body {
+    font-family: josefin-sans;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.wdg-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+div.wdg-menu > header {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    font-weight: bold;
+}
+
+div.wdg-menu > article {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 32px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    padding: 0px;
+}
