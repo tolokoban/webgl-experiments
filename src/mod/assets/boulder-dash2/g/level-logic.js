@@ -11,6 +11,18 @@ window.LevelLogic = function() {
     return cell === Level.ROCK || cell === Level.DIAM || cell === Level.WALL;
   }
 
+  function prepareMove( col, row, vx, vy, env ) {
+    if( vx === 0 && vy === 0 ) return;
+    var level = env.level;
+    var src = level.getType( col, row );
+    var dst = level.getType( col + vx, row + vy );
+    if( dst === Level.HERO ) env.killHero();
+    else {
+      level.setMove( col, row, vx, vy );
+      level.setType( col + vx, row + vy, -src );
+    }
+  };
+
   function processFallingRockOrDiam( level, col, row, env, below ) {
     // La pierre est déjà en train de tomber.
     // On regarde s'il y a autre chose que du vide dessous. Si c'est
@@ -128,7 +140,7 @@ window.LevelLogic = function() {
       target = level.getType( col + vx, row + vy );
       switch( target ) {
       case Level.VOID:
-        level.setMove( col, row, vx, vy );
+        prepareMove( col, row, vx, vy, env );        
         level.setIndex( col, row, d );
         return;
       case Level.HERO:
@@ -151,7 +163,7 @@ window.LevelLogic = function() {
     level.setMove( col, row, 0, 0 );
   }
 
-  function processHero( env, level, col, row, heroMoves ) {
+  function processHero( env, level, col, row, heroMoves, action ) {
     // Si le héro est mort, on ne fait rien du tout.
     if( !env.isHeroAlive ) return;
 
@@ -160,7 +172,7 @@ window.LevelLogic = function() {
     var vx = 0;
     var vy = 0;
 
-    switch( GameInputs.action ) {
+    switch( action ) {
     case GameInputs.UP:
       vx = 0;
       vy = -1;
@@ -213,9 +225,9 @@ window.LevelLogic = function() {
       }
       else {
         /*
-         else if( cell === Level.BOOM ) env.killHero();
-         else if( cell === Level.MONS ) env.killHero();
-         */
+          else if( cell === Level.BOOM ) env.killHero();
+          else if( cell === Level.MONS ) env.killHero();
+        */
         heroMoves.push([ col, row ]);
         level.flag( nextX, nextY );
         level.setMove( col, row, vx, vy );
@@ -229,7 +241,7 @@ window.LevelLogic = function() {
 
   return {
     // Déterminer les déplacements futurs.
-    process: function( env ) {
+    process: function( env, action ) {
       // Chaque héro peut manger de la terres (feuilles), mais il faut
       // la retirer dans  un deuxième temps pour éviter  des effets de
       // bord sur la chute de pierres vers la gauche.
@@ -257,7 +269,7 @@ window.LevelLogic = function() {
             processRockOrDiam( level, col, row, env );
           }
           else if( level.getType( col, row ) === Level.HERO ) {
-            processHero( env, level, col, row, heroMoves );
+            processHero( env, level, col, row, heroMoves, action );
           }
           else if( cell === Level.MONS ) {
             processMonster( env, level, col, row );
@@ -318,6 +330,91 @@ window.LevelLogic = function() {
         }
       }
       if( !isHeroAlive ) env.killHero();
+    },
+
+    createEnv: function(gl, assets) {
+      return {
+        gl: gl,
+        assets: assets,
+        x: 0, y: 0, z: 0, w: 1,
+        cellTime: 180,  // Temps en ms pour traverser une cellule.
+        nextSynchro: -1,
+        levelNumber: 0,
+        score: 0,
+        bonus: 0,
+        divDiam: document.getElementById("diam"),
+        divScore: document.getElementById("score"),
+        //#(eatDiam)
+        eatenDiams: 0,
+        eatDiam: function() {
+          // Les assets finissant par 'ogg', 'mp3' ou 'wav'
+          // sont transpformés en tag AUDIO.
+          assets.diamSound.pause();
+          // Il n'existe pas de méthode `stop()`.
+          // On doit donc faire une pause, puis
+          // remettre le curseur au début de la piste.
+          assets.diamSound.currentTime = 0;
+          assets.diamSound.play();
+          this.eatenDiams++;
+          console.log( this.eatenDiams, "/", this.level.need );
+          if( this.eatenDiams == this.level.need ) {
+            this.level.setType( this.level.exitX, this.level.exitY, Level.EXIT );
+            assets.exitSound.play();
+          }
+          this.score += 50;
+          if( this.divDiam ) {
+            this.divDiam.textContent = Math.max(0, this.level.need - this.eatenDiams );
+            this.divScore.textContent = this.score;
+          }
+        },
+        //#(eatDiam)
+        // Bruit du rocher dont la chute est stoppée par un obstacle.
+        playBoom: function() {
+          assets.rockSound.pause();
+          assets.rockSound.currentTime = 0;
+          assets.rockSound.play();
+        },
+        explode: function( col, row, makeDiams ) {
+          var level = this.level;
+          var x, y;
+          this.makeDiams = makeDiams;
+          for( y = row - 1; y < row + 2; y++ ) {
+            for( x = col - 1; x < col + 2; x++ ) {
+              if( level.getType( x, y ) !== Level.WALL && level.getType( x, y ) !== Level.EXIT ) {
+                level.setType( x, y, makeDiams ? Level.EXP2 : Level.EXP1 );
+                level.setIndex( x, y, 1 );
+                level.setMove( x, y, 0, 0 );
+              }
+            }
+          }
+          assets.explSound.pause();
+          assets.explSound.currentTime = 0;
+          assets.explSound.play();
+        },
+        // Vie te mort du Héro.
+        isHeroAlive: true,
+        killHero: function() {
+          if( !this.isHeroAlive ) return;
+
+          this.camVX = this.camVY = 0;
+
+          this.isHeroAlive = false;
+          var col, row;
+          for( row = 0; row < this.level.rows; row++ ) {
+            for( col = 0; col < this.level.cols; col++ ) {
+              if( this.level.getType( col, row ) === Level.HERO ) {
+                this.explode( col, row );
+              }
+            }
+          }
+          this.transition = 6;
+        },
+        isLevelDone: false,
+        nextLevel: function() {
+          this.isLevelDone = true;
+          this.killHero();
+        }
+      };
     }
   };
 }();
