@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article101', 'wdg.article', {
+        W('wdg.article98', 'wdg.article', {
             title: "Old stuff (à trier)",
             content: [
           W({
@@ -71,36 +71,36 @@ addListener(
                     W({
                       elem: "ul",
                       children: [
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "chap8.html"},
                               children: ["chap8"]})]}),
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform.html"},
                               children: ["deform"]})]}),
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform2.html"},
                               children: ["deform2"]})]}),
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "doc.html"},
                               children: ["doc"]})]}),
-                        "\n    "]}),
-                    "\n"]})]})]},{"id":"wdg.article101"})
+                        "\r\n    "]}),
+                    "\n"]})]})]},{"id":"wdg.article98"})
 
     }
 );

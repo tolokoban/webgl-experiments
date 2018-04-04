@@ -32,7 +32,7 @@ WebGL.fetchAssets({
   header.innerHTML = "<div>Life x <b id='life'>3</b></div><div><b id='score'>0</b></div><div id='bonus'>0</div><div><b id='diam'>12</b> x diam</div>";
   document.body.appendChild( header );
 
-  var env = initEnv( gl, assets );
+  var env = LevelLogic.createEnv( gl, assets );
 
   initLevel( env, parseInt( location.search.substr(1) ) );
 
@@ -65,7 +65,7 @@ WebGL.fetchAssets({
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
 
       LevelLogic.apply( env );
-      LevelLogic.process( env );
+      LevelLogic.process( env, GameInputs.action );
       env.levelPainter.update();
 
       env.bonus--;
@@ -171,88 +171,5 @@ function initLevel( env, levelNumber ) {
   document.getElementById("bonus").textContent = env.bonus;
   
   return level;
-}
-
-
-//#(env)  
-function initEnv( gl, assets ) {
-  return {
-    gl: gl,
-    assets: assets,
-    x: 0, y: 0, z: 0, w: 1,
-    cellTime: 180,  // Temps en ms pour traverser une cellule.
-    nextSynchro: -1,
-    levelNumber: 0,
-    score: 0,
-    bonus: 0,
-    //#(eatDiam)
-    eatenDiams: 0,
-    eatDiam: function() {
-      // Les assets finissant par 'ogg', 'mp3' ou 'wav'
-      // sont transpformés en tag AUDIO.
-      assets.diamSound.pause();
-      // Il n'existe pas de méthode `stop()`.
-      // On doit donc faire une pause, puis
-      // remettre le curseur au début de la piste.
-      assets.diamSound.currentTime = 0;
-      assets.diamSound.play();
-      this.eatenDiams++;
-      console.log( this.eatenDiams, "/", this.level.need );
-      if( this.eatenDiams == this.level.need ) {
-        this.level.setType( this.level.exitX, this.level.exitY, Level.EXIT );
-        assets.exitSound.play();
-      }
-      document.getElementById("diam").textContent = Math.max(0, this.level.need - this.eatenDiams );
-      this.score += 50;
-      document.getElementById("score").textContent = this.score;
-    },
-    //#(eatDiam)
-    // Bruit du rocher dont la chute est stoppée par un obstacle.
-    playBoom: function() {
-      assets.rockSound.pause();
-      assets.rockSound.currentTime = 0;
-      assets.rockSound.play();
-    },
-    explode: function( col, row, makeDiams ) {
-      var level = this.level;
-      var x, y;
-      this.makeDiams = makeDiams;
-      for( y = row - 1; y < row + 2; y++ ) {
-        for( x = col - 1; x < col + 2; x++ ) {
-          if( level.getType( x, y ) !== Level.WALL && level.getType( x, y ) !== Level.ROCK ) {
-            level.setType( x, y, makeDiams ? Level.EXP2 : Level.EXP1 );
-            level.setIndex( x, y, 1 );
-            level.setMove( x, y, 0, 0 );
-          }
-        }
-      }
-      assets.explSound.pause();
-      assets.explSound.currentTime = 0;
-      assets.explSound.play();
-    },
-    // Vie te mort du Héro.
-    isHeroAlive: true,
-    killHero: function() {
-      if( !this.isHeroAlive ) return;
-      
-      this.camVX = this.camVY = 0;
-
-      this.isHeroAlive = false;
-      var col, row;
-      for( row = 0; row < this.level.rows; row++ ) {
-        for( col = 0; col < this.level.cols; col++ ) {
-          if( this.level.getType( col, row ) === Level.HERO ) {
-            this.explode( col, row );
-          }
-        }
-      }
-      this.transition = 6;
-    },
-    isLevelDone: false,
-    nextLevel: function() {
-      this.isLevelDone = true;
-      this.killHero();
-    }
-  };
 }
 //#(env)  
