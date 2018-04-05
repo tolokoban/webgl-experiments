@@ -140,7 +140,7 @@ window.LevelLogic = function() {
       target = level.getType( col + vx, row + vy );
       switch( target ) {
       case Level.VOID:
-        prepareMove( col, row, vx, vy, env );        
+        prepareMove( col, row, vx, vy, env );
         level.setIndex( col, row, d );
         return;
       case Level.HERO:
@@ -165,7 +165,11 @@ window.LevelLogic = function() {
 
   function processHero( env, level, col, row, heroMoves, action ) {
     // Si le héro est mort, on ne fait rien du tout.
-    if( !env.isHeroAlive ) return;
+    if( !env.isHeroAlive ) {
+      env.camX = 0;
+      env.camY = 0;
+      return;
+    }
 
     var move = true;
 
@@ -206,6 +210,10 @@ window.LevelLogic = function() {
       var cell = level.getType( nextX, nextY );
       if( cell === Level.WALL || cell === Level.HERO ) {
         // Les murs arrêtent le déplacement. Les clones aussi.
+        env.camX = col;
+        env.camY = row;
+        env.camVX = 0;
+        env.camVY = 0;
         return;
       }
 
@@ -224,10 +232,6 @@ window.LevelLogic = function() {
         vx = vy = 0;
       }
       else {
-        /*
-          else if( cell === Level.BOOM ) env.killHero();
-          else if( cell === Level.MONS ) env.killHero();
-        */
         heroMoves.push([ col, row ]);
         level.flag( nextX, nextY );
         level.setMove( col, row, vx, vy );

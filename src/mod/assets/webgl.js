@@ -381,11 +381,13 @@ window.WebGL = function() {
           } else if( endsWith( url, "ogg", "wav", "mp3" ) ) {
             var audio = document.createElement("audio");
             result[key] = audio;
-            audio.addEventListener( "canplay", function() {
+            var slot = function() {
               if( audio._loaded ) return;
               audio._loaded = true;
               next( url );              
-            });
+            };
+            audio.addEventListener( "canplay", slot );
+            audio.addEventListener( "loadeddata", slot );
             audio.addEventListener( "error", function( ex ) {
               console.error("Unable to load sound \"" + key + "\":", url);
               console.error( ex );
