@@ -87,11 +87,9 @@ WebGL.fetchAssets({
               initLevel( env, env.levelNumber + 1 );
             }, 1200);
           } else {
-            transition.start(function() {
-              env.life--;
-              if( env.life <= 0 ) env.levelNumber = 0;
-              initLevel( env, env.levelNumber );
-            }, 600);
+            env.life--;
+            if( env.life <= 0 ) env.levelNumber = 0;
+            initLevel( env, env.levelNumber );
           }
           env.wait = -1;
         }
