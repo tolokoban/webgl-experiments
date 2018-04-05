@@ -48,6 +48,8 @@ WebGL.fetchAssets({
   function anim( time ) {
     window.requestAnimationFrame( anim );
 
+    var action = GameInputs.action;
+    
     env.time = time;
     var width = canvas.clientWidth;
     var height = canvas.clientHeight;
@@ -71,7 +73,7 @@ WebGL.fetchAssets({
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
 
       LevelLogic.apply( env );
-      LevelLogic.process( env, GameInputs.action );
+      LevelLogic.process( env, action );
       env.levelPainter.update();
 
       env.bonus--;
