@@ -8,8 +8,10 @@ WebGL.fetchAssets({
   rockSound: "../snd/rock.ogg",
   hueVert: "hue.vert",
   hueFrag: "hue.frag",
-  coordsVert: "../coords.vert",  
+  coordsVert: "../coords.vert",
   coordsMoveVert: "../coords-move.vert",
+  transitionVert: "transition.vert",
+  transitionFrag: "transition.frag",
   backgroundVert: "background.vert",
   backgroundFrag: "background.frag",
   backgroundTexture: "../img/background.jpg",
@@ -41,6 +43,8 @@ WebGL.fetchAssets({
   gl.clearDepth( 0 );
   gl.depthFunc( gl.GREATER );
 
+  var transition = new Transition( gl, assets );
+
   function anim( time ) {
     window.requestAnimationFrame( anim );
 
@@ -55,6 +59,8 @@ WebGL.fetchAssets({
     gl.viewport(0, 0, width, height);
 
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+
+    transition.draw( time, width, height );
 
     //#(synchro)
     // A la synchro, on fait les calculs de mouvements.
@@ -71,18 +77,23 @@ WebGL.fetchAssets({
       env.bonus--;
       if( env.bonus === 0 ) env.killHero();
       document.getElementById("bonus").textContent = env.bonus;
-      
-      if( env.transition > -1 ) {
-        env.transition--;
-        if( env.transition <= 0 ) {
+
+      if( env.wait > -1 ) {
+        env.wait--;
+        if( env.wait <= 0 ) {
           if( env.isLevelDone ) {
-            env.score += env.bonus;
-            initLevel( env, env.levelNumber + 1 );
+            transition.start(function() {
+              env.score += env.bonus;
+              initLevel( env, env.levelNumber + 1 );
+            }, 1200);
           } else {
-            env.life--;
-            if( env.life <= 0 ) env.levelNumber = 0;
-            initLevel( env, env.levelNumber );
+            transition.start(function() {
+              env.life--;
+              if( env.life <= 0 ) env.levelNumber = 0;
+              initLevel( env, env.levelNumber );
+            }, 600);
           }
+          env.wait = -1;
         }
       }
     }
@@ -152,7 +163,7 @@ function initLevel( env, levelNumber ) {
   env.isHeroAlive = true;
   env.isLevelDone = false;
   env.bonus = level.cols * level.rows * 4;
-  env.transition = -1;
+  env.wait = -1;
   env.levelNumber = levelNumber;
 
   env.assets.musicSound.pause();
@@ -170,7 +181,7 @@ function initLevel( env, levelNumber ) {
   document.getElementById("life").textContent = env.life;
   document.getElementById("score").textContent = env.score;
   document.getElementById("bonus").textContent = env.bonus;
-  
+
   return level;
 }
-//#(env)  
+//#(env)
