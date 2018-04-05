@@ -407,7 +407,7 @@ window.LevelLogic = function() {
               }
             }
           }
-          this.transition = 6;
+          this.wait = 4;
         },
         isLevelDone: false,
         nextLevel: function() {
