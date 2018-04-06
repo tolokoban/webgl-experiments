@@ -60,7 +60,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article98', 'wdg.article', {
+        W('wdg.article101', 'wdg.article', {
             title: "Old stuff (à trier)",
             content: [
           W({
@@ -71,40 +71,40 @@ addListener(
                     W({
                       elem: "ul",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "chap8.html"},
                               children: ["chap8"]})]}),
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform.html"},
                               children: ["deform"]})]}),
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform2.html"},
                               children: ["deform2"]})]}),
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "doc.html"},
                               children: ["doc"]})]}),
-                        "\r\n    "]}),
-                    "\n"]})]})]},{"id":"wdg.article98"})
+                        "\n    "]}),
+                    "\n"]})]})]},{"id":"wdg.article101"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.86"',major:"0",minor:"0",revision:"86",date:"2018-04-03T19:58:10.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.87"',major:"0",minor:"0",revision:"87",date:"2018-04-06T15:41:37.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map

@@ -1,9 +1,0 @@
-"use strict";
-
-WebGL.fetchAssets({
-  marilyn: "marilyn.jpg",
-  vert: "marilyn.vert",
-  frag: "marilyn.frag"
-}).then(function( assets ) {
-  
-});

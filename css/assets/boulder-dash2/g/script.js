@@ -28,11 +28,8 @@ WebGL.fetchAssets({
   exploTexture: "../img/row-explo.png",
   groundTexture: "../img/ground.png"
 }).then(function(assets) {
-  var canvas = WebGL.newCanvas();
+  var canvas = document.getElementById("canvas");
   var gl = canvas.getContext("webgl");
-  var header = document.createElement("header");
-  header.innerHTML = "<div>Life x <b id='life'>3</b></div><div><b id='score'>0</b></div><div id='bonus'>0</div><div><b id='diam'>12</b> x diam</div>";
-  document.body.appendChild( header );
 
   var env = LevelLogic.createEnv( gl, assets );
 
@@ -44,10 +41,48 @@ WebGL.fetchAssets({
   gl.depthFunc( gl.GREATER );
 
   var transition = new Transition( gl, assets );
+  var highscore = new HighScore();
 
+  env.demoMode = true;
+  refreshHighScores( highscore );
+  var onStart = function() {
+    hideHighScores();
+    transition.start(function() {
+      env.demoMode = false;
+      initLevel( env, parseInt( location.search.substr(1) ) );
+    }, 1000);
+  };
+  document.getElementById("btnStart").addEventListener("click", onStart );
+
+  document.getElementById("btnOk").addEventListener("click", function() {
+    var name = document.getElementById("name").value.trim();
+    if( name.length === 0 ) {
+      document.getElementById("name").focus();
+      return;
+    }
+    var newScore = parseInt(document.getElementById("new-score").textContent);
+    highscore.addScore( name, newScore );
+    document.getElementById("congrat").className = "hide";
+    refreshHighScores( highscore );
+    env.demoMode = true;
+  });
+  
   function anim( time ) {
     window.requestAnimationFrame( anim );
 
+    var action = GameInputs.action;
+    if( env.demoMode ) {
+      if( action === GameInputs.START ) {
+        if( document.getElementById("congrat").className != "hide" ) {
+          onStart();
+        }        
+        else if( document.getElementById("welcome").className != "hide" ) {
+          onStart();
+        }        
+      }
+      action = GameInputs.STILL;
+    }
+    
     env.time = time;
     var width = canvas.clientWidth;
     var height = canvas.clientHeight;
@@ -71,7 +106,7 @@ WebGL.fetchAssets({
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
 
       LevelLogic.apply( env );
-      LevelLogic.process( env, GameInputs.action );
+      LevelLogic.process( env, action );
       env.levelPainter.update();
 
       env.bonus--;
@@ -88,8 +123,13 @@ WebGL.fetchAssets({
             }, 1200);
           } else {
             env.life--;
-            if( env.life <= 0 ) env.levelNumber = 0;
-            initLevel( env, env.levelNumber );
+            if( env.life <= 0 ) {
+              addNewScore( highscore, env.score );
+              env.levelNumber = 0;
+              env.demoMode = true;
+            } else {
+              initLevel( env, env.levelNumber );
+            }
           }
           env.wait = -1;
         }
@@ -182,4 +222,48 @@ function initLevel( env, levelNumber ) {
 
   return level;
 }
-//#(env)
+
+
+function addNewScore( highscore, score ) {
+  if( highscore.isAnHighScore( score ) ) {
+    var divCongrat = document.getElementById("congrat");
+    divCongrat.className = "";
+    document.getElementById("new-score").textContent = "" + score;
+    document.getElementById("name").focus();
+  } else {
+    refreshHighScores( highscore );
+  }
+}
+
+
+function refreshHighScores( highscore ) {
+  var div = document.getElementById("highscores");
+  div.innerHTML = "";
+  var scores = highscore.getScores();
+  scores.forEach(function (item, pos) {
+    var name = item[0];
+    var score = item[1];
+    var row = document.createElement("div");
+    div.appendChild( row );
+    if( pos == highscore.getLastHighScoreIndex() ) {
+      row.className = "highlighted";
+    }
+    var cell1 = document.createElement("div");
+    cell1.textContent = name;
+    var cell2 = document.createElement("div");
+    cell2.textContent = score;
+    row.appendChild( cell1 );
+    row.appendChild( cell2 );
+  });
+  showHighScores();
+}
+
+
+function showHighScores() {
+  document.getElementById("welcome").className = "";
+}
+
+
+function hideHighScores() {
+  document.getElementById("welcome").className = "hide";
+}
