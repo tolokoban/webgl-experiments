@@ -1,7 +1,8 @@
 * {
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
-    box-sizing:border-box
+    box-sizing:border-box;
+    font-family: sans-serif;
 }
 
 header {
@@ -69,9 +70,9 @@ div.tbl > div > div:last-child {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 280px;
+    width: 240px;
     height: 320px;
-    margin: -160px -140px;
+    margin: -160px -120px;
     border-radius: 8px;
     padding: 8px;
     background: rgba(0,0,0,.8);
@@ -81,13 +82,15 @@ div.tbl > div > div:last-child {
     transition: all .3s;
 }
 
-button {
+#welcome button {
     border: none;
-    background: #CD9;
+    background: #F80;
     font-weight: bold;
     font-size: 1.5rem;
-    padding: 1rem;
-    border-radius: 4px;
+    padding: .5rem 2rem;
+    border-radius: 8px;
+    color: #ffd;
+    cursor: pointer;
 }
 
 #welcome.hide {

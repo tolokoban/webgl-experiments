@@ -28,6 +28,9 @@ WebGL.fetchAssets({
   exploTexture: "../img/row-explo.png",
   groundTexture: "../img/ground.png"
 }).then(function(assets) {
+  var highscore = new HighScore();
+  refreshHighScores( highscore );
+  
   var canvas = document.getElementById("canvas");
   var gl = canvas.getContext("webgl");
   var header = document.createElement("header");
@@ -185,3 +188,22 @@ function initLevel( env, levelNumber ) {
   return level;
 }
 //#(env)
+
+
+function refreshHighScores( highscore ) {
+  var div = document.getElementById("highscores");
+  div.innerHTML = "";
+  var scores = highscore.getScores();
+  scores.forEach(function (item) {
+    var name = item[0];
+    var score = item[1];
+    var row = document.createElement("div");
+    div.appendChild( row );
+    var cell1 = document.createElement("div");
+    cell1.textContent = name;
+    var cell2 = document.createElement("div");
+    cell2.textContent = score;
+    row.appendChild( cell1 );
+    row.appendChild( cell2 );
+  });
+}
