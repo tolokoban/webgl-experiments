@@ -73,7 +73,6 @@ window.GameInputs = function() {
     console.log("Gamepad connected at index %d: %s. %d buttons, %d axes.",
                 e.gamepad.index, e.gamepad.id,
                 e.gamepad.buttons.length, e.gamepad.axes.length);
-    console.log("Mapping: %s", e.gamepad.mapping);
     gamepad = e.gamepad;
   });
 
@@ -140,12 +139,14 @@ window.GameInputs = function() {
   Object.defineProperty( context, "action", {
     get: function() {
       if( gamepad ) {
+        /*
         gamepad.axes.forEach(function (axe, idx) {
           if( axe !== 0 ) console.log("axe[%d] = %d", idx, axe);
         });
         gamepad.buttons.forEach(function (button, idx) {
           if( button.pressed ) console.log("button[%d] = PRESSED", idx);
         });
+         */
         if( gamepad.axes[6] > 0 || gamepad.axes[3] > 0 || gamepad.axes[0] > 0 ) return RIGHT;
         if( gamepad.axes[6] < 0 || gamepad.axes[3] < 0 || gamepad.axes[0] < 0 ) return LEFT;
         if( gamepad.axes[7] > 0 || gamepad.axes[4] > 0 || gamepad.axes[1] > 0 ) return DOWN;
