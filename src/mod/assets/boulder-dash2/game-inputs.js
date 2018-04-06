@@ -7,7 +7,8 @@ window.GameInputs = function() {
   var DOWN = 3;
   var LEFT = 4;
   var SUICIDE = 5;
-  var state = [0,0,0,0,0,0];
+  var START = 6;
+  var state = [0,0,0,0,0,0,0];
 
   function clear() {
     state[0] = state[1] = state[2] = state[3] = state[4] = state[5] = 0;
@@ -32,6 +33,9 @@ window.GameInputs = function() {
     case 'escape':
       state[SUICIDE] = 1;
       break;
+    case 'space':
+      state[START] = 1;
+      break;
     default:
       catchKey = false;
     }
@@ -54,9 +58,30 @@ window.GameInputs = function() {
     case 'escape':
       state[SUICIDE] = 0;
       break;
+    case 'space':
+      state[START] = 0;
+      break;
     }
   }, true);
+
+  //=========
+  // GAMEPAD
+  //---------
+  var gamepad = null;
+
+  window.addEventListener("gamepadconnected", function(e) {
+    console.log("Gamepad connected at index %d: %s. %d buttons, %d axes.",
+                e.gamepad.index, e.gamepad.id,
+                e.gamepad.buttons.length, e.gamepad.axes.length);
+    console.log("Mapping: %s", e.gamepad.mapping);
+    gamepad = e.gamepad;
+  });
+
+  window.addEventListener("gamepaddisconnected", function(e) {
+    if( e.gamepad === gamepad ) gamepad = null;
+  });
   
+
   // Mouvement au toucher.
   // Quand on arrête de toucher l'écran, le héro s'arrête.
   // Sinon, il continue dans la direction courante.
@@ -67,7 +92,7 @@ window.GameInputs = function() {
   document.addEventListener( "touchstart", function( evt ) {
     // S'il y a déjà un doigt sur l'écran, on ignore les suivants.
     if( touchId ) return;
-    
+
     var touch = evt.changedTouches[0];
     touchId = touch.identifier;
     touchX = touch.clientX;
@@ -102,25 +127,46 @@ window.GameInputs = function() {
     }
   });
 
-    var context = {
-      STILL: 0,
-      UP: UP,
-      RIGHT: RIGHT,
-      DOWN: DOWN,
-      LEFT: LEFT,
-      SUICIDE: SUICIDE
-    };
+  var context = {
+    STILL: 0,
+    UP: UP,
+    RIGHT: RIGHT,
+    DOWN: DOWN,
+    LEFT: LEFT,
+    SUICIDE: SUICIDE,
+    START: START
+  };
 
-    Object.defineProperty( context, "action", {
-      get: function() {
-        if( state[UP] ) return UP;
-        if( state[RIGHT] ) return RIGHT;
-        if( state[DOWN] ) return DOWN;
-        if( state[LEFT] ) return LEFT;
-        if( state[SUICIDE] ) return SUICIDE;
-        return STILL;
+  Object.defineProperty( context, "action", {
+    get: function() {
+      if( gamepad ) {
+        gamepad.axes.forEach(function (axe, idx) {
+          if( axe !== 0 ) console.log("axe[%d] = %d", idx, axe);
+        });
+        gamepad.buttons.forEach(function (button, idx) {
+          if( button.pressed ) console.log("button[%d] = PRESSED", idx);
+        });
+        if( gamepad.axes[6] > 0 || gamepad.axes[3] > 0 || gamepad.axes[0] > 0 ) return RIGHT;
+        if( gamepad.axes[6] < 0 || gamepad.axes[3] < 0 || gamepad.axes[0] < 0 ) return LEFT;
+        if( gamepad.axes[7] > 0 || gamepad.axes[4] > 0 || gamepad.axes[1] > 0 ) return DOWN;
+        if( gamepad.axes[7] < 0 || gamepad.axes[4] < 0 || gamepad.axes[1] < 0 ) return UP;
+        var pressedButtonIndex = -1;
+        gamepad.buttons.forEach(function (button, idx) {
+          if( button.pressed ) pressedButtonIndex = idx;
+        });
+        if( pressedButtonIndex > -1 ) {
+          if( pressedButtonIndex < 4 ) return SUICIDE;
+          return START;
+        }
       }
-    });
+      if( state[UP] ) return UP;
+      if( state[RIGHT] ) return RIGHT;
+      if( state[DOWN] ) return DOWN;
+      if( state[LEFT] ) return LEFT;
+      if( state[SUICIDE] ) return SUICIDE;
+      return STILL;
+    }
+  });
 
-    return context;
-  }();
+  return context;
+}();

@@ -7,12 +7,12 @@ window.HighScore = function() {
    * éléments : le nom du joueur et son score.
    */
   var DEFAULT_HIGH_SCORES = [
-    ['Daisy', 4750],
-    ['John', 3900],
-    ['Samantha', 3900],
-    ['Henry', 2600],
-    ['Virginia', 1300],
-    ['William', 1050],
+    ['Daisy', 17132],
+    ['John', 16000],
+    ['Samantha', 11728],
+    ['Henry', 8226],
+    ['Virginia', 4100],
+    ['William', 1950],
     ['Natalia', 900],
     ['Paul', 650]
   ];
@@ -69,7 +69,7 @@ window.HighScore = function() {
    * Vérifier si le score donné peut figurer parmi les 8 meilleurs.
    */
   HighScore.prototype.isAnHighScore = function( score ) {
-    return score > this._scores[this._scores.length - 1];
+    return score > this._scores[this._scores.length - 1][1];
   };
 
   /**
@@ -85,10 +85,10 @@ window.HighScore = function() {
         // ça permettra de le mettre en évidence.
         this._lastNewHighScore = k;
         // On insère le score à sa place.
-        score.splice( k, 0, [name, score] );
+        scores.splice( k, 0, [name, score] );
         // On s'assure qu'il n'y en a pas plus que 8.
-        while( score.length > 8) score.pop();
-        saveToLocalStorage( score );
+        while( scores.length > 8) scores.pop();
+        saveToLocalStorage( scores );
         return true;
       }
     }
