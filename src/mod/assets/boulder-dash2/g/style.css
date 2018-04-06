@@ -40,6 +40,7 @@ h1 {
 div.tbl {
     display: table;
     width: 100%;
+    border-collapse: collapse;
 }
 
 div.tbl > div {
@@ -49,12 +50,21 @@ div.tbl > div {
 div.tbl > div > div {
     display: table-cell;
     vertical-align: middle;
+    padding: 3px 16px;
+}
+
+div.tbl > div > div:first-child {
+    text-align: right;
+}
+
+div.tbl > div > div:last-child {
+    text-align: left;
 }
 
 #welcome {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     position: absolute;
     left: 50%;
