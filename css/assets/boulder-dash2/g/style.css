@@ -1,7 +1,14 @@
 * {
+<<<<<<< HEAD
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     box-sizing:border-box
+=======
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  font-family: sans-serif;
+>>>>>>> 8c219daa0c10ca75f80fb1d1938fa2894f711795
 }
 
 header {
@@ -27,6 +34,7 @@ header > div {
 }
 
 header b {
+<<<<<<< HEAD
     color: #fff;
     font-size: 24px;
 }
@@ -104,4 +112,129 @@ button {
         color: #fff;
         font-size: 16px;
     }
+=======
+  color: #fff;
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 4px 0;
+}
+
+div.tbl {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+div.tbl > div {
+  display: table-row;
+}
+
+div.tbl > div.highlighted {
+  box-shadow: 0 0 8px #f80;
+  font-weight: bold;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255,140,0,.5);
+}
+
+div.tbl > div > div {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3px 16px;
+}
+
+div.tbl > div > div:first-child {
+  text-align: right;
+}
+
+div.tbl > div > div:last-child {
+  text-align: left;
+}
+
+#congrat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 240px;
+  height: 180px;
+  margin: -90px -120px;
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(0,0,0,.8);
+  z-index: 9;
+  text-align: center;
+  font: 70%;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .3s;
+}
+
+#congrat.hide {
+  opacity: 0;
+  transform: translateY(100vh);
+  transition: all .3s;
+}
+
+#congrat input {
+  border: none;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 240px;
+  height: 320px;
+  margin: -160px -120px;
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(0,0,0,.8);
+  z-index: 9;
+  font: 70%;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .3s;
+}
+
+button {
+  border: none;
+  background: #F80;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  color: #ffd;
+  cursor: pointer;
+}
+
+#welcome.hide {
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: all .3s;
+}
+
+@media (max-width:480px) {
+  header {
+    font-size: 10px;
+    height: 16px;
+  }
+  header b {
+    color: #fff;
+    font-size: 16px;
+  }
+>>>>>>> 8c219daa0c10ca75f80fb1d1938fa2894f711795
 }

@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+              content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script src="../../webgl.js"></script>
+        <script src="high-score.js"></script>
         <script src="transition.js"></script>
         <script src="texture-aggregator.js"></script>
         <script src="level-logic.js"></script>
@@ -20,6 +21,7 @@
     </head>
     <body>
         <canvas id="canvas"></canvas>
+<<<<<<< HEAD
         <div id="welcome" class="hide">
             <div class="tbl">
                 <div><div>Paul</div><div>345</div></div>
@@ -32,6 +34,23 @@
                 <div><div>Paul</div><div>345</div></div>
             </div>
             <center><button>START</button></center>
+=======
+        <header>
+            <div>Life x <b id='life'>3</b></div>
+            <div><b id='score'>0</b></div>
+            <div id='bonus'>0</div>
+            <div><b id='diam'>12</b> x diam</div>
+        </header>
+        <div id="welcome">
+            <div class="tbl" id="highscores">
+            </div>
+            <center><button id="btnStart">START</button></center>
+        </div>
+        <div id="congrat" class="hide">
+            <div><span id="new-score"></span><span> points</span></div>
+            <input id="name" maxlength="8" size="8" value=""/>
+            <button id="btnOk">OK</button>
+>>>>>>> 8c219daa0c10ca75f80fb1d1938fa2894f711795
         </div>
     </body>
 </html>
