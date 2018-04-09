@@ -28,7 +28,7 @@ WebGL.fetchAssets({
   exploTexture: "../img/row-explo.png",
   groundTexture: "../img/ground.png"
 }).then(function(assets) {
-  var canvas = WebGL.newCanvas();
+  var canvas = document.getElementById("canvas");
   var gl = canvas.getContext("webgl");
   var header = document.createElement("header");
   header.innerHTML = "<div>Life x <b id='life'>3</b></div><div><b id='score'>0</b></div><div id='bonus'>0</div><div><b id='diam'>12</b> x diam</div>";
@@ -48,6 +48,8 @@ WebGL.fetchAssets({
   function anim( time ) {
     window.requestAnimationFrame( anim );
 
+    var action = GameInputs.action;
+    
     env.time = time;
     var width = canvas.clientWidth;
     var height = canvas.clientHeight;
@@ -71,7 +73,7 @@ WebGL.fetchAssets({
       env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
 
       LevelLogic.apply( env );
-      LevelLogic.process( env, GameInputs.action );
+      LevelLogic.process( env, action );
       env.levelPainter.update();
 
       env.bonus--;

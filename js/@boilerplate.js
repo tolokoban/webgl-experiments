@@ -11143,26 +11143,18 @@ addListener(
                         "\r\n            ",
                         W({
                           elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["audio"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "function"},
-                          children: ["addEventListener"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
+                          attr: {"class": "keyword"},
+                          children: ["var"]}),
                         " ",
                         W({
                           elem: "span",
-                          attr: {"class": "string"},
-                          children: ["\"canplay\""]}),
+                          attr: {"class": "identifier"},
+                          children: ["slot"]}),
+                        " ",
                         W({
                           elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
+                          attr: {"class": "operator"},
+                          children: ["="]}),
                         " ",
                         W({
                           elem: "span",
@@ -11257,7 +11249,73 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: ["});"]}),
+                          children: ["};"]}),
+                        "\r\n            ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["audio"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["addEventListener"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"canplay\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["slot"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\r\n            ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["audio"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "function"},
+                          children: ["addEventListener"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "string"},
+                          children: ["\"loadeddata\""]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [","]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["slot"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
                         "\r\n            ",
                         W({
                           elem: "span",
