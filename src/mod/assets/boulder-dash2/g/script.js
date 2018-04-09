@@ -20,6 +20,8 @@ WebGL.fetchAssets({
   wallTexture: "../img/wall.jpg",
   levelVert: "level.vert",
   levelFrag: "level.frag",
+  rainVert: "rain.vert",
+  rainFrag: "rain.frag",
   boulderTexture: "../img/row-boulder.png",
   monsterTexture: "../img/row-monster.png",
   exitTexture: "../img/exit.png",
@@ -40,6 +42,7 @@ WebGL.fetchAssets({
   gl.clearDepth( 0 );
   gl.depthFunc( gl.GREATER );
 
+  var rainPainter = new RainPainter( env );
   var transition = new Transition( gl, assets );
   var highscore = new HighScore();
 
@@ -66,7 +69,7 @@ WebGL.fetchAssets({
     refreshHighScores( highscore );
     env.demoMode = true;
   });
-  
+
   function anim( time ) {
     window.requestAnimationFrame( anim );
 
@@ -75,14 +78,14 @@ WebGL.fetchAssets({
       if( action === GameInputs.START ) {
         if( document.getElementById("congrat").className != "hide" ) {
           onStart();
-        }        
+        }
         else if( document.getElementById("welcome").className != "hide" ) {
           onStart();
-        }        
+        }
       }
       action = GameInputs.STILL;
     }
-    
+
     env.time = time;
     var width = canvas.clientWidth;
     var height = canvas.clientHeight;
@@ -97,80 +100,87 @@ WebGL.fetchAssets({
 
     transition.draw( time, width, height );
 
-    //#(synchro)
-    // A la synchro, on fait les calculs de mouvements.
-    if( env.nextSynchro < 0 ) {
-      env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
+    if( env.demoMode ) {
+      // Animation d'attente pendant l'affichage des HighScores.
+      rainPainter.draw( env );
     }
-    else if( time >= env.nextSynchro ) {
-      env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
+    else
+    {
+      //#(synchro)
+      // A la synchro, on fait les calculs de mouvements.
+      if( env.nextSynchro < 0 ) {
+        env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
+      }
+      else if( time >= env.nextSynchro ) {
+        env.nextSynchro = Math.ceil( time / env.cellTime ) * env.cellTime;
 
-      LevelLogic.apply( env );
-      LevelLogic.process( env, action );
-      env.levelPainter.update();
+        LevelLogic.apply( env );
+        LevelLogic.process( env, action );
+        env.levelPainter.update();
 
-      env.bonus--;
-      if( env.bonus === 0 ) env.killHero();
-      document.getElementById("bonus").textContent = env.bonus;
+        env.bonus--;
+        if( env.bonus === 0 ) env.killHero();
+        document.getElementById("bonus").textContent = env.bonus;
 
-      if( env.wait > -1 ) {
-        env.wait--;
-        if( env.wait <= 0 ) {
-          if( env.isLevelDone ) {
-            transition.start(function() {
-              env.score += env.bonus;
-              initLevel( env, env.levelNumber + 1 );
-            }, 1200);
-          } else {
-            env.life--;
-            if( env.life <= 0 ) {
-              addNewScore( highscore, env.score );
-              env.levelNumber = 0;
-              env.demoMode = true;
+        if( env.wait > -1 ) {
+          env.wait--;
+          if( env.wait <= 0 ) {
+            if( env.isLevelDone ) {
+              transition.start(function() {
+                env.score += env.bonus;
+                initLevel( env, env.levelNumber + 1 );
+              }, 1200);
             } else {
-              initLevel( env, env.levelNumber );
+              env.life--;
+              if( env.life <= 0 ) {
+                addNewScore( highscore, env.score );
+                env.levelNumber = 0;
+                env.demoMode = true;
+              } else {
+                initLevel( env, env.levelNumber );
+              }
             }
+            env.wait = -1;
           }
-          env.wait = -1;
         }
       }
-    }
-    //#(synchro)
+      //#(synchro)
 
-    //#(camera)
-    // Positionner la caméra sur le héro.
-    // Sauf si le cadrage arrive hors tableau.
-    var t = (time % env.cellTime) / env.cellTime;
-    if( env.level.cols * 64 / env.w < width ) {
-      env.x = env.level.cols / 2;
-    } else {
-      env.x = Math.min(
-        Math.max(
-          env.camX + t * env.camVX,
-          width * env.w * .5 / 64
-        ),
-        env.level.cols - 1 - width * env.w * .5 / 64
-      );
-    }
-    if( env.level.rows * 64 / env.w < height ) {
-      env.y = env.level.rows / 2;
-    } else {
-      env.y = Math.min(
-        Math.max(
-          env.camY + t * env.camVY,
-          height * env.w * .5 / 64
-        ),
-        env.level.rows - 1 - height * env.w * .5 / 64
-      );
-    }
-    //#(camera)
+      //#(camera)
+      // Positionner la caméra sur le héro.
+      // Sauf si le cadrage arrive hors tableau.
+      var t = (time % env.cellTime) / env.cellTime;
+      if( env.level.cols * 64 / env.w < width ) {
+        env.x = env.level.cols / 2;
+      } else {
+        env.x = Math.min(
+          Math.max(
+            env.camX + t * env.camVX,
+            width * env.w * .5 / 64
+          ),
+          env.level.cols - 1 - width * env.w * .5 / 64
+        );
+      }
+      if( env.level.rows * 64 / env.w < height ) {
+        env.y = env.level.rows / 2;
+      } else {
+        env.y = Math.min(
+          Math.max(
+            env.camY + t * env.camVY,
+            height * env.w * .5 / 64
+          ),
+          env.level.rows - 1 - height * env.w * .5 / 64
+        );
+      }
+      //#(camera)
 
-    // On affiche tout.
-    env.levelPainter.draw( env );
-    env.z = 0.2;
-    env.wallPainter.draw( env );
-    env.z = 0;
-    env.backgroundPainter.draw( env );
+      // On affiche tout.
+      env.levelPainter.draw( env );
+      env.z = 0.2;
+      env.wallPainter.draw( env );
+      env.z = 0;
+      env.backgroundPainter.draw( env );
+    }
   }
   window.requestAnimationFrame( anim );
 });
