@@ -138,4 +138,24 @@ Enfin, pour faire varier les couleurs d'un tableau à l'autre, nous utilisons la
 Et voilà <a href="css/assets/boulder-dash2/g/">le résultat</a>.
 
 
+# Automatisation des tests
+
+Pour tester un jeu, rien de tel que d'y jouer, c'est certain. Mais si vous rencontrez un bug qui demande d'être dans une situation particulière qui va vous prendre 10 minutes de jeu, cela va vite devenir fastidieux et vous allez sans doute finir pas ne pas le tester à tous les coups.
+
+Or si votre code évolue au gré de vos nouvelles idées, vous risquez de réintroduire des bugs que vous aviez corrigés précédemment. C'est ce qu'on appelle la __régression__. Pour éviter cela, il faut retester à chaque fois tous les bugs connus (et même les bugs potentiels auxquels vous pensez).
+
+Il n'est plus possible de faire ça à la main.
+
+Dans le cas de notre Boulder Dash, la plupart des bugs viendront du module `level-logic`.
+Alors, nous allons jouer des scenarii et vérifier qu'ils se déroulent comme attendu.
+Si ce n'est pas le cas, il faudra qu'on remonte précisément ce qu'on attendait et ce qu'on a obtenu.
+
+Voici le fichier qui décrit les scenarii :
+<ex src="mod/assets/boulder-dash2/g/test-cases.js" label="test-cases.js" lang="js"/>
+
+Il est même possible d'y simuler les actions du héro.
+
+Voici la <a href="css/assets/boulder-dash2/g/test.html">page utilisée pour les tests automatisés</a>. Comme on peut le voir, certains tests échouent.
+Cela signifie qu'il y a des bugs. C'est un bon exercice pour vous que de tenter de les corriger.
+
 </page>
