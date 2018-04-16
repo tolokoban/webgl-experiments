@@ -5,6 +5,9 @@ var MARGIN = 20;
 
 module.exports = function(init) {
   var Draw = function(args) {
+    this.ORANGE = "#f70";
+    this.BLUE = "#28f";
+    
     if( typeof args === 'undefined' ) args = {};
 
     if( typeof args.width === 'undefined' ) args.width = 300;
@@ -171,6 +174,16 @@ module.exports = function(init) {
     this.tri( x1, y1, x2, y2, x3, y3 );
     ctx.fill();
     return this;
+  };
+
+  Draw.prototype.fillQuad = function( x1, y1, x2, y2, x3, y3, x4, y4 ) {
+    return this.fillTri( x1, y1, x2, y2, x3, y3 )
+      .fillTri( x1, y1, x3, y3, x4, y4 );
+  };
+
+  Draw.prototype.drawQuad = function( x1, y1, x2, y2, x3, y3, x4, y4 ) {
+    return this.drawTri( x1, y1, x2, y2, x3, y3 )
+      .drawTri( x1, y1, x3, y3, x4, y4 );
   };
 
   Draw.prototype.drawTri = function( x1, y1, x2, y2, x3, y3 ) {

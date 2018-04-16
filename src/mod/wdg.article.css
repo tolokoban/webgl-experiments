@@ -266,6 +266,13 @@ div.tbl > div > div.h48 {
   height: 48px;
 }
 
+div.tbl > div.hdr > div,
+div.tbl > div > div.hdr {
+    background: #06d;
+    color: #eee;
+    font-weight: bold;
+}
+
 div.box {
   display: inline-block;
   padding: 6px 8px;
