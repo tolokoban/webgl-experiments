@@ -1,4 +1,7 @@
 <page $title="Frustrum">
+
+# La théorie
+    
 <wdg:frustrum class="right" />
 
 Poutr faire de la __3D__, il faut _projeter_ les coordonnées du monde virtuel dans le __clipspace__ de WebGL.
@@ -91,5 +94,17 @@ Elles se résolvent ainsi :
 * `u = (f-n) / (f+n)`
 * `v = 2.f.n / (f+n)`
 
+La matrice de projection est donc :
+<wdg:matrix $value="[h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,u,v ; 0,0,-1,0] = [h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,(f-n)/(f+n),2fn/(f+n)) ; 0,0,-1,0]"/>
+
+Bien entendu, pour garder un aspect ratio, il faudra ajouter un coefficient multiplicateur.
+Si on pose `W` la largeur de l'écran et `H` sa hauteur, on aura :
+
+* Mode paysage = <wdg:matrix $value="[h/n,0,0,0 ; 0,hH/nW,0,0 ; 0,0,(f-n)/(f+n),2fn/(f+n)) ; 0,0,-1,0]"/>
+* Mode portrait = <wdg:matrix $value="[hW/nH,0,0,0 ; 0,h/n,0,0 ; 0,0,(f-n)/(f+n),2fn/(f+n)) ; 0,0,-1,0]"/>
+
+# La pratique
+
+<wdg:frustrum2/>
 
 </page>

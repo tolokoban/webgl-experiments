@@ -1,0 +1,17 @@
+{View DIV class:wdg-frustrum2
+  view.attribs: {
+    arg-n: {float 1}
+    arg-f: {float 6}
+    arg-h: {float 0.5}
+  }
+
+  [
+    {CANVAS view.id:projection width:300 height:200}
+    {DIV [
+      {tfw.view.textbox value:{Bind arg-n} label:"N="}
+      {tfw.view.textbox value:{Bind arg-f} label:"F="}
+      {tfw.view.textbox value:{Bind arg-h} label:"H="}
+    ]}
+    {CANVAS view.id:flat width:300 height:200}
+  ]
+}

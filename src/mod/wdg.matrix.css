@@ -3,6 +3,7 @@ div.wdg-matrix {
     flex-direction: row;
     vertical-align: middle;
     align-items: center;
+    margin: 3px 4px;
 }
 
 div.wdg-matrix > div {

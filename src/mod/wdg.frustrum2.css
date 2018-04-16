@@ -1,0 +1,5 @@
+div.wdg-frustrum2 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
