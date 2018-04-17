@@ -1,0 +1,6 @@
+{
+  "var": {
+    "vert": "wdg.frustrum2.vert",
+    "frag": "wdg.frustrum2.frag"
+  }
+}
