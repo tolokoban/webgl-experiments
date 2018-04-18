@@ -30,21 +30,96 @@ function init() {
  * Afficher
  */
 function draw() {
-  if( !this._3d ) return;
-  
+  if( this._3d ) draw3D.call( this );
+  if( this._2d ) draw2D.call( this );
+}
+
+function draw2D() {
+  var n = this.argN;
+  var f = this.argF;
+  var h = this.argH;
+  var ctx = this._2d;
+  var W = ctx.canvas.width;
+  var H = ctx.canvas.height;
+  ctx.clearRect( 0, 0, W, H );
+  try {
+    if( n <= 0 ) throw "N doit être strictement positif !";
+    if( f <= n ) throw "F doit être strictement supérieur à N !";
+    if( h <= 0 ) throw "H doit être strictement positif !";
+  }
+  catch( ex ) {
+    ctx.fillStyle = "red";
+    ctx.fillText( ex, 0, 10 );
+  }
+
+  var h2 = h * f / n;
+  ctx.save();
+  ctx.translate( 0, H / 2 );
+  var zoom = Math.min( W / f, H / (2 * h2) ) * .9;
+  ctx.scale( zoom, zoom );
+
+  ctx.fillStyle = "#f70";
+  ctx.beginPath();
+  ctx.moveTo( n, h );
+  ctx.lineTo( f, h2 );
+  ctx.lineTo( f, -h2 );
+  ctx.lineTo( n, -h );
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.strokeStyle = "#aaa";
+  ctx.lineWidth = 1 / zoom;
+  var x, y;
+  for( x = 0; x < 11; x++ ) {
+    ctx.beginPath();
+    ctx.moveTo( x, -h2 * 10 );
+    ctx.lineTo( x, h2 * 10 );
+    ctx.stroke();
+  }
+  for( y = -5; y < 6; y++ ) {
+    ctx.beginPath();
+    ctx.moveTo( 0, y );
+    ctx.lineTo( 10, y );
+    ctx.stroke();
+  }
+
+  ctx.fillStyle = "#000";
+  ctx.globalAlpha = .3;
+  var r = .5;
+  for( x = -3; x > -10; x -= 2 ) {
+    for( y = -5; y < 6 ; y += 2 ) {
+      ctx.fillRect( -x - r, -y - r, 2*r, 2*r );
+    }
+  }
+  ctx.globalAlpha = 1;
+
+  ctx.lineWidth = 4 / zoom;
+  ctx.strokeStyle = "#28f";
+  ctx.beginPath();
+  ctx.moveTo( 0, 0 );
+  ctx.lineTo( f * 10, h2 * 10 );
+  ctx.moveTo( 0, 0 );
+  ctx.lineTo( f * 10, -h2 * 10 );
+  ctx.stroke();
+
+  ctx.restore();
+}
+
+function draw3D() {
   var gl = this._3d;
   var prg = this._prg;
 
+  //#(draw)
   prg.use();
   var proj = createProjectionMatrix( this._3d.canvas, this.argN, this.argF, this.argH );
   console.info("[wdg.frustrum2] proj=", proj);
   prg.$uniProjection = proj;
 
   gl.enable( gl.DEPTH_TEST );
-  gl.clearColor( .1, .1, .1, 1.0 );
-  gl.clearDepth( 0.0 );
+  gl.clearColor( 1, 1, 1, 1 );
+  gl.clearDepth( 1 );
   gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
-  gl.depthFunc( gl.GREATER );
+  gl.depthFunc( gl.LESS );
 
   var bpe = this._bpe;
   var block = 6 * bpe;
@@ -59,6 +134,7 @@ function draw() {
 
   this._3d.bindBuffer( this._3d.ARRAY_BUFFER, this._buffer );
   gl.drawArrays( gl.TRIANGLES, 0, this._count );
+  //#(draw)
 }
 
 //#(createProjectionMatrix)
@@ -66,19 +142,19 @@ function createProjectionMatrix( canvas, n, f, h ) {
   try {
     var W = canvas.width;
     var H = canvas.height;
-    if( W > H ) {
+    if( W >= H ) {
       return new Float32Array([
-        h/n, 0,           0,           0,
-        0,   h*W / (n*H), 0,           0,
-        0,   0,           (f-n)/(f+n), -1,
-        0,   0,           2*f*n/(f+n), 0
+        n/h, 0,           0,           0,
+        0,   n*W / (h*H), 0,           0,
+        0,   0,           (n+f)/(n-f), -1,
+        0,   0,           2*n*f/(n-f), 0
       ]);
     } else {
       return new Float32Array([
-        h*H/(n*W), 0,   0,           0,
+        n*H/(h*W), 0,   0,           0,
         0,         h/n, 0,           0,
-        0,         0,   (f-n)/(f+n), -1,
-        0,         0,   2*f*n/(f+n), 0
+        0,         0,   (n+f)/(n-f), -1,
+        0,         0,   2*n*f/(n-f), 0
       ]);
     }
   }

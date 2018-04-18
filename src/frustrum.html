@@ -44,7 +44,7 @@ Ainsi, si `gl_Position = vec4( 2, 4, 6, 7 )`, alors les coordonnées dans le cli
 `( 2/7, 4/7, 6/7 )`. Et puisque nous avons un division par `-Z` dans la formule précédente, nous allons mettre `-Z` dans la coordonnée `w` de `gl_Position`.
 
 Voici comment on écrit cela sous forme matricielle :
-<wdg:matrix $value="[h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,0,0 ; 0,0,-1,0] * [X;Y;Z;1] = [X*h/n;Y*h/n;0;-Z] = [X';Y';Z';1]"/>
+<wdg:matrix $value="[h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,0,0 ; 0,0,-1,0]*[X;Y;Z;1] = [X*h/n;Y*h/n;0;-Z] = [X';Y';Z';W']"/>
 
 ----
 
@@ -87,24 +87,38 @@ avec des `+1` et utiliser une fonction de test inverse, comme par exemple `gl.de
 
 La transformation de `Z` en `Z'` est linéaire, elle est donc de la forme `Z' = u.Z + v`.
 Et comme le résultat sera divisé par la coordonnée `w` (qui vaut `-Z`), on obtient les deux équations suivantes :
-* `-u.n + v = n`
-* `-u.f + v = -f`
+* `-u.n + v = -n`
+* `-u.f + v = f`
 
 Elles se résolvent ainsi :
-* `u = (f-n) / (f+n)`
-* `v = 2.f.n / (f+n)`
+* `u = (n+f) / (n-f)`
+* `v = 2.n.f / (n-f)`
 
 La matrice de projection est donc :
-<wdg:matrix $value="[h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,u,v ; 0,0,-1,0] = [h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,(f-n)/(f+n),2fn/(f+n)) ; 0,0,-1,0]"/>
+<wdg:matrix $value="[n/h,0,0,0 ; 0,n/h,0,0 ; 0,0,u,v ; 0,0,-1,0] = [n/h,0,0,0 ; 0,n/h,0,0 ; 0,0,(n+f)/(n-f),2nf/(n-f)) ; 0,0,-1,0]"/>
 
 Bien entendu, pour garder un aspect ratio, il faudra ajouter un coefficient multiplicateur.
 Si on pose `W` la largeur de l'écran et `H` sa hauteur, on aura :
 
-* Mode paysage = <wdg:matrix $value="[h/n,0,0,0 ; 0,hH/nW,0,0 ; 0,0,(f-n)/(f+n),2fn/(f+n)) ; 0,0,-1,0]"/>
-* Mode portrait = <wdg:matrix $value="[hW/nH,0,0,0 ; 0,h/n,0,0 ; 0,0,(f-n)/(f+n),2fn/(f+n)) ; 0,0,-1,0]"/>
+* Mode paysage = <wdg:matrix $value="[n/h,0,0,0 ; 0,nW/hH,0,0 ; 0,0,(n+f)/(n-f),2fn/(n-f)) ; 0,0,-1,0]"/>
+* Mode portrait = <wdg:matrix $value="[nH/hW,0,0,0 ; 0,n/h,0,0 ; 0,0,(n+f)/(n-f),2fn/(n-f)) ; 0,0,-1,0]"/>
 
 # La pratique
 
 <wdg:frustrum2/>
+
+Voici la fonction Javascript qui crée la matrice de projection à partir des variables `n`, `f` et `h` :
+<x-code src="mod/wdg.frustrum2.js" section="createProjectionMatrix" />
+
+On remarque que la matrice semble transposée. En effet, il faut bien garder à l'esprit que pour passer
+une matrice à WebGL, __il faut donner ses valeurs colonne par colonne__.
+
+Voici le code d'affichage de notre scène :
+<x-code src="mod/wdg.frustrum2.js" section="draw" />
+
+Les shaders sont simplicimes :
+<x-code src="mod/wdg.frustrum2.vert" />
+<x-code src="mod/wdg.frustrum2.frag" />
+
 
 </page>
