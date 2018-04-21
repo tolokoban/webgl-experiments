@@ -142,6 +142,49 @@ button {
   transition: all .3s;
 }
 
+#LEFT, #RIGHT, #UP, #DOWN {
+  display: none;
+  position: absolute;
+  bottom: 4px;
+  font-size: 0;
+  content: ".";
+  background: orange;
+  box-shadow: 0 0 4px #fff;
+  border: 2px solid #000;  
+}
+
+#LEFT {
+  left: 4px;
+  width: 8vmin;
+  height: 16vmin;
+  border-radius: 100% 0 0 100%;
+}
+
+#RIGHT {
+  left: calc(8px + 8vmin);
+  width: 8vmin;
+  height: 16vmin;
+  border-radius: 0 100% 100% 0;
+}
+
+#UP {
+  bottom: calc(8px + 8vmin);
+  right: 4px;
+  width: 16vmin;
+  height: 8vmin;
+  border-radius: 100% 100% 0 0;
+}
+
+#DOWN {
+  bottom: 4px;
+  right: 4px;
+  width: 16vmin;
+  height: 8vmin;
+  border-radius: 0 0 100% 100%;
+}
+
+
+
 @media (max-width:480px) {
   header {
     font-size: 10px;
