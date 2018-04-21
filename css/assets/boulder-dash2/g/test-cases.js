@@ -8,6 +8,18 @@ var X = 5;  // Suicide
 
 window.TestCases = [
   {
+    name: "Manger des diamants",
+    from: ["Ed  d"],
+    to: [[" E  d"], ["  E d"], ["   Ed"], ["    E"]],
+    actions: [R, R, R, R]
+  },
+  {
+    name: "Pousser une pierre à droite",
+    from: ["Er  r"],
+    to: [["E r r"], [" Er r"], [" E rr"], ["  Err"]],
+    actions: [R, R, R, R]
+  },
+  {
     name: "La pierre tue le monstre",
     from: [
       "www",
@@ -146,18 +158,6 @@ window.TestCases = [
         "wwwwwwww"
       ]
     ]
-  },
-  {
-    name: "Manger des diamants",
-    from: ["Ed  d"],
-    to: [[" E  d"], ["  E d"], ["   Ed"], ["    E"]],
-    actions: [R, R, R, R]
-  },
-  {
-    name: "Pousser une pierre à droite",
-    from: ["Er  r"],
-    to: [["E r r"], [" Er r"], [" E rr"], ["  Err"]],
-    actions: [R, R, R, R]
   },
   {
     name: "Pierre écrasant un diamant",
