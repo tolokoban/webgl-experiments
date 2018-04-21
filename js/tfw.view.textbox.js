@@ -115,6 +115,10 @@ try {
         pm.create("type", { cast: conv_string });
         pm.create("wide", { cast: conv_boolean });
         pm.create("focus", { cast: conv_boolean });
+<<<<<<< HEAD
+=======
+        pm.create("enabled", { cast: conv_boolean });
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
         pm.create("visible", { cast: conv_boolean });
         pm.create("width", { cast: conv_unit });
         pm.createAction("action")
@@ -153,11 +157,28 @@ try {
         //-------
         // Links
         new Link({
+<<<<<<< HEAD
+=======
+          A:{obj: that, name: 'enabled'},
+          B:{action: function(v) {
+          addClassIfTrue( e_, "thm-ele2", v );}}
+        });
+        new Link({
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
           A:{obj: that, name: 'wide'},
           B:{action: function(v) {
           addClassIfTrue( e_, "wide", v );}}
         });
         new Link({
+<<<<<<< HEAD
+=======
+          A:{obj: that, name: 'focus', open: false},
+          B:{action: function(v) {
+          addClassIfTrue( e_, "thm-bgSL", v );
+          addClassIfFalse( e_, "thm-bg2", v );}}
+        });
+        new Link({
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
           A:{obj: that, name: 'focus'},
           B:{action: function(v) {
           addClassIfTrue( e_, "focus", v );}}
@@ -173,11 +194,14 @@ try {
           addClassIfFalse( e_, "invalid", v );}}
         });
         new Link({
+<<<<<<< HEAD
           A:{obj: that, name: 'focus', open: false},
           B:{action: function(v) {
           addClassIfTrue( e_, "thm-bg3", v );}}
         });
         new Link({
+=======
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
           A:{obj: that, name: 'label'},
           B:{obj: e_head, name: 'textcontent'}
         });
@@ -216,7 +240,11 @@ try {
         e_head.class = "head";
         e_body.class = "body";
         e_foot.class = "foot";
+<<<<<<< HEAD
         e_bottom.class = "bottom thm-bgS";
+=======
+        e_bottom.class = "bottom thm-bgSD";
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
         e_completion.class = "completion thm-bg3 thm-ele4";
         //------------------------
         // Initialize attributes.
@@ -224,6 +252,10 @@ try {
         this.type = defVal(args, "type", "text");
         this.wide = defVal(args, "wide", false);
         this.focus = defVal(args, "focus", false);
+<<<<<<< HEAD
+=======
+        this.enabled = defVal(args, "enabled", true);
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
         this.visible = defVal(args, "visible", true);
         this.width = defVal(args, "width", "auto");
         this.list = args["list"];

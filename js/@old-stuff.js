@@ -71,35 +71,39 @@ addListener(
                     W({
                       elem: "ul",
                       children: [
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "chap8.html"},
                               children: ["chap8"]})]}),
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform.html"},
                               children: ["deform"]})]}),
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "deform2.html"},
                               children: ["deform2"]})]}),
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "li",
                           children: [W({
                               elem: "a",
                               attr: {"href": "doc.html"},
                               children: ["doc"]})]}),
+<<<<<<< HEAD
                         "\n    "]}),
+=======
+                        "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     "\n"]})]})]},{"id":"wdg.article122"})
 
     }

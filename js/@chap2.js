@@ -76,61 +76,93 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl244','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "3"},{"id":"wdg.gl244","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]}),
+=======
+                    "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["5 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl245','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "5"},{"id":"wdg.gl245","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]}),
+=======
+                    "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["11 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl246','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "11"},{"id":"wdg.gl246","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]}),
+=======
+                    "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["100 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl247','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "100"},{"id":"wdg.gl247","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]})]}),
+=======
+                    "\r\n    "]})]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
           W({
               elem: "p",
               children: [
@@ -138,65 +170,97 @@ addListener(
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["3 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl248','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "3",
                       regular: "false"},{"id":"wdg.gl248","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]}),
+=======
+                    "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["5 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl249','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "5",
                       regular: "false"},{"id":"wdg.gl249","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]}),
+=======
+                    "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["13 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl250','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "13",
                       regular: "false"},{"id":"wdg.gl250","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]}),
+=======
+                    "\r\n    "]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                 "\n",
                 W({
                   elem: "center",
                   attr: {"style": "margin: 0; padding: 0; display: inline-block"},
                   children: [
-                    "\n        ",
+                    "\r\n        ",
                     W({
                       elem: "p",
                       children: ["100 sommets"]}),
+<<<<<<< HEAD
                     "\n        ",
+=======
+                    "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                     W('wdg.gl251','wdg.gl2',{
                       width: "200",
                       height: "200",
                       size: "100",
                       regular: "false"},{"id":"wdg.gl251","name":"wdg.gl2"}),
+<<<<<<< HEAD
                     "\n    "]})]}),
+=======
+                    "\r\n    "]})]}),
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
           W({
               elem: "p",
               children: [
@@ -318,24 +382,32 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-                    "\n    ",
+                    "\r\n    ",
                     W({
                       elem: "div",
                       children: [
+<<<<<<< HEAD
                         "    \n        ",
                         W('wdg.chap2-triangles52','wdg.chap2-triangles',{
                           width: "160",
                           height: "160"},{"id":"wdg.chap2-triangles52"}),
                         "\n        ",
+=======
+                        "    \r\n        ",
+                        W('wdg.chap2-triangles52','wdg.chap2-triangles',{
+                          width: "160",
+                          height: "160"},{"id":"wdg.chap2-triangles52"}),
+                        "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                         W({
                           elem: "div",
                           children: [
-                            "\n            ",
+                            "\r\n            ",
                             W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -348,7 +420,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["C"]})]}),
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -361,7 +433,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -374,7 +446,7 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["F"]})]}),
-                                "\n                ",
+                                "\r\n                ",
                                 W({
                                   elem: "div",
                                   children: [
@@ -387,13 +459,13 @@ addListener(
                                     W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n            "]}),
-                            "\n        "]}),
-                        "\n        ",
+                                "\r\n            "]}),
+                            "\r\n        "]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [
-                            "\n12 vertex sont nécessaires, mais certains représentent le même point et sont calculés à double (",
+                            "\r\n12 vertex sont nécessaires, mais certains représentent le même point et sont calculés à double (",
                             W({
                               elem: "b",
                               children: ["A"]}),
@@ -405,9 +477,9 @@ addListener(
                             W({
                               elem: "b",
                               children: ["E"]}),
-                            ").\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]}),
+                            ").\r\n        "]}),
+                        "\r\n    "]}),
+                    "\r\n"]})]}),
           W({
               elem: "h2",
               attr: {"id": "triangle_fan"},
@@ -418,71 +490,75 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-                    "\n    ",
+                    "\r\n    ",
                     W({
                       elem: "div",
                       children: [
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [W('wdg.chap2-trifan53','wdg.chap2-trifan',{
                               width: "160",
                               height: "160"},{"id":"wdg.chap2-trifan53"})]}),
+<<<<<<< HEAD
                         "\n        ",
+=======
+                        "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                         W({
                           elem: "div",
                           children: [W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["A"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["B"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["C"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["D"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["F"]})]}),
-                                "\n        "]})]}),
-                        "\n        ",
+                                "\r\n        "]})]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [
-                            "\n6 vertex sont suffisants. C'est une structure en \"éventail\" (fan en anglais).\nLe premier point (",
+                            "\r\n6 vertex sont suffisants. C'est une structure en \"éventail\" (fan en anglais).\r\nLe premier point (",
                             W({
                               elem: "b",
                               children: ["A"]}),
-                            ") est commun à tous les triangles.\nEnsuite, le dernier point d'un triangle est utilisé comme second point du suivant.\n        "]}),
-                        "\n    "]}),
-                    "\n"]})]}),
+                            ") est commun à tous les triangles.\r\nEnsuite, le dernier point d'un triangle est utilisé comme second point du suivant.\r\n        "]}),
+                        "\r\n    "]}),
+                    "\r\n"]})]}),
           W({
               elem: "h2",
               attr: {"id": "triangle_strip"},
@@ -493,66 +569,76 @@ addListener(
                   elem: "div",
                   attr: {"class": "tbl"},
                   children: [
-                    "\n    ",
+                    "\r\n    ",
                     W({
                       elem: "div",
                       children: [
-                        "\n        ",
+                        "\r\n        ",
                         W({
                           elem: "div",
                           children: [W('wdg.chap2-tristrip54','wdg.chap2-tristrip',{
                               width: "160",
                               height: "160"},{"id":"wdg.chap2-tristrip54"})]}),
+<<<<<<< HEAD
                         "\n        ",
+=======
+                        "\r\n        ",
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
                         W({
                           elem: "div",
                           children: [W({
                               elem: "div",
                               attr: {"class": "tbl grd"},
                               children: [
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["A"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["B"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["F"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["C"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["E"]})]}),
-                                "\n            ",
+                                "\r\n            ",
                                 W({
                                   elem: "div",
                                   children: [W({
                                       elem: "div",
                                       children: ["D"]})]}),
-                                "\n        "]})]}),
-                        "\n        ",
+                                "\r\n        "]})]}),
+                        "\r\n        ",
                         W({
                           elem: "div",
+<<<<<<< HEAD
                           children: ["\n6 vertex sont suffisants. Deux triangles consécutifs ont un côté en commun.\nC'est-à-dire que les deux derniers points d'une triangle seront les deux premiers du suivant.\n        "]}),
                         "\n    "]}),
                     "\n"]})]})]},{"id":"wdg.article43"})
+=======
+                          children: ["\r\n6 vertex sont suffisants. Deux triangles consécutifs ont un côté en commun.\r\nC'est-à-dire que les deux derniers points d'une triangle seront les deux premiers du suivant.\r\n        "]}),
+                        "\r\n    "]}),
+                    "\r\n"]})]})]},{"id":"wdg.article43"})
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
 
     }
 );

@@ -1,7 +1,12 @@
 /** @module wdg.interpolation */require( 'wdg.interpolation', function(require, module, exports) { var _=function(){var D={"en":{},"fr":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
  var GLOBAL = {
+<<<<<<< HEAD
   "vert": "// Le temps set à la rotation lente du rectangle.\nuniform float uniTime;\n// Type de calcul a effectué pour le relief.\nuniform float uniType;\n\nattribute vec2 attPosition;\nattribute vec2 attUV;  // Coordonnées de la texture.\n\nvarying vec2 varUV;\n// Profondeur de champ comprise entre 0.0 et 1.0.\nconst float DOF = 0.9;\n\nvoid main() {\n  varUV = attUV;\n  // Rotation lente du rectangle.\n  float angle = uniTime * 0.0002;\n  float x = attPosition.x;\n  float y = attPosition.y * cos(angle);\n  float z = attPosition.y * sin(angle);\n  // Diviseur, calculé selon z.\n  float w = z * DOF + 1.0;\n  \n  if ( uniType > 0.0 ) {\n    // Partie de droite.\n    gl_Position = vec4( \n      x, \n      y, \n      z*w, \n      w \n    );\n  } else {\n    // Partie de gauche.\n    gl_Position = vec4( \n      x/w, \n      y/w, \n      z, \n      1.0 \n    );\n  }\n}\n",
   "frag": "precision mediump float;\n\nuniform sampler2D uniTexture;\n\nvarying vec2 varUV;\n\nvoid main() {\n  gl_FragColor = texture2D( uniTexture, varUV );\n}\n"};
+=======
+  "vert": "// Le temps set à la rotation lente du rectangle.\r\nuniform float uniTime;\r\n// Type de calcul a effectué pour le relief.\r\nuniform float uniType;\r\n\r\nattribute vec2 attPosition;\r\nattribute vec2 attUV;  // Coordonnées de la texture.\r\n\r\nvarying vec2 varUV;\r\n// Profondeur de champ comprise entre 0.0 et 1.0.\r\nconst float DOF = 0.9;\r\n\r\nvoid main() {\r\n  varUV = attUV;\r\n  // Rotation lente du rectangle.\r\n  float angle = uniTime * 0.0002;\r\n  float x = attPosition.x;\r\n  float y = attPosition.y * cos(angle);\r\n  float z = attPosition.y * sin(angle);\r\n  // Diviseur, calculé selon z.\r\n  float w = z * DOF + 1.0;\r\n  \r\n  if ( uniType > 0.0 ) {\r\n    // Partie de droite.\r\n    gl_Position = vec4( \r\n      x, \r\n      y, \r\n      z*w, \r\n      w \r\n    );\r\n  } else {\r\n    // Partie de gauche.\r\n    gl_Position = vec4( \r\n      x/w, \r\n      y/w, \r\n      z, \r\n      1.0 \r\n    );\r\n  }\r\n}\r\n",
+  "frag": "precision mediump float;\r\n\r\nuniform sampler2D uniTexture;\r\n\r\nvarying vec2 varUV;\r\n\r\nvoid main() {\r\n  gl_FragColor = texture2D( uniTexture, varUV );\r\n}\r\n"};
+>>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
   "use strict";
 
 var Program = require( "webgl.program" );

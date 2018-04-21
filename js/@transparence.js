@@ -70,27 +70,27 @@ addListener(
                   elem: "div",
                   attr: {"style": "width: 480px"},
                   children: [
-                    "\n   ",
+                    "\r\n   ",
                     W('white','wdg.checkbox',{
                       wide: "true",
                       text: "Arrière-plan blanc",
                       value: "false"},{"id":"white"}),
-                    "\n   ",
+                    "\r\n   ",
                     W('depth','wdg.checkbox',{
                       wide: "true",
                       text: "Ecrire dans le Z-buffer",
                       value: "true"},{"id":"depth"}),
-                    "\n   ",
+                    "\r\n   ",
                     W('bright','wdg.checkbox',{
                       wide: "true",
                       text: "Couleurs pâles",
                       value: "false"},{"id":"bright"}),
-                    "\n   ",
+                    "\r\n   ",
                     W('multiply','wdg.checkbox',{
                       wide: "true",
                       text: "Combiner par multiplication",
                       value: "false"},{"id":"multiply"}),
-                    "\n"]})]}),
+                    "\r\n"]})]}),
           W({
               elem: "h1",
               attr: {"id": "peut-on-viter-le-tri-"},
