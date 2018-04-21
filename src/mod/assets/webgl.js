@@ -382,18 +382,22 @@ window.WebGL = function() {
             var audio = document.createElement("audio");
             result[key] = audio;
             var slot = function() {
-              if( audio._loaded ) return;
+              console.log( "Slot for ", url );
+              if( audio._loaded ) return;              
               audio._loaded = true;
+              console.log( "Loaded: ", url );
               next( url );              
             };
             audio.addEventListener( "canplay", slot );
             audio.addEventListener( "loadeddata", slot );
+            window.setTimeout( slot, 3000 );
             audio.addEventListener( "error", function( ex ) {
               console.error("Unable to load sound \"" + key + "\":", url);
               console.error( ex );
               next( url );
             });
             audio.src = url;
+            console.log("Loading audio: ", url);
           } else {
             fetch( url ).then(function(response) {
               if( !response.ok ) throw "";

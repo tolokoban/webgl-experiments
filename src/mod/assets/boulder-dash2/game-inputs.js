@@ -87,7 +87,6 @@ window.GameInputs = function() {
   // Pour définir une direction, il faut glisser son doigt
   // dans la direction voulue en gardant le doigt sur l'écran.
   var touchX, touchY, touchId = null;
-  var SENSIBILITE = 2;  // Sensibilité en pixels.
   document.addEventListener( "touchstart", function( evt ) {
     // S'il y a déjà un doigt sur l'écran, on ignore les suivants.
     if( touchId ) return;
@@ -111,18 +110,18 @@ window.GameInputs = function() {
 
     var vx = touch.clientX - touchX;
     var vy = touch.clientY - touchY;
+    touchX += vx;
+    touchY += vy;
     if( Math.abs( vx ) > Math.abs( vy ) ) {
       // Déplacement horizontal.
-      if( Math.abs( vx ) < SENSIBILITE ) return;
       clear();
       if( vx > 0 ) state[RIGHT] = 1;
-      else state[LEFT] = 1;
+      else         state[LEFT] = 1;
     } else {
       // Déplacement vertical.
-      if( Math.abs( vy ) < SENSIBILITE ) return;
       clear();
       if( vy > 0 ) state[DOWN] = 1;
-      else state[UP] = 1;
+      else         state[UP] = 1;
     }
   });
 

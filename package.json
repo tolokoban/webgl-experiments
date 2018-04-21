@@ -19,13 +19,13 @@
     "bugs": {
         "url": "https://github.com/tolokoban/webgl-experiments/issues"
     },
-    "version": "0.0.88",
+    "version": "0.0.89",
     "tfw": {
         "modules": [],
         "compile": {
             "type": "firefoxos",
             "files": [
-                "(index|frustrum)\\.html$"
+                "\\.html$"
             ]
         },
         "output": "www"
