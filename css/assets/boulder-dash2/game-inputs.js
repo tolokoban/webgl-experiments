@@ -96,15 +96,9 @@ window.GameInputs = function() {
     touchId = touch.identifier;
     touchX = touch.clientX;
     touchY = touch.clientY;
+    clear();
     if( touchX < screen.width / 2 ) dir = 'H';
     else dir = 'V';
-  });
-  document.addEventListener( "touchend", function( evt ) {
-    var touch = evt.changedTouches[0];
-    if( touch.identifier === touchId ) {
-      touchId = null;
-      clear();
-    }
   });
   document.addEventListener( "touchmove", function( evt ) {
     var touch = evt.changedTouches[0];
@@ -116,23 +110,25 @@ window.GameInputs = function() {
     touchX += vx;
     touchY += vy;
 
-    if( dir == 'V' ) {
+    if( Math.abs(vx) < Math.abs(vy) ) {
       // Déplacement vertical.
       state[LEFT] = state[RIGHT] = 0;
-      if( vy > 0 ) {
+      if( vy > 1 ) {
         state[ DOWN ] = 1;
         state[ UP ] = 0;
-      } else {
+      }
+      else if( vy < -1 ) {
         state[ DOWN ] = 0;
         state[ UP ] = 1;
       }
     } else {
       // Déplacement horizontal.
       state[UP] = state[DOWN] = 0;
-      if( vx > 0 ) {
+      if( vx > 1 ) {
         state[ RIGHT ] = 1;
         state[ LEFT ] = 0;
-      } else {
+      }
+      else if( vx < -1 ){
         state[ RIGHT ] = 0;
         state[ LEFT ] = 1;
       }
