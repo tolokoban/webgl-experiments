@@ -1,8 +1,8 @@
 {View DIV class:wdg-frustrum2
   view.attribs: {
-    arg-n: {float 2 behind:draw}
-    arg-f: {float 6 behind:draw}
-    arg-h: {float 1 behind:draw}
+    arg-n: {float 1.5 behind:draw}
+    arg-f: {float 10 behind:draw}
+    arg-h: {float 1.5 behind:draw}
   }
 
   view.init: init
@@ -10,10 +10,12 @@
   [
     {CANVAS view.id:projection width:450 height:300}
     {DIV [
-      {tfw.view.textbox value:{Bind arg-n} label:"N="}
-      {tfw.view.textbox value:{Bind arg-f} label:"F="}
-      {tfw.view.textbox value:{Bind arg-h} label:"H="}
+      {DIV [
+        {tfw.view.textbox value:{Bind arg-n} label:"N="}
+        {tfw.view.textbox value:{Bind arg-f} label:"F="}
+        {tfw.view.textbox value:{Bind arg-h} label:"H="}
+      ]}
+      {CANVAS view.id:flat width:300 height:300}
     ]}
-    {CANVAS view.id:flat width:300 height:200}
   ]
 }
