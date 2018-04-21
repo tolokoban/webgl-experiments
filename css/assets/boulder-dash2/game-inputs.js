@@ -87,6 +87,7 @@ window.GameInputs = function() {
   // Pour définir une direction, il faut glisser son doigt
   // dans la direction voulue en gardant le doigt sur l'écran.
   var touchX, touchY, touchId = null;
+  var dir = '';
   document.addEventListener( "touchstart", function( evt ) {
     // S'il y a déjà un doigt sur l'écran, on ignore les suivants.
     if( touchId ) return;
@@ -95,6 +96,8 @@ window.GameInputs = function() {
     touchId = touch.identifier;
     touchX = touch.clientX;
     touchY = touch.clientY;
+    if( touchX < screen.width / 2 ) dir = 'H';
+    else dir = 'V';
   });
   document.addEventListener( "touchend", function( evt ) {
     var touch = evt.changedTouches[0];
@@ -112,16 +115,27 @@ window.GameInputs = function() {
     var vy = touch.clientY - touchY;
     touchX += vx;
     touchY += vy;
-    if( Math.abs( vx ) > Math.abs( vy ) ) {
-      // Déplacement horizontal.
-      clear();
-      if( vx > 0 ) state[RIGHT] = 1;
-      else         state[LEFT] = 1;
-    } else {
+
+    if( dir == 'V' ) {
       // Déplacement vertical.
-      clear();
-      if( vy > 0 ) state[DOWN] = 1;
-      else         state[UP] = 1;
+      state[LEFT] = state[RIGHT] = 0;
+      if( vy > 0 ) {
+        state[ DOWN ] = 1;
+        state[ UP ] = 0;
+      } else {
+        state[ DOWN ] = 0;
+        state[ UP ] = 1;
+      }
+    } else {
+      // Déplacement horizontal.
+      state[UP] = state[DOWN] = 0;
+      if( vx > 0 ) {
+        state[ RIGHT ] = 1;
+        state[ LEFT ] = 0;
+      } else {
+        state[ RIGHT ] = 0;
+        state[ LEFT ] = 1;
+      }
     }
   });
 
