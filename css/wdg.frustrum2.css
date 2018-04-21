@@ -6,7 +6,7 @@ div.wdg-frustrum2 {
   flex-wrap: wrap;
 }
 
-div.wdg-frustrum2 > div {
+div.wdg-frustrum2 > div > div {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

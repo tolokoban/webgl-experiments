@@ -1,7 +1,7 @@
 /** @module wdg.frustrum2 */require( 'wdg.frustrum2', function(require, module, exports) { var _=function(){var D={"en":{},"fr":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
  var GLOBAL = {
-  "vert": "uniform mat4 uniProjection;\n\nattribute vec3 attPoint;\nattribute vec3 attColor;\n\nvarying vec4 varColor;\n\nvoid main() {\n  varColor = vec4( attColor, 1.0 );\n  gl_Position = uniProjection * vec4( attPoint, 1.0 );  \n}\n",
-  "frag": "precision mediump float;\n\nvarying vec4 varColor;\n\nvoid main() {  \n  gl_FragColor = varColor;\n}\n"};
+  "vert": "uniform mat4 uniProjection;\n\nattribute vec3 attPoint;\nattribute vec3 attColor;\n\nvarying vec4 varColor;\n\nvoid main() {  \n  varColor = vec4( attColor, 1.0 );\n  // Une simple multiplication permet d'appliquer\n  // la perspective.\n  gl_Position = uniProjection * vec4( attPoint, 1.0 );\n}\n",
+  "frag": "precision mediump float;\nvarying vec4 varColor;\n\nvoid main() {\n  gl_FragColor = varColor;\n}\n"};
   // Code behind.
 "use strict";
 
@@ -34,21 +34,96 @@ function init() {
  * Afficher
  */
 function draw() {
-  if( !this._3d ) return;
-  
+  if( this._3d ) draw3D.call( this );
+  if( this._2d ) draw2D.call( this );
+}
+
+function draw2D() {
+  var n = this.argN;
+  var f = this.argF;
+  var h = this.argH;
+  var ctx = this._2d;
+  var W = ctx.canvas.width;
+  var H = ctx.canvas.height;
+  ctx.clearRect( 0, 0, W, H );
+  try {
+    if( n <= 0 ) throw "N doit être strictement positif !";
+    if( f <= n ) throw "F doit être strictement supérieur à N !";
+    if( h <= 0 ) throw "H doit être strictement positif !";
+  }
+  catch( ex ) {
+    ctx.fillStyle = "red";
+    ctx.fillText( ex, 0, 10 );
+  }
+
+  var h2 = h * f / n;
+  ctx.save();
+  ctx.translate( 0, H / 2 );
+  var zoom = Math.min( W / f, H / (2 * h2) ) * .9;
+  ctx.scale( zoom, zoom );
+
+  ctx.fillStyle = "#f70";
+  ctx.beginPath();
+  ctx.moveTo( n, h );
+  ctx.lineTo( f, h2 );
+  ctx.lineTo( f, -h2 );
+  ctx.lineTo( n, -h );
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.strokeStyle = "#aaa";
+  ctx.lineWidth = 1 / zoom;
+  var x, y;
+  for( x = 0; x < 11; x++ ) {
+    ctx.beginPath();
+    ctx.moveTo( x, -h2 * 10 );
+    ctx.lineTo( x, h2 * 10 );
+    ctx.stroke();
+  }
+  for( y = -5; y < 6; y++ ) {
+    ctx.beginPath();
+    ctx.moveTo( 0, y );
+    ctx.lineTo( 10, y );
+    ctx.stroke();
+  }
+
+  ctx.fillStyle = "#000";
+  ctx.globalAlpha = .3;
+  var r = .5;
+  for( x = -3; x > -10; x -= 2 ) {
+    for( y = -5; y < 6 ; y += 2 ) {
+      ctx.fillRect( -x - r, -y - r, 2*r, 2*r );
+    }
+  }
+  ctx.globalAlpha = 1;
+
+  ctx.lineWidth = 4 / zoom;
+  ctx.strokeStyle = "#28f";
+  ctx.beginPath();
+  ctx.moveTo( 0, 0 );
+  ctx.lineTo( f * 10, h2 * 10 );
+  ctx.moveTo( 0, 0 );
+  ctx.lineTo( f * 10, -h2 * 10 );
+  ctx.stroke();
+
+  ctx.restore();
+}
+
+function draw3D() {
   var gl = this._3d;
   var prg = this._prg;
 
+  //#(draw)
   prg.use();
   var proj = createProjectionMatrix( this._3d.canvas, this.argN, this.argF, this.argH );
   console.info("[wdg.frustrum2] proj=", proj);
   prg.$uniProjection = proj;
 
   gl.enable( gl.DEPTH_TEST );
-  gl.clearColor( .1, .1, .1, 1.0 );
-  gl.clearDepth( 0.0 );
+  gl.clearColor( 1, 1, 1, 1 );
+  gl.clearDepth( 1 );
   gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
-  gl.depthFunc( gl.GREATER );
+  gl.depthFunc( gl.LESS );
 
   var bpe = this._bpe;
   var block = 6 * bpe;
@@ -63,6 +138,7 @@ function draw() {
 
   this._3d.bindBuffer( this._3d.ARRAY_BUFFER, this._buffer );
   gl.drawArrays( gl.TRIANGLES, 0, this._count );
+  //#(draw)
 }
 
 //#(createProjectionMatrix)
@@ -70,19 +146,19 @@ function createProjectionMatrix( canvas, n, f, h ) {
   try {
     var W = canvas.width;
     var H = canvas.height;
-    if( W > H ) {
+    if( W >= H ) {
       return new Float32Array([
-        h/n, 0,           0,           0,
-        0,   h*W / (n*H), 0,           0,
-        0,   0,           (f-n)/(f+n), -1,
-        0,   0,           2*f*n/(f+n), 0
+        n/h, 0,           0,           0,
+        0,   n*W / (h*H), 0,           0,
+        0,   0,           (n+f)/(n-f), -1,
+        0,   0,           2*n*f/(n-f), 0
       ]);
     } else {
       return new Float32Array([
-        h*H/(n*W), 0,   0,           0,
+        n*H/(h*W), 0,   0,           0,
         0,         h/n, 0,           0,
-        0,         0,   (f-n)/(f+n), -1,
-        0,         0,   2*f*n/(f+n), 0
+        0,         0,   (n+f)/(n-f), -1,
+        0,         0,   2*n*f/(n-f), 0
       ]);
     }
   }
@@ -224,13 +300,15 @@ try {
         var e_projection = new Tag('CANVAS', ["width","height"]);
         this.$elements.projection = e_projection;
         var e_1 = new Tag('DIV');
-        var e_10 = new TfwViewTextbox({ label: "N=" });
-        var e_11 = new TfwViewTextbox({ label: "F=" });
-        var e_12 = new TfwViewTextbox({ label: "H=" });
-        $.add( e_1, e_10, e_11, e_12 );
+        var e_10 = new Tag('DIV');
+        var e_100 = new TfwViewTextbox({ label: "N=" });
+        var e_101 = new TfwViewTextbox({ label: "F=" });
+        var e_102 = new TfwViewTextbox({ label: "H=" });
+        $.add( e_10, e_100, e_101, e_102 );
         var e_flat = new Tag('CANVAS', ["width","height"]);
         this.$elements.flat = e_flat;
-        $.add( e_, e_projection, e_1, e_flat );
+        $.add( e_1, e_10, e_flat );
+        $.add( e_, e_projection, e_1 );
         //-----------------------
         // Declare root element.
         Object.defineProperty( this, '$', {value: e_.$, writable: false, enumerable: false, configurable: false } );
@@ -238,15 +316,15 @@ try {
         // Links
         new Link({
           A:{obj: that, name: 'argN'},
-          B:{obj: e_10, name: 'value'}
+          B:{obj: e_100, name: 'value'}
         });
         new Link({
           A:{obj: that, name: 'argF'},
-          B:{obj: e_11, name: 'value'}
+          B:{obj: e_101, name: 'value'}
         });
         new Link({
           A:{obj: that, name: 'argH'},
-          B:{obj: e_12, name: 'value'}
+          B:{obj: e_102, name: 'value'}
         });
         //-----------------------
         // On attribute changed.
@@ -280,12 +358,12 @@ try {
         e_projection.width = 450;
         e_projection.height = 300;
         e_flat.width = 300;
-        e_flat.height = 200;
+        e_flat.height = 300;
         //------------------------
         // Initialize attributes.
-        this.argN = defVal(args, "argN", 2);
-        this.argF = defVal(args, "argF", 6);
-        this.argH = defVal(args, "argH", 1);
+        this.argN = defVal(args, "argN", 1.5);
+        this.argF = defVal(args, "argF", 10);
+        this.argH = defVal(args, "argH", 1.5);
         // Initialization.
         CODE_BEHIND.init.call( this );
         $.addClass(this, 'view', 'custom');
