@@ -6,11 +6,7 @@ div.wdg-frustrum2 {
   flex-wrap: wrap;
 }
 
-<<<<<<< HEAD
 div.wdg-frustrum2 > div {
-=======
-div.wdg-frustrum2 > div > div {
->>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
   display: flex;
   flex-direction: row;
   justify-content: space-around;

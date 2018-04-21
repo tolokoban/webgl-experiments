@@ -1,12 +1,7 @@
 /** @module transparence */require( 'transparence', function(require, module, exports) { var _=function(){var D={"en":{},"fr":{}},X=require("$").intl;function _(){return X(D,arguments);}_.all=D;return _}();
  var GLOBAL = {
-<<<<<<< HEAD
   "vert": "uniform float uniWidth;\nuniform float uniHeight;\nuniform float uniTime;\nuniform float uniSpeed;\nuniform float uniPhase;\n\nattribute vec2 attPosition;\n\nvoid main() {\n  float x = attPosition.x * cos(uniPhase + uniTime * uniSpeed);\n  float z = attPosition.x * sin(uniPhase + uniTime * uniSpeed);\n  float y = attPosition.y + z * 0.5;\n  float w = 1.0 + 0.5 * z;\n\n  gl_Position = vec4( x, y, z, w );\n}\n",
   "frag": "precision lowp float;\n\nuniform vec4 uniColor;\n\nvoid main() { \n  gl_FragColor = uniColor;\n}\n"};
-=======
-  "vert": "uniform float uniWidth;\r\nuniform float uniHeight;\r\nuniform float uniTime;\r\nuniform float uniSpeed;\r\nuniform float uniPhase;\r\n\r\nattribute vec2 attPosition;\r\n\r\nvoid main() {\r\n  float x = attPosition.x * cos(uniPhase + uniTime * uniSpeed);\r\n  float z = attPosition.x * sin(uniPhase + uniTime * uniSpeed);\r\n  float y = attPosition.y + z * 0.5;\r\n  float w = 1.0 + 0.5 * z;\r\n\r\n  gl_Position = vec4( x, y, z, w );\r\n}\r\n",
-  "frag": "precision lowp float;\r\n\r\nuniform vec4 uniColor;\r\n\r\nvoid main() { \r\n  gl_FragColor = uniColor;\r\n}\r\n"};
->>>>>>> 3894a0f5e19392c0759d55d9da7401dbdaefcee1
   "use strict";
 
 "use strict";
