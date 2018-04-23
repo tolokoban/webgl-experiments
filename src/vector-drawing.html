@@ -1,0 +1,46 @@
+<page $title="Dessin vectoriel">
+# Remplir une courbe fermée
+    
+Le but de cet article est de déterminer l'ensemble des triangles dont on a besoin pour remplir une courbe fermée dont on connait les points.
+
+L'algorithme de base est assez simple et il produit `n-2` triangles pour `n` points d'une courbe fermée qui englobe une seule surface. Mais il faudra le raffiner pour qu'il fonctionne avec toutes les formes de courses.
+
+L'algorithme est le suivant :
+* Soit `vertices` la liste des points de la courbe.
+* Soit `N` le nombre de points de cette courbe.
+* Répéter `N-2` fois:
+    * Soit `index`, l'indice du premier point du premier __triangle possible__.
+    * Créer le triangle (`index`, `index+1`, `index+2`).
+    * Retirer le `vertices` le point `index+1`.
+
+Le reste de l'article portera sur comment déterminer qu'un triangle est __possible__ ou pas.
+    
+# Petit rappel de géométrie
+
+En mathématiques, les angles sont orientés. C'est-à-dire que si l'angle "tourne" dans le sens contraire des aiguilles d'une montre (appelé sens trigonométrique), alors il est positif. Sinon, il est négatif.
+    
+Le __produit scalaire__ est une opération qui crée un vecteur à partir de deux autres.
+Il fonctionne en 3 dimensions, ce qui signifie que le vecteur résultant sera perpendiculaire au plan décrit par les deux autres vecteurs.
+
+Voici la formule qui permet de calculer le produit vectoriel :
+
+<wdg:matrix $value="[x;y;z]*[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"/>
+
+Puisque nos vecteurs sont dans un même plan, ils sont définis par deux coordonnées : `(X,Y)'.
+Et ça simplifie grandement le calcul du produit vectoriel :
+
+<wdg:matrix $value="[x;y;0]*[x';y';0] = [0;0;xy'-x'y]"/>
+
+Donc si on veut connaitre l'angle formé par les vecteurs `(x,y)` et  `(x',y')`, il suffit de vérifier le signe de
+`xy'-x'y`.
+De plus, la valeur absolue de cette valeur donne aussi le double de la surface du triangle défini par ces deux vecteurs.   
+    
+
+# Point à l'intérieur d'une triangle
+
+Dans l'exemple ci-contre, il ne faut surtout pas créer le triangle `ABC` parce que le point `D` se trouve à l'intérieur. La bonne solution est de créer les deux triangles `ABD` et `BCD`. Cela nous conduit à une nouvelle règle :
+__Ne jamais créer un triangle s'il contient un des points de la courbe__.    
+
+Comment savoir si un point est à l'intérieur d'un triangle ?
+
+</page>
