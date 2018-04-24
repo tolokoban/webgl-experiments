@@ -14,7 +14,7 @@ module.exports = require("draw")(function(args) {
   var k, j, Ax, Ay, Bx, By, Cx, Cy, x, y;
 
   this.setColor( this.ORANGE );
-  this.setOpacity( .5 );
+  this;
   for( k = 0; k < elemBuff.length; k+=3 ) {
     j = elemBuff[k] * 2;
     Ax = vertices[j]; Ay = vertices[j + 1];
@@ -22,10 +22,10 @@ module.exports = require("draw")(function(args) {
     Bx = vertices[j]; By = vertices[j + 1];
     j = elemBuff[(k + 2) % elemBuff.length] * 2;
     Cx = vertices[j]; Cy = vertices[j + 1];
-    this.setColor( this.ORANGE ).fillTri( Ax, Ay, Bx, By, Cx, Cy );
+    this.setOpacity( .5 ).setColor( this.ORANGE ).fillTri( Ax, Ay, Bx, By, Cx, Cy );
     x = (Ax + Bx + Cx) / 3;
     y = (Ay + By + Cy) / 3;
-    this.setColor( "#fff" ).txt( Math.floor( k / 3 ), x, y, "" );
+    this.setOpacity( 1 ).setColor( this.BLUE ).txt( Math.floor( k / 3 ), x, y, "" );
   }
   this.setOpacity( 1 ).setLine( 2 ).setColor( this.BLUE );
   for( k = 0; k < elemBuff.length; k+=3 ) {
