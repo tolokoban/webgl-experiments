@@ -19,28 +19,53 @@ Le reste de l'article portera sur comment déterminer qu'un triangle est __possi
 
 En mathématiques, les angles sont orientés. C'est-à-dire que si l'angle "tourne" dans le sens contraire des aiguilles d'une montre (appelé sens trigonométrique), alors il est positif. Sinon, il est négatif.
     
-Le __produit scalaire__ est une opération qui crée un vecteur à partir de deux autres.
+Le __produit vectoriel__ est une opération qui crée un vecteur à partir de deux autres.
 Il fonctionne en 3 dimensions, ce qui signifie que le vecteur résultant sera perpendiculaire au plan décrit par les deux autres vecteurs.
 
 Voici la formule qui permet de calculer le produit vectoriel :
 
-<wdg:matrix $value="[x;y;z]*[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"/>
+<wdg:matrix $value="[x;y;z]^[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"/>
 
 Puisque nos vecteurs sont dans un même plan, ils sont définis par deux coordonnées : `(X,Y)'.
 Et ça simplifie grandement le calcul du produit vectoriel :
 
-<wdg:matrix $value="[x;y;0]*[x';y';0] = [0;0;xy'-x'y]"/>
+<wdg:matrix $value="[x;y;0]^[x';y';0] = [0;0;xy'-x'y]"/>
 
 Donc si on veut connaitre l'angle formé par les vecteurs `(x,y)` et  `(x',y')`, il suffit de vérifier le signe de
-`xy'-x'y`.
-De plus, la valeur absolue de cette valeur donne aussi le double de la surface du triangle défini par ces deux vecteurs.   
+`xy'-x'y`. Par abus de langage, dans le reste de l'article, on dira que le produit vectoriel est positif si cette égalité est positive.
     
 
-# Point à l'intérieur d'une triangle
+# Triangles possibles
 
-Dans l'exemple ci-contre, il ne faut surtout pas créer le triangle `ABC` parce que le point `D` se trouve à l'intérieur. La bonne solution est de créer les deux triangles `ABD` et `BCD`. Cela nous conduit à une nouvelle règle :
-__Ne jamais créer un triangle s'il contient un des points de la courbe__.    
+<wdg:vectorDrawing class="right" />
 
-Comment savoir si un point est à l'intérieur d'un triangle ?
+Dans l'exemple ci-contre, on remarque que les triangles `BCD` et `ABD` ne conviennent pas.
+`BCD` définit un angle concave et il va donc colorier l'extérieur de notre courbe.
+`ABD` a l'inconvénient d'englober un poit de la courbe et donc de colorier une partie intérieure et une partie extérieure.
+
+Comment savoir si un angle est concave ou convexe ?
+
+Il est facile de savoir si deux angles sont de même nature : il suffit que leur produit vectoriel respectif soient de même signe. Il faut donc déterminer la concavité du premier angle, mais c'est un algorithme qui va coûter du temps de calcul, alors pourquoi ne pas simplement supposer que le premier angle est concave et voir où ça nous mène ?
+Si on a tort, on le saura rapidement parce qu'on va retirer un à un tous les angles concaves et aboutir à une courbe totalement convexe pour laquelle plus aucun triangle ne pourra être candidat à l'éviction. Dans ce cas, on fait la supposition inverse (le premier angle est concave) et on est bon.
+
+<wdg:vectorDrawing2 class="right" />
+
+Comment savoir si un point est contenu dans un triangle ?
+
+Un point appartient à un triangle si et seulement s'il appartient à deux secteurs angulaires de ce triangle.
+Dans cet exemple, `M` appartient au secteur angulaire `BCA` puisque les produits vectoriels `CB^CM` et `CM^CA` ont même signe.
+
+
+# Implémentation
+
+<wdg:vectorDrawing3 $width="300" $height="300" $index="0"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="1"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="2"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="3"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="4"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="5"/>
+
+
+<x-code src="mod/webgl.fillpoly.js" section="fillPolyline"/>
 
 </page>

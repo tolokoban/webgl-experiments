@@ -169,6 +169,16 @@ module.exports = function(init) {
     return this;
   };
 
+  Draw.prototype.opacity = function( opacity ) {
+    this._ctx.globalAlpha = opacity;
+    return this;
+  };
+  
+  Draw.prototype.setOpacity = function( opacity ) {
+    this._ctx.globalAlpha = opacity;
+    return this;
+  };
+  
   Draw.prototype.fillTri = function( x1, y1, x2, y2, x3, y3 ) {
     var ctx = this._ctx;
     this.tri( x1, y1, x2, y2, x3, y3 );
