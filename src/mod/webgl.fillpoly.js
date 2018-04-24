@@ -16,7 +16,7 @@ function fillPolyline( vertices, attributesCount, offset ) {
 
   var polyline = new Polyline( vertices, attributesCount );
   return new Uint16Array(
-    doFillPolyline( +1, polyline, offset ) || doFillPolyline( -1, polyline, offset )
+    doFillPolyline( -1, polyline, offset ) || doFillPolyline( +1, polyline, offset )
   );
 }
 
@@ -76,7 +76,10 @@ Polyline.prototype.isCandidate = function( orientation ) {
   var vectprod = Ux*Vy-Uy*Vx;
   if( vectprod > 0 && orientation < 0 ) return false;
   if( vectprod < 0 && orientation > 0 ) return false;
-  return true;
+
+  // On vérifie maintenant qu'aucun point n'est à l'intérieur du triangle.
+  return hasNoPointInside(
+    Ax, Ay, Bx, By, Cx, Cy, this._points, this._vertices, this._points[next][NEXT], prev, orientation );
 };
 
 Polyline.prototype.get = function() {
@@ -104,4 +107,44 @@ Polyline.prototype.removeTriangle = function( elemBuff, offset ) {
   if( this._cursor === index ) this._cursor = next;
   elemBuff.push( index + offset, next + offset, prev + offset );
 };
+
+function cross( Ax, Ay, Bx, By, Mx, My ) {
+  var x1 = Bx - Ax;
+  var y1 = By - Ay;
+  var x2 = Mx - Ax;
+  var y2 = My - Ay;
+  
+  return x1*y2 - x2*y1;
+}
+
+function hasNoPointInside( Ax, Ay, Bx, By, Cx, Cy, points, vertices, index, stop, orientation ) {
+  var Mx, My, ptr;
+  while( index !== stop ) {
+    ptr = index * 2;
+    Mx = vertices[ptr];
+    My = vertices[ptr + 1];
+    if( hasPointInside( Ax, Ay, Bx, By, Cx, Cy, Mx, My, orientation ) ) return false;
+    index = points[index][NEXT];
+  }
+  return true;
+}
+
+function hasPointInside( Ax, Ay, Bx, By, Cx, Cy, Mx, My, orientation ) {
+  if( orientation > 0 ) return hasPointInsidePos( Ax, Ay, Bx, By, Cx, Cy, Mx, My );
+  return hasPointInsideNeg( Ax, Ay, Bx, By, Cx, Cy, Mx, My );
+}
+
+function hasPointInsidePos( Ax, Ay, Bx, By, Cx, Cy, Mx, My ) {
+  if( cross( Ax, Ay, Bx, By, Mx, My ) < 0 ) return false;
+  if( cross( Bx, By, Cx, Cy, Mx, My ) < 0 ) return false;
+  if( cross( Cx, Cy, Ax, Ay, Mx, My ) < 0 ) return false;
+  return true;
+}
+
+function hasPointInsideNeg( Ax, Ay, Bx, By, Cx, Cy, Mx, My ) {
+  if( cross( Ax, Ay, Bx, By, Mx, My ) > 0 ) return false;
+  if( cross( Bx, By, Cx, Cy, Mx, My ) > 0 ) return false;
+  if( cross( Cx, Cy, Ax, Ay, Mx, My ) > 0 ) return false;
+  return true;
+}
 //#(fillPolyline)

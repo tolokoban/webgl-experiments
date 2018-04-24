@@ -13,8 +13,6 @@ module.exports = require("draw")(function(args) {
   console.info("[wdg.vectorDrawing3] elemBuff=", elemBuff);
   var k, j, Ax, Ay, Bx, By, Cx, Cy, x, y;
 
-  this.setColor( this.ORANGE );
-  this;
   for( k = 0; k < elemBuff.length; k+=3 ) {
     j = elemBuff[k] * 2;
     Ax = vertices[j]; Ay = vertices[j + 1];
@@ -66,8 +64,8 @@ function make( index ) {
 
 function makeBoat() {
   return [
-    0,.7, .3,0, 1,.2, .9,0, .5,-.4,
-    -.5,-.4, -.9,0, -1,.2, -.3,0    
+    0,.7, .3,0, 1,.4, .9,0, .5,-.4,
+    -.5,-.4, -.9,0, -1,.4, -.3,0    
   ];
 }
 

@@ -53,7 +53,9 @@ Si on a tort, on le saura rapidement parce qu'on va retirer un à un tous les an
 Comment savoir si un point est contenu dans un triangle ?
 
 Un point appartient à un triangle si et seulement s'il appartient à deux secteurs angulaires de ce triangle.
-Dans cet exemple, `M` appartient au secteur angulaire `BCA` puisque les produits vectoriels `CB^CM` et `CM^CA` ont même signe.
+Dans cet exemple, `M` appartient au secteur angulaire `BCA` puisque les produits vectoriels `CB^CM` et `CM^CA` ont même signe. On peut donc déterminer l'appartenance de `M` au triangle avec 4 produite vectoriels.
+
+Mais on peut faire mieux si on connaît déjà l'orientation de l'angle `BAC`. Il suffit alors de vérifier que le point `M` est bien à gauche de chacun des vecteurs `AB`, `BC` et `CA`. Comme on a déjà fait le test de concavité du triangle, on peut utiliser cette technique et donc faire, dans le pire des cas, seulement 3 produits vectoriels.
 
 
 # Implémentation
