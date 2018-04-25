@@ -53,11 +53,11 @@ function make( index ) {
   case 2:
     return makeStar();
   case 3:
-    return makeBoat();
+    return makePolygon();
   case 4:
-    return makeBoat();    
+    return makeNoise();
   case 5:
-    return makeBoat();    
+    return makeCastle();
   }
   return makeBoat();
 }
@@ -65,7 +65,7 @@ function make( index ) {
 function makeBoat() {
   return [
     0,.7, .3,0, 1,.4, .9,0, .5,-.4,
-    -.5,-.4, -.9,0, -1,.4, -.3,0    
+    -.5,-.4, -.9,0, -1,.4, -.3,0
   ];
 }
 
@@ -86,4 +86,41 @@ function makeStar() {
     );
   }
   return vertices;
+}
+
+function makePolygon() {
+  var r = .95;
+  var vertices = [];
+  for( var k=0; k<6; k++ ) {
+    r = .2 + .6 * (k % 2);
+    vertices.push(
+      r * Math.cos( 2 * Math.PI * k / 6 ),
+      r * Math.sin( 2 * Math.PI * k / 6 )
+    );
+  }
+  return vertices;
+}
+
+function makeNoise() {
+  var r;
+  var vertices = [];
+  for( var k=0; k<8; k++ ) {
+    r = Math.random() * .75 + .25;
+    vertices.push(
+      r * Math.cos( 2 * Math.PI * k / 8 ),
+      r * Math.sin( 2 * Math.PI * k / 8 )
+    );
+  }
+  return vertices;
+}
+
+function makeCastle() {
+  var h1 = .4 + Math.random() * .6;
+  var h2 = .4 + Math.random() * .6;
+  var h3 = .4 + Math.random() * .6;
+  return [
+    -.6,h1, -.3,h1, -.3,.2, -.1,.2,
+    -.2,h2, .2,h2, .1,.2, .3,.2, .3,h3, .6,h3,
+    +.5,0, .3,-.2, .4,-1, -.4,-1, -.3,-.2, -.5,0
+  ];
 }

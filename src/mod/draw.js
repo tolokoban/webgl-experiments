@@ -106,7 +106,9 @@ module.exports = function(init) {
     ctx.arc( x, y, 3, 0, 2 * Math.PI, true );
     ctx.fill();
     if( typeof text === 'string' ) {
-      this.txt( text, xx, yy, attach || "LB" );
+      if( typeof attach === 'undefined' ) attach = getBestAttach( xx, yy );
+
+      this.txt( text, xx, yy, attach );
     }
     return this;
   };
@@ -231,4 +233,34 @@ function readOnly( target, properties ) {
       configurable: false
     });
   }
+}
+
+var EPSILON = 0.000001;
+var PI = Math.PI;
+
+function getBestAttach( x, y ) {
+  if( x*x + y*y < 0.01 ) return "B";
+  var absX = Math.abs( x );
+  var absY = Math.abs( y );
+  var ang = absX < EPSILON ? PI / 2 : Math.atan( absY / absX );
+  if( x < 0 ) {
+    if( y < 0 ) {
+      // x < 0 ; y < 0
+      ang += PI;
+    }
+    else {
+      // x < 0 ; y > 0
+      ang = PI - ang;
+    }
+  }
+  else if( y < 0 ) {
+    // x > 0 ; y < 0
+    ang = 2 * PI - ang;
+  }
+  ang += PI / 8;
+
+  var index = Math.floor( 4 * ang / PI ) % 8;
+  return [
+    "L", "LB", "B", "RB", "R", "RT", "T", "LT"
+  ][index];
 }
