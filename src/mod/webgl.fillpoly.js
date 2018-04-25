@@ -79,51 +79,99 @@ var Polyline = function( vertices, attributesCount ) {
 };
 
 Polyline.prototype.isCandidate = function( orientation ) {
-  var index = this._cursor;
-  var next = this._points[index][NEXT];
-  var prev = this._points[index][PREV];
-  var indexPtr = this._points[index][PTR];
-  var nextPtr = this._points[next][PTR];
-  var prevPtr = this._points[prev][PTR];
-  var Ax = this._vertices[ indexPtr ];
-  var Ay = this._vertices[ indexPtr + 1 ];
-  var Bx = this._vertices[ nextPtr ];
-  var By = this._vertices[ nextPtr + 1 ];
-  var Cx = this._vertices[ prevPtr ];
-  var Cy = this._vertices[ prevPtr + 1 ];
-  var Ux = Bx - Ax;
-  var Uy = By - Ay;
-  var Vx = Cx - Ax;
-  var Vy = Cy - Ay;
-  var crossprod = Ux*Vy-Uy*Vx;
+  var idxA = this._cursor;
+  var A = this.get( idxA );
+  var idxB = A.next;
+  var idxC = A.prev;
+  var AB = this.getVector( idxA, idxB );
+  var AC = this.getVector( idxA, idxC );
+  var crossprod = this.cross( AB, AC );
 
-  console.log( "    Cross prod of", alpha( prev, index, next ), "=", crossprod );
+  console.log( "    Cross prod of", alpha(idxA, idxB, idxC), "=", crossprod );
 
   if( crossprod > 0 && orientation < 0 ) {
-    console.log("    Triangle", alpha(prev, index, next), "est concave!");
+    console.log("    Triangle", alpha(idxA, idxB, idxC), "est concave!");
     return false;
   }
   if( crossprod < 0 && orientation > 0 ) {
-    console.log("    Triangle", alpha(prev, index, next), "est concave!");
+    console.log("    Triangle", alpha(idxA, idxB, idxC), "est concave!");
     return false;
   }
 
   // On vérifie maintenant qu'aucun point n'est à l'intérieur du triangle.
-  console.log("    Check for point inside", alpha(prev, index, next));
-  return hasNoPointInside(
-    Ax, Ay, Bx, By, Cx, Cy,
-    this._points, this._vertices,
-    orientation );
+  console.log("    Check for point inside", alpha(idxA, idxB, idxC));
+  for( var idxM = 0; idxM < this._points.length; idxM++ ) {
+    if( idxM === idxA ) continue;
+    if( idxM === idxB ) continue;
+    if( idxM === idxC ) continue;
+
+    if( this.isInTriangle( idxA, idxM, orientation ) ) return false;
+  }
+  return true;
 };
 
-Polyline.prototype.get = function() {
-  var index = this._cursor;
-  var pointer = this._points[index][PTR];
+Polyline.prototype.get = function( index ) {
+  if( typeof index === 'undefined' ) index = this._cursor;
+  var point = this._points[index];
+  var pointer = point[PTR];
   return {
     index: index,
+    next: point[NEXT],
+    prev: point[PREV],
     x: this._vertices[pointer],
     y: this._vertices[pointer + 1]
   };
+};
+
+Polyline.prototype.getVector = function( idxA, idxB ) {
+  var A = this.get( idxA );
+  var B = this.get( idxB );
+  return {
+    x: B.x - A.x,
+    y: B.y - A.y
+  };
+};
+
+Polyline.prototype.cross = function( u, v ) {
+  return u.x * v.y - u.y - v.x;
+};
+
+/**
+ * @param {number} orientation - Signe du produit scalaire AB^AC.
+ */
+Polyline.prototype.isInTriangle = function( idxA, idxM, orientation ) {
+  var A = this.get( idxA );
+  var idxB = A.next;
+  var idxC = A.prev;
+
+  if( orientation > 0 ) return this.isInTrianglePos( idxA, idxB, idxC, idxM );
+  return this.isInTriangleNeg( idxA, idxB, idxC, idxM );
+}
+
+Polyline.prototype.isInTrianglePos = function( idxA, idxB, idxC, idxM ) {
+  var AB = this.getVector( idxA, idxB );
+  var AM = this.getVector( idxA, idxM );  
+  if( this.cross( AB, AM ) < 0 ) return false;
+  var BC = this.getVector( idxB, idxC );
+  var BM = this.getVector( idxB, idxM );
+  if( this.cross( BC, BM ) < 0 ) return false;
+  var CA = this.getVector( idxC, idxA );
+  var CM = this.getVector( idxC, idxM );
+  if( this.cross( CA, CM ) < 0 ) return false;
+  return true;
+};
+
+Polyline.prototype.isInTriangleNeg = function( idxA, idxB, idxC, idxM ) {
+  var AB = this.getVector( idxA, idxB );
+  var AM = this.getVector( idxA, idxM );  
+  if( this.cross( AB, AM ) > 0 ) return false;
+  var BC = this.getVector( idxB, idxC );
+  var BM = this.getVector( idxB, idxM );
+  if( this.cross( BC, BM ) > 0 ) return false;
+  var CA = this.getVector( idxC, idxA );
+  var CM = this.getVector( idxC, idxM );
+  if( this.cross( CA, CM ) > 0 ) return false;
+  return true;
 };
 
 Polyline.prototype.next = function() {
@@ -152,51 +200,6 @@ Polyline.prototype.removeTriangle = function( elemBuff, offset, orientation ) {
   console.log( "    Points:", txt );
 };
 
-function cross( Ax, Ay, Bx, By, Mx, My ) {
-  var x1 = Bx - Ax;
-  var y1 = By - Ay;
-  var x2 = Mx - Ax;
-  var y2 = My - Ay;
-
-  return x1*y2 - x2*y1;
-}
-
-function hasNoPointInside( Ax, Ay, Bx, By, Cx, Cy, points, vertices, orientation ) {
-  var ptr, Mx, My;
-  for( var index = 0; index < points.length; index++ ) {
-    ptr = points[index][PTR];
-    Mx = vertices[ptr];
-    My = vertices[ptr + 1];
-    if( Ax == Mx && Ay == My ) continue;
-    if( Bx == Mx && By == My ) continue;
-    if( Cx == Mx && Cy == My ) continue;
-    if( hasPointInside( Ax, Ay, Bx, By, Cx, Cy, Mx, My, orientation ) ) {
-      console.log("        " + alpha( index ), "is inside the triangle!!!");
-      return false;
-    }
-    console.log("        " + alpha( index ), "is outside the triangle.");
-  }
-  return true;
-}
-
-function hasPointInside( Ax, Ay, Bx, By, Cx, Cy, Mx, My, orientation ) {
-  if( orientation > 0 ) return hasPointInsidePos( Ax, Ay, Bx, By, Cx, Cy, Mx, My );
-  return hasPointInsideNeg( Ax, Ay, Bx, By, Cx, Cy, Mx, My );
-}
-
-function hasPointInsidePos( Ax, Ay, Bx, By, Cx, Cy, Mx, My ) {
-  if( cross( Ax, Ay, Bx, By, Mx, My ) < 0 ) return false;
-  if( cross( Bx, By, Cx, Cy, Mx, My ) < 0 ) return false;
-  if( cross( Cx, Cy, Ax, Ay, Mx, My ) < 0 ) return false;
-  return true;
-}
-
-function hasPointInsideNeg( Ax, Ay, Bx, By, Cx, Cy, Mx, My ) {
-  if( cross( Ax, Ay, Bx, By, Mx, My ) > 0 ) return false;
-  if( cross( Bx, By, Cx, Cy, Mx, My ) > 0 ) return false;
-  if( cross( Cx, Cy, Ax, Ay, Mx, My ) > 0 ) return false;
-  return true;
-}
 //#(fillPolyline)
 
 
