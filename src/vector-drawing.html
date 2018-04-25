@@ -1,5 +1,9 @@
 <page $title="Dessin vectoriel">
+
 # Remplir une courbe fermée
+
+<wdg:vectorDrawing3 $width="300" $height="300" $index="1" class="right"/>
+    
     
 Le but de cet article est de déterminer l'ensemble des triangles dont on a besoin pour remplir une courbe fermée dont on connait les points.
 
@@ -9,11 +13,11 @@ L'algorithme est le suivant :
 * Soit `vertices` la liste des points de la courbe.
 * Soit `N` le nombre de points de cette courbe.
 * Répéter `N-2` fois:
-    * Soit `index`, l'indice du premier point du premier __triangle possible__.
+    * Soit `index`, l'indice du premier point du premier __triangle candidat__.
     * Créer le triangle (`index`, `index+1`, `index+2`).
-    * Retirer le `vertices` le point `index+1`.
+    * Retirer de `vertices` le point `index+1`.
 
-Le reste de l'article portera sur comment déterminer qu'un triangle est __possible__ ou pas.
+Le reste de l'article portera sur comment déterminer qu'un triangle est __candidat__ ou pas.
     
 # Petit rappel de géométrie
 
@@ -35,7 +39,7 @@ Donc si on veut connaitre l'angle formé par les vecteurs `(x,y)` et  `(x',y')`,
 `xy'-x'y`. Par abus de langage, dans le reste de l'article, on dira que le produit vectoriel est positif si cette égalité est positive.
     
 
-# Triangles possibles
+# Triangles candidats
 
 <wdg:vectorDrawing class="right" />
 
@@ -60,8 +64,15 @@ Mais on peut faire mieux si on connaît déjà l'orientation de l'angle `BAC`. I
 
 # Implémentation
 
+<wdg:vectorDrawing3 $width="300" $height="300" $index="0"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="1"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="2"/>
 <wdg:vectorDrawing3 $width="300" $height="300" $index="3"/>
 <wdg:vectorDrawing3 $width="300" $height="300" $index="4"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="5"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="6"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="6"/>
+<wdg:vectorDrawing3 $width="300" $height="300" $index="6"/>
 
 
 <x-code src="mod/webgl.fillpoly.js" section="fillPolyline"/>

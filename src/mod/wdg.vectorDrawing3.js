@@ -55,11 +55,11 @@ function make( index ) {
   case 3:
     return makePolygon();
   case 4:
-    return makeNoise();
+    return makeSpiral();
   case 5:
     return makeCastle();
   }
-  return makeBoat();
+  return makeNoise();
 }
 
 function makeBoat() {
@@ -96,6 +96,27 @@ function makePolygon() {
     vertices.push(
       r * Math.cos( 2 * Math.PI * k / 6 ),
       r * Math.sin( 2 * Math.PI * k / 6 )
+    );
+  }
+  return vertices;
+}
+
+function makeSpiral() {
+  var r, k;
+  var N = 10;
+  var vertices = [];
+  for( k=0; k<N; k++ ) {
+    r = 1 - .7 * k / N;
+    vertices.push(
+      r * Math.cos( 3 * Math.PI * k / N ),
+      r * Math.sin( 3 * Math.PI * k / N )
+    );
+  }
+  for( k=N-1; k>-1; k-- ) {
+    r = .8 - .7 * k / N;
+    vertices.push(
+      r * Math.cos( 3 * Math.PI * k / N ),
+      r * Math.sin( 3 * Math.PI * k / N )
     );
   }
   return vertices;
