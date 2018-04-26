@@ -10,6 +10,7 @@
   [
     {CANVAS view.id:projection width:450 height:300}
     {DIV [
+      {P textContent:"Vous pouvez modifier N, F et H :"}
       {DIV [
         {tfw.view.textbox value:{Bind arg-n} label:"N="}
         {tfw.view.textbox value:{Bind arg-f} label:"F="}
