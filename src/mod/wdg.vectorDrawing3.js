@@ -113,7 +113,7 @@ function makeSpiral() {
     );
   }
   for( k=N-1; k>-1; k-- ) {
-    r = .8 - .7 * k / N;
+    r = .7 - .6 * k / N;
     vertices.push(
       r * Math.cos( 3 * Math.PI * k / N ),
       r * Math.sin( 3 * Math.PI * k / N )

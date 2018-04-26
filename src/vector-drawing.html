@@ -7,13 +7,13 @@
     
 Le but de cet article est de déterminer l'ensemble des triangles dont on a besoin pour remplir une courbe fermée dont on connait les points.
 
-L'algorithme de base est assez simple et il produit `n-2` triangles pour `n` points d'une courbe fermée qui englobe une seule surface. Mais il faudra le raffiner pour qu'il fonctionne avec toutes les formes de courses.
+L'algorithme de base est assez simple et il produit `n-2` triangles pour `n` points d'une courbe fermée qui englobe une seule surface. Mais __il ne fonctionne que si aucun segment n'en croise un autre__.
 
 L'algorithme est le suivant :
 * Soit `vertices` la liste des points de la courbe.
 * Soit `N` le nombre de points de cette courbe.
 * Répéter `N-2` fois:
-    * Soit `index`, l'indice du premier point du premier __triangle candidat__.
+    * Soit `index`, l'indice du premier point du prochain __triangle candidat__.
     * Créer le triangle (`index`, `index+1`, `index+2`).
     * Retirer de `vertices` le point `index+1`.
 
@@ -30,13 +30,14 @@ Voici la formule qui permet de calculer le produit vectoriel :
 
 <wdg:matrix $value="[x;y;z]^[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"/>
 
-Puisque nos vecteurs sont dans un même plan, ils sont définis par deux coordonnées : `(X,Y)'.
+Puisque nos vecteurs sont dans un même plan, ils sont définis par deux coordonnées : `(X,Y)`.
 Et ça simplifie grandement le calcul du produit vectoriel :
 
 <wdg:matrix $value="[x;y;0]^[x';y';0] = [0;0;xy'-x'y]"/>
 
-Donc si on veut connaitre l'angle formé par les vecteurs `(x,y)` et  `(x',y')`, il suffit de vérifier le signe de
-`xy'-x'y`. Par abus de langage, dans le reste de l'article, on dira que le produit vectoriel est positif si cette égalité est positive.
+Donc si on veut connaitre l'orientation de l'angle formé par les vecteurs `(x,y)` et  `(x',y')`,
+il suffit de vérifier le signe de `xy'-x'y`.
+Par abus de langage, dans le reste de l'article, on dira que le produit vectoriel est positif si cette égalité est positive.
     
 
 # Triangles candidats
@@ -49,7 +50,7 @@ Dans l'exemple ci-contre, on remarque que les triangles `BCD` et `ABD` ne convie
 
 Comment savoir si un angle est concave ou convexe ?
 
-Il est facile de savoir si deux angles sont de même nature : il suffit que leur produit vectoriel respectif soient de même signe. Il faut donc déterminer la concavité du premier angle, mais c'est un algorithme qui va coûter du temps de calcul, alors pourquoi ne pas simplement supposer que le premier angle est concave et voir où ça nous mène ?
+Il est facile de savoir si deux angles sont de même nature : il suffit que leurs produits vectoriels respectifs soient de même signe. Il faut donc déterminer la concavité du premier angle, mais c'est un algorithme qui va coûter du temps de calcul, alors pourquoi ne pas simplement supposer que le premier angle est concave et voir où ça nous mène ?
 Si on a tort, on le saura rapidement parce qu'on va retirer un à un tous les angles concaves et aboutir à une courbe totalement convexe pour laquelle plus aucun triangle ne pourra être candidat à l'éviction. Dans ce cas, on fait la supposition inverse (le premier angle est concave) et on est bon.
 
 <wdg:vectorDrawing2 class="right" />
