@@ -1,11 +1,11 @@
 "use strict";
 
 WebGL.fetchAssets({
-  musicSound: "../snd/music.ogg",
-  diamSound: "../snd/diam.ogg",
-  exitSound: "../snd/exit.ogg",
-  explSound: "../snd/expl.ogg",
-  rockSound: "../snd/rock.ogg",
+  musicSound: "../snd/music.mp3",
+  diamSound: "../snd/diam.mp3",
+  exitSound: "../snd/exit.mp3",
+  explSound: "../snd/expl.mp3",
+  rockSound: "../snd/rock.mp3",
   hueVert: "hue.vert",
   hueFrag: "hue.frag",
   coordsVert: "../coords.vert",

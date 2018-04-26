@@ -87,7 +87,7 @@ window.GameInputs = function() {
   // Pour définir une direction, il faut glisser son doigt
   // dans la direction voulue en gardant le doigt sur l'écran.
   var touchX, touchY, touchId = null;
-  var SENSIBILITE = 2;  // Sensibilité en pixels.
+  var dir = '';
   document.addEventListener( "touchstart", function( evt ) {
     // S'il y a déjà un doigt sur l'écran, on ignore les suivants.
     if( touchId ) return;
@@ -96,13 +96,9 @@ window.GameInputs = function() {
     touchId = touch.identifier;
     touchX = touch.clientX;
     touchY = touch.clientY;
-  });
-  document.addEventListener( "touchend", function( evt ) {
-    var touch = evt.changedTouches[0];
-    if( touch.identifier === touchId ) {
-      touchId = null;
-      clear();
-    }
+    clear();
+    if( touchX < screen.width / 2 ) dir = 'H';
+    else dir = 'V';
   });
   document.addEventListener( "touchmove", function( evt ) {
     var touch = evt.changedTouches[0];
@@ -111,18 +107,31 @@ window.GameInputs = function() {
 
     var vx = touch.clientX - touchX;
     var vy = touch.clientY - touchY;
-    if( Math.abs( vx ) > Math.abs( vy ) ) {
-      // Déplacement horizontal.
-      if( Math.abs( vx ) < SENSIBILITE ) return;
-      clear();
-      if( vx > 0 ) state[RIGHT] = 1;
-      else state[LEFT] = 1;
-    } else {
+    touchX += vx;
+    touchY += vy;
+
+    if( Math.abs(vx) < Math.abs(vy) ) {
       // Déplacement vertical.
-      if( Math.abs( vy ) < SENSIBILITE ) return;
-      clear();
-      if( vy > 0 ) state[DOWN] = 1;
-      else state[UP] = 1;
+      state[LEFT] = state[RIGHT] = 0;
+      if( vy > 1 ) {
+        state[ DOWN ] = 1;
+        state[ UP ] = 0;
+      }
+      else if( vy < -1 ) {
+        state[ DOWN ] = 0;
+        state[ UP ] = 1;
+      }
+    } else {
+      // Déplacement horizontal.
+      state[UP] = state[DOWN] = 0;
+      if( vx > 1 ) {
+        state[ RIGHT ] = 1;
+        state[ LEFT ] = 0;
+      }
+      else if( vx < -1 ){
+        state[ RIGHT ] = 0;
+        state[ LEFT ] = 1;
+      }
     }
   });
 
