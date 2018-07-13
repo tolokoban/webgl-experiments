@@ -1,0 +1,97 @@
+<page $title="Animer un drapeau pirate">
+<div class="right"><iframe src="css/assets/pirate-flag/index.html" border="0" width="300" height="300"></iframe></div>
+
+Dans cet article, nous allons voir comment simuler l'animation d'un drapeau volant au vent avec une technique purement 2D.
+
+Pour cela, nous allons prendre un rectangle que nous découperons en plusieurs bandes verticales.
+Plus il y aura de bandes, plus l'animation sera fluide. Dans l'exemple ci-contre, nous en utilisons 100.
+
+Il suffira alos de déplacer verticalement les bandes suivant une vague pour donner l'illusion d'un mouvement 3D.
+
+Et voilà <a href="css/assets/pirate-flag/index.html">le résultat</a>.
+
+
+----
+
+
+L'initialisation de l'animation se fait une fois que l'image a été chargée :
+<ex src="mod/assets/pirate-flag/script.js" lang="js" section="start" label="Initialisation"/>
+
+Il faut ensuite créer le programme qui va s'occuper de calculer les déplacements verticaux de chaque bande:
+<ex src="mod/assets/pirate-flag/script.js" lang="js" section="createProgram" label="Créer un programme pour les chaders"/>
+<ex lang="glsl" label="Vertex shader">
+uniform float uniTime;
+
+// Coordonnées 2D du point courant.
+attribute vec2 attCoords;
+// Emplacement du pixel dans la texture.    
+varying vec2 varUV;
+// Déterminer la pente pour l'éclairage.    
+varying float varSlope;
+    
+void main() {
+  // On passe les coordonnées de texture
+  // au fragment shader.
+  varUV = attCoords;
+
+  float x = attCoords.x;
+  float y = attCoords.y;
+
+  // L'ondulation est calculée grâce à deux
+  // sinus d fréquences différentes que l'on
+  // supperpose pour donner un effet moins
+  // périodique.
+  float h = sin( uniTime + x * 10.0 );
+  h += sin( x * 3.0 - uniTime * 0.1751 );
+  y += h * x * 0.2;
+
+  // On calcule la position d'un point virtuel
+  // qui serait juste à gauche du point courant.
+  float x2 = x - 0.001;
+  float h2 = cos( uniTime + x2 * 10.0 );
+  h2 += cos( x2 * 3.0 - uniTime * 0.1751 );
+  // Cela permet de calculer la pente qui servira
+  // à ajouter de la lumière ou de l'ombre.
+  varSlope = h - h2;
+
+  gl_Position = vec4( 2.0 * x - 1.0, 0.5 - y, 0.0, 1.0 );
+}
+</ex>
+<ex lang="glsl" label="Fragment shader">
+precision mediump float;
+    
+uniform sampler2D uniTexture;
+varying vec2 varUV;
+varying float varSlope;
+
+void main() {
+  vec4 color = texture2D( uniTexture, varUV );
+  if( color.a == 1.0 ) {
+    // On ne traite la lumière et les ombres que sur les
+    // pixels opaqies.
+    if( varSlope > 0.0 ) {
+      // Pente montante : ajouter du noir.
+      color = mix( color, vec4(0,0,0,1), varSlope * 50.0 );
+    }
+    if( varSlope < 0.0 ) {
+      // Pente descendante : ajouter du blanc.
+      color = mix( color, vec4(1,1,1,1), abs(varSlope) * 50.0 );
+    }
+  }
+  gl_FragColor = color;
+}
+</ex>    
+
+Le code suivant permet de créer les vertex de nos bandes verticales :
+<ex src="mod/assets/pirate-flag/script.js" lang="js" section="createVertices" label="createVertices()"/>
+
+L'image de notre drapeau doit être stoquée dans une texture pour pouvoir être exploitée par WebGL :
+<ex src="mod/assets/pirate-flag/script.js" lang="js" section="createTexture" label="createTexture()"/>
+
+
+Pour finir, voici comment on anime le tout. On peut constater que le Javascript n'a rien à faire.
+C'est le GPU (la carte graphique) qui se charge de tous les calcules.
+
+<ex src="mod/assets/pirate-flag/script.js" lang="js" section="anim" label="Fonction d'animation"/>
+
+</page>
