@@ -9,42 +9,50 @@
  **********************************************************************/
 
 window.require = function() {
-    var modules = {};
-    var definitions = {};
-    var nodejs_require = typeof window.require === 'function' ? window.require : null;
+  var mocks = {};
+  var modules = {};
+  var definitions = {};
+  var nodejs_require = typeof window.require === 'function' ? window.require : null;
 
-    var f = function(id, body) {
-        if( id.substr( 0, 7 ) == 'node://' ) {
-            // Calling for a NodeJS module.
-            if( !nodejs_require ) {
-                throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
-            }
-            return nodejs_require( id.substr( 7 ) );
-        }
+  var f = function(id, body) {
+    var mock = mocks[id];
+    if( mock ) return mock;
+    
+    if( id.substr( 0, 7 ) == 'node://' ) {
+      // Calling for a NodeJS module.
+      if( !nodejs_require ) {
+        throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
+      }
+      return nodejs_require( id.substr( 7 ) );
+    }
 
-        if( typeof body === 'function' ) {
-            definitions[id] = body;
-            return;
-        }
-        var mod;
-        body = definitions[id];
-        if (typeof body === 'undefined') {
-            var err = new Error("Required module is missing: " + id);   
-            console.error(err.stack);
-            throw err;
-        }
-        mod = modules[id];
-        if (typeof mod === 'undefined') {
-            mod = {exports: {}};
-            var exports = mod.exports;
-            body(f, mod, exports);
-            modules[id] = mod.exports;
-            mod = mod.exports;
-            //console.log("Module initialized: " + id);
-        }
-        return mod;
-    };
-    return f;
+    if( typeof body === 'function' ) {
+      definitions[id] = body;
+      return;
+    }
+    var mod;
+    body = definitions[id];
+    if (typeof body === 'undefined') {
+      var err = new Error("Required module is missing: " + id);
+      console.error(err.stack);
+      throw err;
+    }
+    mod = modules[id];
+    if (typeof mod === 'undefined') {
+      mod = {exports: {}};
+      var exports = mod.exports;
+      body(f, mod, exports);
+      modules[id] = mod.exports;
+      mod = mod.exports;
+    }
+    return mod;
+  };
+
+  f.mock = function( moduleName, module ) {
+    mocks[moduleName] = module;
+  };
+  
+  return f;
 }();
 function addListener(e,l) {
     if (window.addEventListener) {
@@ -60,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article0', 'wdg.article', {
+        W('wdg.article98', 'wdg.article', {
             title: "Frustrum",
             content: [
           W({
@@ -69,7 +77,7 @@ addListener(
               children: ["La théorie"]}),
           W({
               elem: "p",
-              children: [W('wdg.frustrum1','wdg.frustrum',{},{"id":"wdg.frustrum1","class":"right"})]}),
+              children: [W('wdg.frustrum99','wdg.frustrum',{},{"id":"wdg.frustrum99","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -289,7 +297,7 @@ addListener(
               elem: "p",
               children: [
                 "Voici comment on écrit cela sous forme matricielle :\n",
-                W('wdg.matrix2','wdg.matrix',{"value": "[h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,0,0 ; 0,0,-1,0]*[X;Y;Z;1] = [X*h/n;Y*h/n;0;-Z] = [X';Y';Z';W']"},{"id":"wdg.matrix2"})]}),
+                W('wdg.matrix100','wdg.matrix',{"value": "[h/n,0,0,0 ; 0,h/n,0,0 ; 0,0,0,0 ; 0,0,-1,0]*[X;Y;Z;1] = [X*h/n;Y*h/n;0;-Z] = [X';Y';Z';W']"},{"id":"wdg.matrix100"})]}),
           W({
               elem: "hr"}),
           W({
@@ -478,7 +486,7 @@ addListener(
                     "\r\n"]})]}),
           W({
               elem: "p",
-              children: [W('wdg.frustrum3','wdg.frustrum',{},{"id":"wdg.frustrum3","class":"right"})]}),
+              children: [W('wdg.frustrum101','wdg.frustrum',{},{"id":"wdg.frustrum101","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -547,7 +555,7 @@ addListener(
               elem: "p",
               children: [
                 "La matrice de projection est donc :\n",
-                W('wdg.matrix4','wdg.matrix',{"value": "[n/h,0,0,0 ; 0,n/h,0,0 ; 0,0,u,v ; 0,0,-1,0] = [n/h,0,0,0 ; 0,n/h,0,0 ; 0,0,(n+f)/(n-f),2nf/(n-f)) ; 0,0,-1,0]"},{"id":"wdg.matrix4"})]}),
+                W('wdg.matrix102','wdg.matrix',{"value": "[n/h,0,0,0 ; 0,n/h,0,0 ; 0,0,u,v ; 0,0,-1,0] = [n/h,0,0,0 ; 0,n/h,0,0 ; 0,0,(n+f)/(n-f),2nf/(n-f)) ; 0,0,-1,0]"},{"id":"wdg.matrix102"})]}),
           W({
               elem: "p",
               children: [
@@ -570,13 +578,13 @@ addListener(
                   elem: "li",
                   children: [
                     "Mode paysage = ",
-                    W('wdg.matrix5','wdg.matrix',{"value": "[n/h,0,0,0 ; 0,nW/hH,0,0 ; 0,0,(n+f)/(n-f),2fn/(n-f)) ; 0,0,-1,0]"},{"id":"wdg.matrix5"})]}),
+                    W('wdg.matrix103','wdg.matrix',{"value": "[n/h,0,0,0 ; 0,nW/hH,0,0 ; 0,0,(n+f)/(n-f),2fn/(n-f)) ; 0,0,-1,0]"},{"id":"wdg.matrix103"})]}),
                 "\n",
                 W({
                   elem: "li",
                   children: [
                     "Mode portrait = ",
-                    W('wdg.matrix6','wdg.matrix',{"value": "[nH/hW,0,0,0 ; 0,n/h,0,0 ; 0,0,(n+f)/(n-f),2fn/(n-f)) ; 0,0,-1,0]"},{"id":"wdg.matrix6"})]}),
+                    W('wdg.matrix104','wdg.matrix',{"value": "[nH/hW,0,0,0 ; 0,n/h,0,0 ; 0,0,(n+f)/(n-f),2fn/(n-f)) ; 0,0,-1,0]"},{"id":"wdg.matrix104"})]}),
                 "\n"]}),
           W({
               elem: "h1",
@@ -584,7 +592,7 @@ addListener(
               children: ["La pratique"]}),
           W({
               elem: "p",
-              children: [W('wdg.frustrum27','wdg.frustrum2',{},{"id":"wdg.frustrum27"})]}),
+              children: [W('wdg.frustrum2105','wdg.frustrum2',{},{"id":"wdg.frustrum2105"})]}),
           W({
               elem: "p",
               children: [
@@ -2677,7 +2685,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["}"]}),
-                    " "]})]})]},{"id":"wdg.article0"})
+                    " "]})]})]},{"id":"wdg.article98"})
 
     }
 );

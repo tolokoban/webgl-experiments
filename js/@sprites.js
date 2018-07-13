@@ -9,42 +9,50 @@
  **********************************************************************/
 
 window.require = function() {
-    var modules = {};
-    var definitions = {};
-    var nodejs_require = typeof window.require === 'function' ? window.require : null;
+  var mocks = {};
+  var modules = {};
+  var definitions = {};
+  var nodejs_require = typeof window.require === 'function' ? window.require : null;
 
-    var f = function(id, body) {
-        if( id.substr( 0, 7 ) == 'node://' ) {
-            // Calling for a NodeJS module.
-            if( !nodejs_require ) {
-                throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
-            }
-            return nodejs_require( id.substr( 7 ) );
-        }
+  var f = function(id, body) {
+    var mock = mocks[id];
+    if( mock ) return mock;
+    
+    if( id.substr( 0, 7 ) == 'node://' ) {
+      // Calling for a NodeJS module.
+      if( !nodejs_require ) {
+        throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
+      }
+      return nodejs_require( id.substr( 7 ) );
+    }
 
-        if( typeof body === 'function' ) {
-            definitions[id] = body;
-            return;
-        }
-        var mod;
-        body = definitions[id];
-        if (typeof body === 'undefined') {
-            var err = new Error("Required module is missing: " + id);   
-            console.error(err.stack);
-            throw err;
-        }
-        mod = modules[id];
-        if (typeof mod === 'undefined') {
-            mod = {exports: {}};
-            var exports = mod.exports;
-            body(f, mod, exports);
-            modules[id] = mod.exports;
-            mod = mod.exports;
-            //console.log("Module initialized: " + id);
-        }
-        return mod;
-    };
-    return f;
+    if( typeof body === 'function' ) {
+      definitions[id] = body;
+      return;
+    }
+    var mod;
+    body = definitions[id];
+    if (typeof body === 'undefined') {
+      var err = new Error("Required module is missing: " + id);
+      console.error(err.stack);
+      throw err;
+    }
+    mod = modules[id];
+    if (typeof mod === 'undefined') {
+      mod = {exports: {}};
+      var exports = mod.exports;
+      body(f, mod, exports);
+      modules[id] = mod.exports;
+      mod = mod.exports;
+    }
+    return mod;
+  };
+
+  f.mock = function( moduleName, module ) {
+    mocks[moduleName] = module;
+  };
+  
+  return f;
 }();
 function addListener(e,l) {
     if (window.addEventListener) {
@@ -60,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article127', 'wdg.article', {
+        W('wdg.article133', 'wdg.article', {
             title: "Sprites",
             content: [
           W({
@@ -73,9 +81,9 @@ addListener(
                 ".\nVous pouvez constater que ça reste fluide."]}),
           W({
               elem: "p",
-              children: [W('wdg.gl5128','wdg.gl5',{
+              children: [W('wdg.gl5134','wdg.gl5',{
                   width: "880",
-                  height: "660"},{"id":"wdg.gl5128"})]}),
+                  height: "660"},{"id":"wdg.gl5134"})]}),
           W({
               elem: "p",
               children: ["Pour WebGL, chaque sprite sera un carré formé de 4 vertices qui auront tous les mêmes coordonnées\n(celles du centre du sprite) ainsi que les attributs suivants :"]}),
@@ -413,7 +421,7 @@ addListener(
                     " "]})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide129','wdg.showhide',{
+              children: [W('wdg.showhide135','wdg.showhide',{
                   value: "false",
                   label: "Le plus gros de la logique se trouve dans le vertex shader",
                   content: [
@@ -1323,12 +1331,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide129"})]}),
+                        " "]})]},{"id":"wdg.showhide135"})]}),
           W({
               elem: "p",
               children: [
                 "Côté Javascript, nous allons faire varier les valeurs des attributs de chaque sprite\nen fonction du temps.\nAinsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.\n",
-                W('wdg.showhide130','wdg.showhide',{
+                W('wdg.showhide136','wdg.showhide',{
                   value: "false",
                   label: "Voici le code de la fonction qui défini les sprites pour le Javascript",
                   content: [
@@ -1824,7 +1832,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide130"})]}),
+                        " "]})]},{"id":"wdg.showhide136"})]}),
           W({
               elem: "p",
               children: ["Nous allons maintenant définir le lien entre un buffer et les attributs dont on a besoin.\nNotre vertex shader aura besoin des 4 attributs suivants :"]}),
@@ -1886,7 +1894,7 @@ addListener(
                 "appeler le premier microprocesseur de vertex shader disponible."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide131','wdg.showhide',{
+              children: [W('wdg.showhide137','wdg.showhide',{
                   value: "false",
                   label: "Voici le code qui définit l'association entre les attributs et les blocs du tableau",
                   content: [
@@ -2821,10 +2829,10 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        " "]})]},{"id":"wdg.showhide131"})]}),
+                        " "]})]},{"id":"wdg.showhide137"})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide132','wdg.showhide',{
+              children: [W('wdg.showhide138','wdg.showhide',{
                   value: "false",
                   label: "Et celui qui dessine chaque frame",
                   content: [
@@ -4205,7 +4213,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide132"})]}),
+                        " "]})]},{"id":"wdg.showhide138"})]}),
           W({
               elem: "h1",
               attr: {"id": "remarque-concernant-l-initialisation-du-contexte-webgl"},
@@ -4724,7 +4732,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    " "]})]})]},{"id":"wdg.article127"})
+                    " "]})]})]},{"id":"wdg.article133"})
 
     }
 );

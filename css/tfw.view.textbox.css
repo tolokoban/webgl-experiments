@@ -4,10 +4,12 @@ div.tfw-view-textbox {
   border: none;
   border-bottom: 1px solid rgba(0,0,0,.5);
   font: inherit;
+  padding: 0 4px 4px 4px;
 }
 
 div.tfw-view-textbox.wide {
   display: block;
+  width: 100%;
 }
 
 div.tfw-view-textbox.hide { display: none; }

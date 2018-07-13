@@ -9,42 +9,50 @@
  **********************************************************************/
 
 window.require = function() {
-    var modules = {};
-    var definitions = {};
-    var nodejs_require = typeof window.require === 'function' ? window.require : null;
+  var mocks = {};
+  var modules = {};
+  var definitions = {};
+  var nodejs_require = typeof window.require === 'function' ? window.require : null;
 
-    var f = function(id, body) {
-        if( id.substr( 0, 7 ) == 'node://' ) {
-            // Calling for a NodeJS module.
-            if( !nodejs_require ) {
-                throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
-            }
-            return nodejs_require( id.substr( 7 ) );
-        }
+  var f = function(id, body) {
+    var mock = mocks[id];
+    if( mock ) return mock;
+    
+    if( id.substr( 0, 7 ) == 'node://' ) {
+      // Calling for a NodeJS module.
+      if( !nodejs_require ) {
+        throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
+      }
+      return nodejs_require( id.substr( 7 ) );
+    }
 
-        if( typeof body === 'function' ) {
-            definitions[id] = body;
-            return;
-        }
-        var mod;
-        body = definitions[id];
-        if (typeof body === 'undefined') {
-            var err = new Error("Required module is missing: " + id);   
-            console.error(err.stack);
-            throw err;
-        }
-        mod = modules[id];
-        if (typeof mod === 'undefined') {
-            mod = {exports: {}};
-            var exports = mod.exports;
-            body(f, mod, exports);
-            modules[id] = mod.exports;
-            mod = mod.exports;
-            //console.log("Module initialized: " + id);
-        }
-        return mod;
-    };
-    return f;
+    if( typeof body === 'function' ) {
+      definitions[id] = body;
+      return;
+    }
+    var mod;
+    body = definitions[id];
+    if (typeof body === 'undefined') {
+      var err = new Error("Required module is missing: " + id);
+      console.error(err.stack);
+      throw err;
+    }
+    mod = modules[id];
+    if (typeof mod === 'undefined') {
+      mod = {exports: {}};
+      var exports = mod.exports;
+      body(f, mod, exports);
+      modules[id] = mod.exports;
+      mod = mod.exports;
+    }
+    return mod;
+  };
+
+  f.mock = function( moduleName, module ) {
+    mocks[moduleName] = module;
+  };
+  
+  return f;
 }();
 function addListener(e,l) {
     if (window.addEventListener) {
@@ -60,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article15', 'wdg.article', {
+        W('wdg.article146', 'wdg.article', {
             title: "Dessin vectoriel",
             content: [
           W({
@@ -69,10 +77,10 @@ addListener(
               children: ["Remplir une courbe fermée"]}),
           W({
               elem: "p",
-              children: [W('wdg.vectorDrawing316','wdg.vectorDrawing3',{
+              children: [W('wdg.vectorDrawing3147','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "1"},{"id":"wdg.vectorDrawing316","class":"right"})]}),
+                  index: "1"},{"id":"wdg.vectorDrawing3147","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -232,7 +240,7 @@ addListener(
               children: ["Voici la formule qui permet de calculer le produit vectoriel :"]}),
           W({
               elem: "p",
-              children: [W('wdg.matrix17','wdg.matrix',{"value": "[x;y;z]^[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"},{"id":"wdg.matrix17"})]}),
+              children: [W('wdg.matrix148','wdg.matrix',{"value": "[x;y;z]^[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"},{"id":"wdg.matrix148"})]}),
           W({
               elem: "p",
               children: [
@@ -243,7 +251,7 @@ addListener(
                 ".\nEt ça simplifie grandement le calcul du produit vectoriel :"]}),
           W({
               elem: "p",
-              children: [W('wdg.matrix18','wdg.matrix',{"value": "[x;y;0]^[x';y';0] = [0;0;xy'-x'y]"},{"id":"wdg.matrix18"})]}),
+              children: [W('wdg.matrix149','wdg.matrix',{"value": "[x;y;0]^[x';y';0] = [0;0;xy'-x'y]"},{"id":"wdg.matrix149"})]}),
           W({
               elem: "p",
               children: [
@@ -282,7 +290,7 @@ addListener(
               children: ["Triangles candidats"]}),
           W({
               elem: "p",
-              children: [W('wdg.vectorDrawing19','wdg.vectorDrawing',{},{"id":"wdg.vectorDrawing19","class":"right"})]}),
+              children: [W('wdg.vectorDrawing150','wdg.vectorDrawing',{},{"id":"wdg.vectorDrawing150","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -326,7 +334,7 @@ addListener(
                 "éviction. Dans ce cas, on fait la supposition inverse (le premier angle est concave) et on est bon."]}),
           W({
               elem: "p",
-              children: [W('wdg.vectorDrawing220','wdg.vectorDrawing2',{},{"id":"wdg.vectorDrawing220","class":"right"})]}),
+              children: [W('wdg.vectorDrawing2151','wdg.vectorDrawing2',{},{"id":"wdg.vectorDrawing2151","class":"right"})]}),
           W({
               elem: "p",
               children: ["Comment savoir si un point est contenu dans un triangle ?"]}),
@@ -393,50 +401,50 @@ addListener(
           W({
               elem: "p",
               children: [
-                W('wdg.vectorDrawing321','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3152','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "0"},{"id":"wdg.vectorDrawing321"}),
+                  index: "0"},{"id":"wdg.vectorDrawing3152"}),
                 "\n",
-                W('wdg.vectorDrawing322','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3153','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "1"},{"id":"wdg.vectorDrawing322"}),
+                  index: "1"},{"id":"wdg.vectorDrawing3153"}),
                 "\n",
-                W('wdg.vectorDrawing323','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3154','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "2"},{"id":"wdg.vectorDrawing323"}),
+                  index: "2"},{"id":"wdg.vectorDrawing3154"}),
                 "\n",
-                W('wdg.vectorDrawing324','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3155','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "3"},{"id":"wdg.vectorDrawing324"}),
+                  index: "3"},{"id":"wdg.vectorDrawing3155"}),
                 "\n",
-                W('wdg.vectorDrawing325','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3156','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "4"},{"id":"wdg.vectorDrawing325"}),
+                  index: "4"},{"id":"wdg.vectorDrawing3156"}),
                 "\n",
-                W('wdg.vectorDrawing326','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3157','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "5"},{"id":"wdg.vectorDrawing326"}),
+                  index: "5"},{"id":"wdg.vectorDrawing3157"}),
                 "\n",
-                W('wdg.vectorDrawing327','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3158','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "6"},{"id":"wdg.vectorDrawing327"}),
+                  index: "6"},{"id":"wdg.vectorDrawing3158"}),
                 "\n",
-                W('wdg.vectorDrawing328','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3159','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "6"},{"id":"wdg.vectorDrawing328"}),
+                  index: "6"},{"id":"wdg.vectorDrawing3159"}),
                 "\n",
-                W('wdg.vectorDrawing329','wdg.vectorDrawing3',{
+                W('wdg.vectorDrawing3160','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "6"},{"id":"wdg.vectorDrawing329"})]}),
+                  index: "6"},{"id":"wdg.vectorDrawing3160"})]}),
           W({
               elem: "p",
               children: [W({
@@ -5768,7 +5776,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["};"]}),
-                    " "]})]})]},{"id":"wdg.article15"})
+                    " "]})]})]},{"id":"wdg.article146"})
 
     }
 );
