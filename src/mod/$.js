@@ -1,4 +1,4 @@
-exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.90\"","major":"0","minor":"0","revision":"90","date":"2018-05-14T07:18:02.000Z","consts":{}};
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.90\"","major":"0","minor":"0","revision":"90","date":"2018-09-04T19:11:28.000Z","consts":{}};
 var currentLang = null;
 exports.lang = function(lang) {
     if (lang === undefined) {
