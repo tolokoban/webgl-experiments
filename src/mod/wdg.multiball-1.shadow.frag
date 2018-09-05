@@ -12,8 +12,8 @@ void main() {
   float y = mod( gl_FragCoord.y, 6.0 );
   if( x > 4.5 && y > 4.5) discard;
   vec3 color = varColor;
-  vec3 black = WHITE;
-  vec3 white = BLACK;
+  vec3 black = BLACK;
+  vec3 white = WHITE;
   vec3 normal = normalize(varNormal);
   float light = dot(normal, LIGHT);
   if( light > 0.0 ) gl_FragColor = vec4( mix(varColor, white, light), 1.0 );
