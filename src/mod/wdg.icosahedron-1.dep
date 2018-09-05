@@ -1,0 +1,8 @@
+{
+  "var": {
+    "vert": "wdg.icosahedron-1.vert",
+    "frag": "wdg.icosahedron-1.frag",
+    "shadow_vert": "wdg.icosahedron-1.shadow.vert",
+    "shadow_frag": "wdg.icosahedron-1.shadow.frag"
+  }
+}

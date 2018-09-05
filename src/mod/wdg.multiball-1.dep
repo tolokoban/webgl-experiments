@@ -1,8 +1,0 @@
-{
-  "var": {
-    "vert": "wdg.multiball-1.vert",
-    "frag": "wdg.multiball-1.frag",
-    "shadow_vert": "wdg.multiball-1.shadow.vert",
-    "shadow_frag": "wdg.multiball-1.shadow.frag"
-  }
-}

@@ -8,9 +8,9 @@ const vec3 BLACK = vec3(0, 0, 0);
 const vec3 LIGHT = normalize(vec3(-1,1,1));
 
 void main() {
-  float x = mod( gl_FragCoord.x, 6.0 );
-  float y = mod( gl_FragCoord.y, 6.0 );
-  if( x > 4.5 && y > 4.5) discard;
+  float x = mod( gl_FragCoord.x, 2.0 );
+  float y = mod( gl_FragCoord.y, 2.0 );
+  if( x > 0.5 && y > 0.5) discard;
   vec3 color = varColor;
   vec3 black = BLACK;
   vec3 white = WHITE;

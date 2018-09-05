@@ -1,0 +1,32 @@
+<page $title="Icosaèdre">
+
+<wdg:icosahedron-1/>
+
+<br/>
+<br/>
+
+Voyons comment dessiner des <a href="https://fr.wikipedia.org/wiki/Icosa%C3%A8dre">icosaèdres</a> convexes.
+Ce sont des volumes dont les 20 faces sont des triangles équilatéraux tous identiques.
+
+De loin ça ressemble à une sphère, mais de près c'est plus comme un dé à 20 faces qu'on utilisait pour jouer à
+<a href="https://fr.wikipedia.org/wiki/Donjons_et_Dragons">Donjons &amp; Dragons</a>.
+
+<em>(Cliquez sur l'animation pour la voir en plein écran.)</em>
+
+# Coordonnées des sommets d'un icosaèdre
+
+Si on considère la partie orange de l'animation ci-dessus, on constate qu'elle est identique à la partie bleu.
+Chaque partie contient 10 triangles équilatéraux de mêmes dimensions et en les regroupant, on obtient notre icosaèdre.
+
+Si on voit la partie orange comme une tente au toît pentagonal, on voit qu'il y a un point au sommet, 5 points à mi-hauteur et 5 points au sol. Il se trouve que les 5 points au sol correspondent aux 5 points à mi-hauteur de la tente bleue. Notre icosahère a donc 12 sommets :
+* 1 sommet à l'altitude `r`,
+* 5 sommets à l'altitude `h`,
+* 5 sommets à l'altitude `-h`,
+* et 1 sommet à l'altitude `-r`.
+
+Les sommets de l'icosaèdre reposent sur une sphère de rayon `r`. Et comme cette sphère est découpée en 3 parties
+(`[-r,-h]`, `[-h,h]` et `[h,r]`), on en déduit que `h = r / 2`.
+
+<x-code src="mod/wdg.icosahedron-1.js" section="vertices" />
+
+</page>
