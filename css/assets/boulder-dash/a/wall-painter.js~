@@ -1,0 +1,14 @@
+window.WallPainter = function() {
+  var WP = function( gl, cave ) {
+    var rows = cave.length;
+    var cols = cave[0].length;
+    var col, row;
+    for( row = 0; row < rows; row++ ) {
+      for( col = 0; col < cols; col++ ) {
+
+      }
+    }
+  };
+
+  return WP;
+}();

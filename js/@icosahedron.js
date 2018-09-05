@@ -1,3 +1,4 @@
+<<<<<<< HEAD:js/@icosahedron.js
 /**********************************************************************
  require( 'require' )
  -----------------------------------------------------------------------
@@ -67,6 +68,77 @@ addListener(
     function() {
         document.body.parentNode.$data = {};
         // Attach controllers.
+=======
+/**********************************************************************
+ require( 'require' )
+ -----------------------------------------------------------------------
+ @example
+
+ var Path = require("node://path");  // Only in NodeJS/NW.js environment.
+ var Button = require("tfw.button");
+
+ **********************************************************************/
+
+window.require = function() {
+  var mocks = {};
+  var modules = {};
+  var definitions = {};
+  var nodejs_require = typeof window.require === 'function' ? window.require : null;
+
+  var f = function(id, body) {
+    var mock = mocks[id];
+    if( mock ) return mock;
+    
+    if( id.substr( 0, 7 ) == 'node://' ) {
+      // Calling for a NodeJS module.
+      if( !nodejs_require ) {
+        throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
+      }
+      return nodejs_require( id.substr( 7 ) );
+    }
+
+    if( typeof body === 'function' ) {
+      definitions[id] = body;
+      return;
+    }
+    var mod;
+    body = definitions[id];
+    if (typeof body === 'undefined') {
+      var err = new Error("Required module is missing: " + id);
+      console.error(err.stack);
+      throw err;
+    }
+    mod = modules[id];
+    if (typeof mod === 'undefined') {
+      mod = {exports: {}};
+      var exports = mod.exports;
+      body(f, mod, exports);
+      modules[id] = mod.exports;
+      mod = mod.exports;
+    }
+    return mod;
+  };
+
+  f.mock = function( moduleName, module ) {
+    mocks[moduleName] = module;
+  };
+  
+  return f;
+}();
+function addListener(e,l) {
+    if (window.addEventListener) {
+        window.addEventListener(e,l,false);
+    } else {
+        window.attachEvent('on' + e, l);
+    }
+};
+
+addListener(
+    'DOMContentLoaded',
+    function() {
+        document.body.parentNode.$data = {};
+        // Attach controllers.
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
         var W = require('x-widget');
         W('wdg.article0', 'wdg.article', {
             title: "Icosaèdre",
@@ -144,6 +216,7 @@ addListener(
                     "&#39;",
                     "altitude ",
                     W({
+<<<<<<< HEAD:js/@icosahedron.js
                       elem: "code",
                       children: ["r"]}),
                     ","]}),
@@ -154,6 +227,71 @@ addListener(
                     "5 sommets à l",
                     "&#39;",
                     "altitude ",
+=======
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["void"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["main"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["()"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl_FragColor"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["vec4"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0.0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1.0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0.0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "code",
                       children: ["h"]}),
@@ -166,6 +304,7 @@ addListener(
                     "&#39;",
                     "altitude ",
                     W({
+<<<<<<< HEAD:js/@icosahedron.js
                       elem: "code",
                       children: ["-h"]}),
                     ","]}),
@@ -176,6 +315,12 @@ addListener(
                     "et 1 sommet à l",
                     "&#39;",
                     "altitude ",
+=======
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "code",
                       children: ["-r"]}),
@@ -215,8 +360,148 @@ addListener(
                   children: [
                     W({
                       elem: "span",
+<<<<<<< HEAD:js/@icosahedron.js
                       attr: {"class": "keyword"},
                       children: ["var"]}),
+=======
+                      attr: {"class": "comment"},
+                      children: ["// La couleur est un vecteur à trois coordonées :"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// une pour le rouge, une pour le vert et une pour le bleu."]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["attribute"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["vec3"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["attColor"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    "\r\n\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["attribute"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["float"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["attAngle"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    "\r\n\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// Voici un nouveau mot clef : \"varying\"."]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// Il doit être déclaré également dans le"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// fragment shader. Cela permet de lui"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// passer des données."]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["varying"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["vec3"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["varColor"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    "\r\n\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["void"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["main"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["()"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// C'est ici que l'on passe la couleur du vertex"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// courant au fragment shader."]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["varColor"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["attColor"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    "\r\n\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["float"]}),
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     " ",
                     W({
                       elem: "span",
@@ -231,7 +516,402 @@ addListener(
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
+<<<<<<< HEAD:js/@icosahedron.js
                       children: ["["]}),
+=======
+                      children: [");"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["float"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["x"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["cos"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["rad"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["float"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["y"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["sin"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["rad"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl_Position"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["vec4"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["x"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["y"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0.0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1.0"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["}"]}),
+                    " "]})]}),
+          W({
+              elem: "p",
+              children: [
+                "Et le fragment shader devient :\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["precision"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["mediump"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["float"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    "\r\n\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["varying"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["vec3"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["varColor"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    "\r\n\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["void"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["main"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["()"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["{"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl_FragColor"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "function"},
+                      children: ["vec4"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["("]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["varColor"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["rgb"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1.0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["}"]}),
+                    " "]})]}),
+          W({
+              elem: "p",
+              children: [
+                "Il faut préciser ici que GLSL est un language qui facilite la manipulation des vecteurs (et des matrices, comme on verra plus tard). Il propose donc des syntaxes très pratiques comme celle-ci : ",
+                W({
+                  elem: "code",
+                  children: ["vec4(varColor.rgb, 1.0)"]}),
+                ".\nQui permet de créer un vecteur à 4 dimensions en utilisant les 3 premières coordonnées de ",
+                W({
+                  elem: "code",
+                  children: ["varColor"]}),
+                " et en y ajoutant ",
+                W({
+                  elem: "code",
+                  children: ["1.0"]}),
+                ". On peut accéder aux valeurs des coordonnées avec des synonymes :"]}),
+          W({
+              elem: "ul",
+              children: [
+                "\n",
+                W({
+                  elem: "li",
+                  children: ["x, y, z et w"]}),
+                "\n",
+                W({
+                  elem: "li",
+                  children: ["r, g, b et a"]}),
+                "\n",
+                W({
+                  elem: "li",
+                  children: ["s, t, p et q"]}),
+                "\n"]}),
+          W({
+              elem: "p",
+              children: [
+                "Et on peut les mettre dans l",
+                "&#39;",
+                "ordre de son choix.\nAinsi, cette syntaxe est parfaitement valide si on veut inverser les valeurs de X et Y :\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl_Position"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl_Position"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["yxzw"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    " "]}),
+                "\nOn peut même les utiliser plusieurs fois :\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["vec2"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["pos"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl_Position"]}),
+                    ".",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["xx"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [";"]}),
+                    " "]}),
+                "\nLa seule chose illégale est de mixer les lettre de groupes différents comme ",
+                W({
+                  elem: "code",
+                  children: ["pos.rgy"]}),
+                " par exemple."]}),
+          W({
+              elem: "h1",
+              attr: {"id": "les-donn-es-des-attributs"},
+              children: ["Les données des attributs"]}),
+          W({
+              elem: "p",
+              children: [
+                "Nous avons de nouveaux attributs, il faut donc revoir la structure des données à passer à WebGL.\n",
+                W({
+                  elem: "pre",
+                  attr: {"class": "custom highlight js"},
+                  children: [
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["var"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["arrPoints"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "operator"},
+                      children: ["="]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword"},
+                      children: ["new"]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "keyword2"},
+                      children: ["Float32Array"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: ["(["]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
+                    "\r\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -240,6 +920,51 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["1"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+                    " ",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["0"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+<<<<<<< HEAD:js/@icosahedron.js
+=======
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "number"},
+                      children: ["130"]}),
+                    W({
+                      elem: "span",
+                      attr: {"class": "symbol"},
+                      children: [","]}),
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     " ",
                     W({
                       elem: "span",
@@ -272,11 +997,20 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
+<<<<<<< HEAD:js/@icosahedron.js
                     " ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
                       children: ["ang"]}),
+=======
+                    "\r\n  ",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// attAngle, attColor.r, attColor.g, attColor.b"]}),
+                    "\r\n  ",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -310,16 +1044,28 @@ addListener(
                     " ",
                     W({
                       elem: "span",
+<<<<<<< HEAD:js/@icosahedron.js
                       attr: {"class": "identifier"},
                       children: ["n"]}),
+=======
+                      attr: {"class": "number"},
+                      children: ["1"]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "operator"},
                       children: ["&lt;"]}),
                     W({
                       elem: "span",
+<<<<<<< HEAD:js/@icosahedron.js
                       attr: {"class": "number"},
                       children: ["5"]}),
+=======
+                      attr: {"class": "comment"},
+                      children: ["// Taille d'un Float32 en octets."]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -346,6 +1092,7 @@ addListener(
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
+<<<<<<< HEAD:js/@icosahedron.js
                       children: ["{"]}),
                     "\n  ",
                     W({
@@ -353,6 +1100,15 @@ addListener(
                       attr: {"class": "identifier"},
                       children: ["ang"]}),
                     " ",
+=======
+                      children: [";"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "comment"},
+                      children: ["// Nombre d'octets utilisés par point."]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "operator"},
@@ -391,7 +1147,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
+<<<<<<< HEAD:js/@icosahedron.js
                     "\n  ",
+=======
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -447,9 +1207,15 @@ addListener(
                     " ",
                     W({
                       elem: "span",
+<<<<<<< HEAD:js/@icosahedron.js
                       attr: {"class": "operator"},
                       children: ["*"]}),
                     " ",
+=======
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "keyword2"},
@@ -483,7 +1249,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\n",
+                    "\r\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -587,9 +1353,15 @@ addListener(
                     " ",
                     W({
                       elem: "span",
+<<<<<<< HEAD:js/@icosahedron.js
                       attr: {"class": "identifier"},
                       children: ["n"]}),
                     " ",
+=======
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "operator"},
@@ -641,8 +1413,18 @@ addListener(
                     " ",
                     W({
                       elem: "span",
+<<<<<<< HEAD:js/@icosahedron.js
                       attr: {"class": "keyword2"},
                       children: ["Math"]}),
+=======
+                      attr: {"class": "symbol"},
+                      children: [");"]}),
+                    "\r\n",
+                    W({
+                      elem: "span",
+                      attr: {"class": "identifier"},
+                      children: ["gl"]}),
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     ".",
                     W({
                       elem: "span",
@@ -661,8 +1443,13 @@ addListener(
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
+<<<<<<< HEAD:js/@icosahedron.js
                       children: ["),"]}),
                     "\n    ",
+=======
+                      children: [");"]}),
+                    "\r\n",
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -760,6 +1547,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
+<<<<<<< HEAD:js/@icosahedron.js
                     " "]})]})]},{"id":"wdg.article0"})
 
     }
@@ -822,3 +1610,9 @@ require("webgl.resize",function(n,t,e){var i=function(){function t(){return i(e,
 //# sourceMappingURL=webgl.resize.js.map
 require("webgl.math",function(t,n,r){function a(t){return new Float32Array(t)}function o(t){var n,r,o=a(t),e=0;for(r=0;r<o.length;r++)n=o[r],e+=n*n;if(e>0){var i=1/Math.sqrt(e);for(r=0;r<o.length;r++)o[r]*=i}return o}function e(t,n,r,a,o,e,i){i=i||new Float32Array(16);var u=Math.cos(o),c=Math.sin(o),f=-Math.cos(e+.5*Math.PI),l=-Math.sin(e+.5*Math.PI),h=f*u,s=l*u,M=c,m=-s,w=h,y=0,v=Math.sqrt(m*m+w*w+y*y);m/=v,w/=v,y/=v;var A=s*y-M*w,F=m*M-y*h,g=h*w-s*m,p=-(h*a+t),x=-(s*a+n),I=-(M*a+r);return i[0]=m,i[4]=w,i[8]=y,i[12]=p*m+x*w+I*y,i[1]=A,i[5]=F,i[9]=g,i[13]=p*A+x*F+I*g,i[2]=h,i[6]=s,i[10]=M,i[14]=p*h+x*s+I*M,i[3]=0,i[7]=0,i[11]=0,i[15]=1,i}function i(t,n,r,a,o){o=o||new Float32Array(16);var e=Math.tan(.5*(Math.PI-t)),i=1/(r-a);return o[0]=e/n,o[1]=0,o[2]=0,o[3]=0,o[4]=0,o[5]=e,o[6]=0,o[7]=0,o[8]=0,o[9]=0,o[10]=(r+a)*i,o[11]=-1,o[12]=0,o[13]=0,o[14]=r*a*i*2,o[15]=0,o}function u(){return g(1,0,0,0,1,0,0,0,1)}function c(){return p(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)}function f(t,n){return g(2/t,0,0,0,-2/n,0,0,0,1)}function l(t,n,r){return p(2/t,0,0,0,0,-2/n,0,0,0,0,2/r,0,0,0,0,1)}function h(t,n){return g(1,0,0,0,1,0,t,n,1)}function s(t,n,r){return p(1,0,0,0,0,1,0,0,0,0,1,0,t,n,r,1)}function M(t){var n=Math.cos(t),r=Math.sin(t);return g(n,-r,0,r,n,0,0,0,1)}function m(t,n){n=n||new Float32Array(16);var r=Math.cos(t),a=Math.sin(t);return n[0]=1,n[1]=0,n[2]=0,n[3]=0,n[4]=0,n[5]=r,n[6]=a,n[7]=0,n[8]=0,n[9]=-a,n[10]=r,n[11]=0,n[12]=0,n[13]=0,n[14]=0,n[15]=1,n}function w(t,n){n=n||new Float32Array(16);var r=Math.cos(t),a=Math.sin(t);return n[0]=r,n[1]=0,n[2]=-a,n[3]=0,n[4]=0,n[5]=1,n[6]=0,n[7]=0,n[8]=a,n[9]=0,n[10]=r,n[11]=0,n[12]=0,n[13]=0,n[14]=0,n[15]=1,n}function y(t,n){n=n||new Float32Array(16);var r=Math.cos(t),a=Math.sin(t);return n[0]=r,n[1]=a,n[2]=0,n[3]=0,n[4]=-a,n[5]=r,n[6]=0,n[7]=0,n[8]=0,n[9]=0,n[10]=1,n[11]=0,n[12]=0,n[13]=0,n[14]=0,n[15]=1,n}function v(t,n,r){r=r||new Float32Array(16);var a=Math.cos(t),o=Math.sin(t),e=Math.cos(n),i=Math.sin(n);return r[0]=e,r[1]=o*i,r[2]=-a*i,r[3]=0,r[4]=0,r[5]=a,r[6]=o,r[7]=0,r[8]=i,r[9]=-o*e,r[10]=a*e,r[11]=0,r[12]=0,r[13]=0,r[14]=0,r[15]=1,r}function A(t,n){return g(t,0,0,0,n,0,0,0,1)}function F(t,n,r){return p(t,0,0,0,0,n,0,0,0,0,r,0,0,0,0,1)}function g(t,n,r,a,o,e,i,u,c){return new Float32Array([t,n,r,a,o,e,i,u,c])}function p(t,n,r,a,o,e,i,u,c,f,l,h,s,M,m,w){return new Float32Array([t,n,r,a,o,e,i,u,c,f,l,h,s,M,m,w])}function x(t,n,r,a){return new Float32Array([t,n,r,a])}function I(t,n,r){var a=d["m"+t.length+"m"+n.length];if("function"!=typeof a)throw Error("[webgl.math.mul] I don't know how to multiply 'M"+t.length+"' with 'M"+n.length+"'!");return a(t,n,r)}var P=function(){function n(){return a(r,arguments)}var r={en:{},fr:{}},a=t("$").intl;return n.all=r,n}();n.exports={m4:{identity:c,matrix:p,vector:x,projection:l,translation:s,rotationX:m,rotationY:w,rotationZ:y,rotationXY:v,scaling:F,copy:a,normalize:o,cameraPolar:e,perspective:i,mul:I},m3:{identity:u,matrix:g,projection:f,translation:h,rotation:M,scaling:A}};var d={m4m4:function(t,n,r){return r=r||new Float32Array(4),r[0]=t[0]*n[0]+t[2]*n[1],r[1]=t[1]*n[0]+t[3]*n[1],r[2]=t[0]*n[2]+t[2]*n[3],r[3]=t[1]*n[2]+t[3]*n[3],r},m9m9:function(t,n,r){return r=r||new Float32Array(9),r[0]=t[0]*n[0]+t[3]*n[1]+t[6]*n[2],r[1]=t[1]*n[0]+t[4]*n[1]+t[7]*n[2],r[2]=t[2]*n[0]+t[5]*n[1]+t[8]*n[2],r[3]=t[0]*n[3]+t[3]*n[4]+t[6]*n[5],r[4]=t[1]*n[3]+t[4]*n[4]+t[7]*n[5],r[5]=t[2]*n[3]+t[5]*n[4]+t[8]*n[5],r[6]=t[0]*n[6]+t[3]*n[7]+t[6]*n[8],r[7]=t[1]*n[6]+t[4]*n[7]+t[7]*n[8],r[8]=t[2]*n[6]+t[5]*n[7]+t[8]*n[8],r},m16m16:function(t,n,r){return r=r||new Float32Array(16),r[0]=t[0]*n[0]+t[4]*n[1]+t[8]*n[2]+t[12]*n[3],r[1]=t[1]*n[0]+t[5]*n[1]+t[9]*n[2]+t[13]*n[3],r[2]=t[2]*n[0]+t[6]*n[1]+t[10]*n[2]+t[14]*n[3],r[3]=t[3]*n[0]+t[7]*n[1]+t[11]*n[2]+t[15]*n[3],r[4]=t[0]*n[4]+t[4]*n[5]+t[8]*n[6]+t[12]*n[7],r[5]=t[1]*n[4]+t[5]*n[5]+t[9]*n[6]+t[13]*n[7],r[6]=t[2]*n[4]+t[6]*n[5]+t[10]*n[6]+t[14]*n[7],r[7]=t[3]*n[4]+t[7]*n[5]+t[11]*n[6]+t[15]*n[7],r[8]=t[0]*n[8]+t[4]*n[9]+t[8]*n[10]+t[12]*n[11],r[9]=t[1]*n[8]+t[5]*n[9]+t[9]*n[10]+t[13]*n[11],r[10]=t[2]*n[8]+t[6]*n[9]+t[10]*n[10]+t[14]*n[11],r[11]=t[3]*n[8]+t[7]*n[9]+t[11]*n[10]+t[15]*n[11],r[12]=t[0]*n[12]+t[4]*n[13]+t[8]*n[14]+t[12]*n[15],r[13]=t[1]*n[12]+t[5]*n[13]+t[9]*n[14]+t[13]*n[15],r[14]=t[2]*n[12]+t[6]*n[13]+t[10]*n[14]+t[14]*n[15],r[15]=t[3]*n[12]+t[7]*n[13]+t[11]*n[14]+t[15]*n[15],r},m16m4:function(t,n,r){return r=r||new Float32Array(4),r[0]=t[0]*n[0]+t[4]*n[1]+t[8]*n[2]+t[12]*n[3],r[1]=t[1]*n[0]+t[5]*n[1]+t[9]*n[2]+t[13]*n[3],r[2]=t[2]*n[0]+t[6]*n[1]+t[10]*n[2]+t[14]*n[3],r[3]=t[3]*n[0]+t[7]*n[1]+t[11]*n[2]+t[15]*n[3],r}};n.exports._=P});
 //# sourceMappingURL=webgl.math.js.map
+=======
+                    " "]})]})]},{"id":"wdg.article108"})
+
+    }
+);
+>>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4:js/@index2.js

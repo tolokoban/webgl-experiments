@@ -1,0 +1,7 @@
+"use strict";
+
+window.HeroLogic = function() {
+  return function( env ) {
+    
+  }
+}();
