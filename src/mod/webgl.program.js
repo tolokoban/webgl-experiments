@@ -1,5 +1,7 @@
 "use strict";
 
+var BPE = ( new Float32Array() ).BYTES_PER_ELEMENT;
+
 /**
  * Creating  a  WebGL  program  for shaders  is  painful.  This  class
  * simplifies the process.
@@ -30,7 +32,9 @@ function Program( gl, codes, includes ) {
 
   this.gl = gl;
   Object.freeze( this.gl );
-
+  this.BPE = BPE;
+  Object.freeze( this.BPE );
+  
   this._typesNamesLookup = getTypesNamesLookup( gl );
 
   var shaderProgram = gl.createProgram();
@@ -53,8 +57,6 @@ function Program( gl, codes, includes ) {
 Program.prototype.getTypeName = function ( typeId ) {
   return this._typesNamesLookup[ typeId ];
 };
-
-var BPE = ( new Float32Array() ).BYTES_PER_ELEMENT;
 
 Program.prototype.bindAttribs = function ( buffer ) {
   var gl = this.gl;

@@ -10,6 +10,7 @@ module.exports = {
     rotationX: rotationX4,
     rotationY: rotationY4,
     rotationZ: rotationZ4,
+    rotationXY: rotationXY4,
     scaling: scaling4,
     copy: copy,
     normalize: normalize,
@@ -35,7 +36,7 @@ function copy( arr ) {
 function normalize( arr ) {
   var n = copy( arr );
   var len = 0,
-    v, k;
+      v, k;
   for ( k = 0; k < n.length; k++ ) {
     v = n[ k ];
     len += v * v;
@@ -111,7 +112,7 @@ function cameraPolar4( targetX, targetY, targetZ, dis, lat, lng, result ) {
  */
 function perspective4( fieldAngle, aspect, near, far, result ) {
   result = result || new Float32Array( 16 );
-  var f = Math.tan( Math.PI * 0.5 - 0.5 * fieldAngle );
+  var f = Math.tan( 0.5 * (Math.PI - fieldAngle) );
   var rangeInv = 1.0 / ( near - far );
 
   result[ 0 ] = f / aspect;
@@ -189,13 +190,13 @@ function inverse4( m, dst ) {
   var tmp_23 = m10 * m01;
 
   var t0 = ( tmp_0 * m11 + tmp_3 * m21 + tmp_4 * m31 ) -
-    ( tmp_1 * m11 + tmp_2 * m21 + tmp_5 * m31 );
+      ( tmp_1 * m11 + tmp_2 * m21 + tmp_5 * m31 );
   var t1 = ( tmp_1 * m01 + tmp_6 * m21 + tmp_9 * m31 ) -
-    ( tmp_0 * m01 + tmp_7 * m21 + tmp_8 * m31 );
+      ( tmp_0 * m01 + tmp_7 * m21 + tmp_8 * m31 );
   var t2 = ( tmp_2 * m01 + tmp_7 * m11 + tmp_10 * m31 ) -
-    ( tmp_3 * m01 + tmp_6 * m11 + tmp_11 * m31 );
+      ( tmp_3 * m01 + tmp_6 * m11 + tmp_11 * m31 );
   var t3 = ( tmp_5 * m01 + tmp_8 * m11 + tmp_11 * m21 ) -
-    ( tmp_4 * m01 + tmp_9 * m11 + tmp_10 * m21 );
+      ( tmp_4 * m01 + tmp_9 * m11 + tmp_10 * m21 );
 
   var d = 1.0 / ( m00 * t0 + m10 * t1 + m20 * t2 + m30 * t3 );
 
@@ -204,29 +205,29 @@ function inverse4( m, dst ) {
   dst[ 2 ] = d * t2;
   dst[ 3 ] = d * t3;
   dst[ 4 ] = d * ( ( tmp_1 * m10 + tmp_2 * m20 + tmp_5 * m30 ) -
-    ( tmp_0 * m10 + tmp_3 * m20 + tmp_4 * m30 ) );
+                   ( tmp_0 * m10 + tmp_3 * m20 + tmp_4 * m30 ) );
   dst[ 5 ] = d * ( ( tmp_0 * m00 + tmp_7 * m20 + tmp_8 * m30 ) -
-    ( tmp_1 * m00 + tmp_6 * m20 + tmp_9 * m30 ) );
+                   ( tmp_1 * m00 + tmp_6 * m20 + tmp_9 * m30 ) );
   dst[ 6 ] = d * ( ( tmp_3 * m00 + tmp_6 * m10 + tmp_11 * m30 ) -
-    ( tmp_2 * m00 + tmp_7 * m10 + tmp_10 * m30 ) );
+                   ( tmp_2 * m00 + tmp_7 * m10 + tmp_10 * m30 ) );
   dst[ 7 ] = d * ( ( tmp_4 * m00 + tmp_9 * m10 + tmp_10 * m20 ) -
-    ( tmp_5 * m00 + tmp_8 * m10 + tmp_11 * m20 ) );
+                   ( tmp_5 * m00 + tmp_8 * m10 + tmp_11 * m20 ) );
   dst[ 8 ] = d * ( ( tmp_12 * m13 + tmp_15 * m23 + tmp_16 * m33 ) -
-    ( tmp_13 * m13 + tmp_14 * m23 + tmp_17 * m33 ) );
+                   ( tmp_13 * m13 + tmp_14 * m23 + tmp_17 * m33 ) );
   dst[ 9 ] = d * ( ( tmp_13 * m03 + tmp_18 * m23 + tmp_21 * m33 ) -
-    ( tmp_12 * m03 + tmp_19 * m23 + tmp_20 * m33 ) );
+                   ( tmp_12 * m03 + tmp_19 * m23 + tmp_20 * m33 ) );
   dst[ 10 ] = d * ( ( tmp_14 * m03 + tmp_19 * m13 + tmp_22 * m33 ) -
-    ( tmp_15 * m03 + tmp_18 * m13 + tmp_23 * m33 ) );
+                    ( tmp_15 * m03 + tmp_18 * m13 + tmp_23 * m33 ) );
   dst[ 11 ] = d * ( ( tmp_17 * m03 + tmp_20 * m13 + tmp_23 * m23 ) -
-    ( tmp_16 * m03 + tmp_21 * m13 + tmp_22 * m23 ) );
+                    ( tmp_16 * m03 + tmp_21 * m13 + tmp_22 * m23 ) );
   dst[ 12 ] = d * ( ( tmp_14 * m22 + tmp_17 * m32 + tmp_13 * m12 ) -
-    ( tmp_16 * m32 + tmp_12 * m12 + tmp_15 * m22 ) );
+                    ( tmp_16 * m32 + tmp_12 * m12 + tmp_15 * m22 ) );
   dst[ 13 ] = d * ( ( tmp_20 * m32 + tmp_12 * m02 + tmp_19 * m22 ) -
-    ( tmp_18 * m22 + tmp_21 * m32 + tmp_13 * m02 ) );
+                    ( tmp_18 * m22 + tmp_21 * m32 + tmp_13 * m02 ) );
   dst[ 14 ] = d * ( ( tmp_18 * m12 + tmp_23 * m32 + tmp_15 * m02 ) -
-    ( tmp_22 * m32 + tmp_14 * m02 + tmp_19 * m12 ) );
+                    ( tmp_22 * m32 + tmp_14 * m02 + tmp_19 * m12 ) );
   dst[ 15 ] = d * ( ( tmp_22 * m22 + tmp_16 * m02 + tmp_21 * m12 ) -
-    ( tmp_20 * m12 + tmp_23 * m22 + tmp_17 * m02 ) );
+                    ( tmp_20 * m12 + tmp_23 * m22 + tmp_17 * m02 ) );
 
   return dst;
 }
@@ -253,22 +254,104 @@ function rotation3( rad ) {
   return mat3( c, -s, 0, s, c, 0, 0, 0, 1 );
 }
 
-function rotationX4( rad ) {
+function rotationX4( rad, result ) {
+  result = result || new Float32Array( 16 );
   var c = Math.cos( rad );
   var s = Math.sin( rad );
-  return mat4( 1, 0, 0, 0, 0, c, s, 0, 0, -s, c, 0, 0, 0, 0, 1 );
+  result[0] = 1;
+  result[1] = 0;
+  result[2] = 0;
+  result[3] = 0;
+  
+  result[4] = 0;
+  result[5] = c;
+  result[6] = s;
+  result[7] = 0;
+  
+  result[8] = 0;
+  result[9] = -s;
+  result[10] = c;
+  result[11] = 0;
+  
+  result[12] = 0;
+  result[13] = 0;
+  result[14] = 0;
+  result[15] = 1;
+  return result;
 }
 
-function rotationY4( rad ) {
+function rotationY4( rad, result ) {
+  result = result || new Float32Array( 16 );
   var c = Math.cos( rad );
   var s = Math.sin( rad );
-  return mat4( c, 0, -s, 0, 0, 1, 0, 0, s, 0, c, 0, 0, 0, 0, 1 );
+  result[0] = c;
+  result[1] = 0;
+  result[2] = -s;
+  result[3] = 0;
+  
+  result[4] = 0;
+  result[5] = 1;
+  result[6] = 0;
+  result[7] = 0;
+  
+  result[8] = s;
+  result[9] = 0;
+  result[10] = c;
+  result[11] = 0;
+  
+  result[12] = 0;
+  result[13] = 0;
+  result[14] = 0;
+  result[15] = 1;
+  return result;
 }
 
-function rotationZ4( rad ) {
+function rotationZ4( rad, result ) {
+  result = result || new Float32Array( 16 );
   var c = Math.cos( rad );
   var s = Math.sin( rad );
-  return mat4( c, s, 0, 0, -s, c, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 );
+  result[0] = c;
+  result[1] = s;
+  result[2] = 0;
+  result[3] = 0;
+  result[4] = -s;
+  result[5] = c;
+  result[6] = 0;
+  result[7] = 0;
+  result[8] = 0;
+  result[9] = 0;
+  result[10] = 1;
+  result[11] = 0;
+  result[12] = 0;
+  result[13] = 0;
+  result[14] = 0;
+  result[15] = 1;
+  return result;
+}
+
+function rotationXY4( radX, radY, result ) {
+  result = result || new Float32Array( 16 );
+  var cx = Math.cos( radX );
+  var sx = Math.sin( radX );
+  var cy = Math.cos( radY );
+  var sy = Math.sin( radY );
+  result[0] = cy;
+  result[1] = sx*sy;
+  result[2] = -cx*sy;
+  result[3] = 0;
+  result[4] = 0;
+  result[5] = cx;
+  result[6] = sx;
+  result[7] = 0;
+  result[8] = sy;
+  result[9] = -sx*cy;
+  result[10] = cx*cy;
+  result[11] = 0;
+  result[12] = 0;
+  result[13] = 0;
+  result[14] = 0;
+  result[15] = 1;
+  return result;
 }
 
 function scaling3( sx, sy ) {
@@ -359,7 +442,7 @@ function mul( a, b, result ) {
   var f = MUL[ 'm' + a.length + 'm' + b.length ];
   if ( typeof f !== 'function' ) {
     throw Error( "[webgl.math.mul] I don't know how to multiply 'M" +
-      a.length + "' with 'M" + b.length + "'!" );
+                 a.length + "' with 'M" + b.length + "'!" );
   }
   return f( a, b, result );
 }
