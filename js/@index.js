@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**********************************************************************
  require( 'require' )
  -----------------------------------------------------------------------
@@ -69,11 +68,11 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.menu2', 'wdg.menu', {"value": [["intro","Introduction aux concepts fondamentaux","attachShader bindBuffer bufferData clear clearColor clearProgram compileShader createBuffer createShader drawArrays enableVertexAttribArray getAttribLocation linkProgram shaderSource useProgram vertexAttribPointer"],["uniform","Passer un uniforme","requestAnimationFrame getUniformLocation uniform4f uniform1f"],["chap2","Du triangle au polygône","drawArrays"],["pirate-flag","Animer un drapeau pirate",""],["lines","Traçons des lignes","gl.LINES requestAnimationFrame"],["boilerplate","Boilerplate","WebGL.Program WebGL.fetchAssets WebGL.newCanvas, WebGL.fillArrayBuffer"],["varying","Variations sur les couleurs","varying"],["aspect-ratio","Aspect Ratio","viewport clientWidth clientHeight"],["chap3","Textures procédurales","mod clamp"],["chap4","Animations de Textures",""],["interpolation","Interpolation","Coordonnée 'w'"],["marilyn","Marilyn",""],["dot","Un point c'est tout",""],["particules","Particules",""],["frame-buffer","Frame Buffer",""],["sprites","Sprites","gl.createTexture gl.bindTexture gl.texParameteri"],["deform","Déformations",""],["tunnel","Tunnel","createTexture, bindTexture, texParameteri, texImage2D, drawElements"],["boulder-dash","Boulder Dash",""],["boulder-dash2","Boulder Dash (Version 2)",""],["vector-drawing","Dessin vectoriel",""],["frustrum","Frustrum : un pas vers la 3D",""],["icosahedron","Les icosaèdres",""]]},{"id":"wdg.menu2"})
+        W('wdg.menu108', 'wdg.menu', {"value": [["intro","Introduction aux concepts fondamentaux","attachShader bindBuffer bufferData clear clearColor clearProgram compileShader createBuffer createShader drawArrays enableVertexAttribArray getAttribLocation linkProgram shaderSource useProgram vertexAttribPointer"],["uniform","Passer un uniforme","requestAnimationFrame getUniformLocation uniform4f uniform1f"],["chap2","Du triangle au polygône","drawArrays"],["pirate-flag","Animer un drapeau pirate",""],["lines","Traçons des lignes","gl.LINES requestAnimationFrame"],["boilerplate","Boilerplate","WebGL.Program WebGL.fetchAssets WebGL.newCanvas, WebGL.fillArrayBuffer"],["varying","Variations sur les couleurs","varying"],["aspect-ratio","Aspect Ratio","viewport clientWidth clientHeight"],["chap3","Textures procédurales","mod clamp"],["chap4","Animations de Textures",""],["interpolation","Interpolation","Coordonnée 'w'"],["marilyn","Marilyn",""],["dot","Un point c'est tout",""],["particules","Particules",""],["frame-buffer","Frame Buffer",""],["sprites","Sprites","gl.createTexture gl.bindTexture gl.texParameteri"],["deform","Déformations",""],["tunnel","Tunnel","createTexture, bindTexture, texParameteri, texImage2D, drawElements"],["boulder-dash","Boulder Dash",""],["boulder-dash2","Boulder Dash (Version 2)",""],["vector-drawing","Dessin vectoriel",""],["frustrum","Frustrum : un pas vers la 3D",""],["icosahedron","Les icosaèdres",""]]},{"id":"wdg.menu108"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.91"',major:"0",minor:"0",revision:"91",date:"2018-09-05T19:38:28.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.92"',major:"0",minor:"0",revision:"92",date:"2018-09-05T19:39:36.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("wdg.menu",function(e,r,t){function n(){var e=this.$elements.article;i.clear(e),this.value.forEach(function(r){var t=new s({id:r[0],title:r[1],keywords:r[2]});i.add(e,t)}),i.add(e,i.tag("hr")),i.add(e,i.tag("a",{href:"doc.html"},["Liens utiles vers de la documentation"])),i.add(e,i.tag("br"))}var a=function(){function r(){return n(t,arguments)}var t={en:{},fr:{}},n=e("$").intl;return r.all=t,r}(),o={refresh:n};e("theme");var i=e("dom"),s=e("wdg.menu.item");try{r.exports=function(){function r(e,r,t){return void 0===e[r]?t:e[r]}var t=e("dom"),n=e("tfw.binding.property-manager"),a=e("tfw.view").Tag,i=e("tfw.view"),s=e("tfw.binding.converters");i.ensureCodeBehind(o,"refresh");var d=s.get("array");return function(e){try{void 0===e&&(e={}),this.$elements={};var i=this,s=n(this);s.create("value",{cast:d});var c=new a("DIV",["class"]),l=new a("ARTICLE",["class"]);this.$elements.article=l;var u=new a("HEADER",["class"]);t.add(u,"Apprendre le WebGL"),t.add(c,l,u),Object.defineProperty(this,"$",{value:c.$,writable:!1,enumerable:!1,configurable:!1}),s.on("value",function(e){try{o.refresh.call(i,e)}catch(e){console.error('Exception in function behind "refresh" of module "mod/wdg.menu.js" for attribute "value"!  '),console.error(e)}}),c.class="wdg-menu",l.class="thm-bg1",u.class="thm-bgP thm-ele8",this.value=r(e,"value",[]),t.addClass(this,"view","custom")}catch(e){throw console.error("mod/wdg.menu.js",e),Error('Instantiation error in XJS of "mod/wdg.menu.js":\n'+e)}}}()}catch(e){throw Error('Definition error in XJS of "mod/wdg.menu.js"\n'+e)}r.exports._=a});
 //# sourceMappingURL=wdg.menu.js.map
@@ -119,79 +118,3 @@ require("tfw.css",function(e,r,t){var i=function(){function r(){return i(t,argum
 //# sourceMappingURL=tfw.css.js.map
 require("polyfill.string",function(r,t,n){var e=function(){function t(){return e(n,arguments)}var n={en:{}},e=r("$").intl;return t.all=n,t}();"function"!=typeof String.toLowerCase&&(String.toLowerCase=function(r){return r.toLowerCase()},String.toUpperCase=function(r){return r.toUpperCase()},String.trim=function(r){return r.trim()}),t.exports._=e});
 //# sourceMappingURL=polyfill.string.js.map
-=======
-/**********************************************************************
- require( 'require' )
- -----------------------------------------------------------------------
- @example
-
- var Path = require("node://path");  // Only in NodeJS/NW.js environment.
- var Button = require("tfw.button");
-
- **********************************************************************/
-
-window.require = function() {
-  var mocks = {};
-  var modules = {};
-  var definitions = {};
-  var nodejs_require = typeof window.require === 'function' ? window.require : null;
-
-  var f = function(id, body) {
-    var mock = mocks[id];
-    if( mock ) return mock;
-    
-    if( id.substr( 0, 7 ) == 'node://' ) {
-      // Calling for a NodeJS module.
-      if( !nodejs_require ) {
-        throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
-      }
-      return nodejs_require( id.substr( 7 ) );
-    }
-
-    if( typeof body === 'function' ) {
-      definitions[id] = body;
-      return;
-    }
-    var mod;
-    body = definitions[id];
-    if (typeof body === 'undefined') {
-      var err = new Error("Required module is missing: " + id);
-      console.error(err.stack);
-      throw err;
-    }
-    mod = modules[id];
-    if (typeof mod === 'undefined') {
-      mod = {exports: {}};
-      var exports = mod.exports;
-      body(f, mod, exports);
-      modules[id] = mod.exports;
-      mod = mod.exports;
-    }
-    return mod;
-  };
-
-  f.mock = function( moduleName, module ) {
-    mocks[moduleName] = module;
-  };
-  
-  return f;
-}();
-function addListener(e,l) {
-    if (window.addEventListener) {
-        window.addEventListener(e,l,false);
-    } else {
-        window.attachEvent('on' + e, l);
-    }
-};
-
-addListener(
-    'DOMContentLoaded',
-    function() {
-        document.body.parentNode.$data = {};
-        // Attach controllers.
-        var W = require('x-widget');
-        W('wdg.menu106', 'wdg.menu', {"value": [["intro","Introduction aux concepts fondamentaux","attachShader bindBuffer bufferData clear clearColor clearProgram compileShader createBuffer createShader drawArrays enableVertexAttribArray getAttribLocation linkProgram shaderSource useProgram vertexAttribPointer"],["uniform","Passer un uniforme","requestAnimationFrame getUniformLocation uniform4f uniform1f"],["chap2","Du triangle au polygône","drawArrays"],["pirate-flag","Animer un drapeau pirate",""],["lines","Traçons des lignes","gl.LINES requestAnimationFrame"],["boilerplate","Boilerplate","WebGL.Program WebGL.fetchAssets WebGL.newCanvas, WebGL.fillArrayBuffer"],["varying","Variations sur les couleurs","varying"],["aspect-ratio","Aspect Ratio","viewport clientWidth clientHeight"],["chap3","Textures procédurales","mod clamp"],["chap4","Animations de Textures",""],["interpolation","Interpolation","Coordonnée 'w'"],["marilyn","Marilyn",""],["dot","Un point c'est tout",""],["particules","Particules",""],["frame-buffer","Frame Buffer",""],["sprites","Sprites","gl.createTexture gl.bindTexture gl.texParameteri"],["deform","Déformations",""],["tunnel","Tunnel","createTexture, bindTexture, texParameteri, texImage2D, drawElements"],["boulder-dash","Boulder Dash",""],["boulder-dash2","Boulder Dash (Version 2)",""],["vector-drawing","Dessin vectoriel",""],["frustrum","Frustrum : un pas vers la 3D",""]]},{"id":"wdg.menu106"})
-
-    }
-);
->>>>>>> d7def5850a86a5261357c67a9df2ddc9f498bfa4
