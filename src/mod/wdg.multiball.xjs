@@ -1,0 +1,10 @@
+{View CANVAS class:"thm-ele8 wdg-multiball"
+  view.attribs: {
+    fullscreen: {boolean false}
+  }
+
+  view.init: init
+
+  event.tap: {toggle fullscreen}
+  class.fullscreen: {Bind fullscreen}
+}
