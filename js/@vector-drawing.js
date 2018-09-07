@@ -68,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article150', 'wdg.article', {
+        W('wdg.article152', 'wdg.article', {
             title: "Dessin vectoriel",
             content: [
           W({
@@ -77,10 +77,10 @@ addListener(
               children: ["Remplir une courbe fermée"]}),
           W({
               elem: "p",
-              children: [W('wdg.vectorDrawing3151','wdg.vectorDrawing3',{
+              children: [W('wdg.vectorDrawing3153','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "1"},{"id":"wdg.vectorDrawing3151","class":"right"})]}),
+                  index: "1"},{"id":"wdg.vectorDrawing3153","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -240,7 +240,7 @@ addListener(
               children: ["Voici la formule qui permet de calculer le produit vectoriel :"]}),
           W({
               elem: "p",
-              children: [W('wdg.matrix152','wdg.matrix',{"value": "[x;y;z]^[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"},{"id":"wdg.matrix152"})]}),
+              children: [W('wdg.matrix154','wdg.matrix',{"value": "[x;y;z]^[x';y';z'] = [yz'-y'z;x'z-xz';xy'-x'y]"},{"id":"wdg.matrix154"})]}),
           W({
               elem: "p",
               children: [
@@ -251,7 +251,7 @@ addListener(
                 ".\nEt ça simplifie grandement le calcul du produit vectoriel :"]}),
           W({
               elem: "p",
-              children: [W('wdg.matrix153','wdg.matrix',{"value": "[x;y;0]^[x';y';0] = [0;0;xy'-x'y]"},{"id":"wdg.matrix153"})]}),
+              children: [W('wdg.matrix155','wdg.matrix',{"value": "[x;y;0]^[x';y';0] = [0;0;xy'-x'y]"},{"id":"wdg.matrix155"})]}),
           W({
               elem: "p",
               children: [
@@ -290,7 +290,7 @@ addListener(
               children: ["Triangles candidats"]}),
           W({
               elem: "p",
-              children: [W('wdg.vectorDrawing154','wdg.vectorDrawing',{},{"id":"wdg.vectorDrawing154","class":"right"})]}),
+              children: [W('wdg.vectorDrawing156','wdg.vectorDrawing',{},{"id":"wdg.vectorDrawing156","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -334,7 +334,7 @@ addListener(
                 "éviction. Dans ce cas, on fait la supposition inverse (le premier angle est concave) et on est bon."]}),
           W({
               elem: "p",
-              children: [W('wdg.vectorDrawing2155','wdg.vectorDrawing2',{},{"id":"wdg.vectorDrawing2155","class":"right"})]}),
+              children: [W('wdg.vectorDrawing2157','wdg.vectorDrawing2',{},{"id":"wdg.vectorDrawing2157","class":"right"})]}),
           W({
               elem: "p",
               children: ["Comment savoir si un point est contenu dans un triangle ?"]}),
@@ -401,50 +401,50 @@ addListener(
           W({
               elem: "p",
               children: [
-                W('wdg.vectorDrawing3156','wdg.vectorDrawing3',{
-                  width: "300",
-                  height: "300",
-                  index: "0"},{"id":"wdg.vectorDrawing3156"}),
-                "\n",
-                W('wdg.vectorDrawing3157','wdg.vectorDrawing3',{
-                  width: "300",
-                  height: "300",
-                  index: "1"},{"id":"wdg.vectorDrawing3157"}),
-                "\n",
                 W('wdg.vectorDrawing3158','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "2"},{"id":"wdg.vectorDrawing3158"}),
+                  index: "0"},{"id":"wdg.vectorDrawing3158"}),
                 "\n",
                 W('wdg.vectorDrawing3159','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "3"},{"id":"wdg.vectorDrawing3159"}),
+                  index: "1"},{"id":"wdg.vectorDrawing3159"}),
                 "\n",
                 W('wdg.vectorDrawing3160','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "4"},{"id":"wdg.vectorDrawing3160"}),
+                  index: "2"},{"id":"wdg.vectorDrawing3160"}),
                 "\n",
                 W('wdg.vectorDrawing3161','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "5"},{"id":"wdg.vectorDrawing3161"}),
+                  index: "3"},{"id":"wdg.vectorDrawing3161"}),
                 "\n",
                 W('wdg.vectorDrawing3162','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "6"},{"id":"wdg.vectorDrawing3162"}),
+                  index: "4"},{"id":"wdg.vectorDrawing3162"}),
                 "\n",
                 W('wdg.vectorDrawing3163','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "6"},{"id":"wdg.vectorDrawing3163"}),
+                  index: "5"},{"id":"wdg.vectorDrawing3163"}),
                 "\n",
                 W('wdg.vectorDrawing3164','wdg.vectorDrawing3',{
                   width: "300",
                   height: "300",
-                  index: "6"},{"id":"wdg.vectorDrawing3164"})]}),
+                  index: "6"},{"id":"wdg.vectorDrawing3164"}),
+                "\n",
+                W('wdg.vectorDrawing3165','wdg.vectorDrawing3',{
+                  width: "300",
+                  height: "300",
+                  index: "6"},{"id":"wdg.vectorDrawing3165"}),
+                "\n",
+                W('wdg.vectorDrawing3166','wdg.vectorDrawing3',{
+                  width: "300",
+                  height: "300",
+                  index: "6"},{"id":"wdg.vectorDrawing3166"})]}),
           W({
               elem: "p",
               children: [W({
@@ -5776,11 +5776,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["};"]}),
-                    " "]})]})]},{"id":"wdg.article150"})
+                    " "]})]})]},{"id":"wdg.article152"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.92"',major:"0",minor:"0",revision:"92",date:"2018-09-05T19:39:36.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.93"',major:"0",minor:"0",revision:"93",date:"2018-09-07T19:37:03.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map

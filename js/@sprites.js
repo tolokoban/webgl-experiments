@@ -68,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article137', 'wdg.article', {
+        W('wdg.article139', 'wdg.article', {
             title: "Sprites",
             content: [
           W({
@@ -81,9 +81,9 @@ addListener(
                 ".\nVous pouvez constater que ça reste fluide."]}),
           W({
               elem: "p",
-              children: [W('wdg.gl5138','wdg.gl5',{
+              children: [W('wdg.gl5140','wdg.gl5',{
                   width: "880",
-                  height: "660"},{"id":"wdg.gl5138"})]}),
+                  height: "660"},{"id":"wdg.gl5140"})]}),
           W({
               elem: "p",
               children: ["Pour WebGL, chaque sprite sera un carré formé de 4 vertices qui auront tous les mêmes coordonnées\n(celles du centre du sprite) ainsi que les attributs suivants :"]}),
@@ -421,7 +421,7 @@ addListener(
                     " "]})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide139','wdg.showhide',{
+              children: [W('wdg.showhide141','wdg.showhide',{
                   value: "false",
                   label: "Le plus gros de la logique se trouve dans le vertex shader",
                   content: [
@@ -1331,12 +1331,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide139"})]}),
+                        " "]})]},{"id":"wdg.showhide141"})]}),
           W({
               elem: "p",
               children: [
                 "Côté Javascript, nous allons faire varier les valeurs des attributs de chaque sprite\nen fonction du temps.\nAinsi, à chaque frame, nous devrons rafraichir le buffer lié à ces attributs.\n",
-                W('wdg.showhide140','wdg.showhide',{
+                W('wdg.showhide142','wdg.showhide',{
                   value: "false",
                   label: "Voici le code de la fonction qui défini les sprites pour le Javascript",
                   content: [
@@ -1832,7 +1832,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide140"})]}),
+                        " "]})]},{"id":"wdg.showhide142"})]}),
           W({
               elem: "p",
               children: ["Nous allons maintenant définir le lien entre un buffer et les attributs dont on a besoin.\nNotre vertex shader aura besoin des 4 attributs suivants :"]}),
@@ -1894,7 +1894,7 @@ addListener(
                 "appeler le premier microprocesseur de vertex shader disponible."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide141','wdg.showhide',{
+              children: [W('wdg.showhide143','wdg.showhide',{
                   value: "false",
                   label: "Voici le code qui définit l'association entre les attributs et les blocs du tableau",
                   content: [
@@ -2829,10 +2829,10 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        " "]})]},{"id":"wdg.showhide141"})]}),
+                        " "]})]},{"id":"wdg.showhide143"})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide142','wdg.showhide',{
+              children: [W('wdg.showhide144','wdg.showhide',{
                   value: "false",
                   label: "Et celui qui dessine chaque frame",
                   content: [
@@ -4213,7 +4213,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide142"})]}),
+                        " "]})]},{"id":"wdg.showhide144"})]}),
           W({
               elem: "h1",
               attr: {"id": "remarque-concernant-l-initialisation-du-contexte-webgl"},
@@ -4732,11 +4732,11 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    " "]})]})]},{"id":"wdg.article137"})
+                    " "]})]})]},{"id":"wdg.article139"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.92"',major:"0",minor:"0",revision:"92",date:"2018-09-05T19:39:36.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.93"',major:"0",minor:"0",revision:"93",date:"2018-09-07T19:37:03.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map

@@ -68,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article129', 'wdg.article', {
+        W('wdg.article131', 'wdg.article', {
             title: "Animer un drapeau pirate",
             content: [
           W({
@@ -128,7 +128,7 @@ addListener(
                 "animation se fait une fois que l",
                 "&#39;",
                 "image a été chargée :\n",
-                W('wdg.showhide130','wdg.showhide',{
+                W('wdg.showhide132','wdg.showhide',{
                   value: "false",
                   label: "Initialisation",
                   content: [
@@ -331,14 +331,14 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide130"})]}),
+                        " "]})]},{"id":"wdg.showhide132"})]}),
           W({
               elem: "p",
               children: [
                 "Il faut ensuite créer le programme qui va s",
                 "&#39;",
                 "occuper de calculer les déplacements verticaux de chaque bande:\n",
-                W('wdg.showhide131','wdg.showhide',{
+                W('wdg.showhide133','wdg.showhide',{
                   value: "false",
                   label: "Créer un programme pour les chaders",
                   content: [
@@ -1109,9 +1109,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide131"}),
+                        " "]})]},{"id":"wdg.showhide133"}),
                 "\n",
-                W('wdg.showhide132','wdg.showhide',{
+                W('wdg.showhide134','wdg.showhide',{
                   value: "false",
                   label: "Vertex shader",
                   content: [
@@ -1786,9 +1786,9 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide132"}),
+                        " "]})]},{"id":"wdg.showhide134"}),
                 "\n",
-                W('wdg.showhide133','wdg.showhide',{
+                W('wdg.showhide135','wdg.showhide',{
                   value: "false",
                   label: "Fragment shader",
                   content: [
@@ -2289,13 +2289,13 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide133"}),
+                        " "]})]},{"id":"wdg.showhide135"}),
                 "    "]}),
           W({
               elem: "p",
               children: [
                 "Le code suivant permet de créer les vertex de nos bandes verticales :\n",
-                W('wdg.showhide134','wdg.showhide',{
+                W('wdg.showhide136','wdg.showhide',{
                   value: "false",
                   label: "createVertices()",
                   content: [
@@ -2658,14 +2658,14 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide134"})]}),
+                        " "]})]},{"id":"wdg.showhide136"})]}),
           W({
               elem: "p",
               children: [
                 "L",
                 "&#39;",
                 "image de notre drapeau doit être stoquée dans une texture pour pouvoir être exploitée par WebGL :\n",
-                W('wdg.showhide135','wdg.showhide',{
+                W('wdg.showhide137','wdg.showhide',{
                   value: "false",
                   label: "createTexture()",
                   content: [
@@ -3080,7 +3080,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide135"})]}),
+                        " "]})]},{"id":"wdg.showhide137"})]}),
           W({
               elem: "p",
               children: [
@@ -3091,7 +3091,7 @@ addListener(
                 "est le GPU (la carte graphique) qui se charge de tous les calcules."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide136','wdg.showhide',{
+              children: [W('wdg.showhide138','wdg.showhide',{
                   value: "false",
                   label: "Fonction d'animation",
                   content: [
@@ -3528,11 +3528,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide136"})]})]},{"id":"wdg.article129"})
+                        " "]})]},{"id":"wdg.showhide138"})]})]},{"id":"wdg.article131"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.92"',major:"0",minor:"0",revision:"92",date:"2018-09-05T19:39:36.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.93"',major:"0",minor:"0",revision:"93",date:"2018-09-07T19:37:03.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map

@@ -68,7 +68,7 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article125', 'wdg.article', {
+        W('wdg.article127', 'wdg.article', {
             title: "Particules",
             content: [
           W({
@@ -79,9 +79,9 @@ addListener(
                 "eau et tout ce que votre imagination peut créer."]}),
           W({
               elem: "p",
-              children: [W('wdg.gl7126','wdg.gl7',{
+              children: [W('wdg.gl7128','wdg.gl7',{
                   width: "640",
-                  height: "640"},{"id":"wdg.gl7126"})]}),
+                  height: "640"},{"id":"wdg.gl7128"})]}),
           W({
               elem: "p",
               children: [
@@ -376,7 +376,7 @@ addListener(
                 " se base sur cette variable pour calculer la position, la taille et la couleur du vertex, donc de la particule."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide127','wdg.showhide',{
+              children: [W('wdg.showhide129','wdg.showhide',{
                   value: "false",
                   label: "Vertex Shader",
                   content: [
@@ -1721,7 +1721,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide127"})]}),
+                        " "]})]},{"id":"wdg.showhide129"})]}),
           W({
               elem: "p",
               children: [
@@ -1736,7 +1736,7 @@ addListener(
                 "\net qui devient de plus en plus transparent en allant vers la périphérie."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide128','wdg.showhide',{
+              children: [W('wdg.showhide130','wdg.showhide',{
                   value: "false",
                   label: "Fragment Shader",
                   content: [
@@ -2113,7 +2113,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide128"})]}),
+                        " "]})]},{"id":"wdg.showhide130"})]}),
           W({
               elem: "p",
               children: [
@@ -2770,11 +2770,11 @@ addListener(
                   children: ["\nRed   := Rs * As + Rd * (1 - As)\nGreen := Gs * As + Gd * (1 - As)\nBlue  := Bs * As + Bd * (1 - As)\nAlpha := As * 0 + Ad * 1\n"]})]}),
           W({
               elem: "p",
-              children: ["Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets."]})]},{"id":"wdg.article125"})
+              children: ["Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets."]})]},{"id":"wdg.article127"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.92"',major:"0",minor:"0",revision:"92",date:"2018-09-05T19:39:36.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.93"',major:"0",minor:"0",revision:"93",date:"2018-09-07T19:37:03.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
