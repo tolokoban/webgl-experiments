@@ -1,7 +1,5 @@
 precision mediump float;
 
-varying float varDepth;
-
 const vec3 WHITE = vec3(1, 1, 1);
 const vec3 BLACK = vec3(0, 0, 0);
 const vec3 DARK = vec3(.4, .2, 0);
@@ -18,10 +16,5 @@ void main() {
   }
   
   vec3 color = mix( COLOR, DARK, r );
-  float z = varDepth;
-  if( z > 0.0 )
-    color = mix( color, WHITE, z );
-  else
-    color = mix( color, BLACK, -z );
   gl_FragColor = vec4( color, 1.0 );
 }

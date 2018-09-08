@@ -1,10 +1,16 @@
-{View CANVAS class:"thm-ele8 wdg-multiball"
+{View DIV class:"thm-ele8 wdg-multiball"
   view.attribs: {
     fullscreen: {boolean false}
+    alpha: {float .5}
   }
 
   view.init: init
 
-  event.tap: {toggle fullscreen}
   class.fullscreen: {Bind fullscreen}
+
+  [
+    {CANVAS view.id:canvas}
+    {tfw.view.textbox value:{Bind alpha} label:Coeff width:48px}
+    {tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}
+  ]
 }

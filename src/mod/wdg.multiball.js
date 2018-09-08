@@ -5,20 +5,20 @@ var CODE_BEHIND = {
   init: init
 };
 
-var RADIUS = .5;
-
-
 var M4 = require("webgl.math").m4;
 var Resize = require("webgl.resize");
 var Program = require("webgl.program");
 
+
 function init() {
-  var gl = createContext3D( this.$ );
+  var that = this;
+
+  var gl = createContext3D( this.$elements.canvas.$ );
   var prg = new Program( gl, {
     vert: GLOBAL.vert,
     frag: GLOBAL.frag
   });
-  var vertices = createVertices( RADIUS );
+  var vertices = createVertices();
   var buffData = gl.createBuffer();
   gl.bindBuffer( gl.ARRAY_BUFFER, buffData );
   gl.bufferData( gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW );
@@ -49,8 +49,11 @@ function init() {
     prg.$uniProjection = projection;
     prg.$uniRotation = rotation;
     prg.$uniScreenWidth = w;
+    prg.$uniDistance = 0.5;
+    prg.$uniRadius = 0.3587 * 0.5;
+    prg.$uniAlpha = that.alpha;
 
-    prg.bindAttribs( buffData, "attPoint", "attRadius" );
+    prg.bindAttribs( buffData, "attPoint", "attLevel" );
     gl.drawArrays( gl.POINTS, 0, vertices.length / 4 );
   };
 
@@ -96,14 +99,11 @@ function createIcosahedronIndexes() {
   ]);
 }
 
-function createVertices( radius ) {
-  if( typeof radius === 'undefined' ) radius = 1;
-
-  var vert = createIcosahedronVertices( radius );
+function createVertices() {
+  var vert = createIcosahedronVertices();
   var elem = createIcosahedronIndexes();
   var vertices = [];
   var faceIdx;
-  var miniRadius = 0.3587 * radius;
   var x, y, z;
   var r;
   for( faceIdx=0; faceIdx<20 ; faceIdx++ ) {
@@ -119,27 +119,19 @@ function createVertices( radius ) {
     x = x0 + x1 + x2;
     y = y0 + y1 + y2;
     z = z0 + z1 + z2;
-    r = Math.sqrt( x*x + y*y + z*z ) / radius;
+    r = Math.sqrt( x*x + y*y + z*z );
 
-    vertices.push(
-      x / r, y / r, z / r, miniRadius
-    );
+    vertices.push( x / r, y / r, z / r, 0 );
   }
 
   var loop;
-  var coeff = 0.75;
-  var miniRadius2 = miniRadius * coeff;
-  r = radius;
-  for( loop = 0; loop < 5; loop++ ) {
-    r += miniRadius + miniRadius2;
+  for( loop = 1; loop < 9; loop++ ) {
     for( faceIdx=0; faceIdx<20 ; faceIdx++ ) {
-      x = vertices[faceIdx * 4 + 0] * r / radius;
-      y = vertices[faceIdx * 4 + 1] * r / radius;
-      z = vertices[faceIdx * 4 + 2] * r / radius;
-      vertices.push( x, y, z, miniRadius2 );
+      x = vertices[faceIdx * 4 + 0];
+      y = vertices[faceIdx * 4 + 1];
+      z = vertices[faceIdx * 4 + 2];
+      vertices.push( x, y, z, loop );
     }
-    miniRadius = miniRadius2;
-    miniRadius2 *= coeff;
   }
   console.info("[wdg.multiball-1] vertices=", vertices);
   return new Float32Array( vertices );
