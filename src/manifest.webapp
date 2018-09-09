@@ -1,6 +1,6 @@
 {
   "name": "webgl-experiments",
-  "version": "0.0.97",
+  "version": "0.0.98",
   "description": "WebGL study by tutorials",
   "launch_path": "/index.html",
   "fullscreen": "false",

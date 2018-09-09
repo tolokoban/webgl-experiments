@@ -1,6 +1,7 @@
 {View DIV class:"thm-ele8 wdg-multiball"
   view.attribs: {
     fullscreen: {boolean false}
+    extra: {boolean false}
     alpha: {float .5}
   }
 
@@ -11,6 +12,7 @@
   [
     {CANVAS view.id:canvas}
     {tfw.view.textbox value:{Bind alpha} label:Coeff width:48px}
-    {tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}
+    {DIV class:bottom [{tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}]}
+    {DIV class:top [{tfw.view.checkbox content:"Rayures" value:{Bind extra} wide:false}]}
   ]
 }

@@ -1,6 +1,8 @@
 {
-  "var": {
-    "vert": "wdg.multiball.vert",
-    "frag": "wdg.multiball.frag"
+  var: {
+    vert: wdg.multiball.vert
+    frag: wdg.multiball.frag
+    vertExtra: wdg.multiball.extra.vert
+    fragExtra: wdg.multiball.extra.frag
   }
 }

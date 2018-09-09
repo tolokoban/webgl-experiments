@@ -14,9 +14,13 @@ function init() {
   var that = this;
 
   var gl = createContext3D( this.$elements.canvas.$ );
-  var prg = new Program( gl, {
+  var prgBasic = new Program( gl, {
     vert: GLOBAL.vert,
     frag: GLOBAL.frag
+  });
+  var prgExtra = new Program( gl, {
+    vert: GLOBAL.vertExtra,
+    frag: GLOBAL.fragExtra
   });
   var vertices = createVertices();
   var buffData = gl.createBuffer();
@@ -45,6 +49,8 @@ function init() {
 
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
+    var prg = that.extra ? prgExtra : prgBasic;
+    
     prg.use();
     prg.$uniProjection = projection;
     prg.$uniRotation = rotation;

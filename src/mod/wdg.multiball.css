@@ -37,9 +37,19 @@
 
 .wdg-multiball > button.tfw-view-checkbox {
   position: absolute;
+}
+
+.wdg-multiball > .bottom {
   left: auto;
   top: auto;
   right: 4px;
   bottom: 4px;
+}
+
+.wdg-multiball > .top {
+  left: auto;
+  top: 4px;
+  right: 4px;
+  bottom: auto;
 }
 
