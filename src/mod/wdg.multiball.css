@@ -45,6 +45,13 @@
   bottom: 4px;
 }
 
+.wdg-multiball > .left {
+  left: 4px;
+  top: auto;
+  right: auto;
+  bottom: 4px;
+}
+
 .wdg-multiball > .top {
   left: auto;
   top: 4px;

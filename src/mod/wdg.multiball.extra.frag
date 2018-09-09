@@ -44,8 +44,11 @@ void main() {
 
   float light = dot( arrow, LIGHT );
   if( light < 0.43 ) color *= .5;
-  else if( light > 0.75 ) {
-    color = mix( color, WHITE, (light - .75) * 3.0 );
+  else if( light > 0.95 ) {    
+    color = mix( color, WHITE, .75 );
+  }
+  else if( light > 0.75 ) {    
+    color = mix( color, WHITE, .5 );
   }
   
   gl_FragColor = vec4( color, 1.0 );

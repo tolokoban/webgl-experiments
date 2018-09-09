@@ -2,6 +2,7 @@
   view.attribs: {
     fullscreen: {boolean false}
     extra: {boolean false}
+    dense: {boolean false}
     alpha: {float .5}
   }
 
@@ -13,6 +14,7 @@
     {CANVAS view.id:canvas}
     {tfw.view.textbox value:{Bind alpha} label:Coeff width:48px}
     {DIV class:bottom [{tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}]}
+    {DIV class:left [{tfw.view.checkbox content:"Dense" value:{Bind dense} wide:false}]}
     {DIV class:top [{tfw.view.checkbox content:"Rayures" value:{Bind extra} wide:false}]}
   ]
 }

@@ -50,17 +50,18 @@ function init() {
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
     var prg = that.extra ? prgExtra : prgBasic;
-    
+
     prg.use();
     prg.$uniProjection = projection;
     prg.$uniRotation = rotation;
     prg.$uniScreenWidth = w * window.devicePixelRatio;
     prg.$uniDistance = 0.5;
-    prg.$uniRadius = 0.3587 * 0.5;
+    prg.$uniRadius = 0.17;
     prg.$uniAlpha = that.alpha;
 
     prg.bindAttribs( buffData, "attPoint", "attLevel" );
-    gl.drawArrays( gl.POINTS, 0, vertices.length / 4 );
+    var count = that.dense ? vertices.length / 4 : 20 * 10;
+    gl.drawArrays( gl.POINTS, 0, count );
   };
 
   requestAnimationFrame( draw );
@@ -109,19 +110,19 @@ function createVertices() {
   var vert = createIcosahedronVertices();
   var elem = createIcosahedronIndexes();
   var vertices = [];
-  var faceIdx;
+  var idx;
   var x, y, z;
   var r;
-  for( faceIdx=0; faceIdx<20 ; faceIdx++ ) {
-    var x0 = vert[elem[3 * faceIdx + 0] * 3 + 0];
-    var y0 = vert[elem[3 * faceIdx + 0] * 3 + 1];
-    var z0 = vert[elem[3 * faceIdx + 0] * 3 + 2];
-    var x1 = vert[elem[3 * faceIdx + 1] * 3 + 0];
-    var y1 = vert[elem[3 * faceIdx + 1] * 3 + 1];
-    var z1 = vert[elem[3 * faceIdx + 1] * 3 + 2];
-    var x2 = vert[elem[3 * faceIdx + 2] * 3 + 0];
-    var y2 = vert[elem[3 * faceIdx + 2] * 3 + 1];
-    var z2 = vert[elem[3 * faceIdx + 2] * 3 + 2];
+  for( idx=0; idx<20 ; idx++ ) {
+    var x0 = vert[elem[3 * idx + 0] * 3 + 0];
+    var y0 = vert[elem[3 * idx + 0] * 3 + 1];
+    var z0 = vert[elem[3 * idx + 0] * 3 + 2];
+    var x1 = vert[elem[3 * idx + 1] * 3 + 0];
+    var y1 = vert[elem[3 * idx + 1] * 3 + 1];
+    var z1 = vert[elem[3 * idx + 1] * 3 + 2];
+    var x2 = vert[elem[3 * idx + 2] * 3 + 0];
+    var y2 = vert[elem[3 * idx + 2] * 3 + 1];
+    var z2 = vert[elem[3 * idx + 2] * 3 + 2];
     x = x0 + x1 + x2;
     y = y0 + y1 + y2;
     z = z0 + z1 + z2;
@@ -131,14 +132,27 @@ function createVertices() {
   }
 
   var loop;
-  for( loop = 1; loop < 9; loop++ ) {
-    for( faceIdx=0; faceIdx<20 ; faceIdx++ ) {
-      x = vertices[faceIdx * 4 + 0];
-      y = vertices[faceIdx * 4 + 1];
-      z = vertices[faceIdx * 4 + 2];
+  for( loop = 1; loop < 10; loop++ ) {
+    for( idx=0; idx<20 ; idx++ ) {
+      x = vertices[idx * 4 + 0];
+      y = vertices[idx * 4 + 1];
+      z = vertices[idx * 4 + 2];
       vertices.push( x, y, z, loop );
     }
   }
+
+  // Combler les trous.
+  for( idx = 0; idx < 12; idx++ ) {
+    x = vert[idx * 3 + 0];
+    y = vert[idx * 3 + 1];
+    z = vert[idx * 3 + 2];
+    r = Math.sqrt( x*x + y*y + z*z );
+    for( loop = 0; loop < 10; loop++ ) {
+      vertices.push( x / r, y / r, z / r, loop );
+    }
+  }
+
+
   console.info("[wdg.multiball-1] vertices=", vertices);
   return new Float32Array( vertices );
 }
