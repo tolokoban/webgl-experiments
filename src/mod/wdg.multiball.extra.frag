@@ -16,11 +16,10 @@ varying vec3 varAxis;
  * Cette fonction retourne les coordonnées (x,y,zz) à partir du point (x,y).
  */
 vec3 getSphericalVector( float x, float y ) {
-  if( x == 0.0 ) return vec3(x, y, 0);
-  
   float phi = asin( y );
   float radius = cos( phi );
-  float theta = asin( x / radius );
+  float theta = 0.0;
+  if( x != 0.0 ) theta = asin( x / radius );
 
   float zz = radius * cos( theta );
   return vec3(x, -y, zz);
