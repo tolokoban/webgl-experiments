@@ -48,7 +48,7 @@ function init() {
     prg.use();
     prg.$uniProjection = projection;
     prg.$uniRotation = rotation;
-    prg.$uniScreenWidth = w;
+    prg.$uniScreenWidth = w * window.devicePixelRatio;
     prg.$uniDistance = 0.5;
     prg.$uniRadius = 0.3587 * 0.5;
     prg.$uniAlpha = that.alpha;
