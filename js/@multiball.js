@@ -68,12 +68,12 @@ addListener(
         document.body.parentNode.$data = {};
         // Attach controllers.
         var W = require('x-widget');
-        W('wdg.article0', 'wdg.article', {
+        W('wdg.article124', 'wdg.article', {
             title: "Multi-Ball",
             content: [
           W({
               elem: "p",
-              children: [W('wdg.multiball1','wdg.multiball',{},{"id":"wdg.multiball1","class":"right"})]}),
+              children: [W('wdg.multiball125','wdg.multiball',{},{"id":"wdg.multiball125","class":"right"})]}),
           W({
               elem: "p",
               children: [
@@ -325,7 +325,7 @@ addListener(
                     " - 1)) / (c - 1)"]})]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide2','wdg.showhide',{
+              children: [W('wdg.showhide126','wdg.showhide',{
                   value: "false",
                   label: "Le vertex shader qui applique cette formule",
                   content: [
@@ -1127,7 +1127,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide2"})]}),
+                        " "]})]},{"id":"wdg.showhide126"})]}),
           W({
               elem: "h1",
               attr: {"id": "dessiner-un-cercle-partir-d-un-point"},
@@ -1416,7 +1416,7 @@ addListener(
                 " au centre. Dans ce repère, un fragment est en dehors du disque si et seulement si sa distance au centre est supérieure à 1."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide3','wdg.showhide',{
+              children: [W('wdg.showhide127','wdg.showhide',{
                   value: "false",
                   label: "Le fragment shader",
                   content: [
@@ -1959,7 +1959,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide3"})]}),
+                        " "]})]},{"id":"wdg.showhide127"})]}),
           W({
               elem: "p",
               children: [
@@ -2384,7 +2384,7 @@ addListener(
                 "hémisphère du haut, sinon, on est dans celle du bas."]}),
           W({
               elem: "p",
-              children: [W('wdg.showhide4','wdg.showhide',{
+              children: [W('wdg.showhide128','wdg.showhide',{
                   value: "false",
                   label: "Le fragment shader pour les rayures",
                   content: [
@@ -3793,11 +3793,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " "]})]},{"id":"wdg.showhide4"})]})]},{"id":"wdg.article0"})
+                        " "]})]},{"id":"wdg.showhide128"})]})]},{"id":"wdg.article124"})
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.104"',major:"0",minor:"0",revision:"104",date:"2018-09-10T14:39:39.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.105"',major:"0",minor:"0",revision:"105",date:"2018-09-10T15:30:59.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
