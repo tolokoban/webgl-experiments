@@ -10,11 +10,9 @@ const vec3 LIGHT = normalize(vec3(-1, 2, 4));
 varying vec3 varAxis;
 
 
-/**
- * Si on fait face à un point de coordonnées (x,y) dans un cercle 2D.
- * On peut imaginer qu'il s'agit en fait d'un point (x,y,zz) dans une demi-sphère.
- * Cette fonction retourne les coordonnées (x,y,zz) à partir du point (x,y).
- */
+// Si on fait face à un point de coordonnées (x,y) dans un cercle 2D.
+// On peut imaginer qu'il s'agit en fait d'un point (x,y,zz) dans une demi-sphère.
+// Cette fonction retourne les coordonnées (x,y,zz) à partir du point (x,y).
 vec3 getSphericalVector( float x, float y ) {
   float phi = asin( y );
   float radius = cos( phi );

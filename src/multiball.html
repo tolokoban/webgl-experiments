@@ -6,13 +6,99 @@ L'animation ci-contre est composée de sphères placées sur 10 orbites différe
 
 Normalement il y a 20 sphères sur une orbite, mais en mode dense, on en affiche 32. Le mode *rayures* permet de donner plus de relief aux sphères tout en leur ajoutant des ombres façon cartoon.
 
+
 # Calcul des coordonnées des sphères d'une orbite
+
+Afin d'avoir une symétrie parfaite, on se base sur un <a href="icosahedron.html">icosaèdre</a> pour placer les sphères d'une orbite. Ce polyèdre possède 20 faces et 12 sommets. Si on considère chaque sommet comme un vecteur partant du centre, on peut déterminer les positions relatives aux faces en normalisant le vecteur résultant de l'ajout des vecteurs associés aux sommets du triangle de chaque face.
+
 
 # Changer le coefficient sans modifier les vertex
 
+Chaque sphère est représentée par 4 attributs :
+* les coordonnes X, Y et Z du centre de la sphère si elle était sur l'orbite 0,
+* et le numéro de l'orbite (de 0 à 9).
+
+Posons `R` le rayon de l'orbite 0, `r` le rayon des sphères sur l'orbite 0 et `c` le coefficient de modification de ce rayon pour passer à l'orbite suivante. On aura alors :
+
+| Orbite | Rayon de l'orbite                                         | Rayon de la sphère |
+| ------ | --------------------------------------------------------- | ------------------ |
+|      0 |                                                         R |                  r |     
+|      1 |                                     R + r + r<sup>2</sup> |      r<sup>2</sup> |     
+|      2 |                   R + r + 2.r<sup>2</sup> + r<sup>3</sup> |      r<sup>3</sup> |     
+|      3 | R + r + 2.r<sup>2</sup> + 2.r<sup>3</sup> + r<sup>4</sup> |      r<sup>4</sup> |     
+
+Si on pose `n` le numéro de l'orbite, on obtient la formule suivante :  
+`R(n) = R - r.(1 + c<sup>n</sup>) + (2r.(c<sup>n + 1</sup> - 1)) / (c - 1)`
+
+<ex src="mod/wdg.multiball.vert" label="Le vertex shader qui applique cette formule"/>
+
+
 # Dessiner un cercle à partir d'un point
 
-# Zébrer lesd sphères
+Nos sphères sont vuew pas WebGL comme des points :
+<x-code>gl.drawArrays( gl.POINTS, 0, count );</x-code>
 
+On précise que ces points sont des carrés avec un certain nombre de pixels de côté :
+<x-code>
+// Détermination de la taille de la sphère en pixels.
+vec4 point = vec4( uniRadius * alpha1, 0, vertex.z, 1 );
+vec4 size = uniProjection * point;  
+gl_PointSize = uniScreenWidth * size.x / size.w;    
+</x-code>
+
+Pour cela, on imagine un vecteur se trouvant dans un plan faisant face à la caméra. Ce vecteur est centré sur le centre de la sphère courante. En multipliant par la matrice `uniProjection`, on obtient ses coordonnées dans l'espace WebGL. Il faudra multiplier par la largeur réelle de l'écran en pixels pour définir la taille du point.
+Mais avant cela, on divise par la coordonnée `w` comme le ferait WebGL si on avait assigné ce vecteur à `gl_Position`.
+
+Ce point donne un carré, donc il va générer plusieurs fragments avec la variable `gl_PointCoord` indiquant quelle partie du carré on est en train d'afficher.
+Comme pour les textures, le point `(0,0)` correspond au coin supérieur gauche et `(1,1)` au coin inférieur droit.
+
+Si on ajoute 1 puis qu'on multiplie par deux les coordonnées de `gl_PointCoord`, on obtient un repère bien plus intéressant avec `(0,0)` au centre. Dans ce repère, un fragment est en dehors du disque si et seulement si sa distance au centre est supérieure à 1.
+
+<ex src="mod/wdg.multiball.frag" label="Le fragment shader"/>
+
+Pour que les disques ressemblent plus à des sphères, on ajoute un léger effet d'éclairage qui assombrit la couleur quand on se rapproche des bords.
+
+
+# Zébrer les sphères
+
+En mode dense, on affiche 320 sphères avec seulement 320 vertices. Et quelque soit la taille des sphères affichées, les contours sont toujours parfaitement ronds. La technique du point semble donc bien avantageuse. Mais il faut se méfier de deux choses : <b>les intersections de volumes</b> et l'<b>effet sprite</b>.
+
+
+## Les intersections de volumes
+
+Même si on donne l'illusion d'avoir affaire à des sphères, pour WebGL, ce sont des disques. C'est-à-dire que chaque fragement d'un point aura exactement la même coordonnée `z`. Ainsi, si deux sphères ont une intersection, le résultat sera faux car avec cette technique, une sphère est toujours soit devant soit derrière une autre sphère.
+
+Le seul moyen d'éviter ce problème est de faire en sorte qu'aucune sphère n'entre en collision avec aucune autre.
+
+
+## L'effet sprite
+
+Les boules oranges sont toutes identiques et au lieu de faire des calcules pour assombrir les bords et donner un aspect sphérique à notre carré initial, on aurait tout aussi bien pu appliquer une texture. Le résultat aurait peut-être été un peu pixélisé sur les très grandes sphères, mais WebGL serait plus rapide.
+
+Alors c'est comme pour un tour de magie :
+il y a toujours quelqu'un dans la salle qui croit avoir découvert le truc.
+
+Dans notre cas, il dira que ce n'est rien de plus que l'animation de sprites. Alors il faut lui montrer quelque chose que les sprites ne peuvent pas faire. Et pour cela, rajouter des rayures suffit car de cette façon, toutes les sphères sont différentes et l'hypothèse du sprite ne tient plus.
+
+
+### Mais comment faire ces rayures ?
+
+Il faut déterminer où le fragment courant se trouve sur une sphère. Supposons qu'on regarde une demi-sphère de face, la variable `gl_PointCoord` nous donne déjà les coordonnées `x` et `y`, il ne nous reste qu'à calculer `z`.
+Un peu de trigonométrie nous mène à la fonction suivante que l'on va mettre dans un fragment shader :
+<x-code>
+vec3 getSphericalVector( float x, float y ) {
+  float phi = asin( y );
+  float radius = cos( phi );
+  float theta = 0.0;
+  if( x != 0.0 ) theta = asin( x / radius );
+
+  float zz = radius * cos( theta );
+  return vec3(x, -y, zz);
+}    
+</x-code>
+
+Si on voulait juste mettre une couleur différente sur chaque hémisphère, il suffit de faire un produit scalaire de ce point avec le vecteur directeur de la sphère. Si le résultat est positif, on est dans l'hémisphère du haut, sinon, on est dans celle du bas.
+
+<ex src="mod/wdg.multiball.extra.frag" label="Le fragment shader pour les rayures"/>
 
 </page>
