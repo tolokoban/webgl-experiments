@@ -95,6 +95,7 @@ $.registerTheme = Theme.register.bind($);
  * @param {string} name - Name of the heme to apply.
  */
 $.applyTheme = Theme.apply.bind($);
+$.registerAndApplyTheme = registerAndApplyTheme;
 /**
  * @param newElem {Element} - Replacement element.
  * @param oldElem {Element} - Element to replace.
@@ -556,6 +557,11 @@ function restoreStyle( elements ) {
     }
   });
 };
+
+function registerAndApplyTheme( name, styles ) {
+  Theme.register.call( this, name, styles );
+  Theme.apply.call( this,  name );
+}
 
 
   

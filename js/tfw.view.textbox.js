@@ -130,7 +130,7 @@ try {
         var e_head = new Tag('DIV', ["class","textcontent"]);
         this.$elements.head = e_head;
         var e_body = new Tag('DIV', ["class"]);
-        var e_input = new Tag('INPUT', ["type","maxLength","value","focus"]);
+        var e_input = new Tag('INPUT', ["class","type","maxLength","value","focus"]);
         this.$elements.input = e_input;
         $.add( e_body, e_input );
         this.$elements.body = e_body;
@@ -154,55 +154,73 @@ try {
         //-------
         // Links
         new Link({
-          A:{obj: that, name: 'enabled'},
+          A:{obj: that,
+              name: 'enabled'},
           B:{action: function(v) {
           addClassIfTrue( e_, "thm-ele2", v );}}
         });
         new Link({
-          A:{obj: that, name: 'wide'},
+          A:{obj: that,
+              name: 'wide'},
           B:{action: function(v) {
           addClassIfTrue( e_, "wide", v );}}
         });
         new Link({
-          A:{obj: that, name: 'focus', open: false},
+          A:{obj: that,
+              name: 'focus',
+              open: false},
           B:{action: function(v) {
           addClassIfTrue( e_, "thm-bgSL", v );
-          addClassIfFalse( e_, "thm-bg2", v );}}
+          addClassIfFalse( e_, "thm-bg3", v );}}
         });
         new Link({
-          A:{obj: that, name: 'focus'},
+          A:{obj: that,
+              name: 'focus'},
           B:{action: function(v) {
           addClassIfTrue( e_, "focus", v );}}
         });
         new Link({
-          A:{obj: that, name: 'visible'},
+          A:{obj: that,
+              name: 'visible'},
           B:{action: function(v) {
           addClassIfFalse( e_, "hide", v );}}
         });
         new Link({
-          A:{obj: that, name: 'valid'},
+          A:{obj: that,
+              name: 'valid'},
           B:{action: function(v) {
           addClassIfFalse( e_, "invalid", v );}}
         });
         new Link({
-          A:{obj: that, name: 'label'},
-          B:{obj: e_head, name: 'textcontent'}
+          A:{obj: that,
+              name: 'label'},
+          B:{obj: e_head,
+              name: 'textcontent'}
         });
         new Link({
-          A:{obj: that, name: 'type'},
-          B:{obj: e_input, name: 'type'}
+          A:{obj: that,
+              name: 'type'},
+          B:{obj: e_input,
+              name: 'type'}
         });
         new Link({
-          A:{obj: that, name: 'maxLength'},
-          B:{obj: e_input, name: 'maxLength'}
+          A:{obj: that,
+              name: 'maxLength'},
+          B:{obj: e_input,
+              name: 'maxLength'}
         });
         new Link({
-          A:{obj: that, name: 'value', delay: 350},
-          B:{obj: e_input, name: 'value'}
+          A:{obj: that,
+              name: 'value',
+              delay: 350},
+          B:{obj: e_input,
+              name: 'value'}
         });
         new Link({
-          A:{obj: that, name: 'focus'},
-          B:{obj: e_input, name: 'focus'}
+          A:{obj: that,
+              name: 'focus'},
+          B:{obj: e_input,
+              name: 'focus'}
         });
         //-----------------------
         // On attribute changed.
@@ -220,11 +238,12 @@ try {
         //----------------------
         // Initialize elements.
         e_.class = "tfw-view-textbox";
-        e_head.class = "head";
+        e_head.class = "head thm-fg";
         e_body.class = "body";
+        e_input.class = "thm-fg";
         e_foot.class = "foot";
         e_bottom.class = "bottom thm-bgSD";
-        e_completion.class = "completion thm-bg3 thm-ele4";
+        e_completion.class = "completion thm-fg thm-bg2 thm-ele4";
         //------------------------
         // Initialize attributes.
         this.label = defVal(args, "label", "");

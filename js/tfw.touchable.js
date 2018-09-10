@@ -39,6 +39,7 @@ var Touchable = function ( elem, opts ) {
 
   $.addClass( elem, 'tfw-touchable' );
   var shadow = $.div( 'tfw-touchable-shadow' );
+  var container = $.div( 'tfw-touchable-container', [shadow] );
   var fxDown = Fx()
       .css( shadow, {
         transition: "none",
@@ -54,7 +55,7 @@ var Touchable = function ( elem, opts ) {
         if ( [ 'relative', 'absolute', 'fixed' ].indexOf( position ) == -1 ) {
           elem.style.position = 'relative';
         }
-        elem.style.overflow = 'hidden';
+        //elem.style.overflow = 'hidden';
         var rect = elem.getBoundingClientRect();
         var w = rect.width;
         var h = rect.height;
@@ -75,7 +76,7 @@ var Touchable = function ( elem, opts ) {
           "-moz-transition-timing-function": "cubic-bezier(0,1,0.780,1)",
           "-webkit-transition-timing-function": "cubic-bezier(0,1,0.780,1)"
         } );
-        $.add( elem, shadow );
+        $.add( elem, container );
       } )
       .wait( 10 )
       .css( shadow, {
@@ -93,7 +94,7 @@ var Touchable = function ( elem, opts ) {
         opacity: 0
       } )
       .wait( 600 )
-      .detach( shadow )
+      .detach( container )
       .exec(function() {
         var cls = that.classToAdd;
         if ( typeof cls === 'string' ) {

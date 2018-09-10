@@ -3,6 +3,12 @@
 /**
  * Manage material design like CSS styles.
  */
+exports.register = registerTheme;
+exports.apply = applyTheme;
+
+
+//################################################################################
+
 
 var Color = require("tfw.color");
 
@@ -14,14 +20,11 @@ var THEMES = {
 
 
 
-exports.register = registerTheme;
-exports.apply = applyTheme;
-
-
 function registerTheme( themeName, style ) {
   style = completeWithDefaultValues( style );
 
-  var codeCSS = codeBackground( themeName, style );
+  var codeCSS = codeVariables( themeName, style );
+  codeCSS += codeBackground( themeName, style );
   codeCSS += codeElevation( themeName, style );
   codeCSS += codeText( themeName, style );
 
@@ -64,17 +67,33 @@ function codeText( themeName, style ) {
           + " { color: " + style['bg' + colorName] + " }\n";
         codeCSS += "body.dom-theme-" + themeName + " "
           + piecesSVG.join( " > " )
-          + " svg .thm-svg-fill0"
+          + " .thm-svg-fill0"
           + " { fill: " + style['fg' + colorName] + " }\n";
+        codeCSS += "body.dom-theme-" + themeName + " "
+          + piecesSVG.join( " > " )
+          + " .thm-svg-stroke0"
+          + " { stroke: " + style['fg' + colorName] + " }\n";
       }
     });
   }
   return codeCSS;
 }
 
+function codeVariables( themeName, style ) {
+  var codeCSS = "body.dom-theme-" + themeName + '{\n';
+  THEME_COLOR_NAMES.forEach(function (colorName) {
+    codeCSS += "  --thm-bg" + colorName + ": " + style['bg' + colorName] + ";\n";
+  });
+  codeCSS += "}\n";
+  return codeCSS;
+}
+
+
 function codeBackground( themeName, style ) {
   var codeCSS = '';
   THEME_COLOR_NAMES.forEach(function (colorName) {
+    codeCSS += "body.dom-theme-" + themeName + ".thm-bg" + colorName
+      + " { background-color: " + style['bg' + colorName] + " }\n";
     codeCSS += "body.dom-theme-" + themeName + " .thm-fg" + colorName
       + " { color: " + style['fg' + colorName] + " }\n";
     codeCSS += "body.dom-theme-" + themeName + " .thm-bg" + colorName
@@ -91,10 +110,13 @@ function codeBackground( themeName, style ) {
     codeCSS += "body.dom-theme-" + themeName + " .thm-bg" + colorName + "-right"
       + " { background: linear-gradient(to left,"
       + style['bg' + colorName] + ",transparent) }\n";
-    
+
     if( !isNaN(parseInt(colorName)) ) return;
-    codeCSS += "body.dom-theme-" + themeName + " svg .thm-svg-fill" + colorName
+    codeCSS += "body.dom-theme-" + themeName + " .thm-svg-fill" + colorName
       + " { fill: "
+      + style['bg' + colorName] + " }\n";
+    codeCSS += "body.dom-theme-" + themeName + " .thm-svg-stroke" + colorName
+      + " { stroke: "
       + style['bg' + colorName] + " }\n";
   });
   return codeCSS;
@@ -102,12 +124,12 @@ function codeBackground( themeName, style ) {
 
 function codeElevation( themeName, style ) {
   var luminance = Color.luminance( style.bg2 );
-  var elevationColor = luminance < .6 ? '#fff' + Math.ceil(10 * luminance) : '#0006';
+  var elevationColor = luminance < .6
+        ? addAlpha(style.white, Math.ceil(10 * luminance)) : addAlpha(style.black, '6');
   var codeCSS = '';
   [0,1,2,3,4,6,8,9,12,16,24].forEach(function (elevation) {
     codeCSS += "body.dom-theme-" + themeName + " .thm-ele" + elevation + " {\n"
-      + "  box-shadow: 0 " + elevation + "px " + (2 * elevation) + "px " + elevationColor + ";\n"
-      + "  transition: box-shadow .2s;\n"
+      + "  box-shadow: 0 " + elevation + "px " + (2 * elevation) + "px " + elevationColor + "\n"
       + "}\n";
   });
   return codeCSS;
@@ -142,10 +164,14 @@ function completeWithDefaultValues( style ) {
   if( typeof style.bgSD !== 'string' ) style.bgSD = dark( style.bgS );
   if( typeof style.bgSL !== 'string' ) style.bgSL = light( style.bgS );
 
+  if( typeof style.white === 'undefined' ) style.white = '#fff';
+  if( typeof style.black === 'undefined' ) style.black = '#000';
+
+
   THEME_COLOR_NAMES.forEach(function (name) {
     var bg = style['bg' + name];
     var luminance = Color.luminance( bg );
-    style['fg' + name] = luminance < .6 ? '#fff' : '#000';
+    style['fg' + name] = luminance < .6 ? style.white : style.black;
   });
 
   return style;
@@ -167,6 +193,16 @@ function light( color ) {
   lightColor.L = percent + (1 - percent) * lightColor.L;
   lightColor.hsl2rgb();
   return lightColor.stringify();
+}
+
+
+/**
+ * @param {string} color - RGB color in format #xxx or #xxxxxx.
+ * @param {string} alpha - Single char between 0 and F.
+ */
+function addAlpha( color, alpha ) {
+  if( color.length < 5 ) return color + alpha;
+  return color + alpha + alpha;
 }
 
 
