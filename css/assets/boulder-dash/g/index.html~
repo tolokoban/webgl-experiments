@@ -9,7 +9,6 @@
         <script src="boulder-painter.js"></script>
         <script src="diam-painter.js"></script>
         <script src="wall-painter.js"></script>
-        <script src="background-painter.js"></script>
         <script src="../caves.js"></script>
         <script src="../cave.js"></script>
         <script src="script.js"></script>

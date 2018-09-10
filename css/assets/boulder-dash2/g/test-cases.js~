@@ -1,0 +1,15 @@
+window.TestCases = [
+  {
+    name: "Chute simple de pierre",
+    from: [
+      "r",
+      " "
+    ],
+    to: [
+      " ",
+      "r"
+    ],
+    steps: 1
+  }
+
+];

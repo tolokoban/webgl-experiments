@@ -5,14 +5,16 @@
         <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script src="../../webgl.js"></script>
-        <script src="ground-painter.js"></script>
-        <script src="boulder-painter.js"></script>
-        <script src="diam-painter.js"></script>
-        <script src="wall-painter.js"></script>
+        <script src="../game-inputs.js"></script>
+        <script src="../level.js"></script>
+        <script src="../levels.js"></script>
         <script src="background-painter.js"></script>
-        <script src="../caves.js"></script>
-        <script src="../cave.js"></script>
+        <script src="level-logic.js"></script>
+        <script src="level-painter.js"></script>
         <script src="script.js"></script>
+        <script src="texture-aggregator.js"></script>
+        <script src="wall-painter.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="../../webgl.css">
     </head>
     <body>

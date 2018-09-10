@@ -73,51 +73,7 @@ addListener(
             content: [
           W({
               elem: "p",
-<<<<<<< HEAD:js/@multiball.js
               children: [W('wdg.multiball1','wdg.multiball',{},{"id":"wdg.multiball1","class":"right"})]}),
-=======
-              children: [
-                "  ",
-                W('wdg.flex73','wdg.flex',{"content": [
-                  W({
-                      elem: "div",
-                      children: [
-                        "\n        ",
-                        W('wdg.deform-174','wdg.deform-1',{
-                          width: "420",
-                          height: "420",
-                          delay: "50"},{"id":"wdg.deform-174"}),
-                        "\n          ",
-                        W('wdg.flex75','wdg.flex',{"content": [
-                          W('delay1','wdg.text',{
-                              label: "Delai par étage (ms)",
-                              wide: "true",
-                              value: "50"},{"id":"delay1"}),
-                          W('angle1','wdg.text',{
-                              label: "Angle max (deg)",
-                              wide: "true",
-                              value: "30"},{"id":"angle1"})]},{"id":"wdg.flex75"}),
-                        "\n      "]}),
-                  W({
-                      elem: "div",
-                      children: [
-                        "\n        ",
-                        W('wdg.deform-276','wdg.deform-2',{
-                          width: "420",
-                          height: "420",
-                          delay: "50"},{"id":"wdg.deform-276"}),
-                        "\n        ",
-                        W('wdg.flex77','wdg.flex',{"content": [
-                          W('delay2','wdg.text',{
-                              label: "Delai par étage (ms)",
-                              wide: "true",
-                              value: "50"},{"id":"delay2"}),
-                          W('angle2','wdg.text',{
-                              label: "Angle max (deg)",
-                              wide: "true",
-                              value: "30"},{"id":"angle2"})]},{"id":"wdg.flex77"}),
-                        "\n      "]})]},{"id":"wdg.flex73"})]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
           W({
               elem: "p",
               children: [
@@ -214,7 +170,6 @@ addListener(
                   children: [
                     "\n",
                     W({
-<<<<<<< HEAD:js/@multiball.js
                       elem: "tr",
                       children: [
                         "\n",
@@ -239,184 +194,6 @@ addListener(
                   elem: "tbody",
                   children: [
                     "\n",
-=======
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["function"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["draw"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["time"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [")"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["{"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["var"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["prg"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["="]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["prg"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["program"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["var"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["="]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    "\n\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["clearColor"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["0.0"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["0.0"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["0.0"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["0.0"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["clear"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["COLOR_BUFFER_BIT"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                     W({
                       elem: "tr",
                       children: [
@@ -543,213 +320,9 @@ addListener(
                       children: ["n"]}),
                     ") + (2r.(c",
                     W({
-<<<<<<< HEAD:js/@multiball.js
                       elem: "sup",
                       children: ["n + 1"]}),
                     " - 1)) / (c - 1)"]})]}),
-=======
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["uniform1f"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["uniTime"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["time"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["uniform1f"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["uniDelay"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["delay"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["uniform1f"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["uniAngle"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["angle"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n  \n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "function"},
-                      children: ["drawArrays"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["gl"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["TRIANGLES"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["0"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [","]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["this"]}),
-                    ".",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["vertexCount"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [");"]}),
-                    "\n",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["}"]}),
-                    " "]})]}),
-          W({
-              elem: "p",
-              children: [
-                "On voit que l",
-                "&#39;",
-                "on efface l",
-                "&#39;",
-                "écran avec une couleur totalement transparente ce qui\npermet de laisser apparaître l",
-                "&#39;",
-                "image que l",
-                "&#39;",
-                "on a définie par CSS sur le canvas."]}),
-          W({
-              elem: "h1",
-              attr: {"id": "d-finition-des-attributs"},
-              children: ["Définition des attributs"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
           W({
               elem: "p",
               children: [W('wdg.showhide2','wdg.showhide',{
@@ -782,7 +355,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [";"]}),
                         "\r\n",
                         W({
@@ -790,15 +362,6 @@ addListener(
                           attr: {"class": "comment"},
                           children: ["// Rotation de la multiball."]}),
                         "\r\n",
-=======
-                          children: ["[];"]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// LEVELS est le nombre de triangles."]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -888,14 +451,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
-=======
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                           attr: {"class": "identifier"},
                           children: ["uniDistance"]}),
                         W({
@@ -905,7 +460,6 @@ addListener(
                         "\r\n",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "comment"},
                           children: ["// Facteur de diminution des rayons des sphères"]}),
                         "\r\n",
@@ -914,16 +468,6 @@ addListener(
                           attr: {"class": "comment"},
                           children: ["// sur les orbites successives"]}),
                         "\r\n",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// attRadius, attAngle, attLevel."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -946,22 +490,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["// Coordonnées du centre de la sphère"]}),
                         "\r\n",
-=======
-                          children: ["// A droite."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0.5"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [","]}),
-                        " ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
@@ -998,15 +528,9 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "identifier"},
                           children: ["float"]}),
                         " ",
-=======
-                          attr: {"class": "comment"},
-                          children: ["// En haut."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1038,7 +562,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["// On va reculer un peu la multiball pour qu'on la voit bien"]}),
                         "\r\n  ",
                         W({
@@ -1046,20 +569,6 @@ addListener(
                           attr: {"class": "identifier"},
                           children: ["vec4"]}),
                         " ",
-=======
-                          children: ["// A gauche."]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["}"]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1094,13 +603,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
                         " ",
-=======
-                          children: [";"]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -1117,13 +621,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [");"]}),
                         "\r\n\r\n  ",
-=======
-                          children: [";"]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
@@ -1137,20 +636,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["alpha1"]}),
-=======
-                          children: ["uniAngle"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["attribute"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -1164,21 +650,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
-=======
-                          children: [";"]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["attribute"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -1187,21 +659,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
-=======
-                          children: [";"]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["attribute"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -1211,23 +669,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [");"]}),
                         "\r\n  ",
-=======
-                          children: [";"]}),
-                        "\n\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Pour faire un léger dégradé dans le fragment shader."]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["varying"]}),
-                        " ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1236,17 +679,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["alpha2"]}),
                         " ",
-=======
-                          children: ["varBrightness"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -1264,7 +698,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "identifier"},
                           children: ["uniAlpha"]}),
                         W({
@@ -1272,16 +705,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [";"]}),
                         "\r\n  ",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Temps qui tient compte du décalage par level."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1320,22 +743,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
-=======
-                          children: [";"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Angle max d'inclinaison entre deux niveaux."]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
-                        " ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -1363,35 +771,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["2.0"]}),
-=======
-                          children: ["0.1"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Calculer en fonction du temps l'angle entre deux"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// triangles consécutifs."]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["tilt"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -1458,21 +838,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Rotation, translation et projection en perspective."]}),
                         "\r\n  ",
-=======
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Plus le triangle à un level élevé, plus il est petit."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1524,7 +895,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
                         " ",
                         W({
@@ -1532,15 +902,6 @@ addListener(
                           attr: {"class": "number"},
                           children: ["1"]}),
                         " ",
-=======
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Coordonnées du centre du triangle de la base."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1568,7 +929,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1597,11 +958,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n\r\n  ",
-=======
-                        "\n  \n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
@@ -1638,7 +995,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "operator"},
                           children: ["*"]}),
                         " ",
@@ -1651,21 +1007,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [","]}),
                         " ",
-=======
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// A chaque niveau supplémentaire,"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// l'angle s'incline un peu plus."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -1697,13 +1038,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [");"]}),
                         "\r\n  ",
-=======
-                          children: [";"]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3059,44 +2395,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["precision"]}),
-=======
-                          children: ["i"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["+"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["+"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [")"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Condition d'arrêt."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["if"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -3111,54 +2410,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n\r\n",
-=======
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Calculer les coordonnées du centre du triangle."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["yc"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["+"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["0.4"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["scale"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword2"},
-                          children: ["cos"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3171,14 +2423,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
-=======
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                           attr: {"class": "identifier"},
                           children: ["BLACK"]}),
                         " ",
@@ -3195,7 +2439,6 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-<<<<<<< HEAD:js/@multiball.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3204,91 +2447,6 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-=======
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["angle"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Incliner un peu plus pour le niveau suivant."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["angle"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["+"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["tilt"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["}"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Coordonnées du vertex dans l'espace de WebGL."]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["x"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["scale"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["attRadius"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -3307,26 +2465,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n",
-=======
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["y"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
-                        " ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3371,13 +2510,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
                         " ",
-=======
-                          children: [");"]}),
-                        "\n  \n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3394,15 +2528,9 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "identifier"},
                           children: ["vec3"]}),
                         " ",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["("]}),
-                        " \n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3420,22 +2548,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
-=======
-                          children: [","]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["yc"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["+"]}),
-                        " ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3444,11 +2557,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-<<<<<<< HEAD:js/@multiball.js
                         " .",
-=======
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3461,21 +2570,12 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["0"]}),
-=======
-                          children: ["1"]}),
-                        " \n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n",
-=======
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3506,7 +2606,6 @@ addListener(
                           children: ["("]}),
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "number"},
                           children: ["0"]}),
                         W({
@@ -3514,16 +2613,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [","]}),
                         " .",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Le dernier triangle est de couleur unie."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3536,16 +2625,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "number"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["866666667"]}),
-=======
-                          children: ["0.0"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3558,30 +2638,9 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "identifier"},
                           children: ["vec3"]}),
                         " ",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Vaut 0 pour les vertex du bas du triangle"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// et 1 pour le sommet."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Cela donne l'effer d'une ombre."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3607,21 +2666,11 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
                         W({
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["-1"]}),
-=======
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["}"]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3643,13 +2692,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["));"]}),
                         "\r\n\r\n",
-=======
-                          children: [";"]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3668,21 +2712,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n\r\n\r\n",
-=======
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["uniform"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
-                        " ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
@@ -3690,15 +2720,9 @@ addListener(
                         "\r\n",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "comment"},
                           children: ["// On peut imaginer qu'il s'agit en fait d'un point (x,y,zz) dans une demi-sphère."]}),
                         "\r\n",
-=======
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
@@ -3716,16 +2740,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
-=======
-                          children: [";"]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["attribute"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -3739,16 +2754,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
-=======
-                          children: [";"]}),
-                        "\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["attribute"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -3763,18 +2769,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [")"]}),
                         " ",
-=======
-                          children: [";"]}),
-                        "\n\n",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Pour faire un léger dégradé dans le fragment shader."]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3788,17 +2784,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["phi"]}),
                         " ",
-=======
-                          children: ["varBrightness"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -3815,7 +2802,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "identifier"},
                           children: ["y"]}),
                         " ",
@@ -3824,16 +2810,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [");"]}),
                         "\r\n  ",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Temps qui tient compte du décalage par level."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3891,17 +2867,11 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "keyword"},
                           children: ["if"]}),
-=======
-                          attr: {"class": "comment"},
-                          children: ["// Angle max d'inclinaison entre deux niveaux."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3953,7 +2923,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "operator"},
                           children: ["/"]}),
                         " ",
@@ -3967,21 +2936,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [");"]}),
                         "\r\n\r\n  ",
-=======
-                          attr: {"class": "symbol"},
-                          children: [";"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Calculer en fonction du temps l'angle entre deux"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// triangles consécutifs."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4087,7 +3041,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["()"]}),
                         " ",
                         W({
@@ -4095,15 +3048,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: ["{"]}),
                         "\r\n  ",
-=======
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Plus le triangle à un level élevé, plus il est petit."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4155,80 +3099,61 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-<<<<<<< HEAD:js/@multiball.js
-                          attr: {"class": "identifier"},
-=======
-                          attr: {"class": "comment"},
-                          children: ["// Coordonnées du centre du triangle de la base."]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
-                          children: ["float"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["y"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["2.0"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["*"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
-                          children: ["("]}),
-=======
-                          children: [";"]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["gl_PointCoord"]}),
-                        ".",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["y"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["-"]}),
-                        " .",
-                        W({
-                          elem: "span",
-                          attr: {"class": "number"},
-                          children: ["5"]}),
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [");"]}),
                         "\r\n  ",
-=======
-                          children: [";"]}),
-                        "\n  \n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["float"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["y"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["="]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["2.0"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["*"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: ["("]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["gl_PointCoord"]}),
+                        ".",
+                        W({
+                          elem: "span",
+                          attr: {"class": "identifier"},
+                          children: ["y"]}),
+                        " ",
+                        W({
+                          elem: "span",
+                          attr: {"class": "operator"},
+                          children: ["-"]}),
+                        " .",
+                        W({
+                          elem: "span",
+                          attr: {"class": "number"},
+                          children: ["5"]}),
+                        W({
+                          elem: "span",
+                          attr: {"class": "symbol"},
+                          children: [");"]}),
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4251,28 +3176,8 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "operator"},
                           children: ["*"]}),
-=======
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// A chaque niveau supplémentaire,"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// l'angle s'incline un peu plus."]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -4302,7 +3207,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4372,7 +3277,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "identifier"},
                           children: ["arrow"]}),
                         " ",
@@ -4381,16 +3285,6 @@ addListener(
                           attr: {"class": "operator"},
                           children: ["="]}),
                         " ",
-=======
-                          attr: {"class": "symbol"},
-                          children: ["{"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Condition d'arrêt."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "function"},
@@ -4426,21 +3320,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
-=======
-                          children: [";"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Calculer les coordonnées du centre du triangle."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "identifier"},
-                          children: ["yc"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -4486,13 +3366,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["),"]}),
                         " .",
-=======
-                          children: [");"]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -4563,7 +3438,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [")"]}),
                         " ",
                         W({
@@ -4576,15 +3450,6 @@ addListener(
                           attr: {"class": "comment"},
                           children: ["// Liseré noir extérieur."]}),
                         "\r\n    ",
-=======
-                          children: [");"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Incliner un peu plus pour le niveau suivant."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4603,21 +3468,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\n  ",
+                        "\r\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "\r\n\r\n  ",
-=======
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Coordonnées du vertex dans l'espace de WebGL."]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4688,16 +3544,7 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [")"]}),
-=======
-                          children: [");"]}),
-                        "\n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword"},
-                          children: ["float"]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
@@ -4754,32 +3601,13 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [")"]}),
-=======
-                          children: [");"]}),
-                        "\n  \n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "keyword2"},
-                          children: ["gl_Position"]}),
-                        " ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "operator"},
-                          children: ["="]}),
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         " ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["{"]}),
                         "    \r\n    ",
-=======
-                          children: ["("]}),
-                        " \n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4797,13 +3625,8 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
                         " ",
-=======
-                          children: [","]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4821,11 +3644,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-<<<<<<< HEAD:js/@multiball.js
                         " .",
-=======
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -4833,7 +3652,6 @@ addListener(
                         " ",
                         W({
                           elem: "span",
-<<<<<<< HEAD:js/@multiball.js
                           attr: {"class": "symbol"},
                           children: [");"]}),
                         "\r\n  ",
@@ -4842,16 +3660,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: ["}"]}),
                         "\r\n  ",
-=======
-                          attr: {"class": "number"},
-                          children: ["1"]}),
-                        " \n  ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: [");"]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -4890,16 +3698,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-<<<<<<< HEAD:js/@multiball.js
                         "    \r\n    ",
-=======
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Le dernier triangle est de couleur unie."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4917,17 +3716,12 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: ["("]}),
                         " ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
                           children: ["color"]}),
-=======
-                          children: [";"]}),
-                        "\n  ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -4940,7 +3734,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
                         " .",
                         W({
@@ -4958,25 +3751,6 @@ addListener(
                           attr: {"class": "symbol"},
                           children: ["}"]}),
                         "\r\n  \r\n  ",
-=======
-                          children: ["{"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Vaut 0 pour les vertex du bas du triangle"]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// et 1 pour le sommet."]}),
-                        "\n    ",
-                        W({
-                          elem: "span",
-                          attr: {"class": "comment"},
-                          children: ["// Cela donne l'effer d'une ombre."]}),
-                        "\n    ",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -5003,7 +3777,6 @@ addListener(
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
-<<<<<<< HEAD:js/@multiball.js
                           children: [","]}),
                         " ",
                         W({
@@ -5016,337 +3789,15 @@ addListener(
                           attr: {"class": "symbol"},
                           children: [");"]}),
                         "\r\n",
-=======
-                          children: [");"]}),
-                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\n",
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
-                        W({
-                          elem: "span",
-                          attr: {"class": "symbol"},
-                          children: ["}"]}),
-<<<<<<< HEAD:js/@multiball.js
                         " "]})]},{"id":"wdg.showhide4"})]})]},{"id":"wdg.article0"})
 
     }
 );
-=======
-                        " "]})]},{"id":"wdg.showhide80"})]}),
-          W({
-              elem: "h1",
-              attr: {"id": "les-boucles-infinies"},
-              children: ["Les boucles infinies"]}),
-          W({
-              elem: "p",
-              children: [
-                "Il faut remarquer une caractéristique du GLSL qui peut dérouter au premier abord :\n",
-                W({
-                  elem: "strong",
-                  children: ["il est interdit de faire des boucles infinies"]}),
-                ".\nEn effet, la carte graphique ne peut pas se permettre d",
-                "&#39;",
-                "attendre indéfiniment\nl",
-                "&#39;",
-                "affichage d",
-                "&#39;",
-                "une image, sans quoi c",
-                "&#39;",
-                "est tout l",
-                "&#39;",
-                "écran qui se fige."]}),
-          W({
-              elem: "p",
-              children: [
-                "Pour se protéger des boucles infinies, GLSL ajoute des restrictions sur le\nlangage et notemment sur les boucles ",
-                W({
-                  elem: "code",
-                  children: ["for(;;)"]}),
-                " et ",
-                W({
-                  elem: "code",
-                  children: ["while()"]}),
-                ".\nLes tests d",
-                "&#39;",
-                "arrêt d",
-                "&#39;",
-                "une boucle ",
-                W({
-                  elem: "strong",
-                  children: ["doivent toujours porter sur des constantes"]}),
-                "."]}),
-          W({
-              elem: "p",
-              children: [
-                "Par exemple, ceci est interdit car ",
-                W({
-                  elem: "code",
-                  children: ["level"]}),
-                " est une variable :\n",
-                W({
-                  elem: "pre",
-                  attr: {"class": "custom highlight glsl"},
-                  children: [
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["for"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["int"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["="]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["1"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["&lt;"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["level"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["+"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["+"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [")"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["{"]}),
-                    " ... ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["}"]}),
-                    " "]})]}),
-          W({
-              elem: "p",
-              children: [
-                "C",
-                "&#39;",
-                "est pour cela que j",
-                "&#39;",
-                "ai utilisé l",
-                "&#39;",
-                "astuce suivante :\n",
-                W({
-                  elem: "pre",
-                  attr: {"class": "custom highlight glsl"},
-                  children: [
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["for"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["int"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["="]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["1"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["&lt;"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "number"},
-                      children: ["10"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["+"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["+"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [")"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["{"]}),
-                    "\n  ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["if"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["("]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["i"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "operator"},
-                      children: ["&gt;"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "identifier"},
-                      children: ["level"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [")"]}),
-                    " ",
-                    W({
-                      elem: "span",
-                      attr: {"class": "keyword"},
-                      children: ["break"]}),
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: [";"]}),
-                    "\n  ...\n",
-                    W({
-                      elem: "span",
-                      attr: {"class": "symbol"},
-                      children: ["}"]}),
-                    " "]})]}),
-          W({
-              elem: "hr"}),
-          W({
-              elem: "p",
-              children: [W('wdg.flex81','wdg.flex',{"content": [
-                  W({
-                      elem: "div",
-                      children: [
-                        "\n        ",
-                        W('wdg.deform-382','wdg.deform-3',{
-                          width: "960",
-                          height: "540",
-                          delay: "0",
-                          angle: "66"},{"id":"wdg.deform-382"}),
-                        "\n          ",
-                        W('wdg.flex83','wdg.flex',{"content": [
-                          W('delay','wdg.text',{
-                              label: "Délai par étage (ms)",
-                              wide: "true",
-                              value: "0"},{"id":"delay"}),
-                          W('angle','wdg.text',{
-                              label: "Angle max (deg)",
-                              wide: "true",
-                              value: "66"},{"id":"angle"}),
-                          W('girafe','wdg.checkbox',{
-                              text: "Afficher la girafe",
-                              value: "false"},{"id":"girafe"})]},{"id":"wdg.flex83"}),
-                        "\n      "]})]},{"id":"wdg.flex81"})]}),
-          W({
-              elem: "p",
-              children: [
-                "Avec la technique de l",
-                "&#39;",
-                "article précédent, il est possible de déformer des images entières."]})]},{"id":"wdg.article72"})
-        W.bind('wdg.deform-174',{"delay":{"B":[["delay1","value"]]},"angle":{"B":[["angle1","value"]]}});
-        W.bind('wdg.deform-276',{"delay":{"B":[["delay2","value"]]},"angle":{"B":[["angle2","value"]]}});
-        W.bind('wdg.deform-382',{"girafe":{"B":[["girafe","value"]]},"delay":{"B":[["delay","value"]]},"angle":{"B":[["angle","value"]]}});
-    }
-);
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.101"',major:"0",minor:"0",revision:"101",date:"2018-09-09T16:48:54.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.104"',major:"0",minor:"0",revision:"104",date:"2018-09-10T14:39:39.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -5396,46 +3847,27 @@ require("font.josefin",function(n,r,t){var e=function(){function r(){return e(t,
 //# sourceMappingURL=font.josefin.js.map
 require("x-widget",function(e,r,t){function n(r,t,n,i){void 0===i&&(i={});try{var a,c=e(t),f=new c(n);if("function"==typeof f.element)a=f.element();else if(f.element instanceof Node)a=f.element;else{if(!(f.$ instanceof Node))throw Error('Sorry, but "'+t+'" is not a widget nor a view!',f);a=f.$}var u=document.getElementById(r);return u&&u.parentNode.replaceChild(a,u),a.setAttribute("id",r),d.addClass(a,i.class||""),o(r,f),f}catch(e){throw console.error("[x-widget] Unable to create widget `"+t+"`!"),console.error("[x-widget] id = ",r,", args = ",n),Error(e)}}function i(e){var r,t=d.tag(e.elem);e.attr&&(d.att(t,e.attr),r=e.attr.id),Array.isArray(e.children)&&e.children.forEach(function(e){d.add(t,e)});var n,i,a={};if(e.prop)for(n in e.prop)i=e.prop[n],Object.defineProperty(a,n,{value:i,writable:!1,configurable:!1,enumerable:!0});return Object.defineProperty(a,"element",{value:t,writable:!1,configurable:!1,enumerable:!0}),void 0!==r&&o(r,a),a}function o(e,r){f[e]=r;var t=u[e];return void 0!==t&&window.setTimeout(function(){t.forEach(function(e){e(r)}),delete u[e]}),"function"==typeof r.element?r.element:r.element||r}var a=function(){function r(){return n(t,arguments)}var t={en:{}},n=e("$").intl;return r.all=t,r}(),d=e("dom"),c=e("tfw.data-binding"),f={},u={},l=function(e,r,t,o){try{return"string"==typeof e?n.call(this,e,r,t,o):i.call(this,e)}catch(e){throw console.error(e),Error("Exception in "+r+"("+JSON.stringify(t)+"):\n"+e)}};l.template=function(r){var t,n,i,a="",d={};for(t in r)n=r[t],"name"==t?a=n:"id"==t?i=n:"$"==t.charAt(0)&&(d[t.substr(1)]=n);var c=e(a),f=new c(d);return i&&o(i,f),"function"==typeof f.element?f.element():f.element||f},l.getById=function(e){if(!f[e])throw Error("[x-widget.getById()] ID not found: "+e+"!");return f[e]},l.onWidgetCreation=function(e,r){void 0===f[e]?void 0===u[e]?u[e]=[r]:u[e].push(r):window.setTimeout(function(){r(f[e])})},l.bind=function(r,t){var n,i,o,a,d,u=f[r];for(n in t)a=t[n].B,Array.isArray(a)&&a.forEach(function(e){if(void 0===(i=f[e[0]]))return void console.error("[x-widget:bind("+r+')] Trying to bind attribute "'+n+'" of widget "'+r+'" to the unexisting widget "'+e[0]+'"!');o=e[1];try{if(2==e.length)c.bind(i,o,u,n);else{var t=e[2];c.bind(i,o,function(){u[n]=t})}}catch(t){console.error("Binding error for widget `"+r+"`!",{ex:t,binding:e})}}),d=t[n].S,Array.isArray(d)&&d.forEach(function(t){var i=APP,o=t;if(Array.isArray(t)){try{i=e(t[0])}catch(e){throw console.error("[x-widget:bind] Widget `"+r+"` can't require unexistent `"+t[0]+"`: ",e),e}o=t[1]}if("function"!=typeof(o=i[o]))throw Array.isArray(t)?Error("[x-widget:bind]  Widget `"+r+"` use unexisting slot `"+t[1]+"` of module `"+t[0]+"`!"):Error("[x-widget:bind]  Widget `"+r+"` use unexisting slot `"+t+"` of main module `APP`!");try{c.bind(u,n,o)}catch(e){console.error("Binding error for widget `"+r+"`!",{ex:e,dstObj:u,dstAtt:n,fct:o,slot:t})}})},r.exports=l,r.exports._=a});
 //# sourceMappingURL=x-widget.js.map
-require("wdg.checkbox",function(e,t,s){var i=function(){function t(){return i(s,arguments)}var s={en:{}},i=e("$").intl;return t.all=s,t}(),o=e("dom"),d=e("tfw.data-binding"),a=(e("wdg.icon"),e("tfw.touchable")),n=function(e){var t=this,s=o.div("btn","thm-ele2"),i=o.div("bar"),n=o.div(),r=o.elem(this,"button","wdg-checkbox",[o.div([s,i]),n]),l=function(){"string"!=typeof t.text||0===t.text.trim().length?o.addClass(t,"no-text"):(o.textOrHtml(n,t.text),o.removeClass(t,"no-text")),t.inverted?o.addClass(t,"inverted"):o.removeClass(t,"inverted"),t.wide?o.addClass(t,"wide"):o.removeClass(t,"wide"),t.value?(o.addClass(t,"checked"),o.addClass(i,"thm-bgSL"),o.removeClass(i,"thm-bg2"),o.addClass(s,"thm-bgS"),o.removeClass(s,"thm-bg1")):(o.removeClass(t,"checked"),o.removeClass(i,"thm-bgSL"),o.addClass(i,"thm-bg2"),o.removeClass(s,"thm-bgS"),o.addClass(s,"thm-bg1"))};d.propBoolean(this,"value"),d.propString(this,"text"),d.propInteger(this,"action",0),d.propBoolean(this,"wide"),d.propBoolean(this,"inverted"),d.propRemoveClass(this,"visible","hide"),d.extend({value:!1,text:"checked",inverted:!1,wide:!1,visible:!0},e,this,l),new a(r).tap.add(this.fire.bind(this)),o.on(r,{keydown:function(e){13!=e.keyCode&&32!=e.keyCode||(e.preventDefault(),e.stopPropagation(),t.fire())}}),this.focus=r.focus.bind(r)};n.prototype.fire=function(){this.value=!this.value},t.exports=n,t.exports._=i});
-//# sourceMappingURL=wdg.checkbox.js.map
+require("wdg.showhide",function(e,t,n){function i(e){function t(){n.value=!n.value,n.focus=!0}var n=this,i=new l({content:"tri-right",size:"24px"}),o=s.tag("span","label"),d=s.div("head",[i,o]),h=s.div("body","thm-bg0"),c=s.elem(this,"div","wdg-showhide","thm-ele2",[d,h]);r(this,function(e){switch(e.keyCode){case 13:case 32:n.value=!n.value}console.info("[wdg.showhide] evt=",e)}),a.propBoolean(this,"value")(function(e){e?(s.addClass(c,"show"),s.removeClass(c,"fade-in"),window.setTimeout(function(){s.addClass(c,"fade-in")})):s.removeClass(c,"show")}),a.propBoolean(this,"simple")(function(e){e?(s.addClass(c,"simple"),s.removeClass(c,"thm-ele2"),s.removeClass(d,"thm-bgPD")):(s.removeClass(c,"simple"),s.addClass(c,"thm-ele2"),s.addClass(d,"thm-bgPD"))}),a.propString(this,"label")(function(e){o.textContent=e}),a.propUnit(this,"maxHeight")(function(e){e.v<=0?h.style.maxHeight="none":h.style.maxHeight=e.v+e.u}),a.prop(this,"content")(function(e){s.clear(h),Array.isArray(e)?e.forEach(function(e){s.add(h,e)}):void 0!==e&&null!==e&&s.add(h,e)}),a.propRemoveClass(this,"wide","inline"),a.propRemoveClass(this,"visible","hide"),e=a.extend({value:!0,label:"",content:null,maxHeight:null,visible:!0,wide:!0,simple:!1,focus:!1},e,this),s.on(d,t),this.append=function(e){return Array.isArray(n.content)||(n.content=[]),n.content.push(e),s.add(h,e),n},this.prepend=function(e){return Array.isArray(n.content)||(n.content=[]),n.content.push(e),h.insertBefore(e,h.childNodes[0]),n}}var o=function(){function t(){return i(n,arguments)}var n={en:{}},i=e("$").intl;return t.all=n,t}(),s=e("dom"),a=e("tfw.data-binding"),l=e("wdg.icon"),r=e("tfw.focusable");i.prototype.clear=function(){return this.content=[],this},t.exports=i,t.exports._=o});
+//# sourceMappingURL=wdg.showhide.js.map
+require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e,arguments)}var e={en:{},fr:{}},o=n("$").intl;return t.all=e,t}(),u=n("dom"),f=n("tfw.data-binding"),i=function(n,t){"function"!=typeof t&&(t=function(){}),u.addClass(n,"tfw-focusable");var e=u.tag("input");u(n).insertAdjacentElement("afterbegin",u.div("tfw-focusable-invisible",[e])),e.addEventListener("keydown",function(n){t(n),e.value=""}),e.addEventListener("focus",function(){u.addClass(n,"focus"),n.focus=!0}),e.addEventListener("blur",function(){u.removeClass(n,"focus"),n.focus=!1}),f.propBoolean(n,"focus")(function(n){window.setTimeout(function(){n?e.focus():e.blur()})})};t.exports=i,t.exports._=o});
+//# sourceMappingURL=tfw.focusable.js.map
+require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
+//# sourceMappingURL=wdg.icon.js.map
+require("wdg.multiball",function(n,r,e){function t(){var n=this,r=a(this.$elements.canvas.$),e=new v(r,{vert:c.vert,frag:c.frag}),t=new v(r,{vert:c.vertExtra,frag:c.fragExtra}),i=l(),o=r.createBuffer();r.bindBuffer(r.ARRAY_BUFFER,o),r.bufferData(r.ARRAY_BUFFER,i,r.STATIC_DRAW),r.enable(r.DEPTH_TEST),r.clearColor(1,1,1,1),r.clearDepth(1);var s=d.identity(),u=d.identity(),h=function(a){requestAnimationFrame(h);var l=r.canvas.clientWidth,c=r.canvas.clientHeight;f(r),d.perspective(.35*Math.PI,l/c,.1,10,s),d.rotationXY(3.27*Math.cos(458e-6*a),5.78*Math.sin(147e-6*a),u),r.clear(r.COLOR_BUFFER_BIT|r.DEPTH_BUFFER_BIT);var v=n.extra?t:e;v.use(),v.$uniProjection=s,v.$uniRotation=u,v.$uniScreenWidth=l*window.devicePixelRatio,v.$uniDistance=.5,v.$uniRadius=.17,v.$uniAlpha=n.alpha,v.bindAttribs(o,"attPoint","attLevel");var p=n.dense?i.length/4:200;r.drawArrays(r.POINTS,0,p)};requestAnimationFrame(h)}function a(n){return n.getContext("webgl",{preserveDrawingBuffer:!0})}function i(n){void 0===n&&(n=1);var r,e,t=[0,0,n];for(r=0;r<5;r++)e=Math.PI*r*.4,t.push(n*Math.cos(e),n*Math.sin(e),.5*n);for(r=0;r<5;r++)e=Math.PI*(.4*r+.2),t.push(n*Math.cos(e),n*Math.sin(e),-.5*n);return t.push(0,0,-n),new Float32Array(t)}function o(){return new Uint16Array([0,1,2,0,2,3,0,3,4,0,4,5,0,5,1,1,6,2,2,7,3,3,8,4,4,9,5,5,10,1,11,10,9,11,9,8,11,8,7,11,7,6,11,6,10,10,6,1,6,7,2,7,8,3,8,9,4,9,10,5])}function l(){var n,r,e,t,a,l=i(),s=o(),c=[];for(n=0;n<20;n++){var u=l[3*s[3*n+0]+0],d=l[3*s[3*n+0]+1],f=l[3*s[3*n+0]+2],v=l[3*s[3*n+1]+0],h=l[3*s[3*n+1]+1],p=l[3*s[3*n+1]+2],m=l[3*s[3*n+2]+0],w=l[3*s[3*n+2]+1],x=l[3*s[3*n+2]+2];r=u+v+m,e=d+h+w,t=f+p+x,a=Math.sqrt(r*r+e*e+t*t),c.push(r/a,e/a,t/a,0)}var g;for(g=1;g<10;g++)for(n=0;n<20;n++)r=c[4*n+0],e=c[4*n+1],t=c[4*n+2],c.push(r,e,t,g);for(n=0;n<12;n++)for(r=l[3*n+0],e=l[3*n+1],t=l[3*n+2],a=Math.sqrt(r*r+e*e+t*t),g=0;g<10;g++)c.push(r/a,e/a,t/a,g);return console.info("[wdg.multiball-1] vertices=",c),new Float32Array(c)}var s=function(){function r(){return t(e,arguments)}var e={en:{},fr:{}},t=n("$").intl;return r.all=e,r}(),c={vert:"// Perspective\r\nuniform mat4 uniProjection;\r\n// Rotation de la multiball.\r\nuniform mat4 uniRotation;\r\n// Largeur de l'écran en pixels.\r\nuniform float uniScreenWidth;\r\n\r\n// Rayon de la sphère\r\nuniform float uniRadius;\r\n// Distance de la sphère au centre.\r\n// (rayon de son orbite)\r\nuniform float uniDistance;\r\n// Facteur de diminution des rayons des sphères\r\n// sur les orbites successives\r\nuniform float uniAlpha;\r\n\r\n// Coordonnées du centre de la sphère\r\n// comme si elle était sur l'orbite 0.\r\nattribute vec3 attPoint;\r\n// Numéro d'orbite (de 0 à 9).\r\nattribute float attLevel;\r\n\r\nvoid main() {\r\n  // On va reculer un peu la multiball pour qu'on la voit bien\r\n  vec4 translation = vec4(0, 0, -2.5, 0);\r\n\r\n  // Application de la formule pour calculer le rayon de l'orbite courante.\r\n  float alpha1 = pow( uniAlpha, attLevel );\r\n  float alpha2 = alpha1 * uniAlpha;\r\n  float dist = uniDistance - uniRadius * (1.0 + alpha1)\r\n    + 2.0 * uniRadius * (alpha2 - 1.0) / (uniAlpha - 1.0);\r\n\r\n  // Rotation, translation et projection en perspective.\r\n  vec4 vertex = uniRotation * vec4( attPoint * dist, 1 );\r\n  vertex +=  translation;\r\n  gl_Position = uniProjection * vertex;\r\n\r\n  // Détermination de la taille de la sphère en pixels.\r\n  vec4 point = vec4( uniRadius * alpha1, 0, vertex.z, 1 );\r\n  vec4 size = uniProjection * point;  \r\n  gl_PointSize = uniScreenWidth * size.x / size.w;\r\n\r\n}\r\n",frag:"precision mediump float;\r\n// Couleur principale d'une sphère.\r\nconst vec3 COLOR = vec3(1, .5, 0);\r\n\r\nvoid main() {\r\n  float x = 2.0 * (gl_PointCoord.x - .5);\r\n  float y = 2.0 * (gl_PointCoord.y - .5);\r\n  // Distance au carré.\r\n  float r = x * x + y * y;\r\n  // Au delà du rayon d'un cercle, on n'affiche rien.\r\n  if( r > 1.0 ) discard;\r\n  // Ajout d'un liseré noir dont l'épaisseur est\r\n  // un dixième du rayon.\r\n  if( r > .9 * .9 ) {\r\n    gl_FragColor = vec4( 0, 0, 0, 1 );\r\n    return;\r\n  }\r\n  // Assombrir quand le rayon devient grand.\r\n  vec3 color = COLOR * (1.0 - r * .4);\r\n  gl_FragColor = vec4( color, 1.0 );\r\n}\r\n",vertExtra:"uniform mat4 uniProjection;\r\nuniform mat4 uniRotation;\r\nuniform float uniScreenWidth;\r\n\r\n// Rayon de la sphère\r\nuniform float uniRadius;\r\n// Distance de la sphère au centre.\r\nuniform float uniDistance;\r\n// Facteur de diminution des rayons des sphères successives.\r\nuniform float uniAlpha;\r\n\r\nattribute vec3 attPoint;\r\nattribute float attLevel;\r\n\r\nvarying vec3 varAxis;\r\n\r\n\r\nvoid main() {\r\n  vec4 axis = uniRotation * vec4( attPoint, 1 );\r\n  varAxis = normalize( axis.xyz );\r\n  \r\n  vec4 translation = vec4(0, 0, -2.5, 0);\r\n  \r\n  float alpha1 = pow( uniAlpha, attLevel );\r\n  float alpha2 = alpha1 * uniAlpha;\r\n  float dist = uniDistance - uniRadius * (1.0 + alpha1) + 2.0 * uniRadius * (alpha2 - 1.0) / (uniAlpha - 1.0);\r\n  \r\n  vec4 vertex = uniRotation * vec4( attPoint * dist, 1 );  \r\n  vertex +=  translation;\r\n  gl_Position = uniProjection * vertex;\r\n\r\n  vec4 point = vec4( uniRadius * alpha1, 0, vertex.z, 1 );\r\n  vec4 size = uniProjection * point;\r\n  \r\n  gl_PointSize = uniScreenWidth * size.x / size.w;\r\n}\r\n",fragExtra:"precision mediump float;\r\n\r\nconst vec3 BLACK = vec3(0, 0, 0);\r\nconst vec3 WHITE = vec3(1, 1, 1);\r\nconst vec3 ORANGE = vec3(1, .5, 0);\r\nconst vec3 BLUE = vec3(0, .4, .866666667);\r\n\r\nconst vec3 LIGHT = normalize(vec3(-1, 2, 4));\r\n\r\nvarying vec3 varAxis;\r\n\r\n\r\n// Si on fait face à un point de coordonnées (x,y) dans un cercle 2D.\r\n// On peut imaginer qu'il s'agit en fait d'un point (x,y,zz) dans une demi-sphère.\r\n// Cette fonction retourne les coordonnées (x,y,zz) à partir du point (x,y).\r\nvec3 getSphericalVector( float x, float y ) {\r\n  float phi = asin( y );\r\n  float radius = cos( phi );\r\n  float theta = 0.0;\r\n  if( x != 0.0 ) theta = asin( x / radius );\r\n\r\n  float zz = radius * cos( theta );\r\n  return vec3(x, -y, zz);\r\n}\r\n\r\n\r\nvoid main() {\r\n  float x = 2.0 * (gl_PointCoord.x - .5);\r\n  float y = 2.0 * (gl_PointCoord.y - .5);\r\n  float r = x * x + y * y;\r\n  if( r > 1.0 ) discard;\r\n\r\n  vec3 color = BLUE;\r\n  vec3 arrow = getSphericalVector( x, y );\r\n  if( mod(1.0 + dot( arrow, varAxis ), .35) > 0.1 )\r\n    color = ORANGE;\r\n\r\n  if( r > .85 ) {\r\n    // Liseré noir extérieur.\r\n    color = BLACK;\r\n  }\r\n\r\n  float light = dot( arrow, LIGHT );\r\n  if( light < 0.43 ) color *= .5;\r\n  else if( light > 0.95 ) {    \r\n    color = mix( color, WHITE, .75 );\r\n  }\r\n  else if( light > 0.75 ) {    \r\n    color = mix( color, WHITE, .5 );\r\n  }\r\n  \r\n  gl_FragColor = vec4( color, 1.0 );\r\n}\r\n"},u={init:t},d=n("webgl.math").m4,f=n("webgl.resize"),v=n("webgl.program");try{r.exports=function(){function r(n,r,e){return void 0===n[r]?e:n[r]}function e(n,r,e){e?t.addClass(n,r):t.removeClass(n,r)}var t=n("dom"),a=n("tfw.binding.property-manager"),i=n("tfw.view").Tag,o=n("tfw.binding.link"),l=n("tfw.view"),s=n("tfw.binding.converters"),c=n("tfw.view.textbox"),d=n("tfw.view.checkbox");l.ensureCodeBehind(u,"init");var f=s.get("boolean"),v=s.get("float");return function(n){try{void 0===n&&(n={}),this.$elements={};var l=this,s=a(this);s.create("fullscreen",{cast:f}),s.create("extra",{cast:f}),s.create("dense",{cast:f}),s.create("alpha",{cast:v(0)});var h=new i("DIV",["class"]),p=new i("CANVAS");this.$elements.canvas=p;var m=new c({label:"Coeff",width:"48px"}),w=new i("DIV",["class"]),x=new d({content:"Plein écran",wide:!1});t.add(w,x);var g=new i("DIV",["class"]),b=new d({content:"Dense",wide:!1});t.add(g,b);var A=new i("DIV",["class"]),y=new d({content:"Rayures",wide:!1});t.add(A,y),t.add(h,p,m,w,g,A),Object.defineProperty(this,"$",{value:h.$,writable:!1,enumerable:!1,configurable:!1}),new o({A:{obj:l,name:"fullscreen"},B:{action:function(n){e(h,"fullscreen",n)}}}),new o({A:{obj:l,name:"alpha"},B:{obj:m,name:"value"}}),new o({A:{obj:l,name:"fullscreen"},B:{obj:x,name:"value"}}),new o({A:{obj:l,name:"dense"},B:{obj:b,name:"value"}}),new o({A:{obj:l,name:"extra"},B:{obj:y,name:"value"}}),h.class="thm-ele8 wdg-multiball",w.class="bottom",g.class="left",A.class="top",this.fullscreen=r(n,"fullscreen",!1),this.extra=r(n,"extra",!1),this.dense=r(n,"dense",!1),this.alpha=r(n,"alpha",.5),u.init.call(this),t.addClass(this,"view","custom")}catch(n){throw console.error("mod/wdg.multiball.js",n),Error('Instantiation error in XJS of "mod/wdg.multiball.js":\n'+n)}}}()}catch(n){throw Error('Definition error in XJS of "mod/wdg.multiball.js"\n'+n)}r.exports._=s});
+//# sourceMappingURL=wdg.multiball.js.map
+require("tfw.view.checkbox",function(e,n,t){function i(e){s(this).on("value",e)}function o(e){["enter","space"].indexOf(e.code.toLowerCase())>-1&&(this.value=!this.value)}function a(){new l(this.$)}var c=function(){function n(){return i(t,arguments)}var t={en:{},fr:{}},i=e("$").intl;return n.all=t,n}(),r={init:a,on:i,onKeyUp:o},s=e("tfw.binding.property-manager"),l=e("tfw.touchable");try{n.exports=function(){function n(e,n,t){return void 0===e[n]?t:e[n]}function t(e,n,t){t?o.addClass(e,n):o.removeClass(e,n)}function i(e,n,t){t?o.removeClass(e,n):o.addClass(e,n)}var o=e("dom"),a=e("tfw.binding.property-manager"),c=e("tfw.view").Tag,s=e("tfw.binding.link"),l=e("tfw.view"),v=e("tfw.binding.converters");l.ensureCodeBehind(r,"on","init","onKeyUp");var u=v.get("boolean"),w=function(e){try{void 0===e&&(e={}),this.$elements={};var v=this,w=a(this);w.create("value",{cast:u}),w.create("inverted",{cast:u}),w.create("visible",{cast:u}),w.create("wide",{cast:u}),w.create("content");var f=new c("BUTTON",["class"]),d=new c("DIV",["class"]),h=new c("DIV",["class"]);this.$elements.bar=h;var b=new c("DIV",["class"]);this.$elements.btn=b,o.add(d,h,b);var m=new c("DIV",["class"]);o.add(f,d,m),Object.defineProperty(this,"$",{value:f.$,writable:!1,enumerable:!1,configurable:!1}),l.events(f,{tap:function(e){v.value=!v.value},keyup:r.onKeyUp.bind(this)}),new s({A:{obj:v,name:"value"},B:{action:function(e){t(f,"ok",e)}}}),new s({A:{obj:v,name:"inverted"},B:{action:function(e){t(f,"inverted",e)}}}),new s({A:{obj:v,name:"wide"},B:{action:function(e){t(f,"wide",e)}}}),new s({A:{obj:v,name:"visible"},B:{action:function(e){i(f,"hide",e)}}}),new s({A:{obj:v,name:"value"},B:{action:function(e){t(h,"thm-bgSL",e),i(h,"thm-bg0",e)}}}),new s({A:{obj:v,name:"value"},B:{action:function(e){t(b,"thm-bgS",e),i(b,"thm-bg0",e)}}}),w.on("content",function(e){o.clear(m,e)}),f.class="tfw-view-checkbox",d.class="pin",h.class="bar thm-ele2",b.class="btn thm-ele2",m.class="txt",this.value=n(e,"value",!1),this.inverted=n(e,"inverted",!1),this.visible=n(e,"visible",!0),this.wide=n(e,"wide",!0),this.content=n(e,"content","Checkbox"),r.init.call(this),o.addClass(this,"view","custom")}catch(e){throw console.error("mod/tfw.view.checkbox.js",e),Error('Instantiation error in XJS of "mod/tfw.view.checkbox.js":\n'+e)}};return w.prototype.on=r.on,w}()}catch(e){throw Error('Definition error in XJS of "mod/tfw.view.checkbox.js"\n'+e)}n.exports._=c});
+//# sourceMappingURL=tfw.view.checkbox.js.map
 require("tfw.touchable",function(t,e,a){var i=function(){function e(){return i(a,arguments)}var a={en:{},fr:{}},i=t("$").intl;return e.all=a,e}(),o=t("dom"),n=t("dom.fx"),s=t("tfw.listeners"),r=function(t,e){var a=this;void 0===e&&(e={}),void 0===e.enabled&&(e.enabled=!0),t=o(t),this.enabled=e.enabled,this.color=e.color||"#333",this.classToAdd=e.classToAdd,this.opacity=e.opacity||.4,this.element=o(t),this.tap=new s,this.press=new s,o.addClass(t,"tfw-touchable");var i,r,c=o.div("tfw-touchable-shadow"),l=o.div("tfw-touchable-container",[c]),d=n().css(c,{transition:"none",transform:"scale(0)"}).exec(function(e){var n=a.classToAdd;"string"==typeof n&&o.addClass(t,n),-1==["relative","absolute","fixed"].indexOf(getComputedStyle(t).position)&&(t.style.position="relative");var s=t.getBoundingClientRect(),d=s.width,f=s.height;d=Math.max(i,d-i),f=Math.max(r,f-r);var u=Math.ceil(Math.sqrt(d*d+f*f));o.css(c,{left:i+"px",top:r+"px",margin:"-"+u+"px",width:2*u+"px",height:2*u+"px",opacity:0,background:a.color,transform:"scale(0)",transition:"all .15s ease","transition-timing-function":"cubic-bezier(0,1,0.780,1)","-moz-transition-timing-function":"cubic-bezier(0,1,0.780,1)","-webkit-transition-timing-function":"cubic-bezier(0,1,0.780,1)"}),o.add(t,l)}).wait(10).css(c,{opacity:a.opacity,transform:"scale(.25)"}).wait(150).css(c,{transform:"scale(.2)"}).wait(150).css(c,{transition:"all .6s ease",transform:"scale(1)",opacity:0}).wait(600).detach(l).exec(function(){var e=a.classToAdd;"string"==typeof e&&o.removeClass(t,e)}),f=0;o.on(t,{down:function(t){a.enabled&&(t.stopPropagation(),t.preventDefault(),i=Math.floor(t.x),r=Math.floor(t.y),d.start(),f=Date.now())},tap:function(t){if(!a.enabled)return void console.log("[tfw.touchable] DISABLED!");console.log("[tfw.touchable] TAP",t),a.tap.fire(t)}})};e.exports=r,e.exports._=i});
 //# sourceMappingURL=tfw.touchable.js.map
 require("dom.fx",function(t,e,n){function i(t){if(t==this._session){if(this._index>=this._tasks.length)return this._index=0,this._started=!1,delete this._session,void this._onEnd(this);var e=this,n=this._tasks[this._index++];this._debug&&console.info("[dom.fx] tsk["+(this._index-1)+"]: ",n.label,"("+(Date.now()-this._startTime)+" ms)",n.args,t),n(function(){l(i.bind(e,t))},!0)}}function o(t,e){e.terminate&&e.terminate();var n=t.getBoundingClientRect();console.info("[dom.fx] rect=...",n);var i=c.div();c.css(i,{display:"inline-block",width:n.width+"px",height:n.height+"px"}),e.onBeforeReplace(t),c.replace(i,t),e.onAfterReplace(t),e.substitute=i,e.styles=r(t),e.overlay=c.div("dom-fx-fullscreen"),document.body.appendChild(e.overlay),e.overlay.appendChild(t),c.css(t,{left:n.left+"px",top:n.top+"px",width:n.width+"px",height:n.height+"px"}),c.addClass(t,"dom-fx-fullscreen-target"),l(function(){var n=e.overlay.getBoundingClientRect();c.css(t,{left:"20px",top:"20px",width:n.width-40+"px",height:n.height-40+"px"})})}function s(t,e){var n=e.substitute.getBoundingClientRect();c.css(t,{left:n.left+"px",top:n.top+"px",width:n.width+"px",height:n.height+"px"}),e.terminate=function(){c.detach(e.overlay),e.onBeforeReplace(t),c.replace(t,e.substitute),e.onAfterReplace(t),a(t,e.styles),delete e.terminate},l(e.terminate,200)}function r(t){var e,n,i={};for(e in t.style)n=t.style[e],i[e]=n;return console.info("[dom.fx] styles=...",i),i}function a(t,e){for(var n in e)t.style[n]=e[n]}var d=function(){function e(){return i(n,arguments)}var n={en:{}},i=t("$").intl;return e.all=n,e}();t("polyfill.promise");var c=t("dom"),h=t("tfw.data-binding"),l=window.setTimeout,f=function(){},p=1,u=function(t){this._session={},Object.defineProperty(u.prototype,"name",{value:t,writable:!1,configurable:!0,enumerable:!0}),this._name=t,this._tasks=[],this._index=0,this._started=!1,this._startTime=0,this._onEnd=f};u.prototype.start=function(t){this._started&&this.end(),"function"!=typeof t&&(t=f),this._onEnd=t,this._started=!0,this._index=0,this._session={$id:p++},this._startTime=Date.now(),i.call(this,this._session)},u.prototype.end=function(){if(!this._started)return this;var t=this;for(this._started=!1,delete this._session;this._index<this._tasks.length;){var e=this._tasks[this._index++];t._debug&&console.info("[dom.fx.end] tsk["+(this._index-1)+"]: ",e.label,e.args),e(f,!1)}return this._onEnd(this),this},u.prototype.debug=function(t){return this.addTask(function(e){this._debug=!!t,e()}),this},u.prototype.addTask=function(t,e,n){return t.label=e,t.args=n,this._tasks.push(t),this},u.prototype.log=function(t){return this.addTask(function(e){console.log("[dom.fx]",t),e()},"log"),this},u.prototype.pause=function(){return this.addTask(f,"pause"),this},u.prototype.exec=function(){var t=Array.prototype.slice.call(arguments);return this.addTask(function(e,n){t.forEach(function(t){try{"function"==typeof t?t(n):console.log("[dom.fx]",t)}catch(t){console.error(t)}}),e()},"exec",t),this},["css","addClass","removeClass","toggleClass","detach","saveStyle","restoreStyle","add","removeAtt","replace"].forEach(function(t){var e=c[t];u.prototype[t]=function(){var n=Array.prototype.slice.call(arguments);return this.addTask(function(t){e.apply(c,n),t()},t,n),this}}),u.prototype.vanish=function(t,e){return e=parseInt(e),isNaN(e)&&(e=300),this.css(t,{transition:"none"}).css(t,{transition:"opacity "+e+"ms",opacity:0}).wait(e)},u.prototype.vanishAndDetach=function(t,e){return e=parseInt(e),isNaN(e)&&(e=300),this.vanish(t,e).detach(t)},u.prototype.wait=function(t){var e=Array.prototype.slice.call(arguments);return void 0===t&&(t=0),"number"==typeof t?this.addTask(function(e,n){n&&l(e,t)},"wait",e):this.addTask(function(e,n){if(n){var i=c(t),o=function(t){["transitionend","oTransitionEnd","webkitTransitionEnd"].forEach(function(t){i.removeEventListener(t,o)}),e()};["transitionend","oTransitionEnd","webkitTransitionEnd"].forEach(function(t){i.addEventListener(t,o)})}},"wait",e),this},e.exports=function(t){return new u(t)},e.exports.Fullscreen=function(t){if(void 0===t)throw Error("[dom.fx:fullscreen] Missing argument!");if(void 0===t.target)throw Error("[dom.fx:fullscreen] Missing `opts.target`!");"function"==typeof t.target.element&&(t.target=t.target.element()),void 0!==t.target.element&&(t.target=t.target.element);var e=function(){},n={onBeforeReplace:"function"==typeof t.onBeforeReplace?t.onBeforeReplace:e,onAfterReplace:"function"==typeof t.onAfterReplace?t.onAfterReplace:e};h.propBoolean(this,"value")(function(e){e?o(t.target,n):s(t.target,n)})},e.exports._=d});
 //# sourceMappingURL=dom.fx.js.map
 require("polyfill.promise",function(t,n,e){var r=function(){function n(){return r(e,arguments)}var e={en:{},fr:{}},r=t("$").intl;return n.all=e,n}();window.Promise||function(){"use strict";function t(t){return"function"==typeof t||"object"==typeof t&&null!==t}function n(t){return"function"==typeof t}function e(t){return"object"==typeof t&&null!==t}function r(){}function o(){for(var t=0;t<S;t+=2){(0,D[t])(D[t+1]),D[t]=void 0,D[t+1]=void 0}S=0}function i(){}function s(){return new TypeError("You cannot resolve a promise with itself")}function u(){return new TypeError("A promises callback cannot return that same promise.")}function c(t){try{return t.then}catch(t){return K.error=t,K}}function a(t,n,e,r){try{t.call(n,e,r)}catch(t){return t}}function f(t,n,e){C(function(t){var r=!1,o=a(e,n,function(e){r||(r=!0,n!==e?_(t,e):v(t,e))},function(n){r||(r=!0,d(t,n))},"Settle: "+(t._label||" unknown promise"));!r&&o&&(r=!0,d(t,o))},t)}function l(t,n){n._state===q?v(t,n._result):t._state===F?d(t,n._result):y(n,void 0,function(n){_(t,n)},function(n){d(t,n)})}function h(t,e){if(e.constructor===t.constructor)l(t,e);else{var r=c(e);r===K?d(t,K.error):void 0===r?v(t,e):n(r)?f(t,e,r):v(t,e)}}function _(n,e){n===e?d(n,s()):t(e)?h(n,e):v(n,e)}function p(t){t._onerror&&t._onerror(t._result),m(t)}function v(t,n){t._state===I&&(t._result=n,t._state=q,0===t._subscribers.length||C(m,t))}function d(t,n){t._state===I&&(t._state=F,t._result=n,C(p,t))}function y(t,n,e,r){var o=t._subscribers,i=o.length;t._onerror=null,o[i]=n,o[i+q]=e,o[i+F]=r,0===i&&t._state&&C(m,t)}function m(t){var n=t._subscribers,e=t._state;if(0!==n.length){for(var r,o,i=t._result,s=0;s<n.length;s+=3)r=n[s],o=n[s+e],r?g(e,r,o,i):o(i);t._subscribers.length=0}}function w(){this.error=null}function b(t,n){try{return t(n)}catch(t){return N.error=t,N}}function g(t,e,r,o){var i,s,c,a,f=n(r);if(f){if(i=b(r,o),i===N?(a=!0,s=i.error,i=null):c=!0,e===i)return void d(e,u())}else i=o,c=!0;e._state!==I||(f&&c?_(e,i):a?d(e,s):t===q?v(e,i):t===F&&d(e,i))}function A(t,n){try{n(function(n){_(t,n)},function(n){d(t,n)})}catch(n){d(t,n)}}function j(t,n,e,r){this._instanceConstructor=t,this.promise=new t(i,r),this._abortOnReject=e,this._validateInput(n)?(this._input=n,this.length=n.length,this._remaining=n.length,this._init(),0===this.length?v(this.promise,this._result):(this.length=this.length||0,this._enumerate(),0===this._remaining&&v(this.promise,this._result))):d(this.promise,this._validationError())}function E(){throw new TypeError("You must pass a resolver function as the first argument to the promise constructor")}function P(){throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.")}function T(t,e){this._id=G++,this._label=e,this._state=void 0,this._result=void 0,this._subscribers=[],i!==t&&(n(t)||E(),this instanceof T||P(),A(this,t))}var k;k=Array.isArray?Array.isArray:function(t){return"[object Array]"===Object.prototype.toString.call(t)};var M,O=k,S=(Date.now,Object.create,0),C=function(t,n){D[S]=t,D[S+1]=n,2===(S+=2)&&M()},R="undefined"!=typeof window?window:{},x=R.MutationObserver||R.WebKitMutationObserver,Y="undefined"!=typeof Uint8ClampedArray&&"undefined"!=typeof importScripts&&"undefined"!=typeof MessageChannel,D=new Array(1e3);M="undefined"!=typeof process&&"[object process]"==={}.toString.call(process)?function(){return function(){process.nextTick(o)}}():x?function(){var t=0,n=new x(o),e=document.createTextNode("");return n.observe(e,{characterData:!0}),function(){e.data=t=++t%2}}():Y?function(){var t=new MessageChannel;return t.port1.onmessage=o,function(){t.port2.postMessage(0)}}():function(){return function(){setTimeout(o,1)}}();var I=void 0,q=1,F=2,K=new w,N=new w;j.prototype._validateInput=function(t){return O(t)},j.prototype._validationError=function(){return new Error("Array Methods must be provided an Array")},j.prototype._init=function(){this._result=new Array(this.length)};var U=j;j.prototype._enumerate=function(){for(var t=this.length,n=this.promise,e=this._input,r=0;n._state===I&&r<t;r++)this._eachEntry(e[r],r)},j.prototype._eachEntry=function(t,n){var r=this._instanceConstructor;e(t)?t.constructor===r&&t._state!==I?(t._onerror=null,this._settledAt(t._state,n,t._result)):this._willSettleAt(r.resolve(t),n):(this._remaining--,this._result[n]=this._makeResult(q,n,t))},j.prototype._settledAt=function(t,n,e){var r=this.promise;r._state===I&&(this._remaining--,this._abortOnReject&&t===F?d(r,e):this._result[n]=this._makeResult(t,n,e)),0===this._remaining&&v(r,this._result)},j.prototype._makeResult=function(t,n,e){return e},j.prototype._willSettleAt=function(t,n){var e=this;y(t,void 0,function(t){e._settledAt(q,n,t)},function(t){e._settledAt(F,n,t)})};var W=function(t,n){return new U(this,t,!0,n).promise},$=function(t,n){function e(t){_(s,t)}function r(t){d(s,t)}var o=this,s=new o(i,n);if(!O(t))return d(s,new TypeError("You must pass an array to race.")),s;for(var u=t.length,c=0;s._state===I&&c<u;c++)y(o.resolve(t[c]),void 0,e,r);return s},z=function(t,n){var e=this;if(t&&"object"==typeof t&&t.constructor===e)return t;var r=new e(i,n);return _(r,t),r},B=function(t,n){var e=this,r=new e(i,n);return d(r,t),r},G=0,H=T;T.all=W,T.race=$,T.resolve=z,T.reject=B,T.prototype={constructor:T,then:function(t,n,e){var r=this,o=r._state;if(o===q&&!t||o===F&&!n)return this;r._onerror=null;var s=new this.constructor(i,e),u=r._result;if(o){var c=arguments[o-1];C(function(){g(o,s,c,u)})}else y(r,s,t,n);return s},catch:function(t,n){return this.then(null,t,n)}};var J=function(){var t;"Promise"in(t="undefined"!=typeof global?global:"undefined"!=typeof window&&window.document?window:self)&&"resolve"in t.Promise&&"reject"in t.Promise&&"all"in t.Promise&&"race"in t.Promise&&function(){var e;return new t.Promise(function(t){e=t}),n(e)}()||(t.Promise=H)};J()}.call(this),n.exports._=r});
 //# sourceMappingURL=polyfill.promise.js.map
-require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
-//# sourceMappingURL=wdg.icon.js.map
-require("wdg.deform-3",function(t,e,n){function r(t){var e=this.gl;s.css(e.canvas,{"background-image":"url(css/wdg.deform-3/background.jpg)","background-size":"100% 100%"}),this.prg=new l(this.gl,{vert:o.vert,frag:o.frag});var n,r=[];for(n=0;n<c;n++)r.push(.18,0,n,.36,1-n/(c-1),.18,1,n,0,1-n/(c-1));for(n=0;n<c;n++)r.push(.25,0,n,1,1-n/(c-1),.25,1,n,.5,1-n/(c-1));r=new Float32Array(r),this.prg.use();var a=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,a),e.bufferData(e.ARRAY_BUFFER,r,e.STATIC_DRAW);var i=r.BYTES_PER_ELEMENT,u=5*i,g=this.prg.attribs.attRadius.location;e.enableVertexAttribArray(g),e.vertexAttribPointer(g,1,e.FLOAT,!1,u,0*i);var f=this.prg.attribs.attAngle.location;e.enableVertexAttribArray(f),e.vertexAttribPointer(f,1,e.FLOAT,!1,u,1*i);var T=this.prg.attribs.attLevel.location;e.enableVertexAttribArray(T),e.vertexAttribPointer(T,1,e.FLOAT,!1,u,2*i);var E=this.prg.attribs.attUV.location;e.enableVertexAttribArray(E),e.vertexAttribPointer(E,2,e.FLOAT,!1,u,3*i),this.vertexCount=2*c,this.uniTime=e.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=e.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=e.getUniformLocation(this.prg.program,"uniAngle"),this.uniTexture=e.getUniformLocation(this.prg.program,"uniTexture");var d=e.createTexture();e.bindTexture(e.TEXTURE_2D,d),this.texture=d,e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_S,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_T,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MIN_FILTER,e.NEAREST),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MAG_FILTER,e.NEAREST);var v=new Image;v.onload=function(){e.texImage2D(e.TEXTURE_2D,0,e.RGBA,e.RGBA,e.UNSIGNED_BYTE,v),t()},v.onerror=function(t){console.error("Unable to load",v.src+"!"),console.error(t)},v.src="css/wdg.deform-3/texture.png"}function a(t){var e=this.prg.program,n=this.gl;n.clearColor(0,0,0,0),n.clear(n.COLOR_BUFFER_BIT),n.useProgram(e),n.uniform1f(this.uniTime,t),n.uniform1f(this.uniDelay,this.delay),n.uniform1f(this.uniAngle,this.angle/c),n.bindTexture(n.TEXTURE_2D,this.texture),n.activeTexture(n.TEXTURE0),n.bindTexture(n.TEXTURE_2D,this.texture),n.uniform1i(this.uniTexture,0),n.drawArrays(n.TRIANGLE_STRIP,this.girafe?this.vertexCount:0,this.vertexCount)}var i=function(){function e(){return r(n,arguments)}var n={en:{},fr:{}},r=t("$").intl;return e.all=n,e}(),o={vert:"uniform float uniTime;\nuniform float uniDelay;\nuniform float uniAngle;\n\nattribute float attRadius;\nattribute float attAngle;\nattribute float attLevel;\nattribute vec2 attUV;\n\n// Coordonnées dans la texture.\nvarying vec2 varUV;\n\nconst float PI = 3.141592653589793;\nconst float LEVELS = 32.0;\n\nvoid main() {\n  // Temps qui tient compte du décalage par level.\n  float t = uniTime - uniDelay * attLevel;\n  // Angle max d'inclinaison entre deux niveaux.\n  float a = radians( uniAngle );\n  // Calculer en fonction du temps l'angle entre deux\n  // triangles consécutifs.\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\n  // Coordonnées du centre du triangle de la base.\n  float xc = 0.0;\n  float yc = -1.0;\n  \n  int level = int( attLevel );\n  // A chaque niveau supplémentaire,\n  // l'angle s'incline un peu plus.\n  float angle = tilt;\n  for( int i = 1 ; i < 32 ; i++ ) {\n    // Condition d'arrêt.\n    if ( i > level ) break;\n    // Calculer les coordonnées du centre du triangle.\n    yc += cos( angle ) * 2.0 / LEVELS;\n    xc += sin( angle ) * 2.0 / LEVELS;\n    // Incliner un peu plus pour le niveau suivant.\n    angle += tilt;\n  }\n  // Coordonnées du vertex dans l'espace de WebGL.\n  float x = attRadius * cos( attAngle * PI - angle );\n  float y = attRadius * sin( attAngle * PI - angle );\n  \n  gl_Position = vec4( \n    xc + x,   // Aspect ratio\n    yc + y,\n    0, 1 \n  );\n  \n  varUV = attUV;\n}\n",frag:"precision mediump float;\n\nuniform sampler2D uniTexture;\n\nvarying vec2 varUV;\n\nvoid main() {\n  vec4 color = texture2D( uniTexture, varUV );\n  // Si le point est transparent, on ne l'affiche pas.\n  if ( color.a < 0.1 ) discard;\n  gl_FragColor = color;\n}\n"},l=t("webgl.program"),u=t("canvas"),s=t("dom");e.exports=u({init:r,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30},booleans:{girafe:!1}});var c=32;e.exports._=i});
-//# sourceMappingURL=wdg.deform-3.js.map
-require("canvas",function(t,n,i){function e(t,n,i){var e=t.getContext("webgl",n);this.gl=e,Object.freeze(this.gl);var r=new Promise(i.init.bind(this)),o=i.draw.bind(this),s=function(t){window.requestAnimationFrame(s),a(e),o(t)};r.then(s)}var r=function(){function n(){return e(i,arguments)}var i={en:{},fr:{}},e=t("$").intl;return n.all=i,n}(),o=t("dom"),s=t("tfw.data-binding"),a=t("webgl.resize");n.exports=function(t){void 0===t.numbers&&(t.numbers={}),void 0===t.strings&&(t.strings={}),void 0===t.booleans&&(t.booleans={}),void 0===t.context&&(t.context={}),"function"!=typeof t.init&&(t.init=function(t){t()}),"function"!=typeof t.draw&&(t.draw=function(){});var n,i={alpha:!1,depth:!1,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0};for(n in t.context)i[n]=t.context[n];var r=function(n){var r=o.elem(this,"canvas");s.propInteger(this,"width")(function(t){r.setAttribute("width",t),r.style.width=t+"px"}),s.propInteger(this,"height")(function(t){r.setAttribute("height",t),r.style.height=t+"px"});var a,h,f={width:640,height:480};for(a in t.strings)h=t.strings[a],s.propString(this,a),f[a]=h;for(a in t.numbers)h=t.numbers[a],s.propFloat(this,a),f[a]=h;for(a in t.booleans)h=t.booleans[a],s.propBoolean(this,a),f[a]=h;n=s.extend(f,n,this),window.setTimeout(e.bind(this,r,i,t),20)};return r},n.exports._=r});
-//# sourceMappingURL=canvas.js.map
-require("webgl.resize",function(n,t,e){var i=function(){function t(){return i(e,arguments)}var e={en:{},fr:{}},i=n("$").intl;return t.all=e,t}();t.exports=function(n,t){"number"!=typeof t&&(t=window.devicePixelRatio);var e=Math.floor(n.canvas.clientWidth*t),i=Math.floor(n.canvas.clientHeight*t);n.canvas.width===e&&n.canvas.height===i||(n.canvas.width=e,n.canvas.height=i,n.viewport(0,0,e,i))},t.exports._=i});
-//# sourceMappingURL=webgl.resize.js.map
+require("tfw.view.textbox",function(e,t,n){function a(e){"Enter"===e.key&&(this.action=this.value)}function i(e){o.call(this,e),s.call(this,e)}function o(e){this.valid=this.validator(e)}function s(e){var t=this,n=this.list;if(Array.isArray(n)&&0!==n.length){var a=this.$elements.completion;r.clear(a);var i=e.trim().toLowerCase(),o=0;n.forEach(function(e){var n=e.toLowerCase().indexOf(i);0===n&&(++o>h||c.call(t,a,e,n,i.length))}),o<h&&n.forEach(function(e){var n=e.toLowerCase().indexOf(i);n<1||++o>h||c.call(t,a,e,n,i.length)})}}function c(e,t,n,a){var i=this,o=r.div();n>0&&r.add(o,r.tag("span",[t.substr(0,n)])),r.add(o,r.tag("b",[t.substr(n,a)])),n+a<t.length&&r.add(o,r.tag("span",[t.substr(n+a)])),r.on(o,function(e){i.value=t}),r.add(e,o)}var l=function(){function t(){return a(n,arguments)}var n={en:{},fr:{}},a=e("$").intl;return t.all=n,t}(),r=e("dom"),d={onKeyUp:a,onValueChanged:i},h=99;try{t.exports=function(){function t(e,t,n){return void 0===e[t]?n:e[t]}function n(e,t,n){n?i.addClass(e,t):i.removeClass(e,t)}function a(e,t,n){n?i.removeClass(e,t):i.addClass(e,t)}var i=e("dom"),o=e("tfw.binding.property-manager"),s=e("tfw.view").Tag,c=e("tfw.binding.link"),l=e("tfw.view"),r=e("tfw.binding.converters");l.ensureCodeBehind(d,"onValueChanged","onKeyUp");var h=r.get("string"),u=r.get("boolean"),f=r.get("unit"),v=r.get("strings"),b=r.get("validator"),m=r.get("integer");return function(e){try{void 0===e&&(e={}),this.$elements={};var r=this,w=o(this);w.create("label",{cast:h}),w.create("type",{cast:h}),w.create("wide",{cast:u}),w.create("focus",{cast:u}),w.create("enabled",{cast:u}),w.create("visible",{cast:u}),w.create("width",{cast:f}),w.createAction("action"),w.create("list",{cast:v}),w.create("validator",{cast:b}),w.create("valid",{cast:u}),w.create("value",{cast:h}),w.create("maxLength",{cast:m(0)});var g=new s("DIV",["class"]),x=new s("DIV",["class","textcontent"]);this.$elements.head=x;var p=new s("DIV",["class"]),y=new s("INPUT",["class","type","maxLength","value","focus"]);this.$elements.input=y,i.add(p,y),this.$elements.body=p;var j=new s("DIV",["class"]);this.$elements.foot=j;var A=new s("DIV",["class"]);this.$elements.bottom=A;var C=new s("FOOTER"),B=new s("DIV",["class"]);this.$elements.completion=B,i.add(C,B),i.add(g,x,p,j,A,C),Object.defineProperty(this,"$",{value:g.$,writable:!1,enumerable:!1,configurable:!1}),l.events(y,{keyup:d.onKeyUp.bind(this)}),new c({A:{obj:r,name:"enabled"},B:{action:function(e){n(g,"thm-ele2",e)}}}),new c({A:{obj:r,name:"wide"},B:{action:function(e){n(g,"wide",e)}}}),new c({A:{obj:r,name:"focus",open:!1},B:{action:function(e){n(g,"thm-bgSL",e),a(g,"thm-bg3",e)}}}),new c({A:{obj:r,name:"focus"},B:{action:function(e){n(g,"focus",e)}}}),new c({A:{obj:r,name:"visible"},B:{action:function(e){a(g,"hide",e)}}}),new c({A:{obj:r,name:"valid"},B:{action:function(e){a(g,"invalid",e)}}}),new c({A:{obj:r,name:"label"},B:{obj:x,name:"textcontent"}}),new c({A:{obj:r,name:"type"},B:{obj:y,name:"type"}}),new c({A:{obj:r,name:"maxLength"},B:{obj:y,name:"maxLength"}}),new c({A:{obj:r,name:"value",delay:350},B:{obj:y,name:"value"}}),new c({A:{obj:r,name:"focus"},B:{obj:y,name:"focus"}}),w.on("value",function(e){try{d.onValueChanged.call(r,e)}catch(e){console.error('Exception in function behind "onValueChanged" of module "mod/tfw.view.textbox.js" for attribute "value"!  '),console.error(e)}}),w.on("width",function(e){p.$.style.width=e}),g.class="tfw-view-textbox",x.class="head thm-fg",p.class="body",y.class="thm-fg",j.class="foot",A.class="bottom thm-bgSD",B.class="completion thm-fg thm-bg2 thm-ele4",this.label=t(e,"label",""),this.type=t(e,"type","text"),this.wide=t(e,"wide",!1),this.focus=t(e,"focus",!1),this.enabled=t(e,"enabled",!0),this.visible=t(e,"visible",!0),this.width=t(e,"width","auto"),this.list=e.list,this.validator=t(e,"validator",""),this.valid=t(e,"valid",!1),this.value=t(e,"value",""),this.maxLength=t(e,"maxLength",999),i.addClass(this,"view","custom")}catch(e){throw console.error("mod/tfw.view.textbox.js",e),Error('Instantiation error in XJS of "mod/tfw.view.textbox.js":\n'+e)}}}()}catch(e){throw Error('Definition error in XJS of "mod/tfw.view.textbox.js"\n'+e)}t.exports._=l});
+//# sourceMappingURL=tfw.view.textbox.js.map
 require("webgl.program",function(r,e,t){function n(r,e,t){if("string"!=typeof e.vert)throw Error("[webgl.program] Missing attribute `vert` in argument `codes`!");if("string"!=typeof e.frag)throw Error("[webgl.program] Missing attribute `frag` in argument `codes`!");e=a(e,t),this.gl=r,Object.freeze(this.gl),this.BPE=p,Object.freeze(this.BPE),this._typesNamesLookup=m(r);var n=r.createProgram();r.attachShader(n,h(r,e.vert)),r.attachShader(n,c(r,e.frag)),r.linkProgram(n),this.program=n,Object.freeze(this.program),this.use=function(){r.useProgram(n)},this.use(),o(this,r,n),i(this,r,n)}function o(r,e,t){var n,o,i={},a=e.getProgramParameter(t,e.ACTIVE_ATTRIBUTES);for(n=0;n<a;n++)o=e.getActiveAttrib(t,n),o.typeName=r.getTypeName(o.type),o.length=g(e,o),o.location=e.getAttribLocation(t,o.name),console.info("item=",o),i[o.name]=o;r.attribs=i,Object.freeze(r.attribs)}function i(r,e,t){var n,o,i={},a=e.getProgramParameter(t,e.ACTIVE_UNIFORMS);for(n=0;n<a;n++)o=e.getActiveUniform(t,n),i[o.name]=e.getUniformLocation(t,o.name),Object.defineProperty(r,"$"+o.name,{set:s(e,o,i[o.name],r._typesNamesLookup),get:u(o),enumerable:!0,configurable:!1});r.uniforms=i,Object.freeze(r.uniforms)}function a(r,e){var t,n,o={};for(t in r)n=r[t],o[t]=n.split("\n").map(function(r){if("#include"!=r.trim().substr(0,8))return r;var t=r.indexOf("#include")+8,n=r.substr(t).trim();"'<\"".indexOf(n.charAt(0))>-1&&(n=n.substr(1,n.length-2));var o=e[n];if("string"!=typeof o)throw console.error("Include <"+n+"> not found in ",e),Error("Include not found in shader: "+n);return o}).join("\n");return o}function s(r,e,t,n){var o="_$"+e.name;switch(e.type){case r.BYTE:case r.UNSIGNED_BYTE:case r.SHORT:case r.UNSIGNED_SHORT:case r.INT:case r.UNSIGNED_INT:case r.SAMPLER_2D:return 1==e.size?function(e){r.uniform1i(t,e),this[o]=e}:function(e){r.uniform1iv(t,e),this[o]=e};case r.FLOAT:return 1==e.size?function(e){r.uniform1f(t,e),this[o]=e}:function(e){r.uniform1fv(t,e),this[o]=e};case r.FLOAT_VEC2:if(1==e.size)return function(e){r.uniform2fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC2 in uniform `"+e.name+"'!'");case r.FLOAT_VEC3:if(1==e.size)return function(e){r.uniform3fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC3 in uniform `"+e.name+"'!'");case r.FLOAT_VEC4:if(1==e.size)return function(e){r.uniform4fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC4 in uniform `"+e.name+"'!'");case r.FLOAT_MAT3:if(1==e.size)return function(e){r.uniformMatrix3fv(t,!1,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_MAT3 in uniform `"+e.name+"'!'");case r.FLOAT_MAT4:if(1==e.size)return function(e){r.uniformMatrix4fv(t,!1,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_MAT4 in uniform `"+e.name+"'!'");default:throw Error("[webgl.program.createWriter] Don't know how to deal with uniform `"+e.name+"` of type "+n[e.type]+"!")}}function u(r){var e="_$"+r.name;return function(){return this[e]}}function f(r,e,t){var n=e.createShader(r);return e.shaderSource(n,t),e.compileShader(n),e.getShaderParameter(n,e.COMPILE_STATUS)?n:(console.log(t),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(n)),null)}function c(r,e){return f(r.FRAGMENT_SHADER,r,e)}function h(r,e){return f(r.VERTEX_SHADER,r,e)}function m(r){var e,t,n={};for(e in r)"number"==typeof(t=r[e])&&(n[t]=e);return n}function g(r,e){switch(e.type){case r.FLOAT_VEC4:return 4;case r.FLOAT_VEC3:return 3;case r.FLOAT_VEC2:return 2;case r.FLOAT:return 1;default:throw"[webgl.program:getSize] I don't know the size of the attribute '"+e.name+"' because I don't know the type "+getTypeName(e.type)+"!"}}var l=function(){function e(){return n(t,arguments)}var t={en:{},fr:{}},n=r("$").intl;return e.all=t,e}(),p=(new Float32Array).BYTES_PER_ELEMENT;n.prototype.getTypeName=function(r){return this._typesNamesLookup[r]},n.prototype.bindAttribs=function(r){var e=this.gl;e.bindBuffer(e.ARRAY_BUFFER,r);var t=Array.prototype.slice.call(arguments,1),n=0;t.forEach(function(r){var e=this.attribs[r];if(!e)throw'Cannot find attribute "'+r+'"!\nIt may be not active because unused in the shader.\nAvailable attributes are: '+Object.keys(this.attribs).map(function(r){return'"'+r+'"'}).join(", ");n+=e.size*e.length*p},this);var o=0;t.forEach(function(r){var t=this.attribs[r];e.enableVertexAttribArray(t.location),e.vertexAttribPointer(t.location,t.size*t.length,e.FLOAT,!1,n,o),o+=t.size*t.length*p},this)},e.exports=n,e.exports._=l});
 //# sourceMappingURL=webgl.program.js.map
-require("wdg.showhide",function(e,t,n){function i(e){function t(){n.value=!n.value,n.focus=!0}var n=this,i=new l({content:"tri-right",size:"24px"}),o=s.tag("span","label"),d=s.div("head",[i,o]),h=s.div("body","thm-bg0"),c=s.elem(this,"div","wdg-showhide","thm-ele2",[d,h]);r(this,function(e){switch(e.keyCode){case 13:case 32:n.value=!n.value}console.info("[wdg.showhide] evt=",e)}),a.propBoolean(this,"value")(function(e){e?(s.addClass(c,"show"),s.removeClass(c,"fade-in"),window.setTimeout(function(){s.addClass(c,"fade-in")})):s.removeClass(c,"show")}),a.propBoolean(this,"simple")(function(e){e?(s.addClass(c,"simple"),s.removeClass(c,"thm-ele2"),s.removeClass(d,"thm-bgPD")):(s.removeClass(c,"simple"),s.addClass(c,"thm-ele2"),s.addClass(d,"thm-bgPD"))}),a.propString(this,"label")(function(e){o.textContent=e}),a.propUnit(this,"maxHeight")(function(e){e.v<=0?h.style.maxHeight="none":h.style.maxHeight=e.v+e.u}),a.prop(this,"content")(function(e){s.clear(h),Array.isArray(e)?e.forEach(function(e){s.add(h,e)}):void 0!==e&&null!==e&&s.add(h,e)}),a.propRemoveClass(this,"wide","inline"),a.propRemoveClass(this,"visible","hide"),e=a.extend({value:!0,label:"",content:null,maxHeight:null,visible:!0,wide:!0,simple:!1,focus:!1},e,this),s.on(d,t),this.append=function(e){return Array.isArray(n.content)||(n.content=[]),n.content.push(e),s.add(h,e),n},this.prepend=function(e){return Array.isArray(n.content)||(n.content=[]),n.content.push(e),h.insertBefore(e,h.childNodes[0]),n}}var o=function(){function t(){return i(n,arguments)}var n={en:{}},i=e("$").intl;return t.all=n,t}(),s=e("dom"),a=e("tfw.data-binding"),l=e("wdg.icon"),r=e("tfw.focusable");i.prototype.clear=function(){return this.content=[],this},t.exports=i,t.exports._=o});
-//# sourceMappingURL=wdg.showhide.js.map
-require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e,arguments)}var e={en:{},fr:{}},o=n("$").intl;return t.all=e,t}(),u=n("dom"),f=n("tfw.data-binding"),i=function(n,t){"function"!=typeof t&&(t=function(){}),u.addClass(n,"tfw-focusable");var e=u.tag("input");u(n).insertAdjacentElement("afterbegin",u.div("tfw-focusable-invisible",[e])),e.addEventListener("keydown",function(n){t(n),e.value=""}),e.addEventListener("focus",function(){u.addClass(n,"focus"),n.focus=!0}),e.addEventListener("blur",function(){u.removeClass(n,"focus"),n.focus=!1}),f.propBoolean(n,"focus")(function(n){window.setTimeout(function(){n?e.focus():e.blur()})})};t.exports=i,t.exports._=o});
-//# sourceMappingURL=tfw.focusable.js.map
-require("wdg.deform-2",function(e,t,n){function r(e){var t=this.gl;s.css(t.canvas,{"background-image":"url(css/wdg.deform-1/forest.jpg)","background-size":"100% 100%"}),this.prg=new l(this.gl,{vert:o.vert,frag:o.frag});for(var n=[],r=0;r<c;r++)n.push(.75,0,r,1,1,.5,.5*Math.PI,r,.5,0,.75,Math.PI,r,0,1);n=new Float32Array(n),this.prg.use();var a=t.createBuffer();t.bindBuffer(t.ARRAY_BUFFER,a),t.bufferData(t.ARRAY_BUFFER,n,t.STATIC_DRAW);var i=n.BYTES_PER_ELEMENT,u=5*i,g=this.prg.attribs.attRadius.location;t.enableVertexAttribArray(g),t.vertexAttribPointer(g,1,t.FLOAT,!1,u,0*i);var f=this.prg.attribs.attAngle.location;t.enableVertexAttribArray(f),t.vertexAttribPointer(f,1,t.FLOAT,!1,u,1*i);var T=this.prg.attribs.attLevel.location;t.enableVertexAttribArray(T),t.vertexAttribPointer(T,1,t.FLOAT,!1,u,2*i);var v=this.prg.attribs.attUV.location;t.enableVertexAttribArray(v),t.vertexAttribPointer(v,2,t.FLOAT,!1,u,3*i),this.vertexCount=3*c,this.uniTime=t.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=t.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=t.getUniformLocation(this.prg.program,"uniAngle"),this.uniTexture=t.getUniformLocation(this.prg.program,"uniTexture");var d=t.createTexture();t.bindTexture(t.TEXTURE_2D,d),this.texture=d,t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.NEAREST),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.NEAREST);var E=new Image;E.onload=function(){t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,E),e()},E.onerror=function(e){console.error("Unable to load",E.src+"!"),console.error(e)},E.src="css/wdg.deform-2/leaves.png"}function a(e){var t=this.prg.program,n=this.gl;n.clearColor(0,0,0,0),n.clear(n.COLOR_BUFFER_BIT),n.useProgram(t),n.uniform1f(this.uniTime,e),n.uniform1f(this.uniDelay,this.delay),n.uniform1f(this.uniAngle,this.angle),n.bindTexture(n.TEXTURE_2D,this.texture),n.activeTexture(n.TEXTURE0),n.bindTexture(n.TEXTURE_2D,this.texture),n.uniform1i(this.uniTexture,0),n.drawArrays(n.TRIANGLES,0,this.vertexCount)}var i=function(){function t(){return r(n,arguments)}var n={en:{},fr:{}},r=e("$").intl;return t.all=n,t}(),o={vert:"uniform float uniTime;\nuniform float uniDelay;\nuniform float uniAngle;\n\nattribute float attRadius;\nattribute float attAngle;\nattribute float attLevel;\nattribute vec2 attUV;\n\n// Coordonnées dans la texture.\nvarying vec2 varUV;\n\nvoid main() {\n  // Temps qui tient compte du décalage par level.\n  float t = uniTime - uniDelay * attLevel;\n  // Angle max d'inclinaison entre deux niveaux.\n  float a = radians( uniAngle ) * 0.1;\n  // Calculer en fonction du temps l'angle entre deux\n  // triangles consécutifs.\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\n  // Plus le triangle à un level élevé, plus il est petit.\n  float scale = 1.0 / sqrt( 1.0 + attLevel );\n  // Coordonnées du centre du triangle de la base.\n  float xc = -0.5;\n  float yc = -0.7;\n  \n  int level = int( attLevel );\n  // A chaque niveau supplémentaire,\n  // l'angle s'incline un peu plus.\n  float angle = tilt - 0.05;\n  for( int i = 1 ; i < 10 ; i++ ) {\n    // Condition d'arrêt.\n    if ( i > level ) break;\n    // Calculer les coordonnées du centre du triangle.\n    yc += 0.4 * scale * cos( angle );\n    xc += 0.4 * scale * sin( angle );\n    // Incliner un peu plus pour le niveau suivant.\n    angle += tilt;\n  }\n  // Coordonnées du vertex dans l'espace de WebGL.\n  float x = scale * attRadius * cos( attAngle - angle );\n  float y = scale * attRadius * sin( attAngle - angle );\n  \n  gl_Position = vec4( \n    xc + x,\n    yc + y,\n    0, 1 \n  );\n  \n  varUV = attUV;\n}\n",frag:"precision mediump float;\n\nuniform sampler2D uniTexture;\n\nvarying vec2 varUV;\n\nvoid main() {\n  vec4 color = texture2D( uniTexture, varUV );\n  // Si le point est transparent, on ne l'affiche pas.\n  if ( color.a < 0.1 ) discard;\n  gl_FragColor = color;\n}\n"},l=e("webgl.program"),u=e("canvas"),s=e("dom");t.exports=u({init:r,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30}});var c=10;t.exports._=i});
-//# sourceMappingURL=wdg.deform-2.js.map
-require("wdg.flex",function(e,s,t){function a(e){var s=n.elem(this,"div","wdg-flex");i.propToggleClass(this,"orientation",o),i.propToggleClass(this,"type",c),i.propArray(this,"content")(function(e){n.clear(s),e.forEach(function(e){n.add(s,e),void 0!==e.$grow&&n.css(e,{"flex-grow":parseFloat(e.$grow)}),void 0!==e.$shrink&&n.css(e,{"flex-shrink":parseFloat(e.$shrink)})})}),i.propString(this,"justify")(function(e){n.removeClass(s,"justify-center","justify-flex-end","justify-flex-start","justify-space-around","justify-space-between");var t=null;switch(e.trim().toLowerCase()){case"center":t="center";break;case"flex-end":case"flexend":case"end":t="flex-end";break;case"flex-start":case"flexstart":case"start":t="flex-start";break;case"space-around":case"around":t="space-around";break;case"space-between":case"between":t="space-between"}t&&n.addClass(s,"justify-"+t)}),i.propAddClass(this,"wide"),i.propRemoveClass(this,"visible","hide"),e=i.extend({orientation:o[0],type:c[0],justify:"space-around",content:[],wide:!0,visible:!0},e,this)}var r=function(){function s(){return a(t,arguments)}var t={en:{}},a=e("$").intl;return s.all=t,s}(),n=e("dom"),i=e("tfw.data-binding"),o=["H","V","W","N"],c=["default","fill"];s.exports=a,s.exports._=r});
-//# sourceMappingURL=wdg.flex.js.map
-require("wdg.text",function(t,e,l){var a=function(){function e(){return a(l,arguments)}var l={en:{}},a=t("$").intl;return e.all=l,e}(),i=t("dom"),n=t("tfw.data-binding"),s=t("wdg.lang"),o=t("tfw.timer").laterAction,r=function(t){var e=this,l=!1,a=[],r=0,u=i.div("label"),v=i.tag("input"),d=new s({small:!0,visible:!0}),p=i.div("nowrap","thm-ele2","thn-bg3",[v,d]),c=i.div("datalist","thm-ele12");this._input=v;var f=i.elem(this,"div","wdg-text",[u,p,c]);n.bind(d,"value",function(t){v.value=e.value[t]||"",e.focus||v.focus()}),n.prop(this,"value")(function(t){if(null!==t&&void 0!==t||(t=""),"number"!=typeof t&&"boolean"!=typeof t||(t=""+t),"string"!=typeof t){v.value!=t[d.value]&&(v.value=t[d.value]);var l,a=[];for(l in t)a.push(l);d.subset=a,e.intl=!0}else v.value!=t&&(v.value=t),e.intl=!1;e.validate()}),n.propBoolean(this,"intl")(function(t){d.visible=t}),n.propEnum(["text","button","checkbox","color","date","datetime","email","file","hidden","image","month","password","radio","range","reset","search","submit","tel","time","url","week"])(this,"type")(function(t){i.att(v,{type:t}),"password"==t&&i.att(v,{autocomplete:"off"})}),n.propStringArray(this,"list")(function(t){i.clear(c),i.removeClass(f,"list"),Array.isArray(t)&&(t.forEach(function(t){i.add(c,i.div([t]))}),t.length>0&&i.att(f,"list"))}),n.propValidator(this,"validator")(this.validate.bind(this)),n.propBoolean(this,"valid")(function(t){null!==t&&e.validator?t?(i.addClass(f,"valid"),i.removeClass(f,"no-valid")):(i.removeClass(f,"valid"),i.addClass(f,"no-valid")):i.removeClass(f,"valid","no-valid")}),n.propBoolean(this,"enabled")(function(t){t?i.removeAtt(v,"disabled"):i.att(v,{disabled:t})}),n.propInteger(this,"size")(function(t){t<1?i.removeAtt(v,"size"):i.att(v,{size:t})}),n.propString(this,"label")(function(t){null===t||"string"==typeof t&&""==t.trim()?i.addClass(f,"no-label"):(i.removeClass(f,"no-label"),i.textOrHtml(u,t),"<html>"==t.substr(0,6)?i.att(u,{title:""}):i.att(u,{title:t}))}),n.propString(this,"placeholder")(function(t){i.att(v,{placeholder:t})}),n.propString(this,"width")(function(t){f.style.width=t}),n.propBoolean(this,"focus")(function(t){t?v.focus():v.blur()}),n.prop(this,"action"),n.propAddClass(this,"wide"),n.propRemoveClass(this,"visible","hide"),t=n.extend({action:!0,intl:!1,value:"",type:"text",placeholder:"",enabled:!0,validator:null,valid:!0,list:null,label:"",placeholder:"",size:10,width:"auto",focus:!1,wide:!1,visible:!0},t,this);var h=function(){if(i.removeClass(f,"list"),e.list&&0!=e.list.length){i.clear(c);var t=e.list,n=v.value.trim().toLowerCase();t=n.length>0?t.map(function(t,e){return[e,t.toLowerCase().indexOf(n)]}).filter(function(t){return t[1]>-1}).sort(function(t,l){var a=t[1]-l[1];if(0!=a)return a;var i=e.list[t[0]],n=e.list[l[0]];return i<n?-1:i>n?1:0}).map(function(t){var l=e.list[t[0]],a=t[1];return l.substr(0,a)+"<b>"+l.substr(a,n.length)+"</b>"+l.substr(a+n.length)}):t.sort(),r>0&&(t=t.slice(r).concat(t.slice(0,r))),a=t,t.forEach(function(a,n){var s=i.div();s.innerHTML=a,t[n]=s.textContent.trim(),i.add(c,s),i.on(s,{down:function(){l=!0},up:function(){l=!1,e.focus=!0},tap:function(){e.value=s.textContent.trim(),i.removeClass(f,"list")}})}),t.length>0?i.addClass(f,"list"):i.removeClass(f,"list")}},m=o(function(){e.intl?(e.value[d.value]=v.value,n.fire(e,"value",e.value)):e.value=v.value},300);v.addEventListener("keyup",function(t){13==t.keyCode?(t.preventDefault(),t.stopPropagation(),i.hasClass(f,"list")?(i.removeClass(f,"list"),e.value=a[0]):!1!==e.valid&&(n.fire(e,"value",v.value),n.fire(e,"action",v.value))):27==t.keyCode?(i.removeClass(f,"list"),r=0,t.preventDefault(),t.stopPropagation()):40==t.keyCode&&i.hasClass(f,"list")?(r=(r+1)%a.length,h(),t.preventDefault(),t.stopPropagation()):38==t.keyCode&&i.hasClass(f,"list")?(r=(r+a.length-1)%a.length,h(),t.preventDefault(),t.stopPropagation()):(r=0,h(),m.fire())}),v.addEventListener("blur",function(){e.intl?(e.value[d.value]=v.value,n.fire(e,"value",e.value)):e.value=v.value,l||i.removeClass(f,"list"),i.addClass(p,"thm-ele2"),i.removeClass(p,"thm-ele4"),i.addClass(v,"thm-bg3"),i.removeClass(v,"thm-bgSL"),n.fire(e,"focus",!1)}),v.addEventListener("focus",function(){e.selectAll(),i.removeClass(p,"thm-ele2"),i.addClass(p,"thm-ele4"),i.removeClass(v,"thm-bg3"),i.addClass(v,"thm-bgSL"),n.fire(e,"focus",!0)}),v.addEventListener("keydown",function(t){}),this.validate()};r.prototype.validate=function(){var t=this.validator;if(t)try{this.valid=t(this.value)}catch(e){console.error("[wdg.text:validate] Exception = ",e),console.error("[wdg.text:validate] Validator = ",t)}},r.prototype.selectAll=function(){var t=this._input;return t.setSelectionRange(0,t.value.length),!0},e.exports=r,e.exports._=a});
-//# sourceMappingURL=wdg.text.js.map
-require("tfw.timer",function(t,i,n){function e(t){return void 0===t&&(t=1),new Promise(function(i,n){window.setTimeout(i,t)})}function o(t,i){return new c(function(){return new Promise(t)},i)}function r(t,i){return new l(t,i)}function u(){return new f}function a(t,i){if("function"!=typeof t)throw"[tfw.timer/debounce] First param must be a function!";"number"!=typeof i&&(i=300);var n=null,e=0;return function(){n=Array.prototype.slice.call(arguments),e&&clearTimeout(e),e=setTimeout(function(){e=0,t.apply(null,n)},i)}}var s=function(){function i(){return e(n,arguments)}var n={en:{}},e=t("$").intl;return i.all=n,i}();t("polyfill.promise"),n.debounce=a,n.later=e,n.laterPromise=o,n.laterAction=r,n.longAction=u;var c=function(t,i){"number"!=typeof i&&(i=300),i<0&&(i=0);this.enabled=!0,this.waiting=!1,this.action=t,this.delay=i,this.timer=0};c.prototype.dbg=function(t){console.log((this.enabled?"E":"e")+(this.waiting?"W":"w")+": "+t)},c.prototype.fire=function(){var t=this;if(this.timer&&window.clearTimeout(this.timer),this.enabled){this.waiting=!1;var i=function(){t.enabled=!0,t.waiting&&t.fire()};this.timer=window.setTimeout(function(){t.timer=0,t.enabled=!1,t.action().then(i,i)},t.delay)}else this.waiting=!0};var l=function(t,i){"number"!=typeof i&&(i=300),i<0&&(i=100);this.action=t,this.delay=i,this.timer=0};l.prototype.fire=function(){var t=this;this.timer&&window.clearTimeout(this.timer),this.timer=window.setTimeout(function(){t.timer=0,t.enabled=!1,t.action()},t.delay)};var f=function(){this._timer=null,this._action=null};f.prototype.fire=function(t,i){var n=this;return this._timer||(t(),this._timer=window.setTimeout(function(){n._timer=null},i)),this},i.exports._=s});
-//# sourceMappingURL=tfw.timer.js.map
-require("wdg.lang",function(a,e,i){function n(a){var e=this,i=s(this),n=r.elem(this,"div","wdg-lang","theme-elevation-2","theme-color-B0","theme-color-bg-A5"),t=r.div();r.add(n,t),u.propString(this,"value")(function(a){t.textContent=a.toUpperCase()}),u.propRemoveClass(this,"visible","hide"),u.propAddClass(this,"small","small"),u.propStringArray(this,"subset"),u.extend({subset:[],value:g.lang(),small:!1,visible:!0},a,this),r.on(this.element,{down:function(a){r.addClass(n,"theme-elevation-8"),a.stopPropagation(),a.preventDefault()},up:function(a){r.removeClass(n,"theme-elevation-8")},tap:function(){o(i.body,e,i),i.attach()}})}function s(a){var e=k.Cancel(),i=r.tag("header",[l("caption")]),n=r.tag("footer",[e]),s=r.div(),o=r.div("wdg-lang-modal",[i,s,n]),t=new d({content:o});return t.body=s,e.on(t.detach.bind(t)),t}function o(a,e,i){r.clear(a);var n;for(n in l.all)break;var s;for(s in l.all[n])2==s.length&&-1!=e.subset.indexOf(s)&&r.add(a,t(e,s,i));e.subset.length>0&&r.add(a,r.tag("hr"));for(s in l.all[n])2==s.length&&-1==e.subset.indexOf(s)&&r.add(a,t(e,s,i))}function t(a,e,i){var n=new h({content:r.div("wdg-lang-table",[r.div([r.div([e.toUpperCase()]),r.div([l(e)])])]),enabled:e!=a.value});return r.css(n,{margin:"4px"}),n.on(function(){a.value=e,i.detach()}),n}var l=function(){function e(){return n(i,arguments)}var i={en:{ab:"аҧсуа бызшәа, аҧсшәа",aa:"Afaraf",af:"Afrikaans",ak:"Akan",sq:"Shqip",am:"አማርኛ",ar:"العربية",an:"aragonés",hy:"Հայերեն",as:"অসমীয়া",av:"авар мацӀ, магӀарул мацӀ",ae:"avesta",ay:"aymar aru",az:"azərbaycan dili",bm:"bamanankan",ba:"башҡорт теле",eu:"euskara, euskera",be:"беларуская мова",bn:"বাংলা",bh:"भोजपुरी",bi:"Bislama",bs:"bosanski jezik",br:"brezhoneg",bg:"български език",my:"ဗမာစာ",ca:"català",ch:"Chamoru",ce:"нохчийн мотт",ny:"chiCheŵa, chinyanja",zh:"中文",cv:"чӑваш чӗлхи",kw:"Kernewek",co:"corsu, lingua corsa",cr:"ᓀᐦᐃᔭᐍᐏᐣ",hr:"hrvatski jezik",cs:"čeština, český jazyk",da:"dansk",dv:"ދިވެހި",nl:"Nederlands, Vlaams",dz:"རྫོང་ཁ",en:"English",eo:"Esperanto",et:"eesti, eesti keel",ee:"Eʋegbe",fo:"føroyskt",fj:"vosa Vakaviti",fi:"suomi, suomen kieli",fr:"français, langue française",ff:"Fulfulde, Pulaar, Pular",gl:"galego",ka:"ქართული",de:"Deutsch",el:"ελληνικά",gn:"Avañe'ẽ",gu:"ગુજરાતી",ht:"Kreyòl ayisyen",ha:"(Hausa) هَوُسَ",he:"עברית",hz:"Otjiherero",hi:"हिन्दी, हिंदी",ho:"Hiri Motu",hu:"magyar",ia:"Interlingua",id:"Bahasa Indonesia",ie:"Interlingue",ga:"Gaeilge",ig:"Asụsụ Igbo",ik:"Iñupiaq, Iñupiatun",io:"Ido",is:"Íslenska",it:"italiano",iu:"ᐃᓄᒃᑎᑐᑦ",ja:"日本語",jv:"Basa Jawa",kl:"kalaallisut, kalaallit oqaasii",kn:"ಕನ್ನಡ",kr:"Kanuri",ks:"कश्मीरी",kk:"қазақ тілі",km:"ខ្មែរ, ខេមរភាសា, ភាសាខ្មែរ",ki:"Gĩkũyũ",rw:"Ikinyarwanda",ky:"Кыргызча, Кыргыз тили",kv:"коми кыв",kg:"Kikongo",ko:"한국어",ku:"Kurdî",kj:"Kuanyama",la:"latine, lingua latina",lb:"Lëtzebuergesch",lg:"Luganda",li:"Limburgs",ln:"Lingála",lo:"ພາສາລາວ",lt:"lietuvių kalba",lu:"Tshiluba",lv:"latviešu valoda",gv:"Gaelg, Gailck",mk:"македонски јазик",mg:"fiteny malagasy",ms:"bahasa Melayu",ml:"മലയാളം",mt:"Malti",mi:"te reo Māori",mr:"मराठी",mh:"Kajin M̧ajeļ",mn:"Монгол хэл",na:"Dorerin Naoero",nv:"Diné bizaad",nd:"isiNdebele",ne:"नेपाली",ng:"Owambo",nb:"Norsk bokmål",nn:"Norsk nynorsk",no:"Norsk",ii:"ꆈꌠ꒿ Nuosuhxop",nr:"isiNdebele",oc:"occitan, lenga d'òc",oj:"ᐊᓂᔑᓈᐯᒧᐎᓐ",cu:"ѩзыкъ словѣньскъ",om:"Afaan Oromoo",or:"ଓଡ଼ିଆ",os:"ирон æвзаг",pa:"ਪੰਜਾਬੀ",pi:"पाऴि",fa:"فارسی",pl:"język polski, polszczyzna",ps:"پښتو",pt:"Português",qu:"Runa Simi, Kichwa",rm:"rumantsch grischun",rn:"Ikirundi",ro:"Română",ru:"Русский",sa:"संस्कृतम्",sc:"sardu",sd:"सिन्धी",se:"Davvisámegiella",sm:"gagana fa'a Samoa",sg:"yângâ tî sängö",sr:"српски језик",gd:"Gàidhlig",sn:"chiShona",si:"සිංහල",sk:"slovenčina, slovenský jazyk",sl:"slovenski jezik, slovenščina",so:"Soomaaliga, af Soomaali",st:"Sesotho",es:"español",su:"Basa Sunda",sw:"Kiswahili",ss:"SiSwati",sv:"svenska",ta:"தமிழ்",te:"తెలుగు",tg:"тоҷикӣ",th:"ไทย",ti:"ትግርኛ",bo:"བོད་ཡིག",tk:"Türkmen, Түркмен",tl:"Wikang Tagalog",tn:"Setswana",to:"faka Tonga",tr:"Türkçe",ts:"Xitsonga",tt:"татар теле",tw:"Twi",ty:"Reo Tahiti",ug:"ئۇيغۇرچە",uk:"Українська",ur:"اردو",uz:"Oʻzbek",ve:"Tshivenḓa",vi:"Tiếng Việt",vo:"Volapük",wa:"walon",cy:"Cymraeg",wo:"Wollof",fy:"Frysk",xh:"isiXhosa",yi:"ייִדיש",yo:"Yorùbá",za:"Saɯ cueŋƅ, Saw cuengh",zu:"isiZulu",caption:"Please select your language"},fr:{caption:"Veuillez choisir votre langue"}},n=a("$").intl;return e.all=i,e}(),r=a("dom"),u=a("tfw.data-binding"),g=a("$"),d=a("wdg.modal"),k=a("wdg.button"),h=a("wdg.box-button");e.exports=n,e.exports._=l});
-//# sourceMappingURL=wdg.lang.js.map
-require("wdg.box-button",function(t,e,n){var i=function(){function e(){return i(n,arguments)}var n={en:{}},i=t("$").intl;return e.all=n,e}(),o=t("dom"),a=t("tfw.data-binding"),s=t("tfw.touchable"),r=function(t){var e=this,n=o.elem(this,"div","wdg-box-button","thm-ele2"),i=new s(n);i.tap.add(this.fire.bind(this));var r=function(){o.removeClass(n,"thm-bgSL","thm-bg0","thm-bg3"),i.enabled=e.enabled,e.enabled?e.selected?o.addClass(n,"thm-bgSL"):o.addClass(n,"pointer","thm-bg3"):o.addClass(n,"thm-bg0")};a.prop(this,"value"),a.propBoolean(this,"enabled")(r),a.propBoolean(this,"selected")(r),a.prop(this,"content")(function(t){o.clear(n),Array.isArray(t)||(t=[t]),t.forEach(function(t){o.add(n,t)})}),a.prop(this,"action",0),a.propAddClass(this,"wide"),a.propRemoveClass(this,"visible","hide"),t=a.extend({content:[],value:"action",action:0,enabled:!0,selected:!1,wide:!1,visible:!0},t,this)};r.prototype.on=function(t){return a.bind(this,"action",t)},r.prototype.fire=function(){this.enabled&&a.fire(this,"action",this.value)},e.exports=r,e.exports._=i});
-//# sourceMappingURL=wdg.box-button.js.map
-require("wdg.button",function(e,t,n){function r(e,t){var n=JSON.parse(JSON.stringify(e));if(void 0===t)return n;var r;for(r in t)n[r]=void 0;return n}function o(e,t){return void 0===e&&(e={}),new c(r(e,t))}var i=function(){function t(){return r(n,arguments)}var n={en:{cancel:"Cancel",close:"Close",delete:"Delete",edit:"Edit",gotit:"Got it",no:"No",ok:"OK",save:"Save",yes:"Yes"},fr:{cancel:"Annuler",close:"Fermer",delete:"Supprimer",edit:"Editer",gotit:"J'ai compris",no:"Non",ok:"Valider",save:"Sauver",yes:"Oui"}},r=e("$").intl;return t.all=n,t}(),c=e("tfw.view.button");c.Cancel=function(e){return o({text:i("cancel"),icon:"cancel",flat:!0},e)},c.Close=function(e){return o({text:i("close"),icon:"close",flat:!0},e)},c.GotIt=function(e){return o({text:i("gotit"),flat:!0},e)},c.Delete=function(e){return o({text:i("delete"),type:"secondary",icon:"delete"},e)},c.No=function(e){return o({text:i("no"),icon:"cancel",flat:!0},e)},c.Ok=function(e){return o({text:i("ok"),icon:"ok",flat:!0},e)},c.Edit=function(e){return o({text:i("edit"),type:"primary",icon:"edit"},e)},c.Save=function(e){return o({text:i("save"),type:"primary",icon:"save"},e)},c.Yes=function(e){return o({text:i("yes"),flat:!0},e)},c.default={text:"OK",icon:null,type:null},t.exports=c,t.exports._=i});
-//# sourceMappingURL=wdg.button.js.map
-require("tfw.view.button",function(e,t,n){function i(e){return w(this).on("action",e),this}function a(e){this.wide?delete this.$.style.width:this.$.style.width=e}function o(e){void 0!==e&&(this.tag=e),this.href.length>0?this.target.length>0?window.open(this.href,this.target):window.location=this.href:this.action=this.tag}function s(){var e=[];if(this.flat)if(this.pressed)switch(this.type){case"default":e.push("thm-bg3");break;case"primary":e.push("thm-bgP");break;case"secondary":e.push("thm-bgS")}else switch(this.type){case"primary":e.push("thm-fgP");break;case"secondary":e.push("thm-fgS")}else{switch(this.type){case"default":e.push("thm-bg3");break;case"primary":e.push("thm-bgP");break;case"secondary":e.push("thm-bgS")}this.pressed?e.push("thm-ele4"):e.push("thm-ele2")}return e}function r(e){this.$elements.icon.size=e?20:28}function c(e){32!=e.keyCode&&13!=e.keyCode||(e.preventDefault(),e.stopPropagation(),o.call(this),this.pressed=!1)}function l(){var e=this;this._touchable=new b(this.$),this._touchable.tap.add(function(){o.call(e)}),this._touchable.enabled=this.enabled}function h(){if(this._touchable){var e=this.enabled&&!this.wait;this._touchable.enabled=e,e?u.removeAtt(this,"disabled"):u.att(this,{disabled:!0})}}var d=function(){function t(){return i(n,arguments)}var n={en:{cancel:"Cancel",close:"Close",delete:"Delete",edit:"Edit",gotit:"Got it",no:"No",ok:"OK",save:"Save",yes:"Yes"},fr:{cancel:"Annuler",close:"Fermer",delete:"Supprimer",edit:"Editer",gotit:"J'ai compris",no:"Non",ok:"Valider",save:"Sauver",yes:"Oui"}},i=e("$").intl;return t.all=n,t}(),f={getClasses:s,onWidthChanged:a,onSmallChanged:r,onEnabledChanged:h,onKeyUp:c,on:i,fire:o,init:l},u=e("dom"),w=e("tfw.binding.property-manager"),b=e("tfw.touchable");try{t.exports=function(){function t(e,t,n){return void 0===e[t]?n:e[t]}function n(e,t,n){n?a.addClass(e,t):a.removeClass(e,t)}function i(e,t,n){n?a.removeClass(e,t):a.addClass(e,t)}var a=e("dom"),o=e("tfw.binding.property-manager"),s=e("tfw.view").Tag,r=e("tfw.binding.link"),c=e("tfw.view"),l=e("tfw.binding.converters"),h=e("tfw.view.icon");c.ensureCodeBehind(f,"onEnabledChanged","onWidthChanged","onSmallChanged","on","fire","init","onKeyUp");var d=l.get("string"),u=l.get("boolean"),w=l.get("enum"),b=l.get("unit"),m=l.get("isEmpty"),p=function(e){try{void 0===e&&(e={}),this.$elements={};var l=this,p=o(this);p.createAction("action"),p.create("tag",{cast:d}),p.create("icon"),p.create("text",{cast:d}),p.create("href",{cast:d}),p.create("target",{cast:d}),p.create("pressed",{cast:u}),p.create("flat",{cast:u}),p.create("type",{cast:w(["default","primary","secondary"])}),p.create("enabled",{cast:u}),p.create("inverted",{cast:u}),p.create("visible",{cast:u}),p.create("wide",{cast:u}),p.create("width",{cast:b}),p.create("responsive",{cast:u}),p.create("small",{cast:u}),p.create("wait",{cast:u});var g=new s("BUTTON",["class"]),v=new s("DIV",["class"]),y=new h;this.$elements.icon=y,a.add(v,y);var C=new s("DIV",["class"]);this.$elements.text=C,a.add(g,v,C),Object.defineProperty(this,"$",{value:g.$,writable:!1,enumerable:!1,configurable:!1}),c.events(g,{keyup:f.onKeyUp.bind(this),down:function(e){l.pressed=!0},up:function(e){l.pressed=!1}}),new r({A:{obj:l,name:"flat"},B:{action:function(e){n(g,"flat",e)}}}),new r({A:{obj:l,name:"wait"},B:{action:function(e){n(g,"wait",e)}}}),new r({A:{obj:l,name:"flat"},B:{action:function(e){g.applyClass(f.getClasses.call(l,e,"flat"),0)}}}),new r({A:{obj:l,name:"type"},B:{action:function(e){g.applyClass(f.getClasses.call(l,e,"type"),0)}}}),new r({A:{obj:l,name:"pressed"},B:{action:function(e){g.applyClass(f.getClasses.call(l,e,"pressed"),0)}}}),new r({A:{obj:l,name:"inverted"},B:{action:function(e){n(g,"inverted",e)}}}),new r({A:{obj:l,name:"visible"},B:{action:function(e){i(g,"hide",e)}}}),new r({A:{obj:l,name:"wide"},B:{action:function(e){n(g,"wide",e)}}}),new r({A:{obj:l,name:"responsive"},B:{action:function(e){n(g,"responsive",e)}}}),new r({A:{obj:l,name:"small"},B:{action:function(e){n(g,"small",e)}}}),new r({A:{obj:l,name:"icon"},B:{obj:y,name:"content"}}),new r({A:{obj:l,name:"wait"},B:{obj:y,name:"animate"}}),new r({A:{obj:l,name:"text"},B:{action:function(e){n(C,"hide",e)},converter:m}}),p.on("enabled",function(e){try{f.onEnabledChanged.call(l,e)}catch(e){console.error('Exception in function behind "onEnabledChanged" of module "mod/tfw.view.button.js" for attribute "enabled"!  '),console.error(e)}}),p.on("width",function(e){try{f.onWidthChanged.call(l,e)}catch(e){console.error('Exception in function behind "onWidthChanged" of module "mod/tfw.view.button.js" for attribute "width"!  '),console.error(e)}}),p.on("small",function(e){try{f.onSmallChanged.call(l,e)}catch(e){console.error('Exception in function behind "onSmallChanged" of module "mod/tfw.view.button.js" for attribute "small"!  '),console.error(e)}}),p.on("wait",function(e){try{f.onEnabledChanged.call(l,e)}catch(e){console.error('Exception in function behind "onEnabledChanged" of module "mod/tfw.view.button.js" for attribute "wait"!  '),console.error(e)}}),p.on("text",function(e){a.clear(C,e)}),g.class="tfw-view-button",v.class="icon",C.class="text thm-fg",this.tag=t(e,"tag","ACTION"),this.icon=t(e,"icon",""),this.text=t(e,"text","Click me!"),this.href=t(e,"href",""),this.target=t(e,"target",""),this.pressed=t(e,"pressed",!1),this.flat=t(e,"flat",!1),this.type=t(e,"type","primary"),this.enabled=t(e,"enabled",!0),this.inverted=t(e,"inverted",!1),this.visible=t(e,"visible",!0),this.wide=t(e,"wide",!1),this.width=t(e,"width","auto"),this.responsive=t(e,"responsive",!1),this.small=t(e,"small",!1),this.wait=t(e,"wait",!1),f.init.call(this),a.addClass(this,"view","custom")}catch(e){throw console.error("mod/tfw.view.button.js",e),Error('Instantiation error in XJS of "mod/tfw.view.button.js":\n'+e)}};return p.prototype.on=f.on,p.prototype.fire=f.fire,p}()}catch(e){throw Error('Definition error in XJS of "mod/tfw.view.button.js"\n'+e)}t.exports._=d});
-//# sourceMappingURL=tfw.view.button.js.map
-require("wdg.modal",function(t,e,o){function n(t){var e=this,o=s.div();o.addEventListener("scroll",i.bind(this,o));var n=function(){window.setTimeout(function(){i(o)})},r=s.tag("header","thm-fg","thm-ele8","thm-bgPD"),c=s.tag("footer"),d=s.div("cell","thm-ele24","thm-bg0",[r,o,c]),l=s.elem(this,"div","wdg-modal",[s.div([d])]);s.on(l,{mousedown:function(t){console.info("[wdg.modal] evt=",t)}}),a.prop(this,"content")(function(t){s.clear(o),Array.isArray(t)?t.forEach(function(t){s.add(o,t)}):void 0!==t&&null!==t&&s.add(o,t),n()}),a.prop(this,"header")(function(t){if(!t||"string"==typeof t&&0===t.trim().length)return void s.addClass(r,"hide");s.removeClass(r,"hide"),s.clear(r),Array.isArray(t)?t.forEach(function(t){s.add(r,t)}):void 0!==t&&null!==t&&s.add(r,t),n()}),a.prop(this,"footer")(function(t){if(!t||"string"==typeof t&&0===t.trim().length)return void s.addClass(c,"hide");s.removeClass(c,"hide"),s.clear(c),Array.isArray(t)?t.forEach(function(t){s.add(c,t)}):s.add(c,t),n()}),a.propString(this,"width")(function(t){s.css(o,{"max-width":t}),n()}),a.propAddClass(this,"fullscreen"),a.propAddClass(this,"padding"),a.propAddClass(this,"scroll"),a.propAddClass(this,"wide"),a.propBoolean(this,"visible")(function(t){t?e.attach():e.detach()}),t=a.extend({visible:!1,header:null,content:[],footer:null,padding:!0,scroll:!0,wide:!1,fullscreen:!1,width:"auto"},t,this)}function i(t,e){t.scrollTop>0?s.addClass(t,"top"):s.removeClass(t,"top"),t.scrollHeight-t.scrollTop>t.clientHeight?s.addClass(t,"bottom"):s.removeClass(t,"bottom")}var r=function(){function e(){return n(o,arguments)}var o={en:{cancel:"Cancel",close:"Got it",confirm:"Confirm",ok:"Accept"},fr:{cancel:"Annuler",close:"J'ai compris",confirm:"Confirmation",ok:"Accepter"}},n=t("$").intl;return e.all=o,e}(),s=t("dom"),a=t("tfw.data-binding"),c=(t("wdg.flex"),t("wdg.button"));n.prototype.refresh=function(){return a.fire(this,"content"),this},n.prototype.attach=function(){var t=this;this._timeoutDetach&&(window.clearTimeout(this._timeoutDetach),delete this._timeoutDetach),document.body.appendChild(this.element),a.set(this,"visible",!0),s.addClass(this,"fadeout"),window.setTimeout(function(){s.removeClass(t,"fadeout")})},n.prototype.detach=function(){var t=this;window.setTimeout(function(){s.addClass(t,"fadeout")}),this._timeoutDetach=window.setTimeout(function(){delete this._timeoutDetach,a.set(t,"visible",!1),s.detach(t.element)},250)},n.confirm=function(t,e,o){"function"==typeof e&&(t={content:t,onYes:e,onNo:o}),void 0===t.title&&(t.title=r("confirm")),void 0===t.yes&&(t.yes=r("ok")),void 0===t.no&&(t.no=r("cancel")),void 0===t.onYes&&(t.onYes=function(){}),void 0===t.onNo&&(t.onNo=function(){}),e=t.onYes,o=t.onNo;var i=new c({text:t.yes,flat:!0}),a=new c({text:t.no,flat:!0});if(Array.isArray(t.content)&&(t.content=s.div(t.content)),"string"==typeof t.content&&"<html>"==t.content.substr(0,6)){var d=t.content.substr(6);t.content=s.div(),t.content.innerHTML=d}var l=new n({header:t.title,footer:[a,i],content:t.content});return l.attach(),a.on(function(){l.detach(),"function"==typeof o&&o()}),i.on(function(){if("function"==typeof e){var t=e();"string"!=typeof t?l.detach():(a.visible=!1,i.waitOn(t))}else l.detach()}),l},n.alert=function(t,e){var o=new c({text:r("close"),flat:!0});if("string"==typeof t&&"<html>"==t.substr(0,6)){var i=t.substr(6);t=s.div(),t.innerHTML=i}var a=new n({footer:o,content:t});return a.attach(),o.on(function(){a.detach(),"function"==typeof e&&e()}),a},e.exports=n,e.exports._=r});
-//# sourceMappingURL=wdg.modal.js.map
-require("wdg.deform-1",function(n,e,t){function a(n){var e=this.gl;u.css(e.canvas,{"background-image":"url(css/wdg.deform-1/forest.jpg)","background-size":"100% 100%"}),this.prg=new o(this.gl,{vert:l.vert,frag:l.frag});for(var t=[],a=0;a<g;a++)t.push(.75,0,a,.5,.5*Math.PI,a,.75,Math.PI,a);t=new Float32Array(t),this.prg.use();var r=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,r),e.bufferData(e.ARRAY_BUFFER,t,e.STATIC_DRAW);var i=t.BYTES_PER_ELEMENT,s=3*i,c=this.prg.attribs.attRadius.location;e.enableVertexAttribArray(c),e.vertexAttribPointer(c,1,e.FLOAT,!1,s,0*i);var f=this.prg.attribs.attAngle.location;e.enableVertexAttribArray(f),e.vertexAttribPointer(f,1,e.FLOAT,!1,s,1*i);var v=this.prg.attribs.attLevel.location;e.enableVertexAttribArray(v),e.vertexAttribPointer(v,1,e.FLOAT,!1,s,2*i),this.vertexCount=3*g,this.uniTime=e.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=e.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=e.getUniformLocation(this.prg.program,"uniAngle"),n()}function r(n){var e=this.prg.program,t=this.gl;t.clearColor(0,0,0,0),t.clear(t.COLOR_BUFFER_BIT),t.useProgram(e),t.uniform1f(this.uniTime,n),t.uniform1f(this.uniDelay,this.delay),t.uniform1f(this.uniAngle,this.angle),t.drawArrays(t.TRIANGLES,0,this.vertexCount)}var i=function(){function e(){return a(t,arguments)}var t={en:{},fr:{}},a=n("$").intl;return e.all=t,e}(),l={vert:"uniform float uniTime;\nuniform float uniDelay;\nuniform float uniAngle;\n\nattribute float attRadius;\nattribute float attAngle;\nattribute float attLevel;\n\n// Pour faire un léger dégradé dans le fragment shader.\nvarying float varBrightness;\n\nvoid main() {\n  // Temps qui tient compte du décalage par level.\n  float t = uniTime - uniDelay * attLevel;\n  // Angle max d'inclinaison entre deux niveaux.\n  float a = radians( uniAngle ) * 0.1;\n  // Calculer en fonction du temps l'angle entre deux\n  // triangles consécutifs.\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\n  // Plus le triangle à un level élevé, plus il est petit.\n  float scale = 1.0 / sqrt( 1.0 + attLevel );\n  // Coordonnées du centre du triangle de la base.\n  float xc = -0.5;\n  float yc = -0.7;\n  \n  int level = int( attLevel );\n  // A chaque niveau supplémentaire,\n  // l'angle s'incline un peu plus.\n  float angle = tilt - 0.05;\n  for( int i = 1 ; i < 10 ; i++ ) {\n    // Condition d'arrêt.\n    if ( i > level ) break;\n    // Calculer les coordonnées du centre du triangle.\n    yc += 0.4 * scale * cos( angle );\n    xc += 0.4 * scale * sin( angle );\n    // Incliner un peu plus pour le niveau suivant.\n    angle += tilt;\n  }\n  // Coordonnées du vertex dans l'espace de WebGL.\n  float x = scale * attRadius * cos( attAngle - angle );\n  float y = scale * attRadius * sin( attAngle - angle );\n  \n  gl_Position = vec4( \n    xc + x,\n    yc + y,\n    0, 1 \n  );\n  if (attLevel == 9.0) {\n    // Le dernier triangle est de couleur unie.\n    varBrightness = 0.0;\n  } else {\n    // Vaut 0 pour les vertex du bas du triangle\n    // et 1 pour le sommet.\n    // Cela donne l'effer d'une ombre.\n    varBrightness = sin( attAngle );\n  }\n}\n",frag:"precision mediump float;\n\nvarying float varBrightness;\n\nconst vec4 COLOR_TOP = vec4(98.0 / 255.0, 110.0 / 255.0, 48.0 / 255.0, 1);\nconst vec4 COLOR_BOTTOM = vec4(193.0 / 255.0, 190.0 / 255.0, 145.0 / 255.0, 1);\n\nvoid main() {\n  gl_FragColor = mix( COLOR_BOTTOM, COLOR_TOP, varBrightness );\n}\n"},o=n("webgl.program"),s=n("canvas"),u=n("dom");e.exports=s({init:a,draw:r,context:{alpha:!0},numbers:{delay:0,angle:30}});var g=10;e.exports._=i});
-//# sourceMappingURL=wdg.deform-1.js.map
->>>>>>> 41464293f15f8b7b6b322ffdeb2d8f1595b6651a:js/@deform.js
+require("webgl.resize",function(n,t,e){var i=function(){function t(){return i(e,arguments)}var e={en:{},fr:{}},i=n("$").intl;return t.all=e,t}();t.exports=function(n,t){"number"!=typeof t&&(t=window.devicePixelRatio);var e=Math.floor(n.canvas.clientWidth*t),i=Math.floor(n.canvas.clientHeight*t);n.canvas.width===e&&n.canvas.height===i||(n.canvas.width=e,n.canvas.height=i,n.viewport(0,0,e,i))},t.exports._=i});
+//# sourceMappingURL=webgl.resize.js.map
+require("webgl.math",function(t,n,r){function a(t){return new Float32Array(t)}function o(t){var n,r,o=a(t),e=0;for(r=0;r<o.length;r++)n=o[r],e+=n*n;if(e>0){var i=1/Math.sqrt(e);for(r=0;r<o.length;r++)o[r]*=i}return o}function e(t,n,r,a,o,e,i){i=i||new Float32Array(16);var u=Math.cos(o),c=Math.sin(o),f=-Math.cos(e+.5*Math.PI),l=-Math.sin(e+.5*Math.PI),h=f*u,s=l*u,M=c,m=-s,w=h,y=0,v=Math.sqrt(m*m+w*w+y*y);m/=v,w/=v,y/=v;var A=s*y-M*w,F=m*M-y*h,g=h*w-s*m,p=-(h*a+t),x=-(s*a+n),I=-(M*a+r);return i[0]=m,i[4]=w,i[8]=y,i[12]=p*m+x*w+I*y,i[1]=A,i[5]=F,i[9]=g,i[13]=p*A+x*F+I*g,i[2]=h,i[6]=s,i[10]=M,i[14]=p*h+x*s+I*M,i[3]=0,i[7]=0,i[11]=0,i[15]=1,i}function i(t,n,r,a,o){o=o||new Float32Array(16);var e=Math.tan(.5*(Math.PI-t)),i=1/(r-a);return o[0]=e/n,o[1]=0,o[2]=0,o[3]=0,o[4]=0,o[5]=e,o[6]=0,o[7]=0,o[8]=0,o[9]=0,o[10]=(r+a)*i,o[11]=-1,o[12]=0,o[13]=0,o[14]=r*a*i*2,o[15]=0,o}function u(){return g(1,0,0,0,1,0,0,0,1)}function c(){return p(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)}function f(t,n){return g(2/t,0,0,0,-2/n,0,0,0,1)}function l(t,n,r){return p(2/t,0,0,0,0,-2/n,0,0,0,0,2/r,0,0,0,0,1)}function h(t,n){return g(1,0,0,0,1,0,t,n,1)}function s(t,n,r){return p(1,0,0,0,0,1,0,0,0,0,1,0,t,n,r,1)}function M(t){var n=Math.cos(t),r=Math.sin(t);return g(n,-r,0,r,n,0,0,0,1)}function m(t,n){n=n||new Float32Array(16);var r=Math.cos(t),a=Math.sin(t);return n[0]=1,n[1]=0,n[2]=0,n[3]=0,n[4]=0,n[5]=r,n[6]=a,n[7]=0,n[8]=0,n[9]=-a,n[10]=r,n[11]=0,n[12]=0,n[13]=0,n[14]=0,n[15]=1,n}function w(t,n){n=n||new Float32Array(16);var r=Math.cos(t),a=Math.sin(t);return n[0]=r,n[1]=0,n[2]=-a,n[3]=0,n[4]=0,n[5]=1,n[6]=0,n[7]=0,n[8]=a,n[9]=0,n[10]=r,n[11]=0,n[12]=0,n[13]=0,n[14]=0,n[15]=1,n}function y(t,n){n=n||new Float32Array(16);var r=Math.cos(t),a=Math.sin(t);return n[0]=r,n[1]=a,n[2]=0,n[3]=0,n[4]=-a,n[5]=r,n[6]=0,n[7]=0,n[8]=0,n[9]=0,n[10]=1,n[11]=0,n[12]=0,n[13]=0,n[14]=0,n[15]=1,n}function v(t,n,r){r=r||new Float32Array(16);var a=Math.cos(t),o=Math.sin(t),e=Math.cos(n),i=Math.sin(n);return r[0]=e,r[1]=o*i,r[2]=-a*i,r[3]=0,r[4]=0,r[5]=a,r[6]=o,r[7]=0,r[8]=i,r[9]=-o*e,r[10]=a*e,r[11]=0,r[12]=0,r[13]=0,r[14]=0,r[15]=1,r}function A(t,n){return g(t,0,0,0,n,0,0,0,1)}function F(t,n,r){return p(t,0,0,0,0,n,0,0,0,0,r,0,0,0,0,1)}function g(t,n,r,a,o,e,i,u,c){return new Float32Array([t,n,r,a,o,e,i,u,c])}function p(t,n,r,a,o,e,i,u,c,f,l,h,s,M,m,w){return new Float32Array([t,n,r,a,o,e,i,u,c,f,l,h,s,M,m,w])}function x(t,n,r,a){return new Float32Array([t,n,r,a])}function I(t,n,r){var a=d["m"+t.length+"m"+n.length];if("function"!=typeof a)throw Error("[webgl.math.mul] I don't know how to multiply 'M"+t.length+"' with 'M"+n.length+"'!");return a(t,n,r)}var P=function(){function n(){return a(r,arguments)}var r={en:{},fr:{}},a=t("$").intl;return n.all=r,n}();n.exports={m4:{identity:c,matrix:p,vector:x,projection:l,translation:s,rotationX:m,rotationY:w,rotationZ:y,rotationXY:v,scaling:F,copy:a,normalize:o,cameraPolar:e,perspective:i,mul:I},m3:{identity:u,matrix:g,projection:f,translation:h,rotation:M,scaling:A}};var d={m4m4:function(t,n,r){return r=r||new Float32Array(4),r[0]=t[0]*n[0]+t[2]*n[1],r[1]=t[1]*n[0]+t[3]*n[1],r[2]=t[0]*n[2]+t[2]*n[3],r[3]=t[1]*n[2]+t[3]*n[3],r},m9m9:function(t,n,r){return r=r||new Float32Array(9),r[0]=t[0]*n[0]+t[3]*n[1]+t[6]*n[2],r[1]=t[1]*n[0]+t[4]*n[1]+t[7]*n[2],r[2]=t[2]*n[0]+t[5]*n[1]+t[8]*n[2],r[3]=t[0]*n[3]+t[3]*n[4]+t[6]*n[5],r[4]=t[1]*n[3]+t[4]*n[4]+t[7]*n[5],r[5]=t[2]*n[3]+t[5]*n[4]+t[8]*n[5],r[6]=t[0]*n[6]+t[3]*n[7]+t[6]*n[8],r[7]=t[1]*n[6]+t[4]*n[7]+t[7]*n[8],r[8]=t[2]*n[6]+t[5]*n[7]+t[8]*n[8],r},m16m16:function(t,n,r){return r=r||new Float32Array(16),r[0]=t[0]*n[0]+t[4]*n[1]+t[8]*n[2]+t[12]*n[3],r[1]=t[1]*n[0]+t[5]*n[1]+t[9]*n[2]+t[13]*n[3],r[2]=t[2]*n[0]+t[6]*n[1]+t[10]*n[2]+t[14]*n[3],r[3]=t[3]*n[0]+t[7]*n[1]+t[11]*n[2]+t[15]*n[3],r[4]=t[0]*n[4]+t[4]*n[5]+t[8]*n[6]+t[12]*n[7],r[5]=t[1]*n[4]+t[5]*n[5]+t[9]*n[6]+t[13]*n[7],r[6]=t[2]*n[4]+t[6]*n[5]+t[10]*n[6]+t[14]*n[7],r[7]=t[3]*n[4]+t[7]*n[5]+t[11]*n[6]+t[15]*n[7],r[8]=t[0]*n[8]+t[4]*n[9]+t[8]*n[10]+t[12]*n[11],r[9]=t[1]*n[8]+t[5]*n[9]+t[9]*n[10]+t[13]*n[11],r[10]=t[2]*n[8]+t[6]*n[9]+t[10]*n[10]+t[14]*n[11],r[11]=t[3]*n[8]+t[7]*n[9]+t[11]*n[10]+t[15]*n[11],r[12]=t[0]*n[12]+t[4]*n[13]+t[8]*n[14]+t[12]*n[15],r[13]=t[1]*n[12]+t[5]*n[13]+t[9]*n[14]+t[13]*n[15],r[14]=t[2]*n[12]+t[6]*n[13]+t[10]*n[14]+t[14]*n[15],r[15]=t[3]*n[12]+t[7]*n[13]+t[11]*n[14]+t[15]*n[15],r},m16m4:function(t,n,r){return r=r||new Float32Array(4),r[0]=t[0]*n[0]+t[4]*n[1]+t[8]*n[2]+t[12]*n[3],r[1]=t[1]*n[0]+t[5]*n[1]+t[9]*n[2]+t[13]*n[3],r[2]=t[2]*n[0]+t[6]*n[1]+t[10]*n[2]+t[14]*n[3],r[3]=t[3]*n[0]+t[7]*n[1]+t[11]*n[2]+t[15]*n[3],r}};n.exports._=P});
+//# sourceMappingURL=webgl.math.js.map
