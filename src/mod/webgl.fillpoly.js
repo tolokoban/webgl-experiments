@@ -8,6 +8,59 @@
  * @return {Uint16Array}
  */
 exports.fillPolyline = fillPolyline;
+/**
+ * Sometimes, your polygon  is expressed in 3 dimensions.   So, if you
+ * want to use `fillPolyline`, tjhis function will flatten the polygon
+ * for you.
+ * @param {array} vectors3 - [[x, y, z], ...]
+ * @return {Float32Array} [ x1, y1, x2, y2, x3, y3, x4, y3, ... ]
+ */
+exports.vertexArrayToAttribs = vertexArrayToAttribs;
+
+
+function vertexArrayToAttribs( vectors3 ) {
+  try {
+    var output = [];
+    if( vectors3.length < 3 )
+      throw "[webgl.fillpoly.vertexArrayToAttribs] A polyline must have at least 3 vertices!";
+
+    var xI = vectors3[1][0] - vectors3[0][0];
+    var yI = vectors3[1][1] - vectors3[0][1];
+    var zI = vectors3[1][2] - vectors3[0][2];
+
+    var xJ, yJ, zJ;
+    var k, x, y, z;
+    for( k = 2; k < vectors3.length; k++ ) {
+      xJ = vectors3[k][0] - vectors3[0][0];
+      yJ = vectors3[k][1] - vectors3[0][1];
+      zJ = vectors3[k][2] - vectors3[0][2];
+
+      x = yI * zJ - zI * yJ;
+      y = zI * xJ - xI * zJ;
+      z = xI * yJ - yI * xJ;
+      if( x*x + y*y + z*z > 0 ) break;
+    }
+
+    // Dot products make a projection on plan (I, J).
+    vectors3.forEach(function (vector3) {
+      var x = vector3[0];
+      var y = vector3[1];
+      var z = vector3[2];
+      output.push(
+        xI * x + yI * y + zI * z,
+        xJ * x + yJ * y + zJ * z
+      );
+    });
+
+    return new Float32Array( output );
+  }
+  catch( ex ) {
+    console.error( "[webgl.fillpoly.vertexArrayToAttribs] error = ", ex );
+    console.error( "[webgl.fillpoly.vertexArrayToAttribs] vectors3 = ", vectors3 );
+    throw ex + "\n...in webgl.fillpoly.vertexArrayToAttribs";
+  }
+}
+
 
 //#(fillPolyline)
 // @param {Float32Array}  vertices -  Attributs de chaque  vertex. Les

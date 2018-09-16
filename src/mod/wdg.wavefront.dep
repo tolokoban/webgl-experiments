@@ -1,0 +1,8 @@
+{
+  var: {
+    vert: wdg.wavefront.vert
+    frag: wdg.wavefront.frag
+    vert2: wdg.wavefront.2.vert
+    frag2: wdg.wavefront.2.frag
+  }
+}
