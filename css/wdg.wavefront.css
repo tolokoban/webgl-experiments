@@ -1,0 +1,19 @@
+div.wdg-wavefront {
+  max-width: 320px;
+  padding: 0;
+  text-align: center;
+}
+
+div.wdg-wavefront span {
+  opacity: .5;
+  font-size: 80%;
+  margin: 4px 8px;
+  display: block;
+}
+
+div.wdg-wavefront > canvas {
+  width: calc(100vw - 64px);
+  height: calc(100vh - 240px);
+  max-width: 920px;
+  min-height: 256px;
+}
