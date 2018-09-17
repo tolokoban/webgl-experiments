@@ -19,10 +19,10 @@ void main() {
   float y = gl_FragCoord.y;
   
   if( r < -0.5 ) {
-    if( mod( x - y, 6.0 ) < 1.0 || mod( y, 6.0 ) < 1.0 ) color = BLACK;
+    color *= .3;
   }
   else if( r < 0.5 ) {
-    if( mod( x - y, 6.0 ) < 1.0 ) color = BLACK;
+    color *= .6;
   }
   
   gl_FragColor = vec4( color, 1.0 );

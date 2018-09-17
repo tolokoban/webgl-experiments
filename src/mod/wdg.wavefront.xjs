@@ -9,6 +9,7 @@
     triangle-count: {integer 0}
     vert-count: {integer 0}
     elem-count: {integer 0}
+    material: {integer 0}
   }
 
   view.init: init
@@ -27,8 +28,11 @@
     ]}
     {CANVAS view.id:canvas class:thm-ele8}
     {tfw.view.flex justify-content:space-around [
-        {tfw.view.checkbox value:{Bind border-visible} content:"Afficher le liseré"}
-        {tfw.view.textbox label:Épaisseur value:{Bind border-thickness}}
-    ]}                 
+      {tfw.view.checkbox wide:false value:{Bind border-visible} content:"Afficher le liseré"}
+      {tfw.view.textbox label:Épaisseur value:{Bind border-thickness} width:40px}
+      {tfw.view.combo items:["Hachures", "Couleurs franches", "Lisse", "Huileux"]
+                      label:Ombrage value:{Bind material}}
+      {tfw.view.color-input}
+    ]}
   ]
 }

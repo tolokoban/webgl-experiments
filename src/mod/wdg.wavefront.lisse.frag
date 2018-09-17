@@ -15,15 +15,7 @@ void main() {
   vec3 normal = normalize( varNormal );
   vec3 reflection = reflect( LIGHT, normal );
   float r = reflection.z;
-  float x = gl_FragCoord.x;
-  float y = gl_FragCoord.y;
+  float R = 0.5 + 0.25 * (1.0 + r);
   
-  if( r < -0.5 ) {
-    if( mod( x - y, 6.0 ) < 1.0 || mod( y, 6.0 ) < 1.0 ) color = BLACK;
-  }
-  else if( r < 0.5 ) {
-    if( mod( x - y, 6.0 ) < 1.0 ) color = BLACK;
-  }
-  
-  gl_FragColor = vec4( color, 1.0 );
+  gl_FragColor = vec4( color * R, 1.0 );
 }

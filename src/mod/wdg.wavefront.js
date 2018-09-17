@@ -18,10 +18,25 @@ function init() {
 
   var gl = this.$elements.canvas.$.getContext( "webgl", { preserveDrawingBuffer: false } );
   this._gl = gl;
-  var prg = new Program( gl, {
+  var prgHachures = new Program( gl, {
     vert: GLOBAL.vert,
     frag: GLOBAL.frag
   });
+  var prgCouleursFranches = new Program( gl, {
+    vert: GLOBAL.vert,
+    frag: GLOBAL.frag_couleurs_franches
+  });
+  var prgLisse = new Program( gl, {
+    vert: GLOBAL.vert,
+    frag: GLOBAL.frag_lisse
+  });
+  var prgHuile = new Program( gl, {
+    vert: GLOBAL.vert,
+    frag: GLOBAL.frag_huile
+  });
+  
+  var prg1 = [prgHachures, prgCouleursFranches, prgLisse, prgHuile];
+  
   var prg2 = new Program( gl, {
     vert: GLOBAL.vert2,
     frag: GLOBAL.frag2
@@ -58,6 +73,7 @@ function init() {
     gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, that._buffElem );
 
     gl.cullFace( gl.BACK );
+    var prg = prg1[that.material];
     prg.use();
     prg.$uniProjection = projection;
     prg.$uniRotation = rotation;
