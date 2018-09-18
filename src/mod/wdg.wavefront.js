@@ -7,6 +7,7 @@ var CODE_BEHIND = {
 };
 
 
+var $ = require("dom");
 var M4 = require("webgl.math").m4;
 var Resize = require("webgl.resize");
 var Program = require("webgl.program");
@@ -16,8 +17,10 @@ var Fillpoly = require("webgl.fillpoly");
 function init() {
   var that = this;
 
-  var gl = this.$elements.canvas.$.getContext( "webgl", { preserveDrawingBuffer: false } );
+  var canvas = this.$elements.canvas.$;
+  var gl = canvas.getContext( "webgl", { preserveDrawingBuffer: false } );
   this._gl = gl;
+
   var prg = new Program( gl, {
     vert: GLOBAL.vert,
     frag: GLOBAL.frag
@@ -38,19 +41,54 @@ function init() {
   var projection = M4.identity();
   var rotation = M4.identity();
   var translation = new Float32Array([ 0, 0, -3, 0 ]);
+  that._translation = translation;
+  
+  var angX = 0;
+  var angY = 0;
+  var rotX = 0;
+  var rotY = 0;
+  var touching = false;
+  var time0 = 0;
+  var time = 0;
+  
+  $.on( canvas, {
+    down: function() {
+      touching = true;
+      angX += rotX;
+      angY += rotY;
+      rotX = 0;
+      rotY = 0;
+    },
+    up: function() {
+      touching = false;
+      angX += rotX;
+      angY += rotY;
+      rotX = 0;
+      rotY = 0;
+      time0 = time;
+    },
+    drag: function( evt ) {
+      console.info("[wdg.wavefront] evt=", evt);
+      rotY = 2 * Math.PI * evt.dx / canvas.clientWidth;
+      rotX = 2 * Math.PI * evt.dy / canvas.clientHeight;
+    }
+  });
 
-  var draw = function( time ) {
+  var draw = function( t ) {    
     requestAnimationFrame( draw );
 
+    var translation = that._translation;
+    time = t;
     var w = gl.canvas.clientWidth;
     var h = gl.canvas.clientHeight;
     Resize( gl );
 
     M4.perspective( Math.PI * .35, w/h, .1, 10, projection );
-    M4.rotationXY(
-      1.97 * Math.sin( time * 0.0000347),
-      5.78 * Math.sin( time * 0.0000758),
-      rotation );
+    if( !touching ) {
+      rotX = 1.97 * Math.sin( (time - time0) * 0.0000347 );
+      rotY = 5.78 * Math.sin( (time - time0) * 0.0000758 );
+    }
+    M4.rotationXY( angX + rotX, angY + rotY, rotation );
 
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
@@ -82,7 +120,7 @@ function init() {
   requestAnimationFrame( draw );
 
   if( typeof fetch === 'function' ) {
-    fetch( "./css/wdg.wavefront/suzanne.obj" ).then(function( response ) {
+    fetch( "./css/wdg.wavefront/wolf.obj" ).then(function( response ) {
       if( response.ok ) return response.text();
     }).then( parse.bind( that ) );
   }
@@ -102,24 +140,26 @@ function onFileLoaded( file ) {
 
 
 function parse( content ) {
-    var model = parseResult.call( this, content );
-    console.info("[wdg.wavefront] model=", model);
-    this.vertCount = model.vert.length / 6;
-    this.elemCount = model.elem.length;
+  var model = parseResult.call( this, content );
+  console.info("[wdg.wavefront] model=", model);
+  this.vertCount = model.vert.length / 6;
+  this.elemCount = model.elem.length;
+  this._translation.z = -model.radius;
+  console.info("[wdg.wavefront] this._translation=", this._translation);
+  
+  var gl = this._gl;
 
-    var gl = this._gl;
+  if( !this._buffVert ) {
+    this._buffVert = gl.createBuffer();
+  }
+  gl.bindBuffer( gl.ARRAY_BUFFER, this._buffVert );
+  gl.bufferData( gl.ARRAY_BUFFER, model.vert, gl.STATIC_DRAW );
 
-    if( !this._buffVert ) {
-      this._buffVert = gl.createBuffer();
-    }
-    gl.bindBuffer( gl.ARRAY_BUFFER, this._buffVert );
-    gl.bufferData( gl.ARRAY_BUFFER, model.vert, gl.STATIC_DRAW );
-
-    if( !this._buffElem ) {
-      this._buffElem = gl.createBuffer();
-    }
-    gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, this._buffElem );
-    gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, model.elem, gl.STATIC_DRAW );  
+  if( !this._buffElem ) {
+    this._buffElem = gl.createBuffer();
+  }
+  gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, this._buffElem );
+  gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, model.elem, gl.STATIC_DRAW );  
 }
 
 function parseResult( content ) {
