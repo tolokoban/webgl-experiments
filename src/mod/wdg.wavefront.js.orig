@@ -20,7 +20,12 @@ function init() {
   var canvas = this.$elements.canvas.$;
   var gl = canvas.getContext( "webgl", { preserveDrawingBuffer: false } );
   this._gl = gl;
+<<<<<<< HEAD
+
+  var prg = new Program( gl, {
+=======
   var prgHachures = new Program( gl, {
+>>>>>>> 9b9e124c7cbe637b50f73ac04564a61f7405446c
     vert: GLOBAL.vert,
     frag: GLOBAL.frag
   });

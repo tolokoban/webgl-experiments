@@ -2,6 +2,9 @@
   var: {
     vert: wdg.wavefront.vert
     frag: wdg.wavefront.frag
+    frag_couleurs_franches: wdg.wavefront.couleurs-franches.frag
+    frag_lisse: wdg.wavefront.lisse.frag
+    frag_huile: wdg.wavefront.huile.frag
     vert2: wdg.wavefront.2.vert
     frag2: wdg.wavefront.2.frag
   }
