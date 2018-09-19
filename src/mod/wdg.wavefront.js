@@ -15,6 +15,9 @@ var Fillpoly = require("webgl.fillpoly");
 
 
 function init() {
+  this._colorArray = new Float32Array([0, 0, 0]);
+  this._colorText = '';
+  
   var that = this;
 
   var canvas = this.$elements.canvas.$;
@@ -91,6 +94,8 @@ function init() {
   var draw = function( t ) {    
     requestAnimationFrame( draw );
 
+    var color = getColor.call( that );
+    
     var translation = that._translation;
     time = t;
     var w = gl.canvas.clientWidth;
@@ -112,6 +117,7 @@ function init() {
     gl.cullFace( gl.BACK );
     var prg = prg1[that.material];
     prg.use();
+    prg.$uniColor = color;
     prg.$uniProjection = projection;
     prg.$uniRotation = rotation;
     prg.$uniTranslation = translation;
@@ -139,6 +145,20 @@ function init() {
       if( response.ok ) return response.text();
     }).then( parse.bind( that ) );
   }
+}
+
+
+function getColor() {
+  var color = this.color;
+  if( color == this._colorText ) return this._colorArray;
+  this._colorText = color;
+  var rr = parseInt( color.substr( 1, 2 ), 16 ) / 255;
+  var gg = parseInt( color.substr( 3, 2 ), 16 ) / 255;
+  var bb = parseInt( color.substr( 5, 2 ), 16 ) / 255;
+  this._colorArray[0] = rr;
+  this._colorArray[1] = gg;
+  this._colorArray[2] = bb;
+  return this._colorArray;
 }
 
 

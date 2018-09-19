@@ -10,29 +10,28 @@
     vert-count: {integer 0}
     elem-count: {integer 0}
     material: {integer 0}
+    color: {color #ff8800}
   }
 
   view.init: init
   
   [
     {tfw.view.file-input text:"Charger un fichier *.obj" file:{Bind file}}
-    {tfw.view.flex justify-content:space-around [
+    {tfw.view.flex justify-content:space-around flex-wrap:wrap [
       {DIV [{SPAN "Sommets"} {B textcontent:{Bind vertex-count}}]}
       {DIV [{SPAN "Normales"} {B textcontent:{Bind normal-count}}]}
       {DIV [{SPAN "Faces"} {B textcontent:{Bind face-count}}]}
-    ]}
-    {tfw.view.flex justify-content:space-around [
       {DIV [{SPAN "Triangles"} {B textcontent:{Bind triangle-count}}]}
       {DIV [{SPAN "Vertices"} {B textcontent:{Bind vert-count}}]}
       {DIV [{SPAN "Elements"} {B textcontent:{Bind elem-count}}]}
     ]}
     {CANVAS view.id:canvas class:thm-ele8}
-    {tfw.view.flex justify-content:space-around [
+    {tfw.view.flex justify-content:space-around flex-wrap:wrap [
       {tfw.view.checkbox wide:false value:{Bind border-visible} content:"Afficher le liseré"}
       {tfw.view.textbox label:Épaisseur value:{Bind border-thickness} width:40px}
       {tfw.view.combo items:["Hachures", "Couleurs franches", "Lisse", "Huileux"]
                       label:Ombrage value:{Bind material}}
-      {tfw.view.color-input}
+      {tfw.view.color-input value:{Bind color}}
     ]}
   ]
 }
