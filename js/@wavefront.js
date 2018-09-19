@@ -67,8 +67,15 @@ addListener(
     function() {
         document.body.parentNode.$data = {};
         // Attach controllers.
-        APP = require('test');
-setTimeout(function (){if(typeof APP.start==='function')APP.start()});
+        var W = require('x-widget');
+        W('wdg.article0', 'wdg.article', {
+            title: "Importer des modèles",
+            content: [
+          W({
+              elem: "p",
+              children: [
+                W('wdg.wavefront1','wdg.wavefront',{},{"id":"wdg.wavefront1"}),
+                "    "]})]},{"id":"wdg.article0"})
 
     }
 );
