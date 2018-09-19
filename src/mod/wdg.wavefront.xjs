@@ -29,7 +29,7 @@
     {tfw.view.flex justify-content:space-around flex-wrap:wrap [
       {tfw.view.checkbox wide:false value:{Bind border-visible} content:"Afficher le liseré"}
       {tfw.view.textbox label:Épaisseur value:{Bind border-thickness} width:40px}
-      {tfw.view.combo items:["Hachures", "Couleurs franches", "Lisse", "Huileux"]
+      {tfw.view.combo items:["Hachures", "Couleurs franches", "Lisse", "Métallique"]
                       label:Ombrage value:{Bind material}}
       {tfw.view.color-input value:{Bind color}}
     ]}
