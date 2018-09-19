@@ -1,0 +1,32 @@
+"use strict";
+
+window.WebGL = function() {
+  return {
+    fetchAssets: function(assets) {
+      return new Promise(function (resolve, reject) {
+        function process() {
+          var keys = Object.keys( assets );
+          var result = {};
+          
+          function fetchNext() {
+            if( keys.length === 0 ) {
+              resolve( result );
+              return;
+            }
+
+            var key = keys.shift();
+            
+          }
+        }
+
+        if (document.readyState === "complete"
+            || document.readyState === "loaded"
+            || document.readyState === "interactive") {
+          process();
+        } else {
+          document.addEventListener("DOMContentLoaded", process );
+        }
+      });
+    }
+  };
+}();

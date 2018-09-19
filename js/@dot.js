@@ -95,28 +95,28 @@ addListener(
                   W({
                       elem: "center",
                       children: [
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "div",
                           children: ["Sans z-buffer"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W('wdg.gl687','wdg.gl6',{
                           width: "320",
                           height: "320"},{"id":"wdg.gl687"}),
-                        "\r\n    "]}),
+                        "\n    "]}),
                   W({
                       elem: "center",
                       children: [
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "div",
                           children: ["Avec z-buffer"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W('wdg.gl688','wdg.gl6',{
                           width: "320",
                           height: "320",
                           zbuffer: "true"},{"id":"wdg.gl688"}),
-                        "\r\n  "]})]},{"id":"wdg.flex86"})]}),
+                        "\n  "]})]},{"id":"wdg.flex86"})]}),
           W({
               elem: "p",
               children: [
@@ -180,7 +180,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -199,7 +199,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -218,7 +218,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -237,7 +237,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -256,7 +256,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -285,22 +285,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Dans une projection 3D, les points éloignés de la caméra"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// paraissent plus petits et plus proches les uns des autres."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Cette variable permet de créer cet effet."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -348,17 +348,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// On utilise la 4ème composant `w` pour donner un effet de profndeur."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// En effet, les coordonnées seront multipliées/divisées par `depth`."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -408,12 +408,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// La taille du point dépend aussi de la profondeur."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -442,7 +442,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -461,7 +461,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -480,7 +480,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -514,7 +514,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -533,7 +533,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -552,7 +552,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -571,17 +571,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Calculons la distance du fragment courant"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// au centre du point."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -620,7 +620,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -659,12 +659,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// On ne calcule pas la racine carré pour gagner du temps."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -714,7 +714,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -738,7 +738,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -762,12 +762,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// 0.25 = 0.5 * 0.5"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -800,17 +800,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Si on est à l'extérieur du cercle de rayon 0.5,"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// on ignore le fragment."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -819,7 +819,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -863,17 +863,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Au delà d'un certain rayon, on met une couleur fixe"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// qui nous sert de liseré."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -935,7 +935,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -959,7 +959,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -974,12 +974,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Petit effet de dégradé."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1003,7 +1003,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1073,22 +1073,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// La luminosité varie avec la profondeur du point."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// En `z = 0.0`, la boule est noire."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1145,7 +1145,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1184,7 +1184,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1340,7 +1340,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1380,7 +1380,7 @@ addListener(
                   W({
                       elem: "center",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "div",
                           children: [
@@ -1388,15 +1388,15 @@ addListener(
                               elem: "b",
                               children: ["Sans"]}),
                             " tri Javascript"]}),
-                        "\r\n        ",
+                        "\n        ",
                         W('wdg.gl6-292','wdg.gl6-2',{
                           width: "300",
                           height: "300"},{"id":"wdg.gl6-292"}),
-                        "\r\n      "]}),
+                        "\n      "]}),
                   W({
                       elem: "center",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W({
                           elem: "div",
                           children: [
@@ -1404,12 +1404,12 @@ addListener(
                               elem: "b",
                               children: ["Avec"]}),
                             " tri Javascript"]}),
-                        "\r\n        ",
+                        "\n        ",
                         W('wdg.gl6-293','wdg.gl6-2',{
                           width: "300",
                           height: "300",
                           sort: "true"},{"id":"wdg.gl6-293"}),
-                        "\r\n    "]})]},{"id":"wdg.flex91"})]}),
+                        "\n    "]})]},{"id":"wdg.flex91"})]}),
           W({
               elem: "p",
               children: ["La semi-transparence apporte son lot de désagréments. Comparez attentivement\nles deux animations ci-dessus et essayez de comprendre pourquoi celle de gauche\nne donne pas le résultat attendu (laissez se faire plusieurs rotations si vous\nne voyez pas tout de suite le problème)."]}),
@@ -1471,7 +1471,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1558,7 +1558,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["["]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1612,7 +1612,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1666,7 +1666,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1720,7 +1720,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ...\r\n",
+                    "\n  ...\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -1916,7 +1916,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["]);"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -1945,7 +1945,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["();"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -1983,7 +1983,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2035,7 +2035,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n    \r\n",
+                    "\n    \n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -2105,7 +2105,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["]);"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -2134,7 +2134,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["();"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2172,7 +2172,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2278,7 +2278,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -2362,7 +2362,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["];"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -2431,7 +2431,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["(["]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2458,7 +2458,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2485,7 +2485,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2512,7 +2512,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2539,7 +2539,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2566,7 +2566,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2593,7 +2593,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2620,7 +2620,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2647,12 +2647,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["]);"]}),
-                    "\r\n  \r\n  ",
+                    "\n  \n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -2681,7 +2681,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["(["]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2831,7 +2831,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "number"},
@@ -2977,7 +2977,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "number"},
                       children: ["7"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -2986,7 +2986,7 @@ addListener(
 
     }
 );
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.106"',major:"0",minor:"0",revision:"106",date:"2018-09-17T14:26:40.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.107"',major:"0",minor:"0",revision:"107",date:"2018-09-19T20:07:44.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -3008,12 +3008,12 @@ require("tfw.event",function(t,r,i){var n=function(){function r(){return n(i,arg
 //# sourceMappingURL=tfw.event.js.map
 require("tfw.view",function(t,e,n){function a(t,e){t=t.trim().toLowerCase();var n="svg"===t?y.svgRoot():r(t);if(Object.defineProperty(this,"$",{value:n,writable:!1,enumerable:!0,configurable:!1}),Array.isArray(e)){var a=this;e.forEach(function(t){switch(t.toLowerCase()){case"value":i.call(a,n);break;case"focus":o.call(a,n);break;case"textcontent":s.call(a,n);break;case"innerhtml":c.call(a,n);break;default:f.call(a,n,t)}})}}function r(t){return-1!==E.indexOf(t.toLowerCase())?y.svg(t):y.tag(t)}function i(t){var e=this,n=null;m(this).create("value",{get:function(){return n},set:function(e){t.value=e,n=e}}),t.addEventListener("input",function(t){m(e).change("value",t.target.value)},!1)}function o(t){var e=this;m(this).create("focus",{cast:C.get("boolean")(),delay:1}),m(this).on("focus",function(e){e?t.focus():t.blur()}),t.addEventListener("focus",function(){e.focus=!0},!1),t.addEventListener("blur",function(){e.focus=!1},!1)}function s(t){["textContent","textcontent"].forEach(function(e){m(this).create(e,{get:function(){return t.textContent},set:function(e){"string"!=typeof e&&(e=""+e),"<html>"===e.substr(0,6)?t.innerHTML=e.substr(6):t.textContent=e}})},this)}function c(t){["innerHTML","innerhtml"].forEach(function(e){m(this).create(e,{get:function(){return t.innerHTML},set:function(e){t.innerHTML=e}})},this)}function f(t,e){m(this).create(e,{get:function(){return t.getAttribute(e)},set:function(n){t.setAttribute(e,n)}})}function u(t){if(void 0===t)throw"Missing mandatory global variable CODE_BEHIND!";var e,n;for(e=1;e<arguments.length;e++)if(n=arguments[e],"function"!=typeof t[n])throw"Expected CODE_BEHIND."+n+" to be a function!"}function l(t,e){var n=y(t),a={},r=0;if(Object.keys(e).forEach(function(t){t=t.toLowerCase();var i=e[t];A.indexOf(t)>-1?(a[t]=i,r=!0):n.addEventListener(t,i,!1)}),r){var i=new w(n);Object.keys(a).forEach(function(t){var n=e[t];i.on(t,n)})}}function d(t,e,n){var a,r;for(a in n)r=n[a],void 0===e[a]?t[a]=r:t[a]=e[a]}function p(t,e,n){n?y.addClass(t,e):y.removeClass(t,e)}function h(t,e,n){n?y.removeClass(t,e):y.addClass(t,e)}function v(t,e,n){n?y.att(t,e):y.removeAtt(t,e)}function b(t,e,n){n?y.removeAtt(t,e):y.att(t,e)}var g=function(){function e(){return a(n,arguments)}var n={en:{},fr:{}},a=t("$").intl;return e.all=n,e}(),y=t("dom"),m=t("tfw.binding.property-manager"),w=t("external.hammer"),C=t("tfw.binding.converters");n.Tag=a,n.ensureCodeBehind=u,n.events=l,n.defVal=d,n.addClassIfTrue=p,n.addClassIfFalse=h,n.addAttribIfTrue=v,n.addAttribIfFalse=b,a.prototype.applyClass=function(t,e){var n=this.$;void 0===e&&(e=0),void 0===this._applyer&&(this._applyer={}),Array.isArray(t)||(t=[t]);var a=this._applyer[e];Array.isArray(a)&&a.forEach(y.removeClass.bind(y,n)),this._applyer[e]=t,t.forEach(y.addClass.bind(y,n))};var E=["g","rect","circle","line","path","defs"],A=["tap","doubletap","press","pan","panstart","panmove","panup","pandown","panleft","panright","panend","pancancel","swipe","swipeleft","swipteright","swipetop","swipebottom","pinch","pinchin","pinchout","pinchstart","pinchmove","pinchend","pinchcancel","rotate","rotatestart","rotatemove","rotateend","rotatecancel"];e.exports._=g});
 //# sourceMappingURL=tfw.view.js.map
-require("external.hammer",function(t,e,n){var i=function(){function e(){return i(n,arguments)}var n={en:{},fr:{}},i=t("$").intl;return e.all=n,e}();!function(t,n,i,r){"use strict";function s(t,e,n){return setTimeout(c(t,n),e)}function o(t,e,n){return!!Array.isArray(t)&&(a(t,n[e],n),!0)}function a(t,e,n){var i;if(t)if(t.forEach)t.forEach(e,n);else if(t.length!==r)for(i=0;i<t.length;)e.call(n,t[i],i,t),i++;else for(i in t)t.hasOwnProperty(i)&&e.call(n,t[i],i,t)}function h(e,n,i){var r="DEPRECATED METHOD: "+n+"\n"+i+" AT \n";return function(){var n=new Error("get-stack-trace"),i=n&&n.stack?n.stack.replace(/^[^\(]+?[\n$]/gm,"").replace(/^\s+at\s+/gm,"").replace(/^Object.<anonymous>\s*\(/gm,"{anonymous}()@"):"Unknown Stack Trace",s=t.console&&(t.console.warn||t.console.log);return s&&s.call(t.console,r,i),e.apply(this,arguments)}}function u(t,e,n){var i,r=e.prototype;i=t.prototype=Object.create(r),i.constructor=t,i._super=r,n&&lt(i,n)}function c(t,e){return function(){return t.apply(e,arguments)}}function l(t,e){return typeof t==vt?t.apply(e?e[0]||r:r,e):t}function p(t,e){return t===r?e:t}function f(t,e,n){a(g(e),function(e){t.addEventListener(e,n,!1)})}function v(t,e,n){a(g(e),function(e){t.removeEventListener(e,n,!1)})}function d(t,e){for(;t;){if(t==e)return!0;t=t.parentNode}return!1}function m(t,e){return t.indexOf(e)>-1}function g(t){return t.trim().split(/\s+/g)}function T(t,e,n){if(t.indexOf&&!n)return t.indexOf(e);for(var i=0;i<t.length;){if(n&&t[i][n]==e||!n&&t[i]===e)return i;i++}return-1}function y(t){return Array.prototype.slice.call(t,0)}function E(t,e,n){for(var i=[],r=[],s=0;s<t.length;){var o=e?t[s][e]:t[s];T(r,o)<0&&i.push(t[s]),r[s]=o,s++}return n&&(i=e?i.sort(function(t,n){return t[e]>n[e]}):i.sort()),i}function I(t,e){for(var n,i,s=e[0].toUpperCase()+e.slice(1),o=0;o<pt.length;){if(n=pt[o],(i=n?n+s:e)in t)return i;o++}return r}function A(){return Et++}function _(e){var n=e.ownerDocument||e;return n.defaultView||n.parentWindow||t}function C(t,e){var n=this;this.manager=t,this.callback=e,this.element=t.element,this.target=t.options.inputTarget,this.domHandler=function(e){l(t.options.enable,[t])&&n.handler(e)},this.init()}function S(t){var e=t.options.inputClass;return new(e||(_t?q:Ct?k:At?U:F))(t,b)}function b(t,e,n){var i=n.pointers.length,r=n.changedPointers.length,s=e&xt&&i-r==0,o=e&(wt|Ot)&&i-r==0;n.isFirst=!!s,n.isFinal=!!o,s&&(t.session={}),n.eventType=e,P(t,n),t.emit("hammer.input",n),t.recognize(n),t.session.prevInput=n}function P(t,e){var n=t.session,i=e.pointers,r=i.length;n.firstInput||(n.firstInput=w(e)),r>1&&!n.firstMultiple?n.firstMultiple=w(e):1===r&&(n.firstMultiple=!1);var s=n.firstInput,o=n.firstMultiple,a=o?o.center:s.center,h=e.center=O(i);e.timeStamp=gt(),e.deltaTime=e.timeStamp-s.timeStamp,e.angle=N(a,h),e.distance=z(a,h),x(n,e),e.offsetDirection=M(e.deltaX,e.deltaY);var u=R(e.deltaTime,e.deltaX,e.deltaY);e.overallVelocityX=u.x,e.overallVelocityY=u.y,e.overallVelocity=mt(u.x)>mt(u.y)?u.x:u.y,e.scale=o?Y(o.pointers,i):1,e.rotation=o?X(o.pointers,i):0,e.maxPointers=n.prevInput?e.pointers.length>n.prevInput.maxPointers?e.pointers.length:n.prevInput.maxPointers:e.pointers.length,D(n,e);var c=t.element;d(e.srcEvent.target,c)&&(c=e.srcEvent.target),e.target=c}function x(t,e){var n=e.center,i=t.offsetDelta||{},r=t.prevDelta||{},s=t.prevInput||{};e.eventType!==xt&&s.eventType!==wt||(r=t.prevDelta={x:s.deltaX||0,y:s.deltaY||0},i=t.offsetDelta={x:n.x,y:n.y}),e.deltaX=r.x+(n.x-i.x),e.deltaY=r.y+(n.y-i.y)}function D(t,e){var n,i,s,o,a=t.lastInterval||e,h=e.timeStamp-a.timeStamp;if(e.eventType!=Ot&&(h>Pt||a.velocity===r)){var u=e.deltaX-a.deltaX,c=e.deltaY-a.deltaY,l=R(h,u,c);i=l.x,s=l.y,n=mt(l.x)>mt(l.y)?l.x:l.y,o=M(u,c),t.lastInterval=e}else n=a.velocity,i=a.velocityX,s=a.velocityY,o=a.direction;e.velocity=n,e.velocityX=i,e.velocityY=s,e.direction=o}function w(t){for(var e=[],n=0;n<t.pointers.length;)e[n]={clientX:dt(t.pointers[n].clientX),clientY:dt(t.pointers[n].clientY)},n++;return{timeStamp:gt(),pointers:e,center:O(e),deltaX:t.deltaX,deltaY:t.deltaY}}function O(t){var e=t.length;if(1===e)return{x:dt(t[0].clientX),y:dt(t[0].clientY)};for(var n=0,i=0,r=0;e>r;)n+=t[r].clientX,i+=t[r].clientY,r++;return{x:dt(n/e),y:dt(i/e)}}function R(t,e,n){return{x:e/t||0,y:n/t||0}}function M(t,e){return t===e?Rt:mt(t)>=mt(e)?0>t?Mt:zt:0>e?Nt:Xt}function z(t,e,n){n||(n=Wt);var i=e[n[0]]-t[n[0]],r=e[n[1]]-t[n[1]];return Math.sqrt(i*i+r*r)}function N(t,e,n){n||(n=Wt);var i=e[n[0]]-t[n[0]],r=e[n[1]]-t[n[1]];return 180*Math.atan2(r,i)/Math.PI}function X(t,e){return N(e[1],e[0],Ht)+N(t[1],t[0],Ht)}function Y(t,e){return z(e[0],e[1],Ht)/z(t[0],t[1],Ht)}function F(){this.evEl=Lt,this.evWin=Ut,this.pressed=!1,C.apply(this,arguments)}function q(){this.evEl=Gt,this.evWin=Zt,C.apply(this,arguments),this.store=this.manager.session.pointerEvents=[]}function W(){this.evTarget=$t,this.evWin=Jt,this.started=!1,C.apply(this,arguments)}function H(t,e){var n=y(t.touches),i=y(t.changedTouches);return e&(wt|Ot)&&(n=E(n.concat(i),"identifier",!0)),[n,i]}function k(){this.evTarget=Qt,this.targetIds={},C.apply(this,arguments)}function L(t,e){var n=y(t.touches),i=this.targetIds;if(e&(xt|Dt)&&1===n.length)return i[n[0].identifier]=!0,[n,n];var r,s,o=y(t.changedTouches),a=[],h=this.target;if(s=n.filter(function(t){return d(t.target,h)}),e===xt)for(r=0;r<s.length;)i[s[r].identifier]=!0,r++;for(r=0;r<o.length;)i[o[r].identifier]&&a.push(o[r]),e&(wt|Ot)&&delete i[o[r].identifier],r++;return a.length?[E(s.concat(a),"identifier",!0),a]:void 0}function U(){C.apply(this,arguments);var t=c(this.handler,this);this.touch=new k(this.manager,t),this.mouse=new F(this.manager,t),this.primaryTouch=null,this.lastTouches=[]}function V(t,e){t&xt?(this.primaryTouch=e.changedPointers[0].identifier,j.call(this,e)):t&(wt|Ot)&&j.call(this,e)}function j(t){var e=t.changedPointers[0];if(e.identifier===this.primaryTouch){var n={x:e.clientX,y:e.clientY};this.lastTouches.push(n);var i=this.lastTouches,r=function(){var t=i.indexOf(n);t>-1&&i.splice(t,1)};setTimeout(r,te)}}function G(t){for(var e=t.srcEvent.clientX,n=t.srcEvent.clientY,i=0;i<this.lastTouches.length;i++){var r=this.lastTouches[i],s=Math.abs(e-r.x),o=Math.abs(n-r.y);if(ee>=s&&ee>=o)return!0}return!1}function Z(t,e){this.manager=t,this.set(e)}function B(t){if(m(t,ae))return ae;var e=m(t,he),n=m(t,ue);return e&&n?ae:e||n?e?he:ue:m(t,oe)?oe:se}function $(t){this.options=lt({},this.defaults,t||{}),this.id=A(),this.manager=null,this.options.enable=p(this.options.enable,!0),this.state=le,this.simultaneous={},this.requireFail=[]}function J(t){return t&me?"cancel":t&ve?"end":t&fe?"move":t&pe?"start":""}function K(t){return t==Xt?"down":t==Nt?"up":t==Mt?"left":t==zt?"right":""}function Q(t,e){var n=e.manager;return n?n.get(t):t}function tt(){$.apply(this,arguments)}function et(){tt.apply(this,arguments),this.pX=null,this.pY=null}function nt(){tt.apply(this,arguments)}function it(){$.apply(this,arguments),this._timer=null,this._input=null}function rt(){tt.apply(this,arguments)}function st(){tt.apply(this,arguments)}function ot(){$.apply(this,arguments),this.pTime=!1,this.pCenter=!1,this._timer=null,this._input=null,this.count=0}function at(t,e){return e=e||{},e.recognizers=p(e.recognizers,at.defaults.preset),new ht(t,e)}function ht(t,e){this.options=lt({},at.defaults,e||{}),this.options.inputTarget=this.options.inputTarget||t,this.handlers={},this.session={},this.recognizers=[],this.oldCssProps={},this.element=t,this.input=S(this),this.touchAction=new Z(this,this.options.touchAction),ut(this,!0),a(this.options.recognizers,function(t){var e=this.add(new t[0](t[1]));t[2]&&e.recognizeWith(t[2]),t[3]&&e.requireFailure(t[3])},this)}function ut(t,e){var n=t.element;if(n.style){var i;a(t.options.cssProps,function(r,s){i=I(n.style,s),e?(t.oldCssProps[i]=n.style[i],n.style[i]=r):n.style[i]=t.oldCssProps[i]||""}),e||(t.oldCssProps={})}}function ct(t,e){var i=n.createEvent("Event");i.initEvent(t,!0,!0),i.gesture=e,e.target.dispatchEvent(i)}var lt,pt=["","webkit","Moz","MS","ms","o"],ft=n.createElement("div"),vt="function",dt=Math.round,mt=Math.abs,gt=Date.now;lt="function"!=typeof Object.assign?function(t){if(t===r||null===t)throw new TypeError("Cannot convert undefined or null to object");for(var e=Object(t),n=1;n<arguments.length;n++){var i=arguments[n];if(i!==r&&null!==i)for(var s in i)i.hasOwnProperty(s)&&(e[s]=i[s])}return e}:Object.assign;var Tt=h(function(t,e,n){for(var i=Object.keys(e),s=0;s<i.length;)(!n||n&&t[i[s]]===r)&&(t[i[s]]=e[i[s]]),s++;return t},"extend","Use `assign`."),yt=h(function(t,e){return Tt(t,e,!0)},"merge","Use `assign`."),Et=1,It=/mobile|tablet|ip(ad|hone|od)|android/i,At="ontouchstart"in t,_t=I(t,"PointerEvent")!==r,Ct=At&&It.test(navigator.userAgent),St="touch",bt="mouse",Pt=25,xt=1,Dt=2,wt=4,Ot=8,Rt=1,Mt=2,zt=4,Nt=8,Xt=16,Yt=Mt|zt,Ft=Nt|Xt,qt=Yt|Ft,Wt=["x","y"],Ht=["clientX","clientY"];C.prototype={handler:function(){},init:function(){this.evEl&&f(this.element,this.evEl,this.domHandler),this.evTarget&&f(this.target,this.evTarget,this.domHandler),this.evWin&&f(_(this.element),this.evWin,this.domHandler)},destroy:function(){this.evEl&&v(this.element,this.evEl,this.domHandler),this.evTarget&&v(this.target,this.evTarget,this.domHandler),this.evWin&&v(_(this.element),this.evWin,this.domHandler)}};var kt={mousedown:xt,mousemove:Dt,mouseup:wt},Lt="mousedown",Ut="mousemove mouseup";u(F,C,{handler:function(t){var e=kt[t.type];e&xt&&0===t.button&&(this.pressed=!0),e&Dt&&1!==t.which&&(e=wt),this.pressed&&(e&wt&&(this.pressed=!1),this.callback(this.manager,e,{pointers:[t],changedPointers:[t],pointerType:bt,srcEvent:t}))}});var Vt={pointerdown:xt,pointermove:Dt,pointerup:wt,pointercancel:Ot,pointerout:Ot},jt={2:St,3:"pen",4:bt,5:"kinect"},Gt="pointerdown",Zt="pointermove pointerup pointercancel";t.MSPointerEvent&&!t.PointerEvent&&(Gt="MSPointerDown",Zt="MSPointerMove MSPointerUp MSPointerCancel"),u(q,C,{handler:function(t){var e=this.store,n=!1,i=t.type.toLowerCase().replace("ms",""),r=Vt[i],s=jt[t.pointerType]||t.pointerType,o=s==St,a=T(e,t.pointerId,"pointerId");r&xt&&(0===t.button||o)?0>a&&(e.push(t),a=e.length-1):r&(wt|Ot)&&(n=!0),0>a||(e[a]=t,this.callback(this.manager,r,{pointers:e,changedPointers:[t],pointerType:s,srcEvent:t}),n&&e.splice(a,1))}});var Bt={touchstart:xt,touchmove:Dt,touchend:wt,touchcancel:Ot},$t="touchstart",Jt="touchstart touchmove touchend touchcancel";u(W,C,{handler:function(t){var e=Bt[t.type];if(e===xt&&(this.started=!0),this.started){var n=H.call(this,t,e);e&(wt|Ot)&&n[0].length-n[1].length==0&&(this.started=!1),this.callback(this.manager,e,{pointers:n[0],changedPointers:n[1],pointerType:St,srcEvent:t})}}});var Kt={touchstart:xt,touchmove:Dt,touchend:wt,touchcancel:Ot},Qt="touchstart touchmove touchend touchcancel";u(k,C,{handler:function(t){var e=Kt[t.type],n=L.call(this,t,e);n&&this.callback(this.manager,e,{pointers:n[0],changedPointers:n[1],pointerType:St,srcEvent:t})}});var te=2500,ee=25;u(U,C,{handler:function(t,e,n){var i=n.pointerType==St,r=n.pointerType==bt;if(!(r&&n.sourceCapabilities&&n.sourceCapabilities.firesTouchEvents)){if(i)V.call(this,e,n);else if(r&&G.call(this,n))return;this.callback(t,e,n)}},destroy:function(){this.touch.destroy(),this.mouse.destroy()}});var ne=I(ft.style,"touchAction"),ie=ne!==r,re="compute",se="auto",oe="manipulation",ae="none",he="pan-x",ue="pan-y",ce=function(){if(!ie)return!1;var e={},n=t.CSS&&t.CSS.supports;return["auto","manipulation","pan-y","pan-x","pan-x pan-y","none"].forEach(function(i){e[i]=!n||t.CSS.supports("touch-action",i)}),e}();Z.prototype={set:function(t){t==re&&(t=this.compute()),ie&&this.manager.element.style&&ce[t]&&(this.manager.element.style[ne]=t),this.actions=t.toLowerCase().trim()},update:function(){this.set(this.manager.options.touchAction)},compute:function(){var t=[];return a(this.manager.recognizers,function(e){l(e.options.enable,[e])&&(t=t.concat(e.getTouchAction()))}),B(t.join(" "))},preventDefaults:function(t){var e=t.srcEvent,n=t.offsetDirection;if(this.manager.session.prevented)return void e.preventDefault();var i=this.actions,r=m(i,ae)&&!ce[ae],s=m(i,ue)&&!ce[ue],o=m(i,he)&&!ce[he];if(r){var a=1===t.pointers.length,h=t.distance<2,u=t.deltaTime<250;if(a&&h&&u)return}return o&&s?void 0:r||s&&n&Yt||o&&n&Ft?this.preventSrc(e):void 0},preventSrc:function(t){this.manager.session.prevented=!0,t.preventDefault()}};var le=1,pe=2,fe=4,ve=8,de=ve,me=16;$.prototype={defaults:{},set:function(t){return lt(this.options,t),this.manager&&this.manager.touchAction.update(),this},recognizeWith:function(t){if(o(t,"recognizeWith",this))return this;var e=this.simultaneous;return t=Q(t,this),e[t.id]||(e[t.id]=t,t.recognizeWith(this)),this},dropRecognizeWith:function(t){return o(t,"dropRecognizeWith",this)?this:(t=Q(t,this),delete this.simultaneous[t.id],this)},requireFailure:function(t){if(o(t,"requireFailure",this))return this;var e=this.requireFail;return t=Q(t,this),-1===T(e,t)&&(e.push(t),t.requireFailure(this)),this},dropRequireFailure:function(t){if(o(t,"dropRequireFailure",this))return this;t=Q(t,this);var e=T(this.requireFail,t);return e>-1&&this.requireFail.splice(e,1),this},hasRequireFailures:function(){return this.requireFail.length>0},canRecognizeWith:function(t){return!!this.simultaneous[t.id]},emit:function(t){function e(e){n.manager.emit(e,t)}var n=this,i=this.state;ve>i&&e(n.options.event+J(i)),e(n.options.event),t.additionalEvent&&e(t.additionalEvent),i>=ve&&e(n.options.event+J(i))},tryEmit:function(t){return this.canEmit()?this.emit(t):void(this.state=32)},canEmit:function(){for(var t=0;t<this.requireFail.length;){if(!(this.requireFail[t].state&(32|le)))return!1;t++}return!0},recognize:function(t){var e=lt({},t);return l(this.options.enable,[this,e])?(this.state&(de|me|32)&&(this.state=le),this.state=this.process(e),void(this.state&(pe|fe|ve|me)&&this.tryEmit(e))):(this.reset(),void(this.state=32))},process:function(t){},getTouchAction:function(){},reset:function(){}},u(tt,$,{defaults:{pointers:1},attrTest:function(t){var e=this.options.pointers;return 0===e||t.pointers.length===e},process:function(t){var e=this.state,n=t.eventType,i=e&(pe|fe),r=this.attrTest(t);return i&&(n&Ot||!r)?e|me:i||r?n&wt?e|ve:e&pe?e|fe:pe:32}}),u(et,tt,{defaults:{event:"pan",threshold:10,pointers:1,direction:qt},getTouchAction:function(){var t=this.options.direction,e=[];return t&Yt&&e.push(ue),t&Ft&&e.push(he),e},directionTest:function(t){var e=this.options,n=!0,i=t.distance,r=t.direction,s=t.deltaX,o=t.deltaY;return r&e.direction||(e.direction&Yt?(r=0===s?Rt:0>s?Mt:zt,n=s!=this.pX,i=Math.abs(t.deltaX)):(r=0===o?Rt:0>o?Nt:Xt,n=o!=this.pY,i=Math.abs(t.deltaY))),t.direction=r,n&&i>e.threshold&&r&e.direction},attrTest:function(t){return tt.prototype.attrTest.call(this,t)&&(this.state&pe||!(this.state&pe)&&this.directionTest(t))},emit:function(t){this.pX=t.deltaX,this.pY=t.deltaY;var e=K(t.direction);e&&(t.additionalEvent=this.options.event+e),this._super.emit.call(this,t)}}),u(nt,tt,{defaults:{event:"pinch",threshold:0,pointers:2},getTouchAction:function(){return[ae]},attrTest:function(t){return this._super.attrTest.call(this,t)&&(Math.abs(t.scale-1)>this.options.threshold||this.state&pe)},emit:function(t){if(1!==t.scale){var e=t.scale<1?"in":"out";t.additionalEvent=this.options.event+e}this._super.emit.call(this,t)}}),u(it,$,{defaults:{event:"press",pointers:1,time:251,threshold:9},getTouchAction:function(){return[se]},process:function(t){var e=this.options,n=t.pointers.length===e.pointers,i=t.distance<e.threshold,r=t.deltaTime>e.time;if(this._input=t,!i||!n||t.eventType&(wt|Ot)&&!r)this.reset();else if(t.eventType&xt)this.reset(),this._timer=s(function(){this.state=de,this.tryEmit()},e.time,this);else if(t.eventType&wt)return de;return 32},reset:function(){clearTimeout(this._timer)},emit:function(t){this.state===de&&(t&&t.eventType&wt?this.manager.emit(this.options.event+"up",t):(this._input.timeStamp=gt(),this.manager.emit(this.options.event,this._input)))}}),u(rt,tt,{defaults:{event:"rotate",threshold:0,pointers:2},getTouchAction:function(){return[ae]},attrTest:function(t){return this._super.attrTest.call(this,t)&&(Math.abs(t.rotation)>this.options.threshold||this.state&pe)}}),u(st,tt,{defaults:{event:"swipe",threshold:10,velocity:.3,direction:Yt|Ft,pointers:1},getTouchAction:function(){return et.prototype.getTouchAction.call(this)},attrTest:function(t){var e,n=this.options.direction;return n&(Yt|Ft)?e=t.overallVelocity:n&Yt?e=t.overallVelocityX:n&Ft&&(e=t.overallVelocityY),this._super.attrTest.call(this,t)&&n&t.offsetDirection&&t.distance>this.options.threshold&&t.maxPointers==this.options.pointers&&mt(e)>this.options.velocity&&t.eventType&wt},emit:function(t){var e=K(t.offsetDirection);e&&this.manager.emit(this.options.event+e,t),this.manager.emit(this.options.event,t)}}),u(ot,$,{defaults:{event:"tap",pointers:1,taps:1,interval:300,time:250,threshold:9,posThreshold:10},getTouchAction:function(){return[oe]},process:function(t){var e=this.options,n=t.pointers.length===e.pointers,i=t.distance<e.threshold,r=t.deltaTime<e.time;if(this.reset(),t.eventType&xt&&0===this.count)return this.failTimeout();if(i&&r&&n){if(t.eventType!=wt)return this.failTimeout();var o=!this.pTime||t.timeStamp-this.pTime<e.interval,a=!this.pCenter||z(this.pCenter,t.center)<e.posThreshold;this.pTime=t.timeStamp,this.pCenter=t.center,a&&o?this.count+=1:this.count=1,this._input=t;if(0===this.count%e.taps)return this.hasRequireFailures()?(this._timer=s(function(){this.state=de,this.tryEmit()},e.interval,this),pe):de}return 32},failTimeout:function(){return this._timer=s(function(){this.state=32},this.options.interval,this),32},reset:function(){clearTimeout(this._timer)},emit:function(){this.state==de&&(this._input.tapCount=this.count,this.manager.emit(this.options.event,this._input))}}),at.VERSION="2.0.8",at.defaults={domEvents:!1,touchAction:re,enable:!0,inputTarget:null,inputClass:null,preset:[[rt,{enable:!1}],[nt,{enable:!1},["rotate"]],[st,{direction:Yt}],[et,{direction:Yt},["swipe"]],[ot],[ot,{event:"doubletap",taps:2},["tap"]],[it]],cssProps:{userSelect:"none",touchSelect:"none",touchCallout:"none",contentZooming:"none",userDrag:"none",tapHighlightColor:"rgba(0,0,0,0)"}};ht.prototype={set:function(t){return lt(this.options,t),t.touchAction&&this.touchAction.update(),t.inputTarget&&(this.input.destroy(),this.input.target=t.inputTarget,this.input.init()),this},stop:function(t){this.session.stopped=t?2:1},recognize:function(t){var e=this.session;if(!e.stopped){this.touchAction.preventDefaults(t);var n,i=this.recognizers,r=e.curRecognizer;(!r||r&&r.state&de)&&(r=e.curRecognizer=null);for(var s=0;s<i.length;)n=i[s],2===e.stopped||r&&n!=r&&!n.canRecognizeWith(r)?n.reset():n.recognize(t),!r&&n.state&(pe|fe|ve)&&(r=e.curRecognizer=n),s++}},get:function(t){if(t instanceof $)return t;for(var e=this.recognizers,n=0;n<e.length;n++)if(e[n].options.event==t)return e[n];return null},add:function(t){if(o(t,"add",this))return this;var e=this.get(t.options.event);return e&&this.remove(e),this.recognizers.push(t),t.manager=this,this.touchAction.update(),t},remove:function(t){if(o(t,"remove",this))return this;if(t=this.get(t)){var e=this.recognizers,n=T(e,t);-1!==n&&(e.splice(n,1),this.touchAction.update())}return this},on:function(t,e){if(t!==r&&e!==r){var n=this.handlers;return a(g(t),function(t){n[t]=n[t]||[],n[t].push(e)}),this}},off:function(t,e){if(t!==r){var n=this.handlers;return a(g(t),function(t){e?n[t]&&n[t].splice(T(n[t],e),1):delete n[t]}),this}},emit:function(t,e){this.options.domEvents&&ct(t,e);var n=this.handlers[t]&&this.handlers[t].slice();if(n&&n.length){e.type=t,e.preventDefault=function(){e.srcEvent.preventDefault()};for(var i=0;i<n.length;)n[i](e),i++}},destroy:function(){this.element&&ut(this,!1),this.handlers={},this.session={},this.input.destroy(),this.element=null}},lt(at,{INPUT_START:xt,INPUT_MOVE:Dt,INPUT_END:wt,INPUT_CANCEL:Ot,STATE_POSSIBLE:le,STATE_BEGAN:pe,STATE_CHANGED:fe,STATE_ENDED:ve,STATE_RECOGNIZED:de,STATE_CANCELLED:me,STATE_FAILED:32,DIRECTION_NONE:Rt,DIRECTION_LEFT:Mt,DIRECTION_RIGHT:zt,DIRECTION_UP:Nt,DIRECTION_DOWN:Xt,DIRECTION_HORIZONTAL:Yt,DIRECTION_VERTICAL:Ft,DIRECTION_ALL:qt,Manager:ht,Input:C,TouchAction:Z,TouchInput:k,MouseInput:F,PointerEventInput:q,TouchMouseInput:U,SingleTouchInput:W,Recognizer:$,AttrRecognizer:tt,Tap:ot,Pan:et,Swipe:st,Pinch:nt,Rotate:rt,Press:it,on:f,off:v,each:a,merge:yt,extend:Tt,assign:lt,inherit:u,bindFn:c,prefixed:I}),(void 0!==t?t:"undefined"!=typeof self?self:{}).Hammer=at,"function"==typeof define&&define.amd?define(function(){return at}):void 0!==e&&e.exports?e.exports=at:t.Hammer=at}(window,document),e.exports=Hammer,e.exports._=i});
+require("external.hammer",function(t,e,n){var i=function(){function e(){return i(n,arguments)}var n={en:{},fr:{}},i=t("$").intl;return e.all=n,e}();!function(t,n,i,r){"use strict";function s(t,e,n){return setTimeout(c(t,n),e)}function o(t,e,n){return!!Array.isArray(t)&&(a(t,n[e],n),!0)}function a(t,e,n){var i;if(t)if(t.forEach)t.forEach(e,n);else if(t.length!==r)for(i=0;i<t.length;)e.call(n,t[i],i,t),i++;else for(i in t)t.hasOwnProperty(i)&&e.call(n,t[i],i,t)}function u(e,n,i){var r="DEPRECATED METHOD: "+n+"\n"+i+" AT \n";return function(){var n=new Error("get-stack-trace"),i=n&&n.stack?n.stack.replace(/^[^\(]+?[\n$]/gm,"").replace(/^\s+at\s+/gm,"").replace(/^Object.<anonymous>\s*\(/gm,"{anonymous}()@"):"Unknown Stack Trace",s=t.console&&(t.console.warn||t.console.log);return s&&s.call(t.console,r,i),e.apply(this,arguments)}}function h(t,e,n){var i,r=e.prototype;i=t.prototype=Object.create(r),i.constructor=t,i._super=r,n&&lt(i,n)}function c(t,e){return function(){return t.apply(e,arguments)}}function l(t,e){return typeof t==vt?t.apply(e?e[0]||r:r,e):t}function p(t,e){return t===r?e:t}function f(t,e,n){a(g(e),function(e){t.addEventListener(e,n,!1)})}function v(t,e,n){a(g(e),function(e){t.removeEventListener(e,n,!1)})}function d(t,e){for(;t;){if(t==e)return!0;t=t.parentNode}return!1}function m(t,e){return t.indexOf(e)>-1}function g(t){return t.trim().split(/\s+/g)}function T(t,e,n){if(t.indexOf&&!n)return t.indexOf(e);for(var i=0;i<t.length;){if(n&&t[i][n]==e||!n&&t[i]===e)return i;i++}return-1}function y(t){return Array.prototype.slice.call(t,0)}function E(t,e,n){for(var i=[],r=[],s=0;s<t.length;){var o=e?t[s][e]:t[s];T(r,o)<0&&i.push(t[s]),r[s]=o,s++}return n&&(i=e?i.sort(function(t,n){return t[e]>n[e]}):i.sort()),i}function I(t,e){for(var n,i,s=e[0].toUpperCase()+e.slice(1),o=0;o<pt.length;){if(n=pt[o],(i=n?n+s:e)in t)return i;o++}return r}function A(){return Et++}function _(e){var n=e.ownerDocument||e;return n.defaultView||n.parentWindow||t}function C(t,e){var n=this;this.manager=t,this.callback=e,this.element=t.element,this.target=t.options.inputTarget,this.domHandler=function(e){l(t.options.enable,[t])&&n.handler(e)},this.init()}function S(t){var e=t.options.inputClass;return new(e||(_t?q:Ct?k:At?U:F))(t,b)}function b(t,e,n){var i=n.pointers.length,r=n.changedPointers.length,s=e&bt&&i-r==0,o=e&(xt|Dt)&&i-r==0;n.isFirst=!!s,n.isFinal=!!o,s&&(t.session={}),n.eventType=e,P(t,n),t.emit("hammer.input",n),t.recognize(n),t.session.prevInput=n}function P(t,e){var n=t.session,i=e.pointers,r=i.length;n.firstInput||(n.firstInput=w(e)),r>1&&!n.firstMultiple?n.firstMultiple=w(e):1===r&&(n.firstMultiple=!1);var s=n.firstInput,o=n.firstMultiple,a=o?o.center:s.center,u=e.center=O(i);e.timeStamp=gt(),e.deltaTime=e.timeStamp-s.timeStamp,e.angle=N(a,u),e.distance=z(a,u),x(n,e),e.offsetDirection=M(e.deltaX,e.deltaY);var h=R(e.deltaTime,e.deltaX,e.deltaY);e.overallVelocityX=h.x,e.overallVelocityY=h.y,e.overallVelocity=mt(h.x)>mt(h.y)?h.x:h.y,e.scale=o?Y(o.pointers,i):1,e.rotation=o?X(o.pointers,i):0,e.maxPointers=n.prevInput?e.pointers.length>n.prevInput.maxPointers?e.pointers.length:n.prevInput.maxPointers:e.pointers.length,D(n,e);var c=t.element;d(e.srcEvent.target,c)&&(c=e.srcEvent.target),e.target=c}function x(t,e){var n=e.center,i=t.offsetDelta||{},r=t.prevDelta||{},s=t.prevInput||{};e.eventType!==bt&&s.eventType!==xt||(r=t.prevDelta={x:s.deltaX||0,y:s.deltaY||0},i=t.offsetDelta={x:n.x,y:n.y}),e.deltaX=r.x+(n.x-i.x),e.deltaY=r.y+(n.y-i.y)}function D(t,e){var n,i,s,o,a=t.lastInterval||e,u=e.timeStamp-a.timeStamp;if(e.eventType!=Dt&&(u>St||a.velocity===r)){var h=e.deltaX-a.deltaX,c=e.deltaY-a.deltaY,l=R(u,h,c);i=l.x,s=l.y,n=mt(l.x)>mt(l.y)?l.x:l.y,o=M(h,c),t.lastInterval=e}else n=a.velocity,i=a.velocityX,s=a.velocityY,o=a.direction;e.velocity=n,e.velocityX=i,e.velocityY=s,e.direction=o}function w(t){for(var e=[],n=0;n<t.pointers.length;)e[n]={clientX:dt(t.pointers[n].clientX),clientY:dt(t.pointers[n].clientY)},n++;return{timeStamp:gt(),pointers:e,center:O(e),deltaX:t.deltaX,deltaY:t.deltaY}}function O(t){var e=t.length;if(1===e)return{x:dt(t[0].clientX),y:dt(t[0].clientY)};for(var n=0,i=0,r=0;r<e;)n+=t[r].clientX,i+=t[r].clientY,r++;return{x:dt(n/e),y:dt(i/e)}}function R(t,e,n){return{x:e/t||0,y:n/t||0}}function M(t,e){return t===e?wt:mt(t)>=mt(e)?t<0?Ot:Rt:e<0?Mt:zt}function z(t,e,n){n||(n=Ft);var i=e[n[0]]-t[n[0]],r=e[n[1]]-t[n[1]];return Math.sqrt(i*i+r*r)}function N(t,e,n){n||(n=Ft);var i=e[n[0]]-t[n[0]],r=e[n[1]]-t[n[1]];return 180*Math.atan2(r,i)/Math.PI}function X(t,e){return N(e[1],e[0],qt)+N(t[1],t[0],qt)}function Y(t,e){return z(e[0],e[1],qt)/z(t[0],t[1],qt)}function F(){this.evEl=Ht,this.evWin=kt,this.pressed=!1,C.apply(this,arguments)}function q(){this.evEl=Vt,this.evWin=jt,C.apply(this,arguments),this.store=this.manager.session.pointerEvents=[]}function W(){this.evTarget=Zt,this.evWin=Bt,this.started=!1,C.apply(this,arguments)}function H(t,e){var n=y(t.touches),i=y(t.changedTouches);return e&(xt|Dt)&&(n=E(n.concat(i),"identifier",!0)),[n,i]}function k(){this.evTarget=Jt,this.targetIds={},C.apply(this,arguments)}function L(t,e){var n=y(t.touches),i=this.targetIds;if(e&(bt|Pt)&&1===n.length)return i[n[0].identifier]=!0,[n,n];var r,s,o=y(t.changedTouches),a=[],u=this.target;if(s=n.filter(function(t){return d(t.target,u)}),e===bt)for(r=0;r<s.length;)i[s[r].identifier]=!0,r++;for(r=0;r<o.length;)i[o[r].identifier]&&a.push(o[r]),e&(xt|Dt)&&delete i[o[r].identifier],r++;return a.length?[E(s.concat(a),"identifier",!0),a]:void 0}function U(){C.apply(this,arguments);var t=c(this.handler,this);this.touch=new k(this.manager,t),this.mouse=new F(this.manager,t),this.primaryTouch=null,this.lastTouches=[]}function V(t,e){t&bt?(this.primaryTouch=e.changedPointers[0].identifier,j.call(this,e)):t&(xt|Dt)&&j.call(this,e)}function j(t){var e=t.changedPointers[0];if(e.identifier===this.primaryTouch){var n={x:e.clientX,y:e.clientY};this.lastTouches.push(n);var i=this.lastTouches,r=function(){var t=i.indexOf(n);t>-1&&i.splice(t,1)};setTimeout(r,Kt)}}function G(t){for(var e=t.srcEvent.clientX,n=t.srcEvent.clientY,i=0;i<this.lastTouches.length;i++){var r=this.lastTouches[i],s=Math.abs(e-r.x),o=Math.abs(n-r.y);if(s<=Qt&&o<=Qt)return!0}return!1}function Z(t,e){this.manager=t,this.set(e)}function B(t){if(m(t,re))return re;var e=m(t,se),n=m(t,oe);return e&&n?re:e||n?e?se:oe:m(t,ie)?ie:ne}function $(t){this.options=lt({},this.defaults,t||{}),this.id=A(),this.manager=null,this.options.enable=p(this.options.enable,!0),this.state=ue,this.simultaneous={},this.requireFail=[]}function J(t){return t&fe?"cancel":t&le?"end":t&ce?"move":t&he?"start":""}function K(t){return t==zt?"down":t==Mt?"up":t==Ot?"left":t==Rt?"right":""}function Q(t,e){var n=e.manager;return n?n.get(t):t}function tt(){$.apply(this,arguments)}function et(){tt.apply(this,arguments),this.pX=null,this.pY=null}function nt(){tt.apply(this,arguments)}function it(){$.apply(this,arguments),this._timer=null,this._input=null}function rt(){tt.apply(this,arguments)}function st(){tt.apply(this,arguments)}function ot(){$.apply(this,arguments),this.pTime=!1,this.pCenter=!1,this._timer=null,this._input=null,this.count=0}function at(t,e){return e=e||{},e.recognizers=p(e.recognizers,at.defaults.preset),new ut(t,e)}function ut(t,e){this.options=lt({},at.defaults,e||{}),this.options.inputTarget=this.options.inputTarget||t,this.handlers={},this.session={},this.recognizers=[],this.oldCssProps={},this.element=t,this.input=S(this),this.touchAction=new Z(this,this.options.touchAction),ht(this,!0),a(this.options.recognizers,function(t){var e=this.add(new t[0](t[1]));t[2]&&e.recognizeWith(t[2]),t[3]&&e.requireFailure(t[3])},this)}function ht(t,e){var n=t.element;if(n.style){var i;a(t.options.cssProps,function(r,s){i=I(n.style,s),e?(t.oldCssProps[i]=n.style[i],n.style[i]=r):n.style[i]=t.oldCssProps[i]||""}),e||(t.oldCssProps={})}}function ct(t,e){var i=n.createEvent("Event");i.initEvent(t,!0,!0),i.gesture=e,e.target.dispatchEvent(i)}var lt,pt=["","webkit","Moz","MS","ms","o"],ft=n.createElement("div"),vt="function",dt=Math.round,mt=Math.abs,gt=Date.now;lt="function"!=typeof Object.assign?function(t){if(t===r||null===t)throw new TypeError("Cannot convert undefined or null to object");for(var e=Object(t),n=1;n<arguments.length;n++){var i=arguments[n];if(i!==r&&null!==i)for(var s in i)i.hasOwnProperty(s)&&(e[s]=i[s])}return e}:Object.assign;var Tt=u(function(t,e,n){for(var i=Object.keys(e),s=0;s<i.length;)(!n||n&&t[i[s]]===r)&&(t[i[s]]=e[i[s]]),s++;return t},"extend","Use `assign`."),yt=u(function(t,e){return Tt(t,e,!0)},"merge","Use `assign`."),Et=1,It=/mobile|tablet|ip(ad|hone|od)|android/i,At="ontouchstart"in t,_t=I(t,"PointerEvent")!==r,Ct=At&&It.test(navigator.userAgent),St=25,bt=1,Pt=2,xt=4,Dt=8,wt=1,Ot=2,Rt=4,Mt=8,zt=16,Nt=Ot|Rt,Xt=Mt|zt,Yt=Nt|Xt,Ft=["x","y"],qt=["clientX","clientY"];C.prototype={handler:function(){},init:function(){this.evEl&&f(this.element,this.evEl,this.domHandler),this.evTarget&&f(this.target,this.evTarget,this.domHandler),this.evWin&&f(_(this.element),this.evWin,this.domHandler)},destroy:function(){this.evEl&&v(this.element,this.evEl,this.domHandler),this.evTarget&&v(this.target,this.evTarget,this.domHandler),this.evWin&&v(_(this.element),this.evWin,this.domHandler)}};var Wt={mousedown:bt,mousemove:Pt,mouseup:xt},Ht="mousedown",kt="mousemove mouseup";h(F,C,{handler:function(t){var e=Wt[t.type];e&bt&&0===t.button&&(this.pressed=!0),e&Pt&&1!==t.which&&(e=xt),this.pressed&&(e&xt&&(this.pressed=!1),this.callback(this.manager,e,{pointers:[t],changedPointers:[t],pointerType:"mouse",srcEvent:t}))}});var Lt={pointerdown:bt,pointermove:Pt,pointerup:xt,pointercancel:Dt,pointerout:Dt},Ut={2:"touch",3:"pen",4:"mouse",5:"kinect"},Vt="pointerdown",jt="pointermove pointerup pointercancel";t.MSPointerEvent&&!t.PointerEvent&&(Vt="MSPointerDown",jt="MSPointerMove MSPointerUp MSPointerCancel"),h(q,C,{handler:function(t){var e=this.store,n=!1,i=t.type.toLowerCase().replace("ms",""),r=Lt[i],s=Ut[t.pointerType]||t.pointerType,o="touch"==s,a=T(e,t.pointerId,"pointerId");r&bt&&(0===t.button||o)?a<0&&(e.push(t),a=e.length-1):r&(xt|Dt)&&(n=!0),a<0||(e[a]=t,this.callback(this.manager,r,{pointers:e,changedPointers:[t],pointerType:s,srcEvent:t}),n&&e.splice(a,1))}});var Gt={touchstart:bt,touchmove:Pt,touchend:xt,touchcancel:Dt},Zt="touchstart",Bt="touchstart touchmove touchend touchcancel";h(W,C,{handler:function(t){var e=Gt[t.type];if(e===bt&&(this.started=!0),this.started){var n=H.call(this,t,e);e&(xt|Dt)&&n[0].length-n[1].length==0&&(this.started=!1),this.callback(this.manager,e,{pointers:n[0],changedPointers:n[1],pointerType:"touch",srcEvent:t})}}});var $t={touchstart:bt,touchmove:Pt,touchend:xt,touchcancel:Dt},Jt="touchstart touchmove touchend touchcancel";h(k,C,{handler:function(t){var e=$t[t.type],n=L.call(this,t,e);n&&this.callback(this.manager,e,{pointers:n[0],changedPointers:n[1],pointerType:"touch",srcEvent:t})}});var Kt=2500,Qt=25;h(U,C,{handler:function(t,e,n){var i="touch"==n.pointerType,r="mouse"==n.pointerType;if(!(r&&n.sourceCapabilities&&n.sourceCapabilities.firesTouchEvents)){if(i)V.call(this,e,n);else if(r&&G.call(this,n))return;this.callback(t,e,n)}},destroy:function(){this.touch.destroy(),this.mouse.destroy()}});var te=I(ft.style,"touchAction"),ee=te!==r,ne="auto",ie="manipulation",re="none",se="pan-x",oe="pan-y",ae=function(){if(!ee)return!1;var e={},n=t.CSS&&t.CSS.supports;return["auto","manipulation","pan-y","pan-x","pan-x pan-y","none"].forEach(function(i){e[i]=!n||t.CSS.supports("touch-action",i)}),e}();Z.prototype={set:function(t){"compute"==t&&(t=this.compute()),ee&&this.manager.element.style&&ae[t]&&(this.manager.element.style[te]=t),this.actions=t.toLowerCase().trim()},update:function(){this.set(this.manager.options.touchAction)},compute:function(){var t=[];return a(this.manager.recognizers,function(e){l(e.options.enable,[e])&&(t=t.concat(e.getTouchAction()))}),B(t.join(" "))},preventDefaults:function(t){var e=t.srcEvent,n=t.offsetDirection;if(this.manager.session.prevented)return void e.preventDefault();var i=this.actions,r=m(i,re)&&!ae[re],s=m(i,oe)&&!ae[oe],o=m(i,se)&&!ae[se];if(r){var a=1===t.pointers.length,u=t.distance<2,h=t.deltaTime<250;if(a&&u&&h)return}return o&&s?void 0:r||s&&n&Nt||o&&n&Xt?this.preventSrc(e):void 0},preventSrc:function(t){this.manager.session.prevented=!0,t.preventDefault()}};var ue=1,he=2,ce=4,le=8,pe=le,fe=16;$.prototype={defaults:{},set:function(t){return lt(this.options,t),this.manager&&this.manager.touchAction.update(),this},recognizeWith:function(t){if(o(t,"recognizeWith",this))return this;var e=this.simultaneous;return t=Q(t,this),e[t.id]||(e[t.id]=t,t.recognizeWith(this)),this},dropRecognizeWith:function(t){return o(t,"dropRecognizeWith",this)?this:(t=Q(t,this),delete this.simultaneous[t.id],this)},requireFailure:function(t){if(o(t,"requireFailure",this))return this;var e=this.requireFail;return t=Q(t,this),-1===T(e,t)&&(e.push(t),t.requireFailure(this)),this},dropRequireFailure:function(t){if(o(t,"dropRequireFailure",this))return this;t=Q(t,this);var e=T(this.requireFail,t);return e>-1&&this.requireFail.splice(e,1),this},hasRequireFailures:function(){return this.requireFail.length>0},canRecognizeWith:function(t){return!!this.simultaneous[t.id]},emit:function(t){function e(e){n.manager.emit(e,t)}var n=this,i=this.state;i<le&&e(n.options.event+J(i)),e(n.options.event),t.additionalEvent&&e(t.additionalEvent),i>=le&&e(n.options.event+J(i))},tryEmit:function(t){if(this.canEmit())return this.emit(t);this.state=32},canEmit:function(){for(var t=0;t<this.requireFail.length;){if(!(this.requireFail[t].state&(32|ue)))return!1;t++}return!0},recognize:function(t){var e=lt({},t);if(!l(this.options.enable,[this,e]))return this.reset(),void(this.state=32);this.state&(pe|fe|32)&&(this.state=ue),this.state=this.process(e),this.state&(he|ce|le|fe)&&this.tryEmit(e)},process:function(t){},getTouchAction:function(){},reset:function(){}},h(tt,$,{defaults:{pointers:1},attrTest:function(t){var e=this.options.pointers;return 0===e||t.pointers.length===e},process:function(t){var e=this.state,n=t.eventType,i=e&(he|ce),r=this.attrTest(t);return i&&(n&Dt||!r)?e|fe:i||r?n&xt?e|le:e&he?e|ce:he:32}}),h(et,tt,{defaults:{event:"pan",threshold:10,pointers:1,direction:Yt},getTouchAction:function(){var t=this.options.direction,e=[];return t&Nt&&e.push(oe),t&Xt&&e.push(se),e},directionTest:function(t){var e=this.options,n=!0,i=t.distance,r=t.direction,s=t.deltaX,o=t.deltaY;return r&e.direction||(e.direction&Nt?(r=0===s?wt:s<0?Ot:Rt,n=s!=this.pX,i=Math.abs(t.deltaX)):(r=0===o?wt:o<0?Mt:zt,n=o!=this.pY,i=Math.abs(t.deltaY))),t.direction=r,n&&i>e.threshold&&r&e.direction},attrTest:function(t){return tt.prototype.attrTest.call(this,t)&&(this.state&he||!(this.state&he)&&this.directionTest(t))},emit:function(t){this.pX=t.deltaX,this.pY=t.deltaY;var e=K(t.direction);e&&(t.additionalEvent=this.options.event+e),this._super.emit.call(this,t)}}),h(nt,tt,{defaults:{event:"pinch",threshold:0,pointers:2},getTouchAction:function(){return[re]},attrTest:function(t){return this._super.attrTest.call(this,t)&&(Math.abs(t.scale-1)>this.options.threshold||this.state&he)},emit:function(t){if(1!==t.scale){var e=t.scale<1?"in":"out";t.additionalEvent=this.options.event+e}this._super.emit.call(this,t)}}),h(it,$,{defaults:{event:"press",pointers:1,time:251,threshold:9},getTouchAction:function(){return[ne]},process:function(t){var e=this.options,n=t.pointers.length===e.pointers,i=t.distance<e.threshold,r=t.deltaTime>e.time;if(this._input=t,!i||!n||t.eventType&(xt|Dt)&&!r)this.reset();else if(t.eventType&bt)this.reset(),this._timer=s(function(){this.state=pe,this.tryEmit()},e.time,this);else if(t.eventType&xt)return pe;return 32},reset:function(){clearTimeout(this._timer)},emit:function(t){this.state===pe&&(t&&t.eventType&xt?this.manager.emit(this.options.event+"up",t):(this._input.timeStamp=gt(),this.manager.emit(this.options.event,this._input)))}}),h(rt,tt,{defaults:{event:"rotate",threshold:0,pointers:2},getTouchAction:function(){return[re]},attrTest:function(t){return this._super.attrTest.call(this,t)&&(Math.abs(t.rotation)>this.options.threshold||this.state&he)}}),h(st,tt,{defaults:{event:"swipe",threshold:10,velocity:.3,direction:Nt|Xt,pointers:1},getTouchAction:function(){return et.prototype.getTouchAction.call(this)},attrTest:function(t){var e,n=this.options.direction;return n&(Nt|Xt)?e=t.overallVelocity:n&Nt?e=t.overallVelocityX:n&Xt&&(e=t.overallVelocityY),this._super.attrTest.call(this,t)&&n&t.offsetDirection&&t.distance>this.options.threshold&&t.maxPointers==this.options.pointers&&mt(e)>this.options.velocity&&t.eventType&xt},emit:function(t){var e=K(t.offsetDirection);e&&this.manager.emit(this.options.event+e,t),this.manager.emit(this.options.event,t)}}),h(ot,$,{defaults:{event:"tap",pointers:1,taps:1,interval:300,time:250,threshold:9,posThreshold:10},getTouchAction:function(){return[ie]},process:function(t){var e=this.options,n=t.pointers.length===e.pointers,i=t.distance<e.threshold,r=t.deltaTime<e.time;if(this.reset(),t.eventType&bt&&0===this.count)return this.failTimeout();if(i&&r&&n){if(t.eventType!=xt)return this.failTimeout();var o=!this.pTime||t.timeStamp-this.pTime<e.interval,a=!this.pCenter||z(this.pCenter,t.center)<e.posThreshold;this.pTime=t.timeStamp,this.pCenter=t.center,a&&o?this.count+=1:this.count=1,this._input=t;if(0===this.count%e.taps)return this.hasRequireFailures()?(this._timer=s(function(){this.state=pe,this.tryEmit()},e.interval,this),he):pe}return 32},failTimeout:function(){return this._timer=s(function(){this.state=32},this.options.interval,this),32},reset:function(){clearTimeout(this._timer)},emit:function(){this.state==pe&&(this._input.tapCount=this.count,this.manager.emit(this.options.event,this._input))}}),at.VERSION="2.0.8",at.defaults={domEvents:!1,touchAction:"compute",enable:!0,inputTarget:null,inputClass:null,preset:[[rt,{enable:!1}],[nt,{enable:!1},["rotate"]],[st,{direction:Nt}],[et,{direction:Nt},["swipe"]],[ot],[ot,{event:"doubletap",taps:2},["tap"]],[it]],cssProps:{userSelect:"none",touchSelect:"none",touchCallout:"none",contentZooming:"none",userDrag:"none",tapHighlightColor:"rgba(0,0,0,0)"}};ut.prototype={set:function(t){return lt(this.options,t),t.touchAction&&this.touchAction.update(),t.inputTarget&&(this.input.destroy(),this.input.target=t.inputTarget,this.input.init()),this},stop:function(t){this.session.stopped=t?2:1},recognize:function(t){var e=this.session;if(!e.stopped){this.touchAction.preventDefaults(t);var n,i=this.recognizers,r=e.curRecognizer;(!r||r&&r.state&pe)&&(r=e.curRecognizer=null);for(var s=0;s<i.length;)n=i[s],2===e.stopped||r&&n!=r&&!n.canRecognizeWith(r)?n.reset():n.recognize(t),!r&&n.state&(he|ce|le)&&(r=e.curRecognizer=n),s++}},get:function(t){if(t instanceof $)return t;for(var e=this.recognizers,n=0;n<e.length;n++)if(e[n].options.event==t)return e[n];return null},add:function(t){if(o(t,"add",this))return this;var e=this.get(t.options.event);return e&&this.remove(e),this.recognizers.push(t),t.manager=this,this.touchAction.update(),t},remove:function(t){if(o(t,"remove",this))return this;if(t=this.get(t)){var e=this.recognizers,n=T(e,t);-1!==n&&(e.splice(n,1),this.touchAction.update())}return this},on:function(t,e){if(t!==r&&e!==r){var n=this.handlers;return a(g(t),function(t){n[t]=n[t]||[],n[t].push(e)}),this}},off:function(t,e){if(t!==r){var n=this.handlers;return a(g(t),function(t){e?n[t]&&n[t].splice(T(n[t],e),1):delete n[t]}),this}},emit:function(t,e){this.options.domEvents&&ct(t,e);var n=this.handlers[t]&&this.handlers[t].slice();if(n&&n.length){e.type=t,e.preventDefault=function(){e.srcEvent.preventDefault()};for(var i=0;i<n.length;)n[i](e),i++}},destroy:function(){this.element&&ht(this,!1),this.handlers={},this.session={},this.input.destroy(),this.element=null}},lt(at,{INPUT_START:bt,INPUT_MOVE:Pt,INPUT_END:xt,INPUT_CANCEL:Dt,STATE_POSSIBLE:ue,STATE_BEGAN:he,STATE_CHANGED:ce,STATE_ENDED:le,STATE_RECOGNIZED:pe,STATE_CANCELLED:fe,STATE_FAILED:32,DIRECTION_NONE:wt,DIRECTION_LEFT:Ot,DIRECTION_RIGHT:Rt,DIRECTION_UP:Mt,DIRECTION_DOWN:zt,DIRECTION_HORIZONTAL:Nt,DIRECTION_VERTICAL:Xt,DIRECTION_ALL:Yt,Manager:ut,Input:C,TouchAction:Z,TouchInput:k,MouseInput:F,PointerEventInput:q,TouchMouseInput:U,SingleTouchInput:W,Recognizer:$,AttrRecognizer:tt,Tap:ot,Pan:et,Swipe:st,Pinch:nt,Rotate:rt,Press:it,on:f,off:v,each:a,merge:yt,extend:Tt,assign:lt,inherit:h,bindFn:c,prefixed:I}),(void 0!==t?t:"undefined"!=typeof self?self:{}).Hammer=at,"function"==typeof define&&define.amd?define(function(){return at}):void 0!==e&&e.exports?e.exports=at:t.Hammer=at}(window,document),e.exports=Hammer,e.exports._=i});
 //# sourceMappingURL=external.hammer.js.map
-require("dom",function(e,r,t){function n(e,r,t){return Object.defineProperty(e,"element",{value:r,writable:!1,configurable:!1,enumerable:!0}),t?e:(e.on=v.bind(e,r),e.css=i.bind(e,r),e.add=l.bind(e,r),e.att=s.bind(e,r),e.addClass=y.bind(e,r),e.hasClass=h.bind(e,r),e.removeClass=p.bind(e,r),e.toggleClass=g.bind(e,r),e)}function o(e,r){return e=M(e),r=M(r),r.parentNode.replaceChild(e,r),e}function i(e,r){e=M(e);var t,n;for(t in r)n=r[t],e.style[t]=n;return e}function s(e,r,t){e=M(e);var n,o;"string"==typeof r&&(void 0===t&&(t=""),n=r,r={},r[n]=t);for(n in r)o=r[n],e.setAttribute(n,o);return e}function a(e,r){return e=M(e),e.removeAttribute(r),e}function l(e){e=M(e);try{var r,t;for(r=1;r<arguments.length;r++)t=arguments[r],u(e,t)||f(e,t)||c(e,t)||console.error("Argument #"+r+" of dom.add() is invalid!",arguments);return e}catch(e){console.error("[DOM.add] arguments=",[].slice.call(arguments)),console.error("[DOM.add] exception=",e)}}function c(e,r){return(r=M(r))instanceof Node&&(e.appendChild(r),!0)}function f(e,r){if("number"==typeof r&&(r=""+r),"string"!=typeof r)return!1;if("<html>"==r.substr(0,6).toLowerCase()){var t=r.substr(6);r=M.tag("span"),r.innerHTML=t}else if(D.test(r)){var n=r;r=M.tag("span"),r.innerHTML=n}else r=document.createTextNode(r);return e.appendChild(r),!0}function u(e,r){return!!Array.isArray(r)&&(r.forEach(function(r){l(e,r)}),!0)}function d(e){if(Array.isArray(e))return e.forEach(function(e){d(e)}),e;if(void 0===e[k])return e;var r=e[k].events;if(void 0===r)return e;r.off(),delete e[k].events}function v(e,r,t){if("function"==typeof r||null===r)r={tap:r};else if("string"==typeof r&&"function"==typeof t){var n={};n[r]=t,r=n}if(Array.isArray(e))return e.forEach(function(e){v(e,r)}),e;e=M(e),void 0===e[k]&&(e[k]={}),void 0===e[k].events&&(e[k].events=new O(e));var o,i,s;for(o in r)i=r[o],"!"==o.charAt(0)?(o=o.substr(1),s=!0):s=!1,H.indexOf(o.toLowerCase())>-1?e.addEventListener(o,i,s):e[k].events.on(o,i,s);return e}function m(e,r){try{var t,n,o,i,s=document.createElementNS(e,r.trim().toLowerCase());for(t=2;t<arguments.length;t++)if(n=arguments[t],Array.isArray(n))n.forEach(function(e){switch(typeof e){case"string":case"number":case"boolean":if(e=""+e,"<html>"==e.substr(0,6)){var r=e.substr(6);e=M.tag("span"),e.innerHTML=r}else e=document.createTextNode(e)}l(s,e)});else switch(typeof n){case"string":n.split(" ").forEach(function(e){e.length>0&&y(s,e)});break;case"object":for(o in n)i=n[o],s.setAttribute(o,i);break;default:throw Error("[dom.tag] Error creating <"+r+">: Invalid argument #"+t+"!")}return s}catch(t){console.error("[dom.tagNS] Error with `ns` = ",e," and `name` = ",r),console.error(t)}}function y(e){var r=[].slice.call(arguments,1);return Array.isArray(e)?(r.unshift(null),e.forEach(function(e){r[0]=e,y.apply(void 0,r)}),e):(e=M(e),r.forEach(function(r){if("string"==typeof r&&(r=r.trim(),0!=r.length))try{e.classList&&e.classList.add(r)}catch(e){console.error("[dom.addClass] Invalid class name: ",r),console.error(e)}}),e)}function h(e,r){return e=M(e),!!e.classList&&e.classList.contains(r)}function p(e){var r=[].slice.call(arguments,1);return Array.isArray(e)?(r.unshift(null),e.forEach(function(e){r[0]=e,p.apply(void 0,r)}),e):(e=M(e),r.forEach(function(r){if("string"==typeof r)try{e.classList&&e.classList.remove(r)}catch(e){console.error("[dom.removeClass] Invalid class name: ",r),console.error(e)}}),e)}function g(e){return[].slice.call(arguments,1).forEach(function(r){h(e,r)?p(e,r):y(e,r)}),e}function w(e){e=M(e);for(var r=e;r.firstChild;)r.removeChild(r.firstChild);var t=[].slice.call(arguments);return t.length>1&&l.apply(this,t),e}function b(e,r){return e=M(e),void 0===r&&(r=e,e=window.document),e.querySelector(r)}function A(e){e=M(e);var r=e.parentElement;return r?(r.removeChild(e),r):r}function C(e){var r=[].slice.call(arguments);r.shift(),0==r.length&&(r=["div"]),r.push("dom","custom");var t;return void 0!==r[0].element?(t=r[0].element,y(t,"dom","custom")):"function"==typeof r[0].appendChild?(t=r[0],y(t,"dom","custom")):t=M.tag.apply(M,r),Object.defineProperty(e,"element",{value:t,writable:!1,configurable:!1,enumerable:!0}),t}function E(e,r){return void 0===r&&(r=""),null===r&&(r=""),"string"!=typeof r&&(r=JSON.stringify(r)),"<html>"==r.substr(0,6)?e.innerHTML=r.substr(6):e.textContent=r,e}function x(e){if(!Array.isArray(e))return x(Array.prototype.slice.call(arguments));e.forEach(function(e){e=M(e),void 0===e[k]&&(e[k]={}),Array.isArray(e[k].style)||(e[k].style=[]),e[k].style.push(JSON.stringify(e.style))})}function L(e){if(!Array.isArray(e))return L(Array.prototype.slice.call(arguments));e.forEach(function(e){if(e=M(e),void 0===e[k]||!Array.isArray(e[k].style))throw Error("[dom.restoreStyle] `saveStyle()` has never been used on this element!");if(0==e[k].style.length)throw Error("[dom.restoreStyle] more `restore` than `save`!");var r,t,n=JSON.parse(e[k].style.pop());for(r in n)void 0!==(t=n[r])&&(e.style[r]=t)})}function N(e,r){T.register.call(this,e,r),T.apply.call(this,e)}var S=function(){function r(){return n(t,arguments)}var t={en:{}},n=e("$").intl;return r.all=t,r}();e("polyfill.classList");var T=e("dom.theme"),O=e("tfw.pointer-events"),M=function(e){if(e instanceof Node)return e;if(void 0===e||null===e)throw Error("`dom` is not a valid element!",e);if(e.$ instanceof Node)return e.$;if(e.element instanceof Node)return e.element;if("string"==typeof e){var r=document.getElementById(e);return r||console.error("[dom] There is no DOM element with this ID: `"+e+"`"),r}return"function"==typeof e.element?e.element():e};r.exports=M;var k="@dom"+Date.now(),D=/^&(#[0-9]+|[a-zA-Z0-9]+);$/;M.tagNS=m,M.svgRoot=m.bind(void 0,"http://www.w3.org/2000/svg","svg",{version:"1.1","xmlns:svg":"http://www.w3.org/2000/svg",xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink"}),M.svg=m.bind(void 0,"http://www.w3.org/2000/svg"),M.tag=m.bind(void 0,"http://www.w3.org/1999/xhtml"),M.div=m.bind(void 0,"http://www.w3.org/1999/xhtml","div"),M.txt=window.document.createTextNode.bind(window.document),M.textOrHtml=E,M.get=b,M.elem=C,M.css=i,M.att=s,M.removeAtt=a,M.addClass=y,M.hasClass=h,M.removeClass=p,M.toggleClass=g,M.saveStyle=x,M.restoreStyle=L,M.registerTheme=T.register.bind(M),M.applyTheme=T.apply.bind(M),M.registerAndApplyTheme=N,M.replace=o,M.detach=A,M.on=v,M.off=d,M.add=l,M.wrap=n,M.clear=w;var H=["keyup","keydown","scroll","load","error"];r.exports._=S});
+require("dom",function(e,r,t){function n(e,r,t){return Object.defineProperty(e,"element",{value:r,writable:!1,configurable:!1,enumerable:!0}),t?e:(e.on=v.bind(e,r),e.css=i.bind(e,r),e.add=l.bind(e,r),e.att=s.bind(e,r),e.addClass=y.bind(e,r),e.hasClass=h.bind(e,r),e.removeClass=p.bind(e,r),e.toggleClass=g.bind(e,r),e)}function o(e,r){return e=M(e),r=M(r),r.parentNode.replaceChild(e,r),e}function i(e,r){e=M(e);var t,n;for(t in r)n=r[t],e.style[t]=n;return e}function s(e,r,t){e=M(e);var n,o;"string"==typeof r&&(void 0===t&&(t=""),n=r,r={},r[n]=t);for(n in r)o=r[n],e.setAttribute(n,o);return e}function a(e,r){return e=M(e),e.removeAttribute(r),e}function l(e){e=M(e);try{var r,t;for(r=1;r<arguments.length;r++)t=arguments[r],u(e,t)||f(e,t)||c(e,t)||console.error("Argument #"+r+" of dom.add() is invalid!",arguments);return e}catch(e){console.error("[DOM.add] arguments=",[].slice.call(arguments)),console.error("[DOM.add] exception=",e)}}function c(e,r){return(r=M(r))instanceof Node&&(e.appendChild(r),!0)}function f(e,r){if("number"==typeof r&&(r=""+r),"string"!=typeof r)return!1;if("<html>"==r.substr(0,6).toLowerCase()){var t=r.substr(6);r=M.tag("span"),r.innerHTML=t}else if(D.test(r)){var n=r;r=M.tag("span"),r.innerHTML=n}else r=document.createTextNode(r);return e.appendChild(r),!0}function u(e,r){return!!Array.isArray(r)&&(r.forEach(function(r){l(e,r)}),!0)}function d(e){if(Array.isArray(e))return e.forEach(function(e){d(e)}),e;if(void 0===e[k])return e;var r=e[k].events;if(void 0===r)return e;r.off(),delete e[k].events}function v(e,r,t){if("function"==typeof r||null===r)r={tap:r};else if("string"==typeof r&&"function"==typeof t){var n={};n[r]=t,r=n}if(Array.isArray(e))return e.forEach(function(e){v(e,r)}),e;e=M(e),void 0===e[k]&&(e[k]={}),void 0===e[k].events&&(e[k].events=O(e));var o,i,s;for(o in r)i=r[o],"!"==o.charAt(0)?(o=o.substr(1),s=!0):s=!1,H.indexOf(o.toLowerCase())>-1?e.addEventListener(o,i,s):e[k].events.on(o,i,s);return e}function m(e,r){try{var t,n,o,i,s=document.createElementNS(e,r.trim().toLowerCase());for(t=2;t<arguments.length;t++)if(n=arguments[t],Array.isArray(n))n.forEach(function(e){switch(typeof e){case"string":case"number":case"boolean":if(e=""+e,"<html>"==e.substr(0,6)){var r=e.substr(6);e=M.tag("span"),e.innerHTML=r}else e=document.createTextNode(e)}l(s,e)});else switch(typeof n){case"string":n.split(" ").forEach(function(e){e.length>0&&y(s,e)});break;case"object":for(o in n)i=n[o],s.setAttribute(o,i);break;default:throw Error("[dom.tag] Error creating <"+r+">: Invalid argument #"+t+"!")}return s}catch(t){console.error("[dom.tagNS] Error with `ns` = ",e," and `name` = ",r),console.error(t)}}function y(e){var r=[].slice.call(arguments,1);return Array.isArray(e)?(r.unshift(null),e.forEach(function(e){r[0]=e,y.apply(void 0,r)}),e):(e=M(e),r.forEach(function(r){if("string"==typeof r&&(r=r.trim(),0!=r.length))try{e.classList&&e.classList.add(r)}catch(e){console.error("[dom.addClass] Invalid class name: ",r),console.error(e)}}),e)}function h(e,r){return e=M(e),!!e.classList&&e.classList.contains(r)}function p(e){var r=[].slice.call(arguments,1);return Array.isArray(e)?(r.unshift(null),e.forEach(function(e){r[0]=e,p.apply(void 0,r)}),e):(e=M(e),r.forEach(function(r){if("string"==typeof r)try{e.classList&&e.classList.remove(r)}catch(e){console.error("[dom.removeClass] Invalid class name: ",r),console.error(e)}}),e)}function g(e){return[].slice.call(arguments,1).forEach(function(r){h(e,r)?p(e,r):y(e,r)}),e}function w(e){e=M(e);for(var r=e;r.firstChild;)r.removeChild(r.firstChild);var t=[].slice.call(arguments);return t.length>1&&l.apply(this,t),e}function b(e,r){return e=M(e),void 0===r&&(r=e,e=window.document),e.querySelector(r)}function A(e){e=M(e);var r=e.parentElement;return r?(r.removeChild(e),r):r}function C(e){var r=[].slice.call(arguments);r.shift(),0==r.length&&(r=["div"]),r.push("dom","custom");var t;return void 0!==r[0].element?(t=r[0].element,y(t,"dom","custom")):"function"==typeof r[0].appendChild?(t=r[0],y(t,"dom","custom")):t=M.tag.apply(M,r),Object.defineProperty(e,"element",{value:t,writable:!1,configurable:!1,enumerable:!0}),t}function E(e,r){return void 0===r&&(r=""),null===r&&(r=""),"string"!=typeof r&&(r=JSON.stringify(r)),"<html>"==r.substr(0,6)?e.innerHTML=r.substr(6):e.textContent=r,e}function x(e){if(!Array.isArray(e))return x(Array.prototype.slice.call(arguments));e.forEach(function(e){e=M(e),void 0===e[k]&&(e[k]={}),Array.isArray(e[k].style)||(e[k].style=[]),e[k].style.push(JSON.stringify(e.style))})}function L(e){if(!Array.isArray(e))return L(Array.prototype.slice.call(arguments));e.forEach(function(e){if(e=M(e),void 0===e[k]||!Array.isArray(e[k].style))throw Error("[dom.restoreStyle] `saveStyle()` has never been used on this element!");if(0==e[k].style.length)throw Error("[dom.restoreStyle] more `restore` than `save`!");var r,t,n=JSON.parse(e[k].style.pop());for(r in n)void 0!==(t=n[r])&&(e.style[r]=t)})}function N(e,r){T.register.call(this,e,r),T.apply.call(this,e)}var S=function(){function r(){return n(t,arguments)}var t={en:{}},n=e("$").intl;return r.all=t,r}();e("polyfill.classList");var T=e("dom.theme"),O=e("tfw.gestures"),M=function(e){if(e instanceof Node)return e;if(void 0===e||null===e)throw Error("`dom` is not a valid element!",e);if(e.$ instanceof Node)return e.$;if(e.element instanceof Node)return e.element;if("string"==typeof e){var r=document.getElementById(e);return r||console.error("[dom] There is no DOM element with this ID: `"+e+"`"),r}return"function"==typeof e.element?e.element():e};r.exports=M;var k="@dom"+Date.now(),D=/^&(#[0-9]+|[a-zA-Z0-9]+);$/;M.tagNS=m,M.svgRoot=m.bind(void 0,"http://www.w3.org/2000/svg","svg",{version:"1.1","xmlns:svg":"http://www.w3.org/2000/svg",xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink"}),M.svg=m.bind(void 0,"http://www.w3.org/2000/svg"),M.tag=m.bind(void 0,"http://www.w3.org/1999/xhtml"),M.div=m.bind(void 0,"http://www.w3.org/1999/xhtml","div"),M.txt=window.document.createTextNode.bind(window.document),M.textOrHtml=E,M.get=b,M.elem=C,M.css=i,M.att=s,M.removeAtt=a,M.addClass=y,M.hasClass=h,M.removeClass=p,M.toggleClass=g,M.saveStyle=x,M.restoreStyle=L,M.registerTheme=T.register.bind(M),M.applyTheme=T.apply.bind(M),M.registerAndApplyTheme=N,M.replace=o,M.detach=A,M.on=v,M.off=d,M.add=l,M.wrap=n,M.clear=w;var H=["keyup","keydown","scroll","load","error"];r.exports._=S});
 //# sourceMappingURL=dom.js.map
-require("tfw.pointer-events",function(t,e,o){function a(t){var e=this;this._slots={},this._eventListeners=[],Object.defineProperty(a.prototype,"element",{value:t,writable:!1,configurable:!0,enumerable:!0}),n.call(e,t,"touchstart",function(o){o.preventDefault(),i.touchDevice||(i.touchDevice=!0,document.body.removeEventListener("mousedown",p,!0),document.body.removeEventListener("mousemove",u,!0),document.body.removeEventListener("mouseup",v,!0));var a=e._slots;1==o.touches.length&&(i.rect=t.getBoundingClientRect(),i.bodyMoveX=o.touches[0].clientX,i.bodyMoveY=o.touches[0].clientY,i.bodyDownX=o.touches[0].clientX,i.bodyDownY=o.touches[0].clientY,i.targetX=o.touches[0].clientX-i.rect.left,i.targetY=o.touches[0].clientY-i.rect.top,i.time=Date.now(),a.down&&a.down({action:"down",button:i.bodyButton,target:t,x:i.targetX,y:i.targetY,stopPropagation:o.stopPropagation.bind(o),preventDefault:o.preventDefault.bind(o)}))}),n.call(e,t,"touchmove",function(o){o.preventDefault();var a=i.bodyMoveX,n=i.bodyMoveY;i.bodyMoveX=o.touches[0].clientX,i.bodyMoveY=o.touches[0].clientY;var r=e._slots;r.drag&&r.drag({action:"drag",target:t,x0:i.targetX,y0:i.targetY,x:i.bodyMoveX-i.rect.left,y:i.bodyMoveY-i.rect.top,dx:i.bodyMoveX-i.bodyDownX,dy:i.bodyMoveY-i.bodyDownY,vx:i.bodyMoveX-a,vy:i.bodyMoveY-n,stopPropagation:o.stopPropagation.bind(o),preventDefault:o.preventDefault.bind(o)})}),n.call(e,t,"touchend",function(t){t.preventDefault();var o=e._slots,a=i.bodyMoveX-i.bodyDownX,n=i.bodyMoveY-i.bodyDownY;if(o.up&&o.up({action:"up",target:e.element,x:i.bodyMoveX-i.rect.left,y:i.bodyMoveY-i.rect.top,dx:a,dy:n,stopPropagation:t.stopPropagation.bind(t),preventDefault:t.preventDefault.bind(t)}),a*a+n*n<256){var r=Date.now();i.lastTapTime>0&&(o.doubletap&&r-i.lastTapTime<400?o.doubletap({action:"doubletap",target:i.bodyTarget,x:i.bodyMoveX-i.rect.left,y:i.bodyMoveY-i.rect.top,stopPropagation:t.stopPropagation.bind(t),preventDefault:t.preventDefault.bind(t)}):i.lastTapTime=0),o.tap&&0==i.lastTapTime&&(t.stopPropagation(),t.preventDefault(),o.tap({action:"tap",target:i.bodyTarget,x:i.bodyMoveX-i.rect.left,y:i.bodyMoveY-i.rect.top,stopPropagation:t.stopPropagation.bind(t),preventDefault:t.preventDefault.bind(t)})),i.lastTapTime=r}}),n.call(e,t,"mousedown",function(o){if(!i.touchDevice){var a=e._slots;i.target=e;var n=t.getBoundingClientRect();i.targetX=o.pageX-n.left,i.targetY=o.pageY-n.top,a.down&&a.down({action:"down",button:i.bodyButton,target:i.bodyTarget,x:i.targetX,y:i.targetY,stopPropagation:o.stopPropagation.bind(o),preventDefault:o.preventDefault.bind(o)})}}),n.call(e,t,"mousemove",function(o){var a=e._slots;if(a.move){var n=t.getBoundingClientRect();a.move({target:t,action:"move",x:o.pageX-n.left,y:o.pageY-n.top,stopPropagation:o.stopPropagation.bind(o),preventDefault:o.preventDefault.bind(o)})}}),Object.defineProperty(this,"element",{value:t,writable:!0,configurable:!0,enumerable:!0})}function n(t,e,o,a){t.addEventListener(e,o,a),this._eventListeners.push([t,e,o,a])}var r=function(){function e(){return a(o,arguments)}var o={en:{}},a=t("$").intl;return e.all=o,e}(),d="onwheel"in document.createElement("div")?"wheel":void 0!==document.onmousewheel?"mousewheel":"DOMMouseScroll",i={touchDevice:!1,target:null,targetX:0,targetY:0,bodyDownX:0,bodyDownY:0,bodyMoveX:-1,bodyMoveY:-1,bodyMoveLastX:-1,bodyMoveLastY:-1,onDrag:null,lastTapTime:0},p=function(t){i.touchDevice||(i.bodyDownX=t.pageX,i.bodyDownY=t.pageY,i.bodyMoveX=t.pageX,i.bodyMoveY=t.pageY,i.bodyMoveLastX=t.pageX,i.bodyMoveLastY=t.pageY,i.bodyTarget=t.target,i.bodyButton=t.button)},u=function(t){if(!i.touchDevice&&i.target&&(t.stopPropagation(),t.preventDefault(),i.bodyMoveLastX=i.bodyMoveX,i.bodyMoveLastY=i.bodyMoveY,i.bodyMoveX=t.pageX,i.bodyMoveY=t.pageY,i.target)){var e=i.target._slots;"function"==typeof e.drag&&e.drag({action:"drag",target:i.target.element,x0:i.targetX,y0:i.targetY,x:i.targetX+i.bodyMoveX-i.bodyDownX,y:i.targetY+i.bodyMoveY-i.bodyDownY,dx:i.bodyMoveX-i.bodyDownX,dy:i.bodyMoveY-i.bodyDownY,vx:i.bodyMoveX-i.bodyMoveLastX,vy:i.bodyMoveY-i.bodyMoveLastY,button:i.bodyButton})}},v=function(t){if(!i.touchDevice&&i.target){t.stopPropagation(),t.preventDefault();var e=Date.now(),o=i.target._slots,a=t.pageX-i.bodyDownX,n=t.pageY-i.bodyDownY;o.up&&o.up({action:"up",target:i.bodyTarget,x:i.targetX+a,y:i.targetY+n,dx:a,dy:n,button:i.bodyButton,stopPropagation:t.stopPropagation.bind(t),preventDefault:t.preventDefault.bind(t)}),a*a+n*n<1024&&(i.lastTapTime>0&&(o.doubletap&&e-i.lastTapTime<400?o.doubletap({action:"doubletap",target:i.bodyTarget,x:i.targetX+a,y:i.targetY+n}):i.lastTapTime=0),o.tap&&0==i.lastTapTime&&o.tap({action:"tap",target:i.bodyTarget,x:i.targetX+a,y:i.targetY+n}),i.lastTapTime=e),delete i.target}};document.body.addEventListener("mousedown",p,!0),document.body.addEventListener("mousemove",u,!0),document.body.addEventListener("mouseup",v,!0),a.prototype.on=function(t,e){var o=this,a=this._slots;return"function"==typeof e&&(a[t]=e),"wheel"==t&&n.call(o,this.element,d,function(t){t.target=i.bodyTarget,t.action="wheel";var e=o.element.getBoundingClientRect();t.x=t.pageX-e.left,t.y=t.pageY-e.top,t.delta=t.deltaY,a.wheel(t)}),this},a.prototype.off=function(){this._eventListeners.forEach(function(t){var e=t[0],o=t[1],a=t[2],n=t[3];e.removeEventListener(o,a,n)})},e.exports=a,e.exports._=r});
-//# sourceMappingURL=tfw.pointer-events.js.map
+require("tfw.gestures",function(t,e,n){function r(t){return t=u(t),t[m]||(t[m]=new _(t)),t[m]}function o(t,e){for(var n=this._events[t].chain,r=0;r<n.length;r++){if(!0===(0,n[r])(e))return}}function a(t,e){var n=v(t,"hammer.");n&&!this._hammer&&(this._hammer=new y(this.$));var r=this._events[t];if(!r){var a=o.bind(this,t);r={chain:[],handler:a},n?this._hammer.on(n,a):this.$.addEventListener(t,a),this._events[t]=r}r.chain.push(e)}function i(t,e){if("string"!=typeof t)throw Error("[Gestures.on] `name` must be a string: "+JSON(t)+"!");if(-1===x.indexOf(t))throw Error("Unknown gesture's name `"+t+"`!\nAvailable names are: "+x.join(", ")+".");if("function"!=typeof e)throw Error("Gesture `"+t+"` must have a function as slot!")}function u(t){if(t instanceof Node)return t;if(void 0===t||null===t)throw Error("Not a valid DOM element!",t);if(t.$ instanceof Node)return t.$;if(t.element instanceof Node)return t.element;if("string"==typeof t){var e=document.getElementById(t);return e||console.error("There is no DOM element with this ID: `"+t+"`"),e}return"function"==typeof t.element?t.element():t}function s(t,e){var n,r;e.center?(n=e.center.x,r=e.center.y):(n=e.clientX,r=e.clientY);var o=t.getBoundingClientRect();e.x=n-o.left,e.y=r-o.top}function c(t,e){e.dx=e.deltaX,e.dy=e.deltaY}function l(t,e,n){var r=this;t("hammer.tap",function(t){return 1===t.tapCount&&(s(r.$,t),e({x:t.x,y:t.y,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation}),!0)})}function f(t,e,n){var r=this;t("hammer.tap",function(t){return 2===t.tapCount&&(s(r.$,t),e({x:t.x,y:t.y,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation}),!0)})}function p(t,e,n){var r=this;t("hammer.pan",function(t){return s(r.$,t),c(r.$,t),e({x:t.x,y:t.y,dx:t.dx,dy:t.dy,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation}),!0})}function h(t,e,n){var r=this;t("touchstart",function(t){if(!t.changedTouches||t.changedTouches.length<1)return!1;var n=t.changedTouches[0],o=r.$.getBoundingClientRect();try{e({x:n.clientX-o.left,y:n.clientY-o.top,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation})}catch(t){console.error(t)}return!0}),t("mousedown",function(t){if(Date.now()-r._touchstart<350)return t.preventDefault(),t.stopPropagation(),!1;var n=r.$.getBoundingClientRect();try{e({x:t.clientX-n.left,y:t.clientY-n.top,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation})}catch(t){console.error(t)}return r._touchstart=0,!0})}function g(t,e,n){var r=this;t("touchend",function(t){if(!t.changedTouches||t.changedTouches.length<1)return!1;var n=t.changedTouches[0],o=r.$.getBoundingClientRect();try{e({x:n.clientX-o.left,y:n.clientY-o.top,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation})}catch(t){console.error(t)}return r._touchstart=Date.now(),!0}),t("mouseup",function(t){if(r._touchstart>0)return t.preventDefault(),t.stopPropagation(),!1;var n=r.$.getBoundingClientRect();try{e({x:t.clientX-n.left,y:t.clientY-n.top,preventDefault:t.preventDefault,stopPropagation:t.stopPropagation})}catch(t){console.error(t)}return r._touchstart=0,!0})}function v(t,e){return t.substr(0,e.length)==e?t.substr(e.length):null}var d=function(){function e(){return r(n,arguments)}var n={en:{},fr:{}},r=t("$").intl;return e.all=n,e}();e.exports=r;var m="__tfw.gestures__",y=t("external.hammer"),D={tap:l,doubletap:f,drag:p,down:h,up:g},x=Object.keys(D),_=function(t){Object.defineProperty(this,"$",{writable:!1,value:t,configurable:!1}),this._events={},this._touchstart=0};_.prototype.on=function(t,e,n){try{return"function"==typeof t?(e=t,t="tap"):i(t,e),D[t].call(this,a.bind(this),e,n)}catch(r){throw console.error("[Gesture.on( name, slot, args )]"),console.error("   name",t),console.error("   slot",e),console.error("   args",n),console.error("   ERROR",r),Error(r)}},e.exports._=d});
+//# sourceMappingURL=tfw.gestures.js.map
 require("dom.theme",function(t,n,e){function o(t,n){n=m(n);var e=g(t,n);e+=b(t,n),e+=i(t,n),e+=r(t,n);var o=l.css[t];return o||(o=document.createElement("style"),document.getElementsByTagName("head")[0].appendChild(o),l.css[t]=o),o.textContent=e,this}function r(t,n){for(var e="",o=1;o<=10;o++)u.forEach(function(r){for(var g=".thm-bg"+r,b=".thm-fg"+r,i=1;i<=o;i++){for(var h=[],m=[],a=[],d=1;d<=o;d++)a.push(i===d?g:"*"),m.push(i===d?g:"*"),h.push(i===d?b:"*"),d===o&&(a.push(a.pop()+".thm-fg"),h.push(h.pop()+b));e+="body.dom-theme-"+t+" "+a.join(" > ")+" { color: "+n["fg"+r]+" }\n",e+="body.dom-theme-"+t+" "+h.join(" > ")+" { color: "+n["bg"+r]+" }\n",e+="body.dom-theme-"+t+" "+m.join(" > ")+" .thm-svg-fill0 { fill: "+n["fg"+r]+" }\n",e+="body.dom-theme-"+t+" "+m.join(" > ")+" .thm-svg-stroke0 { stroke: "+n["fg"+r]+" }\n"}});return e}function g(t,n){var e="body.dom-theme-"+t+"{\n";return u.forEach(function(t){e+="  --thm-bg"+t+": "+n["bg"+t]+";\n"}),e+="}\n"}function b(t,n){var e="";return u.forEach(function(o){e+="body.dom-theme-"+t+".thm-bg"+o+" { background-color: "+n["bg"+o]+" }\n",e+="body.dom-theme-"+t+" .thm-fg"+o+" { color: "+n["fg"+o]+" }\n",e+="body.dom-theme-"+t+" .thm-bg"+o+" { background-color: "+n["bg"+o]+" }\n",e+="body.dom-theme-"+t+" .thm-bg"+o+"-bottom { background: linear-gradient(to top,"+n["bg"+o]+",transparent) }\n",e+="body.dom-theme-"+t+" .thm-bg"+o+"-top { background: linear-gradient(to bottom,"+n["bg"+o]+",transparent) }\n",e+="body.dom-theme-"+t+" .thm-bg"+o+"-left { background: linear-gradient(to right,"+n["bg"+o]+",transparent) }\n",e+="body.dom-theme-"+t+" .thm-bg"+o+"-right { background: linear-gradient(to left,"+n["bg"+o]+",transparent) }\n",isNaN(parseInt(o))&&(e+="body.dom-theme-"+t+" .thm-svg-fill"+o+" { fill: "+n["bg"+o]+" }\n",e+="body.dom-theme-"+t+" .thm-svg-stroke"+o+" { stroke: "+n["bg"+o]+" }\n")}),e}function i(t,n){var e=c.luminance(n.bg2),o=e<.6?s(n.white,Math.ceil(10*e)):s(n.black,"6"),r="";return[0,1,2,3,4,6,8,9,12,16,24].forEach(function(n){r+="body.dom-theme-"+t+" .thm-ele"+n+" {\n  box-shadow: 0 "+n+"px "+2*n+"px "+o+"\n}\n"}),r}function h(t,n){if(void 0===n&&(n=document.body),!l.css[t])return void console.error("This theme has not been registered: ",t);var e=document.body;"string"==typeof l.current&&this.removeClass(e,"dom-theme-"+l.current),l.current=t,this.addClass(e,"dom-theme-"+l.current)}function m(t){return void 0===t&&(t={}),"string"!=typeof t.bg0&&(t.bg0="#E0E0E0"),"string"!=typeof t.bg1&&(t.bg1="#F5F5F5"),"string"!=typeof t.bg2&&(t.bg2="#FAFAFA"),"string"!=typeof t.bg3&&(t.bg3="#FFF"),"string"!=typeof t.bgP&&(t.bgP="#3E50B4"),"string"!=typeof t.bgPD&&(t.bgPD=a(t.bgP)),"string"!=typeof t.bgPL&&(t.bgPL=d(t.bgP)),"string"!=typeof t.bgS&&(t.bgS="#FF3F80"),"string"!=typeof t.bgSD&&(t.bgSD=a(t.bgS)),"string"!=typeof t.bgSL&&(t.bgSL=d(t.bgS)),void 0===t.white&&(t.white="#fff"),void 0===t.black&&(t.black="#000"),u.forEach(function(n){var e=t["bg"+n],o=c.luminance(e);t["fg"+n]=o<.6?t.white:t.black}),t}function a(t){var n=new c(t);return n.rgb2hsl(),n.L*=.75,n.hsl2rgb(),n.stringify()}function d(t){var n=new c(t);return n.rgb2hsl(),n.L=.4+.6*n.L,n.hsl2rgb(),n.stringify()}function s(t,n){return t.length<5?t+n:t+n+n}var f=function(){function n(){return o(e,arguments)}var e={en:{},fr:{}},o=t("$").intl;return n.all=e,n}();e.register=o,e.apply=h;var c=t("tfw.color"),u=["0","1","2","3","P","PD","PL","S","SD","SL"],l={css:{},current:null};n.exports._=f});
 //# sourceMappingURL=dom.theme.js.map
 require("polyfill.classList",function(t,e,n){var i=function(){function e(){return i(n,arguments)}var n={en:{}},i=t("$").intl;return e.all=n,e}();"document"in self&&("classList"in document.createElement("_")&&(!document.createElementNS||"classList"in document.createElementNS("http://www.w3.org/2000/svg","g"))?function(){"use strict";var t=document.createElement("_");if(t.classList.add("c1","c2"),!t.classList.contains("c2")){var e=function(t){var e=DOMTokenList.prototype[t];DOMTokenList.prototype[t]=function(t){var n,i=arguments.length;for(n=0;n<i;n++)t=arguments[n],e.call(this,t)}};e("add"),e("remove")}if(t.classList.toggle("c3",!1),t.classList.contains("c3")){var n=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(t,e){return 1 in arguments&&!this.contains(t)==!e?e:n.call(this,t)}}t=null}():function(t){"use strict";if("Element"in t){var e=t.Element.prototype,n=Object,i=String.prototype.trim||function(){return this.replace(/^\s+|\s+$/g,"")},s=Array.prototype.indexOf||function(t){for(var e=0,n=this.length;e<n;e++)if(e in this&&this[e]===t)return e;return-1},r=function(t,e){this.name=t,this.code=DOMException[t],this.message=e},o=function(t,e){if(""===e)throw new r("SYNTAX_ERR","An invalid or illegal string was specified");if(/\s/.test(e))throw new r("INVALID_CHARACTER_ERR","String contains an invalid character");return s.call(t,e)},c=function(t){for(var e=i.call(t.getAttribute("class")||""),n=e?e.split(/\s+/):[],s=0,r=n.length;s<r;s++)this.push(n[s]);this._updateClassName=function(){t.setAttribute("class",this.toString())}},a=c.prototype=[],l=function(){return new c(this)};if(r.prototype=Error.prototype,a.item=function(t){return this[t]||null},a.contains=function(t){return t+="",-1!==o(this,t)},a.add=function(){var t,e=arguments,n=0,i=e.length,s=!1;do{t=e[n]+"",-1===o(this,t)&&(this.push(t),s=!0)}while(++n<i);s&&this._updateClassName()},a.remove=function(){var t,e,n=arguments,i=0,s=n.length,r=!1;do{for(t=n[i]+"",e=o(this,t);-1!==e;)this.splice(e,1),r=!0,e=o(this,t)}while(++i<s);r&&this._updateClassName()},a.toggle=function(t,e){t+="";var n=this.contains(t),i=n?!0!==e&&"remove":!1!==e&&"add";return i&&this[i](t),!0===e||!1===e?e:!n},a.toString=function(){return this.join(" ")},n.defineProperty){var u={get:l,enumerable:!0,configurable:!0};try{n.defineProperty(e,"classList",u)}catch(t){-2146823252===t.number&&(u.enumerable=!1,n.defineProperty(e,"classList",u))}}else n.prototype.__defineGetter__&&e.__defineGetter__("classList",l)}}(self)),e.exports._=i});
@@ -3036,7 +3036,7 @@ require("font.josefin",function(n,r,t){var e=function(){function r(){return e(t,
 //# sourceMappingURL=font.josefin.js.map
 require("x-widget",function(e,r,t){function n(r,t,n,i){void 0===i&&(i={});try{var a,c=e(t),f=new c(n);if("function"==typeof f.element)a=f.element();else if(f.element instanceof Node)a=f.element;else{if(!(f.$ instanceof Node))throw Error('Sorry, but "'+t+'" is not a widget nor a view!',f);a=f.$}var u=document.getElementById(r);return u&&u.parentNode.replaceChild(a,u),a.setAttribute("id",r),d.addClass(a,i.class||""),o(r,f),f}catch(e){throw console.error("[x-widget] Unable to create widget `"+t+"`!"),console.error("[x-widget] id = ",r,", args = ",n),Error(e)}}function i(e){var r,t=d.tag(e.elem);e.attr&&(d.att(t,e.attr),r=e.attr.id),Array.isArray(e.children)&&e.children.forEach(function(e){d.add(t,e)});var n,i,a={};if(e.prop)for(n in e.prop)i=e.prop[n],Object.defineProperty(a,n,{value:i,writable:!1,configurable:!1,enumerable:!0});return Object.defineProperty(a,"element",{value:t,writable:!1,configurable:!1,enumerable:!0}),void 0!==r&&o(r,a),a}function o(e,r){f[e]=r;var t=u[e];return void 0!==t&&window.setTimeout(function(){t.forEach(function(e){e(r)}),delete u[e]}),"function"==typeof r.element?r.element:r.element||r}var a=function(){function r(){return n(t,arguments)}var t={en:{}},n=e("$").intl;return r.all=t,r}(),d=e("dom"),c=e("tfw.data-binding"),f={},u={},l=function(e,r,t,o){try{return"string"==typeof e?n.call(this,e,r,t,o):i.call(this,e)}catch(e){throw console.error(e),Error("Exception in "+r+"("+JSON.stringify(t)+"):\n"+e)}};l.template=function(r){var t,n,i,a="",d={};for(t in r)n=r[t],"name"==t?a=n:"id"==t?i=n:"$"==t.charAt(0)&&(d[t.substr(1)]=n);var c=e(a),f=new c(d);return i&&o(i,f),"function"==typeof f.element?f.element():f.element||f},l.getById=function(e){if(!f[e])throw Error("[x-widget.getById()] ID not found: "+e+"!");return f[e]},l.onWidgetCreation=function(e,r){void 0===f[e]?void 0===u[e]?u[e]=[r]:u[e].push(r):window.setTimeout(function(){r(f[e])})},l.bind=function(r,t){var n,i,o,a,d,u=f[r];for(n in t)a=t[n].B,Array.isArray(a)&&a.forEach(function(e){if(void 0===(i=f[e[0]]))return void console.error("[x-widget:bind("+r+')] Trying to bind attribute "'+n+'" of widget "'+r+'" to the unexisting widget "'+e[0]+'"!');o=e[1];try{if(2==e.length)c.bind(i,o,u,n);else{var t=e[2];c.bind(i,o,function(){u[n]=t})}}catch(t){console.error("Binding error for widget `"+r+"`!",{ex:t,binding:e})}}),d=t[n].S,Array.isArray(d)&&d.forEach(function(t){var i=APP,o=t;if(Array.isArray(t)){try{i=e(t[0])}catch(e){throw console.error("[x-widget:bind] Widget `"+r+"` can't require unexistent `"+t[0]+"`: ",e),e}o=t[1]}if("function"!=typeof(o=i[o]))throw Array.isArray(t)?Error("[x-widget:bind]  Widget `"+r+"` use unexisting slot `"+t[1]+"` of module `"+t[0]+"`!"):Error("[x-widget:bind]  Widget `"+r+"` use unexisting slot `"+t+"` of main module `APP`!");try{c.bind(u,n,o)}catch(e){console.error("Binding error for widget `"+r+"`!",{ex:e,dstObj:u,dstAtt:n,fct:o,slot:t})}})},r.exports=l,r.exports._=a});
 //# sourceMappingURL=x-widget.js.map
-require("wdg.gl6-2",function(r,e,t){function n(r){function e(r){window.requestAnimationFrame(e);var a,o,i,l,u=r/3766.781248,h=Math.cos(u),v=Math.sin(u),p=r/3979.998511,E=Math.cos(p),_=Math.sin(p),R=h,F=v,b=v*_,P=E,C=-h*_,T=-v*E,m=_,S=h*E;for(l=0;l<c;l++)a=f[3*l+0],o=f[3*l+1],i=f[3*l+2],d[6*l+0]=a*R+0*o+i*F,d[6*l+1]=a*b+o*P+i*C,d[6*l+2]=a*T+o*m+i*S;t.sort&&g.sort(function(r,e){return d[6*e+2]-d[6*r+2]}),n.bindBuffer(n.ARRAY_BUFFER,s),n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW),n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),n.clear(n.COLOR_BUFFER_BIT|n.DEPTH_BUFFER_BIT),n.drawElements(n.POINTS,c,n.UNSIGNED_SHORT,0)}var t=this,n=r.getContext("webgl",{alpha:!1,depth:!0,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0}),a=n.createProgram();n.attachShader(a,i(n,u.vertex)),n.attachShader(a,o(n,u.fragment)),n.linkProgram(a),n.useProgram(a);var s=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,s);var c=56,d=new Float32Array(6*c);n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW);var f=[],g=new Uint16Array(c),A=n.createBuffer();n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),function(){var r,e,t,n,a,o,i,s;for(e=0;e<c-6;e++)r=l(e),d[6*e+3]=r.r,d[6*e+4]=r.g,d[6*e+5]=r.b,g[e]=e,i=.2*Math.PI+.6*e*Math.PI/(c-6-1),s=8.7*e*Math.PI/(c-6-1),a=Math.cos(i),o=Math.sin(i),t=o*Math.cos(s),n=o*Math.sin(s),f.push(t,n,a);for(e=c-6;e<c;e++)r=l(e),g[e]=e,d[6*e+3]=r.r,d[6*e+4]=r.g,d[6*e+5]=r.b,f.push(0,0,2*(e-c+6)/5-1)}();var h=d.BYTES_PER_ELEMENT,v=6*h,p=n.getAttribLocation(a,"attPosition");n.enableVertexAttribArray(p),n.vertexAttribPointer(p,3,n.FLOAT,!1,v,0);var E=n.getAttribLocation(a,"attColor");n.enableVertexAttribArray(E),n.vertexAttribPointer(E,3,n.FLOAT,!1,v,3*h),n.enable(n.BLEND),n.blendFunc(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA),n.enable(n.DEPTH_TEST),n.depthFunc(n.LESS),n.clearColor(0,0,0,1),n.bindBuffer(n.ARRAY_BUFFER,s),window.requestAnimationFrame(e)}function a(r,e,t){var n=e.createShader(r);return e.shaderSource(n,t),e.compileShader(n),e.getShaderParameter(n,e.COMPILE_STATUS)?n:(console.log(t),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(n)),null)}function o(r,e){return a(r.FRAGMENT_SHADER,r,e)}function i(r,e){return a(r.VERTEX_SHADER,r,e)}function l(r){r=(17*r+43)%g.length;var e=g[r];return{r:.5*e[0],g:.5*e[1],b:.5*e[2]}}var s=function(){function e(){return n(t,arguments)}var t={en:{}},n=r("$").intl;return e.all=t,e}(),u={vertex:"attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = (1.5 - z) / 2.5;\r\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 60.0 * depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",fragment:"precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on place un fragment transparent.\r\n    discard;\r\n  } else if (r > .15 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor = vec4(varColor, 1.0);\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    gl_FragColor = vec4(varColor, 0.5);\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\r\n}\r\n"},c=r("dom"),d=r("tfw.data-binding"),f=function(r){var e=c.elem(this,"canvas");d.propInteger(this,"width")(function(r){e.setAttribute("width",r),e.style.width=r+"px"}),d.propInteger(this,"height")(function(r){e.setAttribute("height",r),e.style.height=r+"px"}),d.propBoolean(this,"sort"),r=d.extend({width:640,height:480,sort:!1},r,this),window.setTimeout(n.bind(this,e),20)};e.exports=f;var g=[[2,0,0],[0,2,0],[0,0,2],[2,1,0],[2,0,1],[1,2,0],[0,2,1],[1,0,2],[0,1,2],[0,2,2],[2,0,2],[2,2,0],[2,2,2]];e.exports._=s});
+require("wdg.gl6-2",function(e,t,r){function n(e){function t(e){window.requestAnimationFrame(t);var a,o,i,l,u=e/3766.781248,h=Math.cos(u),v=Math.sin(u),p=e/3979.998511,E=Math.cos(p),_=Math.sin(p),R=h,F=v,b=v*_,P=E,C=-h*_,T=-v*E,m=_,S=h*E;for(l=0;l<c;l++)a=f[3*l+0],o=f[3*l+1],i=f[3*l+2],d[6*l+0]=a*R+0*o+i*F,d[6*l+1]=a*b+o*P+i*C,d[6*l+2]=a*T+o*m+i*S;r.sort&&g.sort(function(e,t){return d[6*t+2]-d[6*e+2]}),n.bindBuffer(n.ARRAY_BUFFER,s),n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW),n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),n.clear(n.COLOR_BUFFER_BIT|n.DEPTH_BUFFER_BIT),n.drawElements(n.POINTS,c,n.UNSIGNED_SHORT,0)}var r=this,n=e.getContext("webgl",{alpha:!1,depth:!0,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0}),a=n.createProgram();n.attachShader(a,i(n,u.vertex)),n.attachShader(a,o(n,u.fragment)),n.linkProgram(a),n.useProgram(a);var s=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,s);var c=56,d=new Float32Array(6*c);n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW);var f=[],g=new Uint16Array(c),A=n.createBuffer();n.bindBuffer(n.ELEMENT_ARRAY_BUFFER,A),n.bufferData(n.ELEMENT_ARRAY_BUFFER,g,n.STATIC_DRAW),function(){var e,t,r,n,a,o,i,s;for(t=0;t<c-6;t++)e=l(t),d[6*t+3]=e.r,d[6*t+4]=e.g,d[6*t+5]=e.b,g[t]=t,i=.2*Math.PI+.6*t*Math.PI/(c-6-1),s=8.7*t*Math.PI/(c-6-1),a=Math.cos(i),o=Math.sin(i),r=o*Math.cos(s),n=o*Math.sin(s),f.push(r,n,a);for(t=c-6;t<c;t++)e=l(t),g[t]=t,d[6*t+3]=e.r,d[6*t+4]=e.g,d[6*t+5]=e.b,f.push(0,0,2*(t-c+6)/5-1)}();var h=d.BYTES_PER_ELEMENT,v=6*h,p=n.getAttribLocation(a,"attPosition");n.enableVertexAttribArray(p),n.vertexAttribPointer(p,3,n.FLOAT,!1,v,0);var E=n.getAttribLocation(a,"attColor");n.enableVertexAttribArray(E),n.vertexAttribPointer(E,3,n.FLOAT,!1,v,3*h),n.enable(n.BLEND),n.blendFunc(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA),n.enable(n.DEPTH_TEST),n.depthFunc(n.LESS),n.clearColor(0,0,0,1),n.bindBuffer(n.ARRAY_BUFFER,s),window.requestAnimationFrame(t)}function a(e,t,r){var n=t.createShader(e);return t.shaderSource(n,r),t.compileShader(n),t.getShaderParameter(n,t.COMPILE_STATUS)?n:(console.log(r),console.error("An error occurred compiling the shader: "+t.getShaderInfoLog(n)),null)}function o(e,t){return a(e.FRAGMENT_SHADER,e,t)}function i(e,t){return a(e.VERTEX_SHADER,e,t)}function l(e){e=(17*e+43)%g.length;var t=g[e];return{r:.5*t[0],g:.5*t[1],b:.5*t[2]}}var s=function(){function t(){return n(r,arguments)}var r={en:{}},n=e("$").intl;return t.all=r,t}(),u={vertex:"attribute vec3 attPosition;\nattribute vec3 attColor;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nvoid main() {\n  float z = attPosition.z;\n  // Dans une projection 3D, les points éloignés de la caméra\n  // paraissent plus petits et plus proches les uns des autres.\n  // Cette variable permet de créer cet effet.\n  float depth = (1.5 - z) / 2.5;\n  gl_Position = vec4(attPosition.xy * depth, z, 1.0);\n\n  // La taille du point dépend aussi de la profondeur.\n  gl_PointSize = 60.0 * depth;\n  varPosition = attPosition;\n  varColor = attColor;\n}\n",fragment:"precision mediump float;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nconst vec3 WHITE = vec3(1.0, 1.0, 1.0);\n\nvoid main() {\n  // Calculons la distance du fragment courant\n  // au centre du point.\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  // On ne calcule pas la racine carré pour gagner du temps.\n  float r = x*x + y*y;\n\n  x = gl_PointCoord.x;\n  y = gl_PointCoord.y;\n\n  // 0.25 = 0.5 * 0.5\n  if (r > 0.25) {\n    // Si on est à l'extérieur du cercle de rayon 0.5,\n    // on place un fragment transparent.\n    discard;\n  } else if (r > .15 ) {\n    // Au delà d'un certain rayon, on met une couleur fixe\n    // qui nous sert de liseré.\n    gl_FragColor = vec4(varColor, 1.0);\n  } else {\n    // Petit effet de dégradé.\n    gl_FragColor = vec4(varColor, 0.5);\n  }\n  // La luminosité varie avec la profondeur du point.\n  // En `z = 0.0`, la boule est noire.\n  gl_FragColor = vec4( gl_FragColor.rgb * (1.0 - varPosition.z) / 2.0, gl_FragColor.a);\n}\n"},c=e("dom"),d=e("tfw.data-binding"),f=function(e){var t=c.elem(this,"canvas");d.propInteger(this,"width")(function(e){t.setAttribute("width",e),t.style.width=e+"px"}),d.propInteger(this,"height")(function(e){t.setAttribute("height",e),t.style.height=e+"px"}),d.propBoolean(this,"sort"),e=d.extend({width:640,height:480,sort:!1},e,this),window.setTimeout(n.bind(this,t),20)};t.exports=f;var g=[[2,0,0],[0,2,0],[0,0,2],[2,1,0],[2,0,1],[1,2,0],[0,2,1],[1,0,2],[0,1,2],[0,2,2],[2,0,2],[2,2,0],[2,2,2]];t.exports._=s});
 //# sourceMappingURL=wdg.gl6-2.js.map
 require("wdg.showhide",function(e,t,n){function i(e){function t(){n.value=!n.value,n.focus=!0}var n=this,i=new l({content:"tri-right",size:"24px"}),o=s.tag("span","label"),d=s.div("head",[i,o]),h=s.div("body","thm-bg0"),c=s.elem(this,"div","wdg-showhide","thm-ele2",[d,h]);r(this,function(e){switch(e.keyCode){case 13:case 32:n.value=!n.value}console.info("[wdg.showhide] evt=",e)}),a.propBoolean(this,"value")(function(e){e?(s.addClass(c,"show"),s.removeClass(c,"fade-in"),window.setTimeout(function(){s.addClass(c,"fade-in")})):s.removeClass(c,"show")}),a.propBoolean(this,"simple")(function(e){e?(s.addClass(c,"simple"),s.removeClass(c,"thm-ele2"),s.removeClass(d,"thm-bgPD")):(s.removeClass(c,"simple"),s.addClass(c,"thm-ele2"),s.addClass(d,"thm-bgPD"))}),a.propString(this,"label")(function(e){o.textContent=e}),a.propUnit(this,"maxHeight")(function(e){e.v<=0?h.style.maxHeight="none":h.style.maxHeight=e.v+e.u}),a.prop(this,"content")(function(e){s.clear(h),Array.isArray(e)?e.forEach(function(e){s.add(h,e)}):void 0!==e&&null!==e&&s.add(h,e)}),a.propRemoveClass(this,"wide","inline"),a.propRemoveClass(this,"visible","hide"),e=a.extend({value:!0,label:"",content:null,maxHeight:null,visible:!0,wide:!0,simple:!1,focus:!1},e,this),s.on(d,t),this.append=function(e){return Array.isArray(n.content)||(n.content=[]),n.content.push(e),s.add(h,e),n},this.prepend=function(e){return Array.isArray(n.content)||(n.content=[]),n.content.push(e),h.insertBefore(e,h.childNodes[0]),n}}var o=function(){function t(){return i(n,arguments)}var n={en:{}},i=e("$").intl;return t.all=n,t}(),s=e("dom"),a=e("tfw.data-binding"),l=e("wdg.icon"),r=e("tfw.focusable");i.prototype.clear=function(){return this.content=[],this},t.exports=i,t.exports._=o});
 //# sourceMappingURL=wdg.showhide.js.map
@@ -3046,5 +3046,5 @@ require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,argu
 //# sourceMappingURL=wdg.icon.js.map
 require("wdg.flex",function(e,s,t){function a(e){var s=n.elem(this,"div","wdg-flex");i.propToggleClass(this,"orientation",o),i.propToggleClass(this,"type",c),i.propArray(this,"content")(function(e){n.clear(s),e.forEach(function(e){n.add(s,e),void 0!==e.$grow&&n.css(e,{"flex-grow":parseFloat(e.$grow)}),void 0!==e.$shrink&&n.css(e,{"flex-shrink":parseFloat(e.$shrink)})})}),i.propString(this,"justify")(function(e){n.removeClass(s,"justify-center","justify-flex-end","justify-flex-start","justify-space-around","justify-space-between");var t=null;switch(e.trim().toLowerCase()){case"center":t="center";break;case"flex-end":case"flexend":case"end":t="flex-end";break;case"flex-start":case"flexstart":case"start":t="flex-start";break;case"space-around":case"around":t="space-around";break;case"space-between":case"between":t="space-between"}t&&n.addClass(s,"justify-"+t)}),i.propAddClass(this,"wide"),i.propRemoveClass(this,"visible","hide"),e=i.extend({orientation:o[0],type:c[0],justify:"space-around",content:[],wide:!0,visible:!0},e,this)}var r=function(){function s(){return a(t,arguments)}var t={en:{}},a=e("$").intl;return s.all=t,s}(),n=e("dom"),i=e("tfw.data-binding"),o=["H","V","W","N"],c=["default","fill"];s.exports=a,s.exports._=r});
 //# sourceMappingURL=wdg.flex.js.map
-require("wdg.gl6",function(r,e,n){function t(r){function e(r){var t,a,i,l,u=r/566,c=Math.cos(u),g=Math.sin(u),h=r/979,v=Math.cos(h),p=Math.sin(h),A=c,_=g,b=g*p,m=v,C=-c*p,P=-g*v,E=p,R=c*v;for(l=0;l<s;l++)t=f[3*l+0],a=f[3*l+1],i=f[3*l+2],d[6*l+0]=t*A+0*a+i*_,d[6*l+1]=t*b+a*m+i*C,d[6*l+2]=t*P+a*E+i*R;n.bindBuffer(n.ARRAY_BUFFER,o),n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW),n.clear(n.COLOR_BUFFER_BIT),n.drawArrays(n.POINTS,0,s),window.requestAnimationFrame(e)}var n=r.getContext("webgl",{alpha:!1,depth:this.zbuffer,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0}),t=n.createProgram();n.attachShader(t,i(n,u.vertex)),n.attachShader(t,a(n,u.fragment)),n.linkProgram(t),n.useProgram(t);var o=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,o);var s=6,d=new Float32Array(36);n.bufferData(n.ARRAY_BUFFER,d,n.STATIC_DRAW);var f=[1,0,0,-1,0,0,0,1,0,0,-1,0,0,0,1,0,0,-1];l[c];for(var g,h=0;h<s;h++)g=c[h],d[6*h+3]=.5*g[0],d[6*h+4]=.5*g[1],d[6*h+5]=.5*g[2];var v=d.BYTES_PER_ELEMENT,p=6*v,A=n.getAttribLocation(t,"attPosition");n.enableVertexAttribArray(A),n.vertexAttribPointer(A,3,n.FLOAT,!1,p,0);var _=n.getAttribLocation(t,"attColor");n.enableVertexAttribArray(_),n.vertexAttribPointer(_,3,n.FLOAT,!1,p,3*v),Boolean(this.zbuffer)?(n.enable(n.DEPTH_TEST),n.depthFunc(n.LEQUAL),n.disable(n.BLEND),n.enable(n.BLEND),n.blendFunc(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA)):(n.enable(n.BLEND),n.blendFunc(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA),n.disable(n.DEPTH_TEST)),n.clearColor(1,1,1,1),n.bindBuffer(n.ARRAY_BUFFER,o),window.requestAnimationFrame(e)}function o(r,e,n){var t=e.createShader(r);return e.shaderSource(t,n),e.compileShader(t),e.getShaderParameter(t,e.COMPILE_STATUS)?t:(console.log(n),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(t)),null)}function a(r,e){return o(r.FRAGMENT_SHADER,r,e)}function i(r,e){return o(r.VERTEX_SHADER,r,e)}function l(r){var e,n,t;for(e=0;e<r.length;e++)n=Math.floor(Math.random(r.length)),t=r[n],r[n]=r[e],r[e]=t;return r}var s=function(){function e(){return t(n,arguments)}var n={en:{}},t=r("$").intl;return e.all=n,e}(),u={vertex:"attribute vec3 attPosition;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  float z = attPosition.z;\r\n  // Dans une projection 3D, les points éloignés de la caméra\r\n  // paraissent plus petits et plus proches les uns des autres.\r\n  // Cette variable permet de créer cet effet.\r\n  float depth = 3.0 / (2.0 - z);\r\n  // On utilise la 4ème composant `w` pour donner un effet de profndeur.\r\n  // En effet, les coordonnées seront multipliées/divisées par `depth`.\r\n  gl_Position = vec4(attPosition.xy, z, depth);\r\n\r\n  // La taille du point dépend aussi de la profondeur.\r\n  gl_PointSize = 150.0 / depth;\r\n  varPosition = attPosition;\r\n  varColor = attColor;\r\n}\r\n",fragment:"precision mediump float;\r\n\r\nvarying vec3 varPosition;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n\r\n  x = gl_PointCoord.x;\r\n  y = gl_PointCoord.y;\r\n\r\n  // 0.25 = 0.5 * 0.5\r\n  if (r > 0.25) {\r\n    // Si on est à l'extérieur du cercle de rayon 0.5,\r\n    // on ignore le fragment.\r\n    discard;\r\n  } else if (r > .2 ) {\r\n    // Au delà d'un certain rayon, on met une couleur fixe\r\n    // qui nous sert de liseré.\r\n    gl_FragColor.rgb = vec3(1,1,1) - varColor;\r\n    gl_FragColor.a = 1.0;\r\n  } else {\r\n    // Petit effet de dégradé.\r\n    gl_FragColor.a = 1.0;\r\n    gl_FragColor.rgb = mix(varColor, varColor * 0.25, r * 5.0);\r\n  }\r\n  // La luminosité varie avec la profondeur du point.\r\n  // En `z = 0.0`, la boule est noire.\r\n  float coeff = (1.0 - varPosition.z) * 0.5;\r\n  gl_FragColor.rgb = coeff * gl_FragColor.rgb;\r\n}\r\n"},d=r("dom"),f=r("tfw.data-binding"),c=[[2,0,0],[0,2,0],[0,0,2],[2,1,0],[2,0,1],[1,2,0],[0,2,1],[1,0,2],[0,1,2],[0,2,2],[2,0,2],[2,2,0]],g=function(r){var e=d.elem(this,"canvas");f.propInteger(this,"width")(function(r){e.setAttribute("width",r),e.style.width=r+"px"}),f.propInteger(this,"height")(function(r){e.setAttribute("height",r),e.style.height=r+"px"}),f.propBoolean(this,"zindex"),r=f.extend({width:640,height:480,zbuffer:!1},r,this),window.setTimeout(t.bind(this,e),20)};e.exports=g,e.exports._=s});
+require("wdg.gl6",function(e,n,r){function t(e){function n(e){var t,a,i,l,u=e/566,c=Math.cos(u),g=Math.sin(u),h=e/979,v=Math.cos(h),p=Math.sin(h),A=c,_=g,b=g*p,m=v,C=-c*p,P=-g*v,E=p,R=c*v;for(l=0;l<s;l++)t=f[3*l+0],a=f[3*l+1],i=f[3*l+2],d[6*l+0]=t*A+0*a+i*_,d[6*l+1]=t*b+a*m+i*C,d[6*l+2]=t*P+a*E+i*R;r.bindBuffer(r.ARRAY_BUFFER,o),r.bufferData(r.ARRAY_BUFFER,d,r.STATIC_DRAW),r.clear(r.COLOR_BUFFER_BIT),r.drawArrays(r.POINTS,0,s),window.requestAnimationFrame(n)}var r=e.getContext("webgl",{alpha:!1,depth:this.zbuffer,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0}),t=r.createProgram();r.attachShader(t,i(r,u.vertex)),r.attachShader(t,a(r,u.fragment)),r.linkProgram(t),r.useProgram(t);var o=r.createBuffer();r.bindBuffer(r.ARRAY_BUFFER,o);var s=6,d=new Float32Array(36);r.bufferData(r.ARRAY_BUFFER,d,r.STATIC_DRAW);var f=[1,0,0,-1,0,0,0,1,0,0,-1,0,0,0,1,0,0,-1];l[c];for(var g,h=0;h<s;h++)g=c[h],d[6*h+3]=.5*g[0],d[6*h+4]=.5*g[1],d[6*h+5]=.5*g[2];var v=d.BYTES_PER_ELEMENT,p=6*v,A=r.getAttribLocation(t,"attPosition");r.enableVertexAttribArray(A),r.vertexAttribPointer(A,3,r.FLOAT,!1,p,0);var _=r.getAttribLocation(t,"attColor");r.enableVertexAttribArray(_),r.vertexAttribPointer(_,3,r.FLOAT,!1,p,3*v),Boolean(this.zbuffer)?(r.enable(r.DEPTH_TEST),r.depthFunc(r.LEQUAL),r.disable(r.BLEND),r.enable(r.BLEND),r.blendFunc(r.SRC_ALPHA,r.ONE_MINUS_SRC_ALPHA)):(r.enable(r.BLEND),r.blendFunc(r.SRC_ALPHA,r.ONE_MINUS_SRC_ALPHA),r.disable(r.DEPTH_TEST)),r.clearColor(1,1,1,1),r.bindBuffer(r.ARRAY_BUFFER,o),window.requestAnimationFrame(n)}function o(e,n,r){var t=n.createShader(e);return n.shaderSource(t,r),n.compileShader(t),n.getShaderParameter(t,n.COMPILE_STATUS)?t:(console.log(r),console.error("An error occurred compiling the shader: "+n.getShaderInfoLog(t)),null)}function a(e,n){return o(e.FRAGMENT_SHADER,e,n)}function i(e,n){return o(e.VERTEX_SHADER,e,n)}function l(e){var n,r,t;for(n=0;n<e.length;n++)r=Math.floor(Math.random(e.length)),t=e[r],e[r]=e[n],e[n]=t;return e}var s=function(){function n(){return t(r,arguments)}var r={en:{}},t=e("$").intl;return n.all=r,n}(),u={vertex:"attribute vec3 attPosition;\nattribute vec3 attColor;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nvoid main() {\n  float z = attPosition.z;\n  // Dans une projection 3D, les points éloignés de la caméra\n  // paraissent plus petits et plus proches les uns des autres.\n  // Cette variable permet de créer cet effet.\n  float depth = 3.0 / (2.0 - z);\n  // On utilise la 4ème composant `w` pour donner un effet de profndeur.\n  // En effet, les coordonnées seront multipliées/divisées par `depth`.\n  gl_Position = vec4(attPosition.xy, z, depth);\n\n  // La taille du point dépend aussi de la profondeur.\n  gl_PointSize = 150.0 / depth;\n  varPosition = attPosition;\n  varColor = attColor;\n}\n",fragment:"precision mediump float;\n\nvarying vec3 varPosition;\nvarying vec3 varColor;\n\nvoid main() {\n  // Calculons la distance du fragment courant\n  // au centre du point.\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  // On ne calcule pas la racine carré pour gagner du temps.\n  float r = x*x + y*y;\n\n  x = gl_PointCoord.x;\n  y = gl_PointCoord.y;\n\n  // 0.25 = 0.5 * 0.5\n  if (r > 0.25) {\n    // Si on est à l'extérieur du cercle de rayon 0.5,\n    // on ignore le fragment.\n    discard;\n  } else if (r > .2 ) {\n    // Au delà d'un certain rayon, on met une couleur fixe\n    // qui nous sert de liseré.\n    gl_FragColor.rgb = vec3(1,1,1) - varColor;\n    gl_FragColor.a = 1.0;\n  } else {\n    // Petit effet de dégradé.\n    gl_FragColor.a = 1.0;\n    gl_FragColor.rgb = mix(varColor, varColor * 0.25, r * 5.0);\n  }\n  // La luminosité varie avec la profondeur du point.\n  // En `z = 0.0`, la boule est noire.\n  float coeff = (1.0 - varPosition.z) * 0.5;\n  gl_FragColor.rgb = coeff * gl_FragColor.rgb;\n}\n"},d=e("dom"),f=e("tfw.data-binding"),c=[[2,0,0],[0,2,0],[0,0,2],[2,1,0],[2,0,1],[1,2,0],[0,2,1],[1,0,2],[0,1,2],[0,2,2],[2,0,2],[2,2,0]],g=function(e){var n=d.elem(this,"canvas");f.propInteger(this,"width")(function(e){n.setAttribute("width",e),n.style.width=e+"px"}),f.propInteger(this,"height")(function(e){n.setAttribute("height",e),n.style.height=e+"px"}),f.propBoolean(this,"zindex"),e=f.extend({width:640,height:480,zbuffer:!1},e,this),window.setTimeout(t.bind(this,n),20)};n.exports=g,n.exports._=s});
 //# sourceMappingURL=wdg.gl6.js.map
