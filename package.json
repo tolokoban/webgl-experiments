@@ -19,7 +19,7 @@
     "bugs": {
         "url": "https://github.com/tolokoban/webgl-experiments/issues"
     },
-    "version": "0.0.107",
+    "version": "0.0.108",
     "tfw": {
         "modules": [],
         "compile": {
