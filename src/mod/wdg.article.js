@@ -43,6 +43,8 @@ var Icon = require("tfw.view.icon");
  * var instance = new Article({ visible: false });
  */
 var Article = function( opts ) {
+  var args = require("tfw.url-args").parse();
+  
   $.addClass( document.body, "thm-bg0" );
   
   var page = window.location.pathname.split('/').pop();
@@ -51,7 +53,7 @@ var Article = function( opts ) {
   if( typeof opts.title !== 'string' ) opts.title = page;
 
   var header = $.tag('header', 'thm-ele12', 'thm-bgP', [
-    $.tag("a", { href: "index.html" }, [
+    $.tag("a", { href: "index.html#" + args.id }, [
       new Icon({ size: "1.5rem", content: "menu" })
     ]),
     opts.title
