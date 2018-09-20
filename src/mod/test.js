@@ -15,6 +15,10 @@ function start() {
   $.add( document.body, canvas );
 
   var gestures = Gestures( canvas );
+  gestures.on( "wheel", function( evt ) {
+    console.info("[test] evt=", evt);
+    evt.preventDefault();
+  });
   gestures.on( "tap", function( evt ) {
     var x = evt.x;
     var y = evt.y;
@@ -40,6 +44,7 @@ function start() {
   });
   gestures.on( "drag", function( evt ) {
     console.info("[test] evt=", evt);
+    evt.preventDefault();
     var x = evt.x;
     var y = evt.y;
     var dx = evt.dx;

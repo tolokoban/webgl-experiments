@@ -1,6 +1,7 @@
 {View DIV class:wdg-wavefront
   view.attribs: {
     file: {any behind:onFileLoaded}
+    automatic-rotation: {boolean true}
     border-visible: {boolean true}
     border-thickness: {float 2}
     vertex-count: {integer 0}
@@ -28,6 +29,7 @@
     {CANVAS view.id:canvas class:thm-ele8}
     {tfw.view.flex justify-content:space-around flex-wrap:wrap [
       {tfw.view.checkbox wide:false value:{Bind border-visible} content:"Afficher le liseré"}
+      {tfw.view.checkbox wide:false value:{Bind automatic-rotation} content:"Rotation automatique"}
       {tfw.view.textbox label:Épaisseur value:{Bind border-thickness} width:40px}
       {tfw.view.combo items:["Hachures", "Couleurs franches", "Lisse", "Métallique"]
                       label:Ombrage value:{Bind material}}
