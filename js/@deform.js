@@ -77,12 +77,12 @@ addListener(
                   W({
                       elem: "div",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W('wdg.deform-174','wdg.deform-1',{
                           width: "420",
                           height: "420",
                           delay: "50"},{"id":"wdg.deform-174"}),
-                        "\r\n          ",
+                        "\n          ",
                         W('wdg.flex75','wdg.flex',{"content": [
                           W('delay1','wdg.text',{
                               label: "Delai par étage (ms)",
@@ -92,16 +92,16 @@ addListener(
                               label: "Angle max (deg)",
                               wide: "true",
                               value: "30"},{"id":"angle1"})]},{"id":"wdg.flex75"}),
-                        "\r\n      "]}),
+                        "\n      "]}),
                   W({
                       elem: "div",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W('wdg.deform-276','wdg.deform-2',{
                           width: "420",
                           height: "420",
                           delay: "50"},{"id":"wdg.deform-276"}),
-                        "\r\n        ",
+                        "\n        ",
                         W('wdg.flex77','wdg.flex',{"content": [
                           W('delay2','wdg.text',{
                               label: "Delai par étage (ms)",
@@ -111,7 +111,7 @@ addListener(
                               label: "Angle max (deg)",
                               wide: "true",
                               value: "30"},{"id":"angle2"})]},{"id":"wdg.flex77"}),
-                        "\r\n      "]})]},{"id":"wdg.flex73"})]}),
+                        "\n      "]})]},{"id":"wdg.flex73"})]}),
           W({
               elem: "p",
               children: [
@@ -152,7 +152,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -186,7 +186,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -215,7 +215,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n\r\n  ",
+                    "\n\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -266,7 +266,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -295,7 +295,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n\r\n  ",
+                    "\n\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -319,7 +319,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -357,7 +357,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -400,7 +400,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -443,7 +443,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  \r\n  ",
+                    "\n  \n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -495,7 +495,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -546,12 +546,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["[];"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// LEVELS est le nombre de triangles."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -627,7 +627,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -641,12 +641,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// attRadius, attAngle, attLevel."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -678,7 +678,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// A droite."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -725,7 +725,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// En haut."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -758,17 +758,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// A gauche."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -879,7 +879,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -898,7 +898,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -917,7 +917,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -936,7 +936,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -955,7 +955,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -974,12 +974,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Pour faire un léger dégradé dans le fragment shader."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -998,7 +998,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1017,12 +1017,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Temps qui tient compte du décalage par level."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1066,12 +1066,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Angle max d'inclinaison entre deux niveaux."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1119,17 +1119,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Calculer en fonction du temps l'angle entre deux"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// triangles consécutifs."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1213,12 +1213,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Plus le triangle à un level élevé, plus il est petit."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1272,12 +1272,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées du centre du triangle de la base."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1301,7 +1301,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1325,7 +1325,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  \r\n  ",
+                        "\n  \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1359,17 +1359,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// A chaque niveau supplémentaire,"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// l'angle s'incline un peu plus."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1403,7 +1403,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1480,12 +1480,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Condition d'arrêt."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1524,12 +1524,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Calculer les coordonnées du centre du triangle."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1582,7 +1582,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1635,12 +1635,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Incliner un peu plus pour le niveau suivant."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1663,17 +1663,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées du vertex dans l'espace de WebGL."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1737,7 +1737,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1801,7 +1801,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  \r\n  ",
+                        "\n  \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -1820,7 +1820,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " \r\n    ",
+                        " \n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1839,7 +1839,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1858,7 +1858,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -1872,12 +1872,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["1"]}),
-                        " \r\n  ",
+                        " \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1910,12 +1910,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Le dernier triangle est de couleur unie."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1934,7 +1934,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1949,22 +1949,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Vaut 0 pour les vertex du bas du triangle"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// et 1 pour le sommet."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Cela donne l'effer d'une ombre."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1993,12 +1993,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2031,7 +2031,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2050,7 +2050,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2069,7 +2069,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2088,7 +2088,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2107,7 +2107,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2126,12 +2126,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Pour faire un léger dégradé dans le fragment shader."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2150,7 +2150,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2169,12 +2169,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Temps qui tient compte du décalage par level."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2218,12 +2218,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Angle max d'inclinaison entre deux niveaux."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2271,17 +2271,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Calculer en fonction du temps l'angle entre deux"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// triangles consécutifs."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2365,12 +2365,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Plus le triangle à un level élevé, plus il est petit."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2424,12 +2424,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées du centre du triangle de la base."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2453,7 +2453,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2477,7 +2477,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  \r\n  ",
+                        "\n  \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2511,17 +2511,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// A chaque niveau supplémentaire,"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// l'angle s'incline un peu plus."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2555,7 +2555,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2632,12 +2632,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Condition d'arrêt."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2676,12 +2676,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Calculer les coordonnées du centre du triangle."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2734,7 +2734,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2787,12 +2787,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Incliner un peu plus pour le niveau suivant."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2815,17 +2815,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées du vertex dans l'espace de WebGL."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2889,7 +2889,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2953,7 +2953,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  \r\n  ",
+                        "\n  \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -2972,7 +2972,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        " \r\n    ",
+                        " \n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2991,7 +2991,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3010,7 +3010,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "number"},
@@ -3024,12 +3024,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["1"]}),
-                        " \r\n  ",
+                        " \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3062,12 +3062,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Le dernier triangle est de couleur unie."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3086,7 +3086,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3101,22 +3101,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Vaut 0 pour les vertex du bas du triangle"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// et 1 pour le sommet."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Cela donne l'effer d'une ombre."]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3145,12 +3145,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3382,7 +3382,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -3421,7 +3421,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n  ...\r\n",
+                    "\n  ...\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
@@ -3435,13 +3435,13 @@ addListener(
                   W({
                       elem: "div",
                       children: [
-                        "\r\n        ",
+                        "\n        ",
                         W('wdg.deform-382','wdg.deform-3',{
                           width: "960",
                           height: "540",
                           delay: "0",
                           angle: "66"},{"id":"wdg.deform-382"}),
-                        "\r\n          ",
+                        "\n          ",
                         W('wdg.flex83','wdg.flex',{"content": [
                           W('delay','wdg.text',{
                               label: "Délai par étage (ms)",
@@ -3454,7 +3454,7 @@ addListener(
                           W('girafe','wdg.checkbox',{
                               text: "Afficher la girafe",
                               value: "false"},{"id":"girafe"})]},{"id":"wdg.flex83"}),
-                        "\r\n      "]})]},{"id":"wdg.flex81"})]}),
+                        "\n      "]})]},{"id":"wdg.flex81"})]}),
           W({
               elem: "p",
               children: [
@@ -3466,7 +3466,11 @@ addListener(
         W.bind('wdg.deform-382',{"girafe":{"B":[["girafe","value"]]},"delay":{"B":[["delay","value"]]},"angle":{"B":[["angle","value"]]}});
     }
 );
+<<<<<<< HEAD
 require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.107"',major:"0",minor:"0",revision:"107",date:"2018-09-20T17:01:25.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+=======
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.110"',major:"0",minor:"0",revision:"110",date:"2018-09-19T20:35:15.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
+>>>>>>> 26ae07ae43a3ac603b0e470fcd13ee7b8e0fd92a
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -3528,7 +3532,7 @@ require("polyfill.promise",function(t,n,e){var r=function(){function n(){return 
 //# sourceMappingURL=polyfill.promise.js.map
 require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
 //# sourceMappingURL=wdg.icon.js.map
-require("wdg.deform-3",function(r,t,e){function n(r){var t=this.gl;s.css(t.canvas,{"background-image":"url(css/wdg.deform-3/background.jpg)","background-size":"100% 100%"}),this.prg=new l(this.gl,{vert:o.vert,frag:o.frag});var e,n=[];for(e=0;e<c;e++)n.push(.18,0,e,.36,1-e/(c-1),.18,1,e,0,1-e/(c-1));for(e=0;e<c;e++)n.push(.25,0,e,1,1-e/(c-1),.25,1,e,.5,1-e/(c-1));n=new Float32Array(n),this.prg.use();var a=t.createBuffer();t.bindBuffer(t.ARRAY_BUFFER,a),t.bufferData(t.ARRAY_BUFFER,n,t.STATIC_DRAW);var i=n.BYTES_PER_ELEMENT,u=5*i,g=this.prg.attribs.attRadius.location;t.enableVertexAttribArray(g),t.vertexAttribPointer(g,1,t.FLOAT,!1,u,0*i);var f=this.prg.attribs.attAngle.location;t.enableVertexAttribArray(f),t.vertexAttribPointer(f,1,t.FLOAT,!1,u,1*i);var T=this.prg.attribs.attLevel.location;t.enableVertexAttribArray(T),t.vertexAttribPointer(T,1,t.FLOAT,!1,u,2*i);var E=this.prg.attribs.attUV.location;t.enableVertexAttribArray(E),t.vertexAttribPointer(E,2,t.FLOAT,!1,u,3*i),this.vertexCount=2*c,this.uniTime=t.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=t.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=t.getUniformLocation(this.prg.program,"uniAngle"),this.uniTexture=t.getUniformLocation(this.prg.program,"uniTexture");var d=t.createTexture();t.bindTexture(t.TEXTURE_2D,d),this.texture=d,t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.NEAREST),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.NEAREST);var v=new Image;v.onload=function(){t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,v),r()},v.onerror=function(r){console.error("Unable to load",v.src+"!"),console.error(r)},v.src="css/wdg.deform-3/texture.png"}function a(r){var t=this.prg.program,e=this.gl;e.clearColor(0,0,0,0),e.clear(e.COLOR_BUFFER_BIT),e.useProgram(t),e.uniform1f(this.uniTime,r),e.uniform1f(this.uniDelay,this.delay),e.uniform1f(this.uniAngle,this.angle/c),e.bindTexture(e.TEXTURE_2D,this.texture),e.activeTexture(e.TEXTURE0),e.bindTexture(e.TEXTURE_2D,this.texture),e.uniform1i(this.uniTexture,0),e.drawArrays(e.TRIANGLE_STRIP,this.girafe?this.vertexCount:0,this.vertexCount)}var i=function(){function t(){return n(e,arguments)}var e={en:{},fr:{}},n=r("$").intl;return t.all=e,t}(),o={vert:"uniform float uniTime;\r\nuniform float uniDelay;\r\nuniform float uniAngle;\r\n\r\nattribute float attRadius;\r\nattribute float attAngle;\r\nattribute float attLevel;\r\nattribute vec2 attUV;\r\n\r\n// Coordonnées dans la texture.\r\nvarying vec2 varUV;\r\n\r\nconst float PI = 3.141592653589793;\r\nconst float LEVELS = 32.0;\r\n\r\nvoid main() {\r\n  // Temps qui tient compte du décalage par level.\r\n  float t = uniTime - uniDelay * attLevel;\r\n  // Angle max d'inclinaison entre deux niveaux.\r\n  float a = radians( uniAngle );\r\n  // Calculer en fonction du temps l'angle entre deux\r\n  // triangles consécutifs.\r\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\r\n  // Coordonnées du centre du triangle de la base.\r\n  float xc = 0.0;\r\n  float yc = -1.0;\r\n  \r\n  int level = int( attLevel );\r\n  // A chaque niveau supplémentaire,\r\n  // l'angle s'incline un peu plus.\r\n  float angle = tilt;\r\n  for( int i = 1 ; i < 32 ; i++ ) {\r\n    // Condition d'arrêt.\r\n    if ( i > level ) break;\r\n    // Calculer les coordonnées du centre du triangle.\r\n    yc += cos( angle ) * 2.0 / LEVELS;\r\n    xc += sin( angle ) * 2.0 / LEVELS;\r\n    // Incliner un peu plus pour le niveau suivant.\r\n    angle += tilt;\r\n  }\r\n  // Coordonnées du vertex dans l'espace de WebGL.\r\n  float x = attRadius * cos( attAngle * PI - angle );\r\n  float y = attRadius * sin( attAngle * PI - angle );\r\n  \r\n  gl_Position = vec4( \r\n    xc + x,   // Aspect ratio\r\n    yc + y,\r\n    0, 1 \r\n  );\r\n  \r\n  varUV = attUV;\r\n}\r\n",frag:"precision mediump float;\r\n\r\nuniform sampler2D uniTexture;\r\n\r\nvarying vec2 varUV;\r\n\r\nvoid main() {\r\n  vec4 color = texture2D( uniTexture, varUV );\r\n  // Si le point est transparent, on ne l'affiche pas.\r\n  if ( color.a < 0.1 ) discard;\r\n  gl_FragColor = color;\r\n}\r\n"},l=r("webgl.program"),u=r("canvas"),s=r("dom");t.exports=u({init:n,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30},booleans:{girafe:!1}});var c=32;t.exports._=i});
+require("wdg.deform-3",function(t,e,n){function r(t){var e=this.gl;s.css(e.canvas,{"background-image":"url(css/wdg.deform-3/background.jpg)","background-size":"100% 100%"}),this.prg=new l(this.gl,{vert:o.vert,frag:o.frag});var n,r=[];for(n=0;n<c;n++)r.push(.18,0,n,.36,1-n/(c-1),.18,1,n,0,1-n/(c-1));for(n=0;n<c;n++)r.push(.25,0,n,1,1-n/(c-1),.25,1,n,.5,1-n/(c-1));r=new Float32Array(r),this.prg.use();var a=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,a),e.bufferData(e.ARRAY_BUFFER,r,e.STATIC_DRAW);var i=r.BYTES_PER_ELEMENT,u=5*i,g=this.prg.attribs.attRadius.location;e.enableVertexAttribArray(g),e.vertexAttribPointer(g,1,e.FLOAT,!1,u,0*i);var f=this.prg.attribs.attAngle.location;e.enableVertexAttribArray(f),e.vertexAttribPointer(f,1,e.FLOAT,!1,u,1*i);var T=this.prg.attribs.attLevel.location;e.enableVertexAttribArray(T),e.vertexAttribPointer(T,1,e.FLOAT,!1,u,2*i);var E=this.prg.attribs.attUV.location;e.enableVertexAttribArray(E),e.vertexAttribPointer(E,2,e.FLOAT,!1,u,3*i),this.vertexCount=2*c,this.uniTime=e.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=e.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=e.getUniformLocation(this.prg.program,"uniAngle"),this.uniTexture=e.getUniformLocation(this.prg.program,"uniTexture");var d=e.createTexture();e.bindTexture(e.TEXTURE_2D,d),this.texture=d,e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_S,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_T,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MIN_FILTER,e.NEAREST),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MAG_FILTER,e.NEAREST);var v=new Image;v.onload=function(){e.texImage2D(e.TEXTURE_2D,0,e.RGBA,e.RGBA,e.UNSIGNED_BYTE,v),t()},v.onerror=function(t){console.error("Unable to load",v.src+"!"),console.error(t)},v.src="css/wdg.deform-3/texture.png"}function a(t){var e=this.prg.program,n=this.gl;n.clearColor(0,0,0,0),n.clear(n.COLOR_BUFFER_BIT),n.useProgram(e),n.uniform1f(this.uniTime,t),n.uniform1f(this.uniDelay,this.delay),n.uniform1f(this.uniAngle,this.angle/c),n.bindTexture(n.TEXTURE_2D,this.texture),n.activeTexture(n.TEXTURE0),n.bindTexture(n.TEXTURE_2D,this.texture),n.uniform1i(this.uniTexture,0),n.drawArrays(n.TRIANGLE_STRIP,this.girafe?this.vertexCount:0,this.vertexCount)}var i=function(){function e(){return r(n,arguments)}var n={en:{},fr:{}},r=t("$").intl;return e.all=n,e}(),o={vert:"uniform float uniTime;\nuniform float uniDelay;\nuniform float uniAngle;\n\nattribute float attRadius;\nattribute float attAngle;\nattribute float attLevel;\nattribute vec2 attUV;\n\n// Coordonnées dans la texture.\nvarying vec2 varUV;\n\nconst float PI = 3.141592653589793;\nconst float LEVELS = 32.0;\n\nvoid main() {\n  // Temps qui tient compte du décalage par level.\n  float t = uniTime - uniDelay * attLevel;\n  // Angle max d'inclinaison entre deux niveaux.\n  float a = radians( uniAngle );\n  // Calculer en fonction du temps l'angle entre deux\n  // triangles consécutifs.\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\n  // Coordonnées du centre du triangle de la base.\n  float xc = 0.0;\n  float yc = -1.0;\n  \n  int level = int( attLevel );\n  // A chaque niveau supplémentaire,\n  // l'angle s'incline un peu plus.\n  float angle = tilt;\n  for( int i = 1 ; i < 32 ; i++ ) {\n    // Condition d'arrêt.\n    if ( i > level ) break;\n    // Calculer les coordonnées du centre du triangle.\n    yc += cos( angle ) * 2.0 / LEVELS;\n    xc += sin( angle ) * 2.0 / LEVELS;\n    // Incliner un peu plus pour le niveau suivant.\n    angle += tilt;\n  }\n  // Coordonnées du vertex dans l'espace de WebGL.\n  float x = attRadius * cos( attAngle * PI - angle );\n  float y = attRadius * sin( attAngle * PI - angle );\n  \n  gl_Position = vec4( \n    xc + x,   // Aspect ratio\n    yc + y,\n    0, 1 \n  );\n  \n  varUV = attUV;\n}\n",frag:"precision mediump float;\n\nuniform sampler2D uniTexture;\n\nvarying vec2 varUV;\n\nvoid main() {\n  vec4 color = texture2D( uniTexture, varUV );\n  // Si le point est transparent, on ne l'affiche pas.\n  if ( color.a < 0.1 ) discard;\n  gl_FragColor = color;\n}\n"},l=t("webgl.program"),u=t("canvas"),s=t("dom");e.exports=u({init:r,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30},booleans:{girafe:!1}});var c=32;e.exports._=i});
 //# sourceMappingURL=wdg.deform-3.js.map
 require("canvas",function(t,n,i){function e(t,n,i){var e=t.getContext("webgl",n);this.gl=e,Object.freeze(this.gl);var r=new Promise(i.init.bind(this)),o=i.draw.bind(this),s=function(t){window.requestAnimationFrame(s),a(e),o(t)};r.then(s)}var r=function(){function n(){return e(i,arguments)}var i={en:{},fr:{}},e=t("$").intl;return n.all=i,n}(),o=t("dom"),s=t("tfw.data-binding"),a=t("webgl.resize");n.exports=function(t){void 0===t.numbers&&(t.numbers={}),void 0===t.strings&&(t.strings={}),void 0===t.booleans&&(t.booleans={}),void 0===t.context&&(t.context={}),"function"!=typeof t.init&&(t.init=function(t){t()}),"function"!=typeof t.draw&&(t.draw=function(){});var n,i={alpha:!1,depth:!1,stencil:!1,antialias:!1,premultipliedAlpha:!1,preserveDrawingBuffer:!1,failIfMajorPerformanceCaveat:!0};for(n in t.context)i[n]=t.context[n];var r=function(n){var r=o.elem(this,"canvas");s.propInteger(this,"width")(function(t){r.setAttribute("width",t),r.style.width=t+"px"}),s.propInteger(this,"height")(function(t){r.setAttribute("height",t),r.style.height=t+"px"});var a,h,f={width:640,height:480};for(a in t.strings)h=t.strings[a],s.propString(this,a),f[a]=h;for(a in t.numbers)h=t.numbers[a],s.propFloat(this,a),f[a]=h;for(a in t.booleans)h=t.booleans[a],s.propBoolean(this,a),f[a]=h;n=s.extend(f,n,this),window.setTimeout(e.bind(this,r,i,t),20)};return r},n.exports._=r});
 //# sourceMappingURL=canvas.js.map
@@ -3540,7 +3544,7 @@ require("wdg.showhide",function(e,t,n){function i(e){function t(){n.value=!n.val
 //# sourceMappingURL=wdg.showhide.js.map
 require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e,arguments)}var e={en:{},fr:{}},o=n("$").intl;return t.all=e,t}(),u=n("dom"),f=n("tfw.data-binding"),i=function(n,t){"function"!=typeof t&&(t=function(){}),u.addClass(n,"tfw-focusable");var e=u.tag("input");u(n).insertAdjacentElement("afterbegin",u.div("tfw-focusable-invisible",[e])),e.addEventListener("keydown",function(n){t(n),e.value=""}),e.addEventListener("focus",function(){u.addClass(n,"focus"),n.focus=!0}),e.addEventListener("blur",function(){u.removeClass(n,"focus"),n.focus=!1}),f.propBoolean(n,"focus")(function(n){window.setTimeout(function(){n?e.focus():e.blur()})})};t.exports=i,t.exports._=o});
 //# sourceMappingURL=tfw.focusable.js.map
-require("wdg.deform-2",function(r,e,t){function n(r){var e=this.gl;s.css(e.canvas,{"background-image":"url(css/wdg.deform-1/forest.jpg)","background-size":"100% 100%"}),this.prg=new l(this.gl,{vert:o.vert,frag:o.frag});for(var t=[],n=0;n<c;n++)t.push(.75,0,n,1,1,.5,.5*Math.PI,n,.5,0,.75,Math.PI,n,0,1);t=new Float32Array(t),this.prg.use();var a=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,a),e.bufferData(e.ARRAY_BUFFER,t,e.STATIC_DRAW);var i=t.BYTES_PER_ELEMENT,u=5*i,g=this.prg.attribs.attRadius.location;e.enableVertexAttribArray(g),e.vertexAttribPointer(g,1,e.FLOAT,!1,u,0*i);var f=this.prg.attribs.attAngle.location;e.enableVertexAttribArray(f),e.vertexAttribPointer(f,1,e.FLOAT,!1,u,1*i);var T=this.prg.attribs.attLevel.location;e.enableVertexAttribArray(T),e.vertexAttribPointer(T,1,e.FLOAT,!1,u,2*i);var v=this.prg.attribs.attUV.location;e.enableVertexAttribArray(v),e.vertexAttribPointer(v,2,e.FLOAT,!1,u,3*i),this.vertexCount=3*c,this.uniTime=e.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=e.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=e.getUniformLocation(this.prg.program,"uniAngle"),this.uniTexture=e.getUniformLocation(this.prg.program,"uniTexture");var d=e.createTexture();e.bindTexture(e.TEXTURE_2D,d),this.texture=d,e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_S,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_WRAP_T,e.CLAMP_TO_EDGE),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MIN_FILTER,e.NEAREST),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MAG_FILTER,e.NEAREST);var E=new Image;E.onload=function(){e.texImage2D(e.TEXTURE_2D,0,e.RGBA,e.RGBA,e.UNSIGNED_BYTE,E),r()},E.onerror=function(r){console.error("Unable to load",E.src+"!"),console.error(r)},E.src="css/wdg.deform-2/leaves.png"}function a(r){var e=this.prg.program,t=this.gl;t.clearColor(0,0,0,0),t.clear(t.COLOR_BUFFER_BIT),t.useProgram(e),t.uniform1f(this.uniTime,r),t.uniform1f(this.uniDelay,this.delay),t.uniform1f(this.uniAngle,this.angle),t.bindTexture(t.TEXTURE_2D,this.texture),t.activeTexture(t.TEXTURE0),t.bindTexture(t.TEXTURE_2D,this.texture),t.uniform1i(this.uniTexture,0),t.drawArrays(t.TRIANGLES,0,this.vertexCount)}var i=function(){function e(){return n(t,arguments)}var t={en:{},fr:{}},n=r("$").intl;return e.all=t,e}(),o={vert:"uniform float uniTime;\r\nuniform float uniDelay;\r\nuniform float uniAngle;\r\n\r\nattribute float attRadius;\r\nattribute float attAngle;\r\nattribute float attLevel;\r\nattribute vec2 attUV;\r\n\r\n// Coordonnées dans la texture.\r\nvarying vec2 varUV;\r\n\r\nvoid main() {\r\n  // Temps qui tient compte du décalage par level.\r\n  float t = uniTime - uniDelay * attLevel;\r\n  // Angle max d'inclinaison entre deux niveaux.\r\n  float a = radians( uniAngle ) * 0.1;\r\n  // Calculer en fonction du temps l'angle entre deux\r\n  // triangles consécutifs.\r\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\r\n  // Plus le triangle à un level élevé, plus il est petit.\r\n  float scale = 1.0 / sqrt( 1.0 + attLevel );\r\n  // Coordonnées du centre du triangle de la base.\r\n  float xc = -0.5;\r\n  float yc = -0.7;\r\n  \r\n  int level = int( attLevel );\r\n  // A chaque niveau supplémentaire,\r\n  // l'angle s'incline un peu plus.\r\n  float angle = tilt - 0.05;\r\n  for( int i = 1 ; i < 10 ; i++ ) {\r\n    // Condition d'arrêt.\r\n    if ( i > level ) break;\r\n    // Calculer les coordonnées du centre du triangle.\r\n    yc += 0.4 * scale * cos( angle );\r\n    xc += 0.4 * scale * sin( angle );\r\n    // Incliner un peu plus pour le niveau suivant.\r\n    angle += tilt;\r\n  }\r\n  // Coordonnées du vertex dans l'espace de WebGL.\r\n  float x = scale * attRadius * cos( attAngle - angle );\r\n  float y = scale * attRadius * sin( attAngle - angle );\r\n  \r\n  gl_Position = vec4( \r\n    xc + x,\r\n    yc + y,\r\n    0, 1 \r\n  );\r\n  \r\n  varUV = attUV;\r\n}\r\n",frag:"precision mediump float;\r\n\r\nuniform sampler2D uniTexture;\r\n\r\nvarying vec2 varUV;\r\n\r\nvoid main() {\r\n  vec4 color = texture2D( uniTexture, varUV );\r\n  // Si le point est transparent, on ne l'affiche pas.\r\n  if ( color.a < 0.1 ) discard;\r\n  gl_FragColor = color;\r\n}\r\n"},l=r("webgl.program"),u=r("canvas"),s=r("dom");e.exports=u({init:n,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30}});var c=10;e.exports._=i});
+require("wdg.deform-2",function(e,t,n){function r(e){var t=this.gl;s.css(t.canvas,{"background-image":"url(css/wdg.deform-1/forest.jpg)","background-size":"100% 100%"}),this.prg=new l(this.gl,{vert:o.vert,frag:o.frag});for(var n=[],r=0;r<c;r++)n.push(.75,0,r,1,1,.5,.5*Math.PI,r,.5,0,.75,Math.PI,r,0,1);n=new Float32Array(n),this.prg.use();var a=t.createBuffer();t.bindBuffer(t.ARRAY_BUFFER,a),t.bufferData(t.ARRAY_BUFFER,n,t.STATIC_DRAW);var i=n.BYTES_PER_ELEMENT,u=5*i,g=this.prg.attribs.attRadius.location;t.enableVertexAttribArray(g),t.vertexAttribPointer(g,1,t.FLOAT,!1,u,0*i);var f=this.prg.attribs.attAngle.location;t.enableVertexAttribArray(f),t.vertexAttribPointer(f,1,t.FLOAT,!1,u,1*i);var T=this.prg.attribs.attLevel.location;t.enableVertexAttribArray(T),t.vertexAttribPointer(T,1,t.FLOAT,!1,u,2*i);var v=this.prg.attribs.attUV.location;t.enableVertexAttribArray(v),t.vertexAttribPointer(v,2,t.FLOAT,!1,u,3*i),this.vertexCount=3*c,this.uniTime=t.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=t.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=t.getUniformLocation(this.prg.program,"uniAngle"),this.uniTexture=t.getUniformLocation(this.prg.program,"uniTexture");var d=t.createTexture();t.bindTexture(t.TEXTURE_2D,d),this.texture=d,t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.NEAREST),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.NEAREST);var E=new Image;E.onload=function(){t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,E),e()},E.onerror=function(e){console.error("Unable to load",E.src+"!"),console.error(e)},E.src="css/wdg.deform-2/leaves.png"}function a(e){var t=this.prg.program,n=this.gl;n.clearColor(0,0,0,0),n.clear(n.COLOR_BUFFER_BIT),n.useProgram(t),n.uniform1f(this.uniTime,e),n.uniform1f(this.uniDelay,this.delay),n.uniform1f(this.uniAngle,this.angle),n.bindTexture(n.TEXTURE_2D,this.texture),n.activeTexture(n.TEXTURE0),n.bindTexture(n.TEXTURE_2D,this.texture),n.uniform1i(this.uniTexture,0),n.drawArrays(n.TRIANGLES,0,this.vertexCount)}var i=function(){function t(){return r(n,arguments)}var n={en:{},fr:{}},r=e("$").intl;return t.all=n,t}(),o={vert:"uniform float uniTime;\nuniform float uniDelay;\nuniform float uniAngle;\n\nattribute float attRadius;\nattribute float attAngle;\nattribute float attLevel;\nattribute vec2 attUV;\n\n// Coordonnées dans la texture.\nvarying vec2 varUV;\n\nvoid main() {\n  // Temps qui tient compte du décalage par level.\n  float t = uniTime - uniDelay * attLevel;\n  // Angle max d'inclinaison entre deux niveaux.\n  float a = radians( uniAngle ) * 0.1;\n  // Calculer en fonction du temps l'angle entre deux\n  // triangles consécutifs.\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\n  // Plus le triangle à un level élevé, plus il est petit.\n  float scale = 1.0 / sqrt( 1.0 + attLevel );\n  // Coordonnées du centre du triangle de la base.\n  float xc = -0.5;\n  float yc = -0.7;\n  \n  int level = int( attLevel );\n  // A chaque niveau supplémentaire,\n  // l'angle s'incline un peu plus.\n  float angle = tilt - 0.05;\n  for( int i = 1 ; i < 10 ; i++ ) {\n    // Condition d'arrêt.\n    if ( i > level ) break;\n    // Calculer les coordonnées du centre du triangle.\n    yc += 0.4 * scale * cos( angle );\n    xc += 0.4 * scale * sin( angle );\n    // Incliner un peu plus pour le niveau suivant.\n    angle += tilt;\n  }\n  // Coordonnées du vertex dans l'espace de WebGL.\n  float x = scale * attRadius * cos( attAngle - angle );\n  float y = scale * attRadius * sin( attAngle - angle );\n  \n  gl_Position = vec4( \n    xc + x,\n    yc + y,\n    0, 1 \n  );\n  \n  varUV = attUV;\n}\n",frag:"precision mediump float;\n\nuniform sampler2D uniTexture;\n\nvarying vec2 varUV;\n\nvoid main() {\n  vec4 color = texture2D( uniTexture, varUV );\n  // Si le point est transparent, on ne l'affiche pas.\n  if ( color.a < 0.1 ) discard;\n  gl_FragColor = color;\n}\n"},l=e("webgl.program"),u=e("canvas"),s=e("dom");t.exports=u({init:r,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30}});var c=10;t.exports._=i});
 //# sourceMappingURL=wdg.deform-2.js.map
 require("wdg.flex",function(e,s,t){function a(e){var s=n.elem(this,"div","wdg-flex");i.propToggleClass(this,"orientation",o),i.propToggleClass(this,"type",c),i.propArray(this,"content")(function(e){n.clear(s),e.forEach(function(e){n.add(s,e),void 0!==e.$grow&&n.css(e,{"flex-grow":parseFloat(e.$grow)}),void 0!==e.$shrink&&n.css(e,{"flex-shrink":parseFloat(e.$shrink)})})}),i.propString(this,"justify")(function(e){n.removeClass(s,"justify-center","justify-flex-end","justify-flex-start","justify-space-around","justify-space-between");var t=null;switch(e.trim().toLowerCase()){case"center":t="center";break;case"flex-end":case"flexend":case"end":t="flex-end";break;case"flex-start":case"flexstart":case"start":t="flex-start";break;case"space-around":case"around":t="space-around";break;case"space-between":case"between":t="space-between"}t&&n.addClass(s,"justify-"+t)}),i.propAddClass(this,"wide"),i.propRemoveClass(this,"visible","hide"),e=i.extend({orientation:o[0],type:c[0],justify:"space-around",content:[],wide:!0,visible:!0},e,this)}var r=function(){function s(){return a(t,arguments)}var t={en:{}},a=e("$").intl;return s.all=t,s}(),n=e("dom"),i=e("tfw.data-binding"),o=["H","V","W","N"],c=["default","fill"];s.exports=a,s.exports._=r});
 //# sourceMappingURL=wdg.flex.js.map
@@ -3558,5 +3562,5 @@ require("tfw.view.button",function(e,t,n){function i(e){return m(this).on("actio
 //# sourceMappingURL=tfw.view.button.js.map
 require("wdg.modal",function(t,e,n){function o(t){var e=this,n=s.div();n.addEventListener("scroll",i.bind(this,n));var o=function(){window.setTimeout(function(){i(n)})},r=s.tag("header","thm-fg","thm-ele8","thm-bgPD"),c=s.tag("footer"),d=s.div("cell","thm-ele24","thm-bg0",[r,n,c]);s.elem(this,"div","wdg-modal",[s.div([d])]);a.prop(this,"content")(function(t){s.clear(n),Array.isArray(t)?t.forEach(function(t){s.add(n,t)}):void 0!==t&&null!==t&&s.add(n,t),o()}),a.prop(this,"header")(function(t){if(!t||"string"==typeof t&&0===t.trim().length)return void s.addClass(r,"hide");s.removeClass(r,"hide"),s.clear(r),Array.isArray(t)?t.forEach(function(t){s.add(r,t)}):void 0!==t&&null!==t&&s.add(r,t),o()}),a.prop(this,"footer")(function(t){if(!t||"string"==typeof t&&0===t.trim().length)return void s.addClass(c,"hide");s.removeClass(c,"hide"),s.clear(c),Array.isArray(t)?t.forEach(function(t){s.add(c,t)}):s.add(c,t),o()}),a.propString(this,"width")(function(t){s.css(n,{"max-width":t}),o()}),a.propAddClass(this,"fullscreen"),a.propAddClass(this,"padding"),a.propAddClass(this,"scroll"),a.propAddClass(this,"wide"),a.propBoolean(this,"visible")(function(t){t?e.attach():e.detach()}),t=a.extend({visible:!1,header:null,content:[],footer:null,padding:!0,scroll:!0,wide:!1,fullscreen:!1,width:"auto"},t,this)}function i(t,e){t.scrollTop>0?s.addClass(t,"top"):s.removeClass(t,"top"),t.scrollHeight-t.scrollTop>t.clientHeight?s.addClass(t,"bottom"):s.removeClass(t,"bottom")}var r=function(){function e(){return o(n,arguments)}var n={en:{cancel:"Cancel",close:"Got it",confirm:"Confirm",ok:"Accept"},fr:{cancel:"Annuler",close:"J'ai compris",confirm:"Confirmation",ok:"Accepter"}},o=t("$").intl;return e.all=n,e}(),s=t("dom"),a=t("tfw.data-binding"),c=(t("wdg.flex"),t("wdg.button"));o.prototype.refresh=function(){return a.fire(this,"content"),this},o.prototype.attach=function(){var t=this;this._timeoutDetach&&(window.clearTimeout(this._timeoutDetach),delete this._timeoutDetach),document.body.appendChild(this.element),a.set(this,"visible",!0),s.addClass(this,"fadeout"),window.setTimeout(function(){s.removeClass(t,"fadeout")})},o.prototype.detach=function(){var t=this;window.setTimeout(function(){s.addClass(t,"fadeout")}),this._timeoutDetach=window.setTimeout(function(){delete this._timeoutDetach,a.set(t,"visible",!1),s.detach(t.element)},250)},o.confirm=function(t,e,n){"function"==typeof e&&(t={content:t,onYes:e,onNo:n}),void 0===t.title&&(t.title=r("confirm")),void 0===t.yes&&(t.yes=r("ok")),void 0===t.no&&(t.no=r("cancel")),void 0===t.onYes&&(t.onYes=function(){}),void 0===t.onNo&&(t.onNo=function(){}),e=t.onYes,n=t.onNo;var i=new c({text:t.yes,flat:!0}),a=new c({text:t.no,flat:!0});if(Array.isArray(t.content)&&(t.content=s.div(t.content)),"string"==typeof t.content&&"<html>"==t.content.substr(0,6)){var d=t.content.substr(6);t.content=s.div(),t.content.innerHTML=d}var l=new o({header:t.title,footer:[a,i],content:t.content});return l.attach(),a.on(function(){l.detach(),"function"==typeof n&&n()}),i.on(function(){if("function"==typeof e){var t=e();"string"!=typeof t?l.detach():(a.visible=!1,i.waitOn(t))}else l.detach()}),l},o.alert=function(t,e){var n=new c({text:r("close"),flat:!0});if("string"==typeof t&&"<html>"==t.substr(0,6)){var i=t.substr(6);t=s.div(),t.innerHTML=i}var a=new o({footer:n,content:t});return a.attach(),n.on(function(){a.detach(),"function"==typeof e&&e()}),a},e.exports=o,e.exports._=r});
 //# sourceMappingURL=wdg.modal.js.map
-require("wdg.deform-1",function(r,n,e){function t(r){var n=this.gl;u.css(n.canvas,{"background-image":"url(css/wdg.deform-1/forest.jpg)","background-size":"100% 100%"}),this.prg=new o(this.gl,{vert:l.vert,frag:l.frag});for(var e=[],t=0;t<g;t++)e.push(.75,0,t,.5,.5*Math.PI,t,.75,Math.PI,t);e=new Float32Array(e),this.prg.use();var a=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,a),n.bufferData(n.ARRAY_BUFFER,e,n.STATIC_DRAW);var i=e.BYTES_PER_ELEMENT,s=3*i,c=this.prg.attribs.attRadius.location;n.enableVertexAttribArray(c),n.vertexAttribPointer(c,1,n.FLOAT,!1,s,0*i);var f=this.prg.attribs.attAngle.location;n.enableVertexAttribArray(f),n.vertexAttribPointer(f,1,n.FLOAT,!1,s,1*i);var v=this.prg.attribs.attLevel.location;n.enableVertexAttribArray(v),n.vertexAttribPointer(v,1,n.FLOAT,!1,s,2*i),this.vertexCount=3*g,this.uniTime=n.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=n.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=n.getUniformLocation(this.prg.program,"uniAngle"),r()}function a(r){var n=this.prg.program,e=this.gl;e.clearColor(0,0,0,0),e.clear(e.COLOR_BUFFER_BIT),e.useProgram(n),e.uniform1f(this.uniTime,r),e.uniform1f(this.uniDelay,this.delay),e.uniform1f(this.uniAngle,this.angle),e.drawArrays(e.TRIANGLES,0,this.vertexCount)}var i=function(){function n(){return t(e,arguments)}var e={en:{},fr:{}},t=r("$").intl;return n.all=e,n}(),l={vert:"uniform float uniTime;\r\nuniform float uniDelay;\r\nuniform float uniAngle;\r\n\r\nattribute float attRadius;\r\nattribute float attAngle;\r\nattribute float attLevel;\r\n\r\n// Pour faire un léger dégradé dans le fragment shader.\r\nvarying float varBrightness;\r\n\r\nvoid main() {\r\n  // Temps qui tient compte du décalage par level.\r\n  float t = uniTime - uniDelay * attLevel;\r\n  // Angle max d'inclinaison entre deux niveaux.\r\n  float a = radians( uniAngle ) * 0.1;\r\n  // Calculer en fonction du temps l'angle entre deux\r\n  // triangles consécutifs.\r\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\r\n  // Plus le triangle à un level élevé, plus il est petit.\r\n  float scale = 1.0 / sqrt( 1.0 + attLevel );\r\n  // Coordonnées du centre du triangle de la base.\r\n  float xc = -0.5;\r\n  float yc = -0.7;\r\n  \r\n  int level = int( attLevel );\r\n  // A chaque niveau supplémentaire,\r\n  // l'angle s'incline un peu plus.\r\n  float angle = tilt - 0.05;\r\n  for( int i = 1 ; i < 10 ; i++ ) {\r\n    // Condition d'arrêt.\r\n    if ( i > level ) break;\r\n    // Calculer les coordonnées du centre du triangle.\r\n    yc += 0.4 * scale * cos( angle );\r\n    xc += 0.4 * scale * sin( angle );\r\n    // Incliner un peu plus pour le niveau suivant.\r\n    angle += tilt;\r\n  }\r\n  // Coordonnées du vertex dans l'espace de WebGL.\r\n  float x = scale * attRadius * cos( attAngle - angle );\r\n  float y = scale * attRadius * sin( attAngle - angle );\r\n  \r\n  gl_Position = vec4( \r\n    xc + x,\r\n    yc + y,\r\n    0, 1 \r\n  );\r\n  if (attLevel == 9.0) {\r\n    // Le dernier triangle est de couleur unie.\r\n    varBrightness = 0.0;\r\n  } else {\r\n    // Vaut 0 pour les vertex du bas du triangle\r\n    // et 1 pour le sommet.\r\n    // Cela donne l'effer d'une ombre.\r\n    varBrightness = sin( attAngle );\r\n  }\r\n}\r\n",frag:"precision mediump float;\r\n\r\nvarying float varBrightness;\r\n\r\nconst vec4 COLOR_TOP = vec4(98.0 / 255.0, 110.0 / 255.0, 48.0 / 255.0, 1);\r\nconst vec4 COLOR_BOTTOM = vec4(193.0 / 255.0, 190.0 / 255.0, 145.0 / 255.0, 1);\r\n\r\nvoid main() {\r\n  gl_FragColor = mix( COLOR_BOTTOM, COLOR_TOP, varBrightness );\r\n}\r\n"},o=r("webgl.program"),s=r("canvas"),u=r("dom");n.exports=s({init:t,draw:a,context:{alpha:!0},numbers:{delay:0,angle:30}});var g=10;n.exports._=i});
+require("wdg.deform-1",function(n,e,t){function a(n){var e=this.gl;u.css(e.canvas,{"background-image":"url(css/wdg.deform-1/forest.jpg)","background-size":"100% 100%"}),this.prg=new o(this.gl,{vert:l.vert,frag:l.frag});for(var t=[],a=0;a<g;a++)t.push(.75,0,a,.5,.5*Math.PI,a,.75,Math.PI,a);t=new Float32Array(t),this.prg.use();var r=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,r),e.bufferData(e.ARRAY_BUFFER,t,e.STATIC_DRAW);var i=t.BYTES_PER_ELEMENT,s=3*i,c=this.prg.attribs.attRadius.location;e.enableVertexAttribArray(c),e.vertexAttribPointer(c,1,e.FLOAT,!1,s,0*i);var f=this.prg.attribs.attAngle.location;e.enableVertexAttribArray(f),e.vertexAttribPointer(f,1,e.FLOAT,!1,s,1*i);var v=this.prg.attribs.attLevel.location;e.enableVertexAttribArray(v),e.vertexAttribPointer(v,1,e.FLOAT,!1,s,2*i),this.vertexCount=3*g,this.uniTime=e.getUniformLocation(this.prg.program,"uniTime"),this.uniDelay=e.getUniformLocation(this.prg.program,"uniDelay"),this.uniAngle=e.getUniformLocation(this.prg.program,"uniAngle"),n()}function r(n){var e=this.prg.program,t=this.gl;t.clearColor(0,0,0,0),t.clear(t.COLOR_BUFFER_BIT),t.useProgram(e),t.uniform1f(this.uniTime,n),t.uniform1f(this.uniDelay,this.delay),t.uniform1f(this.uniAngle,this.angle),t.drawArrays(t.TRIANGLES,0,this.vertexCount)}var i=function(){function e(){return a(t,arguments)}var t={en:{},fr:{}},a=n("$").intl;return e.all=t,e}(),l={vert:"uniform float uniTime;\nuniform float uniDelay;\nuniform float uniAngle;\n\nattribute float attRadius;\nattribute float attAngle;\nattribute float attLevel;\n\n// Pour faire un léger dégradé dans le fragment shader.\nvarying float varBrightness;\n\nvoid main() {\n  // Temps qui tient compte du décalage par level.\n  float t = uniTime - uniDelay * attLevel;\n  // Angle max d'inclinaison entre deux niveaux.\n  float a = radians( uniAngle ) * 0.1;\n  // Calculer en fonction du temps l'angle entre deux\n  // triangles consécutifs.\n  float tilt = a * cos(t * 0.001013) * sin(t * 0.001712);\n  // Plus le triangle à un level élevé, plus il est petit.\n  float scale = 1.0 / sqrt( 1.0 + attLevel );\n  // Coordonnées du centre du triangle de la base.\n  float xc = -0.5;\n  float yc = -0.7;\n  \n  int level = int( attLevel );\n  // A chaque niveau supplémentaire,\n  // l'angle s'incline un peu plus.\n  float angle = tilt - 0.05;\n  for( int i = 1 ; i < 10 ; i++ ) {\n    // Condition d'arrêt.\n    if ( i > level ) break;\n    // Calculer les coordonnées du centre du triangle.\n    yc += 0.4 * scale * cos( angle );\n    xc += 0.4 * scale * sin( angle );\n    // Incliner un peu plus pour le niveau suivant.\n    angle += tilt;\n  }\n  // Coordonnées du vertex dans l'espace de WebGL.\n  float x = scale * attRadius * cos( attAngle - angle );\n  float y = scale * attRadius * sin( attAngle - angle );\n  \n  gl_Position = vec4( \n    xc + x,\n    yc + y,\n    0, 1 \n  );\n  if (attLevel == 9.0) {\n    // Le dernier triangle est de couleur unie.\n    varBrightness = 0.0;\n  } else {\n    // Vaut 0 pour les vertex du bas du triangle\n    // et 1 pour le sommet.\n    // Cela donne l'effer d'une ombre.\n    varBrightness = sin( attAngle );\n  }\n}\n",frag:"precision mediump float;\n\nvarying float varBrightness;\n\nconst vec4 COLOR_TOP = vec4(98.0 / 255.0, 110.0 / 255.0, 48.0 / 255.0, 1);\nconst vec4 COLOR_BOTTOM = vec4(193.0 / 255.0, 190.0 / 255.0, 145.0 / 255.0, 1);\n\nvoid main() {\n  gl_FragColor = mix( COLOR_BOTTOM, COLOR_TOP, varBrightness );\n}\n"},o=n("webgl.program"),s=n("canvas"),u=n("dom");e.exports=s({init:a,draw:r,context:{alpha:!0},numbers:{delay:0,angle:30}});var g=10;e.exports._=i});
 //# sourceMappingURL=wdg.deform-1.js.map
