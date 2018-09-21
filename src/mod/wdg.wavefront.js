@@ -102,7 +102,7 @@ function init() {
     Resize( gl );
 
     M4.perspective( Math.PI * .35, w/h, .1, 10, projection );
-    if( !touching ) {
+    if( !touching && that.automaticRotation ) {
       rotX = 1.97 * Math.sin( (time - time0) * 0.0000347 );
       rotY = 5.78 * Math.sin( (time - time0) * 0.0000758 );
     }

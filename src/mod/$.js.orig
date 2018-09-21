@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.89\"","major":"0","minor":"0","revision":"89","date":"2018-04-21T13:47:34.000Z","consts":{}};
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.108\"","major":"0","minor":"0","revision":"108","date":"2018-09-20T17:07:02.000Z","consts":{}};
 =======
-exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.88\"","major":"0","minor":"0","revision":"88","date":"2018-04-18T13:17:12.000Z","consts":{}};
->>>>>>> 192fdf494233df77cdbeb8780d4917b7b1fa14c3
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.107\"","major":"0","minor":"0","revision":"107","date":"2018-09-20T18:36:08.000Z","consts":{}};
+>>>>>>> 929e6ff7c469860b2a4d06cfbdd33a63b9da2bca
 var currentLang = null;
 exports.lang = function(lang) {
     if (lang === undefined) {
