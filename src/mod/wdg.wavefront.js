@@ -85,8 +85,8 @@ function init() {
       time0 = time;
     },
     drag: function( evt ) {
-      rotY = 2 * Math.PI * evt.dx / canvas.clientWidth;
-      rotX = 2 * Math.PI * evt.dy / canvas.clientHeight;
+      rotY = 2 * Math.PI * evt.vx / canvas.clientWidth;
+      rotX = 2 * Math.PI * evt.vy / canvas.clientHeight;
     }
   });
 
