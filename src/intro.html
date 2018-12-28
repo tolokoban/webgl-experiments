@@ -4,7 +4,7 @@
 <wdg:intro1 $float="right" $height="200"/>
 
 WebGL manipule les pixels de son __viewport__. Le __viewport__ est le rectangle auquel on restreint l'affichage. Le système de coordonnées de WebGL est totalement indépendant des dimension physiques de ce viewport.
-* L'axe des __X__ est horizontal et dirigé vers la droite.    
+* L'axe des __X__ est horizontal et dirigé vers la droite.
 * L'axe des __Y__ est vertical et dirigé vers le haut.
 
 Les coordonnées sont comprises entre `-1` et `+1`. Le centre de l'écran a donc `(0,0)` comme coordonnées.
@@ -19,19 +19,19 @@ Pour lui faire dessiner un simple triangle comme celui-ci (en orange), il faut b
 <div class="tbl">
     <div>
         <div>Attributs de vertex</div><div>&xrarr;</div>
-        <div><div class="box">Vertex Shader</div></div><div>&xrarr;</div><div>Coordonnées</div>
+        <div><div class="hdr">Vertex Shader</div></div><div>&xrarr;</div><div>Coordonnées</div>
     </div>
     <div>
         <div>Coordonnées</div><div>&xrarr;</div>
-        <div><div class="box">Rasterisation</div></div><div>&xrarr;</div><div>Fragments</div>
+        <div><div class="hdr">Rasterisation</div></div><div>&xrarr;</div><div>Fragments</div>
     </div>
     <div>
         <div>Fragments</div><div>&xrarr;</div>
-        <div><div class="box">Fragment Shader</div></div><div>&xrarr;</div><div>Pixels</div>
+        <div><div class="hdr">Fragment Shader</div></div><div>&xrarr;</div><div>Pixels</div>
     </div>
     <div>
         <div>Pixels</div><div>&xrarr;</div>
-        <div><div class="box">Composition</div></div><div>&xrarr;</div><div>Frame Buffer</div>
+        <div><div class="hdr">Composition</div></div><div>&xrarr;</div><div>Frame Buffer</div>
     </div>
 </div>
 
@@ -117,4 +117,109 @@ Et enfin, on dessine notre triangle :
 Et voici le <a href="css/assets/intro/index.html">rendu final</a> :<br/>
 <iframe src="css/assets/intro/index.html" width="300" height="240"></iframe>
 
+# Comment sont stoqués les attributs en mémoire ?
+
+Comme on l'a vu, les attributs sont stoqués dans un tableau.
+Ils sont donc donc placés les uns à la suite des autres.
+Dans l'exemple du triangle, on les a placé comme ceci :
+
+<div class="tbl grd">
+  <div>
+    <div class="hdr w32">0</div>
+    <div class="hdr w32">1</div>
+    <div class="hdr w32">2</div>
+    <div class="hdr w32">3</div>
+    <div class="hdr w32">4</div>
+    <div class="hdr w32">5</div>
+  </div>
+  <div>
+    <div>x1</div>
+    <div>y1</div>
+    <div>x2</div>
+    <div>y2</div>
+    <div>x3</div>
+    <div>y3</div>
+  </div>
+</div>
+
+Mais on aurait pu aussi les placer comme ceci :
+
+<div class="tbl grd">
+  <div>
+    <div class="hdr w32">0</div>
+    <div class="hdr w32">1</div>
+    <div class="hdr w32">2</div>
+    <div class="hdr w32">3</div>
+    <div class="hdr w32">4</div>
+    <div class="hdr w32">5</div>
+  </div>
+  <div>
+    <div>x1</div>
+    <div>x2</div>
+    <div>x3</div>
+    <div>y1</div>
+    <div>y2</div>
+    <div>y3</div>
+  </div>
+</div>
+
+Pour cela, il aurait fallu modifier le code comme ceci :
+
+<x-code>
+  // Taille d'un Float32 en octets.
+  var bpe = vertices.BYTES_PER_ELEMENT;
+  // Nombre d'octets utilisés par vertex.
+  var block = 2 * bpe; // 2 attributs.
+  var attX = gl.getAttribLocation( program, "x" );
+  gl.enableVertexAttribArray( attX );
+  gl.vertexAttribPointer( attX, 1, gl.FLOAT, false, bpe, 0 );
+  var attY = gl.getAttribLocation( program, "y" );
+  gl.enableVertexAttribArray( attY );
+  gl.vertexAttribPointer( attY, 1, gl.FLOAT, false, bpe, 3 * bpe );
+</x-code>
+
+Voici comment la carte graphique procède pour lire les trois attributs de chaque vertex :
+
+<x-code>
+const
+  strideX = 1,  // bpe
+  offsetX = 0,
+  strideY = 1,  // bpe
+  offsetY = 3;  // 3 * bpe
+for( let vertexIndex = 0; vertexIndex &lt; 3; vertexIndex++ ) {
+  setAttribValue( "x", buffer[offsetX] );
+  setAttribValue( "y", buffer[offsetY] );
+  offsetX += strideX;
+  offsetY += strideY;
+}
+</x-code>
+
+Ce qui équivaut à ceci :
+<x-code>
+setAttribValue( "x", buffer[0] );
+setAttribValue( "y", buffer[3] );
+setAttribValue( "x", buffer[1] );
+setAttribValue( "y", buffer[4] );
+setAttribValue( "x", buffer[2] );
+setAttribValue( "y", buffer[5] );
+</x-code>
+
+## A quoi ça sert ?
+
+Imaginez que vous vouliez afficher un animal.
+Vous aurez besoin de nombreux vertices avec des coordonnées 3D,
+mais aussi des données servant à l'application des textures.
+
+Maintenant, si vous décidez que cet animal doit marcher, il faudra modifier
+à chaque frame ses coordonnées 3D.
+Mais vous n'avez pas besoin de toucher aux données concernant les textures.
+
+Une bonne optimisation serait donc de n'envoyer dans la carte graphique que les
+attributs concernant les coordonnées 3D. Mais pour cela, il faut les stoquer dans
+deux blocs différents, comme ceci :
+
+<code>x1, y1, z1, x2, y2, z2, ..., u1, v1, u2, v2, ...</code>
+
+Je vous laisse imaginer comment utiliser la fonction `vertexAttribPointer`
+pour obtenir un tel agencement.
 </page>
