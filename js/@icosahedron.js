@@ -258,7 +258,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["];"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -281,7 +281,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -347,7 +347,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -391,7 +391,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [";"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -405,7 +405,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["("]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -439,7 +439,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["),"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -473,7 +473,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["),"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -488,17 +488,17 @@ addListener(
                       elem: "span",
                       attr: {"class": "number"},
                       children: ["5"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["}"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -564,7 +564,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -624,7 +624,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -638,7 +638,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["("]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -672,7 +672,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["),"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -706,7 +706,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["),"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -726,17 +726,17 @@ addListener(
                       elem: "span",
                       attr: {"class": "number"},
                       children: ["5"]}),
-                    "\r\n  ",
+                    "\n  ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["}"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -784,11 +784,7 @@ addListener(
 
     }
 );
-<<<<<<< HEAD
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.108"',major:"0",minor:"0",revision:"108",date:"2018-12-28T23:10:54.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
-=======
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.108"',major:"0",minor:"0",revision:"108",date:"2018-09-20T17:07:02.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
->>>>>>> 6d90b52c0902d80ce0b7bb7a780055bc50ffaf20
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.109"',major:"0",minor:"0",revision:"109",date:"2018-12-28T23:13:32.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -840,7 +836,7 @@ require("font.josefin",function(n,r,t){var e=function(){function r(){return e(t,
 //# sourceMappingURL=font.josefin.js.map
 require("x-widget",function(e,r,t){function n(r,t,n,i){void 0===i&&(i={});try{var a,c=e(t),f=new c(n);if("function"==typeof f.element)a=f.element();else if(f.element instanceof Node)a=f.element;else{if(!(f.$ instanceof Node))throw Error('Sorry, but "'+t+'" is not a widget nor a view!',f);a=f.$}var u=document.getElementById(r);return u&&u.parentNode.replaceChild(a,u),a.setAttribute("id",r),d.addClass(a,i.class||""),o(r,f),f}catch(e){throw console.error("[x-widget] Unable to create widget `"+t+"`!"),console.error("[x-widget] id = ",r,", args = ",n),Error(e)}}function i(e){var r,t=d.tag(e.elem);e.attr&&(d.att(t,e.attr),r=e.attr.id),Array.isArray(e.children)&&e.children.forEach(function(e){d.add(t,e)});var n,i,a={};if(e.prop)for(n in e.prop)i=e.prop[n],Object.defineProperty(a,n,{value:i,writable:!1,configurable:!1,enumerable:!0});return Object.defineProperty(a,"element",{value:t,writable:!1,configurable:!1,enumerable:!0}),void 0!==r&&o(r,a),a}function o(e,r){f[e]=r;var t=u[e];return void 0!==t&&window.setTimeout(function(){t.forEach(function(e){e(r)}),delete u[e]}),"function"==typeof r.element?r.element:r.element||r}var a=function(){function r(){return n(t,arguments)}var t={en:{}},n=e("$").intl;return r.all=t,r}(),d=e("dom"),c=e("tfw.data-binding"),f={},u={},l=function(e,r,t,o){try{return"string"==typeof e?n.call(this,e,r,t,o):i.call(this,e)}catch(e){throw console.error(e),Error("Exception in "+r+"("+JSON.stringify(t)+"):\n"+e)}};l.template=function(r){var t,n,i,a="",d={};for(t in r)n=r[t],"name"==t?a=n:"id"==t?i=n:"$"==t.charAt(0)&&(d[t.substr(1)]=n);var c=e(a),f=new c(d);return i&&o(i,f),"function"==typeof f.element?f.element():f.element||f},l.getById=function(e){if(!f[e])throw Error("[x-widget.getById()] ID not found: "+e+"!");return f[e]},l.onWidgetCreation=function(e,r){void 0===f[e]?void 0===u[e]?u[e]=[r]:u[e].push(r):window.setTimeout(function(){r(f[e])})},l.bind=function(r,t){var n,i,o,a,d,u=f[r];for(n in t)a=t[n].B,Array.isArray(a)&&a.forEach(function(e){if(void 0===(i=f[e[0]]))return void console.error("[x-widget:bind("+r+')] Trying to bind attribute "'+n+'" of widget "'+r+'" to the unexisting widget "'+e[0]+'"!');o=e[1];try{if(2==e.length)c.bind(i,o,u,n);else{var t=e[2];c.bind(i,o,function(){u[n]=t})}}catch(t){console.error("Binding error for widget `"+r+"`!",{ex:t,binding:e})}}),d=t[n].S,Array.isArray(d)&&d.forEach(function(t){var i=APP,o=t;if(Array.isArray(t)){try{i=e(t[0])}catch(e){throw console.error("[x-widget:bind] Widget `"+r+"` can't require unexistent `"+t[0]+"`: ",e),e}o=t[1]}if("function"!=typeof(o=i[o]))throw Array.isArray(t)?Error("[x-widget:bind]  Widget `"+r+"` use unexisting slot `"+t[1]+"` of module `"+t[0]+"`!"):Error("[x-widget:bind]  Widget `"+r+"` use unexisting slot `"+t+"` of main module `APP`!");try{c.bind(u,n,o)}catch(e){console.error("Binding error for widget `"+r+"`!",{ex:e,dstObj:u,dstAtt:n,fct:o,slot:t})}})},r.exports=l,r.exports._=a});
 //# sourceMappingURL=x-widget.js.map
-require("wdg.icosahedron-1",function(r,n,t){function o(){var r=e(this.$),n=new f(r,{vert:v.vert,frag:v.frag}),t=new f(r,{vert:v.shadow_vert,frag:v.shadow_frag}),o=l(),a=r.createBuffer();r.bindBuffer(r.ARRAY_BUFFER,a),r.bufferData(r.ARRAY_BUFFER,o,r.STATIC_DRAW),r.enable(r.DEPTH_TEST),r.clearColor(1,1,1,1),r.clearDepth(1),r.depthFunc(r.LESS),r.cullFace(r.BACK);var i=u.identity(),c=u.identity(),s=function(o){requestAnimationFrame(s);var e=r.canvas.clientWidth,l=r.canvas.clientHeight;m(r),u.perspective(.35*Math.PI,e/l,.1,10,i),u.rotationXY(3.27*Math.cos(458e-6*o),5.78*Math.sin(147e-6*o),c),r.clear(r.COLOR_BUFFER_BIT|r.DEPTH_BUFFER_BIT),t.use(),r.enable(r.CULL_FACE),t.$uniProjection=i,t.$uniRotation=c,t.$uniExpansion=g,t.bindAttribs(a,"attPoint","attNormal","attColor"),r.drawArrays(r.TRIANGLES,0,60),n.use(),r.disable(r.CULL_FACE),n.$uniProjection=i,n.$uniRotation=c,n.$uniExpansion=d;var v,f=o%38e3;f<19e3?(v=3*Math.ceil(f/200),v=Math.min(30,v)):(f-=19e3,v=3*Math.ceil(f/200),v=30+Math.min(30,v)),n.bindAttribs(a,"attPoint","attNormal","attColor"),r.drawArrays(r.TRIANGLES,0,v)};requestAnimationFrame(s)}function e(r){return r.getContext("webgl",{preserveDrawingBuffer:!0})}function a(r){void 0===r&&(r=1);var n,t,o=[0,0,r];for(n=0;n<5;n++)t=Math.PI*n*.4,o.push(r*Math.cos(t),r*Math.sin(t),.5*r);for(n=0;n<5;n++)t=Math.PI*(.4*n+.2),o.push(r*Math.cos(t),r*Math.sin(t),-.5*r);return o.push(0,0,-r),new Float32Array(o)}function i(){return new Uint16Array([0,1,2,0,2,3,0,3,4,0,4,5,0,5,1,1,6,2,2,7,3,3,8,4,4,9,5,5,10,1,11,10,9,11,9,8,11,8,7,11,7,6,11,6,10,10,6,1,6,7,2,7,8,3,8,9,4,9,10,5])}function l(){var r,n,t,o,e=a(),l=i(),c=[];for(r=0;r<20;r++){r<10?(n=1,t=.5,o=0):(n=0,t=0,o=.8);var v=e[3*l[3*r+0]+0],s=e[3*l[3*r+0]+1],u=e[3*l[3*r+0]+2],m=e[3*l[3*r+1]+0],f=e[3*l[3*r+1]+1],d=e[3*l[3*r+1]+2],g=e[3*l[3*r+2]+0],h=e[3*l[3*r+2]+1],C=e[3*l[3*r+2]+2],w=m-v,b=f-s,A=d-u,p=g-v,x=h-s,y=C-u,E=b*y-A*x,_=A*p-w*y,F=w*x-b*p;c.push(v,s,u,E,_,F,n,t,o,m,f,d,E,_,F,n,t,o,g,h,C,E,_,F,n,t,o)}return console.info("[wdg.multiball-1] vertices=",c),new Float32Array(c)}var c=function(){function n(){return o(t,arguments)}var t={en:{},fr:{}},o=r("$").intl;return n.all=t,n}(),v={vert:"uniform mat4 uniProjection;\r\nuniform mat4 uniRotation;\r\nuniform float uniExpansion;\r\n\r\nattribute vec3 attPoint;\r\nattribute vec3 attNormal;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varNormal;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  varColor = attColor;\r\n  vec4 normal = uniRotation * vec4( attNormal, 1 );\r\n  varNormal = normal.xyz;\r\n  vec4 translation = vec4(0, 0, -2.5, 0);\r\n  vec4 vertex = uniRotation\r\n    * vec4( uniExpansion * attNormal + attPoint, 1 ) + translation;\r\n  gl_Position = uniProjection * vertex;\r\n}\r\n",frag:"precision mediump float;\r\n\r\nvarying vec3 varNormal;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1, 1, 1);\r\nconst vec3 BLACK = vec3(0, 0, 0);\r\nconst vec3 LIGHT = normalize(vec3(-1,1,1));\r\n\r\nvoid main() {\r\n  vec3 color = varColor;\r\n  vec3 white = mix(color, WHITE, .7);\r\n  vec3 black = mix(color, BLACK, .7);\r\n  vec3 normal = normalize(varNormal);\r\n  float light = dot(normal, LIGHT);\r\n  if( light > 0.0 ) gl_FragColor = vec4( mix(varColor, white, light), 1.0 );\r\n  else gl_FragColor = vec4( mix(varColor, black, -light), 1.0 );  \r\n}\r\n",shadow_vert:"uniform mat4 uniProjection;\r\nuniform mat4 uniRotation;\r\nuniform float uniExpansion;\r\n\r\nattribute vec3 attPoint;\r\nattribute vec3 attNormal;\r\nattribute vec3 attColor;\r\n\r\nvarying vec3 varNormal;\r\nvarying vec3 varColor;\r\n\r\nvoid main() {\r\n  varColor = attColor * .1 + vec3(.5,.5,.5);\r\n  vec4 normal = uniRotation * vec4( attNormal, 1 );\r\n  varNormal = normal.xyz;\r\n  vec4 translation = vec4(0, 0, -2.5, 0);\r\n  vec4 vertex = uniRotation\r\n    * vec4( (1.0 + uniExpansion) * attPoint, 1 ) + translation;\r\n  gl_Position = uniProjection * vertex;\r\n}\r\n",shadow_frag:"precision mediump float;\r\n\r\nvarying vec3 varNormal;\r\nvarying vec3 varColor;\r\n\r\nconst vec3 WHITE = vec3(1, 1, 1);\r\nconst vec3 BLACK = vec3(0, 0, 0);\r\nconst vec3 LIGHT = normalize(vec3(-1,1,1));\r\n\r\nvoid main() {\r\n  float x = mod( gl_FragCoord.x, 2.0 );\r\n  float y = mod( gl_FragCoord.y, 2.0 );\r\n  if( x > 0.5 && y > 0.5) discard;\r\n  vec3 color = varColor;\r\n  vec3 black = BLACK;\r\n  vec3 white = WHITE;\r\n  vec3 normal = normalize(varNormal);\r\n  float light = dot(normal, LIGHT);\r\n  if( light > 0.0 ) gl_FragColor = vec4( mix(varColor, white, light), 1.0 );\r\n  else gl_FragColor = vec4( mix(varColor, black, -light), 1.0 );  \r\n}\r\n"},s={init:o},u=r("webgl.math").m4,m=r("webgl.resize"),f=r("webgl.program"),d=.06,g=.075;try{n.exports=function(){function n(r,n,t){return void 0===r[n]?t:r[n]}function t(r,n,t){t?o.addClass(r,n):o.removeClass(r,n)}var o=r("dom"),e=r("tfw.binding.property-manager"),a=r("tfw.view").Tag,i=r("tfw.binding.link"),l=r("tfw.view"),c=r("tfw.binding.converters");l.ensureCodeBehind(s,"init");var v=c.get("boolean");return function(r){try{void 0===r&&(r={}),this.$elements={};var c=this;e(this).create("fullscreen",{cast:v});var u=new a("CANVAS",["class"]);Object.defineProperty(this,"$",{value:u.$,writable:!1,enumerable:!1,configurable:!1}),l.events(u,{tap:function(r){c.fullscreen=!c.fullscreen}}),new i({A:{obj:c,name:"fullscreen"},B:{action:function(r){t(u,"fullscreen",r)}},name:"fullscreen > undefined"}),u.class="thm-ele8 wdg-multiball-1",this.fullscreen=n(r,"fullscreen",!1),s.init.call(this),o.addClass(this,"view","custom")}catch(r){throw console.error("mod/wdg.icosahedron-1.js",r),Error('Instantiation error in XJS of "mod/wdg.icosahedron-1.js":\n'+r)}}}()}catch(r){throw Error('Definition error in XJS of "mod/wdg.icosahedron-1.js"\n'+r)}n.exports._=c});
+require("wdg.icosahedron-1",function(n,t,r){function o(){var n=e(this.$),t=new f(n,{vert:v.vert,frag:v.frag}),r=new f(n,{vert:v.shadow_vert,frag:v.shadow_frag}),o=l(),a=n.createBuffer();n.bindBuffer(n.ARRAY_BUFFER,a),n.bufferData(n.ARRAY_BUFFER,o,n.STATIC_DRAW),n.enable(n.DEPTH_TEST),n.clearColor(1,1,1,1),n.clearDepth(1),n.depthFunc(n.LESS),n.cullFace(n.BACK);var i=u.identity(),c=u.identity(),s=function(o){requestAnimationFrame(s);var e=n.canvas.clientWidth,l=n.canvas.clientHeight;m(n),u.perspective(.35*Math.PI,e/l,.1,10,i),u.rotationXY(3.27*Math.cos(458e-6*o),5.78*Math.sin(147e-6*o),c),n.clear(n.COLOR_BUFFER_BIT|n.DEPTH_BUFFER_BIT),r.use(),n.enable(n.CULL_FACE),r.$uniProjection=i,r.$uniRotation=c,r.$uniExpansion=g,r.bindAttribs(a,"attPoint","attNormal","attColor"),n.drawArrays(n.TRIANGLES,0,60),t.use(),n.disable(n.CULL_FACE),t.$uniProjection=i,t.$uniRotation=c,t.$uniExpansion=d;var v,f=o%38e3;f<19e3?(v=3*Math.ceil(f/200),v=Math.min(30,v)):(f-=19e3,v=3*Math.ceil(f/200),v=30+Math.min(30,v)),t.bindAttribs(a,"attPoint","attNormal","attColor"),n.drawArrays(n.TRIANGLES,0,v)};requestAnimationFrame(s)}function e(n){return n.getContext("webgl",{preserveDrawingBuffer:!0})}function a(n){void 0===n&&(n=1);var t,r,o=[0,0,n];for(t=0;t<5;t++)r=Math.PI*t*.4,o.push(n*Math.cos(r),n*Math.sin(r),.5*n);for(t=0;t<5;t++)r=Math.PI*(.4*t+.2),o.push(n*Math.cos(r),n*Math.sin(r),-.5*n);return o.push(0,0,-n),new Float32Array(o)}function i(){return new Uint16Array([0,1,2,0,2,3,0,3,4,0,4,5,0,5,1,1,6,2,2,7,3,3,8,4,4,9,5,5,10,1,11,10,9,11,9,8,11,8,7,11,7,6,11,6,10,10,6,1,6,7,2,7,8,3,8,9,4,9,10,5])}function l(){var n,t,r,o,e=a(),l=i(),c=[];for(n=0;n<20;n++){n<10?(t=1,r=.5,o=0):(t=0,r=0,o=.8);var v=e[3*l[3*n+0]+0],s=e[3*l[3*n+0]+1],u=e[3*l[3*n+0]+2],m=e[3*l[3*n+1]+0],f=e[3*l[3*n+1]+1],d=e[3*l[3*n+1]+2],g=e[3*l[3*n+2]+0],h=e[3*l[3*n+2]+1],C=e[3*l[3*n+2]+2],w=m-v,b=f-s,A=d-u,p=g-v,x=h-s,y=C-u,E=b*y-A*x,_=A*p-w*y,F=w*x-b*p;c.push(v,s,u,E,_,F,t,r,o,m,f,d,E,_,F,t,r,o,g,h,C,E,_,F,t,r,o)}return console.info("[wdg.multiball-1] vertices=",c),new Float32Array(c)}var c=function(){function t(){return o(r,arguments)}var r={en:{},fr:{}},o=n("$").intl;return t.all=r,t}(),v={vert:"uniform mat4 uniProjection;\nuniform mat4 uniRotation;\nuniform float uniExpansion;\n\nattribute vec3 attPoint;\nattribute vec3 attNormal;\nattribute vec3 attColor;\n\nvarying vec3 varNormal;\nvarying vec3 varColor;\n\nvoid main() {\n  varColor = attColor;\n  vec4 normal = uniRotation * vec4( attNormal, 1 );\n  varNormal = normal.xyz;\n  vec4 translation = vec4(0, 0, -2.5, 0);\n  vec4 vertex = uniRotation\n    * vec4( uniExpansion * attNormal + attPoint, 1 ) + translation;\n  gl_Position = uniProjection * vertex;\n}\n",frag:"precision mediump float;\n\nvarying vec3 varNormal;\nvarying vec3 varColor;\n\nconst vec3 WHITE = vec3(1, 1, 1);\nconst vec3 BLACK = vec3(0, 0, 0);\nconst vec3 LIGHT = normalize(vec3(-1,1,1));\n\nvoid main() {\n  vec3 color = varColor;\n  vec3 white = mix(color, WHITE, .7);\n  vec3 black = mix(color, BLACK, .7);\n  vec3 normal = normalize(varNormal);\n  float light = dot(normal, LIGHT);\n  if( light > 0.0 ) gl_FragColor = vec4( mix(varColor, white, light), 1.0 );\n  else gl_FragColor = vec4( mix(varColor, black, -light), 1.0 );  \n}\n",shadow_vert:"uniform mat4 uniProjection;\nuniform mat4 uniRotation;\nuniform float uniExpansion;\n\nattribute vec3 attPoint;\nattribute vec3 attNormal;\nattribute vec3 attColor;\n\nvarying vec3 varNormal;\nvarying vec3 varColor;\n\nvoid main() {\n  varColor = attColor * .1 + vec3(.5,.5,.5);\n  vec4 normal = uniRotation * vec4( attNormal, 1 );\n  varNormal = normal.xyz;\n  vec4 translation = vec4(0, 0, -2.5, 0);\n  vec4 vertex = uniRotation\n    * vec4( (1.0 + uniExpansion) * attPoint, 1 ) + translation;\n  gl_Position = uniProjection * vertex;\n}\n",shadow_frag:"precision mediump float;\n\nvarying vec3 varNormal;\nvarying vec3 varColor;\n\nconst vec3 WHITE = vec3(1, 1, 1);\nconst vec3 BLACK = vec3(0, 0, 0);\nconst vec3 LIGHT = normalize(vec3(-1,1,1));\n\nvoid main() {\n  float x = mod( gl_FragCoord.x, 2.0 );\n  float y = mod( gl_FragCoord.y, 2.0 );\n  if( x > 0.5 && y > 0.5) discard;\n  vec3 color = varColor;\n  vec3 black = BLACK;\n  vec3 white = WHITE;\n  vec3 normal = normalize(varNormal);\n  float light = dot(normal, LIGHT);\n  if( light > 0.0 ) gl_FragColor = vec4( mix(varColor, white, light), 1.0 );\n  else gl_FragColor = vec4( mix(varColor, black, -light), 1.0 );  \n}\n"},s={init:o},u=n("webgl.math").m4,m=n("webgl.resize"),f=n("webgl.program"),d=.06,g=.075;try{t.exports=function(){function t(n,t,r){return void 0===n[t]?r:n[t]}function r(n,t,r){r?o.addClass(n,t):o.removeClass(n,t)}var o=n("dom"),e=n("tfw.binding.property-manager"),a=n("tfw.view").Tag,i=n("tfw.binding.link"),l=n("tfw.view"),c=n("tfw.binding.converters");l.ensureCodeBehind(s,"init");var v=c.get("boolean");return function(n){try{void 0===n&&(n={}),this.$elements={};var c=this;e(this).create("fullscreen",{cast:v});var u=new a("CANVAS",["class"]);Object.defineProperty(this,"$",{value:u.$,writable:!1,enumerable:!1,configurable:!1}),l.events(u,{tap:function(n){c.fullscreen=!c.fullscreen}}),new i({A:{obj:c,name:"fullscreen"},B:{action:function(n){r(u,"fullscreen",n)}},name:"fullscreen > undefined"}),u.class="thm-ele8 wdg-multiball-1",this.fullscreen=t(n,"fullscreen",!1),s.init.call(this),o.addClass(this,"view","custom")}catch(n){throw console.error("mod/wdg.icosahedron-1.js",n),Error('Instantiation error in XJS of "mod/wdg.icosahedron-1.js":\n'+n)}}}()}catch(n){throw Error('Definition error in XJS of "mod/wdg.icosahedron-1.js"\n'+n)}t.exports._=c});
 //# sourceMappingURL=wdg.icosahedron-1.js.map
 require("webgl.program",function(r,e,t){function n(r,e,t){if("string"!=typeof e.vert)throw Error("[webgl.program] Missing attribute `vert` in argument `codes`!");if("string"!=typeof e.frag)throw Error("[webgl.program] Missing attribute `frag` in argument `codes`!");e=a(e,t),this.gl=r,Object.freeze(this.gl),this.BPE=p,Object.freeze(this.BPE),this._typesNamesLookup=m(r);var n=r.createProgram();r.attachShader(n,h(r,e.vert)),r.attachShader(n,c(r,e.frag)),r.linkProgram(n),this.program=n,Object.freeze(this.program),this.use=function(){r.useProgram(n)},this.use(),o(this,r,n),i(this,r,n)}function o(r,e,t){var n,o,i={},a=e.getProgramParameter(t,e.ACTIVE_ATTRIBUTES);for(n=0;n<a;n++)o=e.getActiveAttrib(t,n),o.typeName=r.getTypeName(o.type),o.length=g(e,o),o.location=e.getAttribLocation(t,o.name),console.info("item=",o),i[o.name]=o;r.attribs=i,Object.freeze(r.attribs)}function i(r,e,t){var n,o,i={},a=e.getProgramParameter(t,e.ACTIVE_UNIFORMS);for(n=0;n<a;n++)o=e.getActiveUniform(t,n),i[o.name]=e.getUniformLocation(t,o.name),Object.defineProperty(r,"$"+o.name,{set:s(e,o,i[o.name],r._typesNamesLookup),get:u(o),enumerable:!0,configurable:!1});r.uniforms=i,Object.freeze(r.uniforms)}function a(r,e){var t,n,o={};for(t in r)n=r[t],o[t]=n.split("\n").map(function(r){if("#include"!=r.trim().substr(0,8))return r;var t=r.indexOf("#include")+8,n=r.substr(t).trim();"'<\"".indexOf(n.charAt(0))>-1&&(n=n.substr(1,n.length-2));var o=e[n];if("string"!=typeof o)throw console.error("Include <"+n+"> not found in ",e),Error("Include not found in shader: "+n);return o}).join("\n");return o}function s(r,e,t,n){var o="_$"+e.name;switch(e.type){case r.BYTE:case r.UNSIGNED_BYTE:case r.SHORT:case r.UNSIGNED_SHORT:case r.INT:case r.UNSIGNED_INT:case r.SAMPLER_2D:return 1==e.size?function(e){r.uniform1i(t,e),this[o]=e}:function(e){r.uniform1iv(t,e),this[o]=e};case r.FLOAT:return 1==e.size?function(e){r.uniform1f(t,e),this[o]=e}:function(e){r.uniform1fv(t,e),this[o]=e};case r.FLOAT_VEC2:if(1==e.size)return function(e){r.uniform2fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC2 in uniform `"+e.name+"'!'");case r.FLOAT_VEC3:if(1==e.size)return function(e){r.uniform3fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC3 in uniform `"+e.name+"'!'");case r.FLOAT_VEC4:if(1==e.size)return function(e){r.uniform4fv(t,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_VEC4 in uniform `"+e.name+"'!'");case r.FLOAT_MAT3:if(1==e.size)return function(e){r.uniformMatrix3fv(t,!1,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_MAT3 in uniform `"+e.name+"'!'");case r.FLOAT_MAT4:if(1==e.size)return function(e){r.uniformMatrix4fv(t,!1,e),this[o]=e};throw Error("[webgl.program.createWriter] Don't know how to deal arrays of FLOAT_MAT4 in uniform `"+e.name+"'!'");default:throw Error("[webgl.program.createWriter] Don't know how to deal with uniform `"+e.name+"` of type "+n[e.type]+"!")}}function u(r){var e="_$"+r.name;return function(){return this[e]}}function f(r,e,t){var n=e.createShader(r);return e.shaderSource(n,t),e.compileShader(n),e.getShaderParameter(n,e.COMPILE_STATUS)?n:(console.log(t),console.error("An error occurred compiling the shader: "+e.getShaderInfoLog(n)),null)}function c(r,e){return f(r.FRAGMENT_SHADER,r,e)}function h(r,e){return f(r.VERTEX_SHADER,r,e)}function m(r){var e,t,n={};for(e in r)"number"==typeof(t=r[e])&&(n[t]=e);return n}function g(r,e){switch(e.type){case r.FLOAT_VEC4:return 4;case r.FLOAT_VEC3:return 3;case r.FLOAT_VEC2:return 2;case r.FLOAT:return 1;default:throw"[webgl.program:getSize] I don't know the size of the attribute '"+e.name+"' because I don't know the type "+getTypeName(e.type)+"!"}}var l=function(){function e(){return n(t,arguments)}var t={en:{},fr:{}},n=r("$").intl;return e.all=t,e}(),p=(new Float32Array).BYTES_PER_ELEMENT;n.prototype.getTypeName=function(r){return this._typesNamesLookup[r]},n.prototype.bindAttribs=function(r){var e=this.gl;e.bindBuffer(e.ARRAY_BUFFER,r);var t=Array.prototype.slice.call(arguments,1),n=0;t.forEach(function(r){var e=this.attribs[r];if(!e)throw'Cannot find attribute "'+r+'"!\nIt may be not active because unused in the shader.\nAvailable attributes are: '+Object.keys(this.attribs).map(function(r){return'"'+r+'"'}).join(", ");n+=e.size*e.length*p},this);var o=0;t.forEach(function(r){var t=this.attribs[r];e.enableVertexAttribArray(t.location),e.vertexAttribPointer(t.location,t.size*t.length,e.FLOAT,!1,n,o),o+=t.size*t.length*p},this)},e.exports=n,e.exports._=l});
 //# sourceMappingURL=webgl.program.js.map

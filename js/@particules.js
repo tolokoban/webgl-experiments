@@ -142,7 +142,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -178,7 +178,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n\r\n    ",
+                    "\n\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -205,7 +205,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["{"]}),
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword2"},
@@ -229,7 +229,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n\r\n        ",
+                    "\n\n        ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -256,7 +256,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -287,7 +287,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n        ",
+                    "\n        ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -332,12 +332,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["}"]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "keyword2"},
@@ -388,7 +388,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Temps courant en millisecondes"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -407,12 +407,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Position en valeurs comprises entre -1.0 et +1.0"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -431,17 +431,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// 4 Valeurs aléatoires comprises entre 0.0 et 1.0"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Ces valeurs donnent la \"personnalité\" de la particule"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -460,12 +460,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Couleur pour le fragment shader"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -484,17 +484,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Indique au fragment shader si les particules sont"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// en place (1.0) ou en mouvement désordonné (0.0)"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -513,7 +513,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -532,7 +532,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -607,12 +607,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Position \"en place\" de la particule."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -641,7 +641,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -670,12 +670,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Créer un léger mouvement autour de la position normale."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -732,7 +732,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -781,7 +781,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -828,7 +828,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -875,12 +875,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Coordonnées aléatoires en rotation dans tout l'espace."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -961,7 +961,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1005,7 +1005,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1047,7 +1047,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1089,17 +1089,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Dans un cycle de 12 secondes, l'image est stable"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// pendant 8 secondes et en vrac pendant 4."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1123,7 +1123,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1164,7 +1164,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1197,7 +1197,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1244,12 +1244,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1283,7 +1283,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1302,12 +1302,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Petites variations de vert."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1392,7 +1392,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1449,12 +1449,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// La position est intrerpolée entre (x,y) et (xx,yy)."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1570,12 +1570,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Palpitation de la taille et diminution lors de la phase de désordre."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1609,7 +1609,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1716,7 +1716,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["));"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1762,7 +1762,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1781,7 +1781,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1800,7 +1800,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1819,17 +1819,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Calculons la distance du fragment courant"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// au centre du point."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1868,7 +1868,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1907,12 +1907,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// On ne calcule pas la racine carré pour gagner du temps."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -1962,7 +1962,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2032,7 +2032,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -2108,7 +2108,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -2156,7 +2156,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2183,7 +2183,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2252,7 +2252,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -2767,18 +2767,14 @@ addListener(
                 "On en déduit que, dans notre exemple, on obtiendra ceci :\n",
                 W({
                   elem: "pre",
-                  children: ["\r\nRed   := Rs * As + Rd * (1 - As)\r\nGreen := Gs * As + Gd * (1 - As)\r\nBlue  := Bs * As + Bd * (1 - As)\r\nAlpha := As * 0 + Ad * 1\r\n"]})]}),
+                  children: ["\nRed   := Rs * As + Rd * (1 - As)\nGreen := Gs * As + Gd * (1 - As)\nBlue  := Bs * As + Bd * (1 - As)\nAlpha := As * 0 + Ad * 1\n"]})]}),
           W({
               elem: "p",
               children: ["Une fois bien compris, le blending est un outil puissant qui permet de réaliser de nombreux effets."]})]},{"id":"wdg.article130"})
 
     }
 );
-<<<<<<< HEAD
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.108"',major:"0",minor:"0",revision:"108",date:"2018-12-28T23:10:54.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
-=======
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.108"',major:"0",minor:"0",revision:"108",date:"2018-09-20T17:07:02.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
->>>>>>> 6d90b52c0902d80ce0b7bb7a780055bc50ffaf20
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.109"',major:"0",minor:"0",revision:"109",date:"2018-12-28T23:13:32.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -2836,5 +2832,5 @@ require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e
 //# sourceMappingURL=tfw.focusable.js.map
 require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
 //# sourceMappingURL=wdg.icon.js.map
-require("wdg.gl7",function(r,t,n){function e(r,t){function n(r){window.requestAnimationFrame(n),e.clear(e.COLOR_BUFFER_BIT),e.uniform1f(E,r),e.drawArrays(e.POINTS,0,v)}var e=r.getContext("webgl")||r.getContext("experimental-webgl"),a=e.createProgram();e.attachShader(a,i(e,d.vertex)),e.attachShader(a,o(e,d.fragment)),e.linkProgram(a),e.useProgram(a);for(var s=e.getProgramParameter(a,e.ACTIVE_ATTRIBUTES),u=0;u<s;u++)console.log(e.getActiveAttrib(a,u));var c=e.createBuffer();e.bindBuffer(e.ARRAY_BUFFER,c);var m,g,f=0,h=l(t),p=[];for(g=0;g<t.height;g++)for(m=0;m<t.width;m++)h[f]+h[f+1]+h[f+2]<50&&h[f+3]>240&&p.push([2*m/t.width-1,1-2*g/t.height]),f+=4;var v=p.length,A=[];p.forEach(function(r){A.push(r[0]),A.push(r[1]),A.push(Math.random()),A.push(Math.random()),A.push(Math.random()),A.push(Math.random())});var x=new Float32Array(A);e.bufferData(e.ARRAY_BUFFER,x,e.STATIC_DRAW);var R=x.BYTES_PER_ELEMENT,b=6*R,y=e.getAttribLocation(a,"attPosition");e.enableVertexAttribArray(y),e.vertexAttribPointer(y,2,e.FLOAT,!1,b,0);var C=e.getAttribLocation(a,"attRandom");e.enableVertexAttribArray(C),e.vertexAttribPointer(C,4,e.FLOAT,!1,b,2*R),e.disable(e.DEPTH_TEST),e.enable(e.BLEND),e.blendFuncSeparate(e.SRC_ALPHA,e.ONE_MINUS_SRC_ALPHA,e.ZERO,e.ONE),e.blendEquation(e.FUNC_ADD);var E=e.getUniformLocation(a,"uniTime");e.clearColor(.133,.466,1,1),e.bindBuffer(e.ARRAY_BUFFER,c),window.requestAnimationFrame(n)}function a(r,t,n){var e=t.createShader(r);return t.shaderSource(e,n),t.compileShader(e),t.getShaderParameter(e,t.COMPILE_STATUS)?e:(console.log(n),console.error("An error occurred compiling the shader: "+t.getShaderInfoLog(e)),null)}function o(r,t){return a(r.FRAGMENT_SHADER,r,t)}function i(r,t){return a(r.VERTEX_SHADER,r,t)}function l(r){var t=r.width,n=r.height,e=document.createElement("canvas");e.setAttribute("width",t),e.setAttribute("height",n);var a=e.getContext("2d");return a.drawImage(r,0,0),document.body.appendChild(e),a.getImageData(0,0,t,n).data}var s=function(){function t(){return e(n,arguments)}var n={en:{}},e=r("$").intl;return t.all=n,t}(),d={vertex:'// Temps courant en millisecondes\r\nuniform float uniTime;\r\n\r\n// Position en valeurs comprises entre -1.0 et +1.0\r\nattribute vec2 attPosition;\r\n// 4 Valeurs aléatoires comprises entre 0.0 et 1.0\r\n// Ces valeurs donnent la "personnalité" de la particule\r\nattribute vec4 attRandom;\r\n\r\n// Couleur pour le fragment shader\r\nvarying vec3 varColor;\r\n// Indique au fragment shader si les particules sont\r\n// en place (1.0) ou en mouvement désordonné (0.0)\r\nvarying float varCoeff;\r\n\r\nvoid main() {\r\n  float t = dot(attRandom, attRandom) * 10000.0 + uniTime / 100.0;\r\n  // Position "en place" de la particule.\r\n  float x = attPosition.x;\r\n  float y = attPosition.y;\r\n\r\n  // Créer un léger mouvement autour de la position normale.\r\n  float radius = .02 * cos(t * attRandom.y);\r\n  float ang = uniTime * attRandom.z / 100.0;\r\n  x = x + radius * cos(ang);\r\n  y = y + radius * sin(ang);\r\n\r\n  // Coordonnées aléatoires en rotation dans tout l\'espace.\r\n  radius = 1.5 * sin(t * 0.01 * (attRandom.y + attRandom.x));\r\n  ang = t * attRandom.x * 0.1;\r\n  float xx = radius * cos(ang);\r\n  float yy = radius * sin(ang);\r\n\r\n  // Dans un cycle de 12 secondes, l\'image est stable\r\n  // pendant 8 secondes et en vrac pendant 4.\r\n  float c1 = 0.0;\r\n  float tt = mod(uniTime, 12000.0);\r\n  if (tt < 4000.0) {\r\n    c1 = sin(tt * 3.1415926539 / 4000.0);\r\n  }\r\n  float c2 = 1.0 - c1;\r\n\r\n  varCoeff = c2;\r\n  // Petites variations de vert.\r\n  float color = .6 + .3 * abs(cos(attRandom.x * uniTime * 0.01));\r\n  varColor = vec3( color, color * 0.5, 0.0 );\r\n  // La position est intrerpolée entre (x,y) et (xx,yy).\r\n  gl_Position = vec4( x * c2 + xx * c1, y * c2 + yy * c1, 0.0, 1.0 );\r\n  // Palpitation de la taille et diminution lors de la phase de désordre.\r\n  ang = t * attRandom.x;\r\n  gl_PointSize = max(8.0, (32.0 + 8.0 * cos(ang)) * (.5 + c2 * .5));\r\n}\r\n',fragment:"precision mediump float;\r\n\r\nvarying vec3 varColor;\r\nvarying float varCoeff;\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n  float alpha = clamp(1.0 - r * 4.0, 0.0, 1.0);\r\n\r\n  gl_FragColor = vec4( varColor, alpha * (1.0 - varCoeff * 0.3) );\r\n}\r\n"},u=r("dom"),c=r("tfw.data-binding"),m=function(r){var t=u.elem(this,"canvas");c.propInteger(this,"width")(function(r){t.setAttribute("width",r),t.style.width=r+"px"}),c.propInteger(this,"height")(function(r){t.setAttribute("height",r),t.style.height=r+"px"}),c.propBoolean(this,"zindex"),r=c.extend({width:640,height:480,zbuffer:!1},r,this);var n=new Image;n.src="css/wdg.gl7/tp.png",n.onload=e.bind(this,t,n)};t.exports=m,t.exports._=s});
+require("wdg.gl7",function(t,n,e){function a(t,n){function e(t){window.requestAnimationFrame(e),a.clear(a.COLOR_BUFFER_BIT),a.uniform1f(E,t),a.drawArrays(a.POINTS,0,v)}var a=t.getContext("webgl")||t.getContext("experimental-webgl"),r=a.createProgram();a.attachShader(r,i(a,d.vertex)),a.attachShader(r,o(a,d.fragment)),a.linkProgram(r),a.useProgram(r);for(var s=a.getProgramParameter(r,a.ACTIVE_ATTRIBUTES),u=0;u<s;u++)console.log(a.getActiveAttrib(r,u));var c=a.createBuffer();a.bindBuffer(a.ARRAY_BUFFER,c);var m,g,f=0,h=l(n),p=[];for(g=0;g<n.height;g++)for(m=0;m<n.width;m++)h[f]+h[f+1]+h[f+2]<50&&h[f+3]>240&&p.push([2*m/n.width-1,1-2*g/n.height]),f+=4;var v=p.length,A=[];p.forEach(function(t){A.push(t[0]),A.push(t[1]),A.push(Math.random()),A.push(Math.random()),A.push(Math.random()),A.push(Math.random())});var x=new Float32Array(A);a.bufferData(a.ARRAY_BUFFER,x,a.STATIC_DRAW);var R=x.BYTES_PER_ELEMENT,b=6*R,y=a.getAttribLocation(r,"attPosition");a.enableVertexAttribArray(y),a.vertexAttribPointer(y,2,a.FLOAT,!1,b,0);var C=a.getAttribLocation(r,"attRandom");a.enableVertexAttribArray(C),a.vertexAttribPointer(C,4,a.FLOAT,!1,b,2*R),a.disable(a.DEPTH_TEST),a.enable(a.BLEND),a.blendFuncSeparate(a.SRC_ALPHA,a.ONE_MINUS_SRC_ALPHA,a.ZERO,a.ONE),a.blendEquation(a.FUNC_ADD);var E=a.getUniformLocation(r,"uniTime");a.clearColor(.133,.466,1,1),a.bindBuffer(a.ARRAY_BUFFER,c),window.requestAnimationFrame(e)}function r(t,n,e){var a=n.createShader(t);return n.shaderSource(a,e),n.compileShader(a),n.getShaderParameter(a,n.COMPILE_STATUS)?a:(console.log(e),console.error("An error occurred compiling the shader: "+n.getShaderInfoLog(a)),null)}function o(t,n){return r(t.FRAGMENT_SHADER,t,n)}function i(t,n){return r(t.VERTEX_SHADER,t,n)}function l(t){var n=t.width,e=t.height,a=document.createElement("canvas");a.setAttribute("width",n),a.setAttribute("height",e);var r=a.getContext("2d");return r.drawImage(t,0,0),document.body.appendChild(a),r.getImageData(0,0,n,e).data}var s=function(){function n(){return a(e,arguments)}var e={en:{}},a=t("$").intl;return n.all=e,n}(),d={vertex:'// Temps courant en millisecondes\nuniform float uniTime;\n\n// Position en valeurs comprises entre -1.0 et +1.0\nattribute vec2 attPosition;\n// 4 Valeurs aléatoires comprises entre 0.0 et 1.0\n// Ces valeurs donnent la "personnalité" de la particule\nattribute vec4 attRandom;\n\n// Couleur pour le fragment shader\nvarying vec3 varColor;\n// Indique au fragment shader si les particules sont\n// en place (1.0) ou en mouvement désordonné (0.0)\nvarying float varCoeff;\n\nvoid main() {\n  float t = dot(attRandom, attRandom) * 10000.0 + uniTime / 100.0;\n  // Position "en place" de la particule.\n  float x = attPosition.x;\n  float y = attPosition.y;\n\n  // Créer un léger mouvement autour de la position normale.\n  float radius = .02 * cos(t * attRandom.y);\n  float ang = uniTime * attRandom.z / 100.0;\n  x = x + radius * cos(ang);\n  y = y + radius * sin(ang);\n\n  // Coordonnées aléatoires en rotation dans tout l\'espace.\n  radius = 1.5 * sin(t * 0.01 * (attRandom.y + attRandom.x));\n  ang = t * attRandom.x * 0.1;\n  float xx = radius * cos(ang);\n  float yy = radius * sin(ang);\n\n  // Dans un cycle de 12 secondes, l\'image est stable\n  // pendant 8 secondes et en vrac pendant 4.\n  float c1 = 0.0;\n  float tt = mod(uniTime, 12000.0);\n  if (tt < 4000.0) {\n    c1 = sin(tt * 3.1415926539 / 4000.0);\n  }\n  float c2 = 1.0 - c1;\n\n  varCoeff = c2;\n  // Petites variations de vert.\n  float color = .6 + .3 * abs(cos(attRandom.x * uniTime * 0.01));\n  varColor = vec3( color, color * 0.5, 0.0 );\n  // La position est intrerpolée entre (x,y) et (xx,yy).\n  gl_Position = vec4( x * c2 + xx * c1, y * c2 + yy * c1, 0.0, 1.0 );\n  // Palpitation de la taille et diminution lors de la phase de désordre.\n  ang = t * attRandom.x;\n  gl_PointSize = max(8.0, (32.0 + 8.0 * cos(ang)) * (.5 + c2 * .5));\n}\n',fragment:"precision mediump float;\n\nvarying vec3 varColor;\nvarying float varCoeff;\n\nvoid main() {\n  // Calculons la distance du fragment courant\n  // au centre du point.\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  // On ne calcule pas la racine carré pour gagner du temps.\n  float r = x*x + y*y;\n  float alpha = clamp(1.0 - r * 4.0, 0.0, 1.0);\n\n  gl_FragColor = vec4( varColor, alpha * (1.0 - varCoeff * 0.3) );\n}\n"},u=t("dom"),c=t("tfw.data-binding"),m=function(t){var n=u.elem(this,"canvas");c.propInteger(this,"width")(function(t){n.setAttribute("width",t),n.style.width=t+"px"}),c.propInteger(this,"height")(function(t){n.setAttribute("height",t),n.style.height=t+"px"}),c.propBoolean(this,"zindex"),t=c.extend({width:640,height:480,zbuffer:!1},t,this);var e=new Image;e.src="css/wdg.gl7/tp.png",e.onload=a.bind(this,n,e)};n.exports=m,n.exports._=s});
 //# sourceMappingURL=wdg.gl7.js.map

@@ -122,12 +122,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// La texture créée à l'aide d'un Frame Buffer"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -146,12 +146,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Les coordonnées de l'écran, comprises entre -1.0 et +1.0"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -170,12 +170,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Temps en millisecondes"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -194,12 +194,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Constante utilisée pour lire les pixels avoisinants."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -238,17 +238,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// La couleur fait-elle partie de l'arrière-plan ?"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// En fait, on vérifie qu'elle est blanche, ou proche du blanc."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -280,7 +280,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -385,7 +385,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -399,17 +399,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Effet 1 : on prend l'image telle qu'elle est."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -497,7 +497,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -516,17 +516,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Effet 2 : détextion de contour + seuil."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -614,7 +614,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -639,7 +639,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["9.0"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -713,7 +713,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -778,7 +778,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -852,7 +852,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -917,7 +917,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -982,7 +982,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -1056,7 +1056,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -1121,7 +1121,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -1195,7 +1195,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1263,7 +1263,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1295,7 +1295,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -1359,12 +1359,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        " \r\n  ",
+                        " \n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -1379,7 +1379,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -1433,22 +1433,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Effet 3 : variation de couleur en fonction de la position."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1536,7 +1536,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1581,7 +1581,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1725,22 +1725,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Effet 4 : autre effet. On peut faire varier les coefficients de"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// 9 pixels utilisés, à condition que leur somme soit égale à 1."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -1828,7 +1828,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -1858,7 +1858,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "number"},
                           children: ["7.0"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -1932,7 +1932,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -1997,7 +1997,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -2071,7 +2071,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -2136,7 +2136,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -2201,7 +2201,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -2275,7 +2275,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -2340,7 +2340,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [")"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "operator"},
@@ -2414,7 +2414,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2443,7 +2443,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2472,7 +2472,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2501,7 +2501,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2554,7 +2554,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword2"},
@@ -2609,17 +2609,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n\r\n\r\n",
+                        "\n\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2638,7 +2638,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2667,7 +2667,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2696,12 +2696,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Les coordonnées (u,v) sont comprises entre 0.0 et 1.0"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2753,7 +2753,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2805,12 +2805,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Mouvement du centre qui permet de séparer l'affichage en 4."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2844,7 +2844,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2896,7 +2896,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -2929,7 +2929,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3031,7 +3031,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3133,12 +3133,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [";"]}),
-                        "\r\n\r\n  ",
+                        "\n\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Voici comment on lit un pixel dans une texture."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3202,17 +3202,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// En fonction de la position du pixel courant par rapport"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// au centre (cx, cy), on applique un effet ou un autre."]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3245,7 +3245,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3278,7 +3278,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "function"},
@@ -3331,7 +3331,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3346,7 +3346,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "function"},
@@ -3399,12 +3399,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3419,7 +3419,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3452,7 +3452,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "function"},
@@ -3505,7 +3505,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3520,7 +3520,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["{"]}),
-                        "\r\n      ",
+                        "\n      ",
                         W({
                           elem: "span",
                           attr: {"class": "function"},
@@ -3573,17 +3573,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n  ",
+                        "\n  ",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["}"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "symbol"},
@@ -3608,12 +3608,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Réserver de la mémoire dans la carte graphique"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// pour une texture."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "keyword"},
@@ -3642,12 +3642,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["();"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Définir cette texture comme texture courante."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3683,22 +3683,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Si on donne une coordonnée U (aussi appelée S) qui est inférieure à 0 "]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// ou supérieure à 1, on n'affiche rien, on ne répète pas la texture."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// C'est ce que signifie gl.CLAMP_TO_EDGE."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3753,12 +3753,12 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Même configuration pour la coordonnée V (aussi appelée T)."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3813,22 +3813,22 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Pour passer d'une coordonnée (u, v) en float à des entiers (x, y)"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// correspondant à un pixel de l'image, on décide de ne pas interpoler,"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// mais plutôt de prendre le pixel le plus proche (NEAREST en anglais)."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3883,7 +3883,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3938,17 +3938,17 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [");"]}),
-                        "\r\n\r\n",
+                        "\n\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// Initialisons les données de cette texture en spécifiant sa taille"]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "comment"},
                           children: ["// 512x512."]}),
-                        "\r\n",
+                        "\n",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -3962,7 +3962,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: ["("]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4026,7 +4026,7 @@ addListener(
                           elem: "span",
                           attr: {"class": "symbol"},
                           children: [","]}),
-                        "\r\n    ",
+                        "\n    ",
                         W({
                           elem: "span",
                           attr: {"class": "identifier"},
@@ -4082,12 +4082,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Réserver de l'espace mémoire sur la carte graphique"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// pour un nouveau Framebuffer."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "keyword"},
@@ -4116,12 +4116,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["();"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Définer `fb` comme le Framebuffer courant."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4157,17 +4157,17 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Associer ce Framebuffer à la "]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// texture précédemment créée."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4181,7 +4181,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: ["("]}),
-                    "\r\n    ",
+                    "\n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4209,7 +4209,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [","]}),
-                    " \r\n    ",
+                    " \n    ",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4255,7 +4255,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Tout ce qui suit sera rendu dans la texture."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4293,12 +4293,12 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n...\r\n\r\n",
+                    "\n...\n\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Tout ce qui suit sera rendu dans le canvas."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4336,17 +4336,17 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// Dans le fragment shader, le premier `uniform`"]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "comment"},
                       children: ["// de type `sampler2D` recevra la texture `texture`."]}),
-                    "\r\n",
+                    "\n",
                     W({
                       elem: "span",
                       attr: {"class": "identifier"},
@@ -4384,7 +4384,7 @@ addListener(
                       elem: "span",
                       attr: {"class": "symbol"},
                       children: [");"]}),
-                    "\r\n... "]})]}),
+                    "\n... "]})]}),
           W({
               elem: "h2",
               attr: {"id": "plus-de-d-tails"},
@@ -4625,11 +4625,7 @@ addListener(
 
     }
 );
-<<<<<<< HEAD
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.108"',major:"0",minor:"0",revision:"108",date:"2018-12-28T23:10:54.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
-=======
-require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.108"',major:"0",minor:"0",revision:"108",date:"2018-09-20T17:07:02.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
->>>>>>> 6d90b52c0902d80ce0b7bb7a780055bc50ffaf20
+require("$",function(r,n,t){t.config={name:'"webgl-experiments"',description:'"WebGL study by tutorials"',author:'"tolokoban"',version:'"0.0.109"',major:"0",minor:"0",revision:"109",date:"2018-12-28T23:13:32.000Z",consts:{}};var o=null;t.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),o=r,window.localStorage&&window.localStorage.setItem("Language",r),r},t.intl=function(r,n){var o,e,a,i,g,u,l,s=r[t.lang()],w=n[0];for(l in r)break;if(!l)return w;if(!s&&!(s=r[l]))return w;if(o=s[w],o||(s=r[l],o=s[w]),!o)return w;if(n.length>1){for(e="",g=0,a=0;a<o.length;a++)i=o.charAt(a),"$"===i?(e+=o.substring(g,a),a++,u=o.charCodeAt(a)-48,u<0||u>=n.length?e+="$"+o.charAt(a):e+=n[u],g=a+1):"\\"===i&&(e+=o.substring(g,a),a++,e+=o.charAt(a),g=a+1);e+=o.substr(g),o=e}return o}});
 //# sourceMappingURL=$.js.map
 require("assets",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=assets.js.map
@@ -4687,9 +4683,9 @@ require("tfw.focusable",function(n,t,e){var o=function(){function t(){return o(e
 //# sourceMappingURL=tfw.focusable.js.map
 require("wdg.icon",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{}},e=n("$").intl;return r.all=t,r}();r.exports=n("tfw.view.icon"),r.exports._=e});
 //# sourceMappingURL=wdg.icon.js.map
-require("wdg.gl8",function(r,e,n){var t=function(){function e(){return t(n,arguments)}var n={en:{}},t=r("$").intl;return e.all=n,e}(),o={vert:"// Temps courant en millisecondes\r\nuniform float uniTime;\r\n\r\n// Position en valeurs comprises entre -1.0 et +1.0\r\nattribute vec2 attPosition;\r\n\r\n// Passer les coordonnées UV pour la texture.\r\nvarying vec2 varUV;\r\nvarying float varTime;\r\n\r\nvoid main() {\r\n  float x = attPosition.x;\r\n  float y = attPosition.y;\r\n  float z = 0.0;\r\n\r\n  gl_Position = vec4(x, y, z, 1.0 );\r\n\r\n  varUV = vec2( x, y );\r\n  varTime = uniTime;\r\n}\r\n",frag:"precision mediump float;\r\n\r\n// La texture créée à l'aide d'un Frame Buffer\r\nuniform sampler2D uniTexture;\r\n\r\n// Les coordonnées de l'écran, comprises entre -1.0 et +1.0\r\nvarying vec2 varUV;\r\n// Temps en millisecondes\r\nvarying float varTime;\r\n\r\n// Constante utilisée pour lire les pixels avoisinants.\r\nconst float S = 1.0 / 128.0;\r\n\r\n// La couleur fait-elle partie de l'arrière-plan ?\r\n// En fait, on vérifie qu'elle est blanche, ou proche du blanc.\r\nbool isBackground(vec4 color) {\r\n  if (color.r > .9 && color.g > .9 && color.b > .9) return true;\r\n  return false;\r\n}\r\n\r\n// Effet 1 : on prend l'image telle qu'elle est.\r\nvoid fx1(vec4 color, float u, float v, float x, float y) {\r\n  gl_FragColor = color;\r\n}\r\n\r\n// Effet 2 : détextion de contour + seuil.\r\nvoid fx2(vec4 color, float u, float v, float x, float y) {\r\n  gl_FragColor = color * 9.0\r\n    - texture2D( uniTexture, vec2(u - S, v - S) )\r\n    - texture2D( uniTexture, vec2(u    , v - S) )\r\n    - texture2D( uniTexture, vec2(u + S, v - S) )\r\n    - texture2D( uniTexture, vec2(u - S, v    ) )\r\n    - texture2D( uniTexture, vec2(u + S, v    ) )\r\n    - texture2D( uniTexture, vec2(u - S, v + S) )\r\n    - texture2D( uniTexture, vec2(u    , v + S) )\r\n    - texture2D( uniTexture, vec2(u + S, v + S) );\r\n  if (gl_FragColor.r + gl_FragColor.g + gl_FragColor.b > .1) {\r\n    if (!isBackground(color)) {\r\n      gl_FragColor = vec4(1.0, 0.9 * u, 0.0, 1.0);\r\n    } \r\n  } else {\r\n    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);\r\n  }\r\n}\r\n\r\n// Effet 3 : variation de couleur en fonction de la position.\r\nvoid fx3(vec4 color, float u, float v, float x, float y) {\r\n  if (isBackground(color)) gl_FragColor = color;\r\n  else gl_FragColor = vec4(1.0 - color.r * u, 1.0 - color.g * u * v, 1.0 - color.b * v, 1.0);\r\n}\r\n\r\n// Effet 4 : autre effet. On peut faire varier les coefficients de\r\n// 9 pixels utilisés, à condition que leur somme soit égale à 1.\r\nvoid fx4(vec4 color, float u, float v, float x, float y) {\r\n  gl_FragColor = - color * 7.0\r\n    + texture2D( uniTexture, vec2(u - S, v - S) )\r\n    + texture2D( uniTexture, vec2(u    , v - S) )\r\n    + texture2D( uniTexture, vec2(u + S, v - S) )\r\n    + texture2D( uniTexture, vec2(u - S, v    ) )\r\n    + texture2D( uniTexture, vec2(u + S, v    ) )\r\n    + texture2D( uniTexture, vec2(u - S, v + S) )\r\n    + texture2D( uniTexture, vec2(u    , v + S) )\r\n    + texture2D( uniTexture, vec2(u + S, v + S) );\r\n  float r = gl_FragColor.r;\r\n  float g = gl_FragColor.g;\r\n  float b = gl_FragColor.b;\r\n  if (r + g + b < 2.0) {\r\n    gl_FragColor = vec4( g, 0.0, 0.0, 1.0);\r\n  }\r\n}\r\n\r\n\r\nvoid main() {\r\n  float x = varUV.x;\r\n  float y = varUV.y;\r\n  // Les coordonnées (u,v) sont comprises entre 0.0 et 1.0\r\n  float u = (1.0 + x) / 2.0;\r\n  float v = (1.0 + y) / 2.0;\r\n  // Mouvement du centre qui permet de séparer l'affichage en 4.\r\n  float ang = varTime * 0.000314;\r\n  float r = cos(4581.15 + varTime * 0.000711);\r\n  float t= varTime * 0.002;\r\n  float cx = (cos(ang) + 0.35 * cos(t + y * 5.0)) * r;\r\n  float cy = (sin(ang) + 0.35 * cos(t + x * 5.0)) * r;\r\n\r\n  // Voici comment on lit un pixel dans une texture.\r\n  vec4 color = texture2D( uniTexture, vec2(u, v) );\r\n  // En fonction de la position du pixel courant par rapport\r\n  // au centre (cx, cy), on applique un effet ou un autre.\r\n  if (x < cx) {\r\n    if (y < cy) {\r\n      fx1(color, u, v, x, y);\r\n    } else {\r\n      fx2(color, u, v, x, y);\r\n    }\r\n  } else {\r\n    if (y < cy) {\r\n      fx3(color, u, v, x, y);\r\n    } else {\r\n      fx4(color, u, v, x, y);\r\n    }\r\n  }\r\n}\r\n"},i=r("dom"),u=r("tfw.data-binding"),a=r("tfw.webgl"),l=r("explosive-tp"),c=function(r){var e=i.elem(this,"canvas");u.propInteger(this,"width")(function(r){e.setAttribute("width",r),e.style.width=r+"px"}),u.propInteger(this,"height")(function(r){e.setAttribute("height",r),e.style.height=r+"px"}),u.propBoolean(this,"zindex"),r=u.extend({width:640,height:480,zbuffer:!1},r,this);var n=new a(e),t=n.gl,c=new l(e),f=n.createTextureForFB(512,512),v=t.createFramebuffer();t.bindFramebuffer(t.FRAMEBUFFER,v),t.framebufferTexture2D(t.FRAMEBUFFER,t.COLOR_ATTACHMENT0,t.TEXTURE_2D,f,0),t.bindFramebuffer(t.FRAMEBUFFER,null);var s=t.createBuffer(),x=new Float32Array([-1,-1,0,-1,1,0,1,-1,0,1,1,0]),g=n.createProgram({vertex:o.vert,fragment:o.frag});n.start(function(r){t.bindFramebuffer(t.FRAMEBUFFER,v),t.clear(t.COLOR_BUFFER_BIT),c.render(r),g.use(),t.bindFramebuffer(t.FRAMEBUFFER,null),t.disable(t.BLEND),t.disable(t.DEPTH_TEST),t.clear(t.COLOR_BUFFER_BIT),t.bindBuffer(t.ARRAY_BUFFER,s),t.enableVertexAttribArray(g.$attPosition),t.vertexAttribPointer(g.$attPosition,3,t.FLOAT,!1,0,0),t.bufferData(t.ARRAY_BUFFER,x,t.STATIC_DRAW),t.bindTexture(t.TEXTURE_2D,f),g.$uniTime=r,t.drawArrays(t.TRIANGLE_STRIP,0,4)})};e.exports=c,e.exports._=t});
+require("wdg.gl8",function(e,n,r){var t=function(){function n(){return t(r,arguments)}var r={en:{}},t=e("$").intl;return n.all=r,n}(),o={vert:"// Temps courant en millisecondes\nuniform float uniTime;\n\n// Position en valeurs comprises entre -1.0 et +1.0\nattribute vec2 attPosition;\n\n// Passer les coordonnées UV pour la texture.\nvarying vec2 varUV;\nvarying float varTime;\n\nvoid main() {\n  float x = attPosition.x;\n  float y = attPosition.y;\n  float z = 0.0;\n\n  gl_Position = vec4(x, y, z, 1.0 );\n\n  varUV = vec2( x, y );\n  varTime = uniTime;\n}\n",frag:"precision mediump float;\n\n// La texture créée à l'aide d'un Frame Buffer\nuniform sampler2D uniTexture;\n\n// Les coordonnées de l'écran, comprises entre -1.0 et +1.0\nvarying vec2 varUV;\n// Temps en millisecondes\nvarying float varTime;\n\n// Constante utilisée pour lire les pixels avoisinants.\nconst float S = 1.0 / 128.0;\n\n// La couleur fait-elle partie de l'arrière-plan ?\n// En fait, on vérifie qu'elle est blanche, ou proche du blanc.\nbool isBackground(vec4 color) {\n  if (color.r > .9 && color.g > .9 && color.b > .9) return true;\n  return false;\n}\n\n// Effet 1 : on prend l'image telle qu'elle est.\nvoid fx1(vec4 color, float u, float v, float x, float y) {\n  gl_FragColor = color;\n}\n\n// Effet 2 : détextion de contour + seuil.\nvoid fx2(vec4 color, float u, float v, float x, float y) {\n  gl_FragColor = color * 9.0\n    - texture2D( uniTexture, vec2(u - S, v - S) )\n    - texture2D( uniTexture, vec2(u    , v - S) )\n    - texture2D( uniTexture, vec2(u + S, v - S) )\n    - texture2D( uniTexture, vec2(u - S, v    ) )\n    - texture2D( uniTexture, vec2(u + S, v    ) )\n    - texture2D( uniTexture, vec2(u - S, v + S) )\n    - texture2D( uniTexture, vec2(u    , v + S) )\n    - texture2D( uniTexture, vec2(u + S, v + S) );\n  if (gl_FragColor.r + gl_FragColor.g + gl_FragColor.b > .1) {\n    if (!isBackground(color)) {\n      gl_FragColor = vec4(1.0, 0.9 * u, 0.0, 1.0);\n    } \n  } else {\n    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);\n  }\n}\n\n// Effet 3 : variation de couleur en fonction de la position.\nvoid fx3(vec4 color, float u, float v, float x, float y) {\n  if (isBackground(color)) gl_FragColor = color;\n  else gl_FragColor = vec4(1.0 - color.r * u, 1.0 - color.g * u * v, 1.0 - color.b * v, 1.0);\n}\n\n// Effet 4 : autre effet. On peut faire varier les coefficients de\n// 9 pixels utilisés, à condition que leur somme soit égale à 1.\nvoid fx4(vec4 color, float u, float v, float x, float y) {\n  gl_FragColor = - color * 7.0\n    + texture2D( uniTexture, vec2(u - S, v - S) )\n    + texture2D( uniTexture, vec2(u    , v - S) )\n    + texture2D( uniTexture, vec2(u + S, v - S) )\n    + texture2D( uniTexture, vec2(u - S, v    ) )\n    + texture2D( uniTexture, vec2(u + S, v    ) )\n    + texture2D( uniTexture, vec2(u - S, v + S) )\n    + texture2D( uniTexture, vec2(u    , v + S) )\n    + texture2D( uniTexture, vec2(u + S, v + S) );\n  float r = gl_FragColor.r;\n  float g = gl_FragColor.g;\n  float b = gl_FragColor.b;\n  if (r + g + b < 2.0) {\n    gl_FragColor = vec4( g, 0.0, 0.0, 1.0);\n  }\n}\n\n\nvoid main() {\n  float x = varUV.x;\n  float y = varUV.y;\n  // Les coordonnées (u,v) sont comprises entre 0.0 et 1.0\n  float u = (1.0 + x) / 2.0;\n  float v = (1.0 + y) / 2.0;\n  // Mouvement du centre qui permet de séparer l'affichage en 4.\n  float ang = varTime * 0.000314;\n  float r = cos(4581.15 + varTime * 0.000711);\n  float t= varTime * 0.002;\n  float cx = (cos(ang) + 0.35 * cos(t + y * 5.0)) * r;\n  float cy = (sin(ang) + 0.35 * cos(t + x * 5.0)) * r;\n\n  // Voici comment on lit un pixel dans une texture.\n  vec4 color = texture2D( uniTexture, vec2(u, v) );\n  // En fonction de la position du pixel courant par rapport\n  // au centre (cx, cy), on applique un effet ou un autre.\n  if (x < cx) {\n    if (y < cy) {\n      fx1(color, u, v, x, y);\n    } else {\n      fx2(color, u, v, x, y);\n    }\n  } else {\n    if (y < cy) {\n      fx3(color, u, v, x, y);\n    } else {\n      fx4(color, u, v, x, y);\n    }\n  }\n}\n"},i=e("dom"),u=e("tfw.data-binding"),a=e("tfw.webgl"),l=e("explosive-tp"),c=function(e){var n=i.elem(this,"canvas");u.propInteger(this,"width")(function(e){n.setAttribute("width",e),n.style.width=e+"px"}),u.propInteger(this,"height")(function(e){n.setAttribute("height",e),n.style.height=e+"px"}),u.propBoolean(this,"zindex"),e=u.extend({width:640,height:480,zbuffer:!1},e,this);var r=new a(n),t=r.gl,c=new l(n),f=r.createTextureForFB(512,512),v=t.createFramebuffer();t.bindFramebuffer(t.FRAMEBUFFER,v),t.framebufferTexture2D(t.FRAMEBUFFER,t.COLOR_ATTACHMENT0,t.TEXTURE_2D,f,0),t.bindFramebuffer(t.FRAMEBUFFER,null);var s=t.createBuffer(),x=new Float32Array([-1,-1,0,-1,1,0,1,-1,0,1,1,0]),g=r.createProgram({vertex:o.vert,fragment:o.frag});r.start(function(e){t.bindFramebuffer(t.FRAMEBUFFER,v),t.clear(t.COLOR_BUFFER_BIT),c.render(e),g.use(),t.bindFramebuffer(t.FRAMEBUFFER,null),t.disable(t.BLEND),t.disable(t.DEPTH_TEST),t.clear(t.COLOR_BUFFER_BIT),t.bindBuffer(t.ARRAY_BUFFER,s),t.enableVertexAttribArray(g.$attPosition),t.vertexAttribPointer(g.$attPosition,3,t.FLOAT,!1,0,0),t.bufferData(t.ARRAY_BUFFER,x,t.STATIC_DRAW),t.bindTexture(t.TEXTURE_2D,f),g.$uniTime=e,t.drawArrays(t.TRIANGLE_STRIP,0,4)})};n.exports=c,n.exports._=t});
 //# sourceMappingURL=wdg.gl8.js.map
-require("explosive-tp",function(r,t,n){function a(r){var t=this._webgl,n=t.gl,a=n.createBuffer();this._buffer=a,n.bindBuffer(n.ARRAY_BUFFER,a);var e,o,i=0,s=t.getDataFromImage(r),l=[];for(o=0;o<r.height;o++)for(e=0;e<r.width;e++)s[i]+s[i+1]+s[i+2]<50&&s[i+3]>240&&l.push([2*e/r.width-1,1-2*o/r.height]),i+=4;var d=l.length,u=[];l.forEach(function(r){u.push(r[0]),u.push(r[1]),u.push(Math.random()),u.push(Math.random()),u.push(Math.random()),u.push(Math.random())});var c=new Float32Array(u);n.bufferData(n.ARRAY_BUFFER,c,n.STATIC_DRAW);var f=c.BYTES_PER_ELEMENT,g=6*f,p=n.getAttribLocation(this._prg.program,"attPosition");n.enableVertexAttribArray(p),n.vertexAttribPointer(p,2,n.FLOAT,!1,g,0);var m=n.getAttribLocation(this._prg.program,"attRandom");n.enableVertexAttribArray(m),n.vertexAttribPointer(m,4,n.FLOAT,!1,g,2*f),n.disable(n.DEPTH_TEST),n.enable(n.BLEND),n.blendFuncSeparate(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA,n.ZERO,n.ONE),n.blendEquation(n.FUNC_ADD),n.clearColor(1,1,1,1),n.bindBuffer(n.ARRAY_BUFFER,a),this._loaded=!0,this._count=d,this._data=c}var e=function(){function t(){return a(n,arguments)}var n={en:{}},a=r("$").intl;return t.all=n,t}(),o={vert:'// Temps courant en millisecondes\r\nuniform float uniTime;\r\n\r\n// Position en valeurs comprises entre -1.0 et +1.0\r\nattribute vec2 attPosition;\r\n// 4 Valeurs aléatoires comprises entre 0.0 et 1.0\r\n// Ces valeurs donnent la "personnalité" de la particule\r\nattribute vec4 attRandom;\r\n\r\n// Couleur pour le fragment shader\r\nvarying vec3 varColor;\r\n// Indique au fragment shader si les particules sont\r\n// en place (1.0) ou en mouvement désordonné (0.0)\r\nvarying float varCoeff;\r\n\r\nvoid main() {\r\n  float t = dot(attRandom, attRandom) * 10000.0 + uniTime / 100.0;\r\n  // Position "en place" de la particule.\r\n  float x = attPosition.x;\r\n  float y = attPosition.y;\r\n\r\n  // Créer un léger mouvement autour de la position normale.\r\n  float radius = .02 * cos(t * attRandom.y);\r\n  float ang = uniTime * attRandom.z / 100.0;\r\n  x = x + radius * cos(ang);\r\n  y = y + radius * sin(ang);\r\n\r\n  // Coordonnées aléatoires en rotation dans tout l\'espace.\r\n  radius = 1.5 * sin(t * 0.01 * (attRandom.y + attRandom.x));\r\n  ang = t * attRandom.x * 0.1;\r\n  float xx = radius * cos(ang);\r\n  float yy = radius * sin(ang);\r\n\r\n  // Dans un cycle de 12 secondes, l\'image est stable\r\n  // pendant 8 secondes et en vrac pendant 4.\r\n  float c1 = 0.0;\r\n  float tt = mod(uniTime, 12000.0);\r\n  if (tt < 4000.0) {\r\n    c1 = sin(tt * 3.1415926539 / 4000.0);\r\n  }\r\n  float c2 = 1.0 - c1;\r\n\r\n  varCoeff = c2;\r\n  // Petites variations de vert.\r\n  varColor = vec3( 0.0, .3 + .1 * abs(cos(attRandom.x * uniTime * 0.01)), 0.0 );\r\n  // La position est intrerpolée entre (x,y) et (xx,yy).\r\n  gl_Position = vec4( x * c2 + xx * c1, y * c2 + yy * c1, 0.0, 1.0 );\r\n  // Palpitation de la taille et diminution lors de la phase de désordre.\r\n  ang = t * attRandom.x;\r\n  gl_PointSize = max(8.0, (32.0 + 8.0 * cos(ang)) * (.5 + c2 * .5));\r\n}\r\n',frag:"precision mediump float;\r\n\r\nvarying vec3 varColor;\r\nvarying float varCoeff;\r\n\r\nvoid main() {\r\n  // Calculons la distance du fragment courant\r\n  // au centre du point.\r\n  float x = gl_PointCoord.x - 0.5;\r\n  float y = gl_PointCoord.y - 0.5;\r\n  // On ne calcule pas la racine carré pour gagner du temps.\r\n  float r = x*x + y*y;\r\n  float alpha = clamp(1.0 - r * 4.0, 0.0, 1.0);\r\n\r\n  gl_FragColor = vec4( varColor, alpha * (1.0 - varCoeff * 0.3) );\r\n}\r\n"},i=r("tfw.webgl"),s=function(r){var t=new i(r),n=t.createProgram({vertex:o.vert,fragment:o.frag});this._webgl=t,this._prg=n,this._loaded=!1;var e=new Image;e.src="css/explosive-tp/tp.png",e.onload=a.bind(this,e)};s.prototype.render=function(r){if(this._loaded){var t=this._webgl.gl,n=this._prg;n.use(),t.disable(t.DEPTH_TEST),t.enable(t.BLEND),t.blendFuncSeparate(t.SRC_ALPHA,t.ONE_MINUS_SRC_ALPHA,t.ZERO,t.ONE),t.blendEquation(t.FUNC_ADD),n.$uniTime=r,t.bindBuffer(t.ARRAY_BUFFER,this._buffer);var a=this._data.BYTES_PER_ELEMENT,e=6*a,o=t.getAttribLocation(this._prg.program,"attPosition");t.enableVertexAttribArray(o),t.vertexAttribPointer(o,2,t.FLOAT,!1,e,0);var i=t.getAttribLocation(this._prg.program,"attRandom");t.enableVertexAttribArray(i),t.vertexAttribPointer(i,4,t.FLOAT,!1,e,2*a),t.bufferData(t.ARRAY_BUFFER,this._data,t.STATIC_DRAW),t.drawArrays(t.POINTS,0,this._count)}},t.exports=s,t.exports._=e});
+require("explosive-tp",function(t,n,a){function e(t){var n=this._webgl,a=n.gl,e=a.createBuffer();this._buffer=e,a.bindBuffer(a.ARRAY_BUFFER,e);var r,o,i=0,s=n.getDataFromImage(t),l=[];for(o=0;o<t.height;o++)for(r=0;r<t.width;r++)s[i]+s[i+1]+s[i+2]<50&&s[i+3]>240&&l.push([2*r/t.width-1,1-2*o/t.height]),i+=4;var d=l.length,u=[];l.forEach(function(t){u.push(t[0]),u.push(t[1]),u.push(Math.random()),u.push(Math.random()),u.push(Math.random()),u.push(Math.random())});var c=new Float32Array(u);a.bufferData(a.ARRAY_BUFFER,c,a.STATIC_DRAW);var f=c.BYTES_PER_ELEMENT,g=6*f,p=a.getAttribLocation(this._prg.program,"attPosition");a.enableVertexAttribArray(p),a.vertexAttribPointer(p,2,a.FLOAT,!1,g,0);var m=a.getAttribLocation(this._prg.program,"attRandom");a.enableVertexAttribArray(m),a.vertexAttribPointer(m,4,a.FLOAT,!1,g,2*f),a.disable(a.DEPTH_TEST),a.enable(a.BLEND),a.blendFuncSeparate(a.SRC_ALPHA,a.ONE_MINUS_SRC_ALPHA,a.ZERO,a.ONE),a.blendEquation(a.FUNC_ADD),a.clearColor(1,1,1,1),a.bindBuffer(a.ARRAY_BUFFER,e),this._loaded=!0,this._count=d,this._data=c}var r=function(){function n(){return e(a,arguments)}var a={en:{}},e=t("$").intl;return n.all=a,n}(),o={vert:'// Temps courant en millisecondes\nuniform float uniTime;\n\n// Position en valeurs comprises entre -1.0 et +1.0\nattribute vec2 attPosition;\n// 4 Valeurs aléatoires comprises entre 0.0 et 1.0\n// Ces valeurs donnent la "personnalité" de la particule\nattribute vec4 attRandom;\n\n// Couleur pour le fragment shader\nvarying vec3 varColor;\n// Indique au fragment shader si les particules sont\n// en place (1.0) ou en mouvement désordonné (0.0)\nvarying float varCoeff;\n\nvoid main() {\n  float t = dot(attRandom, attRandom) * 10000.0 + uniTime / 100.0;\n  // Position "en place" de la particule.\n  float x = attPosition.x;\n  float y = attPosition.y;\n\n  // Créer un léger mouvement autour de la position normale.\n  float radius = .02 * cos(t * attRandom.y);\n  float ang = uniTime * attRandom.z / 100.0;\n  x = x + radius * cos(ang);\n  y = y + radius * sin(ang);\n\n  // Coordonnées aléatoires en rotation dans tout l\'espace.\n  radius = 1.5 * sin(t * 0.01 * (attRandom.y + attRandom.x));\n  ang = t * attRandom.x * 0.1;\n  float xx = radius * cos(ang);\n  float yy = radius * sin(ang);\n\n  // Dans un cycle de 12 secondes, l\'image est stable\n  // pendant 8 secondes et en vrac pendant 4.\n  float c1 = 0.0;\n  float tt = mod(uniTime, 12000.0);\n  if (tt < 4000.0) {\n    c1 = sin(tt * 3.1415926539 / 4000.0);\n  }\n  float c2 = 1.0 - c1;\n\n  varCoeff = c2;\n  // Petites variations de vert.\n  varColor = vec3( 0.0, .3 + .1 * abs(cos(attRandom.x * uniTime * 0.01)), 0.0 );\n  // La position est intrerpolée entre (x,y) et (xx,yy).\n  gl_Position = vec4( x * c2 + xx * c1, y * c2 + yy * c1, 0.0, 1.0 );\n  // Palpitation de la taille et diminution lors de la phase de désordre.\n  ang = t * attRandom.x;\n  gl_PointSize = max(8.0, (32.0 + 8.0 * cos(ang)) * (.5 + c2 * .5));\n}\n',frag:"precision mediump float;\n\nvarying vec3 varColor;\nvarying float varCoeff;\n\nvoid main() {\n  // Calculons la distance du fragment courant\n  // au centre du point.\n  float x = gl_PointCoord.x - 0.5;\n  float y = gl_PointCoord.y - 0.5;\n  // On ne calcule pas la racine carré pour gagner du temps.\n  float r = x*x + y*y;\n  float alpha = clamp(1.0 - r * 4.0, 0.0, 1.0);\n\n  gl_FragColor = vec4( varColor, alpha * (1.0 - varCoeff * 0.3) );\n}\n"},i=t("tfw.webgl"),s=function(t){var n=new i(t),a=n.createProgram({vertex:o.vert,fragment:o.frag});this._webgl=n,this._prg=a,this._loaded=!1;var r=new Image;r.src="css/explosive-tp/tp.png",r.onload=e.bind(this,r)};s.prototype.render=function(t){if(this._loaded){var n=this._webgl.gl,a=this._prg;a.use(),n.disable(n.DEPTH_TEST),n.enable(n.BLEND),n.blendFuncSeparate(n.SRC_ALPHA,n.ONE_MINUS_SRC_ALPHA,n.ZERO,n.ONE),n.blendEquation(n.FUNC_ADD),a.$uniTime=t,n.bindBuffer(n.ARRAY_BUFFER,this._buffer);var e=this._data.BYTES_PER_ELEMENT,r=6*e,o=n.getAttribLocation(this._prg.program,"attPosition");n.enableVertexAttribArray(o),n.vertexAttribPointer(o,2,n.FLOAT,!1,r,0);var i=n.getAttribLocation(this._prg.program,"attRandom");n.enableVertexAttribArray(i),n.vertexAttribPointer(i,4,n.FLOAT,!1,r,2*e),n.bufferData(n.ARRAY_BUFFER,this._data,n.STATIC_DRAW),n.drawArrays(n.POINTS,0,this._count)}},n.exports=s,n.exports._=r});
 //# sourceMappingURL=explosive-tp.js.map
 require("tfw.webgl",function(e,t,r){function n(e){Object.defineProperty(this,"gl",{value:e.getContext("webgl")||e.getContext("experimental-webgl"),writable:!1,configurable:!1,enumerable:!0}),this.render=function(){}}function a(e,t){var r=e.createProgram();e.attachShader(r,s(e,t.vertex||"//No Vertex Shader")),e.attachShader(r,c(e,t.fragment||"//No Fragment Shader")),e.linkProgram(r),this.program=r,Object.freeze(this.program),this.use=function(){e.useProgram(r)},this.use();var n,a,u={},m=e.getProgramParameter(r,e.ACTIVE_ATTRIBUTES);for(n=0;n<m;n++)a=e.getActiveAttrib(r,n),u[a.name]=e.getAttribLocation(r,a.name),this["$"+a.name]=e.getAttribLocation(r,a.name);Object.freeze(u),this.attribs=u;var E={},T=e.getProgramParameter(r,e.ACTIVE_UNIFORMS);for(n=0;n<T;n++)a=e.getActiveUniform(r,n),E[a.name]=e.getUniformLocation(r,a.name),Object.defineProperty(this,"$"+a.name,{set:i(e,a,E[a.name]),get:o(a),enumerable:!0,configurable:!0});Object.freeze(E),this.uniforms=E}function i(e,t,r){var n="_$"+t.name;switch(t.type){case e.BYTE:case e.UNSIGNED_BYTE:case e.SHORT:case e.UNSIGNED_SHORT:case e.INT:case e.UNSIGNED_INT:return 1==t.size?function(t){e.uniform1i(r,t),this[n]=t}:function(t){e.uniform1iv(r,t),this[n]=t};case e.FLOAT:return 1==t.size?function(t){e.uniform1f(r,t),this[n]=t}:function(t){e.uniform1fv(r,t),this[n]=t}}}function o(e){var t="_$"+e.name;return function(){return this[t]}}function u(e,t,r){var n=t.createShader(e);return t.shaderSource(n,r),t.compileShader(n),t.getShaderParameter(n,t.COMPILE_STATUS)?n:(console.log(r),console.error("An error occurred compiling the shader: "+t.getShaderInfoLog(n)),null)}function c(e,t){return u(e.FRAGMENT_SHADER,e,t)}function s(e,t){return u(e.VERTEX_SHADER,e,t)}var m=function(){function t(){return n(r,arguments)}var r={en:{}},n=e("$").intl;return t.all=r,t}();(new Float32Array).BYTES_PER_ELEMENT;n.prototype.createProgram=function(e){return new a(this.gl,e)},n.prototype.start=function(e){if("function"==typeof e&&(this.render=e),!this._animationIsOn){var t=this,r=function(e){t._animationIsOn&&window.requestAnimationFrame(r),t.render(e)};window.requestAnimationFrame(r),this._animationIsOn=!0}},n.prototype.stop=function(){this._animationIsOn=!1},n.prototype.createTextureForFB=function(e,t){var r=this.gl,n=r.createTexture();return r.bindTexture(r.TEXTURE_2D,n),r.texParameteri(r.TEXTURE_2D,r.TEXTURE_WRAP_S,r.CLAMP_TO_EDGE),r.texParameteri(r.TEXTURE_2D,r.TEXTURE_WRAP_T,r.CLAMP_TO_EDGE),r.texParameteri(r.TEXTURE_2D,r.TEXTURE_MIN_FILTER,r.NEAREST),r.texParameteri(r.TEXTURE_2D,r.TEXTURE_MAG_FILTER,r.NEAREST),r.texImage2D(r.TEXTURE_2D,0,r.RGBA,e,t,0,r.RGBA,r.UNSIGNED_BYTE,null),n},n.prototype.getDataFromImage=function(e){var t=e.width,r=e.height,n=document.createElement("canvas");n.setAttribute("width",t),n.setAttribute("height",r);var a=n.getContext("2d");return a.drawImage(e,0,0),a.getImageData(0,0,t,r).data},t.exports=n,t.exports._=m});
 //# sourceMappingURL=tfw.webgl.js.map
