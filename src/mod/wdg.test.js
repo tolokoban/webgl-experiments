@@ -1,3 +1,4 @@
+
 // https://www.opengl.org/wiki/Primitive#Point_primitives
 
 "use strict";

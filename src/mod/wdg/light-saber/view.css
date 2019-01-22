@@ -1,0 +1,63 @@
+.wdg-light-saber-view {
+  position: relative;
+  width: 300px;
+  max-width: 90vmin;
+  height: 300px;
+  max-height: 90vmin;
+  float: left;
+  transition: all .3s;
+}
+
+.wdg-light-saber-view.fullscreen {
+  float: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  z-index: 99;
+  transition: all .3s;
+}
+
+.wdg-light-saber-view > * {
+  position: absolute;
+  margin: 0;
+  left: 4px;
+  top: 4px;
+}
+
+.wdg-light-saber-view > canvas {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #334;
+}
+
+.wdg-light-saber-view > button.tfw-view-checkbox {
+  position: absolute;
+}
+
+.wdg-light-saber-view > .bottom {
+  left: auto;
+  top: auto;
+  right: 4px;
+  bottom: 4px;
+}
+
+.wdg-light-saber-view > .left {
+  left: 4px;
+  top: auto;
+  right: auto;
+  bottom: 4px;
+}
+
+.wdg-light-saber-view > .top {
+  left: auto;
+  top: 4px;
+  right: 4px;
+  bottom: auto;
+}

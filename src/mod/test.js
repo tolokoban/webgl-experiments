@@ -47,12 +47,19 @@ function start() {
     evt.preventDefault();
     var x = evt.x;
     var y = evt.y;
-    var dx = evt.dx;
-    var dy = evt.dy;
+    var x0 = evt.x0;
+    var y0 = evt.y0;
+    var xx = x - evt.vx;
+    var yy = y - evt.vy;
     ctx.strokeStyle = "#f80";
     ctx.beginPath();
     ctx.moveTo( x, y );
-    ctx.lineTo( x - dx, y - dy );
+    ctx.lineTo( xx, yy );
+    ctx.stroke();
+    ctx.strokeStyle = "#f801";
+    ctx.beginPath();
+    ctx.moveTo( x, y );
+    ctx.lineTo( x0, y0 );
     ctx.stroke();
   });
   
