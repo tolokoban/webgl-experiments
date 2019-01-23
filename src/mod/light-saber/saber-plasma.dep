@@ -1,0 +1,6 @@
+{
+  var: {
+    vert: flat.vert
+    frag: flat.frag
+  }
+}

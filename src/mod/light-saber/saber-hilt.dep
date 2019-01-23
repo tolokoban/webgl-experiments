@@ -1,0 +1,6 @@
+{
+  var: {
+    vert: gouraud.vert
+    frag: gouraud.frag
+  }
+}

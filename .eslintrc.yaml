@@ -22,7 +22,7 @@
     linebreak-style: 0
     max-len: [1, { code: 120 }]
     max-lines: [1, { max: 300, skipBlankLines: true, skipComments: true}]
-    max-params: [1, {max: 6}]
+    max-params: 0
     max-statements: [2, {max: 20}]
     multiline-comment-style: 0
     multiline-ternary: 0

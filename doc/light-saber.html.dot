@@ -94,23 +94,25 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
-    "wdg.light-saber.view" -> "webgl.math"
+    "light-saber.view" -> "webgl.math"
 
-    "wdg.light-saber.view" -> "webgl.resize"
+    "light-saber.view" -> "webgl.resize"
 
-    "wdg.light-saber.view" -> "webgl.program"
+    "light-saber.view" -> "light-saber.saber-hilt"
 
-    "wdg.light-saber.view" -> "dom"
+    "light-saber.view" -> "light-saber.saber-plasma"
 
-    "wdg.light-saber.view" -> "tfw.binding.property-manager"
+    "light-saber.view" -> "dom"
 
-    "wdg.light-saber.view" -> "tfw.view"
+    "light-saber.view" -> "tfw.binding.property-manager"
 
-    "wdg.light-saber.view" -> "tfw.binding.link"
+    "light-saber.view" -> "tfw.view"
 
-    "wdg.light-saber.view" -> "tfw.binding.converters"
+    "light-saber.view" -> "tfw.binding.link"
 
-    "wdg.light-saber.view" -> "tfw.view.checkbox"
+    "light-saber.view" -> "tfw.binding.converters"
+
+    "light-saber.view" -> "tfw.view.checkbox"
     "tfw.view.checkbox" -> "$"
 
     "tfw.view.checkbox" -> "tfw.binding.property-manager"
@@ -139,8 +141,14 @@ digraph dependencies {
 
     "dom.fx" -> "tfw.data-binding"
     "polyfill.promise" -> "$"
+    "light-saber.saber-plasma" -> "webgl.math"
+
+    "light-saber.saber-plasma" -> "webgl.program"
     "webgl.program" -> "$"
-    "webgl.resize" -> "$"
     "webgl.math" -> "$"
+    "light-saber.saber-hilt" -> "webgl.math"
+
+    "light-saber.saber-hilt" -> "webgl.program"
+    "webgl.resize" -> "$"
 
 }

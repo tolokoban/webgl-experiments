@@ -1,12 +1,12 @@
-# mod/wdg.light-saber.view.js
+# mod/light-saber.view.js
 
 ----
 
 ## Dependencies
 * [webgl.math](webgl.math.md)
 * [webgl.resize](webgl.resize.md)
-* [webgl.program](webgl.program.md)
-* [wdg.light-saber.saber-hilt](wdg.light-saber.saber-hilt.md)
+* [light-saber.saber-hilt](light-saber.saber-hilt.md)
+* [light-saber.saber-plasma](light-saber.saber-plasma.md)
 * [dom](dom.md)
 * [tfw.binding.property-manager](tfw.binding.property-manager.md)
 * [tfw.view](tfw.view.md)

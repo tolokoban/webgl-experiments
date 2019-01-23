@@ -1,8 +1,0 @@
-{
-  var: {
-    vertFlat: flat.vert
-    fragFlat: flat.frag
-    vertGouraud: gouraud.vert
-    fragGouraud: gouraud.frag
-  }
-}

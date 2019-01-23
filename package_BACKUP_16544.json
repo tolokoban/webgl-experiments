@@ -1,0 +1,42 @@
+{
+    "name": "webgl-experiments",
+    "author": "tolokoban",
+    "description": "WebGL study by tutorials",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tolokoban/webgl-experiments.git"
+    },
+    "homepage": "https://github.com/tolokoban/webgl-experiments",
+    "license": "GPL",
+    "scripts": {
+        "test": "node node_modules/karma/bin/karma start karma.conf.js",
+        "test:dbg": "node --debug-brk node_modules/karma/bin/karma start karma.conf.js",
+        "debug": "node submodules/tfw/bin/tfw.js build debug test",
+        "watch": "node submodules/tfw/bin/tfw.js build debug test watch",
+        "clean": "node submodules/tfw/bin/tfw.js clean",
+        "release": "node submodules/tfw/bin/tfw.js build version clean"
+    },
+    "bugs": {
+        "url": "https://github.com/tolokoban/webgl-experiments/issues"
+    },
+    "version": "0.0.108",
+    "tfw": {
+        "modules": [],
+        "compile": {
+            "type": "firefoxos",
+            "files": [
+                "(light-saber)\\.html$"
+            ]
+        },
+        "output": "www"
+    },
+    "dependencies": {
+        "jasmine-core": "^2.99.1",
+        "karma": "^0.13.22",
+        "karma-chrome-launcher": "^0.2.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-jasmine": "^0.3.8",
+        "toloframework": "^0.50.6"
+    },
+    "reservedModules": []
+}
