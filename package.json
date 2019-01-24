@@ -19,11 +19,11 @@
     "bugs": {
         "url": "https://github.com/tolokoban/webgl-experiments/issues"
     },
-    "version": "0.0.108",
+    "version": "0.0.109",
     "tfw": {
         "modules": [],
         "compile": {
-            "type": "firefoxos",
+            "type": "web",
             "files": [
                 "(light-saber)\\.html$"
             ]
