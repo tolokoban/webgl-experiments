@@ -1,9 +1,0 @@
-"use strict";
-
-window.TextureAggregator = function() {
-  
-  return function( assets ) {
-    
-  };
-}();
-
