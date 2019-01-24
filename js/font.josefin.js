@@ -1,0 +1,2 @@
+"use strict";require("font.josefin",function(require,module){var _=function(){function _(){return X(D,arguments)}var D={en:{},fr:{}},X=require("$").intl;return _.all=D,_}();module.exports._=_});
+//# sourceMappingURL=font.josefin.js.map

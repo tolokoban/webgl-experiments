@@ -1,0 +1,2 @@
+"use strict";require("theme",function(require,module){var _=function(){function _(){return X(D,arguments)}var D={en:{},fr:{}},X=require("$").intl;return _.all=D,_}();"use strict",require("assets"),require("font.josefin");var $=require("dom");$.registerTheme("main",{bgP:"#06D",bgS:"#F80"}),$.applyTheme("main"),module.exports._=_});
+//# sourceMappingURL=theme.js.map

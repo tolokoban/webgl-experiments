@@ -1,0 +1,2 @@
+"use strict";require("tfw.url-args",function(require,module,exports){var _=function(){function _(){return X(D,arguments)}var D={en:{},fr:{}},X=require("$").intl;return _.all=D,_}();exports.parse=function(){var i,x,args={},t=location.search;if(2>t.length)return args;for(t=t.substring(1).split("&"),i=0;i<t.length;i++)x=t[i].split("="),1==x.length?args[""]=decodeURIComponent(x[0]):args[x[0]]=decodeURIComponent(x[1]);return args},exports.stringify=function(){},module.exports._=_});
+//# sourceMappingURL=tfw.url-args.js.map

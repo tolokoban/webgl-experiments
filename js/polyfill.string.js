@@ -1,0 +1,2 @@
+"use strict";require("polyfill.string",function(require,module){var _=function(){function _(){return X(D,arguments)}var D={en:{}},X=require("$").intl;return _.all=D,_}();"function"!=typeof String.toLowerCase&&(String.toLowerCase=function(v){return v.toLowerCase()},String.toUpperCase=function(v){return v.toUpperCase()},String.trim=function(v){return v.trim()}),module.exports._=_});
+//# sourceMappingURL=polyfill.string.js.map
