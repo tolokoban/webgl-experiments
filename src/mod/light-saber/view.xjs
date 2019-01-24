@@ -1,7 +1,7 @@
 {View DIV class:wdg-light-saber-view
     view.attribs: {
-      fullscreen: {boolean true}
-      gloom: {boolean true}
+      fullscreen: {boolean false}
+      gloom: {boolean false}
     }
 
     view.init: init
