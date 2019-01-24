@@ -143,7 +143,7 @@ function renderBlur( gl, blur, blurFB, time ) {
 
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
 
-    const attenuation = 1.2;
+    const attenuation = 1.75;
     blur.centerCoeff = 0.332 * attenuation;
     blur.segmentCoeff = 0.122 * attenuation;
     blur.cornerCoeff = 0.045 * attenuation;
@@ -186,7 +186,7 @@ function renderPersistence( gl, blur, framebuffers, time ) {
     gl.bindFramebuffer( gl.FRAMEBUFFER, fb.fb );
     gl.viewport( 0, 0, fb.width, fb.height );
 
-    const attenuation = 0.95;
+    const attenuation = 1.0;
     blur.centerCoeff = 0.332 * attenuation;
     blur.segmentCoeff = 0.122 * attenuation;
     blur.cornerCoeff = 0.045 * attenuation;
