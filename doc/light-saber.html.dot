@@ -94,7 +94,15 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
+    "light-saber.view" -> "assets"
+
     "light-saber.view" -> "webgl.math"
+
+    "light-saber.view" -> "light-saber.add"
+
+    "light-saber.view" -> "light-saber.blur"
+
+    "light-saber.view" -> "light-saber.filter"
 
     "light-saber.view" -> "webgl.resize"
 
@@ -143,6 +151,8 @@ digraph dependencies {
     "polyfill.promise" -> "$"
     "light-saber.saber-plasma" -> "webgl.math"
 
+    "light-saber.saber-plasma" -> "light-saber.colors"
+
     "light-saber.saber-plasma" -> "webgl.program"
     "webgl.program" -> "$"
     "webgl.math" -> "$"
@@ -150,5 +160,11 @@ digraph dependencies {
 
     "light-saber.saber-hilt" -> "webgl.program"
     "webgl.resize" -> "$"
+    "light-saber.filter" -> "light-saber.colors"
+
+    "light-saber.filter" -> "light-saber.image-processor"
+    "light-saber.image-processor" -> "webgl.program"
+    "light-saber.blur" -> "light-saber.image-processor"
+    "light-saber.add" -> "light-saber.image-processor"
 
 }

@@ -3,8 +3,13 @@
 /* exported CODE_BEHIND */
 const CODE_BEHIND = { init };
 
+require( "assets" );
+
 const
     M4 = require( "webgl.math" ).m4,
+    Add = require( "light-saber.add" ),
+    Blur = require( "light-saber.blur" ),
+    Filter = require( "light-saber.filter" ),
     Resize = require( "webgl.resize" ),
     HiltObject = require( "light-saber.saber-hilt" ),
     PlasmaObject = require( "light-saber.saber-plasma" );
@@ -16,9 +21,16 @@ const
  */
 function init() {
     const
+        that = this,
         canvas = this.$elements.canvas.$,
         gl = canvas.getContext( "webgl", { preserveDrawingBuffer: false } ),
-        frameBuffers = {},
+        framebuffers = {},
+        add = new Add( gl, framebuffers, "persistence1", "scene" ),
+        blur1 = new Blur( gl, framebuffers, "filter" ),
+        blur2 = new Blur( gl, framebuffers, "blur1" ),
+        filter = new Filter( gl, framebuffers, "scene" ),
+        blurPersistence = new Blur( gl, framebuffers, "persistence1" ),
+        addPersistence = new Add( gl, framebuffers, "persistence2", "blur2" ),
         hiltObject = new HiltObject( gl ),
         plasmaObject = new PlasmaObject( gl ),
         projection = M4.identity(),
@@ -32,38 +44,153 @@ function init() {
     plasmaObject.rotation = rotation;
     plasmaObject.translation = translation;
 
-    gl.enable( gl.DEPTH_TEST );
-    gl.clearColor( 0, 0, 0, 0 );
-    gl.clearDepth( 1 );
+    createFramebuffers( gl, framebuffers );
 
+    const paint = function ( time ) {
+        requestAnimationFrame( paint );
 
-    const draw = function ( time ) {
-        requestAnimationFrame( draw );
-
-        const
-            w = gl.canvas.clientWidth,
-            h = gl.canvas.clientHeight;
         if ( Resize( gl ) ) {
             console.log( "Resize!" );
-            createFrameBuffers( gl, frameBuffers );
+            createFramebuffers( gl, framebuffers );
         }
 
-        M4.perspective( Math.PI * .35, w / h, .1, 10, projection );
-        M4.rotationYX(
-            4 * Math.cos( time * 0.000458 ),
-            ramp( Math.sin( 1 + time * 0.000147 ), -Math.PI * 0.5, Math.PI * 0.5 ),
-            rotation );
-        gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+        const
+            angX = ramp( Math.sin( 1 + time * 0.000147 ), -Math.PI * 0.5, Math.PI * 0.5 ),
+            angY = 4 * Math.cos( time * 0.000458 ),
+            w = gl.canvas.clientWidth,
+            h = gl.canvas.clientHeight;
 
-        hiltObject.paint( time );
-        plasmaObject.paint( time );
+        M4.rotationYX( angY, angX, rotation );
+        M4.perspective( Math.PI * .35, w / h, .1, 10, projection );
+
+        const sceneFB = framebuffers.scene;
+        const filterFB = framebuffers.filter;
+        const blur1FB = framebuffers.blur1;
+        const blur2FB = framebuffers.blur2;
+        const persistence1FB = framebuffers.persistence1;
+
+        renderScene( gl, sceneFB, that.gloom, hiltObject, plasmaObject, time );
+
+        if ( that.gloom ) {
+            renderFilter( gl, filter, filterFB, time );
+            renderPersistence( gl, blurPersistence, framebuffers, time );
+            renderBlur( gl, blur1, blur1FB, time );
+            renderBlur( gl, blur2, blur2FB, time );
+            renderAdd( gl, addPersistence, time, persistence1FB );
+            renderAdd( gl, add, time );
+        }
     };
 
-    requestAnimationFrame( draw );
+    requestAnimationFrame( paint );
 }
 
 /**
- * Tak a number between -1 and +1 and project it between min and max.
+ * Render the scene on screen or in a frame buffer.
+ *
+ * @param   {[type]} gl      [description]
+ * @param   {[type]} sceneFB [description]
+ * @param   {[type]} gloom   [description]
+ * @param {object} hiltObject -
+ * @param {object} plasmaObject -
+ * @param {float} time -
+ */
+function renderScene( gl, sceneFB, gloom, hiltObject, plasmaObject, time ) {
+    if ( gloom ) {
+        gl.bindFramebuffer( gl.FRAMEBUFFER, sceneFB.fb );
+        gl.viewport( 0, 0, sceneFB.width, sceneFB.height );
+    } else {
+        gl.bindFramebuffer( gl.FRAMEBUFFER, null );
+        gl.viewport( 0, 0, gl.canvas.width, gl.canvas.height );
+    }
+
+    gl.enable( gl.DEPTH_TEST );
+    gl.clearColor( 0, 0, 0, 0 );
+    gl.clearDepth( 1 );
+    gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+
+    hiltObject.paint( time );
+    plasmaObject.paint( time );
+}
+
+/**
+ * Keep only the saber plasma.
+ *
+ * @param   {[type]} gl       [description]
+ * @param   {[type]} filter   [description]
+ * @param   {[type]} filterFB [description]
+ * @param {double} time -
+ */
+function renderFilter( gl, filter, filterFB, time ) {
+    gl.bindFramebuffer( gl.FRAMEBUFFER, filterFB.fb );
+    gl.viewport( 0, 0, filterFB.width, filterFB.height );
+
+    gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+
+    filter.paint( time );
+}
+
+/**
+ * Gaussian blur.
+ *
+ * @param   {[type]} gl       [description]
+ * @param   {[type]} blur   [description]
+ * @param   {[type]} blurFB [description]
+ * @param {double} time -
+ */
+function renderBlur( gl, blur, blurFB, time ) {
+    gl.bindFramebuffer( gl.FRAMEBUFFER, blurFB.fb );
+    gl.viewport( 0, 0, blurFB.width, blurFB.height );
+
+    gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+
+    blur.paint( time );
+}
+
+/**
+ * Add glowing effect above final image.
+ *
+ * @param   {[type]} gl   [description]
+ * @param   {[type]} add  [description]
+ * @param   {[type]} time [description]
+ * @param {object} fb -
+ */
+function renderAdd( gl, add, time, fb = null ) {
+    if ( fb === null ) {
+        gl.bindFramebuffer( gl.FRAMEBUFFER, null );
+        gl.viewport( 0, 0, gl.canvas.width, gl.canvas.height );
+    } else {
+        gl.bindFramebuffer( gl.FRAMEBUFFER, fb.fb );
+        gl.viewport( 0, 0, fb.width, fb.height );
+
+    }
+    gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+
+    add.paint( time );
+}
+
+/**
+ * Fade persistence buffer.
+ *
+ * @param   {[type]} gl           [description]
+ * @param   {[type]} blur         [description]
+ * @param   {[type]} framebuffers [description]
+ * @param   {[type]} time         [description]
+ */
+function renderPersistence( gl, blur, framebuffers, time ) {
+    const fb = framebuffers.persistence2;
+
+    gl.bindFramebuffer( gl.FRAMEBUFFER, fb.fb );
+    gl.viewport( 0, 0, fb.width, fb.height );
+
+    const attenuation = 0.9;
+    blur.centerCoeff = 0.332 * attenuation;
+    blur.segmentCoeff = 0.122 * attenuation;
+    blur.cornerCoeff = 0.045 * attenuation;
+    blur.paint( time );
+}
+
+/**
+ * Take a number between -1 and +1 and project it between min and max.
  *
  * @param   {float} value - Value between -1 and +1.
  * @param   {float} min - Mapped value for -1.
@@ -75,16 +202,28 @@ function ramp( value, min, max ) {
     return min + ( value + 1 ) * 0.5 * delta;
 }
 
+/**
+ * Create all needed framebuffers and delete the previous one.
+ *
+ * @param   {[type]} gl           [description]
+ * @param   {[type]} framebuffers [description]
+ */
+function createFramebuffers( gl, framebuffers ) {
+    Object.values( framebuffers ).forEach( deleteFramebuffer.bind( null, gl ) );
 
-function createFrameBuffers( gl, frameBuffers ) {
     const
         w = Math.max( 1, gl.canvas.width ),
         h = Math.max( 1, gl.canvas.height );
-
+    framebuffers.scene = createFramebuffer( gl, w, h );
+    framebuffers.filter = createFramebuffer( gl, w / 2, h / 2 );
+    framebuffers.blur1 = createFramebuffer( gl, w / 8, h / 8 );
+    framebuffers.blur2 = createFramebuffer( gl, w / 8, h / 8 );
+    framebuffers.persistence1 = createFramebuffer( gl, w / 2, h / 2 );
+    framebuffers.persistence2 = createFramebuffer( gl, w / 2, h / 2 );
 }
 
 /**
- * Crate a FrameBuffer and its associated texture.
+ * Crate a Framebuffer and its associated texture.
  *
  * @param   {[type]} gl     [description]
  * @param   {[type]} width  [description]
@@ -92,7 +231,7 @@ function createFrameBuffers( gl, frameBuffers ) {
  *
  * @returns {object} `{ texture, framebuffer }`
  */
-function createFrameBuffer( gl, width, height ) {
+function createFramebuffer( gl, width, height ) {
     const texture = gl.createTexture();
 
     // Tell GL that the current texture is this one.
@@ -103,21 +242,36 @@ function createFrameBuffer( gl, width, height ) {
     gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE );
     gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR );
     gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
+    // gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
+    // gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
 
     // Set texture dimension.
     gl.texImage2D(
         gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
-        gl.RGBA, gl.UNSIGNED_BYTE, null );
+        gl.RGBA, gl.UNSIGNED_BYTE, null
+    );
 
-    const framebuffer = gl.createFrameBuffer();
+    const fb = gl.createFramebuffer();
 
     // Tell GL that the current framebuffer is this one.
-    gl.bindFramebuffer( gl.FRAMEBUFFER, framebuffer );
+    gl.bindFramebuffer( gl.FRAMEBUFFER, fb );
 
     // Attach the texture to this framebuffer.
     gl.framebufferTexture2D(
         gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0,
-        gl.TEXTURE_2D, texture, 0 );
+        gl.TEXTURE_2D, texture, 0
+    );
 
-    return { texture, framebuffer };
+    return { texture, fb, width, height };
+}
+
+/**
+ * Clean up the framebuffer and its texture.
+ *
+ * @param   {[type]} gl          [description]
+ * @param   {[type]} frameBuffer [description]
+ */
+function deleteFramebuffer( gl, { texture, fb } ) {
+    gl.deleteTexture( texture );
+    gl.deleteFramebuffer( fb );
 }

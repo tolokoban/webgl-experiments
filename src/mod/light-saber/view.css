@@ -34,7 +34,9 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: #334;
+  background-color: #334;
+  background-image: url(assets/light-saber/background.jpg);
+  background-size: cover;
 }
 
 .wdg-light-saber-view > button.tfw-view-checkbox {

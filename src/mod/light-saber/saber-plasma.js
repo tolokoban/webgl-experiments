@@ -2,6 +2,7 @@
 
 const
     M4 = require( "webgl.math" ).m4,
+    Colors = require( "light-saber.colors" ),
     Program = require( "webgl.program" );
 
 class Plasma {
@@ -27,6 +28,8 @@ class Plasma {
         this.projection = M4.identity();
         this.rotation = M4.identity();
         this.translation = new Float32Array( [ 0, 0, 0, 0 ] );
+
+        this.color = Colors.PLASMA;
     }
 
     paint( time, delta ) {
@@ -39,6 +42,7 @@ class Plasma {
         prg.$uniProjection = projection;
         prg.$uniRotation = rotation;
         prg.$uniTranslation = translation;
+        prg.$uniColor = this.color;
 
         gl.enable( gl.CULL_FACE );
         gl.enable( gl.DEPTH_TEST );

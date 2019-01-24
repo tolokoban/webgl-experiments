@@ -1,0 +1,5 @@
+{
+  var: {
+    vert: image-processor.vert
+  }
+}
