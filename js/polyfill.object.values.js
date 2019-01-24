@@ -1,2 +1,0 @@
-"use strict";require("polyfill.object.values",function(require,module){var _=function(){function _(){return X(D,arguments)}var D={en:{},fr:{}},X=require("$").intl;return _.all=D,_}();Object.values||(window.Object.values=function(obj){var values=[];for(var key in obj)values.push(obj[key]);return values}),module.exports._=_});
-//# sourceMappingURL=polyfill.object.values.js.map

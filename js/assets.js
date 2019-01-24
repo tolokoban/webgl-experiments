@@ -1,2 +1,0 @@
-"use strict";require("assets",function(require,module){var _=function(){function _(){return X(D,arguments)}var D={en:{},fr:{}},X=require("$").intl;return _.all=D,_}();"use strict",module.exports._=_});
-//# sourceMappingURL=assets.js.map
