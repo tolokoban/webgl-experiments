@@ -2,7 +2,7 @@
     view.attribs: {
       fullscreen: {boolean true}
       gloom: {boolean true}
-      brightness: {float 1}
+      brightness: {float 0.7}
     }
 
     view.init: init
