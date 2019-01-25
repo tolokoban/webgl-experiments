@@ -7,11 +7,7 @@ digraph dependencies {
 
     "wdg.menu" -> "wdg.menu.item"
 
-    "wdg.menu" -> "dom"
-
     "wdg.menu" -> "tfw.binding.property-manager"
-
-    "wdg.menu" -> "tfw.view"
 
     "wdg.menu" -> "tfw.view"
 
@@ -58,15 +54,11 @@ digraph dependencies {
 
     "wdg.menu.item" -> "dom"
 
-    "wdg.menu.item" -> "dom"
-
     "wdg.menu.item" -> "tfw.binding.property-manager"
 
     "wdg.menu.item" -> "tfw.view"
 
     "wdg.menu.item" -> "tfw.binding.link"
-
-    "wdg.menu.item" -> "tfw.view"
 
     "wdg.menu.item" -> "tfw.binding.converters"
     "tfw.binding.link" -> "$"

@@ -19,13 +19,13 @@
     "bugs": {
         "url": "https://github.com/tolokoban/webgl-experiments/issues"
     },
-    "version": "0.0.109",
+    "version": "0.0.110",
     "tfw": {
         "modules": [],
         "compile": {
-            "type": "web",
+            "type": "desktop",
             "files": [
-                "(light-saber)\\.html$"
+                "\\.html$"
             ]
         },
         "output": "www"
@@ -38,5 +38,27 @@
         "karma-jasmine": "^0.3.8",
         "toloframework": "^0.50.6"
     },
-    "reservedModules": []
+    "reservedModules": [
+        "fs",
+        "path",
+        "process",
+        "child_process",
+        "cluster",
+        "http",
+        "os",
+        "crypto",
+        "dns",
+        "domain",
+        "events",
+        "https",
+        "net",
+        "readline",
+        "stream",
+        "string_decoder",
+        "tls",
+        "dgram",
+        "util",
+        "vm",
+        "zlib"
+    ]
 }
