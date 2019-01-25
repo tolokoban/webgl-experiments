@@ -14,7 +14,7 @@
       {DIV class:bottom [{tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}]}
       {DIV class:left [{tfw.view.checkbox content:"Halo" value:{Bind gloom} wide:false}]}
       {DIV class:top class.|hide: {Bind gloom} [
-        {tfw.view.textbox value:{Bind brightness} label:{Intl brightness}}
+        {tfw.view.textbox value:{Bind brightness} width:48px label:{Intl brightness}}
       ]}
     ]
 }
