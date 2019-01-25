@@ -7,6 +7,10 @@
 
 
 
+## `computeBinomialCoeffs(size)`
+
+[object Object]
+
 
 ----
 

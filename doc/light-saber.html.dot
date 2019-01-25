@@ -111,21 +111,7 @@ digraph dependencies {
     "wdg.icon" -> "$"
 
     "wdg.icon" -> "tfw.view.icon"
-    "light-saber.view" -> "assets"
-
-    "light-saber.view" -> "webgl.math"
-
-    "light-saber.view" -> "light-saber.add"
-
-    "light-saber.view" -> "light-saber.blur"
-
-    "light-saber.view" -> "light-saber.filter"
-
-    "light-saber.view" -> "webgl.resize"
-
-    "light-saber.view" -> "light-saber.saber-hilt"
-
-    "light-saber.view" -> "light-saber.saber-plasma"
+    "light-saber.view" -> "$"
 
     "light-saber.view" -> "dom"
 
@@ -136,6 +122,8 @@ digraph dependencies {
     "light-saber.view" -> "tfw.binding.link"
 
     "light-saber.view" -> "tfw.binding.converters"
+
+    "light-saber.view" -> "tfw.view.textbox"
 
     "light-saber.view" -> "tfw.view.checkbox"
     "tfw.view.checkbox" -> "$"
@@ -166,22 +154,16 @@ digraph dependencies {
 
     "dom.fx" -> "tfw.data-binding"
     "polyfill.promise" -> "$"
-    "light-saber.saber-plasma" -> "webgl.math"
+    "tfw.view.textbox" -> "$"
 
-    "light-saber.saber-plasma" -> "light-saber.colors"
+    "tfw.view.textbox" -> "dom"
 
-    "light-saber.saber-plasma" -> "webgl.program"
-    "webgl.program" -> "$"
-    "webgl.math" -> "$"
-    "light-saber.saber-hilt" -> "webgl.math"
+    "tfw.view.textbox" -> "tfw.binding.property-manager"
 
-    "light-saber.saber-hilt" -> "webgl.program"
-    "webgl.resize" -> "$"
-    "light-saber.filter" -> "light-saber.colors"
+    "tfw.view.textbox" -> "tfw.view"
 
-    "light-saber.filter" -> "light-saber.image-processor"
-    "light-saber.image-processor" -> "webgl.program"
-    "light-saber.blur" -> "light-saber.image-processor"
-    "light-saber.add" -> "light-saber.image-processor"
+    "tfw.view.textbox" -> "tfw.binding.link"
+
+    "tfw.view.textbox" -> "tfw.binding.converters"
 
 }

@@ -1,7 +1,8 @@
 {View DIV class:wdg-light-saber-view
     view.attribs: {
-      fullscreen: {boolean false}
-      gloom: {boolean false}
+      fullscreen: {boolean true}
+      gloom: {boolean true}
+      brightness: {float 1}
     }
 
     view.init: init
@@ -12,5 +13,8 @@
       {CANVAS view.id:canvas}
       {DIV class:bottom [{tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}]}
       {DIV class:left [{tfw.view.checkbox content:"Halo" value:{Bind gloom} wide:false}]}
+      {DIV class:top class.|hide: {Bind gloom} [
+        {tfw.view.textbox value:{Bind brightness} label:{Intl brightness}}
+      ]}
     ]
 }
