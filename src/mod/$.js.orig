@@ -1,5 +1,8 @@
 <<<<<<< HEAD
-exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.108\"","major":"0","minor":"0","revision":"108","date":"2019-01-22T18:11:06.202Z","consts":{}};
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.110\"","major":"0","minor":"0","revision":"110","date":"2019-01-24T16:20:45.282Z","consts":{}};
+=======
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.112\"","major":"0","minor":"0","revision":"112","date":"2019-01-24T21:36:49.234Z","consts":{}};
+>>>>>>> ab45686d8ad30c941915b75a5d85931b30202eef
 "use strict";
 
 const ZERO_CHAR_CODE = '0'.charCodeAt( 0 );
@@ -9,14 +12,6 @@ exports.lang = function lang( _lang ) {
     if ( typeof language === 'undefined' ) {
         if ( window.localStorage ) {
             language = window.localStorage.getItem( "Language" );
-=======
-exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.108\"","major":"0","minor":"0","revision":"108","date":"2018-12-28T23:10:54.000Z","consts":{}};
-var currentLang = null;
-exports.lang = function(lang) {
-    if (lang === undefined) {
-        if (window.localStorage) {
-            lang = window.localStorage.getItem("Language");
->>>>>>> 65440106194f10a706350055ce8e34051240b91c
         }
         if ( !language ) {
             language = window.navigator.language;
