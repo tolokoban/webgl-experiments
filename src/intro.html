@@ -3,11 +3,15 @@
 
 <wdg:intro1 $float="right" $height="200"/>
 
-WebGL manipule les pixels de son __viewport__. Le __viewport__ est le rectangle auquel on restreint l'affichage. Le système de coordonnées de WebGL est totalement indépendant des dimension physiques de ce viewport.
+WebGL manipule les pixels de son __viewport__. Le __viewport__ est le rectangle auquel
+on restreint l'affichage.
+Le système de coordonnées de WebGL est totalement indépendant des dimensions physiques
+de ce viewport.
 * L'axe des __X__ est horizontal et dirigé vers la droite.
 * L'axe des __Y__ est vertical et dirigé vers le haut.
 
-Les coordonnées sont comprises entre `-1` et `+1`. Le centre de l'écran a donc `(0,0)` comme coordonnées.
+Les coordonnées sont comprises entre `-1` et `+1`. Le centre de l'écran a donc `(0,0)`
+comme coordonnées.
 
 # Le pipeline
 
@@ -19,26 +23,31 @@ Pour lui faire dessiner un simple triangle comme celui-ci (en orange), il faut b
 <div class="tbl">
     <div>
         <div>Attributs de vertex</div><div>&xrarr;</div>
-        <div><div class="hdr">Vertex Shader</div></div><div>&xrarr;</div><div>Coordonnées</div>
+        <div class="hdr">Vertex Shader</div>
+        <div>&xrarr;</div><div>Coordonnées</div>
     </div>
     <div>
         <div>Coordonnées</div><div>&xrarr;</div>
-        <div><div class="hdr">Rasterisation</div></div><div>&xrarr;</div><div>Fragments</div>
+        <div class="hdr">Rasterisation</div>
+        <div>&xrarr;</div><div>Fragments</div>
     </div>
     <div>
         <div>Fragments</div><div>&xrarr;</div>
-        <div><div class="hdr">Fragment Shader</div></div><div>&xrarr;</div><div>Pixels</div>
+        <div class="hdr">Fragment Shader</div>
+        <div>&xrarr;</div><div>Pixels</div>
     </div>
     <div>
         <div>Pixels</div><div>&xrarr;</div>
-        <div><div class="hdr">Composition</div></div><div>&xrarr;</div><div>Frame Buffer</div>
+        <div class="hdr">Composition</div>
+        <div>&xrarr;</div><div>Frame Buffer</div>
     </div>
 </div>
 
 
 ## Le vertex shader
 
-Le __vertex shader__ est un programme de la carte graphique (que vous devez écrire vous-même) qui transforme des données de la mémoire en coordonnées pour le viewport.
+Le __vertex shader__ est un programme de la carte graphique (que vous devez écrire vous-même)
+qui transforme des données de la mémoire en coordonnées pour le viewport.
 
 <x-include src="intro.vertex-shader.htm"/>
 
@@ -52,6 +61,10 @@ void main() {
 }
 </x-code>
 
+Dans cet exemple, la mémoire contient 6 nombres qui correspondent à 3 __vertices__.
+Chaque vertex (singulier de vertices) contient deux __attributs__ : `x` et `y`.
+
+Nous reviendrons en détail là-dessus plus tard.
 
 ## Rasterisation
 
@@ -73,14 +86,17 @@ Voici un exemple :
 precision mediump float;
 
 void main() {
-  gl_FragColor = vec4( 1.0, 0.5, 0.0, 1.0 );
+    // Le pixel sera orange ( 100% de rouge, 50% de vert, 0% de bleu et 100% d'opacité)
+    gl_FragColor = vec4( 1.0, 0.5, 0.0, 1.0 );
 }
 </x-code>
 
 
 ## Composition
 
-Durant cette dernière phase il est possible d'effectuer divers tests pour savoir si le pixel doit être écarté ou dessiné. Et s'il est dessiné, on peut préciser comment il doit réagir avec le pixel déjà affiché à la même position.
+Durant cette dernière phase il est possible d'effectuer divers tests pour savoir si le pixel
+doit être écarté ou dessiné. Et s'il est dessiné, on peut préciser comment il doit réagir
+avec le pixel déjà affiché à la même position.
 
 
 # Passons à la pratique
@@ -96,14 +112,13 @@ Préparons le code de nos shaders :
 Créons un __Program__ qui contient nos deux shaders :
 <x-code src="mod/assets/intro/index.html" section="program" />
 
-Puisque nous voulons dessiner un triangle, il nous faut __3 vertex__.
+Puisque nous voulons dessiner un triangle, il nous faut __3 vertices__.
 Chaque vertex aura 2 attributs, l'abscisse et l'ordonnée du point.
 
 On crée donc un tableau que l'on pousse dans la mémoire de la carte graphique (ARRAY_BUFFER) :
 <x-code src="mod/assets/intro/index.html" section="buffer" />
 
 Il faut maintenant décrire ce qu'on a mis dans l'ARRAY_BUFFER.
-
 <x-code src="mod/assets/intro/index.html" section="attribs" />
 
 Ensuite, on va effacer l'écran en le coloriant en bleu :

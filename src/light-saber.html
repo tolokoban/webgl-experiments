@@ -20,13 +20,163 @@ de traitement d'image à plusieurs passes que vous pourriez faire avec GIMP par 
 
 Pour commencer, il faut faire un rendu 3D de votre scène complete que vous n'affichez pas à
 l'écran, mais plutôt dans une texture __(A)__.
+Nous verrons plus bas comment faire cela en WebGL.
 
-Ensuite, s'agit d'extraire les zones qui devronts émettre un halo. Dans notre cas,
-on garde simplement les zones oranges __(B)__.
+Ensuite, il s'agit d'extraire les zones qui devront émettre un halo. Dans notre cas,
+on garde simplement les zones oranges __(B)__. On aurait aussi pu décider de dessiner
+la lame directement sur B et pas sur A.
 
 Cette dernière image devra être flouttée à l'aide d'un filtre Gaussien __(C)__.
+Il faut souvent répéter ce flou plusieurs fois afin que la couleur s'étale bien autour
+des limites du dessin initial. C'est ça qui donnera l'effet de halo désiré.
 
 Il ne reste plus qu'à combiner l'image A avec la C par addition des couleurs __(D)__.
+On voit que le sabre devient jaune. Cela est dû à l'addition des couleurs qui se fait canal
+par canal avec troncature à 1. Si on additionne deux oranges, par exemple, on obtient
+`(1, 0.5, 0) + (1, 0.5, 0) = (2, 1, 0)`, et après troncage : `(1, 1, 0)`.
+
+----
+
+Notre sabre est composé de deux objets : une __poignée__ et une __lame__.
+
+Le premier est rendu avec un shading Gouraud qui reflète la lumière et donne un effet de
+volume tel qu'attendu dans un scène 3D classique. Le Gouraud ne donne pas les résultats
+les plus réalistes, mais il est rapide et suffit largement pour notre exemple.
+
+<ex lang="glsl" label="Vertex Shader pour Gouraud">
+// Perspective
+uniform mat4 uniProjection;
+// Rotation
+uniform mat4 uniRotation;
+// Translation
+uniform vec4 uniTranslation;
+
+// Coordonnées du sommet
+attribute vec3 attPoint;
+// Vecteur normal en ce sommet.
+attribute vec3 attNormal;
+
+const vec3 COLOR = vec3(0.1, 0.5, 0.86666666666666666);
+// Lumière incidente
+const vec3 LIGHT = normalize(vec3(.5, -.5, -1));
+
+varying vec3 varColor;
+
+float ramp(vec3 ray, float minValue, float maxValue) {
+    float diff = maxValue - minValue;
+    float alpha = 0.5 * (ray.z + 1.0);
+    return minValue + alpha * diff;
+}
+
+void main() {
+  // Rotation, translation et projection en perspective.
+  vec4 vertex = uniRotation * vec4( attPoint, 1 ) + uniTranslation;
+  gl_Position = uniProjection * vertex;
+
+  vec4 normal = uniRotation * vec4( attNormal, 1 );
+  vec3 ray = reflect(LIGHT, normal.xyz);
+  float lightPower = ramp(ray, 0.4, 1.5);
+
+  varColor = COLOR * lightPower;
+}
+</ex>
+
+Pour la lame, on utilise un shader qui renvoie une couleur unique quelque soit l'orientation
+de la face. Cela facilitera la tâche du filtre. Le fragment shader est passez
+simple et le plus rapide qui soit :
+
+<x-code lang="glsl">
+uniform vec4 uniColor;
+void main() {
+  gl_FragColor = uniColor;
+}
+</x-code>
+
+Il faut alors créer un frameBuffer pour que le rendu se fasse dans une texture :
+<x-code lang="js">
+function createFramebuffer( gl, width, height ) {
+    const fb = gl.createFramebuffer();
+
+    // Dire à WebGL que le frameBuffer courant est celui-ci.
+    gl.bindFramebuffer( gl.FRAMEBUFFER, fb );
+
+    // Attacher une texture à ce framebuffer.
+    const texture = createTexture( gl, width, height );
+    gl.framebufferTexture2D(
+        gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0,
+        gl.TEXTURE_2D, texture, 0
+    );
+
+    // Associer un Depth Buffer parce qu'il n'y en a pas par défaut.
+    const depthBuffer = gl.createRenderbuffer();
+    gl.bindRenderbuffer( gl.RENDERBUFFER, depthBuffer );
+    gl.renderbufferStorage( gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, width, height );
+    gl.framebufferRenderbuffer( gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, depthBuffer );
+
+    return { fb, texture };
+}
+</x-code>
+
+<ex lang="glsl" label="Si vous avez oublié comment créer une texture...">
+function createTexture( gl, width, height ) {
+    const texture = gl.createTexture();
+
+    // Tell GL that the current texture is this one.
+    gl.bindTexture( gl.TEXTURE_2D, texture );
+
+    // The texture doesn't wrap and it uses linear interpolation.
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
+
+    // Set texture dimension.
+    gl.texImage2D(
+        gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
+        gl.RGBA, gl.UNSIGNED_BYTE, null
+    );
+
+    return texture;
+}
+</ex>
+
+# Floutage rapide
+
+L'effet doit s'appliquer en temps réel, alors il nous est impossible de faire un grand
+nombre de passes de floutage. Pourtant, il faut bien que la couleur s'étale. Nous allons
+donc recourir à des astuces.
+
+Pour rendre un pixel flou, il suffit de réaliser une moyenne podérée avec tous ses voisins.
+Par exemple, si on considère les 8 voisins immédiats, on va devoir moyenner un carré `3x3`.
+Pour un floutage Gaussien, on pourra utiliser les coefficients suivants dont la somme vaut 1 :
+
+<div class="tbl grd">
+    <div><div>0.045</div><div>0.122</div><div>0.045</div></div>
+    <div><div>0.122</div><div>0.332</div><div>0.122</div></div>
+    <div><div>0.045</div><div>0.122</div><div>0.045</div></div>
+</div>
+
+De cette façon, la couleur va s'étaler de ... 1 seul pixel ! Si on veut un étalement
+de 10 pixels, on pourrait
+* __(A)__ appliquer 10 fois de suite un carré `3x3` ou
+* __(B)__ utiliser une fois un carré de `21x21`.
+
+Les mathématiques nous viennent en aide en affirmant qu'une Gaussienne en 2D
+est équivalente au produit de deux Gaussiennes en 1D. Ca ne vous aide pas ?
+
+Et bien cela signifie que faire un moyenne sur un carré de `21x21` revient à faire une
+moyenne sur un rectangle de `21x1` et de faire une moyenne sur ce résultat avec un rectangle
+de `1x21`. On a donc une troisième technique __(C)__ qui combine une Gaussienne verticale
+avec une Gaussienne horizontale.
+
+Voici une comparaison du nombre de lectures/écritures en mémoire pour chaque pixel à flouter :
+
+<div class="tbl grd">
+    <div><div class="hdr">Technique</div><div class="hdr">Lectures</div><div class="hdr">Ecritures</div></div>
+    <div><div class="hdr">(A)</div><div>90</div><div>10</div></div>
+    <div><div class="hdr">(B)</div><div>441</div><div>1</div></div>
+    <div><div class="hdr">(C)</div><div>42</div><div>2</div></div>
+</div>
 
 
 </page>

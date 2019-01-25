@@ -106,15 +106,11 @@ digraph dependencies {
 
     "wdg.wavefront" -> "webgl.fillpoly"
 
-    "wdg.wavefront" -> "dom"
-
     "wdg.wavefront" -> "tfw.binding.property-manager"
 
     "wdg.wavefront" -> "tfw.view"
 
     "wdg.wavefront" -> "tfw.binding.link"
-
-    "wdg.wavefront" -> "tfw.view"
 
     "wdg.wavefront" -> "tfw.binding.converters"
 
@@ -202,15 +198,9 @@ digraph dependencies {
 
     "tfw.view.tapable" -> "tfw.touchable"
 
-    "tfw.view.tapable" -> "dom"
-
-    "tfw.view.tapable" -> "tfw.binding.property-manager"
-
     "tfw.view.tapable" -> "tfw.view"
 
     "tfw.view.tapable" -> "tfw.binding.link"
-
-    "tfw.view.tapable" -> "tfw.view"
 
     "tfw.view.tapable" -> "tfw.binding.converters"
     "wdg.modal" -> "$"
@@ -234,15 +224,11 @@ digraph dependencies {
 
     "tfw.view.file-input" -> "dom"
 
-    "tfw.view.file-input" -> "dom"
-
     "tfw.view.file-input" -> "tfw.binding.property-manager"
 
     "tfw.view.file-input" -> "tfw.view"
 
     "tfw.view.file-input" -> "tfw.binding.link"
-
-    "tfw.view.file-input" -> "tfw.view"
 
     "tfw.view.file-input" -> "tfw.binding.converters"
 
@@ -284,8 +270,6 @@ digraph dependencies {
     "tfw.view.flex" -> "tfw.view"
 
     "tfw.view.flex" -> "tfw.binding.link"
-
-    "tfw.view.flex" -> "tfw.view"
 
     "tfw.view.flex" -> "tfw.binding.converters"
     "webgl.fillpoly" -> "$"

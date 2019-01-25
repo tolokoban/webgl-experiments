@@ -273,6 +273,7 @@ div.tbl > div > div.hdr {
     background: #06d;
     color: #eee;
     font-weight: bold;
+    border: 1px solid #fff;
 }
 
 div.box {

@@ -218,7 +218,8 @@ function createFramebuffers( gl, framebuffers ) {
     const
         w = Math.max( 1, gl.canvas.width ),
         h = Math.max( 1, gl.canvas.height );
-    framebuffers.scene = createFramebuffer( gl, w, h );
+
+    framebuffers.scene = createFramebufferWithDepth( gl, w, h );
     framebuffers.filter = createFramebuffer( gl, w / 2, h / 2 );
     framebuffers.blur1 = createFramebuffer( gl, w / 8, h / 8 );
     framebuffers.blur2 = createFramebuffer( gl, w / 8, h / 8 );
@@ -236,25 +237,7 @@ function createFramebuffers( gl, framebuffers ) {
  * @returns {object} `{ texture, framebuffer }`
  */
 function createFramebuffer( gl, width, height ) {
-    const texture = gl.createTexture();
-
-    // Tell GL that the current texture is this one.
-    gl.bindTexture( gl.TEXTURE_2D, texture );
-
-    // The texture doesn't wrap and it uses linear interpolation.
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
-    // gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
-    // gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
-
-    // Set texture dimension.
-    gl.texImage2D(
-        gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
-        gl.RGBA, gl.UNSIGNED_BYTE, null
-    );
-
+    const texture = createTexture( gl, width, height );
     const fb = gl.createFramebuffer();
 
     // Tell GL that the current framebuffer is this one.
@@ -270,12 +253,66 @@ function createFramebuffer( gl, width, height ) {
 }
 
 /**
+ * Create a texture of the given size.
+ *
+ * @param {object} gl -
+ * @param   {int} width -
+ * @param   {int} height -
+ * @returns {Texture} -
+ */
+function createTexture( gl, width, height ) {
+    const texture = gl.createTexture();
+
+    // Tell GL that the current texture is this one.
+    gl.bindTexture( gl.TEXTURE_2D, texture );
+
+    // The texture doesn't wrap and it uses linear interpolation.
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
+
+    // Set texture dimension.
+    gl.texImage2D(
+        gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0,
+        gl.RGBA, gl.UNSIGNED_BYTE, null
+    );
+
+    return texture;
+}
+
+/**
+ * Crate a Framebuffer with its associated texture and depth buffer.
+ *
+ * @param   {[type]} gl     [description]
+ * @param   {[type]} width  [description]
+ * @param   {[type]} height [description]
+ *
+ * @returns {object} `{ texture, fb, depth }`
+ */
+function createFramebufferWithDepth( gl, width, height ) {
+    const fb = createFramebuffer( gl, width, height );
+
+    // Create a depth renderbuffer
+    const depthBuffer = gl.createRenderbuffer();
+    gl.bindRenderbuffer( gl.RENDERBUFFER, depthBuffer );
+    gl.renderbufferStorage( gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, width, height );
+    gl.framebufferRenderbuffer( gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, depthBuffer );
+
+    fb.depth = depthBuffer;
+    return fb;
+}
+
+/**
  * Clean up the framebuffer and its texture.
  *
  * @param   {[type]} gl          [description]
  * @param   {[type]} frameBuffer [description]
  */
-function deleteFramebuffer( gl, { texture, fb } ) {
+function deleteFramebuffer( gl, { texture, fb, depth } ) {
     gl.deleteTexture( texture );
     gl.deleteFramebuffer( fb );
+    if ( depth ) {
+        gl.deleteRenderbuffer( depth );
+    }
 }

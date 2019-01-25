@@ -94,6 +94,23 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
+    "wdg.showhide" -> "$"
+
+    "wdg.showhide" -> "dom"
+
+    "wdg.showhide" -> "tfw.data-binding"
+
+    "wdg.showhide" -> "wdg.icon"
+
+    "wdg.showhide" -> "tfw.focusable"
+    "tfw.focusable" -> "$"
+
+    "tfw.focusable" -> "dom"
+
+    "tfw.focusable" -> "tfw.data-binding"
+    "wdg.icon" -> "$"
+
+    "wdg.icon" -> "tfw.view.icon"
     "light-saber.view" -> "assets"
 
     "light-saber.view" -> "webgl.math"

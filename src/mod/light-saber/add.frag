@@ -1,4 +1,9 @@
-precision mediump float;
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+#else
+    precision mediump float;
+#endif
+
 
 uniform sampler2D uniTex0;
 uniform sampler2D uniTex1;
