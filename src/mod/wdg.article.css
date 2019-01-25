@@ -147,18 +147,20 @@ article iframe {
   box-shadow: 0 2px 4px rgba(0,0,0,.5);
 }
 
-*.left {
+.left,
+.left.dom {
   float: left;
   margin: 0 8px 8px 0;
 }
 
-*.right {
+.right,
+.right.dom {
   float: right;
   margin: 0 0 8px 8px;
 }
 
 html > body div.article > article code {
-  color: #D60;  
+  color: #D60;
 }
 
 article h1 {
@@ -280,4 +282,3 @@ div.box {
   color: #eef;
   font-weight: bold;
 }
-

@@ -1,17 +1,32 @@
 digraph dependencies {
-    "wdg.menu" -> "$"
+    "assets" -> "$"
+    "wdg.article" -> "$"
 
-    "wdg.menu" -> "theme"
+    "wdg.article" -> "theme"
 
-    "wdg.menu" -> "dom"
+    "wdg.article" -> "dom"
 
-    "wdg.menu" -> "wdg.menu.item"
+    "wdg.article" -> "tfw.data-binding"
 
-    "wdg.menu" -> "tfw.binding.property-manager"
+    "wdg.article" -> "tfw.view.icon"
 
-    "wdg.menu" -> "tfw.view"
+    "wdg.article" -> "tfw.url-args"
+    "tfw.url-args" -> "$"
+    "tfw.view.icon" -> "$"
 
-    "wdg.menu" -> "tfw.binding.converters"
+    "tfw.view.icon" -> "polyfill.object.values"
+
+    "tfw.view.icon" -> "dom"
+
+    "tfw.view.icon" -> "tfw.icons"
+
+    "tfw.view.icon" -> "tfw.binding.property-manager"
+
+    "tfw.view.icon" -> "tfw.view"
+
+    "tfw.view.icon" -> "tfw.binding.link"
+
+    "tfw.view.icon" -> "tfw.binding.converters"
     "tfw.binding.converters" -> "$"
 
     "tfw.binding.converters" -> "tfw.binding.list"
@@ -28,6 +43,9 @@ digraph dependencies {
 
     "tfw.binding.property-manager" -> "tfw.event"
     "tfw.event" -> "$"
+    "tfw.binding.link" -> "$"
+
+    "tfw.binding.link" -> "tfw.binding.property-manager"
     "tfw.view" -> "$"
 
     "tfw.view" -> "dom"
@@ -50,34 +68,8 @@ digraph dependencies {
 
     "dom.theme" -> "tfw.color"
     "polyfill.classList" -> "$"
-    "wdg.menu.item" -> "$"
-
-    "wdg.menu.item" -> "dom"
-
-    "wdg.menu.item" -> "tfw.binding.property-manager"
-
-    "wdg.menu.item" -> "tfw.view"
-
-    "wdg.menu.item" -> "tfw.binding.link"
-
-    "wdg.menu.item" -> "tfw.binding.converters"
-    "tfw.binding.link" -> "$"
-
-    "tfw.binding.link" -> "tfw.binding.property-manager"
-    "theme" -> "$"
-
-    "theme" -> "assets"
-
-    "theme" -> "font.josefin"
-
-    "theme" -> "dom"
-    "font.josefin" -> "$"
-    "assets" -> "$"
-    "x-widget" -> "$"
-
-    "x-widget" -> "dom"
-
-    "x-widget" -> "tfw.data-binding"
+    "tfw.icons" -> "$"
+    "polyfill.object.values" -> "$"
     "tfw.data-binding" -> "$"
 
     "tfw.data-binding" -> "polyfill.string"
@@ -89,5 +81,27 @@ digraph dependencies {
     "tfw.data-binding" -> "tfw.listeners"
     "tfw.css" -> "$"
     "polyfill.string" -> "$"
+    "theme" -> "$"
+
+    "theme" -> "assets"
+
+    "theme" -> "font.josefin"
+
+    "theme" -> "dom"
+    "font.josefin" -> "$"
+    "x-widget" -> "$"
+
+    "x-widget" -> "dom"
+
+    "x-widget" -> "tfw.data-binding"
+    "wdg.intro2" -> "$"
+
+    "wdg.intro2" -> "draw"
+    "draw" -> "$"
+
+    "draw" -> "dom"
+    "wdg.intro1" -> "$"
+
+    "wdg.intro1" -> "draw"
 
 }

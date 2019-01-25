@@ -1,0 +1,231 @@
+digraph dependencies {
+    "assets" -> "$"
+    "wdg.article" -> "$"
+
+    "wdg.article" -> "theme"
+
+    "wdg.article" -> "dom"
+
+    "wdg.article" -> "tfw.data-binding"
+
+    "wdg.article" -> "tfw.view.icon"
+
+    "wdg.article" -> "tfw.url-args"
+    "tfw.url-args" -> "$"
+    "tfw.view.icon" -> "$"
+
+    "tfw.view.icon" -> "polyfill.object.values"
+
+    "tfw.view.icon" -> "dom"
+
+    "tfw.view.icon" -> "tfw.icons"
+
+    "tfw.view.icon" -> "tfw.binding.property-manager"
+
+    "tfw.view.icon" -> "tfw.view"
+
+    "tfw.view.icon" -> "tfw.binding.link"
+
+    "tfw.view.icon" -> "tfw.binding.converters"
+    "tfw.binding.converters" -> "$"
+
+    "tfw.binding.converters" -> "tfw.binding.list"
+
+    "tfw.binding.converters" -> "tfw.color"
+    "tfw.color" -> "$"
+    "tfw.binding.list" -> "$"
+
+    "tfw.binding.list" -> "tfw.binding.property-manager"
+
+    "tfw.binding.list" -> "tfw.listeners"
+    "tfw.listeners" -> "$"
+    "tfw.binding.property-manager" -> "$"
+
+    "tfw.binding.property-manager" -> "tfw.event"
+    "tfw.event" -> "$"
+    "tfw.binding.link" -> "$"
+
+    "tfw.binding.link" -> "tfw.binding.property-manager"
+    "tfw.view" -> "$"
+
+    "tfw.view" -> "dom"
+
+    "tfw.view" -> "tfw.binding.property-manager"
+
+    "tfw.view" -> "tfw.binding.converters"
+    "dom" -> "$"
+
+    "dom" -> "polyfill.classList"
+
+    "dom" -> "dom.theme"
+
+    "dom" -> "tfw.gestures"
+    "tfw.gestures" -> "$"
+
+    "tfw.gestures" -> "external.hammer"
+    "external.hammer" -> "$"
+    "dom.theme" -> "$"
+
+    "dom.theme" -> "tfw.color"
+    "polyfill.classList" -> "$"
+    "tfw.icons" -> "$"
+    "polyfill.object.values" -> "$"
+    "tfw.data-binding" -> "$"
+
+    "tfw.data-binding" -> "polyfill.string"
+
+    "tfw.data-binding" -> "dom"
+
+    "tfw.data-binding" -> "tfw.css"
+
+    "tfw.data-binding" -> "tfw.listeners"
+    "tfw.css" -> "$"
+    "polyfill.string" -> "$"
+    "theme" -> "$"
+
+    "theme" -> "assets"
+
+    "theme" -> "font.josefin"
+
+    "theme" -> "dom"
+    "font.josefin" -> "$"
+    "x-widget" -> "$"
+
+    "x-widget" -> "dom"
+
+    "x-widget" -> "tfw.data-binding"
+    "wdg.checkbox" -> "$"
+
+    "wdg.checkbox" -> "dom"
+
+    "wdg.checkbox" -> "tfw.data-binding"
+
+    "wdg.checkbox" -> "wdg.icon"
+
+    "wdg.checkbox" -> "tfw.touchable"
+    "tfw.touchable" -> "$"
+
+    "tfw.touchable" -> "dom"
+
+    "tfw.touchable" -> "dom.fx"
+
+    "tfw.touchable" -> "tfw.listeners"
+    "dom.fx" -> "$"
+
+    "dom.fx" -> "polyfill.promise"
+
+    "dom.fx" -> "dom"
+
+    "dom.fx" -> "tfw.data-binding"
+    "polyfill.promise" -> "$"
+    "wdg.icon" -> "$"
+
+    "wdg.icon" -> "tfw.view.icon"
+    "wdg.deform-3" -> "$"
+
+    "wdg.deform-3" -> "webgl.program"
+
+    "wdg.deform-3" -> "canvas"
+
+    "wdg.deform-3" -> "dom"
+    "canvas" -> "$"
+
+    "canvas" -> "dom"
+
+    "canvas" -> "tfw.data-binding"
+
+    "canvas" -> "webgl.resize"
+    "webgl.resize" -> "$"
+    "webgl.program" -> "$"
+    "wdg.showhide" -> "$"
+
+    "wdg.showhide" -> "dom"
+
+    "wdg.showhide" -> "tfw.data-binding"
+
+    "wdg.showhide" -> "wdg.icon"
+
+    "wdg.showhide" -> "tfw.focusable"
+    "tfw.focusable" -> "$"
+
+    "tfw.focusable" -> "dom"
+
+    "tfw.focusable" -> "tfw.data-binding"
+    "wdg.deform-2" -> "$"
+
+    "wdg.deform-2" -> "webgl.program"
+
+    "wdg.deform-2" -> "canvas"
+
+    "wdg.deform-2" -> "dom"
+    "wdg.flex" -> "$"
+
+    "wdg.flex" -> "dom"
+
+    "wdg.flex" -> "tfw.data-binding"
+    "wdg.text" -> "$"
+
+    "wdg.text" -> "dom"
+
+    "wdg.text" -> "tfw.data-binding"
+
+    "wdg.text" -> "wdg.lang"
+
+    "wdg.text" -> "tfw.timer"
+    "tfw.timer" -> "$"
+
+    "tfw.timer" -> "polyfill.promise"
+    "wdg.lang" -> "$"
+
+    "wdg.lang" -> "dom"
+
+    "wdg.lang" -> "tfw.data-binding"
+
+    "wdg.lang" -> "wdg.modal"
+
+    "wdg.lang" -> "wdg.button"
+
+    "wdg.lang" -> "wdg.box-button"
+    "wdg.box-button" -> "$"
+
+    "wdg.box-button" -> "dom"
+
+    "wdg.box-button" -> "tfw.data-binding"
+
+    "wdg.box-button" -> "tfw.touchable"
+    "wdg.button" -> "$"
+
+    "wdg.button" -> "tfw.view.button"
+    "tfw.view.button" -> "$"
+
+    "tfw.view.button" -> "dom"
+
+    "tfw.view.button" -> "tfw.binding.property-manager"
+
+    "tfw.view.button" -> "tfw.touchable"
+
+    "tfw.view.button" -> "tfw.view"
+
+    "tfw.view.button" -> "tfw.binding.link"
+
+    "tfw.view.button" -> "tfw.binding.converters"
+
+    "tfw.view.button" -> "tfw.view.icon"
+    "wdg.modal" -> "$"
+
+    "wdg.modal" -> "dom"
+
+    "wdg.modal" -> "tfw.data-binding"
+
+    "wdg.modal" -> "wdg.flex"
+
+    "wdg.modal" -> "wdg.button"
+    "wdg.deform-1" -> "$"
+
+    "wdg.deform-1" -> "webgl.program"
+
+    "wdg.deform-1" -> "canvas"
+
+    "wdg.deform-1" -> "dom"
+
+}

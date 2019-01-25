@@ -1,0 +1,24 @@
+digraph dependencies {
+    "test" -> "$"
+
+    "test" -> "dom"
+
+    "test" -> "tfw.gestures"
+    "tfw.gestures" -> "$"
+
+    "tfw.gestures" -> "external.hammer"
+    "external.hammer" -> "$"
+    "dom" -> "$"
+
+    "dom" -> "polyfill.classList"
+
+    "dom" -> "dom.theme"
+
+    "dom" -> "tfw.gestures"
+    "dom.theme" -> "$"
+
+    "dom.theme" -> "tfw.color"
+    "tfw.color" -> "$"
+    "polyfill.classList" -> "$"
+
+}

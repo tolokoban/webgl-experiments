@@ -2,4 +2,31 @@
 
 <x-widget name="light-saber.view" class="right" />
 
+Dans cet article, nous allons parler du rendu des lumières intenses.
+
+Quel meilleur exemple qu'un sabre laser pour illustrer le concept ?
+Celui qui tourne en ce moment sous vos yeux paraît bien fade,
+mais si vous cliquez sur le bouton __Halo__ il devient plus crédible.
+
+Si vous passez en __Plein écran__ vous pourrez même voir la trainée
+laissée par la lame incandescente.
+
+# Post-processing
+
+<img src="css/assets/light-saber/layers.png" class="right"/>
+
+Ajouter de la brillance n'est pas une affaire de 3D, mais une bonne vieille technique
+de traitement d'image à plusieurs passes que vous pourriez faire avec GIMP par exemple.
+
+Pour commencer, il faut faire un rendu 3D de votre scène complete que vous n'affichez pas à
+l'écran, mais plutôt dans une texture __(A)__.
+
+Ensuite, s'agit d'extraire les zones qui devronts émettre un halo. Dans notre cas,
+on garde simplement les zones oranges __(B)__.
+
+Cette dernière image devra être flouttée à l'aide d'un filtre Gaussien __(C)__.
+
+Il ne reste plus qu'à combiner l'image A avec la C par addition des couleurs __(D)__.
+
+
 </page>
