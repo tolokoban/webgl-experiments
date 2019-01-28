@@ -1,5 +1,5 @@
 # mod/light-saber.filter.js
-## `Blur()`
+## `Filter()`
 
 
 

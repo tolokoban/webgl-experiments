@@ -7,14 +7,12 @@ require("assets");
 
 const
     M4 = require("webgl.math").m4,
-    Add = require("light-saber.add"),
-    Blur = require("light-saber.blur"),
+    Add = require("webgl.filter.addition"),
     Filter = require("light-saber.filter"),
     Resize = require("webgl.resize"),
     HiltObject = require("light-saber.saber-hilt"),
-    PlasmaObject = require("light-saber.saber-plasma"),
-    VerticalBlur = require("light-saber.vertical-blur"),
-    HorizontalBlur = require("light-saber.horizontal-blur");
+    GaussianBlur = require("webgl.filter.gaussian-blur"),
+    PlasmaObject = require("light-saber.saber-plasma");
 
 
 /**
@@ -27,17 +25,16 @@ function init() {
         canvas = this.$elements.canvas.$,
         gl = canvas.getContext("webgl", { preserveDrawingBuffer: false }),
         framebuffers = {},
-        add = new Add(gl, framebuffers, "persistence1", "scene"),
-        blur1 = new VerticalBlur(gl, framebuffers, "filter", 9),
-        blur2 = new HorizontalBlur(gl, framebuffers, "blur1", 9),
-        filter = new Filter(gl, framebuffers, "scene"),
-        blurPersistence = new Blur(gl, framebuffers, "persistence1"),
-        addPersistence = new Add(gl, framebuffers, "persistence2", "blur2"),
+        add = new Add({ gl }),
+        filter = new Filter(gl),
         hiltObject = new HiltObject(gl),
         plasmaObject = new PlasmaObject(gl),
         projection = M4.identity(),
         rotation = M4.identity(),
         translation = new Float32Array([0, -0.4, -1.5, 0]);
+    let
+        blurH = new GaussianBlur({ gl, size: 7, energy: 0.6, horizontal: true }),
+        blurV = new GaussianBlur({ gl, size: 7, energy: 0.6, horizontal: false });
 
     hiltObject.projection = projection;
     hiltObject.rotation = rotation;
@@ -60,26 +57,30 @@ function init() {
             angX = ramp(Math.sin(1 + time * 0.000147), -Math.PI * 0.5, Math.PI * 0.5),
             angY = 4 * Math.cos(time * 0.000458),
             w = gl.canvas.clientWidth,
-            h = gl.canvas.clientHeight;
+            h = gl.canvas.clientHeight,
+            fb = framebuffers;
 
         M4.rotationYX(angY, angX, rotation);
         M4.perspective(Math.PI * .35, w / h, .1, 10, projection);
 
-        const sceneFB = framebuffers.scene;
-        const filterFB = framebuffers.filter;
-        const blur1FB = framebuffers.blur1;
-        const blur2FB = framebuffers.blur2;
-        const persistence1FB = framebuffers.persistence1;
-
-        renderScene(gl, sceneFB, that.gloom, hiltObject, plasmaObject, time);
+        renderScene(gl, that.gloom ? fb.scene : null, hiltObject, plasmaObject, time);
 
         if (that.gloom) {
-            renderFilter(gl, filter, filterFB, time);
-            renderPersistence(gl, blurPersistence, framebuffers, time);
-            renderBlur(gl, blur1, blur1FB, time);
-            renderBlur(gl, blur2, blur2FB, time);
-            renderAdd(gl, addPersistence, time, persistence1FB);
-            renderAdd(gl, add, time, null, that.brightness);
+            if (that.persistence !== blurH.energy ||
+                that.blur !== blurH.size) {
+                const
+                    size = Math.max(1, Math.floor(that.blur)),
+                    energy = that.persistence;
+                console.info("that.persistence=", that.persistence);
+                console.info("blurH.energy=", blurH.energy);
+                blurH = new GaussianBlur({ gl, size, energy, horizontal: true });
+                blurV = new GaussianBlur({ gl, size, energy, horizontal: false });
+            }
+
+            renderFilter(gl, filter, fb.scene, fb.blurV, time);
+            renderBlur(gl, blurH, fb.blurV, fb.blurH, time);
+            renderBlur(gl, blurV, fb.blurH, fb.blurV, time);
+            renderAdd(gl, add, fb.blurV, fb.scene, null, that.brightness, time);
         }
     };
 
@@ -90,20 +91,13 @@ function init() {
  * Render the scene on screen or in a frame buffer.
  *
  * @param   {[type]} gl      [description]
- * @param   {[type]} sceneFB [description]
- * @param   {[type]} gloom   [description]
+ * @param   {[type]} outputFB [description]
  * @param {object} hiltObject -
  * @param {object} plasmaObject -
  * @param {float} time -
  */
-function renderScene(gl, sceneFB, gloom, hiltObject, plasmaObject, time) {
-    if (gloom) {
-        gl.bindFramebuffer(gl.FRAMEBUFFER, sceneFB.fb);
-        gl.viewport(0, 0, sceneFB.width, sceneFB.height);
-    } else {
-        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-    }
+function renderScene(gl, outputFB, hiltObject, plasmaObject, time) {
+    bindFramebuffer(gl, outputFB);
 
     gl.enable(gl.DEPTH_TEST);
     gl.clearColor(0, 0, 0, 0);
@@ -119,15 +113,14 @@ function renderScene(gl, sceneFB, gloom, hiltObject, plasmaObject, time) {
  *
  * @param   {[type]} gl       [description]
  * @param   {[type]} filter   [description]
- * @param   {[type]} filterFB [description]
+ * @param   {[type]} inputFB - Framebuffer for source.
+ * @param   {[type]} outputFB - Framebuffer for destination.
  * @param {double} time -
  */
-function renderFilter(gl, filter, filterFB, time) {
-    gl.bindFramebuffer(gl.FRAMEBUFFER, filterFB.fb);
-    gl.viewport(0, 0, filterFB.width, filterFB.height);
+function renderFilter(gl, filter, inputFB, outputFB, time) {
+    bindFramebuffer(gl, outputFB);
 
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
+    filter.texture = inputFB.texture;
     filter.paint(time);
 }
 
@@ -136,19 +129,16 @@ function renderFilter(gl, filter, filterFB, time) {
  *
  * @param   {[type]} gl       [description]
  * @param   {[type]} blur   [description]
- * @param   {[type]} blurFB [description]
+ * @param   {[type]} inputFB [description]
+ * @param   {[type]} outputFB [description]
  * @param {double} time -
  */
-function renderBlur(gl, blur, blurFB, time) {
-    gl.bindFramebuffer(gl.FRAMEBUFFER, blurFB.fb);
-    gl.viewport(0, 0, blurFB.width, blurFB.height);
+function renderBlur(gl, blur, inputFB, outputFB, time) {
+    bindFramebuffer(gl, outputFB);
 
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
-    const attenuation = 1.75;
-    blur.centerCoeff = 0.332 * attenuation;
-    blur.segmentCoeff = 0.122 * attenuation;
-    blur.cornerCoeff = 0.045 * attenuation;
+    blur.texture = inputFB.texture;
+    blur.width = inputFB.width;
+    blur.height = inputFB.height;
     blur.paint(time);
 }
 
@@ -160,40 +150,14 @@ function renderBlur(gl, blur, blurFB, time) {
  * @param   {[type]} time [description]
  * @param {object} fb -
  */
-function renderAdd(gl, add, time, fb = null, brightness = 1) {
-    if (fb === null) {
-        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-    } else {
-        gl.bindFramebuffer(gl.FRAMEBUFFER, fb.fb);
-        gl.viewport(0, 0, fb.width, fb.height);
-
-    }
+function renderAdd(gl, add, input0FB, input1FB, outputFB, brightness, time) {
+    bindFramebuffer(gl, outputFB);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    add.brightness = brightness;
+    add.texture0 = input0FB.texture;
+    add.energy0 = brightness;
+    add.texture1 = input1FB.texture;
     add.paint(time);
-}
-
-/**
- * Fade persistence buffer.
- *
- * @param   {[type]} gl           [description]
- * @param   {[type]} blur         [description]
- * @param   {[type]} framebuffers [description]
- * @param   {[type]} time         [description]
- */
-function renderPersistence(gl, blur, framebuffers, time) {
-    const fb = framebuffers.persistence2;
-
-    gl.bindFramebuffer(gl.FRAMEBUFFER, fb.fb);
-    gl.viewport(0, 0, fb.width, fb.height);
-
-    const attenuation = 0.8;
-    blur.centerCoeff = 0.332 * attenuation;
-    blur.segmentCoeff = 0.122 * attenuation;
-    blur.cornerCoeff = 0.045 * attenuation;
-    blur.paint(time);
 }
 
 /**
@@ -223,11 +187,9 @@ function createFramebuffers(gl, framebuffers) {
         h = Math.max(1, gl.canvas.height);
 
     framebuffers.scene = createFramebufferWithDepth(gl, w, h);
-    framebuffers.filter = createFramebuffer(gl, w / 8, h / 8);
-    framebuffers.blur1 = createFramebuffer(gl, w / 4, h / 4);
-    framebuffers.blur2 = createFramebuffer(gl, w / 4, h / 4);
-    framebuffers.persistence1 = createFramebuffer(gl, w / 2, h / 2);
-    framebuffers.persistence2 = createFramebuffer(gl, w / 2, h / 2);
+    framebuffers.filter = createFramebuffer(gl, w / 2, h / 2);
+    framebuffers.blurH = createFramebuffer(gl, w / 4, h / 4);
+    framebuffers.blurV = createFramebuffer(gl, w / 4, h / 4);
 }
 
 /**
@@ -317,5 +279,21 @@ function deleteFramebuffer(gl, { texture, fb, depth }) {
     gl.deleteFramebuffer(fb);
     if (depth) {
         gl.deleteRenderbuffer(depth);
+    }
+}
+
+/**
+ * Bind to the given Framebuffer.
+ *
+ * @param  {[type]} gl          [description]
+ * @param  {[type]} framebuffer - Can be null to switch to the render buffer.
+ */
+function bindFramebuffer(gl, framebuffer) {
+    if (!framebuffer) {
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+    } else {
+        gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer.fb);
+        gl.viewport(0, 0, framebuffer.width, framebuffer.height);
     }
 }
