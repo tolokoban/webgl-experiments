@@ -1,0 +1,28 @@
+div.light-saber-wdg-pascal > div {
+    text-align: center;
+    font-family: monospace;
+    white-space: no-wrap;
+    font-size: 75%;
+    font-weight: bold;
+}
+
+div.light-saber-wdg-pascal > div > div {
+    display: inline-block;
+    margin: -1px -1px 0 0;
+    border: 1px solid #fff;
+    background: #06d;
+    color: #fff;
+    line-height: 2em;
+    white-space: no-wrap;
+    width: 2.7em;
+}
+
+div.light-saber-wdg-pascal > div.orange > div {
+    background: #f80;
+    color: #000;
+}
+
+div.light-saber-wdg-pascal > div > div.orange {
+    background: #f80;
+    color: #000;
+}

@@ -3,6 +3,7 @@
 ----
 
 ## Dependencies
+* [$]($.md)
 * [assets](assets.md)
 * [webgl.math](webgl.math.md)
 * [webgl.filter.addition](webgl.filter.addition.md)

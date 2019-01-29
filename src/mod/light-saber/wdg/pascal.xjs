@@ -1,0 +1,9 @@
+{View DIV class:light-saber-wdg-pascal
+  view.attribs: {
+    rows: {array [2 3 4 5 6 7 8 9 10 11]}
+    highlight: {integer 7}
+  }
+
+  view.children: {Bind rows map:mapRow}
+}
+

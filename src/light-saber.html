@@ -182,7 +182,7 @@ Voici une comparaison du nombre de lectures/écritures en mémoire pour chaque p
 Supposons que l'on veuille un flou horizontal de taille 7.
 Cela signifie qu'il faudra faire une moyenne des couleurs du fragment considéré avec les 3 à sa droite et les 3 à sa gauche. Pour obtenir un résultat réaliste, il faut pondérer les couleurs de sorte que la couleur du fragment considéré ait le plus de poids et que les fragments aux extrémités en aient le moins.
 
-Si on parle de flou Gaussien, c'est parce que l'on va choisir les poids selon la fameuse courbe en cloche de Gauss. Tout bon mathématicien vous donnera facilement la formule compliquée avec des exponentielles. Mais par chance, il y a plus simple. Les coefficients binomiaux (ceux du triangle de Pascal) donnent le même résultat. Voici les premières lignes de ce triangle :
+Si on parle de flou Gaussien, c'est parce que l'on va choisir les poids selon la fameuse courbe en cloche de Gauss. Tout bon mathématicien vous donnera immédiatement sa formule compliquée avec des exponentielles. Mais par chance, il y a plus simple. Les coefficients binomiaux (ceux du triangle de Pascal) donnent le même résultat. Voici les premières lignes de ce triangle :
 
 <x-widget name="light-saber.wdg.pascal"/>
 

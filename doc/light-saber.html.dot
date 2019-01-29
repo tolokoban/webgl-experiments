@@ -94,6 +94,18 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
+    "light-saber.wdg.pascal" -> "dom"
+
+    "light-saber.wdg.pascal" -> "webgl.math"
+
+    "light-saber.wdg.pascal" -> "tfw.binding.property-manager"
+
+    "light-saber.wdg.pascal" -> "tfw.view"
+
+    "light-saber.wdg.pascal" -> "tfw.binding.link"
+
+    "light-saber.wdg.pascal" -> "tfw.binding.converters"
+    "webgl.math" -> "$"
     "wdg.showhide" -> "$"
 
     "wdg.showhide" -> "dom"
@@ -187,7 +199,6 @@ digraph dependencies {
 
     "light-saber.saber-plasma" -> "webgl.program"
     "webgl.program" -> "$"
-    "webgl.math" -> "$"
     "webgl.filter.gaussian-blur" -> "webgl.filter.base"
 
     "webgl.filter.gaussian-blur" -> "webgl.math"
