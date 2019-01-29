@@ -3,7 +3,6 @@
 ----
 
 ## Dependencies
-* [$]($.md)
 * [assets](assets.md)
 * [webgl.math](webgl.math.md)
 * [light-saber.add](light-saber.add.md)

@@ -96,7 +96,7 @@ function init() {
  * @param {object} plasmaObject -
  * @param {float} time -
  */
-function renderScene(gl, sceneFB, gloom, hiltObject, plasmaObject, time) {
+function renderScene(gl, sceneFB, gloom, hiltObject, plasmaObject, time, rene) {
     if (gloom) {
         gl.bindFramebuffer(gl.FRAMEBUFFER, sceneFB.fb);
         gl.viewport(0, 0, sceneFB.width, sceneFB.height);
