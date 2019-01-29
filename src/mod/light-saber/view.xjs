@@ -1,8 +1,10 @@
 {View DIV class:wdg-light-saber-view
     view.attribs: {
-      fullscreen: {boolean true}
-      gloom: {boolean true}
-      brightness: {float 1}
+      fullscreen: {boolean false}
+      gloom: {boolean false}
+      brightness: {float 2.2}
+      persistence: {float 0.53}
+      blur: {integer 7}
     }
 
     view.init: init
@@ -14,7 +16,9 @@
       {DIV class:bottom [{tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}]}
       {DIV class:left [{tfw.view.checkbox content:"Halo" value:{Bind gloom} wide:false}]}
       {DIV class:top class.|hide: {Bind gloom} [
-        {tfw.view.textbox value:{Bind brightness} width:48px label:{Intl brightness}}
+        {tfw.view.textbox value:{Bind brightness} width:64px label:{Intl brightness}}
+        {tfw.view.textbox value:{Bind persistence} width:64px label:{Intl persistence}}
+        {tfw.view.textbox value:{Bind blur} width:64px label:{Intl blur}}
       ]}
     ]
 }

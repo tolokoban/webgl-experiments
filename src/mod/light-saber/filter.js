@@ -1,32 +1,29 @@
 "use strict";
 
 const
-    Colors = require( "light-saber.colors" ),
-    ImageProcessor = require( "light-saber.image-processor" );
+    Colors = require("light-saber.colors"),
+    ImageProcessor = require("light-saber.image-processor");
 
-class Blur {
-    constructor( gl, framebuffers, sourceName ) {
+class Filter {
+    constructor(gl) {
         this.gl = gl;
-        this.framebuffers = framebuffers;
-        this.sourceName = sourceName;
-        this.imageProcessor = new ImageProcessor( gl, GLOBAL.frag );
+        this.imageProcessor = new ImageProcessor(gl, GLOBAL.frag);
         this.prg = this.imageProcessor.prg;
         this.color = Colors.PLASMA;
     }
 
-    paint( time, delta ) {
-        const { gl, prg, imageProcessor, framebuffers, sourceName } = this;
-        const fb = framebuffers[ sourceName ];
+    paint(time, delta) {
+        const { gl, prg, imageProcessor, texture } = this;
 
         prg.use();
         prg.$uniTexture = 0;
         prg.$uniColor = this.color;
-        gl.activeTexture( gl.TEXTURE0 );
-        gl.bindTexture( gl.TEXTURE_2D, fb.texture );
+        gl.activeTexture(gl.TEXTURE0);
+        gl.bindTexture(gl.TEXTURE_2D, texture);
 
-        imageProcessor.paint( time, delta );
+        imageProcessor.paint(time, delta);
     }
 }
 
 
-module.exports = Blur;
+module.exports = Filter;

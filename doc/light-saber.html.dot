@@ -117,9 +117,7 @@ digraph dependencies {
 
     "light-saber.view" -> "webgl.math"
 
-    "light-saber.view" -> "light-saber.add"
-
-    "light-saber.view" -> "light-saber.blur"
+    "light-saber.view" -> "webgl.filter.addition"
 
     "light-saber.view" -> "light-saber.filter"
 
@@ -127,11 +125,9 @@ digraph dependencies {
 
     "light-saber.view" -> "light-saber.saber-hilt"
 
+    "light-saber.view" -> "webgl.filter.gaussian-blur"
+
     "light-saber.view" -> "light-saber.saber-plasma"
-
-    "light-saber.view" -> "light-saber.vertical-blur"
-
-    "light-saber.view" -> "light-saber.horizontal-blur"
 
     "light-saber.view" -> "dom"
 
@@ -185,20 +181,17 @@ digraph dependencies {
     "tfw.view.textbox" -> "tfw.binding.link"
 
     "tfw.view.textbox" -> "tfw.binding.converters"
-    "light-saber.horizontal-blur" -> "webgl.math"
-
-    "light-saber.horizontal-blur" -> "light-saber.image-processor"
-    "light-saber.image-processor" -> "webgl.program"
-    "webgl.program" -> "$"
-    "webgl.math" -> "$"
-    "light-saber.vertical-blur" -> "webgl.math"
-
-    "light-saber.vertical-blur" -> "light-saber.image-processor"
     "light-saber.saber-plasma" -> "webgl.math"
 
     "light-saber.saber-plasma" -> "light-saber.colors"
 
     "light-saber.saber-plasma" -> "webgl.program"
+    "webgl.program" -> "$"
+    "webgl.math" -> "$"
+    "webgl.filter.gaussian-blur" -> "webgl.filter.base"
+
+    "webgl.filter.gaussian-blur" -> "webgl.math"
+    "webgl.filter.base" -> "webgl.program"
     "light-saber.saber-hilt" -> "webgl.math"
 
     "light-saber.saber-hilt" -> "webgl.program"
@@ -206,7 +199,7 @@ digraph dependencies {
     "light-saber.filter" -> "light-saber.colors"
 
     "light-saber.filter" -> "light-saber.image-processor"
-    "light-saber.blur" -> "light-saber.image-processor"
-    "light-saber.add" -> "light-saber.image-processor"
+    "light-saber.image-processor" -> "webgl.program"
+    "webgl.filter.addition" -> "webgl.filter.base"
 
 }

@@ -1,5 +1,5 @@
-# mod/light-saber.filter.js
-## `Filter()`
+# mod/light-saber.horizontal-blur.js
+## `HorizontalBlur()`
 
 
 
@@ -7,5 +7,5 @@
 ----
 
 ## Dependencies
-* [light-saber.colors](light-saber.colors.md)
+* [webgl.math](webgl.math.md)
 * [light-saber.image-processor](light-saber.image-processor.md)

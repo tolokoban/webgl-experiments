@@ -10,7 +10,7 @@ attribute vec3 attPoint;
 // Vecteur normal en ce point.
 attribute vec3 attNormal;
 
-const vec3 COLOR = vec3(0.1, 0.5, 0.86666666666666666);
+const vec3 COLOR = vec3(0.4, 0.2, 0.1);
 const vec3 LIGHT = normalize(vec3(.5, -.5, -1));
 
 varying vec3 varColor;
@@ -18,7 +18,7 @@ varying vec3 varColor;
 float ramp(vec3 ray, float minValue, float maxValue) {
     float diff = maxValue - minValue;
     float alpha = 0.5 * (ray.z + 1.0);
-    return minValue + alpha * diff;
+    return minValue + alpha * alpha * diff;
 }
 
 void main() {
@@ -28,7 +28,8 @@ void main() {
 
   vec4 normal = uniRotation * vec4( attNormal, 1 );
   vec3 ray = reflect(LIGHT, normal.xyz);
-  float lightPower = ramp(ray, 0.4, 1.5);
+  float lightPower = ramp(ray, 0.1, 5.0);
+  float ring = abs(cos(attPoint.y * 15.0));
 
-  varColor = COLOR * lightPower;
+  varColor = COLOR * ((ring + 1.0) * lightPower);
 }
