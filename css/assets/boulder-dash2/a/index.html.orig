@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html style="background:#000">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="../../webgl.js"></script>
+<<<<<<< HEAD
+        <script src="ground-painter.js"></script>
+        <script src="boulder-painter.js"></script>
+        <script src="diam-painter.js"></script>
+        <script src="wall-painter.js"></script>
+        <script src="background-painter.js"></script>
+        <script src="hero-painter.js"></script>
+        <script src="../levels.js"></script>
+        <script src="../level.js"></script>
+        <script src="../game-inputs.js"></script>
+=======
+        <script src="texture-aggregator.js"></script>
+>>>>>>> 201c07e772de6b434624a2fe3ff4c1ad3ea91bd4
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../webgl.css">
+    </head>
+    <body>
+    </body>
+</html>
