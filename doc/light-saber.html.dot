@@ -94,6 +94,24 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
+    "light-saber.wdg.histo7" -> "dom"
+
+    "light-saber.wdg.histo7" -> "tfw.binding.property-manager"
+
+    "light-saber.wdg.histo7" -> "tfw.view"
+
+    "light-saber.wdg.histo7" -> "tfw.view.flex"
+    "tfw.view.flex" -> "$"
+
+    "tfw.view.flex" -> "dom"
+
+    "tfw.view.flex" -> "tfw.binding.property-manager"
+
+    "tfw.view.flex" -> "tfw.view"
+
+    "tfw.view.flex" -> "tfw.binding.link"
+
+    "tfw.view.flex" -> "tfw.binding.converters"
     "light-saber.wdg.pascal" -> "dom"
 
     "light-saber.wdg.pascal" -> "webgl.math"

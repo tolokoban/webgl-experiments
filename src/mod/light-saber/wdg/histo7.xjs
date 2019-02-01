@@ -1,0 +1,67 @@
+{View DIV [
+  {tfw.view.flex [
+    {SVG
+      xmlns: "http://www.w3.org/2000/svg"
+      width: "100%"
+      height: "100%"
+      style: "width:140px; height:140px"
+      viewBox: "0 0 70 70"
+    
+      [
+        {G fill: orange stroke: "#000" stroke-width: 0.5 transform: "scale(1, -1) translate(0, -70.5)"
+           [
+             {RECT x:.5 y:.5 width:10 height:3.5}
+             {RECT x:10 y:.5 width:10 height:21}
+             {RECT x:20 y:.5 width:10 height:52.5}
+             {RECT x:30 y:.5 width:10 height:69.5}
+             {RECT x:40 y:.5 width:10 height:52.5}
+             {RECT x:50 y:.5 width:10 height:21}
+             {RECT x:60 y:.5 width:10 height:3.5}
+           ]
+        }
+      ]
+    }
+    {SVG
+      xmlns: "http://www.w3.org/2000/svg"
+      width: "100%"
+      height: "100%"
+      style: "width:140px; height:140px"
+      viewBox: "0 0 70 70"
+    
+      [
+        {G fill: orange stroke: "#000" stroke-width: 0.5 transform: "scale(1, -1) translate(0, -70.5)"
+           [
+             {RECT x:.5 y:.5 width:10 height:8}
+             {RECT x:10 y:.5 width:10 height:28}
+             {RECT x:20 y:.5 width:10 height:56}
+             {RECT x:30 y:.5 width:10 height:69.5}
+             {RECT x:40 y:.5 width:10 height:56}
+             {RECT x:50 y:.5 width:10 height:28}
+             {RECT x:60 y:.5 width:10 height:8}
+           ]
+        }
+      ]
+    }
+    {SVG
+      xmlns: "http://www.w3.org/2000/svg"
+      width: "100%"
+      height: "100%"
+      style: "width:140px; height:140px"
+      viewBox: "0 0 70 70"
+    
+      [
+        {G fill: orange stroke: "#000" stroke-width: 0.5 transform: "scale(1, -1) translate(0, -70.5)"
+           [
+             {RECT x:.5 y:.5 width:10 height:12.5}
+             {RECT x:10 y:.5 width:10 height:33.3}
+             {RECT x:20 y:.5 width:10 height:58.3}
+             {RECT x:30 y:.5 width:10 height:69.5}
+             {RECT x:40 y:.5 width:10 height:58.3}
+             {RECT x:50 y:.5 width:10 height:33.3}
+             {RECT x:60 y:.5 width:10 height:12.5}
+           ]
+        }
+      ]
+    }
+  ]}
+]}
