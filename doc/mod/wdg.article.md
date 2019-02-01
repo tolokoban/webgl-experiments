@@ -1,4 +1,4 @@
-# E:\Code\github\webgl-experiments\src\mod\wdg.article.js
+# mod/wdg.article.js
 ## `Article()`
 
 

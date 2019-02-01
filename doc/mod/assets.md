@@ -1,4 +1,4 @@
-# E:\Code\github\webgl-experiments\src\mod\assets.js
+# mod/assets.js
 
 ----
 
