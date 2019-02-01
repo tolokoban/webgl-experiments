@@ -186,4 +186,25 @@ Si on parle de flou Gaussien, c'est parce que l'on va choisir les poids selon la
 
 <x-widget name="light-saber.wdg.pascal"/>
 
+Si on prend les coefficients en rouge, on obtient les histogrammes suivants :
+<x-widget name="light-saber.wdg.histo7"/>
+
+# La dernière optimisation
+
+Pour faire un flou de taille 7, il semble qu'il nous faille lire 7 couleurs. Mais on pourrait n'en lire que 4 si on exploite les interpolations linéaires opérées lors de la lecture des textures.
+
+En effet, quand on utilise la fonction `texture2D( uniTexture, varUV )` il est possible que certaines coordonnées `varUV` ne tombent pas précisément sur le centre d'un pixel. Quand cela arrive, WebGL réalise une interpolation linéaire entre les 4 pixels les plus proches.
+
+L'astuce consiste donc à lire entre deux pixels pour avoir une moyenne pondérée de ces derniers.
+
+Supposons que l'on ait les 4 pixels suivants :
+* __A__ `x=0.125` et `w=10`.
+* __B__ `x=0.375` et `w=40`.
+* __C__ `x=0.625` et `w=40`.
+* __D__ `x=0.875` et `w=10`.
+
+Alors si on lit la couleur entre le point __A__ et le point __B__ à la position `x=0.325`, on obtiendra la moyenne pondérée de __A__ et __B__ avec les poids `w=10` et `w=40`.
+
+Pour ceux à qui les calculs donnent des maux de tête, voici l'algorithme qui génère le code GLSL du fragment shader pour faire uin moyenne pondérée en utilisant le moins de lectures de pixels possible : [gaussian-blur.js](https://github.com/tolokoban/webgl-experiments/blob/master/src/mod/webgl/filter/gaussian-blur.js)
+
 </page>
