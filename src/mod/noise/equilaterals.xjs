@@ -1,0 +1,15 @@
+{View DIV class:noise-equilaterals
+    view.attribs: {
+      fullscreen: {boolean false}
+    }
+
+    view.init: init
+
+    class.fullscreen: {Bind fullscreen}
+
+    [
+      {CANVAS view.id:canvas}
+      {DIV class:bottom [{tfw.view.checkbox content:"Plein écran" value:{Bind fullscreen} wide:false}]}
+    ]
+
+}
