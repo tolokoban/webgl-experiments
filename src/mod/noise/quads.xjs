@@ -1,0 +1,10 @@
+{View CANVAS
+    view.attribs: {
+        mode: {[linear cubic pentic] behind: paint}
+    }
+    
+    view.init: init
+    
+    width: 200
+    height: 200
+}

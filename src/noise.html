@@ -6,7 +6,30 @@ L'approche la plus simple serait de créer une image préremplie en Javascript a
 Malheureusement, ce hasard là est bien trop "dur" pour paraître naturel.  
 Pourquoi ? Parce que __dans la nature, rien n'est indépendant de son environnement__.
 
-Si on veut, par exemple, remplir un écran avec des couleurs aléatoires, il faut que deux pixels contigûs soient très proches. Une technique pour obtenir cela est de définir une grille et d'associer à chaque intersection une couleur au hasard. Ensuite, quand on veut définir la couleur d'un fragment, on recherche dans quelle cellule ce gragment se trouve et on interpole avec les 4 intersections voisines.
+C'est <a href="https://fr.wikipedia.org/wiki/Bruit_de_Perlin">Ken Perlin</a> qui, dans les années 80, a le premier compris cela.
+
+Son idée est de créer une grille avec des vecteurs aléatoires sur chacune des intersections.
+Pour calculer la valeur associée à un pixel, il faut d'abord trouver dans quelle cellule de la grille il se trouve.
+Ensuite, on interpole les vecteurs aléatoires des 4 coins de cette cellule.
+
+<x-widget name="noise.graph1" class="right" />
+
+Voici comment on calcule la valeur du point `F` dans le schema ci-contre :
+* Les flèches oranges sont les vecteurs unitaires aléatoires associés aux intersections de la grille.
+* Le point `F` se trouve dans la cellule bleu foncé de côté unitaire (`AB=BC=CD=DA=1`).
+* On calcule la valeur `Va` qui est le produit scalaire du vecteur orange en `A` et du vecteur `AF`.
+* On fait le même calcul pour `Vb`, `Vc` et `Vd`.
+* Ensuite on calcule `Vab` par interpolation entre `Va` et `Vb` (voir ci-dessous) et `Vcd` par interpolation entre `Vc` et `Vd`.
+* Pour terminer, on interpole `Vab` et `Vcd` e on obtient une valeur pour le point `F`.
+
+## L'interpolation
+
+<x-widget name="noise.quads" class="right" />
+
+Supposons que le point `A` ait pour coordonnées `(0,0)` et le point `C` `(1,1)`. Posons `F(x,y)`. Une interpolation linéaire (la plus simple) serait celle-ci :  
+`Vab = (1 - y).Va + y.Vb`
+
+
 
 # Maillage équilatéral
     

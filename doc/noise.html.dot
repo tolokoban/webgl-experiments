@@ -143,5 +143,20 @@ digraph dependencies {
     "noise.base" -> "webgl.program"
     "webgl.program" -> "$"
     "webgl.resize" -> "$"
+    "noise.quads" -> "dom"
+
+    "noise.quads" -> "webgl.resize"
+
+    "noise.quads" -> "webgl.program"
+
+    "noise.quads" -> "tfw.binding.property-manager"
+
+    "noise.quads" -> "tfw.view"
+
+    "noise.quads" -> "tfw.binding.converters"
+    "noise.graph1" -> "draw"
+    "draw" -> "$"
+
+    "draw" -> "dom"
 
 }

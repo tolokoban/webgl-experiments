@@ -4,7 +4,6 @@
   max-width: 100vmin;
   height: 300px;
   max-height: 100vmin;
-  float: left;
   transition: all .3s;
 }
 
