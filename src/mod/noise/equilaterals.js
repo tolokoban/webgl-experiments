@@ -14,6 +14,4 @@ function init(  ) {
     const canvas = this.$elements.canvas.$,
           gl = canvas.getContext("webgl", { preserveDrawingBuffer: false }),
           base = new Base( gl, GLOBAL.frag );
-    canvas.width = this.width;
-    canvas.height = this.height;
 }

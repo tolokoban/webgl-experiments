@@ -1,0 +1,27 @@
+<page $title="Faites du bruit !">
+# Simplex noise
+
+La première optimisation que l'on peut apporter est de passer d'un maillage avec des carrés à un maillage en triangles équilatéraux.
+    
+## Maillage équilatéral
+    
+<x-widget name="noise.equilaterals" class="right" />
+
+Pour passer d'un pavage à base de carrés à un pavages fait de triangles équilatéraux, il suffit de compresser la grille selon sa diagonale.
+L'animation ci-contre illustre ce principe.
+
+Mais comment fait-on pour compresser selon une diagonale ?
+
+On sait qu'en utilisant une matrice, on est cabable de compresser selon l'axe des `x` de cette façon :
+<wdg:matrix $value="[α,0 ; 0,1]*[x;y]"/>
+
+On sait aussi faire une rotation d'angle φ avec cette matrice :
+<wdg:matrix $value="[cos φ,-sin φ ; sin φ,cos φ]*[x;y]"/>
+
+Il suffit donc de combiner une rotation de 45°, puis une compression sur l'axe des `x` et enfin une rotation de -45°. Et comme `cos 45° = sin 45° = √2 / 2`, `cos -45° = cos 45°` et `sin -45° = -sin 45°`, alors tout se simplifie et on obtient la matrice suivante :
+<wdg:matrix $value="[√2 / 2,√2 / 2 ; √2 / 2,√2 / 2]*[α,0 ; 0,1]*[√2 / 2,√2 / 2;-√2 / 2,√2 / 2]=[α+1,α-1;α-1,α+1]/2"/>
+
+<hr/>
+
+<a href="noise.html">Page précédente</a>.
+</page>

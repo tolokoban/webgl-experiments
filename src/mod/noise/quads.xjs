@@ -1,10 +1,17 @@
-{View CANVAS
+{View DIV class:noise-quads
     view.attribs: {
-        mode: {[linear cubic pentic] behind: paint}
+        mode: {[linear cubic pentic] linear behind: paint}
+        size: {integer 8 behind: paint}
     }
     
     view.init: init
-    
-    width: 200
-    height: 200
+
+    [
+        {CANVAS view.id: canvas}
+        {tfw.view.slider value:{Bind size} min:1 max:32 smooth:true}
+        {tfw.view.combo wide: false label: Interpolation
+                        keys:[linear cubic pentic]
+                        items: ["f(a)=a" "f(a)=3a²-2a³" "f(a)=6a⁵-15a⁴+10x³"]
+                        value: {Bind mode}}
+    ]
 }

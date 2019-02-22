@@ -1,0 +1,6 @@
+{
+    var: {
+        vert: quads.vert
+        frag: quads.frag
+    }
+}

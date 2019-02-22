@@ -94,66 +94,35 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
-    "wdg.showhide" -> "$"
+    "wdg.matrix" -> "$"
 
-    "wdg.showhide" -> "dom"
+    "wdg.matrix" -> "dom"
+    "noise.equilaterals" -> "noise.base"
 
-    "wdg.showhide" -> "tfw.data-binding"
+    "noise.equilaterals" -> "dom"
 
-    "wdg.showhide" -> "wdg.icon"
+    "noise.equilaterals" -> "tfw.binding.property-manager"
 
-    "wdg.showhide" -> "tfw.focusable"
-    "tfw.focusable" -> "$"
+    "noise.equilaterals" -> "tfw.view"
 
-    "tfw.focusable" -> "dom"
+    "noise.equilaterals" -> "tfw.binding.link"
 
-    "tfw.focusable" -> "tfw.data-binding"
-    "wdg.icon" -> "$"
+    "noise.equilaterals" -> "tfw.binding.converters"
 
-    "wdg.icon" -> "tfw.view.icon"
-    "noise.quads" -> "dom"
+    "noise.equilaterals" -> "tfw.view.checkbox"
+    "tfw.view.checkbox" -> "$"
 
-    "noise.quads" -> "webgl.resize"
+    "tfw.view.checkbox" -> "tfw.binding.property-manager"
 
-    "noise.quads" -> "webgl.program"
+    "tfw.view.checkbox" -> "tfw.touchable"
 
-    "noise.quads" -> "tfw.binding.property-manager"
+    "tfw.view.checkbox" -> "dom"
 
-    "noise.quads" -> "tfw.view"
+    "tfw.view.checkbox" -> "tfw.view"
 
-    "noise.quads" -> "tfw.binding.link"
+    "tfw.view.checkbox" -> "tfw.binding.link"
 
-    "noise.quads" -> "tfw.binding.converters"
-
-    "noise.quads" -> "tfw.view.combo"
-
-    "noise.quads" -> "tfw.view.slider"
-    "tfw.view.slider" -> "$"
-
-    "tfw.view.slider" -> "dom"
-
-    "tfw.view.slider" -> "tfw.binding.property-manager"
-
-    "tfw.view.slider" -> "tfw.view"
-
-    "tfw.view.slider" -> "tfw.binding.link"
-
-    "tfw.view.slider" -> "tfw.binding.converters"
-    "tfw.view.combo" -> "$"
-
-    "tfw.view.combo" -> "dom"
-
-    "tfw.view.combo" -> "tfw.binding.property-manager"
-
-    "tfw.view.combo" -> "tfw.touchable"
-
-    "tfw.view.combo" -> "tfw.view"
-
-    "tfw.view.combo" -> "tfw.binding.link"
-
-    "tfw.view.combo" -> "tfw.binding.converters"
-
-    "tfw.view.combo" -> "tfw.view.icon"
+    "tfw.view.checkbox" -> "tfw.binding.converters"
     "tfw.touchable" -> "$"
 
     "tfw.touchable" -> "dom"
@@ -169,11 +138,10 @@ digraph dependencies {
 
     "dom.fx" -> "tfw.data-binding"
     "polyfill.promise" -> "$"
+    "noise.base" -> "webgl.resize"
+
+    "noise.base" -> "webgl.program"
     "webgl.program" -> "$"
     "webgl.resize" -> "$"
-    "noise.graph1" -> "draw"
-    "draw" -> "$"
-
-    "draw" -> "dom"
 
 }

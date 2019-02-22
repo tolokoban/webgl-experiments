@@ -1,0 +1,12 @@
+.noise-quads {
+    display: inlin-block;
+    padding: 0;
+}
+
+.noise-quads > canvas {
+    margin: 0;
+    width: 800px;
+    height: 800px;
+    max-width: 90vmin;
+    max-height: 90vmin;
+}

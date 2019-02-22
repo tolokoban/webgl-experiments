@@ -1,7 +1,5 @@
 {View DIV class:noise-equilaterals
     view.attribs: {
-      width: {integer 300}
-      height: {integer 300}
       fullscreen: {boolean false}
     }
 
