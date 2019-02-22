@@ -4,19 +4,10 @@ precision mediump float;
 
 
 uniform float uniTime;
-uniform float uniCenterX;
-uniform float uniCenterY;
-
-const vec3 COLOR0 = vec3(.7, 1, 0);
-const vec3 COLOR1 = vec3(.3, 0, 1);
-const vec3 COLOR2 = vec3(1, .4, 0);
-const vec3 COLOR3 = vec3(0, 1, 1);
-const vec3 COLOR4 = vec3(.7, .7, 0);
-const vec3 COLOR5 = vec3(1, .3, .7);
-const vec3 COLOR6 = vec3(1, 1, 0);
-const vec3 COLOR7 = vec3(1, .7, .3);
 
 const float ALPHA = sqrt(3.);
+
+
 
 void main() {
   float ang = uniTime * 0.0001;

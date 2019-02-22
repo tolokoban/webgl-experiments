@@ -13,7 +13,7 @@ const Dom = require("dom"),
 /**
  * This function is called by the XJS code.
  *
- * @this Quads
+ * @this Tris
  */
 function init(  ) {
     const canvas = this.$elements.canvas.$,
@@ -44,17 +44,6 @@ function paint() {
     if( Resize( gl ) ) requestAnimationFrame( paint.bind( this ) );
 
     prg.use();
-    prg.$uniSize = this.size;
-    prg.$uniFactorX = 1 / gl.canvas.width;
-    prg.$uniFactorY = 1 / gl.canvas.height;
-
-    if( this.mode === 'linear' ) prg.$uniMode = 0;
-    else if( this.mode === 'cubic' ) prg.$uniMode = 1;
-    else prg.$uniMode = 2;
-    
-    console.info("[quads] this.mode=", this.mode);
-    console.info("[quads] prg.$uniMode=", prg.$uniMode);
-    
     prg.$uniRandom = 0;
 
     gl.activeTexture( gl.TEXTURE0 );
