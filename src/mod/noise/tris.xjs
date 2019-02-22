@@ -1,0 +1,10 @@
+{View DIV class:noise-tris
+    view.attribs: {
+    }
+    
+    view.init: init
+
+    [
+        {CANVAS view.id: canvas}
+    ]
+}

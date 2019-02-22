@@ -94,6 +94,17 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
+    "noise.tris" -> "dom"
+
+    "noise.tris" -> "webgl.resize"
+
+    "noise.tris" -> "webgl.program"
+
+    "noise.tris" -> "tfw.binding.property-manager"
+
+    "noise.tris" -> "tfw.view"
+    "webgl.program" -> "$"
+    "webgl.resize" -> "$"
     "wdg.matrix" -> "$"
 
     "wdg.matrix" -> "dom"
@@ -141,7 +152,5 @@ digraph dependencies {
     "noise.base" -> "webgl.resize"
 
     "noise.base" -> "webgl.program"
-    "webgl.program" -> "$"
-    "webgl.resize" -> "$"
 
 }

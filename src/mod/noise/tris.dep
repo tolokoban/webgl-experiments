@@ -1,0 +1,6 @@
+{
+    var: {
+        vert: tris.vert
+        frag: tris.frag
+    }
+}
