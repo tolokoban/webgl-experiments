@@ -1,6 +1,4 @@
-#ifdef GL_ES
 precision mediump float;
-#endif
 
 uniform float uniFactorX;
 uniform float uniFactorY;
@@ -8,9 +6,6 @@ uniform float uniSize;
 uniform float uniMode;
 
 uniform sampler2D uniRandom;
-
-const float CELLS = 8.0;
-const float INV = 1.0 / CELLS;
 
 const vec3 ORANGE = vec3(1., .5, 0.);
 const vec3 BLUE = vec3(0, .4, .867);
@@ -22,16 +17,17 @@ float interpolate( float a ) {
 }
 
 void main() {
-  float INV = 1.0 / uniSize;
+  float INV = 1.0 / 32.0;
   
   vec2 A = vec2( 0, 0 );
   vec2 B = vec2( 0, INV );
   vec2 C = vec2( INV, INV );
   vec2 D = vec2( INV, 0 );
 
-  vec2 coords = vec2( gl_FragCoord.x * uniFactorX, gl_FragCoord.y * uniFactorY );
-
-  vec2 cellA = fract( coords * uniSize );
+  vec2 coords = uniSize * vec2( gl_FragCoord.x * uniFactorX, gl_FragCoord.y * uniFactorY ) * INV;
+  coords += 0.5 + uniSize * INV;
+  
+  vec2 cellA = fract( coords * 32.0 );
   vec2 cellB = cellA - vec2(0, 1);
   vec2 cellC = cellA - vec2(1, 1);
   vec2 cellD = cellA - vec2(1, 0);
@@ -58,7 +54,7 @@ void main() {
 
   // Les valeurs positives seront orange,
   if( v > 0.0 ) gl_FragColor = vec4( v * ORANGE, 1 );
-  // les négatives seront bleues.
+  // les négatives seront bleu.
   else gl_FragColor = vec4( -v * BLUE, 1 );
 
   // Ajouter les liserés blancs.

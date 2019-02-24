@@ -71,14 +71,9 @@ void main() {
     }
   }
 
-  float dist = coords.x * coords.x + coords.y * coords.y;  
-  float radius = 13000.0;
-  float thickness = 500.0;
-  float shadow = smoothstep(radius - thickness, radius + thickness, dist);
-  shadow *= 1.0 - shadow;
-  shadow = 2.0 * shadow;
-  color += shadow;
-  
   float grayscale = 0.2989 * color.r + 0.5870 * color.g + 0.1140 * color.b;
   gl_FragColor = vec4( mix(color, vec3(grayscale, grayscale, grayscale), transition), 1 );
+
+  // Afficher la grande diagonale.
+  if( abs(u - v) < 0.04 ) gl_FragColor = vec4( gl_FragColor.rgb * 25. * abs( u - v), 1 );
 }
