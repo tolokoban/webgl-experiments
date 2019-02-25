@@ -4,19 +4,29 @@ precision mediump float;
 uniform float uniTime;
 uniform sampler2D uniRandom;
 
+const vec3 BLUE = vec3( 0, .4, .687 );
+const vec3 ORANGE = vec3( 1, .5, 0 );
 
-const float ALPHA = sqrt(3.);
 const float INV = 1.0 / 32.0;
 
 const float ZOOM = 0.005;
 
+const float SQRT2 = 1.4142135623730951;
+const float SQRT3 = 1.7320508075688772;
 const float SQRT6 = 2.449489742783178;
-const vec2 UP = vec2(-0.25881904510252063, 0.9659258262890683);
-const vec2 DOWN = vec2(0.9659258262890683, -0.2588190451025207);
+
+const mat2 SKEW = mat2(2.7320508075688772, 0.7320508075688772, 0.7320508075688772, 2.7320508075688772);
+const mat2 UNSKEW = mat2(0.39433756729740643, -0.10566243270259355, -0.10566243270259355, 0.39433756729740643);
+
+const float RADIUS = .5 / sqrt(3.);
+const vec2 UP = vec2(-0.25881904510252063, 0.9659258262890683) * RADIUS * SQRT2;
+const vec2 DOWN = vec2(0.9659258262890683, -0.2588190451025207) * RADIUS * SQRT2;
 
 
-vec3 hue( vec2 rnd ) {
-  vec2 v = normalize(rnd - .5 );
+vec3 hue( vec3 rnd ) {
+  return rnd;
+  
+  vec2 v = 2. * (rnd.xy - .5 );
   const vec2 RED = vec2( .5, 0.8660254037844386 );
   const vec2 GREEN = vec2( .5, -0.8660254037844386 );
   const vec2 BLUE = vec2( -1, 0 );
@@ -27,26 +37,21 @@ vec3 hue( vec2 rnd ) {
 }
 
 float computeDis( vec2 pt ) {
-  vec2 pt2 = pt;
-  float x = pt2.x;
-  float y = pt2.y;
-  return smoothstep( 0., 1., 1. - (x*x + y*y) );
+  float a = 1. - length(pt) * SQRT6;
+  return a*a*a*(a*(a*6.-15.)+10.);
+  return smoothstep( 0., 1., a );
+}
+
+float getVal( vec2 rnd, vec2 dir ) {
+  vec2 grd = 2. * (rnd - .5);
+  float d = computeDis(dir);
+  return dot( dir, grd ) * d;
 }
 
 void main() {
-  float ang = 0.; //uniTime * 0.0001;
-  float c = cos( ang );
-  float s = sin( ang );
-  mat2 rotation = mat2(c, -s, s, c);
+  vec2 coords = gl_FragCoord.xy * ZOOM;
 
-  vec2 coords = rotation * gl_FragCoord.xy * ZOOM;
-
-  float alpha = ALPHA;
-  float sa = (1.0 + alpha);
-  float sb = (alpha - 1.0);
-  mat2 skew = mat2( sa, sb, sb, sa ); 
-  mat2 unskew = mat2( sa, -sb, -sb, sa ) / (4. * alpha); 
-  vec2 pos = skew * coords;
+  vec2 pos = SKEW * coords;
   float x = pos.x;
   float y = pos.y;
 
@@ -58,41 +63,34 @@ void main() {
 
   vec2 posM = coords;
   
-  vec2 pos0 = unskew*(pos - vec2(u,v));
-  vec2 rnd0 = texture2D( uniRandom, vec2( x, y ) ).xy;
-  float dis0 = computeDis( posM - pos0 );
+  vec2 posA = UNSKEW*(pos - vec2(u,v));
+  vec3 rndA = texture2D( uniRandom, vec2( x, y ) ).xyz;
+  vec2 vecMA = posM - posA;
   
-  vec2 pos1 = pos0 + ZOOM;
-  vec2 rnd1 = texture2D( uniRandom, vec2( x + INV, y + INV ) ).xy;
-  float dis1 = computeDis( posM - pos1 );
+  vec2 posB = posA + RADIUS;
+  vec3 rndB = texture2D( uniRandom, vec2( x + INV, y + INV ) ).xyz;
+  vec2 vecMB = posM - posB;
 
-  vec2 pos2;
-  vec2 rnd2 = vec2( 0 );
-  float dis2 = 0.;
-  
+  vec2 posC;
+  vec3 rndC;  
   if( u < v ) {
-    pos2 = pos0 + UP;
-    rnd2 = texture2D( uniRandom, vec2( x, y + INV ) ).xy;
+    posC = posA + UP;
+    rndC = texture2D( uniRandom, vec2( x, y + INV ) ).xyz;
   } else {
-    pos2 = pos0 + DOWN;
-    rnd2 = texture2D( uniRandom, vec2( x + INV, y ) ).xy;
+    posC = posA + DOWN;
+    rndC = texture2D( uniRandom, vec2( x + INV, y ) ).xyz;
   }
-  dis2 = computeDis( posM - pos2 );
+  vec2 vecMC = posM - posC;
 
-  vec3 color = hue(rnd0) * dis0 + hue(rnd1) * dis1 + hue(rnd2) * dis2;
+  vec2 vecAC = posC - posA;
+  vec2 vecBC = posC - posB;
   
-  if( abs(u - v) < 0.01 ) color *= abs(u - v) / 0.01;
+  float denom = vecBC.y * vecAC.x - vecBC.x * vecAC.y;
+  float wA = (vecBC.y * vecMC.x - vecBC.x * vecMC.y) / denom;
+  float wB = (vecAC.x * vecMC.y - vecAC.y * vecMC.x) / denom;
+  float wC = 1. - wA - wB;
   
-  float d = distance(posM, pos0);
-  if( d < 0.1 ) color = vec3(0);
-  d = distance(posM, pos1);
-  if( d < 0.05 ) color.g = 1.;
-  d = distance(posM, pos2);
-  if( d < 0.05 ) color.r = 1.;
-  
-  
-  d = distance( posM, vec2(0) );
-  if( d > 1./sqrt(6.) && d < 2./sqrt(6.) ) color *= .2;
-  
+  vec3 color = wA * rndA + wB * rndB + wC * rndC;
+    //hue(rndA) * dis0 + hue(rndB) * dis1 + hue(rndC) * dis2;
   gl_FragColor = vec4( color, 1 );
 }
