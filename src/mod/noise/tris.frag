@@ -36,16 +36,10 @@ vec3 hue( vec3 rnd ) {
               clamp( dot( v, BLUE ), 0., 1. ));              
 }
 
-float computeDis( vec2 pt ) {
-  float a = 1. - length(pt) * SQRT6;
+float smooth( float a ) {
+  //return a;
   return a*a*a*(a*(a*6.-15.)+10.);
-  return smoothstep( 0., 1., a );
-}
-
-float getVal( vec2 rnd, vec2 dir ) {
-  vec2 grd = 2. * (rnd - .5);
-  float d = computeDis(dir);
-  return dot( dir, grd ) * d;
+  //return smoothstep( 0., 1., a );
 }
 
 void main() {
@@ -65,11 +59,11 @@ void main() {
   
   vec2 posA = UNSKEW*(pos - vec2(u,v));
   vec3 rndA = texture2D( uniRandom, vec2( x, y ) ).xyz;
-  vec2 vecMA = posM - posA;
+  vec2 vecAM = posA - posM;
   
   vec2 posB = posA + RADIUS;
   vec3 rndB = texture2D( uniRandom, vec2( x + INV, y + INV ) ).xyz;
-  vec2 vecMB = posM - posB;
+  vec2 vecBM = posB - posM;
 
   vec2 posC;
   vec3 rndC;  
@@ -80,17 +74,45 @@ void main() {
     posC = posA + DOWN;
     rndC = texture2D( uniRandom, vec2( x + INV, y ) ).xyz;
   }
-  vec2 vecMC = posM - posC;
+  vec2 vecCM = posC - posM;
 
-  vec2 vecAC = posC - posA;
-  vec2 vecBC = posC - posB;
+  vec2 vecCA = posA - posC;
+  vec2 vecCB = posB - posC;
   
-  float denom = vecBC.y * vecAC.x - vecBC.x * vecAC.y;
-  float wA = (vecBC.y * vecMC.x - vecBC.x * vecMC.y) / denom;
-  float wB = (vecAC.x * vecMC.y - vecAC.y * vecMC.x) / denom;
+  float denom = vecCB.x * vecCA.y - vecCB.y * vecCA.x;
+  float wA =  ( vecCB.y * vecCM.x - vecCB.x * vecCM.y ) / denom;
+  float wB =  ( vecCA.x * vecCM.y - vecCA.y * vecCM.x ) / denom;
   float wC = 1. - wA - wB;
-  
+
+  wA = smooth( wA );
+  wB = smooth( wB );
+  wC = smooth( wC );
+
+  /*
   vec3 color = wA * rndA + wB * rndB + wC * rndC;
-    //hue(rndA) * dis0 + hue(rndB) * dis1 + hue(rndC) * dis2;
+  color /= wA + wB + wC;
+  */
+
+  float vA = dot(rndA.xy - .5, vecAM);
+  float vB = dot(rndB.xy - .5, vecBM);
+  float vC = dot(rndC.xy - .5, vecCM);
+
+  float value = wA*vA + wB*vB + wC*vC;
+  //value /= wA + wB + wC;
+  value *= 16.;
+  
+  vec3 color;
+  if( value < 0. ) color = -value * BLUE;
+  else color = value * ORANGE;
+  
+  /*
+  if( length(vecAM) < .1 ) color = vec3(1);
+  if( length(vecBM) < .1 ) color = vec3(.8);
+  if( length(vecCM) < .1 ) color = vec3(.6);
+  if( u < v ) color *= .5;
+
+  if( wA < -1.0 ) color = BLUE;
+  else color = ORANGE;
+  */
   gl_FragColor = vec4( color, 1 );
 }
