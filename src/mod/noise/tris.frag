@@ -2,14 +2,22 @@ precision mediump float;
 
 
 uniform float uniTime;
+uniform float uniCenterX;
+uniform float uniCenterY;
 uniform sampler2D uniRandom;
+
+uniform float uniLoop;
+uniform float uniAmpl;
+uniform float uniFreq;
+uniform float uniAmplAttenuation;
+uniform float uniFreqAttenuation;
 
 const vec3 BLUE = vec3( 0, .4, .687 );
 const vec3 ORANGE = vec3( 1, .5, 0 );
 
 const float INV = 1.0 / 32.0;
 
-const float ZOOM = 0.005;
+const float ZOOM = 0.01;
 
 const float SQRT2 = 1.4142135623730951;
 const float SQRT3 = 1.7320508075688772;
@@ -18,33 +26,18 @@ const float SQRT6 = 2.449489742783178;
 const mat2 SKEW = mat2(2.7320508075688772, 0.7320508075688772, 0.7320508075688772, 2.7320508075688772);
 const mat2 UNSKEW = mat2(0.39433756729740643, -0.10566243270259355, -0.10566243270259355, 0.39433756729740643);
 
-const float RADIUS = .5 / sqrt(3.);
+const float RADIUS = .5 / SQRT3;
 const vec2 UP = vec2(-0.25881904510252063, 0.9659258262890683) * RADIUS * SQRT2;
 const vec2 DOWN = vec2(0.9659258262890683, -0.2588190451025207) * RADIUS * SQRT2;
 
 
-vec3 hue( vec3 rnd ) {
-  return rnd;
-  
-  vec2 v = 2. * (rnd.xy - .5 );
-  const vec2 RED = vec2( .5, 0.8660254037844386 );
-  const vec2 GREEN = vec2( .5, -0.8660254037844386 );
-  const vec2 BLUE = vec2( -1, 0 );
-
-  return vec3(clamp( dot( v, RED ), 0., 1. ),
-              clamp( dot( v, GREEN ), 0., 1. ),
-              clamp( dot( v, BLUE ), 0., 1. ));              
+vec3 gradient( vec2 pt, float seed ) {
+  vec2 coord = mat2(seed, 1. - seed, 1. + seed, 1) * pt;
+  return texture2D( uniRandom, coord ).xyz;
 }
 
-float smooth( float a ) {
-  //return a;
-  return a*a*a*(a*(a*6.-15.)+10.);
-  //return smoothstep( 0., 1., a );
-}
 
-void main() {
-  vec2 coords = gl_FragCoord.xy * ZOOM;
-
+float simplexNoise(vec2 coords, float seed) {
   vec2 pos = SKEW * coords;
   float x = pos.x;
   float y = pos.y;
@@ -58,61 +51,68 @@ void main() {
   vec2 posM = coords;
   
   vec2 posA = UNSKEW*(pos - vec2(u,v));
-  vec3 rndA = texture2D( uniRandom, vec2( x, y ) ).xyz;
+  vec3 rndA = gradient( vec2( x, y ), seed );
   vec2 vecAM = posA - posM;
   
   vec2 posB = posA + RADIUS;
-  vec3 rndB = texture2D( uniRandom, vec2( x + INV, y + INV ) ).xyz;
+  vec3 rndB = gradient( vec2( x + INV, y + INV ), seed );
   vec2 vecBM = posB - posM;
 
   vec2 posC;
   vec3 rndC;  
   if( u < v ) {
     posC = posA + UP;
-    rndC = texture2D( uniRandom, vec2( x, y + INV ) ).xyz;
+    rndC = gradient( vec2( x, y + INV ), seed );
   } else {
     posC = posA + DOWN;
-    rndC = texture2D( uniRandom, vec2( x + INV, y ) ).xyz;
+    rndC = gradient( vec2( x + INV, y ), seed );
   }
   vec2 vecCM = posC - posM;
 
   vec2 vecCA = posA - posC;
   vec2 vecCB = posB - posC;
+
+  // Calcul des produits scalaires pour chaque sommet.
+  float vA = dot(2. * rndA.xy - 1., vecAM);
+  float vB = dot(2. * rndB.xy - 1., vecBM);
+  float vC = dot(2. * rndC.xy - 1., vecCM);
+  // Calcul des poids.
+  // r2 est une valeur empirique. Des valeurs éloignées de .16 feront apparaître la grille.
+  float r2 = .16;
+  float wA = max(0., r2 - dot(vecAM, vecAM));
+  float wB = max(0., r2 - dot(vecBM, vecBM));
+  float wC = max(0., r2 - dot(vecCM, vecCM));
+  // On élève chaque poids à la puissance 4.
+  wA *= wA; wA *= wA;
+  wB *= wB; wB *= wB;
+  wC *= wC; wC *= wC;
   
-  float denom = vecCB.x * vecCA.y - vecCB.y * vecCA.x;
-  float wA =  ( vecCB.y * vecCM.x - vecCB.x * vecCM.y ) / denom;
-  float wB =  ( vecCA.x * vecCM.y - vecCA.y * vecCM.x ) / denom;
-  float wC = 1. - wA - wB;
-
-  wA = smooth( wA );
-  wB = smooth( wB );
-  wC = smooth( wC );
-
-  /*
-  vec3 color = wA * rndA + wB * rndB + wC * rndC;
-  color /= wA + wB + wC;
-  */
-
-  float vA = dot(rndA.xy - .5, vecAM);
-  float vB = dot(rndB.xy - .5, vecBM);
-  float vC = dot(rndC.xy - .5, vecCM);
-
   float value = wA*vA + wB*vB + wC*vC;
-  //value /= wA + wB + wC;
-  value *= 16.;
+  // Normaliser `value` pour bien étaler entre [-1 et 1].
+  // Là encore, c'est une valeur empirique.
+  value *= 10000.;
+
+  return value;
+}
+
+void main() {
+  vec2 coords = (gl_FragCoord.xy - vec2(uniCenterY, uniCenterY)) * ZOOM;
+  
+  float value = 0.;
+  float freq = uniFreq;
+  float ampl = uniAmpl;
+  float attF = uniFreqAttenuation;
+  float attA = uniAmplAttenuation;
+  for( int i=0; i<20; i++ ) {
+    if( float(i) > uniLoop ) break;
+    value += ampl * simplexNoise(coords * freq, 1. + float(i*i) * .1);
+    ampl *= attA;
+    freq *= attF;
+  }
   
   vec3 color;
   if( value < 0. ) color = -value * BLUE;
   else color = value * ORANGE;
   
-  /*
-  if( length(vecAM) < .1 ) color = vec3(1);
-  if( length(vecBM) < .1 ) color = vec3(.8);
-  if( length(vecCM) < .1 ) color = vec3(.6);
-  if( u < v ) color *= .5;
-
-  if( wA < -1.0 ) color = BLUE;
-  else color = ORANGE;
-  */
   gl_FragColor = vec4( color, 1 );
 }

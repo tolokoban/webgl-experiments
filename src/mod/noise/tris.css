@@ -1,6 +1,7 @@
 .noise-tris {
-    display: inlin-block;
+    display: inline-block;
     padding: 0;
+    text-align: center;
 }
 
 .noise-tris > canvas {
@@ -9,4 +10,11 @@
     height: 600px;
     max-width: 90vmin;
     max-height: 90vmin;
+}
+
+.noise-tris > div.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

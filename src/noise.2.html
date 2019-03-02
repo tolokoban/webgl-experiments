@@ -23,8 +23,21 @@ Il suffit donc de combiner une rotation de 45°, puis une compression sur l'axe 
 
 ## Interpolation
 
+Comme pour le bruit classique, on commence par faire un produit scalaire entre le gradient de chaque sommet du triangle dans lequel on se trouve et le vecteur qui va de ce sommet au fragment.
+
+A partir de là, on pourrait interpoler comme on le faisait dans le carré. Mais interpoler dans un triangle signifie rechercher les coordonnées barycentriques du fragment et cela fait intervenir une division. Le résultat n'est pas plu rapide que pour le bruit classique, de plus il est très difficile de faire disparaître la grille qui laisse une marque sur le rendu final.
+
+Le tour de force de Kenneth Perlin a été de ne pas faire d'interpolation. Il a juste calculé des poids pour chaque sommet du triangle, les a multiplié aux trois produits scalaires et finalement a simplememnt additionné les trois résultats.
+
+Pour le fragment au point `M` dans un triangle `ABC`, le poids en `A` est calculé comme ceci :
+* on calcule `0.16 - AM.AM` (le produit scalaire de `AM` par lui-même donne sa taille au carré),
+* si c'est un nombre négatif, on prend 0,
+* on élève ce nombre à la puissance 4.
+
 <x-widget name="noise.tris"/>
 
+Les contrôles ci-dessus permettent de générer ce qu'on appelle du __bruit fractal__.
+C'est le résultat de l'addition de plusieurs bruits avec des amplitudes et des échelles différentes.
 
 <hr/>
 
