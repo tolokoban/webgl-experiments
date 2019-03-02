@@ -1,10 +1,22 @@
 {View DIV class:noise-tris
     view.attribs: {
+        loop: {integer 1 behind:paint}
+        freq: {float 1 behind:paint}
+        ampl: {float 1 behind:paint}
+        freq-att: {float 1.1 behind:paint}
+        ampl-att: {float 0.8 behind:paint}
     }
     
     view.init: init
 
     [
         {CANVAS view.id: canvas}
+        {tfw.view.slider min:0 max:20 value:{Bind loop}}
+        {DIV class:flex [
+            {tfw.view.textbox label:{Intl freq} value:{Bind freq}}
+            {tfw.view.textbox label:{Intl ampl} value:{Bind ampl}}
+            {tfw.view.textbox label:{Intl freq-att} value:{Bind freq-att}}
+            {tfw.view.textbox label:{Intl ampl-att} value:{Bind ampl-att}}
+        ]}
     ]
 }

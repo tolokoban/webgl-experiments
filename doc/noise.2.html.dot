@@ -94,6 +94,8 @@ digraph dependencies {
     "x-widget" -> "dom"
 
     "x-widget" -> "tfw.data-binding"
+    "noise.tris" -> "$"
+
     "noise.tris" -> "dom"
 
     "noise.tris" -> "webgl.resize"
@@ -103,6 +105,36 @@ digraph dependencies {
     "noise.tris" -> "tfw.binding.property-manager"
 
     "noise.tris" -> "tfw.view"
+
+    "noise.tris" -> "tfw.binding.link"
+
+    "noise.tris" -> "tfw.binding.converters"
+
+    "noise.tris" -> "tfw.view.slider"
+
+    "noise.tris" -> "tfw.view.textbox"
+    "tfw.view.textbox" -> "$"
+
+    "tfw.view.textbox" -> "dom"
+
+    "tfw.view.textbox" -> "tfw.binding.property-manager"
+
+    "tfw.view.textbox" -> "tfw.view"
+
+    "tfw.view.textbox" -> "tfw.binding.link"
+
+    "tfw.view.textbox" -> "tfw.binding.converters"
+    "tfw.view.slider" -> "$"
+
+    "tfw.view.slider" -> "dom"
+
+    "tfw.view.slider" -> "tfw.binding.property-manager"
+
+    "tfw.view.slider" -> "tfw.view"
+
+    "tfw.view.slider" -> "tfw.binding.link"
+
+    "tfw.view.slider" -> "tfw.binding.converters"
     "webgl.program" -> "$"
     "webgl.resize" -> "$"
     "wdg.matrix" -> "$"

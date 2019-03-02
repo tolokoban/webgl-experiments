@@ -44,8 +44,16 @@ function paint( time ) {
 
     prg.use();
     prg.$uniTime = time;
-    prg.$uniRandom = 0;
+    prg.$uniCenterX = gl.canvas.width * 0.5;
+    prg.$uniCenterY = gl.canvas.height * 0.5;
 
+    prg.$uniLoop = this.loop - .5;
+    prg.$uniAmpl = this.ampl;
+    prg.$uniFreq = this.freq;
+    prg.$uniAmplAttenuation = this.amplAtt;
+    prg.$uniFreqAttenuation = this.freqAtt;
+    prg.$uniRandom = 0;
+    
     gl.activeTexture( gl.TEXTURE0 );
     gl.bindTexture( gl.TEXTURE_2D, texture );
 
