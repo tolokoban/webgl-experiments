@@ -30,7 +30,7 @@ function paint( time ) {
   Resize( gl );
 
   prg.use();
-  prg.$uniTime = time;  
+  prg.$uniTime = time;
   prg.$uniCenterX = gl.canvas.width * 0.5;
   prg.$uniCenterY = gl.canvas.height * 0.5;
   gl.bindBuffer( gl.ARRAY_BUFFER, buffVert );

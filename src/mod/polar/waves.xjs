@@ -1,0 +1,7 @@
+{View DIV class:polar.waves
+  view.init: init
+  
+  [
+    {CANVAS view.id:canvas}
+  ]
+}

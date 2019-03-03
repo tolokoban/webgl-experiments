@@ -1,0 +1,5 @@
+{
+  var: {
+    frag: waves.frag
+  }
+}
