@@ -1,0 +1,8 @@
+{View DIV class:ray-sample1
+    view.init: init
+
+    [
+        {CANVAS view.id:canvas}
+        {DIV view.id:fps class:fps}
+    ]
+}

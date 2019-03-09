@@ -1,0 +1,6 @@
+{
+    var: {
+         vert: sample1.vert
+         frag: sample1.frag
+    }
+}
