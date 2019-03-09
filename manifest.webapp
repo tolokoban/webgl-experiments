@@ -1,10 +1,6 @@
 {
   "name": "webgl-experiments",
-<<<<<<< HEAD
-  "version": "0.0.131",
-=======
-  "version": "0.0.132",
->>>>>>> 4b8651b615d8066c73a6ae405e1828af04ef1baa
+  "version": "0.0.133",
   "description": "WebGL study by tutorials",
   "launch_path": "/index.html",
   "fullscreen": "false",
