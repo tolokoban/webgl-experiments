@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.133\"","major":"0","minor":"0","revision":"133","date":"2019-03-09T12:06:23.618Z","consts":{}};
+=======
+exports.config={"name":"\"webgl-experiments\"","description":"\"WebGL study by tutorials\"","author":"\"tolokoban\"","version":"\"0.0.132\"","major":"0","minor":"0","revision":"132","date":"2019-03-05T08:52:00.538Z","consts":{}};
+>>>>>>> a465eb7bdc5652bca4bcfebcb9678042ac437101
 "use strict";
 
 const ZERO_CHAR_CODE = '0'.charCodeAt( 0 );
